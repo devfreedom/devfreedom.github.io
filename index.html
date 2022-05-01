@@ -12,10 +12,11 @@
 </head>
 
 <body>
+  <div id="header-anchor"></div>
   <header id="header-section" class="fixed z-10 bg-white flex place-content-center w-full h-16 tablet:h-20 laptop:h-24 shadow-2xl shadow-white">
     <div id="header-container" class="flex flex-row justify-center tablet:justify-between laptop:justify-between items-center w-full bg-white px-3 tablet:w-full tablet:px-7 laptop:w-3/5 laptop:min-w-[1280px]">
       <div class="hidden tablet:flex laptop:flex"><img class="object-contain h-[2rem] tablet:h-[2.5rem] laptop:h-[3rem] mx-5" src="./img/devfreedom-logo-black.svg"></div>
-      <div class="flex flex-row">
+      <a href="#header-anchor"><div class="flex flex-row">
         <div class="text-black font-trueno">
           <span class="font-semibold text-xl tablet:text-2xl laptop:text-3xl">JUNSUB</span><span class="font-light text-xl tablet:text-2xl laptop:text-3xl">KIM</span>
         </div>
@@ -24,14 +25,14 @@
         <div class="text-black font-trueno">
           <span class="font-light text-xl tablet:text-2xl laptop:text-3xl">DEV</span><span class="font-semibold text-xl tablet:text-2xl laptop:text-3xl">FREEDOM</span>
         </div>
-      </div>
-      <div class="hidden tablet:flex laptop:flex">CONTACT</div>
+      </div></a>
+      <div class="hidden tablet:flex laptop:flex"><a href="#contact-anchor">CONTACT</a></div>
     </div>
   </header>
 
   <div id="header-padding" class="h-16 tablet:h-20 laptop:h-24"></div>
 
-  <div id="hero-section" class="flex w-full h-[90vh] bg-cover bg-center bg-[url('../img/hero-bg.jpg')]">
+  <div id="hero-section" class="flex w-full h-[90vh] bg-cover bg-center bg-[url('../img/hero-bg.jpg')]"> <!-- Photo by Julie Molliver -->
     <div id="hero-container" class="flex justify-center w-10/12 tablet:w-4/6 laptop:w-4/6">
       <div id="hero-headlines" class="flex flex-col mt-[10vh] tablet:mt-[10vh] laptop:mt-[10vh] font-fira-sans font-bold text-3xl tablet:text-5xl laptop:text-6xl">
         <p>A solution-oriented<p>
@@ -42,23 +43,23 @@
     </div>
   </div>
 
+  <div id="codedata-anchor"></div>
+
   <div id="header-menu-container" class="z-20 sticky top-16 tablet:top-20 laptop:top-24 flex flex-col items-center justify-center w-full bg-black shadow-2xl shadow-white">
     <div id="header-menu-phone" class="grid tablet:hidden laptop:hidden grid-cols-2 place-items-center tablet:flex laptop:flex flex-col tablet:flex-row laptop:flex-row justify-between items-center w-full tablet:w-5/6 laptop:w-3/5 text-white text-lg font-open-sans">
-      <h1 class="m-5">CONTACT</h1>
+      <h1 class="m-5"><a href="#contact-anchor">CONTACT</a></h1>
       <h1 id="works-show-btn" class="flex m-5" onClick="openHeaderMenu();">WORKS ▾</h1>
       <h1 id="works-hide-btn" class="hidden m-5" onClick="closeHeaderMenu();">WORKS ▴</h1>
     </div>
     <div id="header-menu" class="hidden grid-cols-2 tablet:flex laptop:flex flex-col tablet:flex-row laptop:flex-row place-items-center justify-between items-center w-full tablet:w-5/6 laptop:w-3/5 text-white text-lg font-open-sans">
-      <h2 class="my-5">CODE & DATA</h2>
-      <h2 class="my-5">UI/UX</h2>
-      <h2 class="my-5">WRITING</h2>
-      <h2 class="my-5">EDUCATION</h2>
-      <h2 class="my-5">CREATIVITY</h2>
-      <h2 class="my-5">ACTIVISM</h2>
+      <h2 class="my-5"><a href="#codedata-anchor" onClick="closeHeaderMenu();">CODE & DATA</a></h2>
+      <h2 class="my-5"><a href="#uiux-anchor" onClick="closeHeaderMenu();">UI/UX</a></h2>
+      <h2 class="my-5"><a href="#writing-anchor" onClick="closeHeaderMenu();">WRITING</a></h2>
+      <h2 class="my-5"><a href="#creativity-anchor" onClick="closeHeaderMenu();">CREATIVITY</a></h2>
     </div>
   </div>
 
-  <div class="h-24 tablet:h-36 laptop:h-36"></div>
+  <div class="h-16 tablet:h-20 laptop:h-24"></div>
 
   <div id="codedata-section" class="flex items-center justify-center w-full bg-white">
     <div id="codedata-container" class="flex flex-col tablet:flex-row laptop:flex-row items-center justify-center w-full tablet:w-full laptop:w-3/5 laptop:min-w-[1280px] laptop:max-w-[1920px]">
@@ -67,49 +68,43 @@
         <span class="text-xl laptop:text-2xl font-bold font-fira-code">I use code to make things work, and data to see how things are.</span>
       </div>
       <div id="codedata-wrapper" class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 tablet:grid-rows-2 laptop:grid-rows-2 w-full tablet:w-7/12 laptop:w-3/5 bg-white p-5 tablet:p-5 laptop:p-0 font-open-sans">
-        <div id="codedata-item1" class="flex flex-row tablet:flex-col laptop:flex-col bg-gray-100 rounded-xl drop-shadow-lg m-5 p-5 tablet:p-7 laptop:p-7">
-          <img class="w-[5rem] h-[5rem] aspect-square mb-5 mr-5 rounded-full shadow-lg shadow-black/30" src="./img/sharing.jpg" text="Photo of typewriter by Markus Winkler">
+        <div id="codedata-item-1" class="flex flex-row tablet:flex-col laptop:flex-col bg-gray-100 rounded-xl drop-shadow-lg m-5 p-5 tablet:p-7 laptop:p-7">
+          <img class="w-[5rem] h-[5rem] aspect-square mb-5 mr-5 rounded-full shadow-lg shadow-black/30" src="./img/sharing.jpg">
           <div>
             <h2 class="font-semibold text-lg">devfreedom</h2>
             <p class="font-light text-md mt-3">Personal GitHub repositories</p>
           </div>
         </div>
-        <div id="codedata-item2" class="flex flex-row tablet:flex-col laptop:flex-col  bg-gray-100 rounded-lg drop-shadow-lg m-5 p-5 tablet:p-7 laptop:p-7">
-          <img class="w-[5rem] h-[5rem] aspect-square mb-5 mr-5 rounded-full shadow-lg shadow-black/30" src="./img/blueprint.jpg" text="Photo of blueprint by Sven Mieke">
+        <div id="codedata-item-2" class="flex flex-row tablet:flex-col laptop:flex-col  bg-gray-100 rounded-lg drop-shadow-lg m-5 p-5 tablet:p-7 laptop:p-7">
+          <img class="w-[5rem] h-[5rem] aspect-square mb-5 mr-5 rounded-full shadow-lg shadow-black/30" src="./img/blueprint.jpg">
           <div>
-            <h2 class="font-semibold text-lg">Tripblazr (dev)</h2>
+            <h2 class="font-semibold text-lg">Tourplaya (dev)</h2>
             <p class="font-light text-md mt-3">Geolocation-based fullstack webapp, development build</p>
           </div>
         </div>
-        <div id="codedata-item3" class="flex flex-row tablet:flex-col laptop:flex-col bg-gray-100 rounded-lg drop-shadow-lg m-5 p-5 tablet:p-7 laptop:p-7">
-          <img class="w-[5rem] h-[5rem] aspect-square mb-5 mr-5 rounded-full shadow-lg shadow-black/30" src="./img/blueprint.jpg" text="Photo of blueprint by Sven Mieke">
+        <div id="codedata-item-3" class="flex flex-row tablet:flex-col laptop:flex-col bg-gray-100 rounded-lg drop-shadow-lg m-5 p-5 tablet:p-7 laptop:p-7">
+          <img class="w-[5rem] h-[5rem] aspect-square mb-5 mr-5 rounded-full shadow-lg shadow-black/30" src="./img/blueprint.jpg">
           <div>
-            <h2 class="font-semibold text-lg">Tripblazr (MVP)</h2>
-            <p class="font-light text-md mt-3">Minimum viable product version of Tripblazr</p>
+            <h2 class="font-semibold text-lg">Tourplaya Prototype</h2>
+            <p class="font-light text-md mt-3">Working prototype of Tourplaya </p>
           </div>
         </div>
-        <div id="codedata-item4" class="flex flex-row tablet:flex-col laptop:flex-col  bg-gray-100 rounded-lg drop-shadow-lg m-5 p-5 tablet:p-7 laptop:p-7">
-          <img class="w-[5rem] h-[5rem] aspect-square mb-5 mr-5 rounded-full shadow-lg shadow-black/30" src="./img/collab.jpg" text="Photo of laptops by Marvin Meyer">
+        <div id="codedata-item-4" class="flex flex-row tablet:flex-col laptop:flex-col  bg-gray-100 rounded-lg drop-shadow-lg m-5 p-5 tablet:p-7 laptop:p-7">
+          <img class="w-[5rem] h-[5rem] aspect-square mb-5 mr-5 rounded-full shadow-lg shadow-black/30" src="./img/collab.jpg">
           <div>
             <h2 class="font-semibold text-lg">Pandas study #1</h2>
             <p class="font-light text-md mt-3">Data analysis on South Korean tourism industry and market</p>
-          </div>
-        </div>
-        <div id="codedata-item5" class="flex flex-row tablet:flex-col laptop:flex-col  bg-gray-100 rounded-lg drop-shadow-lg m-5 p-5 tablet:p-7 laptop:p-7">
-          <img class="w-[5rem] h-[5rem] aspect-square mb-5 mr-5 rounded-full shadow-lg shadow-black/30" src="./img/collab.jpg" text="Photo of laptops by Marvin Meyer">
-          <div>
-            <h2 class="font-semibold text-lg">SEO study #1</h2>
-            <p class="font-light text-md mt-3">Website SEO marketing study using Google Analytics data</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="h-24 tablet:h-36 laptop:h-56"></div>
+  <div id="uiux-anchor"></div>
+  <div class="h-36 tablet:h-40 laptop:h-72"></div>
   
   <div id="uiux-section" class="flex items-center justify-center w-full bg-white">
-    <div id="uiux-container" class="flex flex-col items-center justify-center w-full tablet:w-full laptop:w-3/5 laptop:min-w-[1280px] laptop:max-w-[1920px] p-5 tablet:p-5 laptop:p-10 bg-slate-100">
+    <div id="uiux-container" class="flex flex-col items-center justify-center w-full tablet:w-full laptop:w-3/5 laptop:min-w-[1280px] laptop:max-w-[1920px] p-5 tablet:p-5 laptop:p-10 bg-blue-100">
       <div id="decoration1" class="flex flex-row justify-center items-center w-full mt-5">
         <div class="flex items-center w-10/12 h-12 p-3 mx-5 bg-white shadow-lg shadow-black/20 text-slate-500 text-md tablet:text-lg laptop:text-xl font-open-sans font-normal">
           <p class="mx-3">pragmatism first</p>
@@ -119,24 +114,24 @@
         </div>
       </div>
       <div id="uiux-intro" class="flex flex-row justify-between items-center w-full tablet:w-11/12 laptop:w-10/12 p-5">
-        <h1 class="py-5 text-6xl tablet:text-[7rem] laptop:text-[10rem] font-light font-fira-sans">UI/UX</h1>
-        <span class="hidden tablet:flex laptop:flex flex-row w-4/5 justify-center text-lg tablet:text-xl laptop:text-2xl font-semibold font-open-sans">USER-ORIENTED DESIGN</span>
+        <h1 class="py-5 text-6xl tablet:text-[7rem] laptop:text-[10rem] font-bold font-open-sans">UI/UX</h1>
+        <span class="hidden tablet:flex laptop:flex flex-row w-4/5 justify-center px-3 text-lg tablet:text-xl laptop:text-2xl font-semibold font-open-sans">PURPOSE-DRIVEN DESIGN</span>
         <div id="decoration2" class="flex flex-row justify-between items-center w-2/6">
           <div class="w-3 h-3 laptop:w-5 laptop:h-5 rounded-full bg-orange-500 shadow-lg shadow-black"></div>
           <div class="w-3 h-3 laptop:w-5 laptop:h-5 rounded-full bg-sky-500 shadow-lg shadow-black"></div>
           <div class="w-3 h-3 laptop:w-5 laptop:h-5 rounded-full bg-violet-500 shadow-lg shadow-black"></div>
         </div>
       </div>
-      <div id="uiux-wrapper" class="grid grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-3 tablet:grid-rows-1 laptop:grid-rows-1 w-full tablet:w-11/12 laptop:w-4/5 bg-slate-100 mb-5 font-open-sans">
-        <div id="uiux-item1" class="flex flex-col bg-white rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] m-5 p-5 tablet:p-7 laptop:p-7">
-          <img class="w-[5rem] h-[5rem] aspect-square mb-5 rounded-full shadow-inner shadow-black/30" src="./img/sharing.jpg" text="Photo of typewriter by Markus Winkler">
+      <div id="uiux-wrapper" class="grid grid-cols-1 tablet:grid-cols-3 laptop:grid-cols-3 tablet:grid-rows-1 laptop:grid-rows-1 w-full tablet:w-11/12 laptop:w-4/5 mb-5 font-open-sans">
+        <div id="uiux-item-1" class="flex flex-row tablet:flex-col laptop:flex-col items-center tablet:text-center laptop:text-center bg-white rounded-full tablet:rounded-xl laptop:rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] m-5 p-5 tablet:p-7 laptop:p-7">
+          <img class="w-[5rem] h-[5rem] aspect-square mb-0 mx-5 tablet:mb-5 tablet:mx-0 laptop:mb-5 laptop:mx-0 rounded-full shadow-inner shadow-black/30" src="./img/sharing.jpg">
           <div>
-            <h2 class="font-semibold text-lg">Tripblazr UI/UX</h2>
+            <h2 class="font-semibold text-lg">Tourplaya UI/UX</h2>
             <p class="font-light text-md mt-3">UI/UX prototyping</p>
           </div>
         </div>
-        <div id="uiux-item2" class="flex flex-col bg-white rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] m-5 p-5 tablet:p-7 laptop:p-7">
-          <img class="w-[5rem] h-[5rem] aspect-square mb-5 rounded-full shadow-inner shadow-black/30" src="./img/blueprint.jpg" text="Photo of blueprint by Sven Mieke">
+        <div id="uiux-item-2" class="flex flex-row tablet:flex-col laptop:flex-col items-center tablet:text-center laptop:text-center bg-white rounded-full tablet:rounded-xl laptop:rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] m-5 p-5 tablet:p-7 laptop:p-7">
+          <img class="w-[5rem] h-[5rem] aspect-square mb-0 mx-5 tablet:mb-5 tablet:mx-0 laptop:mb-5 laptop:mx-0 rounded-full shadow-inner shadow-black/30" src="./img/blueprint.jpg">
           <div>
             <h2 class="font-semibold text-lg">Munch Hunter</h2>
             <p class="font-light text-md mt-3">UI/UX sketch</p>
@@ -147,19 +142,20 @@
     </div>
   </div>
 
-  <div class="h-24 tablet:h-36 laptop:h-56"></div>
+  <div id="writing-anchor"></div>
+  <div class="h-36 tablet:h-40 laptop:h-72"></div>
 
   <div id="writing-section" class="flex items-center justify-center w-full bg-white">
     <div id="writing-container" class="flex flex-col items-center justify-center w-full tablet:w-full laptop:w-3/5 laptop:min-w-[1280px] laptop:max-w-[1920px] p-3 tablet:p-5">
       <div id="writing-intro" class="flex flex-col w-full px-5">
         <h1 class="text-6xl tablet:text-[7rem] laptop:text-[10rem] font-black font-fira-sans underline decoration-4 tablet:decoration-8 laptop:decoration-8">Writing</h1>
-        <span class="mt-5 text-lg tablet:text-xl laptop:text-2xl font-bold font-fira-sans">Stuffs like technical writings, opinion pieces, and personal essays.</span>
+        <span class="mt-5 text-lg tablet:text-xl laptop:text-2xl font-bold font-fira-sans">Stuffs like technical writing, opinion piece, translation work, and essay.</span>
       </div>
       <div id="writing-wrapper" class="flex flex-col w-full ml-0 tablet:ml-3 laptop:ml-10 p-10 bg-white font-open-sans">
-        <div id="writing-item1-wrapper">
+        <div id="writing-item-1-wrapper">
           <div class="text-2xl font-bold"><span class="mr-2">1.</span><a href="https://devfreedom.github.io/opencomputings" class="underline decoration-2 underline-offset-4">Opencomputings</a></div>
           <div class="flex flex-row text-md tablet:text-lg laptop:text-lg mt-2">
-            <span class="ml-5 mr-2">•</span><div><span>This is a technical blog which aims to promote widespread practical use of</span>&nbsp;<span class="italic font-semibold">free and/or open source softwares and hardwares</span>&nbsp;<span>in daily lives.</span></div>
+            <span class="ml-5 mr-2">•</span><div><span>A technical blog which aims to promote widespread practical use of</span>&nbsp;<span class="italic font-semibold">free and/or open source softwares and hardwares</span>&nbsp;<span>in daily lives.</span></div>
           </div>
           <div class="flex flex-rowtext-md tablet:text-lg laptop:text-lg">
             <span class="ml-5 mr-2">•</span><div>"<span class="underline underline-offset-4 decoration-4 decoration-red-500">Open source</span>"&nbsp;<span>can be a foreign concept to people who are not into tech, and it generally requires a technological background to make use of it.</span></div>
@@ -168,42 +164,43 @@
             <span class="ml-5 mr-2">•</span><div><span>Opencomputing provides comprehensible information and concise tutorials for everyone, so even people who are not tech-savvy can benefit from open source computing.</span></div>
           </div>
         </div>
-        <div id="writing-item2" class="mt-5">
-          <div class="text-2xl font-bold"><span class="mr-2">2.</span><a href="https://thecolorizer.com" class="underline decoration-2 underline-offset-4">The Colorizer</a>&nbsp;/&nbsp;<a href="https://korea.thecolorizer.com" class="underline decoration-2 underline-offset-4">Korean Edition</a></div>
+        <div id="writing-item-2" class="mt-5">
+          <div class="flex flex-row text-2xl font-bold"><span class="mr-2">2.</span><div><a href="https://thecolorizer.com" class="underline decoration-2 underline-offset-4">The Colorizer</a>&nbsp;/&nbsp;<a href="https://korea.thecolorizer.com" class="underline decoration-2 underline-offset-4">Korean Edition</a></div></div>
           <div class="flex flex-row text-md tablet:text-lg laptop:text-lg mt-2">
-            <span class="ml-5 mr-2">•</span><div><span>This is a sociocultural blog focuses on</span>&nbsp;<span class="bg-yellow-200">global affairs</span>&nbsp;and&nbsp;<span class="bg-yellow-200">intercultural goodwill</span>.</div>
+            <span class="ml-5 mr-2">•</span><div><span>A sociocultural blog focuses on</span>&nbsp;<span class="bg-yellow-200">global affairs</span>&nbsp;and&nbsp;<span class="bg-yellow-200">intercultural goodwill</span>.</div>
           </div>
           <div class="flex flex-row text-md tablet:text-lg laptop:text-lg">
             <span class="ml-5 mr-2">•</span><div><span>Under the motto</span>&nbsp;"<span class="font-semibold text-blue-600">Color your horizon</span>"<span>, The Colorizer encourages readers to appreciate and broaden understandings on different cultures around the world, and what we can do to cooperate towards common goals.</span></div>
           </div>
         </div>
-        <div id="writing-item3" class="mt-5">
-          <div class="text-2xl font-bold"><span class="mr-2">3.</span><a href="https://devfreedom-blog.netlify.app" class="underline decoration-2 underline-offset-4">df.memoRandom()</a></div>
+        <div id="writing-item-3" class="mt-5">
+          <div class="text-2xl font-bold"><span class="mr-2">3.</span><a href="" class="underline decoration-2 underline-offset-4">EFF Translations</a></div>
           <div class="flex flex-row text-md tablet:text-lg laptop:text-lg mt-2">
-            <span class="ml-5 mr-2">•</span><div><span>This is a personal blog in regards to web development, tech/computing, and personal life</span> </div>
+            <span class="ml-5 mr-2">•</span><div><span>Monthly contribution to <a href="https://www.eff.org/" class="font-bold text-red-600 underline underline-offset-4">Electronic Frontier Foundation</a> with English-to-Korean translation service for their articles.</span></div>
+          </div>
+        </div>
+        <div id="writing-item-4" class="mt-5">
+          <div class="text-2xl font-bold"><span class="mr-2">4.</span><a href="https://devfreedom-blog.netlify.app" class="underline decoration-2 underline-offset-4">memoRandom()</a></div>
+          <div class="flex flex-row text-md tablet:text-lg laptop:text-lg mt-2">
+            <span class="ml-5 mr-2">•</span><div><span>A personal blog in regards to web development, tech/computing, and personal thoughts</span> </div>
           </div>
           <div class="flex flex-row text-md tablet:text-lg laptop:text-lg">
-            <span class="ml-5 mr-2">•</span><div><span>Built with</span>&nbsp;<a href="https://www.11ty.dev/" class="font-bold underline text-green-600">11ty</a>&nbsp;and&nbsp;<a href="https://bulma.io/" class="font-bold underline text-green-600">Bulma</a></span></div>
+            <span class="ml-5 mr-2">•</span><div><span>Built with</span>&nbsp;<a href="https://www.11ty.dev/" class="font-bold underline text-green-600 underline-offset-4">11ty</a>&nbsp;and&nbsp;<a href="https://bulma.io/" class="font-bold underline text-green-600 underline-offset-4">Bulma</a></span></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="h-24 tablet:h-36 laptop:h-56"></div>
 
-  <div id="education-section" class="flex items-center justify-center w-full bg-[url('../img/education.jpg')] bg-cover bg-center">
-    <div id="education-container" class="flex flex-col items-center justify-center w-full py-3 tablet:py-5 laptop:py-12">
-      <div id="education-wrapper" class="grid grid-cols-2 tablet:grid-cols-4 laptop:grid-cols-5 tablet:grid-rows-1 laptop:grid-rows-1 tablet:w-full laptop:w-3/5 laptop:min-w-[1280px] laptop:max-w-[1920px] bg-transparent p-3 tablet:p-10 laptop:p-10 mb-5 font-open-sans">
-        <div id="education-item1" class="flex flex-col bg-white rounded-xl shadow-[0_35px_60px_-15px_rgba(255,255,255,1)] m-5 p-5 tablet:p-7 laptop:p-7">
-          <img class="w-[5rem] h-[5rem] aspect-square mb-5 rounded-full shadow-inner shadow-black/30" src="./img/sharing.jpg" text="Photo of typewriter by Markus Winkler">
-          <div>
-            <h2 class="font-semibold text-lg">TESOL</h2>
-            <p class="font-light text-md mt-3">Lesson plans and documentations</p>
-          </div>
-        </div>
-        <div id="education-item2" class="flex flex-col bg-white rounded-xl shadow-[0_35px_60px_-15px_rgba(255,255,255,1)] m-5 p-5 tablet:p-7 laptop:p-7">
-          <img class="w-[5rem] h-[5rem] aspect-square mb-5 rounded-full shadow-inner shadow-black/30" src="./img/blueprint.jpg" text="Photo of blueprint by Sven Mieke">
+  <div id="creativity-anchor"></div>
+  <div class="h-36 tablet:h-40 laptop:h-72"></div>
+
+  <div id="creativity-section" class="flex items-center justify-center w-full bg-[url('../img/creativity.jpg')] bg-cover bg-center py-7"> <!-- Photo by Peter Olexa -->
+    <div id="creativity-container" class="flex flex-col items-center justify-center w-full py-3 tablet:py-5 laptop:py-12">
+      <div id="creativity-wrapper" class="grid grid-cols-2 tablet:grid-cols-4 laptop:grid-cols-5 tablet:grid-rows-1 laptop:grid-rows-1 tablet:w-full laptop:w-3/5 laptop:min-w-[1280px] laptop:max-w-[1920px] bg-transparent p-3 tablet:p-10 laptop:p-10 mb-5 font-open-sans">
+        <div id="creativity-item-2" class="flex flex-col bg-white rounded-xl shadow-[0_35px_60px_-15px_rgba(255,255,255,1)] m-5 p-5 tablet:p-7 laptop:p-7">
+          <img class="w-[5rem] h-[5rem] aspect-square mb-5 rounded-full shadow-inner shadow-black/30" src="./img/blueprint.jpg">
           <div>
             <h2 class="font-semibold text-lg">NIA award</h2>
             <p class="font-light text-md mt-3">Digital security awareness campaign</p>
@@ -211,34 +208,59 @@
         </div>
       </div>
       <div class="flex justify-center w-full bg-black/50">
-        <div id="education-intro" class="flex flex-col w-full tablet:w-full laptop:w-3/5 laptop:min-w-[1280px] laptop:max-w-[1920px] p-7 tablet:p-10 laptop:p-12 text-white">
-          <h1 class="text-6xl tablet:text-[3rem] laptop:text-[5rem] font-black font-lato mb-3">Education</h1>
-          <div><span class="mt-5 text-md tablet:text-xl laptop:text-2xl font-semibold font-lato">“ Teachers are the most admirable and important people in the world. Even if you’re not a teacher, be a teacher. Share your ideas. Don’t take for granted your education. Rejoice in what you learn, and spray it. ” </span></div>
-          <p class="mt-3 tablet:mt-3 laptop:mt-5 text-xl tablet:text-xl laptop:text-2xl text-right font-semibold font-lato">&mdash; Tim Minchin</p>
+        <div id="creativity-intro" class="flex flex-col w-full tablet:w-full laptop:w-3/5 laptop:min-w-[1280px] laptop:max-w-[1920px] p-7 tablet:p-10 laptop:p-12 text-white">
+          <h1 class="text-6xl tablet:text-[5rem] laptop:text-[7rem] font-light font-lato mb-3">CREATIVITY</h1>
+          <div><span class="mt-5 text-md tablet:text-xl laptop:text-2xl font-semibold font-lato">Productive creative works in the form of artwork, design, literature, and multimedia.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <div id="contact-anchor"></div>
+  <div class="h-36 tablet:h-40 laptop:h-72"></div>
+
+  <div id="contact-section" class="flex items-center justify-center w-full bg-white">
+    <div id="contact-container" class="flex flex-col items-center justify-center w-full tablet:w-full laptop:w-3/5 laptop:min-w-[1280px] laptop:max-w-[1920px] p-3 tablet:p-5">
+      <div id="contact-intro" class="flex flex-col items-center justify-center text-center w-full px-5">
+        <h1 class="text-6xl tablet:text-[3rem] laptop:text-[5rem] text-black text-center font-black font-lato">CONTACT</h1>
+        <div class="flex flex-col tablet:flex-col laptop:flex-row mt-8 text-lg tablet:text-xl laptop:text-2xl font-bold font-fira-sans"><span>Inquiries are welcome,</span>&nbsp;<span>from networking, collaboration, to hiring!</span></div>
+        <span class="mt-5 text-lg tablet:text-xl laptop:text-2xl font-light font-fira-sans">weekdays, 9am&mdash;6pm</span><span class="font-light font-fira-sans text-slate-700 text-md">(UTC +9 Korean Standard Time)</span>
+      </div>
+      <div id="contact-wrapper" class="flex flex-col tablet:flex-row laptop:flex-row justify-between items-center mt-10">
+        <div id="contact-item-1" class="flex flex-col items-center justify-center">
+          <div class="flex items-center justify-center w-[7rem] h-[7rem] aspect-square bg-gray-700 rounded-full m-3">
+            <img src="./img/linkedin.svg">
+          </div>
+          <p class="text-lg tablet:text-xl laptop:text-2xl font-light font-fira-sans">LinkedIn</p>
+        </div>
+        <div class="w-7 h-7"></div>
+        <div id="contact-item-2" class="flex flex-col items-center justify-center">
+          <div class="flex items-center justify-center w-[7rem] h-[7rem] aspect-square bg-gray-700 rounded-full m-3">
+            <img src="./img/linkedin.svg">
+          </div>
+          <p class="text-lg tablet:text-xl laptop:text-2xl font-light font-fira-sans">E-Mail</p>
+        </div>
+        <div class="w-7 h-7"></div>
+        <div id="contact-item-3" class="flex flex-col items-center justify-center">
+          <div class="flex items-center justify-center w-[7rem] h-[7rem] aspect-square bg-gray-700 rounded-full m-3">
+            <img src="./img/linkedin.svg">
+          </div>
+          <p class="text-lg tablet:text-xl laptop:text-2xl font-light font-fira-sans">LinkedIn</p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="h-24 tablet:h-36 laptop:h-56"></div>
+  <div class="h-44 tablet:h-44 laptop:h-72"></div>
 
-  <div id="creativity-section">
-
-  </div>
-
-  <div id="activism-section">
-
-  </div>
-  
   <footer class="flex place-content-center w-full h-16 tablet:h-16 laptop:h-20 bg-gray-100 drop-shadow-lg tablet:drop-shadow-xl laptop:drop-shadow-xl">
     <div id="footer-container" class="flex flex-row justify-between content-around px-7 w-full tablet:w-full laptop:w-3/5 laptop:min-w-[1280px] text-slate-500">
       <div id="copyright" class="flex w-fit justify-start items-center">
         <p>© 2022 Junsub Kim</p>
       </div>
     <div id="footer-menu-laptop" class="flex flex-row justify-end justify-between items-center w-2/5 tablet:w-2/6 laptop:w-1/5 font-fira-sans">
-      <a href="">LinkedIn</a>
-      <a href="">GitHub</a>
-      <a href="">Etc.</a>
+      <a href="https://www.linkedin.com/in/junsubkim">LinkedIn</a>
+      <a href="https://www.github.com/devfreedom">GitHub</a>
     </div>
   </footer>
 
