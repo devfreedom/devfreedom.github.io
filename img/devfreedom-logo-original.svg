@@ -26,8 +26,8 @@
      units="px"
      width="1920px"
      inkscape:zoom="0.49260384"
-     inkscape:cx="884.07756"
-     inkscape:cy="815.05658"
+     inkscape:cx="886.10759"
+     inkscape:cy="977.45888"
      inkscape:window-width="1920"
      inkscape:window-height="1016"
      inkscape:window-x="0"
@@ -86,27 +86,27 @@
     <path
        id="path5207"
        style="color:#000000;fill:#000000;stroke-width:0.341682;-inkscape-stroke:none"
-       d="M 146.07813,121.61606 93.201597,174.48397 66.158902,147.44963 v 15.9283 l 27.043435,27.05171 18.440563,-18.44061 v 18.44061 l 11.27542,-11.20999 v -11.77803 h 11.77779 l 11.38202,-11.27543 h -18.61264 l 18.61264,-18.62132 z"
+       d="m 174.12414,121.61606 -52.87657,52.86791 -27.042817,-27.03434 v 15.9283 l 27.043557,27.05171 18.4406,-18.44061 v 18.44061 l 11.27542,-11.20999 v -11.77803 h 11.77779 l 11.38202,-11.27543 H 155.5115 l 18.61264,-18.62132 z"
        sodipodi:nodetypes="cccccccccccccc" />
     <path
        id="path5207-7"
        style="color:#000000;fill:#000000;stroke-width:0.165431;-inkscape-stroke:none"
-       d="m 273.34707,152.67474 -25.60099,25.59683 -13.09315,-13.0891 v 7.71194 l 13.0935,13.09751 8.92828,-8.92831 v 8.92831 l 5.45918,-5.4275 v -5.70252 h 5.70239 l 5.51079,-5.45917 h -9.0116 l 9.0116,-9.0158 z"
+       d="m 301.39308,152.67474 -25.60099,25.59683 -13.09315,-13.0891 v 7.71194 l 13.0935,13.09751 8.92828,-8.92831 v 8.92831 l 5.45918,-5.4275 v -5.70252 h 5.70239 l 5.51079,-5.45917 h -9.0116 l 9.0116,-9.0158 z"
        sodipodi:nodetypes="cccccccccccccc" />
     <text
        xml:space="preserve"
-       transform="matrix(0.18560234,0,0,0.18560234,-107.69002,34.886276)"
+       transform="matrix(0.18560234,0,0,0.18560234,-79.644127,34.886276)"
        id="text8673"
        style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect8675);fill:#000000;fill-opacity:1;stroke:none"
        x="340.94348"
        y="0"><tspan
          x="799.12119"
          y="993.84821"
-         id="tspan2648"><tspan
+         id="tspan951"><tspan
            style="font-family:Trueno;-inkscape-font-specification:Trueno;text-align:center;text-anchor:middle"
-           id="tspan2644">DEV</tspan><tspan
+           id="tspan947">DEV</tspan><tspan
            style="font-weight:bold;font-family:Trueno;-inkscape-font-specification:'Trueno Bold';text-align:center;text-anchor:middle"
-           id="tspan2646">FREEDOM</tspan></tspan></text>
+           id="tspan949">FREEDOM</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"
@@ -119,31 +119,17 @@
        style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;white-space:pre;shape-inside:url(#rect9305)" />
     <text
        xml:space="preserve"
-       transform="matrix(0.18560234,0,0,0.18560234,133.84152,-6.2629695)"
+       transform="matrix(0.18560234,0,0,0.18560234,161.88753,-6.2629695)"
        id="text8673-3"
        style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect8675-5);fill:#000000;fill-opacity:1;stroke:none"
        x="340.94348"
        y="0"><tspan
          x="799.12119"
          y="993.84821"
-         id="tspan2654"><tspan
+         id="tspan957"><tspan
            style="font-family:Trueno;-inkscape-font-specification:Trueno;text-align:center;text-anchor:middle"
-           id="tspan2650">DEV</tspan><tspan
+           id="tspan953">DEV</tspan><tspan
            style="font-weight:bold;font-family:Trueno;-inkscape-font-specification:'Trueno Bold';text-align:center;text-anchor:middle"
-           id="tspan2652">FREEDOM</tspan></tspan></text>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.18560234,0,0,0.18560234,120.7659,89.254226)"
-       id="text8673-3-2"
-       style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect8675-5-1);fill:#000000;fill-opacity:1;stroke:none"
-       x="340.94348"
-       y="0"><tspan
-         x="775.66992"
-         y="993.84821"
-         id="tspan2660"><tspan
-           style="font-weight:600;font-family:Trueno;-inkscape-font-specification:'Trueno Semi-Bold'"
-           id="tspan2656">JUNSUB</tspan><tspan
-           style="font-weight:300;font-family:Trueno;-inkscape-font-specification:'Trueno Light'"
-           id="tspan2658">KIM</tspan></tspan></text>
+           id="tspan955">FREEDOM</tspan></tspan></text>
   </g>
 </svg>
