@@ -49,6 +49,12 @@
         font-weight: 100;
         src: url("../../assets/fonts/NotoSans-Thin.woff2") format('woff2');
     }
+    @font-face {
+        font-family: 'Noto Mono Regular';
+        font-style: monospace, monospace;
+        font-weight: 400;
+        src: url("../../assets/fonts/NotoMono-Regular.woff") format('woff');
+    }
 }
 
 @layer utilities {
