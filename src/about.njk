@@ -1,0 +1,45 @@
+---
+layout: default
+title: About
+---
+
+<div class="flex flex-col md:flex-row lg:flex-row items-center justify-center text-md">
+    {% if author.avatar %}
+        <a href="{{ author.homepage | url }}" target="_blank" rel="noopener">
+            <img class="w-32 h-32 md:w-40 md:h-40 m-5" src="{{ author.avatar | url }}" width="128" height="128" alt="Author avatar">
+        </a>
+    {% endif %}
+
+    <div class="text-center mt-8">
+        <h1 class="text-xl font-semibold text-gray-800 leading-relaxed mt-0 mb-1">
+            <a href="{{ author.homepage | url }}" target="_blank" rel="noopener">{{ author.name }}</a>
+        </h1>
+        {% if author.email %}
+        <div class="text-gray-600">
+            <a href="mailto:{{ author.email }}">{{ author.email }}</a>
+        </div>
+        {% endif %}
+        {% if author.phone %}
+        <div class="text-gray-600">
+            <a href="tel:{{ author.phone }}">{{ author.phone }}</a>
+        </div>
+        {% endif %}
+        {% if author.bio %}
+        <p class="mt-3 text-gray-700">{{ author.bio }}</p>
+        {% endif %}
+    </div>
+</div>
+<div class="flex flex-col mt-10">
+    <p class="text-md"> Hi, this is my personal blog sharing all sorts of information and ideas in regard to computer science, web development, free and open source computing, digital rights, etc. </p>
+</div>
+
+<!--
+<div class="flex flex-col mt-10">
+    <h2 class="text-xl font-bold">Lorem Ipsum</h2>
+    <p class="text-md mt-3 px-3 border-l-4 border-gray-500">Lorem Ipsum</p>
+</div>
+<div class="flex flex-col mt-10">
+    <h2 class="text-xl font-bold">Lorem Ipsum</h2>
+    <p class="text-md mt-3 px-3 border-l-4 border-gray-500">Lorem Ipsum</p>
+</div>
+--> 

@@ -1,0 +1,15 @@
+[
+    {
+        "label": "Categories",
+        "url": "/tags"
+    },
+    {
+        "label": "GitHub",
+        "url": "https://github.com/devfreedom",
+        "newTab": true
+    },
+    {
+        "label": "About",
+        "url": "/about"
+    }
+]

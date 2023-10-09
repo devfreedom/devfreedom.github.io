@@ -1,0 +1,16 @@
+---
+layout: default
+title: All Posts by Categories & Tags
+permalink: "tags/index.html"
+---
+
+<h1 class="text-3xl leading-normal font-bold mt-0 mb-7 text-center">{{ title }}</h1>
+
+<div class="flex justify-center flex-wrap">
+    {% for name, length in collections.tagList %}
+        <a href="{{ '/tags/' | url }}{{ name }}" class="inline-block mx-1 mb-3 px-4 py-2 bg-gray-300 text-black rounded-full">
+            {{ name }}
+            <span class="px-2 py-1 ml-1 text-xs font-semibold bg-white text-gray-700 rounded-full">{{ length }}</span>
+        </a>
+    {% endfor %}
+</div>
