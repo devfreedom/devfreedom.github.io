@@ -8,7 +8,7 @@
     }
 
     pre {
-        font-family: "Source Han Mono K", monospace, monospace;
+        font-family: "Source Han Mono K Regular", monospace, monospace;
     }
 
     @font-face {
@@ -55,7 +55,7 @@
     }
 
     @font-face {
-        font-family: 'Source Han Mono K';
+        font-family: 'Source Han Mono K Regular';
         font-style: monospace, monospace;
         font-weight: 400;
         src: url("../../assets/fonts/SourceHanMonoK-Regular.woff2") format("woff2");
