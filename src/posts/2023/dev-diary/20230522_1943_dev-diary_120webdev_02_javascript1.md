@@ -71,7 +71,8 @@ Variable is a named reference to a value. That way an unpredictable value can be
 # JavaScript Object
 
 ## What is Object?
-An object is a collection of properties, and property is a pair of key and value. When the value is function, the property is called "method".
+An object is a collection of properties, and property is a pair of key and value. 
+- When the value is function, the property is called "method".
 
 ### How to create an object
 - Object literal

@@ -1,7 +1,7 @@
 ---
 title: "[리뷰] 압도적인 가성비의 고품질 사무용 텐키리스 키보드 - Cherry Stream TKL"
 date: 2023-04-17T19:50
-thumb: "stream-tkl-thumbnail.jpg"
+thumb: "stream-tkl-1.jpg"
 tags: 
     - ❮리뷰❯
     - 키보드

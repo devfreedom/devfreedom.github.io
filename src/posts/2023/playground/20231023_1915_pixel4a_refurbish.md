@@ -1,7 +1,7 @@
 ---
 title: "[놀이터] 구글 픽셀 4a 스마트폰 수리하기"
 date: 2023-10-23T19:15
-thumb: "pixel-4a-refurbished.jpg"
+thumb: "pixel-4a-refurbished-1.jpg"
 tags: 
     - ❮놀이터❯
     - 스마트폰

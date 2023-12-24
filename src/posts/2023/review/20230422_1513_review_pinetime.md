@@ -1,7 +1,7 @@
 ---
 title: "[리뷰] 오픈소스 스마트워치! PINE64 PineTime"
 date: 2023-04-22T15:13
-thumb: "pinetime-thumbnail.jpg"
+thumb: "pinetime-front-1.jpg"
 tags: 
     - ❮리뷰❯
     - 스마트워치
