@@ -7,7 +7,6 @@ tags:
     - web development
     - containerization
     - virtualization
-    - 
 ---
 
 Since I have studied and covered theoretical background knowledge about containerization, virtualization, and Docker in a DevOps study note already, this will be mostly about an introductory hands-on experience and knowledge.

@@ -443,5 +443,5 @@ Using `index` as a value for `key` is not recommended. Here is why.
 <div key={3}>{C}</div>  // Re-rendered
 <div key={4}>{D}</div>  // Re-rendered
 ```
-    - Unnecessary waste of resource happens because of 
+    - Unnecessary re-rendering happens because of key misalignment
 

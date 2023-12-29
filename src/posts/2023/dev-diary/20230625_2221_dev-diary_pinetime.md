@@ -1,7 +1,7 @@
 ---
 title: "[개발 일기] PineTime 스마트워치 펌웨어를 개조해서 커스텀 워치페이스 만들기"
 date: 2023-06-25T22:21
-thumb: "pinetime.jpg"
+thumb: "pinetime-front-2.jpg"
 tags: 
     - ❮개발 일기❯
     - C++
