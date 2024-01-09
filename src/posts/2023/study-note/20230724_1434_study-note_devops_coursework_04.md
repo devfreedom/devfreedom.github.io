@@ -1,5 +1,5 @@
 ---
-title: "[Study Note] Coursework: DevOps and Software Engineering - Part 2"
+title: "[Study Note] Coursework: DevOps and Software Engineering - Containerization"
 date: 2023-07-24T14:34
 thumb: "devops.jpg"
 tags: 
@@ -10,10 +10,10 @@ tags:
     - web development
 ---
 
-# 3. Containerization
+# 4. Containerization
 - Organizations are moving to containers to overcome challenges around isolation, utilization, provisioning, performance, and more.
 
-## 3-1. Container
+## 4-1. Container
 - A container is a standard unit of software that encapsulates everything that programmers need to build, ship, and run applications.
     - Infrastructure, operating system, and container engine are layered, from bottom to top.
         - Container engine(runtime) runs and manages multiple apps, seperately but simultaneously, on a single operating system.
@@ -64,7 +64,7 @@ tags:
     - Vagrant
         - Offers hightest levels of isolation on the running physical machine
 
-## 3-2. Docker
+## 4-2. Docker
 - Docker is an open platform for developing, shipping, and running applications as containers.
     - Written in Go
     - Uses Linux kernel's cgroups to deliver functionality
@@ -176,7 +176,7 @@ tags:
             - The daemon then creates a running container using the image. 
     2. Local machines, cloud systems, and on-premises systems can pull those images.
 
-## 3-3. Container Orchestration
+## 4-3. Container Orchestration
 - Container orchestration is a process that automates the container lifecycle of containerized applications.
     - Lifecycle
         - Deployment
@@ -232,7 +232,7 @@ tags:
         - Standard for open-source container orchestration platforms
         - Robust feature set, broadly supported
 
-## 3-4. Kubernetes
+## 4-4. Kubernetes
 - An open-source system for automating deployment, scaling, and management of containerized applications
     - a.k.a. K8s
     - The de facto choice for container orchestration

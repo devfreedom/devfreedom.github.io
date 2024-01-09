@@ -1,0 +1,341 @@
+---
+title: "[Study Note] Coursework: DevOps and Software Engineering - Cloud Computing"
+date: 2023-06-21T22:43
+thumb: "devops.jpg"
+tags: 
+    - ❮Study Note❯
+    - DevOps
+    - software engineering
+    - cloud computing
+    - web development
+---
+
+# 2. Cloud Computing
+
+## 2-1. Cloud Types by Purview
+
+### Public cloud 
+- A public cloud is a virtualized multi-tenant architecture enabling tenants or users to share computing resources, residing outside their firewalls.
+- Leverage cloud services over the open internet on hardware owned by the cloud provider, but its usage is shared by other companies. 
+    - The cloud provider owns, manages, provisions, and maintains the infrastructure, renting it out to customers either for a subscription charge or usage-based fee.
+    - Users don’t own the servers their applications run on or storage their data consumes, or manage the operations of the servers, or even determine how the platforms are maintained.
+- Users get access to servers, storage, network, security, and applications as services delivered by cloud service providers over the internet.
+    - Using web consoles and APIs, users can provision the resources and services they need.
+- Advantages
+    - Public clouds offer significant cost savings as the provider bears all the capital, operational, and maintenance expenses for the infrastructure and the facilities they are hosted in.
+    - It makes scalability as easy as requesting more capacity. 
+    - Vast on-demand resources are available, allowing applications to respond seamlessly to fluctuations in demand.
+        - Considering the large number of users that share the centralized cloud resources on-demand, the public cloud offers the most significant economies of scale.
+        - The sheer number of server and network resources available on the public cloud means that a public cloud is highly reliable.
+            - If one physical component fails, the service still runs unaffected on the remaining available components. 
+- Concerns
+    - Security
+        - Security issues such as data breaches, data loss, account hijacking, insufficient due diligence, and system and application vulnerability
+    - Lack of control
+        - The user does not have any control over the computing environment and is subject to the performance and security of the cloud provider’s infrastructure. 
+    - Data sovereignty compliance    
+        - Data being stored in different locations and accessed across national borders, it has also become increasingly critical for companies to be compliant with data sovereignty regulations governing the storage, transfer, and security of data.
+        - A service provider’s ability to not just keep up with the regulations, but also the interpretation of these regulations, is a concern shared by many businesses
+- Why public cloud?
+    - Organizations are increasingly opting to access cloud-based applications and platforms so their teams can focus on building and testing applications, and reducing time-to-market for their products and services.
+    - Businesses with fluctuating capacity and resourcing needs are opting for the public cloud.
+        - IT departments are outsourcing the management of less critical and standardized business platforms and applications to pubic cloud providers.
+    - More and more organizations are using cloud storage and data management services for greater accessibility, easy distribution, and backing up their data.
+        - Organizations are using public cloud computing resources to build secondary infrastructures for disaster recovery, data protection, and business continuity.
+- Vendors and products
+    - Amazon Web Services
+    - Microsoft Azure
+    - IBM Cloud
+    - Google Cloud Platform
+
+### Private cloud
+- The cloud infrastructure is provisioned for exclusive use by a single organization.
+    - It could run on-premises.
+        - It could be owned, managed, and operated by the organization.
+    - It could run off-premises.
+        - By a service provider, a third party, or some combination as well.
+- Private cloud platforms can be implemented internally or externally.
+    - When the platform is provisioned over an organization’s internal infrastructure, it runs on-premises and is owned, managed, and operated by the organization.
+    - When it is provisioned over a cloud provider’s infrastructure, it is owned, managed, and operated by the service provider.
+        - This external private cloud offering that resides on a cloud service provider’s infrastructure is called a Virtual Private Cloud, or VPC.
+- VPC is a public cloud offering that lets an organization establish its own private and secure cloud-like computing environment in a logically isolated part of a shared public cloud.
+    - Using a VPC, organizations can leverage the dynamic scalability, high availability, and lower cost of ownership of a public cloud, while having the infrastructure and security tailored to the organization’s unique needs.
+- A private cloud is a virtualized environment modeled to bring in the benefits of a public cloud platform without the perceived disadvantages of an open and shared public platform.
+    - Users of a private cloud, such as Developers and Business Units in an organization, still get to leverage benefits such as economies of scale, granular scale, operational efficiencies, and user self-service, while exercising full control over access, security, and compliances specific to their organization and business.
+- Advantages
+    - The ability to leverage the value of cloud computing using systems that are directly managed or under perceived control of the organization’s internal IT.
+    - The ability to better utilize internal computing resources, such as the organization’s existing investments in hardware and software, thereby reducing costs.
+    - Better scalability through virtualization and “cloud bursting"
+        - i.e., leveraging public cloud instances for a period of time but returning to the private cloud when the surge is met.
+    - Controlled access and greater security measures customized to specific organizational needs.
+    - The ability to expand and provision things in a relatively short amount of time, providing greater agility. 
+- Why private cloud?
+    - Organizational needs
+        - Because their applications provide a unique competitive advantage.
+        - Because there are security and regulatory concerns.
+        - Because the data is highly sensitive and subject to strict industry or governmental regulations. 
+            - Some of the key reasons that may prevent an organization from moving to a public cloud include security and regulatory concerns, and data sensitivity.
+    - A private cloud is an opportunity for organizations to modernize and unify their in-house and legacy applications.
+        - Moving these applications from their dedicated hardware to the cloud also allows them to leverage the power of the compute resources and multiple services available on the cloud.
+    - Using the private cloud, organizations are integrating data and application services from their existing applications with public cloud services.
+        - This allows them to leverage their private cloud’s compute capability for the larger jobs while pulling data into an application on a private cloud to leverage public cloud services — essentially opening their data centers to work with cloud services.
+    - Application portability is a key feature of cloud platforms.
+        - Using the private cloud gives organizations the ability to build applications anywhere, and move them anywhere, without having to compromise security and compliance in the process.
+    
+### Hybrid cloud 
+- Hybrid Cloud is a computing environment that connects an organization's on-premise private cloud and third-party public cloud into a single flexible infrastructure for running the organization's applications and workloads.
+- The mix of public and private cloud resources gives organizations the flexibility to choose the optimal cloud for each application or workload, workloads move freely between the two clouds as needs change.
+    - Organizations can choose to run,
+        - On private cloud: The sensitive highly-regulated and mission-critical applications or workloads with reasonably constant performance and capacity requirements
+        - On public cloud: Deploying the less sensitive and more dynamic workloads
+- Key tenants
+    - Interoperability
+        - The public and private cloud services can understand each other's APIs, configuration, data formats, and forms of authentication and authorization.
+    - Scalability
+        - When there is a spike in demand a workload running on the private cloud, can leverage the additional public cloud capacity making it scalable.
+    - Portability
+        - You're no longer locked in with a specific vendor, you can move applications and data not just between on-premise and cloud systems, but also between cloud service providers.
+- Types
+    - Hybrid Monocloud 
+        - A hybrid cloud with one cloud provider
+    - Hybrid Multicloud 
+        - Cloud adoption strategy that embraces a mix of cloud models from different service providers seamlessly,
+            - Public, private, and managed, across infrastructure, platform, or software services
+        - An open standards-based stack that can be deployed on any public cloud infrastructure.
+            - Prevent lock-in to a specific vendor's cloud platform
+        - The difference lies in the flexibility that the hybrid multicloud offers organizations to move workloads and environments from one vendor to another.
+    - Composite Multicloud
+        - Makes hybrid multicloud's flexibility even more granular as it distributes single applications across multiple providers, allowing you to move application components across cloud services and vendors as needed. 
+            - Able to take advantage of scaling at a global level across different industries and needs
+- Advantages
+    - Security and compliance
+        - A hybrid cloud lets organizations deploy highly regulated or sensitive workloads in a private cloud while running the less-sensitive workloads on a public cloud. 
+    - Scalability and resilience
+        - Using a hybrid cloud you can scale up quickly, inexpensively, and even automatically using the public cloud infrastructure, all without impacting the other workloads running on your private cloud.
+    - Resource optimization
+        - You can maintain workloads where they are most efficient, spin-up environments using pay-as-you-go in public cloud, and rapidly adopt new tools as you need them.
+    - Cost saving
+        - Because you're not locked-in with a specific vendor and also don't have to make either-or decisions between the different cloud models, you can make the most cost-efficient use of your infrastructure budget. 
+
+## 2-2. Types by service model
+
+### IaaS (Infrastructure as a Service)
+- Summary
+    - You get access to infrastructure and physical computing resources such as servers, networking, storage, and data center space - without the need to manage or operate them. 
+    - Customers can create or provision virtual machines (or VMs) in their choice of Region and Zone available from the Cloud Provider.
+        - These VMs typically come pre-installed the customer’s choice of operating system.
+    - The customers can then deploy middleware, install applications, and run workloads on these VMs.
+        - They can also and create storage for their workloads and backups. 
+- User 
+    - The persona for IaaS is a system admin, or an IT admin.
+- Physical data centers
+    - IaaS providers manage large data centers that contain the physical machines required to power the various layers of abstraction on top of them.
+- Compute
+    - IaaS providers manage the hypervisors and end-users programmatically provision virtual instances with desired amounts of compute, memory, and storage resources.
+    - Cloud compute typically comes with supporting services like auto scaling and load balancing that provide scalability and high performance. 
+- Network
+    - Users get access to networking resources on the cloud through virtualization or programmatically, through APIs.
+- Storage
+    - There are three types of cloud data storage: object, file, and block storage.
+        - Object storage is the most common mode of storage in the cloud, given that it is highly distributed and resilient. 
+- Why IaaS?
+    - Organizations today are using cloud infrastructure services to enable their teams to set up test and development environments faster, helping create new applications more quickly.
+    - By abstracting the low-level components, cloud infrastructure is helping developers focus more on business logic than infrastructure management.
+    - Business continuity and disaster recovery require a significant amount of technology and staff investments.
+        - IaaS is helping organizations reduce this cost and make applications and data accessible as usual during a disaster or outage.
+    - Organizations are using cloud infrastructure to deploy their web applications faster and also scale infrastructure up and down as demand fluctuates.
+        - Organizations are leveraging the high-performance computing capabilities of cloud infrastructure to solve complex problem.
+- Concern
+    - There are some concerns regarding the lack of transparency in the cloud infrastructure’s configuration and management and dependency on a third-party for workload availability and performance.
+
+### PaaS (Platform as a Service)
+- Summary
+    - You get access to the platform, that is the hardware and software tools, usually those needed to develop and deploy applications to users over the Internet.
+    - With PaaS, the provider, in addition to the computing resources, also manages the platform infrastructure which includes the operating systems, development tools, databases, and business analytics.
+        - The cloud service provider delivers and manages the entire platform infrastructure, abstracting users from the lower-level details of the environment. 
+        - Eliminating the complexity of deploying applications, configuring infrastructure, and provisioning and configuring supporting technologies like load balancers and databases.
+    - PaaS takes advantage of all the virtualized resources from Iaas and then just abstracts them away, so the user doesn't have to worry about managing any of those virtualized resources. 
+- User
+    - The user for PaaS is usually a dev, not a sysadmin.
+        - Many of the PaaS offerings provide developers with rapid deployment mechanisms, or “push and run” mechanism, for deploying and running applications. 
+        - PaaS eliminates the dev's need to integrate disparate components.
+- Services
+    - PaaS clouds provide services and APIs that help simplify the job of developers in delivering elastically scalable and highly available cloud applications.    
+        - APIs for distributed caching
+        - Queuing and messaging
+        - File and data storage
+        - Workload management
+        - User identity and analytics
+        - etc.
+    - PaaS offerings support a range of application infrastructure or middleware capabilities.
+        - Application servers
+        - Database management systems
+        - Business analytics servers
+        - Mobile back-end services
+        - Integration services
+        - Business process management systems
+        - Rules engines
+        - Complex event processing systems
+        - etc.
+    - PaaS runtime environment executes end-user code according to policies set by the application owner and cloud provider.
+- Advantages
+    - Scalability
+        - Made possible because of the rapid allocation and deallocation of resources with a pay-as-you-use model offered by PaaS.
+        - The APIs, support services, and middleware capabilities that PaaS clouds provide assist developers in focusing their efforts on application development and testing, resulting in faster time to market for their products and services. 
+    - Middleware capabilities 
+        - Also reduce the amount of code that needs to be written while expanding the application’s functional capabilities. 
+    - Greater agility and innovation 
+        - Using PaaS platforms means that you can experiment with multiple operating systems, languages, and tools without having to invest in these resources.
+        - You can evaluate and prototype ideas with very low risk exposure resulting in faster, easier, less-risky adoption of a wider range of resources. 
+- Concerns
+    - Information security threats and dependency on the service provider’s infrastructure.
+    - Services can get impacted when a service provider’s infrastructure experiences downtime.
+    - Customers also don’t have any direct control over the changes that may take place when a provider makes changes in its strategy, service offerings, or tools. 
+- Why PaaS?
+    - Strategic build, test, deploy, enhance process
+    - Scale applications rapidly and cost-effectively
+    - API development and management
+        - Organizations are using PaaS to develop, run, manage, and secure APIs and microservices, which are loosely coupled, independently deployable components and services.
+    - IoT
+        - PaaS clouds support a broad range of application environments, programming languages, and tools used for IoT deployments.
+    - Business analytics/intelligence
+        - PaaS tools allow organizations to analyze their data to find business insights that enable more informed business decisions and predictions.
+    - Business Process Management (BPM)
+        - Organizations are using the PaaS cloud to access BPM platform delivered as a service.
+    - Master Data Management (MDM) 
+        - Organizations are leveraging the PaaS cloud to provide a single point of reference for critical business data such as information about customer transactions and analytical data to support decision making. 
+- Vendors and products
+    - AWS Elastic Beanstalk
+    - Cloud Foundry
+    - IBM Cloud Paks
+    - Windows Azure
+    - RedHat OpenShift
+    - Magento Commerce Cloud
+    - Force.com
+    - Apache Stratos
+
+### SaaS (Software as a Service)
+- Summary
+    - In addition to the infrastructure and the platform resources, the provider also hosts and manages the applications and data.
+    - A software licensing and delivery model in which software and applications are centrally hosted and licensed on a subscription basis, and sometimes also referred to as "on-demand software." 
+        - Applications reside on a remote cloud network, and users use these applications without having to maintain and update the infrastructure. 
+- Multitenant architecture
+    - Infrastructure and code are maintained centrally and accessed by all users.
+    - SaaS makes it easy for users to manage privileges, monitor data use, and ensure everyone sees the same information at the same time.
+    - Security, compliance, and maintenance are all part of the offering.
+- Customization
+    - Users can customize applications to fit their business processes with point-and-click ease.
+    - Users can customize the UI to work with their branding guidelines; they can modify data fields and enable or disable features within the business process.
+        - These customizations are preserved through upgrades. 
+- Scalability 
+    - Users pay for the use of the services via a subscription model.
+    - The use of resources can be scaled easily, depending on service needs. 
+- Advantages
+    - Businesses can directly procure solutions without upfront capital and assistance from IT, greatly reducing the time from decision to value from months to days.
+    - SaaS greatly increases workforce productivity and efficiency.
+    - Users can access core business apps from wherever they are. 
+    - They can also buy and deploy apps in minutes, reducing the typical obstacles enterprises have to test the products they they might use.
+    - Using SaaS applications, individuals and small enterprises can spread out their software costs over time. 
+- Concerns
+    - Data ownership and data safety
+        - Security is an important consideration when you’re allowing a third-party to maintain business-critical data.
+    - Application access relies on a good internet connection
+        - If you’re not connected, you cannot access the apps.
+- Why SaaS?
+    - Organizations are moving to SaaS for their core business needs as part of their strategic transformation to reduce on-premises IT infrastructure and reduce capital expenditure.
+        - Organizations are increasingly opting for SaaS eCommerce Platforms to manage their websites, marketing, sales, and operations.
+        - Applications run reliably with minimal input, for example, email servers and office collaboration and productivity tools.
+    - Organizations are leveraging SaaS to avoid the need for ongoing upgrades, maintenance, and patching, done traditionally by internal IT resources.
+        - With SaaS, organizations are able to take advantage of the resilience and business continuity of the cloud provider.
+        - Enterprises are now developing SaaS integration platforms (or SIPs) for building additional SaaS applications, moving SaaS beyond standalone software functionality to a platform for mission-critical applications.
+- Vendors and products
+    - Email and collaboration 
+        - Microsoft 365
+        - Google's Gmail
+    - Customer Relationship Management (CRM)
+        - NetSuite CRM 
+        - Salesforce
+    - Human Resource Management (HRM)
+        - Workday 
+        - SAP SuccessFactors
+    - Financial management, billing and collaboration, etc.
+
+## 2-3. Key Considerations
+- Infrastructure and workloads
+    - The cost of building and operating data centers can become astronomical.
+    - On the other hand, low initial costs and pay-as-you-go attributes of cloud computing can add up to significant cost savings.
+    - Also, a point to consider is that not all workloads may be ready for the cloud, as is.
+- SaaS and development platforms
+    - Organizations need to consider if paying for application access is a more viable option than purchasing off-the-shelf software and subsequently investing in upgrades.
+    - Organizations also need to consider speed and productivity, what it means for them to get a new application up and running in ‘x’ hours on the cloud versus a couple of weeks, even months on traditional platforms.
+        - And the person-hour cost efficiencies they gain from using cloud dashboards, real-time statistics, and active analytics.
+- Impact of making a wrong decision (risk exposure)
+    - Is it riskier, for example, for them to invest in the hardware and software or rent by the hour?
+    - Is it safer for them to work on a 12-month plan to build, write, test, and release the code if they’re uncertain about adoption?
+    - Is it better for them to “try” something new paying-as-you-go rather than making long-term decisions based on little or no trial or adoption? 
+
+## 2-4. Cloud Benefits and Risks
+- Benefits
+    - Flexibility
+        - Users can scale back or scale up services to fit their needs, customize applications, and access cloud services from anywhere with an internet connection.
+        - Cloud infrastructure scales on demand to support fluctuating workloads. 
+        - Organizations can determine their level of control with as-a-service options.
+            - Users can select from a menu of pre-built tools and features to build a solution that fits their specific needs. 
+        - Virtual Private Clouds, encryption, and API keys help keep data secure. 
+    - Efficiency
+        - Enterprise users can get applications to market quickly without worrying about underlying infrastructure costs or its maintenance.
+        - Cloud-based applications and data are accessible from virtually any internet-connected device.
+            - Hardware failures do not result in data loss because of networked backups.
+        - Cloud computing uses remote resources, saving organizations the cost of servers and other equipment, and paying on use-basis.
+    - Strategic value
+        - Cloud services give enterprises a competitive advantage by providing the most innovative technologies available while managing the underlying infrastructure, thus enabling organizations to focus on their priorities. 
+- Risks
+    - Data security
+        - Associated with loss or unavailability of data causing business disruption
+    - Governance and sovereignty issues
+        - Legal, regulatory, and compliance issues
+    - Lack of standardization in how the constantly evolving technologies integrate and interoperate
+    - Choosing the right deployment and service models to serve specific needs
+    - Partnering with the right cloud service providers
+    - Concerns related to business continuity and disaster recovery 
+- With the right cloud adoption strategies, technologies, services, and service providers, these risks can be mitigated.
+
+## 2-5. Cloud Computing Products and Providers
+- Amazon Web Services / AWS Cloud
+    - Provides a wide range of products, services, and solutions ranging from Compute, DevOps, Data, Analytics, IoT, Machine Learning, Networking, Content Delivery, Robotics, Serverless Computing, and much more.
+- Google Cloud Platform
+    - A suite of cloud computing services, providing infrastructure, platform, and serverless Computing environments.
+    - Google App Engine
+        - A platform for developing and hosting web applications in Google-managed data centers, automatically allocating and de-allocating resources to handle demand.
+- IBM Cloud
+    - A full stack cloud platform that spans public, private, and hybrid environments with products and services covering compute, network, storage, management, security, DevOps, and databases. 
+    - Include their Bare Metal Servers, VMWare, Cloud Paks for Application Modernization, Virtual Private Cloud, and the suite of emerging technologies such as AI, IoT, Blockchain, Data and Analytics.
+- Microsoft Azure 
+    - A flexible cloud platform for building, testing, deploying, and managing applications and services through Microsoft managed data centers. 
+    - It provides Software, Platform, and Infrastructure services supporting Microsoft-specific and third-party languages, tools, and frameworks. 
+- Oracle Cloud 
+    - Primarily known for Software as a Service and Database as a Service (also known as the Oracle Data Cloud).
+    - Oracle’s SaaS offering includes wide-ranging applications such as ERP, SCM, HCM, Marketing, Sales, and CX running in the cloud. 
+    - Oracle Data Cloud provides one of the largest cloud-based data management platforms helping customers personalize their online, offline, and mobile marketing campaigns.
+- Salesforce 
+    - Offers multiple cloud services such as Sales Cloud, Service Cloud, and Marketing Cloud, helping customers track analytics in real-time, customer success and support, customer complaints, even listening in to customers across social platforms to automatically route them to appropriate agents for resolution. 
+- SAP 
+    - Known for enterprise software and applications such as ERP, CRM, HR, and Finance, running in the cloud.
+    - There is also an SAP Cloud Platform for building and extending business applications with rapid innovation cycles in a secure cloud computing environment managed by SAP. 
+
+## 2-6. Cloud with IoT, AI, and Blockchain
+- An unprecedented amount of data is being generated, putting a tremendous strain on the Internet. 
+    - That is where the cloud comes in, by connecting the IoT device user to the cloud - be it for device registration, device identity, storing data, or accessing enterprise data. 
+- Cloud and IoT
+    - From IoT platforms running entirely on the cloud to the interfaces used by customers to interact these devices, to the backend analytics platforms - cloud computing supports and enables IoT. 
+        - Data collected through IoT devices is stored and processed on the cloud since IoT devices can be in a state of motion.
+        - The cloud serves as a collection point in closest proximity, minimizing the latency in reporting up the data points and providing a response back to the IoT application.
+- IoT and AI
+    - IoT delivers the data, AI powers the insights, and both these emerging technologies leverage cloud’s scalability and processing power to provide value to individuals and businesses alike. 
+    - Just as AI consumes the data produced by IoT devices, the IoT devices’ behavior can be dictated based on responses from AI.
+- Cloud + IoT + AI + Blockchain
+    - Blockchain serves to make AI more understandable by recording the data and variables that go into a decision made in an AI algorithm, leading to greater trust and transparency in the conclusions and decisions made by these algorithms. 
+        - Blockchain technology provides the trusted, decentralized source of truth.
+        - AI powers the analytics and decision-making from the data collected.
+    - Cloud provides globally distributed, scalable, and cost-efficient computing resources to support both the unprecedented amounts of data being collected and the processing power required to draw insights from this data. 
+

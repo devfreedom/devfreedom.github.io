@@ -1,6 +1,6 @@
 ---
-title: "[Study Note] Coursework: DevOps and Software Engineering - Part 3"
-date: 2023-07-24T14:34
+title: "[Study Note] Coursework: DevOps and Software Engineering - Microservices"
+date: 2023-07-26T18:52
 thumb: "devops.jpg"
 tags: 
     - ❮Study Note❯
@@ -8,12 +8,11 @@ tags:
     - software engineering
     - cloud computing
     - web development
-    - CI/CD
 ---
 
-# 4. Microservices and Serverless Development
+# 5. Microservices and Serverless Development
 
-## 4-1. Microservices
+## 5-1. Microservices
 - Modern Software Development
     - Delivered as a service
     - Centrally hosted and accessed through the internet
@@ -196,7 +195,7 @@ tags:
     - An API gateway is an API management tool that sits between a client and your collection of backend services.
         - This will become central to the above-mentioned non-functional concerns and will avoid re-engineering them with each service.
 
-## 4-2. Web APIs
+## 5-2. Web APIs
 
 ### REST API
 - REST stands for Representational State Transfer. 
@@ -301,7 +300,7 @@ tags:
     - A mutation is used for manipulating and modifying your data.
     - Every field in the mutation type can be thought of as a POST, PUT, or DELETE request in a RESTful API. 
 
-## 4-3. Serverless Computing
+## 5-3. Serverless Computing
 
 - Serverless computing offloads the responsibility of infrastructure management to cloud providers, enabling developers to focus on the application business logic.
     - Think of serverless computing as a combination of function-as-a-service (or FaaS) platforms and backend-as-a-service (or BaaS) services.

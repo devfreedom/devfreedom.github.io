@@ -56,17 +56,17 @@ tags:
         - The size of each partition can vary but cannot exceed the total free space of the hard disk.
 
 ### Partition Size
-    - / 
-	    - Minimum 1 GB. 
-    - /boot
-	    - 100 MB. 
-    - swap 
-	    - Double the RAM size. 
-    - /var
-	    - Minimum 250 MB. 
-        - If the possibility of the installation of many applications exists in the future, allocate the appropriate size. 
-    - /home
-	    - Varies based on the number of users. 
+- / 
+  - Minimum 1 GB. 
+- /boot
+  - 100 MB. 
+- swap 
+  - Double the RAM size. 
+- /var
+  - Minimum 250 MB. 
+    - If the possibility of the installation of many applications exists in the future, allocate the appropriate size. 
+- /home
+  - Varies based on the number of users. 
     
 ### Disk Partitions
 - Primary 

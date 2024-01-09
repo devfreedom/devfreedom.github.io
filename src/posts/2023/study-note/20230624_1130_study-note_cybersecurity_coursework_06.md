@@ -1092,8 +1092,8 @@ tags:
     ```
     Joe Hacker<div id="login" style="some inline CSS styles that mimic the original UI"><form><p>Your session has expired, please log in again:</p>Username:<input type="text" name="username" size="10"/><br>Password:<input type="text" name="password" size="10"/><br><br><input type="submit" value="Login"/></form></div>
     ```
-        - If there was a malicious user input like this, every time the list of users is rendered, this dialog will be displayed and trick some users into entering their credentials.
-        - The stolen usernames and passwords can then be sent to an external site and used for further exploitation.
+      - If there was a malicious user input like this, every time the list of users is rendered, this dialog will be displayed and trick some users into entering their credentials.
+      - The stolen usernames and passwords can then be sent to an external site and used for further exploitation.
 
 ### XSS Attack Prevention
 - Preventing XSS with HTML encoding
