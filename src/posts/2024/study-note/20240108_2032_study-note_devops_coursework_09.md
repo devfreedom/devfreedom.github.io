@@ -188,9 +188,9 @@ Scenario 2: Exchanged items should be returned to stock
 ```
 1. You start the document with the keyword Feature followed by a colon and then the title.
     - The title should express what this feature is about.
-            - It will be displayed by the tool when you run the test cases so that you know which feature the tests are reporting on.
+        - It will be displayed by the tool when you run the test cases so that you know which feature the tests are reporting on.
     - This feature's title is "Returns go to stock," so now you know the scope of this feature.
-            - It is for handling returns, specifically the expected behavior for returning items to stock.
+        - It is for handling returns, specifically the expected behavior for returning items to stock.
 2. Then below the feature line you have the user story:
     - "As a store owner, I want to add items back to stock when they're returned, So that I can keep track of the stock."
     - The BDD tools do not parse this user story in any way.

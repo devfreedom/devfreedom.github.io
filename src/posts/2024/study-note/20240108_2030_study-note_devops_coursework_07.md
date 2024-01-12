@@ -101,7 +101,7 @@ tags:
     5. Deployment
         - The deployment phase is where the application is released into the production environment and made available to users.
         - This can also happen in stages,
-            - First, it is released onto a user acceptance testing, also called UAT, platform 
+            - First, it is released onto a user acceptance testing, also called UAT platform.
             - And once the customer signs off on the functionality, it is released to production.
                 - This approach can be used for making software available on a website, mobile device app store, or a software distribution server on a corporate network.
     6. Maintenance
@@ -524,9 +524,9 @@ tags:
 - The diagram shows a simplified example billing system. 
   ```
        [Services rendered] → (services rendered) →     [   Billing   ]    → (total owed) → [Output total]
-                                                 🡗            ↑
+                                                 ↙            ↑
                              (services rendered)   (amount insurance paid)
-                           🡗                                  ↑
+                           ↙                                  ↑
   [Insurance verification] → (services rendered) →     [ Submit claim ]
   ```
   - Modules are arranged in a hierarchy and communicate with each other.
@@ -562,10 +562,10 @@ tags:
         ```
             ♦ → /start                         /start
                 patient check-in → [Waiting] → called for testing → [Testing]
-                                 🡗                                🡗     🡓 
+                                 ↙                                ↙     🡓 
                 /start                                   result       result
                 called to see doctor                    positive     negative
-              🡗                                      🡗
+              ↙                                      ↙
         [With the doctor]  ← yes ←  [Is Dr. ready?]
         ```
         - The different states include “waiting,” “testing,” and “with the doctor.”
@@ -623,7 +623,7 @@ tags:
                         - Name
                         - Address
                         - Employee ID
-                    🡗           ↓           🡖
+                    ↙           ↓           ↘
     [Nurse]             [Doctor]                [X-ray Technician]
     - callPatient()     - makeDiagnosis()       - takeXRay()
     - TakeVitals        - getTestResults()
@@ -833,11 +833,11 @@ system should adhere to.
     Presentation Tier            [USER/CLIENT APP]         
                         -----------------------------------
              Web Tier           [WEB LOAD BALANCER]
-                              🡗          ↓          🡖   
+                              ↙          ↓          ↘   
                          [SERVER1]   [SERVER2]   [SERVER3]
                         -----------------------------------
              App Tier           [APP LOAD BALANCER]
-                               🡗                   🡖
+                               ↙                   ↘
                          [APP SERVER 1]     [APP SERVER 2]
                         -----------------------------------
               DB Tier            [DATABASE SERVER]         
