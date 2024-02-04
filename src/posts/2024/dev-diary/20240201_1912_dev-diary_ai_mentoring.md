@@ -267,13 +267,13 @@ A. 이건 백엔드 설계 이슈에 가깝고, 두 구조 모두 머신러닝 �
     # 저장된 가장 최적의 체크포인트 경로를 지정해줍니다. 예: checkpoint-400 디렉토리
     model = BartForSequenceClassification.from_pretrained(os.path.join(workdir, 'outputs', 'checkpoint-400'))
 
-    # pipeline 메소드를 사용하면 빠르게 추론이 가능합니다.
+    # Transformers의 pipeline 메소드를 사용하면 빠르게 추론이 가능합니다.
     classifier = pipeline('text-classification', model=model, tokenizer=tokenizer)
 
-    # 실제로 감정 분류기를 사용해봅시다.
+    # 실제로 감정 분류기를 사용해봅시다. 아래의 예시 문장을 투입해봅시다.
     classifier('오늘은 정말 힘든 하루였어')
 
-    # 예시 출력값: [{'label': '슬픔', 'score': 0.69395810298}]
+    # 출력값 예시: [{'label': '슬픔', 'score': 0.69395810298}]
     ```
 
 ---
