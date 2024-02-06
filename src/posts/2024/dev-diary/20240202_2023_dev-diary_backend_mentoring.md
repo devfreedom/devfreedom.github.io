@@ -485,10 +485,13 @@ CMD ['nginx', '-g', 'daemon off;']
     - POST, PUT, DELETE 메소드에서 DB 작업을 할 때 여러 쿼리들을 transaction 단위로 묶어주면 쿼리의 일부가 실패하더라도 무결성을 보장할 수 있습니다.
     - SQL 쿼리에서 만약에 LIKE 연산자를 사용해서 검색을 구현할 경우에, LIKE 대신 MySQL에 full-text search function이라는걸 사용하면 인덱싱 개념으로 이게 훨씬 성능이 좋습니다. 
     - 반복문 안에는 쿼리를 넣지 마세요. 대신에 MANY 연산자로 한꺼번에 불러온 뒤에 for loop를 돌려야 합니다.
+    - DB 쿼리 세션들을 중복되지 않도록 설계하는 것이 중요하고, 세션 pool들을 Prisma가 자체적으로 관리하도록 해주는 것이 좋습니다.
 - 배포 관련
     - 파이썬을 도커에서 돌릴 때 이미지의 용량이 커지는 경우가 있습니다. 저장소의 용량이 부족해지면 다음 명령어로 Docker volume을 pruning 해주면 됩니다.
         - `$ sudo docker system prune -af --volumes`
     - 도커 컨테이너에 env 파일을 직접 넣어주는 대신에, Dockerfile상에서 환경변수 항목들을 import하게 할 수도 있습니다.
+    - babel이 메모리를 많이 먹어서 그런지, 리액트 프론트엔드를 도커에서 빌드할 경우에 컨테이너가 터지는 경우가 있습니다. 그래서 리액트는 그냥 로컬에서 빌드를 해버리고, 빌드된 정적 파일을 도커 내부로 복사해와서 사용하는 것이 나을 것 같습니다.
+        - `docker save / load` 명령어를 사용해서 tar 압축 파일로 추출/주입하거나 아니면 `docker export / import` 명령어를 사용하면 됩니다.
 
 ---
 

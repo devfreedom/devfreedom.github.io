@@ -49,8 +49,8 @@ $ npx create-next-app@latest
     ├ (...)
     └ next.config.js
     ```
-- Maximum URL/Path: https://www.example.com/**segment1**/**segment2**
-    - URN: **segment1/segment2**
+- URL/Path structure: https://www.example.com/**segment1**/**segment2**
+    - **segment1/segment2** = URN (Uniform Resource Name)
 - /app/layout.js (global layout file)
     ```
     export const metadata = {
