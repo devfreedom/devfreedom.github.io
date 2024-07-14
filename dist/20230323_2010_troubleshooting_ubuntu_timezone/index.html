@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[트러블슈팅] 우분투를 윈도우즈와 듀얼부팅으로 사용할 때 시간대가 틀어지는 현상 해결하기 | devfreedom.github.io</title>
+    <meta name="title" content="[트러블슈팅] 우분투를 윈도우즈와 듀얼부팅으로 사용할 때 시간대가 틀어지는 현상 해결하기 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮트러블슈팅❯,우분투,리눅스,운영체제,윈도우즈,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230323_2010_troubleshooting_ubuntu_timezone/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[트러블슈팅] 우분투를 윈도우즈와 듀얼부팅으로 사용할 때 시간대가 틀어지는 현상 해결하기</h1>
+        <div class="text-center">Published on 23 March 2023 08:10 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮트러블슈팅❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮트러블슈팅❯</a>
+            
+            <a href="/tags/우분투" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#우분투</a>
+            
+            <a href="/tags/리눅스" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#리눅스</a>
+            
+            <a href="/tags/운영체제" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#운영체제</a>
+            
+            <a href="/tags/윈도우즈" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#윈도우즈</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/ubuntu-logo.png" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <p>한 컴퓨터에서 우분투와 윈도우즈를 같이 사용하는 듀얼부팅 환경에서, 우분투에서 설정한 시간이 윈도우즈에서 틀리고, 윈도우즈에서 설정한 시간이 우분투에서 틀리는 증상이 있습니다. 이는 하드웨어에 탑재된 시계(Real Time Clock)에 우분투는 협정세계시(UTC)를 적용하고, 윈도우즈는 현지(local) 시간대를 적용하기 때문에 발생하는 문제입니다.</p>
+<p>이 문제를 해결하는 방법은 두가지가 있는데, 하나는 우분투에서 현지 시간대를 적용하도록 timedatectl 설정을 변경하는 것이고, 다른 하나는 윈도우즈에서 UTC를 적용하도록 TimeZoneInformation 레지스트리를 변경하는 것입니다. 개인적으로는 전자가 더 깔끔하고 확실한 방법이라고 생각합니다. 방법은 간단합니다.</p>
+<ol>
+<li>
+<p>우분투 터미널에서 다음 명령어를 실행하세요.</p>
+<pre><code>$ timedatectl set-local-rtc 1 --adjust-system-clock
+</code></pre>
+</li>
+<li>
+<p>그 다음 터미널에서 timedatectl 을 실행해서 그 결과를 확인하세요. 표시되는 Local Time과 RTC Time이 일치하면 설정이 정상적으로 변경된겁니다. <em>Warning: The system is configured to read the RTC time in the local time zone (...)</em> 이런 경고 메세지가 뜨지만 무시하시면 됩니다.</p>
+</li>
+<li>
+<p>재부팅하고 윈도우즈에서 적합한 시간대를 다시 맞추세요.</p>
+</li>
+</ol>
+<p>이후부터는 우분투로 부팅하더라도 하드웨어의 시간대가 UTC로 변경되지 않고 윈도우즈에서 설정한 현지 시간대가 그대로 적용됩니다.</p>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

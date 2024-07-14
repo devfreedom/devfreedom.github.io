@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[트러블슈팅] 우분투에서 블루투스 스피커 또는 이어폰 연결시 음질이 저하되는 현상 | devfreedom.github.io</title>
+    <meta name="title" content="[트러블슈팅] 우분투에서 블루투스 스피커 또는 이어폰 연결시 음질이 저하되는 현상 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮트러블슈팅❯,우분투,리눅스,운영체제,블루투스,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230309_1743_troubleshooting_ubuntu_bluetooth/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[트러블슈팅] 우분투에서 블루투스 스피커 또는 이어폰 연결시 음질이 저하되는 현상</h1>
+        <div class="text-center">Published on 9 March 2023 05:43 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮트러블슈팅❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮트러블슈팅❯</a>
+            
+            <a href="/tags/우분투" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#우분투</a>
+            
+            <a href="/tags/리눅스" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#리눅스</a>
+            
+            <a href="/tags/운영체제" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#운영체제</a>
+            
+            <a href="/tags/블루투스" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#블루투스</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/ubuntu-logo.png" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h3>Ubuntu 22.10 버전부터는 PipeWire가 기본 오디오 서버로 지정되면서 이 문제는 해결되었습니다.</h3>
+<p>블루투스 기술에서 오디오 장치를 정의하는 프로파일에는 HSP/HFP와 A2DP(+AVRCP)가 있습니다.</p>
+<p>HSP(Headset Profile) 또는 HFP(Hands-free Profile)는 마이크를 통해 음성을 발신하고 스피커를 통해 음성을 수신하는 '전화 통화용' 프로파일입니다. 모노 오디오에 비트레이트가 CVSD 코덱 기준 8kHz 또는 mSBC 코덱(wideband speech) 기준 16kHz밖에 안되는 저음질 프로파일입니다. A2DP(Advanced Audio Distribution Profile)의 경우 SBC, AAC, LDAC, aptX 등의 코덱으로 고품질의 음악 감상을 지원하는 프로파일이고 일반적인 음악 감상용 블루투스 기기에는 이 프로파일을 사용하게 됩니다. 미디어 컨트롤 기능을 가진 AVRCP 프로파일과 함께 제공되기도 합니다.</p>
+<p>우분투 운영체제에서 음악 감상 전용 블루투스 '스피커'를 연결하게 되면 문제 없이 A2DP 장치로 인식합니다. 문제는 블루투스 스피커에 마이크와 통화 기능, 즉 '핸즈프리' 기능이 탑재된 경우입니다. 이런 블루투스 기기는 HSP/HFP 프로파일과 A2DP(+AVRCP) 프로파일을 모두 지원하는데, 음악 감상에 특화된 블루투스 스피커임에도 불구하고 우분투에서는 무선 통화용 블루투스 핸즈프리로 인식하고는 위에서 언급한 저음질 모노 오디오 코덱으로 음악을 전송하는 현상이 발생합니다. 음질이 매우 낮을 뿐만 아니라, 음량 조절이 되지 않는 경우도 있습니다. HSP/HFP에서 인식하는 볼륨 컨트롤 신호와 미디어 애플리케이션에서 전송하는 볼륨 컨트롤 신호가 다르기 때문입니다.</p>
+<p>이 현상은 우분투에서 설정 앱을 켠 다음 오디오 메뉴로 들어가서 현재 사용중인 오디오 출력 기기의 설정을 Headset Head Unit(HSP/HFP)가 아니라 High Fidelity Playback (A2DP Sink)로 바꿔주면 쉽게 해결됩니다. 하지만 우분투의 블루투스 스택에서 기본 설정을 HSP/HFP로 잡는 경우가 있기 때문에, 매번 수동으로 바꿔주는 대신 아예 기본값을 A2DP로 바꿔주는 해결 방법이 있습니다.</p>
+<ol>
+<li>
+<p>블루투스 설정 파일을 루트 권한을 가진 텍스트 편집기로 여세요.</p>
+<pre><code>$ sudo gedit /etc/bluetooth/main.conf
+</code></pre>
+</li>
+<li>
+<p>맨 마지막 줄에 HSP/HFP를 비활성하는 옵션을 추가합니다.</p>
+<pre><code>Disable=headset
+</code></pre>
+</li>
+<li>
+<p>시스템을 재부팅합니다.</p>
+</li>
+</ol>
+<p>만약 이렇게 해도 블루투스 스피커가 여전히 핸즈프리 기기로 우선적으로 인식된다면 다음 방법을 시도해보세요.</p>
+<ol>
+<li>
+<p>우분투가 init에서 systemd로 전환한 사용하고 있으므로 systemd에 있는 블루투스 설정을 바꿔봅시다.</p>
+<pre><code>$ sudo gedit /etc/systemd/system/bluetooth.target.wants/bluetooth.service
+</code></pre>
+</li>
+<li>
+<p>다음과 같은 명령줄이 있을겁니다.</p>
+<pre><code>ExecStart=/usr/lib/bluetooth/bluetoothd
+</code></pre>
+</li>
+<li>
+<p>이 명령줄 뒤에 --plugin=a2dp 옵션을 추가합니다.</p>
+<pre><code>ExecStart=/usr/lib/bluetooth/bluetoothd --plugin=a2dp
+</code></pre>
+</li>
+<li>
+<p>시스템을 재부팅합니다.</p>
+</li>
+</ol>
+<hr>
+<p>✱ Stack Overflow에서 정보를 얻었고, 작동 여부를 확인한 사례입니다.</p>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

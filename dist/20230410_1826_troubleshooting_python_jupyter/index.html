@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[트러블슈팅] [리눅스] VSCode에서 Jupyter 확장 프로그램이 파이썬 커널을 찾지 못할 때 | devfreedom.github.io</title>
+    <meta name="title" content="[트러블슈팅] [리눅스] VSCode에서 Jupyter 확장 프로그램이 파이썬 커널을 찾지 못할 때 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮트러블슈팅❯,파이썬,VSCode,jupyter-notebook,리눅스,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230410_1826_troubleshooting_python_jupyter/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[트러블슈팅] [리눅스] VSCode에서 Jupyter 확장 프로그램이 파이썬 커널을 찾지 못할 때</h1>
+        <div class="text-center">Published on 10 April 2023 06:26 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮트러블슈팅❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮트러블슈팅❯</a>
+            
+            <a href="/tags/파이썬" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#파이썬</a>
+            
+            <a href="/tags/VSCode" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#VSCode</a>
+            
+            <a href="/tags/jupyter-notebook" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#jupyter-notebook</a>
+            
+            <a href="/tags/리눅스" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#리눅스</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/python-logo.png" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <p>VSCode용 jupyter-notebook 확장 프로그램인 Jupyter를 잘 사용하고 있었는데, 언제부터인가 ipynb 파일을 구동할 때 파이썬 커널을 찾을 수 없다면서 오류 메세지를 뿜기 시작했습니다. VSCode, Jupyter extension, ipython, ipykernel, Anaconda 중에서 뭔가가 업데이트되면서 뭔가 꼬인 것 같습니다. 최근에는 구동조차 되지 않아서 오류 메세지가 나오기는 커녕 VSCode에서 사용할 수 있는 파이썬 커널이 아예 나타나지 않았습니다. 상당히 골치 아픈 문제인데, 해외 사례를 찾아봐도 확실한 원인이나 해결 방법이 나오지 않았습니다.</p>
+<p>일단은 해볼 수 있는 것부터 해봐야겠죠. 먼저 ipython이나 ipykernel을 최신 버전으로 업데이트해봅니다.</p>
+<pre><code>$ pip install --upgrade ipython
+$ pip install -U ipykernel
+</code></pre>
+<p>그리고 혹시라도 누락되어있을 Anaconda의 dependency들을 설치해봅니다.</p>
+<pre><code>$ conda install jupyter
+</code></pre>
+<p>이래도 안되면 Jupyter가 파이썬 커널을 인식할 수 있게 강제로 주소를 잡아주는 방법도 있습니다.</p>
+<ol>
+<li>
+<p>터미널을 열고 다음 명령어를 입력합니다.</p>
+<pre><code>$ jupyter kernelspec list
+</code></pre>
+</li>
+<li>
+<p>출력되는 주소에는 Jupyter의 파이썬 커널을 설정할 수 있는 문서인 kernel.json이 있습니다. ###### 자리에다가 방금 출력된 주소를 입력하고, 이 명령어를 실행시켜서 텍스트 편집기로 해당 문서를 열어줍니다.</p>
+<pre><code>$ gedit #######/kernel.json
+</code></pre>
+</li>
+<li>
+<p>아래와 같은 형식의 문서가 열립니다. 여기서 arvg 바로 밑에줄에 있는 &quot;python&quot; 이라는 문구를, 파이썬이 설치되어 있는 실제 full path로 바꿔주면 됩니다.</p>
+<pre><code>{
+  &quot;argv&quot;: [
+    &quot;python&quot;,
+    &quot;-m&quot;,
+    &quot;ipykernel_launcher&quot;,
+    &quot;-f&quot;,
+    &quot;{connection_file}&quot;
+  ],
+  &quot;display_name&quot;: &quot;Python 3 (ipykernel)&quot;,
+  &quot;language&quot;: &quot;python&quot;,
+  &quot;metadata&quot;: {
+    &quot;debugger&quot;: true
+  }
+}
+</code></pre>
+</li>
+<li>
+<p>파이썬이 설치되어 있는 full path는 새로운 터미널을 열고 다음 명령어를 입력하면 확인할 수 있습니다.</p>
+<pre><code>$ which python3
+</code></pre>
+</li>
+</ol>
+<p>여전히 문제가 해결되지 않는다면... Jupyter를 과거 버전으로 롤백하거나 아니면 pre-release 버전으로 다시 설치해서 해결했다는 사례도 있으니 시도해보세요.</p>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

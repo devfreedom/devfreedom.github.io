@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[필기] 머신러닝 특강 - PyTorch 기반의 머신러닝 파이프라인 체험하기 | devfreedom.github.io</title>
+    <meta name="title" content="[필기] 머신러닝 특강 - PyTorch 기반의 머신러닝 파이프라인 체험하기 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮필기❯,인공지능,머신러닝,Python,PyTorch,Transformers,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20240205_2109_study-note_ai_ml_pytorch/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[필기] 머신러닝 특강 - PyTorch 기반의 머신러닝 파이프라인 체험하기</h1>
+        <div class="text-center">Published on 5 February 2024 09:09 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮필기❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮필기❯</a>
+            
+            <a href="/tags/인공지능" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#인공지능</a>
+            
+            <a href="/tags/머신러닝" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#머신러닝</a>
+            
+            <a href="/tags/Python" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#Python</a>
+            
+            <a href="/tags/PyTorch" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#PyTorch</a>
+            
+            <a href="/tags/Transformers" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#Transformers</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/neural-network.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>머신러닝 데이터 저장소 활용하기</h1>
+<ul>
+<li>HuggingFace는 각종 머신러닝 코드, 데이터셋, 모델 등을 저장하고 공유할 수 있는 머신러닝 특화 저장소 서비스 중 하나입니다.
+<ul>
+<li>GitHub의 Large File Storage 기반으로 만들어진 repo 서비스입니다.</li>
+<li>기능
+<ul>
+<li>Models: 학습된 머신러닝 모델의 checkpoint들이 있습니다.</li>
+<li>Datasets: 학습에 사용할 수 있는 데이터셋들입니다.</li>
+<li>Spaces: 머신러닝 모델을 간단한 서비스로써 실제로 구현 및 시연해놓은 것들입니다.</li>
+<li>Docs: 각종 도큐멘테이션, 튜토리얼, 설명서 등이 있습니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1>Transformers pipeline 메소드를 사용해 pre-trained 모델을 빠르고 쉽게 사용하기</h1>
+<h2>음성 인식기</h2>
+<pre><code># Google Colab에서 코딩을 할 경우 대부분의 머신러닝 관련 라이브러리들과 의존성들이 설치되어 있습니다. 
+# 다음 명령어로 확인해볼 수 있습니다.
+!pip freeze
+
+# Jupyter Notebook 환경에서 터미널 shell 명령어를 사용하기 위해서는 앞에 ! 기호를 붙여 subshell을 활성화해주어야 합니다.
+
+# 설치되어 있지 않다면 모두 설치를 직접 해주어야 합니다.
+# !pip install transformers
+# !pip install torch
+
+!pip install datasets
+!pip install accelerate -U
+
+# HuggingFace와 연동하기 위해서 필요합니다.
+from huggingface_hub import notebook_login
+notebook_login()
+
+
+
+# Transformers pipeline을 사용해보도록 하겠습니다.
+# 기본적인 pre-trained 모델을 아키텍쳐나 토크나이저를 따로 불러올 필요가 없이 간편하게 사용할 수 있습니다.
+from transformers import pipeline
+
+# HuggingFace에서 음성 인식 모델을 불러오도록 하겠습니다.
+speech_recognizer = pipeline(&quot;automatic-speech-recognition&quot;, model=&quot;facebook/wav2vec2-base-960h&quot;)
+
+# HuggingFace에서 영문 오디오 데이터셋을 불러와서 테스트하도록 하겠습니다.
+from datasets import load_dataset, Audio
+audio_dataset = load_dataset(&quot;PolyAI/minds14&quot;, name=&quot;en-us&quot;, split=&quot;train&quot;)
+
+# sampling rate를 모델에 내장된 값과 일치시켜줍니다. 8000에서 16000으로 바꾸게 됩니다.
+audio_dataset_recognized = audio_dataset.cast_column('audio', Audio(sampling_rate=speech_recognizer.feature_extractor.sampling_rate))
+
+# 오디오 데이터셋의 일부를 음성 인식기에 입력시키고, speech-to-text 인식 결과를 다음과 같이 확인할 수 있습니다.
+result = speech_recognizer(audio_dataset_recognized[:4]['audio'])
+
+from pprint import pprint
+pprint([data['text'] for data in result])
+
+# 실제 원문을 출력하고 인식 결과와 비교해서 모델의 정확도를 판단해볼 수 있습니다.
+transcript = audio_dataset_recognized[&quot;english_transcription&quot;][:4]
+print(transcript)
+</code></pre>
+<h2>감정 분류기</h2>
+<pre><code># HuggingFace에서 text classification 모델 중 koelectra-base-finetuned-nsmc를 사용해보겠습니다.
+classifier = pipeline(task=&quot;sentiment-analysis&quot;, model=&quot;beomi/koelectra-base-finetuned-nsmc&quot;)
+
+# 입력값을 받아 해당 문장의 감정이 긍정적인지 부정적인지를 모델이 판단해 출력합니다.
+def snt_cls(text):
+    result = classifier(text)[0]['label']
+    if result == &quot;positive&quot;:
+        print(&quot;긍정적인 감정입니다.&quot;)
+    else:
+        print(&quot;부정적인 감정입니다.&quot;)
+</code></pre>
+<h1>네이버 영화 리뷰 데이터셋(NSMC) 기반으로 감정 분류 머신러닝 모델 구현하기</h1>
+<h2>1. 데이터셋 준비 및 전처리 구현</h2>
+<pre><code>import os
+import pandas as pd
+import torch
+
+import urllib.request
+ 
+# 학습에 사용할 텍스트 데이터를 URL으로부터 가져옵니다.
+urllib.request.urlretrieve(&quot;https://raw.githubusercontent.com/e9t/nsmc/master/ratings_train.txt&quot;)
+urllib.request.urlretrieve(&quot;https://raw.githubusercontent.com/e9t/nsmc/master/ratings_test.txt&quot;)
+
+class nsmc_dataset(torch.utils.data.Dataset):
+    def __init__(self, nsmc_df, labels):
+        # 여기서는 pandas DataFrame 형식의 데이터를 사용하려고 합니다.
+        self.dataset = nsmc_df
+        self.labels = labels
+
+    def __getitem__(self, idx):
+        # 인덱스에 맞게 컬럼별로 key-value pair를 추출합니다.
+        # 원본 데이터의 보존을 위해서 clone()과 detach()를 해줍니다.
+        item = { key: val[idx].clone().detach() for key, val in self.dataset.items() 
+        }
+        
+        # 각 인덱스에 맞게 데이터를 클래스 레이블로써 분류해 사용하고자 합니다.
+        # PyTorch Tensor 자료형으로 변환해줍니다.
+        item['labels'] = torch.tensor(self.labels[idx])
+        return item
+
+    def __len__(self):
+        return len(self.labels)
+
+# 텍스트 파일을 DataFrame 형식으로 읽어오는 함수를 만들어줍니다.
+def load_data(dataset_dir):
+    dataset = pd.read_table(dataset_dir)[:500]          # 시범으로 500개만 사용해보도록 하겠습니다.
+    return dataset
+
+
+
+# 입력된 텍스트를 토큰화하는 함수를 구성해줍니다.
+# tokenizer를 불러오기 위해 AutoTokenizer를 사용하도록 하겠습니다.
+from transformers import AutoTokenizer
+
+# pre-trained된 tokenizer로 bert-base를 사용해보도록 하겠습니다.
+tokenizer = AutoTokenizer.from_pretrained(&quot;klue/bert-base&quot;)
+
+def tokenize(dataset, tokenizer, max_length):
+    input_data = list(dataset['document'])
+    tokenized_input = tokenizer(
+        input_data,
+        return_tensors = &quot;pt&quot;,          # PyTorch에서 사용하는 Tensor 자료형으로 지정해줍니다.
+        padding = True,
+        truncation = True,
+        max_length = max_length,
+        add_special_tokens = True,
+        return_token_type_ids = False   # BERT 이후의 모델 (RoBERTa, ALBERT 등) 에서는 해당 옵션을 False로 명시해주어야 합니다.
+    )
+
+    return tokenized_input
+
+
+
+# train과 test 데이터셋을 각각의 데이터셋 클래스로 만들어줍니다.
+# scikit-learn의 train_test_split()을 사용해서 train 데이터의 일부를 validation 데이터로 split 해주겠습니다.
+from sklearn.model_selection import train_test_split
+
+def prepare_dataset(dataset_dir, tokenizer, max_length):
+    train_dataset = load_data(dataset_dir, &quot;train.txt&quot;)
+    test_dataset = load_data(dataset_dir, &quot;test.txt&quot;)
+
+    # 여기서는 train 데이터와 test 데이터의 비율을 75%, 25%로 나누어보겠습니다.
+    train_dataset, val_dataset = train_test_split(train_dataset, test_size=0.25, random_state=42, stratify=train_dataset['label'])
+
+    # 인덱스를 기준으로 매칭을 하기 위해서 레이블도 나누어줍니다.
+    train_label = train_dataset['label'].values
+    test_label = test_dataset['label'].values
+    val_lebel = val_dataset['label'].values
+
+    # 준비된 데이터셋들을 토큰화합니다.
+    train_dataset_tokenized = tokenize(train_dataset, tokenizer, max_length)
+    test_dataset_tokenized = tokenize(val_dataset, tokenizer, max_length)
+    val_dataset_tokenized = tokenize(test_dataset, tokenizer, max_length)
+
+    # 학습에 필요한 데이터를 최종 가공합니다.
+    train_dataset_final = nsmc_dataset(train_dataset_tokenized, train_label)
+    test_dataset_final = nsmc_dataset(test_dataset_tokenized, test_label)
+    val_dataset_final = nsmc_dataset(val_dataset_tokenized, val_label)
+
+    return train_dataset_final, test_dataset_final, val_dataset_final, test_dataset
+</code></pre>
+<h2>2. 학습 모델 설정</h2>
+<pre><code>import random
+import numpy as np
+from sklearn.metrics import accuracy_score, f1_score
+
+from transformers import (AutoTokenizer, AutoConfig, AutoModelForSequenceClassification)
+
+# 학습기를 불러옵니다.
+from transformers import Trainer, TrainingArguments
+
+# overfitting을 방지하기 위해 사용할 예정입니다.
+from transformers import EarlyStoppingCallback
+
+# 학습률 스케줄러를 불러옵니다.
+from transformers.optimization import get_consine_with_hard_restarts_schedule_with_warmup
+
+
+
+# validation 과정에서 metrics를 계산하기 위한 function입니다.
+def compute_metrics(pred):
+    labels = pred.label_ids
+    preds = pred.predictions.argmax(-1)
+
+    # scikit-learn을 사용해 정확도를 계산합니다.
+    acc = accuracy_score(labels, preds)
+
+    f1 = f1_score(labels, preds, average=&quot;micro&quot;)
+
+    return {
+        &quot;Accuracy&quot;: acc,
+        &quot;F1 Score&quot;: f1,
+    }
+
+
+
+# 학습에 사용할 pre-trained tokenizer를 불러옵니다.
+def load_tokenizer_and_model_for_train():
+
+    MODEL_NAME = args.model_name
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+
+    model_config = AutoConfig.from_pretrained(MODEL_NAME)
+
+    # 분류할 클래스 레이블이 '긍정'과 '부정'이므로 2로 지정해줍니다.
+    model_config.num_labels = 2
+    print(model_config)
+
+    model = AutoModelForSequenceClassification.from_pretrained(
+        MODEL_NAME, 
+        config = model_config
+    )
+
+    print(&quot;TOKENIZER AND MODEL LOADED&quot;)
+    return tokenizer, model
+
+
+
+# 학습에 관한 세부사항을 설정하는 함수입니다.
+def load_trainer_for_train(model, train_dataset_final, val_dataset_final):
+    training_args = TrainingArguments(
+        output_dir = args.save_path + &quot;results&quot;,        # 출력 디렉토리입니다.
+        save_total_limit = args.save_limit,             # 저장될 모델의 총 개수입니다.
+        save_steps = args.save_step,                    # 몇 step 단위로 저장할지 정해줍니다.
+
+        num_train_epoch = args.ephochs,                 # 학습 epoch을 설정합니다.
+        learning_rate = args.lr,                        # 학습률을 설정합니다.
+        per_device_train_batch_size = args.batch_size   # device당 batch size를 지정합니다.
+        per_device_eval_batch_size = 2,                 # 모델 평가 단계에서 사용할 batch size입니다.
+        warmup_steps = args.warmup_steps,               # 학습률 스케줄러의 warmup step을 지정해줍니다.
+        weight_decay = args.weight_decay,               # 가중치 감쇠율을 지정해줍니다.
+
+        logging_dir = args.save_path + &quot;logs&quot;           # 로그가 저장될 디렉토리입니다.
+        logging_steps = args.logging_step,              # 몇 step 단위로 로깅할지 정해줍니다.
+        
+        # 학습 과정에서 사용할 평가 전략을 지정해줍니다.
+        #   no: 학습 과정에서 평가하지 않음
+        #   steps: eval_steps마다 평가
+        #   epochs: epoch 단위마다 평가
+        evaluation_strategy = &quot;steps&quot;,                  
+
+        eval_steps = args.eval_step,
+        load_best_model_at_end = True,
+    )
+
+    print(&quot;TRAINING ARGUMENTS HAVE BEEN SET.&quot;)
+
+    # 조기종료 callback을 설정해줍니다.
+    MyCallback = EarlyStoppingCallback(
+        early_stopping_patience = 3,
+        early_stopping_threshold = 0.001
+    )
+
+    # 옵티마이저를 설정해줍니다.
+    optimizer = torch.optim.AdamW(
+        model.parameters(),
+        lr = args.lr,
+        betas = (0.9, 0.999),
+        eps = 1e-08,
+        weight_decay = args.weight_decay,
+        amsgrad = False
+    )
+
+    # 학습기를 설정해줍니다.
+    trainer = Trainer(
+        model = model,                                      # 학습에 사용할 transformers 모델 인스턴스
+        args = training_args,
+        train_dataset = train_dataset_final,
+        eval_dataset = val_dataset_final,
+        compute_metrics = compute_metrics,                  # 기본적으로는 loss만을 출력하므로 별도로 구현한 함수를 불러와 정확도와 F1 score를 계산합니다.
+        callbacks=[MyCallback],
+        optimizers = (
+            optimizer,
+            get_cosine_with_hard_restarts_schedule_with_warmup(
+                optimizer,
+                num_warmup_steps = args.warmup_steps,
+                num_training_steps = len(train_dataset_final) * args.epochs,
+            ),
+        ),
+
+    )
+
+    print(&quot;TRAINER HAS BEEN SET.&quot;)
+
+    return trainer
+</code></pre>
+<h2>3. 학습 수행</h2>
+<pre><code># 학습 수행에 앞서 유지보수의 편의성을 위해 전달인자들을 하나의 클래스로 정의해줍니다.
+class args():
+    dataset_dir = &quot;./&quot;
+    model_type = &quot;roberta&quot;                  # 사용할 모델을 종류를 지정합니다.
+    model_name = &quot;klue/roberta-large&quot;       # 사용할 모델의 이름을 지정합니다.
+    save_path = &quot;./&quot;
+    save_step = 200
+    logging_step = 200
+    eval_step = 100
+    save_limit = 5
+    seed = 42
+    epochs = 10
+    batch_size = 8
+    max_length = 256
+    lr = 3e-5
+    weight_decay = 0.01
+    warmup_steps = 300
+    scheduler = &quot;linear&quot;
+    model_dir = &quot;./best_model&quot;              # 추론할 때 저장된 모델을 불러옵니다.
+
+
+
+# 학습기에 데이터를 투입해 실제로 학습을 수행하는 함수입니다.
+def train():
+
+    # seed를 고정합니다.
+    pl.seed_everything(seed=42, workers=False)
+
+    # 학습에 사용할 GPU/CPU device를 설정합니다.
+    device = torch.device(&quot;cuda:0&quot; if torch.cuda.is_available() else &quot;cpu&quot;)
+    print(&quot;Device:&quot;, device)
+
+    # 모델과 tokenizer를 지정하고 device에 투입합니다.
+    tokenizer, model = load_tokenizer_and_model_for_train()
+    model.to(device)
+
+    # 데이터셋을 실제로 준비합니다.
+    train_dataset_final, test_dataset_final, val_dataset_final, test_dataset = prepare_dataset(args.dataset_dir, tokenizer, args.max_length)
+
+    # 학습기에 데이터와 모델을 투입합니다.
+    trainer = load_trainer_for_train(model, train_dataset_final, val_dataset_final)
+
+    print(&quot;TRAINING IN PROGRESS...&quot;)
+    
+    # 학습기를 작동시킵니다.
+    trainer.train()
+
+    print(&quot;TRAINING HAS BEEN COMPLETED&quot;)
+
+    model.save_pretrained(&quot;./best_model&quot;)
+
+
+
+# 학습을 시작합니다.
+train()
+</code></pre>
+<h2>4. 만들어진 머신러닝 모델에 데이터를 투입해 추론하기</h2>
+<pre><code># 만들어진 모델을 불러옵니다.
+model = AutoModelForSequenceClassification.from_pretrained('./best_model')
+
+# 학습기를 학습이 아닌 추론에 사용하기 위해 옵션을 지정해줍니다. 
+# 학습 과정은 끝났으므로 do_train은 False, 추론에 사용할 것이므로 do_predict는 True로 설정합니다.
+test_args = TrainingArguments(
+    output_dir = OUTPUT_DIR,
+    do_train = False,
+    do_predict = True,
+    per_device_eval_batch_size = BATCH_SIZE,   
+    dataloader_drop_last = False    
+)
+
+# 학습기를 초기화합니다.
+trainer = Trainer(
+    model = model, 
+    args = test_args, 
+    compute_metrics = compute_metrics
+)
+
+# 추론을 시작합니다. inference_test_dataset이라는 이름으로 추론용 데이터를 투입한다고 가정합니다.
+inference_result = trainer.predict(inference_test_dataset)
+</code></pre>
+<hr>
+<h1>기타 정보 및 조언</h1>
+<ul>
+<li>대규모의 LLM들을 학습시킬 때 parameter-efficient fine-tuning methods for large models(PEFT)을 사용합니다.</li>
+<li>하드웨어 가속을 사용해 Transformers로 학습 및 추론할 때 Optimum을 사용합니다.</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Dev Diary] 120 Days of WebDev - 6. React: Part 2 | devfreedom.github.io</title>
+    <meta name="title" content="[Dev Diary] 120 Days of WebDev - 6. React: Part 2 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Dev Diary❯,web development,front-end,JavaScript,TypeScript,React,JSX,TSX,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230619_1038_dev-diary_120webdev_06_react2/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Dev Diary] 120 Days of WebDev - 6. React: Part 2</h1>
+        <div class="text-center">Published on 19 June 2023 10:38 AM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Dev Diary❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Dev Diary❯</a>
+            
+            <a href="/tags/web development" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#web development</a>
+            
+            <a href="/tags/front-end" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#front-end</a>
+            
+            <a href="/tags/JavaScript" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#JavaScript</a>
+            
+            <a href="/tags/TypeScript" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#TypeScript</a>
+            
+            <a href="/tags/React" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#React</a>
+            
+            <a href="/tags/JSX" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#JSX</a>
+            
+            <a href="/tags/TSX" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#TSX</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/react-logo.png" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>Next.js Basics</h1>
+<h2>Installation</h2>
+<pre><code>$ npx create-next-app@latest
+</code></pre>
+<h2>Folder Structure</h2>
+<ul>
+<li>Static assets
+<ul>
+<li>Next.js can serve static files, like images, under a folder called <code>public</code> in the root directory.</li>
+<li>Files inside public can then be referenced by your code starting from the base URL ( / ).
+<ul>
+<li>e.g. <code>&lt;img src=&quot;/logo.svg&quot;&gt;</code></li>
+</ul>
+</li>
+<li>For static metadata files, such as robots.txt , favicon.ico , etc, you should use special metadata files inside the app folder.</li>
+</ul>
+</li>
+</ul>
+<h2>Routing in Next.js</h2>
+<h3>Code example</h3>
+<ul>
+<li>File structure<pre><code>/ (project root)
+├ /app
+│  ├ /segment1
+│  │  ├ /segment2  
+│  │  │   └ page.js
+│  │  ├ layout.js
+│  │  └ page.js
+│  ├ layout.js
+│  └ page.js
+├ /public
+├ /node_modules
+├ package.json
+├ package-lock.json
+├ jsconfig.json
+├ (...)
+└ next.config.js
+</code></pre>
+</li>
+<li>URL/Path structure: https://www.example.com/<strong>segment1</strong>/<strong>segment2</strong>
+<ul>
+<li><strong>segment1/segment2</strong> = URN (Uniform Resource Name)</li>
+</ul>
+</li>
+<li>/app/layout.js (global layout file)<pre><code>export const metadata = {
+    title: 'Next.js',
+    description: 'Routing Practice',
+}
+
+export default function RootLayout({children}){
+    return(
+        &lt;html&gt;
+            &lt;body&gt;
+                &lt;h1&gt;Welcome to Next.js Root Layout File&lt;/h1&gt;
+                &lt;div&gt;
+                    &lt;a href=&quot;/&quot;&gt;Click here to render / (root)&lt;/a&gt;
+                &lt;/div&gt;  
+                &lt;div&gt;
+                    &lt;a href=&quot;/segment1&quot;&gt;Click here to render &lt;b&gt;/segment1&lt;/b&gt; as 'children' below.&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;a href=&quot;/segment1/segment2&quot;&gt;Click here to render &lt;b&gt;/segment1/segment2&lt;/b&gt; as 'children' below.&lt;/a&gt;
+                &lt;/div&gt;  
+                &lt;hr /&gt;
+                {children}
+            &lt;/body&gt;
+        &lt;/html&gt;
+    );
+}
+</code></pre>
+</li>
+<li>/app/page.js (component for global layout)<pre><code>export default function RootChildren() {
+    return (
+        &lt;&gt;
+            &lt;p&gt;This paragraph (/page.js) is a child component for the global root layout (/layout.js)&lt;/p&gt;
+        &lt;/&gt;
+    );
+}
+</code></pre>
+</li>
+<li>/app/segment1/layout.js (local layout file)<pre><code>export default function Layout(props){
+    return(
+        &lt;&gt;
+            &lt;h1&gt;Welcome to Local Layout File at /segment1 (/segment1/layout.js)&lt;/h1&gt;
+            {props.children}
+        &lt;/&gt;
+    );
+}
+</code></pre>
+</li>
+<li>/app/segment1/page.js (component for local layout)<pre><code>export default function Segment1(){
+    return(
+        &lt;&gt;
+            &lt;p&gt;This paragraph (/segment1/page.js) is a child component for the local layout (/segment1/layout.js)&lt;/p&gt;
+        &lt;/&gt; 
+    );
+}
+</code></pre>
+</li>
+<li>/app/segment1/segment2/page.js<pre><code>export default function Segment2(){
+    return(
+        &lt;&gt;
+            &lt;p&gt;This paragraph (/segment1/segment2/page.js) is an isolated child component&lt;/p&gt;
+        &lt;/&gt; 
+    );
+}
+</code></pre>
+</li>
+<li>When routed to /segment1,
+<ol>
+<li>Next.js tries to find a folder named <code>segment1</code> inside <code>/app</code>.</li>
+<li>And then Next.js looks for <code>page.js</code> file inside that folder.</li>
+<li>Next.js passes what <code>page.js</code> component returns into <code>layout.js</code> of the same folder.
+<ul>
+<li>Or into <code>layout.js</code> of the parent's folder if there is no layout file in the same folder.
+<ul>
+<li>e.g. <code>/segment1/segment2/page.js</code> elements are passed into <code>/segment1/layout.js</code> because <code>/segment1/segment2/layout.js</code> does not exist.</li>
+</ul>
+</li>
+<li>For global layout file, elements returned by the component of the root <code>page.js</code> file are passed into the <code>{children}</code> argument.</li>
+<li>For local layout file, elements returned by the component of the local <code>page.js</code> file are passed into the <code>{prop.children}</code> argument.</li>
+</ul>
+</li>
+<li><code>layout.js</code> receives the <code>page.js</code> elements as <code>children</code> argument and renders it.</li>
+</ol>
+</li>
+</ul>
+<h3>Dynamic Routing</h3>
+<ul>
+<li>Instead of having a fixed route, a Dynamic Segment can be created by wrapping a folder's name in square brackets: [folderName].
+<ul>
+<li>e.g. [id] or [slug]</li>
+</ul>
+</li>
+<li>Dynamic Segments can be access from useRouter.</li>
+<li>e.g.<pre><code>import { useRouter } from 'next/router'
+
+export default function Page() {
+    const router = useRouter()
+    return &lt;p&gt;Post: {router.query.slug}&lt;/p&gt;
+}
+</code></pre>
+<ul>
+<li>Route	= pages/blog/[slug].js</li>
+<li>Example URL = /blog/a</li>
+<li><code>params</code> = { slug: 'a' }</li>
+</ul>
+</li>
+</ul>
+<h2>Navigation in Next.js</h2>
+<h3>Pages</h3>
+<ul>
+<li>In Next.js, a page is a React Component exported from a file in the pages directory.
+<ul>
+<li>Simply create a JS file under the pages directory, and the path to the file becomes the URL path.</li>
+</ul>
+</li>
+<li>Pages are associated with a route based on their file name. For example, in development,
+<ul>
+<li><code>pages/index.js</code> is associated with the / route.</li>
+<li><code>pages/posts/first-post.js</code> is associated with the /posts/first-post route.
+<ul>
+<li>e.g. pages/posts/first-post.js<pre><code>export default function FirstPost() {
+    return &lt;h1&gt;First Post&lt;/h1&gt;;
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><code>&lt;Link&gt;</code> Component</h3>
+<ul>
+<li>When linking between pages on websites, you use the <code>&lt;a&gt;</code> HTML tag.</li>
+<li>In Next.js, you can use the Link Component next/link to link between pages in your application.
+<ul>
+<li><code>&lt;Link&gt;</code> allows you to do client-side navigation and accepts props that give you better control over the navigation behavior.</li>
+</ul>
+</li>
+<li>Using <code>&lt;Link&gt;</code>
+<ul>
+<li>First, open pages/index.js, and import the Link component from next/link by adding this line at the top:<pre><code>import Link from 'next/link';
+</code></pre>
+</li>
+<li>And then replace <code>&lt;a href=&quot;&quot;&gt;</code> tag with <code>&lt;Link href=&quot;&quot;&gt;</code>.</li>
+</ul>
+</li>
+<li>This enables 'Single Page Application manuever' in Next.js, by having many pages, but to keep it as such using client side transitions only, not using <code>&lt;a&gt;</code> tag.</li>
+</ul>
+<hr>
+<h1>Next.js Styling</h1>
+<ul>
+<li>Global CSS: Simple to use and familiar for those experienced with traditional CSS, but can lead to larger CSS bundles and difficulty managing styles as the application grows.</li>
+<li>CSS Modules: Create locally scoped CSS classes to avoid naming conflicts and improve maintainability.</li>
+<li>Tailwind CSS: A utility-first CSS framework that allows for rapid custom designs by composing utility classes.</li>
+<li>Sass: A popular CSS preprocessor that extends CSS with features like variables, nested rules, and mixins.</li>
+<li>CSS-in-JS: Embed CSS directly in your JavaScript components, enabling dynamic and scoped styling.</li>
+</ul>
+<hr>
+<h1>Next.js Backend</h1>
+<h2>Next.js API route</h2>
+<ul>
+<li>API routes provide a solution to build your API with Next.js.</li>
+<li>Any file inside the folder pages/api is mapped to /api/* and will be treated as an API endpoint instead of a page.
+<ul>
+<li>They are server-side only bundles and won't increase your client-side bundle size.</li>
+</ul>
+</li>
+<li>e.g.
+<ul>
+<li>Create a new <code>route.js</code> file, instead of <code>page.js</code> file, inside the <code>/app/api</code> folder to use it as an API server.
+<ul>
+<li>/app/api/segment3/route.js</li>
+</ul>
+<pre><code>import { NextResponse } from &quot;next/server&quot;;
+
+export async function GET(){
+    return NextResponse.json({ message: &quot;Hello World&quot; });
+}
+</code></pre>
+</li>
+<li>(npm run dev) <code>https://localhost:3000/segment3/</code> returns a JSON object <code>{ &quot;message&quot; : &quot;Hello World&quot; }</code></li>
+</ul>
+</li>
+</ul>
+<h2>Next.js Is A Server</h2>
+<ul>
+<li>Next.js is considered as React Server Component by default.
+<ul>
+<li>React Server Component
+<ul>
+<li>Secure data</li>
+<li>Cookie header</li>
+<li><code>fetch()</code></li>
+<li>etc.</li>
+</ul>
+</li>
+<li>React Client Component
+<ul>
+<li><code>fetch()</code></li>
+<li><code>useState()</code></li>
+<li><code>useEffect()</code></li>
+<li><code>onClick()</code></li>
+<li><code>onChange()</code></li>
+<li><code>useRouter()</code></li>
+<li><code>useParams()</code></li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Therefore you can't use Client Component hooks with Next.js.
+<ul>
+<li>e.g. The code below won't work, shows ReactServerComponentsError instead.<pre><code>export default function RootLayout({children}) {
+    const [json, setJson] = useState([]);
+    useEffect(() =&gt; {
+        fetch.(&quot;http://localhost:9999/json&quot;)                // There is a JSON server running locally
+            .then((resp) =&gt; resp.json())
+            .then((result) =&gt; {
+                console.log(&quot;result&quot;, result);
+                setJson(result);
+            });
+    }, []);
+
+    return(
+        &lt;&gt;
+            &lt;h1&gt; Check your console to see the received JSON object. &lt;/h1&gt;
+            &lt;ul&gt;
+                {json.map((item)=&gt;{
+                    return (
+                        &lt;li key={item.id}&gt;
+                            &lt;Link href={&quot;/json-segments/&quot; + item.id}&gt;{item.title}&lt;/Link&gt;
+                        &lt;/li&gt;
+                    );
+                })};
+            &lt;/ul&gt;
+        &lt;/&gt;
+    );
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>Instead, if network communication is needed, use <code>async/await</code> without <code>useEffect()</code>.<pre><code>// REFACTORED: RootLayout() as an async function
+export default async function RootLayout({children}) {
+    
+    // REFACTORED: Discard useState() and useEffect()
+    // const [json, setJson] = useState([]);
+    // useEffect(() =&gt; {  }, []);
+    
+    // REFACTORED: use await on fetch() and resp.json()
+    const resp = await fetch.(&quot;http://localhost:9999/json&quot;)                // There is a JSON server running locally
+    const result = await resp.json();                
+
+(...)
+</code></pre>
+</li>
+<li>In order to use Client Component hooks anyway,
+<ul>
+<li>Add <code>&quot;use client&quot;;</code> at the top of the module code file (e.g. layout.js)</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

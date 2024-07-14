@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Study Note] Coursework: The Comprehensive Practice in Machine Learning - Part 4 | devfreedom.github.io</title>
+    <meta name="title" content="[Study Note] Coursework: The Comprehensive Practice in Machine Learning - Part 4 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Study Note❯,machine learning,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230128_1237_study-note_ML_OJT_04/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Study Note] Coursework: The Comprehensive Practice in Machine Learning - Part 4</h1>
+        <div class="text-center">Published on 28 January 2023 12:37 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Study Note❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Study Note❯</a>
+            
+            <a href="/tags/machine learning" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#machine learning</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/artificial-intelligence.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <p>See you again in next CompSci semester, with &quot;Artificial Intelligence 101&quot; which is even more dreading...</p>
+<h3>Genetic algorithm</h3>
+<ul>
+<li>&quot;Survival of the fittest&quot; principle
+<ul>
+<li>Genetic algorithm is introduced by John Holland and Christopher Langton, based on John Von Neumann's theoretic basis</li>
+<li>A metaheuristic inspired by the process of natural selection that belongs to the larger class of evolutionary algorithms (EA)</li>
+<li>Generates high-quality solutions to optimization and search problems by relying on biologically inspired operators</li>
+</ul>
+</li>
+<li>Operators
+<ul>
+<li>Crossover
+<ul>
+<li>Too many crossovers don't guarantee &quot;better&quot; solutions, just &quot;many&quot; solutions</li>
+</ul>
+</li>
+<li>Mutation
+<ul>
+<li>Diversifying the solutions so that local optima could be avoided</li>
+<li>Single-point mutation
+<ul>
+<li>Generating a random variable for each bit in a sequence, this random variable tells whether or not a particular bit will be flipped
+<ul>
+<li>Intentional data corruption</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Selection</li>
+</ul>
+</li>
+<li>Workflow
+<ul>
+<li>Requirements
+<ul>
+<li>A genetic representation of the solution domain</li>
+<li>A fitness function to evaluate the solution domain</li>
+</ul>
+</li>
+<li>Step 1. Define problem/solution/array-of-bits</li>
+<li>Step 2. Define chromosomes of the solution</li>
+<li>Step 3. Build a fitness function &quot;f(x)&quot;</li>
+<li>Step 4. Genetic manipulation (crossover, mutation, etc.)</li>
+<li>Step 5. Perform chromosome selection</li>
+<li>Step 6. Repeat generational process until a termination condition has been reached</li>
+<li>Fitness function evaluation</li>
+</ul>
+</li>
+</ul>
+<h3>Association rule learning</h3>
+<ul>
+<li>Finding a rule among elements within a given set of data
+<ul>
+<li>e.g. Analyzing customers' &quot;saved for later&quot; items</li>
+</ul>
+</li>
+<li>Frequent itemset
+<ul>
+<li>A set of items that is frequent in a subset</li>
+</ul>
+</li>
+<li>Infrequent itemset
+<ul>
+<li>A set of items that is not frequent in a subset</li>
+</ul>
+</li>
+<li>X → Y
+<ul>
+<li>The representation of an association rule
+<ul>
+<li>Y exists if X exists</li>
+<li>e.g.
+<ul>
+<li>X = [&quot;Boots&quot;, &quot;Sneakers&quot;, &quot;Oxford shoes&quot;]</li>
+<li>Y = [&quot;Insole&quot;, &quot;Polisher&quot;, &quot;Shoelaces&quot;]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>s(X⇒Y)
+<ul>
+<li>= support = n(X∪Y) / N = P(X∪Y)</li>
+<li>N = universal set = transaction</li>
+</ul>
+</li>
+<li>c(X⇒Y)
+<ul>
+<li>= confidence = n(X∪Y) / n(X) = P(Y|X)</li>
+</ul>
+</li>
+<li>Lift = P(Y|X) / P(Y) = P(X∪Y) / P(X)P(Y) = c(X⇒Y) / P(Y)
+<ul>
+<li>Lift(A, B) = c(A→B) / s(B)</li>
+<li>A lift value greater than 1 indicates that the rule body and the rule head appear more often together than expected
+<ul>
+<li>The occurrence of the rule body has a positive effect on the occurrence of the rule head.</li>
+<li>e.g. Buying a shoe polisher after buying boots is an &quot;improvement&quot; over just buying a shoe polisher only</li>
+</ul>
+</li>
+<li>If A and B are independent, then the lift value would be 1 which means &quot;no improvement&quot;</li>
+<li>A lift smaller than 1 indicates negative effect</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Apriori algorithm
+<ul>
+<li>An algorithm for frequent item set mining and association rule learning over relational databases</li>
+</ul>
+</li>
+</ul>
+<h3>Logistic regression analysis</h3>
+<ul>
+<li>Sigmoid function
+<ul>
+<li>Sigmoid(x) = 1 / (1+e<sup>-x</sup>)</li>
+<li>Sigmoid function converts a certain real number into 0~1 which is the range of probabilities</li>
+</ul>
+</li>
+<li>Generic regression analysis
+<ul>
+<li>y = w<sup>T</sup>x + b</li>
+</ul>
+</li>
+<li>Logistic regression analysis
+<ul>
+<li>sigmoid(x) = σ(y) = σ(w<sup>T</sup>x+b)</li>
+<li>Returns the output value ranging from 0 to 1</li>
+<li>LRA is about predicting the probability of either A or B</li>
+</ul>
+</li>
+<li>P(Y=1|x)
+<ul>
+<li>The probability if Y is true when x exists</li>
+<li>The probability of a 'positive' correlation</li>
+<li>= σ(w<sup>T</sup>x+b)</li>
+</ul>
+</li>
+<li>P(Y=0|x)
+<ul>
+<li>The probability if Y is false when x exists</li>
+<li>The probability of a 'negative' correlation</li>
+<li>1 - P(Y=1|x) = 1 / { σ(w<sup>T</sup>x+b) }</li>
+</ul>
+</li>
+<li>P(Y=1|x) / 1 - P(Y=1|x)
+<ul>
+<li>= odds ratio</li>
+<li>= e<sup>w<sup>t</sup>x+b</sup> = sigmoid function</li>
+</ul>
+</li>
+<li>ln(odds ratio) = w<sup>T</sup>x + b = generic regression</li>
+</ul>
+<h3>Time series analysis</h3>
+<ul>
+<li>Used when independent variables changes over time</li>
+<li>Auto-correlation
+<ul>
+<li>The relation where the past of a variable affects the future of the variable</li>
+</ul>
+</li>
+<li>x<sub>t</sub> = T<sub>t</sub> + S<sub>t</sub> + a<sub>t</sub>
+<ul>
+<li>Time series model</li>
+<li>T = Trend
+<ul>
+<li>The increasing or decreasing tendency of the data, without frequency in general</li>
+</ul>
+</li>
+<li>S = Seasonality</li>
+<li>a = Noise</li>
+<li>a<sub>t</sub> ~ N(0, σ)</li>
+</ul>
+</li>
+<li>Normality
+<ul>
+<li>Requirements
+<ul>
+<li>Average is flattened for any point in time &quot;t&quot;
+<ul>
+<li>E(Z<sub>t</sub>) = µ</li>
+</ul>
+</li>
+<li>Variance &quot;Var(Z<sub>t</sub>)&quot; is not dependent on the point in time &quot;t&quot;</li>
+<li>When there are two points in time &quot;t&quot; and &quot;s&quot;, the covariance &quot;Cov(Z<sub>t</sub>, Z<sub>s</sub>)&quot; is dependent on the lag (time difference) &quot;t-s&quot;, but not &quot;t&quot; or &quot;s&quot;</li>
+</ul>
+</li>
+<li>To achieve &quot;normality&quot; from &quot;anomaly with trend&quot;, differentiation is used</li>
+<li>Normality needs to be achieved to apply ARIMA model</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Auto-correlation function
+<ul>
+<li>A function that measures the relation between observed values of the lag &quot;k&quot;</li>
+<li>ρ<sub>k</sub> = Cor(y<sub>t</sub>, y<sub>t+k</sub>) / Var(y<sub>t</sub>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Partial auto-correlation function (PACF)
+<ul>
+<li>A function that measures the relation of y<sub>t</sub> and y<sub>t-k</sub>, except the lag &quot;k&quot;</li>
+</ul>
+</li>
+</ul>
+<h3>Machine learning model evaluation</h3>
+<ul>
+<li>Metrics
+<ul>
+<li>Confusion matrix
+<ul>
+<li>[ Predict = Y, Actual = Y ] = True positive (TP)</li>
+<li>[ Predict = Y, Actual = N ] = False positive (FP)</li>
+<li>[ Predict = N, Actual = Y ] = False negative (FN)</li>
+<li>[ Predict = N, Actual = N ] = True negative (TN)</li>
+<li>Accuracy = (TP + TN) / (TP + FP + FN + TN)</li>
+<li>Precision = TP / (TP + FP)</li>
+<li>Sensitivity = Recall = TP rate = TP / (TP + FN)</li>
+<li>Specificity = TN / (FP + TN)</li>
+<li>FN rate = FP / (FP + TN)</li>
+</ul>
+</li>
+<li>Receiver operating characteristic (ROC) chart
+<ul>
+<li>X-axis: FP rate</li>
+<li>Y-axis: TP rate</li>
+<li>If the ROC curve is closer to the top left corner, the model is better
+<ul>
+<li>Area under curve (AUC) needs to be greater than 0.5</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hold-out
+<ul>
+<li>Seperate testing data from the original data, and train the model using the rest (training data)</li>
+<li>Drawbacks
+<ul>
+<li>Test data is not diverse enough</li>
+<li>Model might be biased</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>K-fold cross validation
+<ul>
+<li>Split the data into N number of blocks, create N number of models, and then perform N number of tests</li>
+<li>Overcomes the drawbacks of hold-out method</li>
+<li>e.g. [Data 1, Data 2, Data 3]
+<ul>
+<li>Test Data 1 by using Model A, calculate the performance A<sub>1</sub></li>
+<li>Test Data 2 by using Model B, calculate the performance B<sub>2</sub></li>
+<li>Test Data 1 by using Model C, calculate the performance C<sub>3</sub></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

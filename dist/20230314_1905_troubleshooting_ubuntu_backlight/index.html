@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[트러블슈팅] 노트북에서 우분투 시작시 디스플레이 백라이트가 최대 또는 최소로 설정되는 증상 해결하기 | devfreedom.github.io</title>
+    <meta name="title" content="[트러블슈팅] 노트북에서 우분투 시작시 디스플레이 백라이트가 최대 또는 최소로 설정되는 증상 해결하기 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮트러블슈팅❯,우분투,리눅스,운영체제,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230314_1905_troubleshooting_ubuntu_backlight/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[트러블슈팅] 노트북에서 우분투 시작시 디스플레이 백라이트가 최대 또는 최소로 설정되는 증상 해결하기</h1>
+        <div class="text-center">Published on 14 March 2023 07:05 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮트러블슈팅❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮트러블슈팅❯</a>
+            
+            <a href="/tags/우분투" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#우분투</a>
+            
+            <a href="/tags/리눅스" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#리눅스</a>
+            
+            <a href="/tags/운영체제" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#운영체제</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/ubuntu-logo.png" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <p>노트북에서 우분투를 사용하려고 할 때, 하드웨어 구성마다 다르지만 일반적으로 우분투가 부팅될 때 노트북 액정의 백라이트 밝기가 100% 또는 0%로 시작되는 증상이 있습니다. 우분투 우측 상단 설정 팝업에서 백라이트 밝기 슬라이더를 움직이면 백라이트 밝기 조절 자체는 되지만, 내가 지정한 밝기가 저장되지 않고 다음 부팅시에는 최대값 또는 최소값으로 강제되는 증상입니다.</p>
+<p>이걸 해결하기 위해서 시도하는 방법들이 몇가지 있는데,</p>
+<ol>
+<li>
+<p>GRUB에서 GRUB_CMDLINE_LINUX_DEFAULT 설정값을 바꿔주는 방법</p>
+<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash acpi_backlight=vendor&quot;
+</code></pre>
+</li>
+<li>
+<p>xbacklight를 사용하는 방법 (이건 우분투의 경우 그래픽 서버가 X11에서 Wayland로 넘어가면서 무용지물이 됐습니다)</p>
+</li>
+<li>
+<p>후속작인 acpilight 및 각종 백라이트 조절 유틸리티들을 사용하는 방법</p>
+</li>
+</ol>
+<p>등이 있지만, 실제로 해보면 성공하는 경우가 거의 없습니다. 굉장히 짜증나지만 뭐... 사소한 하드웨어조차 직접 설정해주는 이 맛에 리눅스 쓰는거 아니겠습니까.</p>
+<p>한번 설정해둔 백라이트 밝기 설정값을 저장해서 다음 부팅시에도 사용하는게 정상적인 운영체제의 설계고 우분투도 설계는 그렇게 되어 있는걸로 알고 있습니다. 하지만 리눅스의 하드웨어 관리 체계가 다소 복잡하고, 리눅스 특유의 개방성으로 인해 하드웨어와의 호환성이 보장되지 않다 보니, 그 값이 부팅 과정에서 소실되거나, 사용되지 않거나, 아니면 하드웨어를 다시 인식하면서 우분투가 임의로 최대 밝기로 설정하는 버그로 추측됩니다. 그래서 이 호환성을 어렵게 찾아 만들어내느니 그냥 우분투가 시작될 때 적당한 수준의 밝기로 백라이트를 자동으로 낮추도록 예약 작업을 걸어줄 수는 있습니다. 단순하지만 확실한 반쪽짜리 해결책이라고 할 수 있겠네요.</p>
+<p>리눅스가 하드웨어에서 인식하는 백라이트 밝기 값은 우리가 일반적으로 생각하는 0~100% 범위의 값이 아닙니다. 그래서 일단은 내가 지정하고자 하는 백라이트 밝기의 실제 raw 데이터를 파악할 필요가 있습니다.</p>
+<ol>
+<li>
+<p>기본값으로 설정하기에 적당한 밝기로 노트북의 백라이트를 조절합니다.</p>
+</li>
+<li>
+<p>터미널을 열고 다음 명령어를 입력합니다. ####### 라고 표시된 자리에다가 AMD APU를 사용하는 노트북의 경우 <strong>amdgpu_bl0</strong>을, Nvidia GPU를 사용하는 노트북의 경우 <strong>nvidia_0</strong>을, Intel 내장 그래픽을 사용하는 노트북의 경우 <strong>acpi_video0</strong> 또는 <strong>intel_backlight</strong>를 입력해주면 됩니다.</p>
+<pre><code>$ cat /sys/class/backlight/#######/brightness
+</code></pre>
+</li>
+<li>
+<p>표시되는 숫자가 바로 현재 백라이트의 밝기 설정값입니다. 이 숫자를 기억하세요.</p>
+</li>
+</ol>
+<p>자, 이제 우분투가 시작될 때 백라이트 밝기를 오류값인 '최대값' 대신 내가 원하는 임의의 값으로 바꾸도록 예약 작업, 즉 cron job을 만들어줍시다.</p>
+<ol>
+<li>
+<p>터미널을 열고 루트 권한으로 crontab을 실행시켜줍니다.</p>
+<pre><code>$ sudo crontab -e
+</code></pre>
+</li>
+<li>
+<p>cron 목록 맨 마지막 줄에 다음 명령줄을 추가하고 저장하세요.</p>
+<pre><code>@reboot (sleep 10 ; echo 133 &gt; /sys/class/backlight/#######/brightness) &amp;
+</code></pre>
+</li>
+</ol>
+<p>위에서 언급했듯이 ####### 자리에는 본인 노트북에 장착된 그래픽 제조사에 맞는 값을 입력해주세요.</p>
+<p>sleep 뒤의 숫자는 부팅이 되고나서 이 작업을 실행하기까지 임의로 딜레이를 걸어주는 시간을 의미합니다. 우분투가 부팅될 때 백라이트 관련 그래픽 모듈이 가동되기도 전에 이 작업을 실행해버리면 백라이트 밝기는 변경될 수 없으므로, 잠시 기다려줄 필요가 있기 때문입니다. 숫자가 너무 작으면 방금 언급했듯이 백라이트가 변경되지 않는 문제가 발생하고, 숫자가 너무 크면 부팅이 되고 한참 뒤에 밝기가 바뀌는 현상이 생기므로, 3~15 정도의 적당한 값을 입력해보세요. 시행착오가 필요할 수 있습니다.</p>
+<p>echo 뒤의 숫자는 부팅시 변경할 기본 백라이트 밝기값입니다. 위에서 알아낸 백라이트 밝기 raw 데이터를 입력해주면 됩니다.</p>
+<p>crontab을 저장하고 나서 노트북을 껐다가 켜면, 이제는 우분투가 시작될 때 눈부신 최대 밝기 대신 내가 원하는 적당한 밝기로 바뀌는 것을 확인할 수 있습니다. 문제 해결!</p>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

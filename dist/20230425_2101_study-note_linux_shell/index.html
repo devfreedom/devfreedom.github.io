@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[필기] 리눅스 Bash shell에서 자주 사용하는 명령어 모음 | devfreedom.github.io</title>
+    <meta name="title" content="[필기] 리눅스 Bash shell에서 자주 사용하는 명령어 모음 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮필기❯,운영체제,리눅스,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230425_2101_study-note_linux_shell/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[필기] 리눅스 Bash shell에서 자주 사용하는 명령어 모음</h1>
+        <div class="text-center">Published on 25 April 2023 09:01 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮필기❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮필기❯</a>
+            
+            <a href="/tags/운영체제" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#운영체제</a>
+            
+            <a href="/tags/리눅스" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#리눅스</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/linux.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h2>파일 시스템 관련</h2>
+<h3>파일 및 디렉토리 정보 관련</h3>
+<ul>
+<li>pwd
+<ul>
+<li><strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory</li>
+<li>현재 작업을 위해 머무르고 있는 디렉토리의 절대경로를 출력하는 명령어</li>
+</ul>
+</li>
+<li>ls
+<ul>
+<li><strong>l</strong>ist <strong>s</strong>egment</li>
+<li>파일 및 디렉토리 목록을 표시하는 명령어</li>
+<li>사용할 수 있는 옵션
+<ul>
+<li>-a : 숨김 파일 포함, 모든 파일과 디렉토리 출력 (<strong>a</strong>ll)</li>
+<li>-l : 권한을 포함한 상세 정보를 함께 출력 (<strong>l</strong>ong)</li>
+<li>-t : 수정한 시간 순서대로 정렬해서 출력 (<strong>t</strong>imedate)</li>
+<li>-r : 역순으로 정렬해서 출력 (<strong>r</strong>everse)</li>
+<li>-R : 하위 디렉토리를 포함하는 전체 목록 출력 (<strong>R</strong>ecursive)</li>
+<li>-S : 파일 크기 순서대로 정렬해서 출력 (<strong>S</strong>ize)</li>
+<li>-h : 용량을 블록 단위가 아닌 사람이 읽을 수 있는 단위로 함께 출력 (<strong>h</strong>uman readable)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ll
+<ul>
+<li><code>ls -l</code>과 동일함</li>
+</ul>
+</li>
+<li>cd
+<ul>
+<li><strong>c</strong>hange <strong>d</strong>irectory</li>
+<li>작업 디렉토리를 변경하는 명령어</li>
+<li>사용할 수 있는 파라미터
+<ul>
+<li>/ : 루트 디렉토리</li>
+<li>.. : 상위 디렉토리</li>
+<li>
+<ul>
+<li>: 바로 전에 위치했던 디렉토리</li>
+</ul>
+</li>
+<li>~ : 홈 디렉토리</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>파일 및 디렉토리 조작 관련</h3>
+<ul>
+<li>touch
+<ul>
+<li>파일을 생성함
+<ul>
+<li>파일이 존재하지 않을 경우, 해당 이름으로 빈 문서를 생성</li>
+<li><code>touch [파일명]</code>
+<ul>
+<li>e.g. <code>touch file.txt</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>파일의 timestamp를 변경함
+<ul>
+<li>파일이 존재할 경우, 해당 파일의 datetime을 변경</li>
+<li>옵션을 사용하지 않을 경우, 파일의 atime/ctime/mtime을 현재 시간으로 갱신함</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>mkdir
+<ul>
+<li><strong>m</strong>a<strong>k</strong>e <strong>dir</strong>ectory</li>
+<li>디렉토리를 생성하는 명령어
+<ul>
+<li><code>mkdir [디렉토리명]</code></li>
+<li>사용할 수 있는 옵션
+<ul>
+<li>-p : 하위 디렉토리들을 생성함 (<strong>p</strong>arent directories if required)
+<ul>
+<li>e.g. <code>mkdir -p /home/user/Documents/test1/test2/test3</code></li>
+<li>test3 이라는 이름의 디렉토리를 만들기 위해서 상위 디렉토리인 test1과 test2도 함께 생성</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>mv
+<ul>
+<li><strong>m</strong>o<strong>v</strong>e</li>
+<li>파일 및 디렉토리 이름을 변경함
+<ul>
+<li><code>mv [기존의 파일 또는 디렉토리] [새로운 파일 또는 디렉토리]</code></li>
+</ul>
+</li>
+<li>파일 및 디렉토리를 이동함
+<ul>
+<li><code>mv [파일 또는 디렉토리] [이동할 위치]</code>
+<ul>
+<li>e.g. <code>mv /home/user/Downloads/file.txt /home/user/Documents</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>cp
+<ul>
+<li><strong>c</strong>o<strong>p</strong>y</li>
+<li>파일 및 디렉토리를 복사하는 명령어</li>
+<li><code>cp [파일 또는 디렉토리] [복사할 위치 (새로운 파일명으로 지정하는 것도 가능)]</code>
+<ul>
+<li>e.g. <code>cp /home/user/Downloads/original.txt /home/user/Documents/clone.txt</code></li>
+</ul>
+</li>
+<li>사용할 수 있는 옵션
+<ul>
+<li>-r : 하위 디렉토리에 재귀적으로 모두 적용함 (<strong>r</strong>ecursive)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>rm
+<ul>
+<li><strong>r</strong>e<strong>m</strong>ove</li>
+<li>파일 및 디렉토리를 삭제함</li>
+<li>사용할 수 있는 옵션
+<ul>
+<li>-r : 하위 디렉토리에 재귀적으로 모두 적용함 (<strong>r</strong>ecursive)</li>
+<li>-f : 권한이 없는 파일이나 디렉토리도 강제로 삭제함 (<strong>f</strong>orce)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>파일 내용 관련</h3>
+<ul>
+<li>cat
+<ul>
+<li>con<strong>cat</strong>enate</li>
+<li>파일(들)의 내용을 순서대로 stdout으로써 출력함
+<ul>
+<li><code>cat [파일명1] ([파일명2] ...)</code></li>
+</ul>
+</li>
+<li>파일의 내용을 출력하고 그것을 pipe/redirection로 연계해서 입력으로써 활용 가능
+<ul>
+<li>출력된 내용을 그대로 새 파일에 입력하기 (=복사와 같은 효과)
+<ul>
+<li>e.g. <code>cat original.txt &gt; clone.txt</code></li>
+</ul>
+</li>
+<li>출력된 내용들을 하나의 파일로 합치기
+<ul>
+<li>e.g. <code>cat first_part.txt second_part.txt &gt; merged.txt</code></li>
+<li>파일 이름 대신 <code>-</code>을 파라미터로 사용하면 stdin으로써 내용을 입력할 수 있음
+<ul>
+<li>e.g. <code>cat original.txt - &gt; user_input_is_merged.txt</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>echo
+<ul>
+<li><code>echo [텍스트 또는 (환경)변수]</code></li>
+<li>지정된 문자열의 내용을 그대로 출력하는 명령어 (=echo)
+<ul>
+<li>e.g. <code>echo Hello World!</code></li>
+<li>e.g. <code>echo $SHELL</code></li>
+</ul>
+</li>
+<li>출력된 내용을 pipe/redirection로 연계해서 입력으로써 활용 가능</li>
+</ul>
+</li>
+<li>grep
+<ul>
+<li><strong>g</strong>lobal <strong>r</strong>egular <strong>e</strong>xpression <strong>p</strong>rint</li>
+<li><code>grep [패턴] [파일명]</code></li>
+<li>지정한 패턴(문자열/정규표현식/다중패턴)을 파일의 내용에서 찾아내는 명령어
+<ul>
+<li>e.g. <code>grep 'important' document.txt</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>sort</li>
+</ul>
+<h3>장치/디스크/파티션 관련</h3>
+<ul>
+<li>mount
+<ul>
+<li>장치를 마운트하는 명령어</li>
+<li>사용할 수 있는 파라미터
+<ul>
+<li>마운트할 디바이스 주소와 마운트할 목표 디렉터리
+<ul>
+<li>e.g. <code>sudo mount /dev/sdb1 /mnt/usb</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>df
+<ul>
+<li>디스크의 용량을 출력하는 명령어</li>
+<li>사용할 수 있는 옵션
+<ul>
+<li>-h : 용량을 블록 단위가 아닌 사람이 읽을 수 있는 단위로 함께 출력 (<strong>h</strong>uman readable)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>du
+<ul>
+<li>디렉토리 내부의 파일과 디렉토리의 용량을 출력하는 명령어 (<strong>d</strong>isk <strong>u</strong>sage)</li>
+<li>사용할 수 있는 옵션
+<ul>
+<li>-h : 용량을 블록 단위가 아닌 사람이 읽을 수 있는 단위로 함께 출력 (<strong>h</strong>uman readable)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ln
+<ul>
+<li>심볼릭 링크를 생성함 (sym<strong>l</strong>i<strong>n</strong>k)</li>
+<li>사용할 수 있는 옵션
+<ul>
+<li>-s</li>
+</ul>
+</li>
+<li>사용할 수 있는 파라미터
+<ul>
+<li>원본 이름과 링크 이름
+<ul>
+<li>e.g. <code>ln -s /test/original /test/symlink</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>프로세스 관련</h2>
+<ul>
+<li>ps
+<ul>
+<li>현재 실행중인 프로세스의 정보를 출력하는 명령어</li>
+<li>사용할 수 있는 옵션
+<ul>
+<li><code>aux</code> = 모든 프로세스의 세부적인 정보를 출력</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>kill
+<ul>
+<li>사용할 수 있는 옵션
+<ul>
+<li>-9 : 해당 프로세스를 당장 종료하라는 신호를 보냄 = SIGKILL(<strong>9</strong>)</li>
+</ul>
+</li>
+<li>사용할 수 있는 파라미터
+<ul>
+<li>PID 또는 processname: 특정 프로세스를 지정함</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[CTRL+C 키]
+<ul>
+<li>프로세스를 종료함</li>
+</ul>
+</li>
+<li>[CTRL+Z 키]
+<ul>
+<li>프로세스를 일시정지함 (suspend)</li>
+<li><code>fg % 1</code> 명령어를 사용해서 프로세스 재개 가능</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>네트워크 관련</h2>
+<ul>
+<li>ipconfig
+<ul>
+<li><strong>IP</strong> <strong>config</strong>uration</li>
+<li>IP주소, 서브넷 마스크, 기본 게이트웨이 주소 등의 정보들을 출력하는 명령어</li>
+</ul>
+</li>
+<li>netstat
+<ul>
+<li><strong>net</strong>work <strong>stat</strong>us</li>
+<li>네트워크 상태를 확인함 (net-tools 설치 필요)</li>
+<li>사용할 수 있는 옵션
+<ul>
+<li>-nap : 열려있는 모든 포트 출력
+<ul>
+<li><code>-nap | grep LISTEN</code> : LISTEN중인 포트 출력</li>
+<li><code>-nap | grep 포트번호</code> : 특정 포트의 상태 확인</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>명령어 다중 연결 및 조작 관련</h2>
+<h3>리다이렉션</h3>
+<ul>
+<li>
+<p>출력 리다이렉션</p>
+<ul>
+<li><code>&gt;</code>
+<ul>
+<li><code>[명령어] &gt; [파일]</code></li>
+<li>해당 명령어의 출력을 특정 파일에다가 덮어씌우기(overwrite)</li>
+</ul>
+</li>
+<li><code>&gt;&gt;</code>
+<ul>
+<li><code>[명령어] &gt;&gt; [파일]</code></li>
+<li>해당 명령어의 출력을 특정 파일에다가 덧붙이기(append)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>입력 리다이렉션</p>
+<ul>
+<li><code>&lt;</code>
+<ul>
+<li><code>[명령어] &lt; [파일]</code></li>
+<li>특정 파일을 해당 명령어의 입력으로써 사용함</li>
+</ul>
+</li>
+<li><code>&lt;&lt;</code>
+<ul>
+<li><strong>here</strong> <strong>doc</strong>cument</li>
+<li><code>[명령어] &lt;&lt; [heredoc 입력을 종료하는 임의의 문자열을 지정해줌]</code></li>
+<li>'입력 종료를 위해 지정한 임의의 문자열'을 입력하기 전까지, 여러 줄의 텍스트를 입력받을 수 있음</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>파이프</h3>
+<ul>
+<li><code>|</code>
+<ul>
+<li><code>[명령어] | [명령어]</code></li>
+<li>앞 명령어의 결과를 뒤에 나오는 명령어의 입력으로써 사용함</li>
+<li>e.g. `ls | grep mnt'
+<ul>
+<li>= 파일 및 디렉터리 목록을 출력(ls)한 다음, 그 목록에서 mnt라는 문자열을 포함하는 파일 및 디렉터리를 찾아냄(grep)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>&amp;&amp;</code>
+<ul>
+<li><code>[명령어] &amp;&amp; [명령어]</code></li>
+<li>명령어들을 순차적으로 연달아서 실행함</li>
+</ul>
+</li>
+<li><code>;</code>
+<ul>
+<li><code>[명령어] ; [명령어]</code></li>
+<li>전자의 성공 여부와 상관없이 후자가 실행됨</li>
+</ul>
+</li>
+<li><code>&amp;</code>
+<ul>
+<li><code>[명령어] &amp;</code></li>
+<li>해당 명령어를 백그라운드 프로세스로써 실행함</li>
+</ul>
+</li>
+<li>응용
+<ul>
+<li><code>2&gt;&amp;1</code>
+<ul>
+<li>실행된 명령이 출력한 오류 메세지를 저장하는 방법
+<ul>
+<li>e.g. <code>[명령어] &gt; error.txt 2&gt;&amp;1</code></li>
+</ul>
+</li>
+<li>2 : 오류를 출력하도록 함</li>
+<li><code>&gt;</code> : 리다이렉션</li>
+<li>&amp;1 : 파일로 출력하도록 함</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3>추가해야 할 내용</h3>
+<p>cut
+textutil
+diff
+wc
+aspell
+tr
+find</p>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

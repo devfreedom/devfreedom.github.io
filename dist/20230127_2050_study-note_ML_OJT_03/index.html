@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Study Note] Coursework: The Comprehensive Practice in Machine Learning - Part 3 | devfreedom.github.io</title>
+    <meta name="title" content="[Study Note] Coursework: The Comprehensive Practice in Machine Learning - Part 3 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Study Note❯,machine learning,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230127_2050_study-note_ML_OJT_03/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Study Note] Coursework: The Comprehensive Practice in Machine Learning - Part 3</h1>
+        <div class="text-center">Published on 27 January 2023 08:50 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Study Note❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Study Note❯</a>
+            
+            <a href="/tags/machine learning" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#machine learning</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/artificial-intelligence.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h3>Word2Vec</h3>
+<ul>
+<li>Natural language processing technique that overcomes the limitation of bag-of-words model
+<ul>
+<li>BoW model doesn't reflect distance and relations between words</li>
+</ul>
+</li>
+<li>Represents each distinct word with a particular list of numbers called a vector</li>
+<li>Produces word embeddings in a specified size</li>
+<li>e.g. [&quot;The quick brown fox jumps over the lazy dog.&quot;]
+<ul>
+<li>The
+<ul>
+<li>[&quot;the&quot;, &quot;quick&quot;]</li>
+<li>[&quot;the&quot;, &quot;brown&quot;]</li>
+</ul>
+</li>
+<li>Quick
+<ul>
+<li>[&quot;quick&quot;, &quot;the&quot;]</li>
+<li>[&quot;quick&quot;, &quot;brown&quot;]</li>
+<li>[&quot;quick&quot;, &quot;fox&quot;]</li>
+</ul>
+</li>
+<li>Brown
+<ul>
+<li>[&quot;brown&quot;, &quot;the&quot;]</li>
+<li>[&quot;brown&quot;, &quot;quick&quot;]</li>
+<li>[&quot;brown&quot;, &quot;fox&quot;]</li>
+<li>[&quot;brown&quot;, &quot;jumps&quot;]</li>
+</ul>
+</li>
+<li>...</li>
+<li>Skip-gram
+<ul>
+<li>A generalization of n-grams in which the components (typically words) need not be consecutive in the text under consideration, but may leave gaps that are skipped over</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Input layer → hidden layer → output layer
+<ul>
+<li>= x<sub>1</sub>, x<sub>2</sub>, ... x<sub>V</sub> → h<sub>1</sub>, h<sub>2</sub>, ... h<sub>N</sub> → y<sub>1</sub>, y<sub>2</sub>, ... y<sub>V</sub></li>
+<li>= V-dim → N-dim → C×V-dim</li>
+<li>W<sub>(V×N)</sub>={w<sub>ki</sub>} → W'<sub>(N×V)</sub>={w'<sub>ij</sub>}
+<ul>
+<li>The input or the context word is a one-hot-encoded vector of size V
+<ul>
+<li>V = dictionary size</li>
+</ul>
+</li>
+<li>The hidden layer contains N neurons and the output is again a V length vector with the elements being the softmax values
+<ul>
+<li>N = user-defined value</li>
+</ul>
+</li>
+<li>W<sub>(V×N)</sub> = hidden layer, weight matrix</li>
+<li>W'<sub>(N×V)</sub> = word vector, lookup table</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Topic modelling</h3>
+<ul>
+<li>Statistical deduction algorithm for finding a hidden topic structure</li>
+<li>Words → topics → documents → text corpus
+<ul>
+<li>= Three-stage hierarchical Bayesian model</li>
+<li>A topic has a set of words</li>
+<li>A document is made of multiple words</li>
+<li>A document has one or more topics</li>
+<li>Words are a variable that indicates a specific topic</li>
+<li>e.g.
+<ul>
+<li>words = [&quot;function&quot;, &quot;variable&quot;, &quot;operator&quot;, &quot;iterator&quot;, &quot;method&quot;, &quot;class&quot;, &quot;encapsulation&quot;, &quot;abstraction&quot;]</li>
+<li>→ topic = &quot;programming&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>β<sub>ik</sub>
+<ul>
+<li>= the probability of the word &quot;W<sub>i</sub>&quot; to reflect a certain possible topic &quot;k&quot;
+<ul>
+<li>The probability of the topic &quot;Z<sub>k</sub>&quot; to generate a certain set of words is,
+<ul>
+<li>Z<sub>k</sub> = Σ(β<sub>ik</sub>×W<sub>i</sub>)
+<ul>
+<li>We can calculate the probability of a specific document to be generated as well</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>e.g.
+<ul>
+<li>Document 1 = [&quot;operator&quot;, &quot;method&quot;, &quot;abstraction&quot;]</li>
+<li>Document 2 = [&quot;function&quot;, &quot;operator&quot;, &quot;method&quot;]</li>
+<li>Document 3 = [&quot;operator&quot;, &quot;probability&quot;, &quot;sum&quot;]</li>
+<li>Topic 1 = programming = [&quot;function&quot;, &quot;operator&quot;, &quot;method&quot;, &quot;abstraction&quot;]</li>
+<li>Topic 2 = mathematics = [&quot;function&quot;, &quot;operator&quot;, &quot;probability&quot;, &quot;sum&quot;]</li>
+<li>Topics have different weights in the documents</li>
+<li>What if we don't know what the topic is?
+<ul>
+<li>We have to deduct the topics from the documents</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Latent dirichlet allocation (LDA)
+<ul>
+<li>A generative statistical model that explains a set of observations through unobserved groups, and each group explains why some parts of the data are similar</li>
+<li>Premise
+<ul>
+<li>There are &quot;k&quot; numbers of topics</li>
+<li>There is an &quot;i&quot;th word &quot;W<sub>ik</sub></li>
+<li>There is a topic vector &quot;Θ&quot; in a certain document</li>
+<li>β<sub>ik</sub> = The weight/probability of the topic to generate a certain word</li>
+<li>Z<sub>ik</sub> = The topic &quot;k&quot; of the &quot;i&quot;th word</li>
+<li>W<sub>ik</sub> = The word that indicates the topic &quot;k&quot; of the &quot;i&quot;th word</li>
+</ul>
+</li>
+<li>Extract the topic &quot;Z&quot; from the topics distribution Θ</li>
+<li>Generate the word &quot;w&quot; with β</li>
+<li>α → corpus = M = [ → Θ → document = N [ → z → w ] ]</li>
+</ul>
+</li>
+</ul>
+<h3>Random forest &amp; AdaBoost</h3>
+<ul>
+<li><strong>Ensemble learning</strong>
+<ul>
+<li>The use of multiple learning algorithms to obtain better predictive performance than could be obtained from any of the constituent learning algorithms alone</li>
+</ul>
+</li>
+<li><strong>Bootstrap aggregating (bagging)</strong>
+<ul>
+<li>Using bootstrapped training data sets for the same algorithm</li>
+<li>A bootstrapped set is created by selecting from original training data set with replacement
+<ul>
+<li>A bootstrap set may contain a given example zero, one, or multiple times.</li>
+</ul>
+</li>
+<li>Given a training set X = x1, ..., xn with responses Y = y1, ..., yn, bagging repeatedly (B times) selects a random sample with replacement of the training set and fits trees to such samples</li>
+<li>e.g.
+<ul>
+<li>Sample data 1 → (training) → weak model A</li>
+<li>Sample data 2 → (training) → weak model B</li>
+<li>Sample data 3 → (training) → weak model C</li>
+<li>Weak model A, B, C → (majority voting) → strong model</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Boosting</strong>
+<ul>
+<li>An ensemble meta-algorithm for primarily reducing bias, and also variance in supervised learning, and a family of machine learning algorithms that convert weak learners to strong ones</li>
+<li>Iteratively learning weak classifiers with respect to a distribution and adding them to a final strong classifier
+<ul>
+<li>When they are added, they are weighted in a way that is related to the weak learners' accuracy</li>
+<li>After a weak learner is added, the data weights are readjusted, known as &quot;re-weighting&quot;</li>
+</ul>
+</li>
+<li>Taking errors into account by weighting lower-accuracy models</li>
+<li>e.g.
+<ul>
+<li>Weaker sample data 1 → (weighted re-sampling, training) → weak model A</li>
+<li>Sample data 2 → (training) → weak model B</li>
+<li>Sample data 3 → (training) → weak model C</li>
+<li>Weak model A, B, C → (weighted voting) → strong model</li>
+</ul>
+</li>
+<li>AdaBoost
+<ul>
+<li>Statistical classification meta-algorithm</li>
+<li>Subsequent weak learners are tweaked in favor of those instances misclassified by previous classifiers</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Random forest</strong>
+<ul>
+<li>An ensemble learning method for classification, regression and other tasks that operates by constructing a multitude of decision trees at training time</li>
+<li>Using &quot;decision tree&quot; method for bootstrap aggregation</li>
+<li>Used for classifier, regression analysis, cluster analysis</li>
+<li>Less impact from noise</li>
+<li>Possible overfitting issue if the sample data is not big enough</li>
+</ul>
+</li>
+</ul>
+<h3>Social network analysis (SNA)</h3>
+<ul>
+<li>The process of investigating social structures through the use of networks and graph theory</li>
+<li>Network structure
+<ul>
+<li>Node
+<ul>
+<li>Attributes: color, shape, size, etc.</li>
+</ul>
+</li>
+<li>Link/edge
+<ul>
+<li>Attributes: thickness (connection strength)</li>
+<li>Directional interaction</li>
+<li>Non-directional interaction</li>
+</ul>
+</li>
+<li>Degree
+<ul>
+<li>The number of directional links that a certain node has</li>
+<li>→ indegree → node → outdegree →</li>
+<li>← outdegree ← node ← indegree ←</li>
+</ul>
+</li>
+<li>Density
+<ul>
+<li>= the sum of all node's indegree and outdegree count ÷ the number of cases of all possible links</li>
+<li>more links, higher density</li>
+</ul>
+</li>
+<li>Reachability
+<ul>
+<li>The possibility if node A can reach to node B, either directly or indirectly</li>
+<li>Reachability is either 0 (impossible) or 1 (possible)</li>
+</ul>
+</li>
+<li>Component
+<ul>
+<li>A group of nodes that are internally reachable</li>
+</ul>
+</li>
+<li>Centrality
+<ul>
+<li>Closeness centrality</li>
+<li>Betweenness centrality</li>
+<li>Eigenvector centrality</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Combining machine learning models</h3>
+<ul>
+<li>Practice 1. Naive Bayes + TF-IDF</li>
+<li>Practice 2. Random forest + TF-IDF</li>
+<li>Practice 3. Random forest + Word2Vec + Document2Vec</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Dev Diary] 120 Days of WebDev - 1. HTML/CSS Essentials | devfreedom.github.io</title>
+    <meta name="title" content="[Dev Diary] 120 Days of WebDev - 1. HTML/CSS Essentials | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Dev Diary❯,web development,front-end,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230515_2132_dev-diary_120webdev_01_html_css/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Dev Diary] 120 Days of WebDev - 1. HTML/CSS Essentials</h1>
+        <div class="text-center">Published on 15 May 2023 09:32 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Dev Diary❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Dev Diary❯</a>
+            
+            <a href="/tags/web development" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#web development</a>
+            
+            <a href="/tags/front-end" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#front-end</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/html-css-js-logo.png" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>1. HTML</h1>
+<h2>1-1. HTML Structure Boilerplate</h2>
+<pre><code>&lt;!-- Indentation convention is 2 spaces --&gt;
+
+&lt;!DOCTYPE html&gt;                               &lt;!-- Declare DOCTYPE as HTML5 --&gt;
+&lt;html&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;&gt;                  &lt;!-- Set character encoding --&gt;
+      &lt;title&gt; Title goes here &lt;/title&gt;
+      &lt;script async src=&quot;script.js&quot;&gt;          &lt;!-- DO NOT put this after the body tag waiting for DOM elements. use async/defer instead! --&gt;
+      &lt;style&gt;&lt;/style&gt;                         &lt;!-- [Optional] internal CSS goes here --&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3>Naming Convention for IDs and Classes</h3>
+<ul>
+<li>lowercase, with hyphens
+<ul>
+<li>Most common</li>
+<li><a href="https://html.spec.whatwg.org/">HTML standard</a></li>
+<li>Optional: Use two hyphens to indicate the parent-child relationship
+<ul>
+<li>e.g. <code>&lt;div class=&quot;post-image--caption&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>lowercase, with underscores
+<ul>
+<li><a href="https://en.bem.info/methodology/naming-convention/">BEM style</a></li>
+<li>Block, element, modifier
+<ul>
+<li><code>block-name__elem-name_mod-name_mod-val</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>camelCase
+<ul>
+<li>Least common</li>
+<li>To match with JavaScript naming convention</li>
+<li>CSS attribute selectors are case sensitive</li>
+</ul>
+</li>
+</ul>
+<h2>1-2. HTML DOM Node Structure Example</h2>
+<pre><code>                                        [DOCUMENT NODE]
+                                               │
+                                          [ROOT NODE]
+                           ┌───────────────────┴────────────────────┐
+                 [ELEMENT NODE (PARENT)]                       [ELEMENT NODE]
+                     [ATTRIBUTE NODE]                         [ATTRIBUTE NODE]
+            ┌──────────────┴───────────────────┐ 
+[ELEMENT NODE (CHILD/SIBLING)]     [ELEMENT NODE (CHILD/SIBLING)]
+      [ATTRIBUTE NODE]                   [ATTRIBUTE NODE]
+</code></pre>
+<h3>The Difference Between HTML Attribute and HTML Property</h3>
+<ul>
+<li>HTML attribute = Additional values that provide additional information about HTML elements</li>
+<li>HTML property = The equivalent of HTML attribute when it comes to HTML DOM elements</li>
+<li>Therefore HTML properties are dynamic and live, can be changed on-air, while HTML attributes are static.</li>
+</ul>
+<h2>1-3. Semantic Tag</h2>
+<h3>What is &quot;Semantic Tag&quot;?</h3>
+<ul>
+<li>The word &quot;semantic&quot; means &quot;of or relating to the meanings of words and phrases&quot;.</li>
+<li>Semantic tag is, basically a tag that indicates its meaning as well.
+<ul>
+<li>Normally HTML tags have their roles as its name.
+<ul>
+<li>e.g. <code>&lt;div&gt;</code> tag means it is meant to &quot;divide&quot; an area.</li>
+<li>However we don't know what <code>&lt;div&gt;</code> tag divides the area &quot;for&quot;.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Semantic tag conveys the meaning of the tag by itself.
+<ul>
+<li>So that both human and machine can recognize the purposed use of the tag more easily.</li>
+<li>e.g. <code>&lt;header&gt;</code> tag means the area is meant to be the header of the page.</li>
+</ul>
+</li>
+</ul>
+<h3>Semantic Tag Example</h3>
+<pre><code>&lt;header&gt;                    &lt;!-- header --&gt;
+  &lt;nav&gt;                     &lt;!-- navigation menu --&gt;
+  &lt;/nav&gt;                 
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;section&gt;                 &lt;!-- indicates the section --&gt;
+    &lt;h1&gt;lorem ipsum&lt;/h1&gt;
+      &lt;p&gt;lorem ipsum&lt;/p&gt;
+    &lt;aside&gt;                 &lt;!-- indicates the sidebar or call-out box --&gt;
+      &lt;p&gt;lorem ipsum&lt;/p&gt;
+    &lt;/aside&gt;
+  &lt;/section&gt;
+  &lt;article&gt;                 &lt;!-- indicates the article --&gt;
+    &lt;h2&gt;lorem ipsum&lt;/h2&gt;
+  &lt;/article&gt;
+  &lt;article&gt;                 &lt;!-- indicates the article --&gt;
+    &lt;h2&gt;lorem ipsum&lt;/h2&gt;          
+  &lt;/article&gt;
+&lt;footer&gt;                    &lt;!-- footer --&gt;
+&lt;/footer&gt;
+</code></pre>
+<ul>
+<li>In order to support legacy web browsers like IE9 which cannot recognize semantic tags, additional &quot;role&quot; property is required.
+<ul>
+<li>e.g. <code>&lt;main role=&quot;main&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h2>1-4. <code>&lt;meta&gt;</code> tag</h2>
+<p><code>&lt;meta&gt;</code> tag represents metadata that cannot be represented by other relevant HTML elements.</p>
+<ul>
+<li>If <code>name</code> attribute is set, the <code>&lt;meta&gt;</code> element provides document-level metadata, applied to the whole page.
+<ul>
+<li>e.g. <code>&lt;meta name=&quot;viewport&quot;&gt;</code></li>
+</ul>
+</li>
+<li>If <code>charset</code> attribute is set, the <code>&lt;meta&gt;</code> element is a charset declaration, giving the character encoding in which the document is encoded.
+<ul>
+<li>e.g. <code>&lt;meta charset=&quot;utf-8&quot;&gt;</code></li>
+</ul>
+</li>
+<li>Attributes
+<ul>
+<li>charset</li>
+<li>content</li>
+<li>http-equiv</li>
+<li>itemprop</li>
+</ul>
+</li>
+</ul>
+<h3>Viewport</h3>
+<p>You can control the viewport's size and shape by using <code>&lt;meta&gt;</code> tag.</p>
+<ul>
+<li>Boilerplate
+<ul>
+<li><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>2. CSS</h1>
+<h2>2-1. CSS selector</h2>
+<pre><code>h1 { color: blue; }                // tag type selector
+.element-class { color: green }    // class selector
+#element-id { color: black }       // id selector 
+</code></pre>
+<h3>Element selectors</h3>
+<ul>
+<li><code>element</code></li>
+<li><code>element.class</code>
+<ul>
+<li>Selects all elements with specified class</li>
+<li>Not to be confused with <code>element .class</code> which selects descendants of the element, that have specified class.
+<ul>
+<li>e.g. <code>element.class</code><pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;h1 class=&quot;item&quot;&gt;Hello&lt;/h1&gt;
+    &lt;h2 class=&quot;item&quot;&gt;World&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class=&quot;item&quot;&gt;
+    &lt;h1&gt;Everyone&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+    div.item { color: blue; }
+    // This selects &lt;div&gt;s with 'item' class only, among all &lt;div&gt;s.
+    // This selects &lt;div class=&quot;item&quot;&gt;.
+    // Therefore only 'Everyone' is blue.
+&lt;/style&gt;
+</code></pre>
+</li>
+<li>e.g. <code>element .class</code><pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;h1 class=&quot;item&quot;&gt;Hello&lt;/h1&gt;
+    &lt;h2 class=&quot;item&quot;&gt;World&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class=&quot;item&quot;&gt;
+    &lt;h1&gt;Everyone&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+    div .item { color: blue; }
+    // This selects child elements with 'item' class, from all &lt;div&gt;s.
+    // This selects &lt;h1 class=&quot;item&quot;&gt; and &lt;h2 class=&quot;item&quot;&gt;.
+    // Therefore 'Hello' and 'World' are blue.
+&lt;/style&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>element1, element2</code> selector
+<ul>
+<li>Selects all <code>element1</code> elements and all <code>element2</code> elements</li>
+<li>e.g. <code>.create-buttons, .delete-buttons</code></li>
+</ul>
+</li>
+</ul>
+<h3>Descendant elements selectors</h3>
+<ul>
+<li><code>ancestor-element decendant-elements</code> selector
+<ul>
+<li>Selects all decendant elements inside the ancestor element, regardless of DOM nesting</li>
+<li>e.g. <code>article p { font-family: sans-serif; }</code></li>
+</ul>
+</li>
+<li><code>direct-ancestor-element &gt; direct-descendant-elements</code> selector
+<ul>
+<li>Selects all directly-nested decendant elements of the ancestor, which are not wrapped in other DOM elements</li>
+<li>e.g. <code>nav &gt; .menu-items { font-weight: bold; }</code></li>
+</ul>
+</li>
+</ul>
+<h3>Sibling element selectors</h3>
+<ul>
+<li><code>sibling-element ~ all-sibling-elements</code> selector</li>
+<li><code>sibling-element + adjacent-sibling-only-element</code> selector</li>
+</ul>
+<h3>Child element selectors</h3>
+<ul>
+<li>Uses pseudo-class to select childeren of specific order and position</li>
+<li><code>parent-element child-element:first-child</code> selector</li>
+<li><code>parent-element child-element:last-child</code> selector</li>
+<li><code>parent-element child-element:nth-child(odd)</code> selector</li>
+<li><code>parent-element child-element:nth-child(even)</code> selector</li>
+<li><code>parent-element child-element:nth-child(n)</code> selector</li>
+</ul>
+<h3>Attribute selectors</h3>
+<ul>
+<li><code>[attribute]</code>
+<ul>
+<li>Select all DOM elements with the specified attribute
+<ul>
+<li>e.g. <code>[href] { font-weight: bold; }</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>tag[attribute]</code>
+<ul>
+<li>Select tag-specified elements with the specified attribute
+<ul>
+<li>e.g. <code>a[href] { font-weight: bold; }</code></li>
+</ul>
+</li>
+<li>Values are optional
+<ul>
+<li>e.g. <code>a[href=&quot;https://www.wikipedia.org&quot;] { font-weight: bold; }</code></li>
+<li>Attribute suffix
+<ul>
+<li><code>[attribute*=value]</code> : Select all DOM elements with an attribute that includes specified custom value
+<ul>
+<li>e.g. <code>img[src*=&quot;icon.png&quot;] { width: 100px; height: 100px; }</code></li>
+</ul>
+</li>
+<li><code>[attribute^=value]</code> : Select all DOM elements with an attribute that begins with specified custom value
+<ul>
+<li>e.g. <code>a[href^=&quot;#&quot;] { color: blue; }</code></li>
+</ul>
+</li>
+<li><code>[attribute$=value]</code> : Select all DOM elements with an attribute that ends in specified custom value
+<ul>
+<li>e.g. <code>a[href$=&quot;.com&quot;] { color: green; }</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Pseudo-elements</h3>
+<p>CSS pseudo-element is a predefined keyword added to a selector that lets you style a specific part of the selected element.</p>
+<ul>
+<li><code>selector::pseudo-element { property: value }</code>
+<ul>
+<li>Only one pseudo-element can be used for a single simple CSS selector.</li>
+</ul>
+</li>
+<li>e.g.<pre><code>/* The first line of every &lt;p&gt; element. */
+p::first-line {
+    color: blue;
+    text-transform: uppercase;
+}
+</code></pre>
+</li>
+</ul>
+<h2>2-2. CSS Priority and Specificity</h2>
+<p>From hightest to lowest priority,</p>
+<h3>First, the Location of CSS lines</h3>
+<ul>
+<li>Inline attribute (e.g. <code>&lt;div style=&quot;background-color: white;&quot;&gt;</code>)</li>
+<li>Internal tag (e.g. <code>&lt;head&gt; &lt;style&gt; div { background-color: white; } &lt;/style&gt; &lt;/head&gt;</code>)</li>
+<li>External file (e.g. <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;</code>)</li>
+</ul>
+<h3>After that,</h3>
+<ul>
+<li>Cascade order
+<ul>
+<li>Priority: descending order</li>
+</ul>
+<pre><code>h1 { color: red; }
+h1 { color: green; }
+h1 { color: blue; }
+
+// &lt;h1&gt; text color is blue, neither green nor red.
+</code></pre>
+</li>
+<li>Selector specificity
+<ul>
+<li>Priority: higher specificity &gt; lower specificity</li>
+</ul>
+<pre><code>h1 { color: red; }
+main h1 { color: green; }
+
+// &lt;main&gt;'s &lt;h1&gt; is green, not red.
+</code></pre>
+</li>
+<li>Selector priority
+<ul>
+<li>Priority: id &gt; class &gt; tag type<pre><code>&lt;style&gt;
+h1 { color: red; }
+#color { color: green; }
+.color { color: blue; }
+&lt;/style&gt;
+
+&lt;h1 id=&quot;color&quot; class=&quot;color&quot;&gt; color &lt;/h1&gt;
+
+// &lt;h1&gt; text color is green.
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2>2-3. Box Model</h2>
+<h3>Margin Collapse</h3>
+<p>Some elements share the adjacent margin value vertically, instead of having their own vertical margins individually. This is done by design, to improve the readability of the layout.</p>
+<ul>
+<li>Cases
+<ul>
+<li>Adjacent sibling elements</li>
+<li>Adjacent parent and decendant elements
+<ul>
+<li>The margins of top and bottom descendants also collapse with the parent's margins if there is no content seperating parent and descendants</li>
+</ul>
+</li>
+<li>Empty blocks.
+<ul>
+<li>If there is no border, padding, inline content, height, or min-height to separate a block's margin-top from its margin-bottom, then its top and bottom margins collapse.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example<pre><code>.black-square { margin: 10px 7px 15px 7px }
+</code></pre>
+<ul>
+<li>Result:<pre><code> ⥑     ← This margin is 10px.
+⥐■⥐    
+ ⥑     ← This vertical margin is 15px, NEITHER 20px NOR 10px!
+⥐■⥐
+ ⥑     ← Upper and lower margin 'collapse' into one single biggest margin. This is also 15px.
+⥐■⥐
+ ⥑     ← This margin is 15px.
+</code></pre>
+</li>
+</ul>
+</li>
+<li>Exception
+<ul>
+<li>The margins of floating and absolutely-positioned elements never collapse.</li>
+<li>The margins of flex or grid items never collapse.</li>
+</ul>
+</li>
+</ul>
+<h2>2-4. CSS Properties</h2>
+<h3><code>!important</code> property</h3>
+<p><code>!important</code> marks the declaration as important. The <code>!important flag</code> alters the rules selecting declarations inside the cascade.</p>
+<ul>
+<li>All <code>!important</code> declarations take precedence over all CSS animations, EXCEPT, within <code>@keyframes</code> animation declarations.
+<ul>
+<li>However, unlike CSS animations, CSS transitions take precedence over all <code>!important</code> declarations.</li>
+</ul>
+</li>
+<li>No matter how high the selector specificity matches a normal declaration, an important declaration from the same source and cascade layer will always have precedence.</li>
+</ul>
+<h3><code>content</code> property</h3>
+<ul>
+<li>The <code>content</code> CSS property replaces an element with a generated value. Objects inserted using the content property are anonymous replaced elements.</li>
+<li><code>content</code> property is often used with pseudo-elements, for instance, <code>::before</code> and <code>::after</code>.</li>
+</ul>
+<h2>2-5. CSS Animation and Transition</h2>
+<h3><code>animation</code> sub-properties</h3>
+<ul>
+<li><code>animation-delay</code>
+<ul>
+<li>Specifies the delay between an element loading and the start of an animation sequence and whether the animation should start immediately from its beginning or partway through the animation.</li>
+</ul>
+</li>
+<li><code>animation-direction</code>
+<ul>
+<li>Specifies whether an animation's first iteration should be forward or backward and whether subsequent iterations should alternate direction on each run through the sequence or reset to the start point and repeat.</li>
+</ul>
+</li>
+<li><code>animation-duration</code>
+<ul>
+<li>Specifies the length of time in which an animation completes one cycle.</li>
+</ul>
+</li>
+<li><code>animation-fill-mode</code>
+<ul>
+<li>Specifies how an animation applies styles to its target before and after it runs.</li>
+</ul>
+</li>
+<li><code>animation-iteration-count</code>
+<ul>
+<li>Specifies the number of times an animation should repeat.</li>
+</ul>
+</li>
+<li><code>animation-name</code>
+<ul>
+<li>Specifies the name of the @keyframes at-rule describing an animation's keyframes.</li>
+</ul>
+</li>
+<li><code>animation-play-state</code>
+<ul>
+<li>Specifies whether to pause or play an animation sequence.</li>
+</ul>
+</li>
+<li><code>animation-timing-function</code>
+<ul>
+<li>Specifies how an animation transitions through keyframes by establishing acceleration curves.</li>
+</ul>
+</li>
+</ul>
+<h3>@keyframes</h3>
+<p><code>@keyframes</code> is an at-rule CSS statement that defines and controls intermediate steps(keyframes/waypoints) in a CSS animation sequence.</p>
+<ul>
+<li>e.g.<pre><code>@keyframes animation1 {
+    from {                          // initial keyframe (same as 0%)
+        margin-top: 50px;
+    }
+    33% {                           // intermediate percentage keyframe
+        margin-top: 300px;
+    }
+    50% {                           // intermediate percentage keyframe
+        margin-top: 150px;
+    }
+    to {                            // final keyframe (same as 100%)
+        margin-top: 100px;
+    }
+}
+</code></pre>
+</li>
+</ul>
+<h3>Differences between <code>animation</code> and <code>transition</code></h3>
+<ul>
+<li><code>animation</code> can loop, <code>transition</code> can run only once.</li>
+<li><code>animation</code> can have intermediate steps through @keyframes, <code>transition</code> can have only initial and final state.</li>
+<li><code>animation</code> can run by itself or by trigger, <code>transition</code> requires a trigger like mouse hover.</li>
+<li><code>animation</code> is more difficult to use with JavaScript, while <code>transition</code> is easier.</li>
+<li><code>animation</code> is more suitable for complex animation, while <code>transition</code> is more suitable for simple change of state.</li>
+</ul>
+<h2>2-6. Responsive Web and Media Query</h2>
+<h3>Media Query</h3>
+<ul>
+<li>Format: <code>@media MEDIA_TYPE OPERATOR (CONDITION/BREAKPOINT) { }</code>
+<ul>
+<li>e.g. <code>@media screen, (min-width: 720px) and (max-width: 1080px) { }</code></li>
+</ul>
+</li>
+<li>Media type (optional)
+<ul>
+<li>all</li>
+<li>print</li>
+<li>screen</li>
+<li>speech</li>
+</ul>
+</li>
+<li>Media Query needs to be located at the bottom of the stylesheet, because of (top-to-bottom cascade) CSS priority rules.</li>
+<li>To prevent the inheritance of the property outside <code>@media</code>, manually set the property within <code>@media</code> as <code>none</code>.
+<ul>
+<li>e.g.<pre><code>.div {
+    color: green
+    background-color: blue;
+}
+
+@media (min-width: 720px) {
+    .div {
+        color: yellow
+        background-color: none;
+    }
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>3. Git</h1>
+<h2>3-1. Workflow</h2>
+<ul>
+<li>Working directory → Staging area → Local repo → Remote repo
+<ul>
+<li>Working directory</li>
+<li>Staging area</li>
+<li>Local repository</li>
+<li>Remote repository</li>
+</ul>
+</li>
+</ul>
+<h2>3-2. Commands</h2>
+<ul>
+<li>
+<p>Git command related to configuration</p>
+<ul>
+<li><code>git remote add</code>
+<ul>
+<li>Add the URL of the remote repository.</li>
+</ul>
+</li>
+<li><code>git remote set-url</code>
+<ul>
+<li>Change the URL of already-set remote repository.</li>
+</ul>
+</li>
+<li><code>git remote -v</code>
+<ul>
+<li>See if the remote repository is correctly configured.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Git command related to project</p>
+<ul>
+<li><code>git init</code></li>
+<li><code>git fork</code></li>
+<li><code>git clone</code></li>
+</ul>
+</li>
+<li>
+<p>Git command related to local repository</p>
+</li>
+<li>
+<p>Git command related to staging</p>
+<ul>
+<li><code>git status</code>
+<ul>
+<li>Displays the state of the working directory and the staging area.</li>
+</ul>
+</li>
+<li><code>git add</code></li>
+<li><code>git reset</code></li>
+<li><code>git restore</code></li>
+<li><code>git clean</code></li>
+<li><code>git revert</code></li>
+<li><code>git rm</code></li>
+</ul>
+</li>
+<li>
+<p>Git command related to commits</p>
+<ul>
+<li><code>git commit</code></li>
+<li><code>git log</code>
+<ul>
+<li>Shows the commit logs.</li>
+</ul>
+</li>
+<li><code>git pull</code></li>
+<li><code>git push</code></li>
+</ul>
+</li>
+<li>
+<p>Git command related to branches and HEAD</p>
+<ul>
+<li><code>git checkout</code>
+<ul>
+<li><code>git checkout [branch name]</code></li>
+</ul>
+</li>
+<li><code>git branch</code>
+<ul>
+<li>Shows the current working branch</li>
+<li><code>git branch [branch name]</code>
+<ul>
+<li>Create a new local branch.</li>
+</ul>
+</li>
+<li><code>git branch -D [branch name]</code>
+<ul>
+<li>Delete the existing local branch.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>3-3. Strategy</h2>
+<ul>
+<li>Today, most programmers leverage one of two development models to deliver quality software -- Gitflow and trunk-based development.</li>
+</ul>
+<h3>Gitflow</h3>
+<ul>
+<li>Gitflow is an alternative Git branching model that involves the use of feature branches and multiple primary branches.
+<ul>
+<li>It was first published and made popular by <a href="https://nvie.com/posts/a-successful-git-branching-model/">Vincent Driessen at nvie</a>.</li>
+</ul>
+</li>
+<li>Compared to trunk-based development, Gitflow has numerous, longer-lived branches and larger commits.
+<ul>
+<li>Under this model, developers create a feature branch and delay merging it to the main trunk branch until the feature is complete.</li>
+<li>These long-lived feature branches require more collaboration to merge and have a higher risk of deviating from the trunk branch.</li>
+<li>They can also introduce conflicting updates.</li>
+</ul>
+</li>
+<li>A stricter development model where only certain individuals can approve changes to the main code.
+<ul>
+<li>This maintains code quality and minimizes the number of bugs.</li>
+</ul>
+</li>
+</ul>
+<h3>Trunk-based development</h3>
+<ul>
+<li>Trunk-based development is a version control management practice where developers merge small, frequent updates to a core “trunk” or main branch.
+<ul>
+<li>Since it streamlines merging and integration phases, it helps achieve CI/CD and increases software delivery and organizational performance.</li>
+</ul>
+</li>
+<li>It’s a common practice among DevOps teams and part of the DevOps lifecycle since it streamlines merging and integration phases.
+<ul>
+<li>In fact, trunk-based development is a required practice of CI/CD.</li>
+</ul>
+</li>
+<li>Developers can create short-lived branches with a few small commits compared to other long-lived feature branching strategies.
+<ul>
+<li>As codebase complexity and team size grow, trunk-based development helps keep production releases flowing.</li>
+</ul>
+</li>
+<li>Trunk-based development is a more open model since all developers have access to the main code.
+<ul>
+<li>This enables teams to iterate quickly and implement CI/CD.</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

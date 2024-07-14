@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Study Note] Coursework: DevOps and Software Engineering - SDLC | devfreedom.github.io</title>
+    <meta name="title" content="[Study Note] Coursework: DevOps and Software Engineering - SDLC | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Study Note❯,DevOps,software engineering,cloud computing,web development,SDLC,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20240108_2030_study-note_devops_coursework_07/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Study Note] Coursework: DevOps and Software Engineering - SDLC</h1>
+        <div class="text-center">Published on 8 January 2024 08:31 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Study Note❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Study Note❯</a>
+            
+            <a href="/tags/DevOps" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#DevOps</a>
+            
+            <a href="/tags/software engineering" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#software engineering</a>
+            
+            <a href="/tags/cloud computing" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#cloud computing</a>
+            
+            <a href="/tags/web development" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#web development</a>
+            
+            <a href="/tags/SDLC" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#SDLC</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/devops.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>7. Software Engineering</h1>
+<ul>
+<li>Software engineering is the application of scientific principles to the design and creation of software.
+<ul>
+<li>The field uses a systematic approach to collect and analyze business requirements in order to design, build, and test software applications to satisfy those business requirements.</li>
+</ul>
+</li>
+<li>When computing began in the late 1950s, software engineering was a relatively undefined discipline, but over time it transformed into a modernized engineering field.
+<ul>
+<li>Initially, the creation of software lacked a formal development process.
+<ul>
+<li>This led to what is known as the “Software Crisis” which began in the mid-1960s and lasted until the mid-1980s.</li>
+<li>During this period, software development often ran over budget, behind schedule, and consisted of unmanageable, buggy code.</li>
+</ul>
+</li>
+<li>The software engineering field became a discipline in the 1960s and evolved as new technologies were developed and the approach to software development became more scientific.
+<ul>
+<li>The mid 1980s also saw a rise in the growth of computer-aided software engineering or CASE which also helped to relieve the software crisis.
+<ul>
+<li>CASE tools can be divided into six categories,
+<ul>
+<li>Business analysis and modeling</li>
+<li>Development tools such as debugging environments</li>
+<li>Verification and validation tools</li>
+<li>Configuration management</li>
+<li>Metrics and measurement</li>
+<li>Project management</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Trends in software engineering transformed from ad hoc programming towards more formal and standardized methods.
+<ul>
+<li>Today, the development process is typically guided by the Software Development Lifecycle or SDLC.
+<ul>
+<li>The SDLC identifies the steps needed to develop high-quality software.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>7-1. Software Development Life Cycle (SDLC)</h2>
+<ul>
+<li>The Software Development Life Cycle, known as the SDLC, is a systematic process to develop high-quality software in a predictable timeframe and budget.
+<ul>
+<li>The goal of the SDLC is to produce software that meets a client’s business requirements.</li>
+<li>The software development life cycle began to take shape in the mid-1960s as software development began to necessitate a more detailed approach because of its growing complexity.
+<ul>
+<li>The SDLC led to a more deliberate approach as large corporations needed to manage complex business systems requiring heavy computational resources.</li>
+<li>In its initial conception, it used what is called the “waterfall method” to manage projects where the development of software follows a linear pattern through discrete stages.
+<ul>
+<li>The SDLC has since been adapted, however, to more iterative methods in response to addressing customer needs and shifting requirements.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The SDLC defines phases of the software development process that encompass their own process and deliverables.
+<ul>
+<li>It is a cycle of planning, design, and development that can be implemented as an iterative approach to software development.</li>
+</ul>
+</li>
+<li>Adherence to the SDLC minimizes risks and costs to the development of high-quality, deployable software.</li>
+</ul>
+<h3>SDLC Adavantages</h3>
+<ul>
+<li>SDLC is a roadmap to the software development process.
+<ul>
+<li>Therefore it gives development teams a process to follow rather than using an ad hoc approach to improve efficiency and reduce risks.</li>
+</ul>
+</li>
+<li>There are discrete phases to the SDLC and each phase is well defined.
+<ul>
+<li>So that team members know what they should be working on and when.</li>
+<li>Because of the well-defined phases, it facilitates communication between the customer, other stakeholders, and the development team.
+<ul>
+<li>The SDLC offers an overview of the process, so stakeholders know where they fit in to that process.</li>
+<li>Since each phase is discrete, cross-domain teams know when they have completed their tasks and when development can move to the next phase.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The SDLC provides room for iteration where, at the end of a cycle, the process can circle back to incorporate additional requirements as needed.
+<ul>
+<li>Problem solving is incorporated early in the cycle so problems are addressed in a timely fashion and can be addressed in the design phase rather than during coding.</li>
+<li>Each team member has a well-defined role which reduces conflict and overlapping responsibilities.</li>
+</ul>
+</li>
+</ul>
+<h3>SDLC Phases</h3>
+<ul>
+<li>There are generally six phases in the SDLC process.
+<ol>
+<li>Planning
+<ul>
+<li>Requirements are gathered, analyzed, documented and prioritized.</li>
+<li>When planning a software solution, the following factors must be considered:
+<ul>
+<li>users of the solution</li>
+<li>the overall purpose of the solution</li>
+<li>data inputs and outputs</li>
+<li>legal and regulatory compliance</li>
+<li>risk identification</li>
+<li>quality assurance requirements</li>
+<li>allocation of human and financial resources</li>
+<li>project scheduling</li>
+</ul>
+</li>
+<li>As part of the planning process, labor and material costs are estimated and weighed against time constraints.
+<ul>
+<li>Also, project teams are identified, and roles of each team member are proposed.</li>
+<li>If stakeholders are struggling to define requirements, often the development team may produce prototypes during the planning stage to tease out those requirements.
+<ul>
+<li>A prototype is a small-scale replica of the end product used to get stakeholder feedback and establish requirements.</li>
+<li>A prototype is used to test basic design ideas.</li>
+<li>Though prototyping usually occurs during the planning stage, prototyping can occur at various phases of the SDLC whenever requirements need to be reconsidered or clarified as the project develops.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>After requirements have been gathered, they are combined into a document called a software requirements specification, or SRS, document.
+<ul>
+<li>The SRS needs to be clearly understood and approved by all stakeholders.</li>
+<li>The developers are also involved at this stage so they can gain a clear understanding of these requirements.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Design
+<ul>
+<li>The requirements gathered from the SRS are used to develop the software architecture.</li>
+<li>Several team members work together at this stage to design the architecture.
+<ul>
+<li>The architecture is reviewed by the stakeholders and team.</li>
+</ul>
+</li>
+<li>During this phase, prototypes can be designed.
+<ul>
+<li>A prototype is a preliminary mock-up of the system, or parts of the system, used for demonstration purposes.</li>
+</ul>
+</li>
+<li>The document created in this phase is called a design document, and is used by developers during the next phase, which is the development phase.</li>
+</ul>
+</li>
+<li>Development
+<ul>
+<li>Sometimes called the “building&quot; phase or the &quot;implementation&quot; phase, is when the developers start the coding process once the design document is completed.</li>
+<li>The project planners use the design document to determine and assign coding tasks.</li>
+<li>This phase often requires the use of programming tools, different programming languages, and software stacks.</li>
+<li>Organizations may also have standards or guidelines that need to be followed.</li>
+</ul>
+</li>
+<li>Testing
+<ul>
+<li>Some large projects have dedicated testing teams.</li>
+<li>Code needs to be thoroughly tested to ensure it is stable, secure, and meets the requirements outlined in the SRS.</li>
+<li>Testing can be manual, automated, or a hybrid of both.</li>
+<li>Product bugs are reported, tracked, and fixed, and code is retested until the software is stable.</li>
+<li>Some common levels of testing include,
+<ul>
+<li>Unit testing</li>
+<li>Integration testing</li>
+<li>System testing</li>
+<li>Acceptance testing</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Deployment
+<ul>
+<li>The deployment phase is where the application is released into the production environment and made available to users.</li>
+<li>This can also happen in stages,
+<ul>
+<li>First, it is released onto a user acceptance testing, also called UAT platform.</li>
+<li>And once the customer signs off on the functionality, it is released to production.
+<ul>
+<li>This approach can be used for making software available on a website, mobile device app store, or a software distribution server on a corporate network.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Maintenance
+<ul>
+<li>Once the code has been deployed into a production environment, this phase helps to find any other bugs, identify user interface issues, or UI for short, and identify other requirements that may not have been listed in the SRS.</li>
+<li>Code enhancements can also be identified at this stage.</li>
+<li>If bugs are discovered in this phase that were missed during testing, these errors may need to be fixed for high-priority issues or incorporated into the requirements as part of a future software release and the process can start over again.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Each phase is discrete meaning that tasks from a previous phase do not overlap with tasks in the next phase.</li>
+<li>Some organizations may have different names for each stage.
+<ul>
+<li>For example, “planning” may be called “requirements” or “strategy” or “analysis”.</li>
+<li>Also, some organizations may have additional or fewer stages.</li>
+</ul>
+</li>
+</ul>
+<h3>Building Quality Software</h3>
+<ul>
+<li>Software requirements specification (SRS)
+<ul>
+<li>Encompasses the process of collecting and documenting the set of requirements that the software needs to adhere to.</li>
+<li>It may include a set of use cases that describe the business needs and user flows that the software must implement.</li>
+<li>Software requirements can be classified into four broad categories:
+<ul>
+<li>Functional</li>
+<li>External and User Interface</li>
+<li>System features</li>
+<li>Non-functional</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Software design
+<ul>
+<li>The process of transforming the requirements into a structure that is implementable using code.</li>
+<li>The software design process translates the requirements into a language the developers can use to write the code.
+<ul>
+<li>It transforms the requirements into a software solution.</li>
+</ul>
+</li>
+<li>The technical lead breaks down requirements into sets of related components with clearly defined behaviors, boundaries, and interactions. These components define the system architecture.
+<ul>
+<li>The system design incorporates guidance on system functions, performance, security, and platform characteristics.</li>
+<li>The design communicates business rules and application logic, application programming interface design, which is how apps talk to each other or communicate with the database, user interfaces, and database design.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Code quality
+<ul>
+<li>Refers to the characteristics of the code including attributes such as,
+<ul>
+<li>Maintainability</li>
+<li>Readability</li>
+<li>Testability</li>
+<li>Security</li>
+</ul>
+</li>
+<li>Quality code must fulfill the intended requirements of the software without defects.</li>
+<li>Additionally, it should be clean and consistent, easy to read and maintain, well documented, and efficient.</li>
+</ul>
+</li>
+<li>Coding for quality
+<ul>
+<li>Entails following a set of coding practices during development such as,
+<ul>
+<li>Following common coding standards, conventions, patterns and styles</li>
+<li>Using automated tools, known as linters, to detect programmatic and stylistic errors</li>
+<li>Commenting in the code itself to make it easy for others to understand and modify</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Software testing
+<ul>
+<li>The process of verifying that the software matches established requirements and is free of bugs.</li>
+<li>Its purpose is to identify errors, gaps, or missing requirements when compared with stated requirements.
+<ul>
+<li>Properly tested software ensures reliability, security, performance, and efficiency.</li>
+</ul>
+</li>
+<li>Software testing can often be automated or done manually.</li>
+<li>Levels
+<ul>
+<li>Unit testing is often done by the developer and tests the smallest component of code that can be isolated from the rest of the system.</li>
+<li>Once the components are integrated into the larger product, integration testing occurs.</li>
+<li>Then, after the larger product is deemed completed, system testing can take place.</li>
+<li>User acceptance testing, or UAT for short and sometimes called beta testing, is when the software is tested by the intended end user.</li>
+</ul>
+</li>
+<li>Types
+<ul>
+<li>Functional</li>
+<li>Non-functional</li>
+<li>Regression</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Releases
+<ul>
+<li>When the newest version of the software is distributed, it is referred to as a “release.”</li>
+<li>Different types of releases are intended for different audiences.
+<ul>
+<li>The alpha release is the first functioning version of the system released to a select group of stakeholders.
+<ul>
+<li>The alpha release likely contains errors and may not contain the full feature set but does contain most of the desired functionality.</li>
+<li>Design changes may still occur during this release stage.</li>
+</ul>
+</li>
+<li>The beta release, also called a limited release, is given to the stakeholders outside of the developing organization.
+<ul>
+<li>One of the intents of the beta release is to try out the software under real conditions, test the functionality, and identify any outstanding bugs or errors.</li>
+<li>The beta release should meet all the functional requirements.</li>
+</ul>
+</li>
+<li>After beta release changes are agreed upon, made, and tested, and a stable version is released.
+<ul>
+<li>The audience for the General Availability release is all users.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Documentation
+<ul>
+<li>Software documentation
+<ul>
+<li>Should be provided to both non-technical end-users and technical users.</li>
+</ul>
+</li>
+<li>System documentation
+<ul>
+<li>Geared towards the technical user.
+<ul>
+<li>Technical users may be other engineers, developers, or architects.</li>
+</ul>
+</li>
+<li>System documentation explains how the software operates or how to use it.
+<ul>
+<li>It consists of README files, inline comments, architecture and design documents, verification information, and maintenance guides.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>User documentation
+<ul>
+<li>Provided to the non-technical end-users to assist them in the use of the product.
+<ul>
+<li>Generally, user documentation is provided in the form of user guides, instructional videos and manuals, online help, and inline help.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Requirements</h3>
+<ul>
+<li>Requirement gathering is a six-step process of defining a problem to be solved and documenting how to go about solving that problem.
+<ol>
+<li>Identifying stakeholders
+<ul>
+<li>Generally, the stakeholders work for the organization that requests the development of the software product.</li>
+<li>Key personnel from the organization may include,
+<ul>
+<li>Decision-makers</li>
+<li>End-users</li>
+<li>System administrators</li>
+<li>Engineering</li>
+<li>Marketing</li>
+<li>Sales</li>
+<li>Customer support personnel</li>
+</ul>
+</li>
+<li>It is good to have a representative from every group that the product affects.</li>
+</ul>
+</li>
+<li>Establishing goals and objectives
+<ul>
+<li>The goals of the product should be clearly defined.
+<ul>
+<li>Goals are broad, long-term achievable outcomes.</li>
+<li>Goals can include customer outcomes and business goals.</li>
+</ul>
+</li>
+<li>Then, objectives should be identified.
+<ul>
+<li>Objectives are more specific than goals and they are actionable and measurable actions that achieve the stated goals.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Eliciting requirements from the stakeholders
+<ul>
+<li>Elicitation can be accomplished through surveys, questionnaires, and interviews.</li>
+</ul>
+</li>
+<li>Documenting the requirements
+<ul>
+<li>As the requirements emerge, they should be documented and checked to ensure they align with the goals and objectives.</li>
+<li>Documented requirements should be easily understood by stakeholders and the project team.</li>
+</ul>
+</li>
+<li>Analyzing and confirming the requirements
+<ul>
+<li>In order to confirm the requirements, they should be analyzed to ensure consistency, clarity, and completeness.</li>
+<li>After analysis, the requirements should be shared with and approved by the stakeholders.</li>
+</ul>
+</li>
+<li>Prioritizing
+<ul>
+<li>After confirmation, requirements should be prioritized.</li>
+<li>Labels such as “must-have,” “highly desired,” and “nice to have” are helpful.</li>
+<li>If possible, order the requirements within those categories.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3>Requirements Documentation</h3>
+<ul>
+<li>Typically, there may be three documents that result from the requirements gathering process:
+<ul>
+<li>Software requirements specification (SRS)
+<ul>
+<li>The software requirements specification, or SRS, is a document that captures the functionalities that the software should perform and also establishes benchmarks or service levels for its performance.</li>
+<li>Parts of an SRS include:
+<ul>
+<li>A purpose statement that contains the intended use of the SRS</li>
+<li>Its audience and scope
+<ul>
+<li>Describes who will have access to the SRS and how they should use it.</li>
+<li>The scope describes the benefits of the software, its goals, and objectives.</li>
+</ul>
+</li>
+<li>Constraints, assumptions and dependencies
+<ul>
+<li>Constraints describe how the product must operate under given conditions that may limit options in the design phase such as conformation to standards or hardware limitations.</li>
+<li>Assumptions may include things like a required operating system or hardware that is needed by the software to function.</li>
+<li>Dependencies on other software products should also be noted.</li>
+</ul>
+</li>
+<li>Requirements
+<ul>
+<li>Functional requirements
+<ul>
+<li>Those that cover the functionalities of the software</li>
+</ul>
+</li>
+<li>External Interface requirements
+<ul>
+<li>The requirements that address the behavior of the software in relation to external entities such as users and interactions with other hardware or software</li>
+</ul>
+</li>
+<li>System Features
+<ul>
+<li>A subset of functional requirements.</li>
+<li>These are required features for the system to function.</li>
+</ul>
+</li>
+<li>Non-functional requirements
+<ul>
+<li>Such as specifying performance, safety, security, and quality standards</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>User requirements specification (URS)
+<ul>
+<li>User requirements describe the business need and expectations of the end-users from the software system.</li>
+<li>The user requirements are written as “user stories” or “use cases” that answer three questions:
+<ul>
+<li>Who is the user?</li>
+<li>What is the function that needs to be performed?</li>
+<li>Why does the user want this functionality?</li>
+</ul>
+</li>
+<li>User acceptance testing determines if these requirements have been met.</li>
+<li>Often though, the user requirements and software requirements are combined into a single SRS document.
+<ul>
+<li>The SRS details the expectations of the software system.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>System requirements specification (SysRS)
+<ul>
+<li>SysRS, to differentiate it from the SRS, clearly outlines the requirements of an entire system.</li>
+<li>The system requirement specification is often used interchangeably with software requirement specification, but the SysRS is actually broader in scope than the SRS.
+<ul>
+<li>Many software projects develop an SRS rather than a SysRS.</li>
+</ul>
+</li>
+<li>The SysRS contains,
+<ul>
+<li>System capabilities</li>
+<li>Interfaces and user characteristics</li>
+<li>Policy requirements</li>
+<li>Regulation requirements</li>
+<li>Personnel requirements</li>
+<li>Performance requirements</li>
+<li>Security requirements</li>
+<li>System acceptance criteria</li>
+</ul>
+</li>
+<li>It also outlines expectations of the hardware needed for the system in addition to software requirements.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>7-2. Software Building Process</h2>
+<h3>Software Development Methodologies</h3>
+<ul>
+<li>A specific methodology for developing software is commonly used in order to assist the development team to clarify communication among team members and determine how and when information is shared.
+<ul>
+<li>Waterfall
+<ul>
+<li>In the beginning, when the SDLC was conceived, it implemented what is known as the waterfall method.</li>
+<li>Waterfall is a sequential method of software development where the output of one phase is the input for the next phase of the cycle.
+<ul>
+<li>Development and work on the next phase start only after the completion of the previous phase.</li>
+</ul>
+</li>
+<li>All planning, such as defining requirements and architectural design, is done up front.
+<ul>
+<li>The customer usually does not see the product until it is in the testing phase.</li>
+</ul>
+</li>
+<li>For a major version release of the product, the same process is repeated resulting in long intervals, such as years, between releases.</li>
+</ul>
+</li>
+<li>V-model
+<ul>
+<li>The V-shape model is named as such because the phases form the shape of a V.
+<ul>
+<li>The phases going down the left side of the V are called “verification&quot;.</li>
+<li>Then, going up the right side of the V, those phases are called, &quot;validation.&quot;</li>
+</ul>
+</li>
+<li>The V-shape model is like waterfall in that it is also sequential.
+<ul>
+<li>Each phase in verification corresponds with a validation phase.</li>
+</ul>
+</li>
+<li>There are four stages that occur on each side of the V.
+<ul>
+<li>Going down the V are
+<ul>
+<li>Planning</li>
+<li>System design</li>
+<li>Architecture design</li>
+<li>Module design</li>
+</ul>
+</li>
+<li>The bottom of the V is the coding phase.</li>
+<li>And going back up the V are four phases that correspond to the phases going down the V
+<ul>
+<li>Unit testing</li>
+<li>Integration testing</li>
+<li>System testing</li>
+<li>Acceptance testing</li>
+</ul>
+</li>
+<li>The tests are written during the verification phases on the left and executed during the validation stages on the right.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Agile
+<ul>
+<li>It focuses on a collaborative software development process over multiple short cycles rather than a strictly top-down linear process.
+<ul>
+<li>Agile is what is called an iterative approach to development.</li>
+</ul>
+</li>
+<li>It still aligns with the SDLC, but each phase is short.
+<ul>
+<li>Teams work in cycles, or sprints, which are usually one to four weeks long.</li>
+<li>Unit testing happens in each sprint to minimize the risk of failure.</li>
+</ul>
+</li>
+<li>Rather than the “maintenance” stage of the SDLC, the final stage of the sprint is a feedback stage.</li>
+<li>At the end of each sprint, a chunk of working code is released at a meeting called the “sprint demo” where stakeholders can see the new functionality and provide feedback.
+<ul>
+<li>After the sprint demo, the entire process is repeated for every sprint cycle.</li>
+</ul>
+</li>
+<li>After several sprint cycles, a minimum viable product, or MVP, is developed so stakeholders can provide feedback on the basic feature set.
+<ul>
+<li>The MVP contains a feature set to validate assumptions about the software.</li>
+</ul>
+</li>
+<li>The four core values of Agile development outlined in what is known as the &quot;Agile manifesto&quot; are:
+<ul>
+<li>Individuals and interactions over processes and tools</li>
+<li>Working software over comprehensive documentation</li>
+<li>Customer collaboration over contract negotiation</li>
+<li>Responding to change over following a plan</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The main difference between traditional SDLC methods such as waterfall and the v-shape model compared to the Agile method of software development is the former are sequential whereas Agile is cyclical.
+<ul>
+<li>Traditional SDLC methods, such as waterfall and V-shape, center around the whole product being developed before soliciting customer feedback,</li>
+<li>whereas Agile focuses on quick, short bursts of development.</li>
+</ul>
+</li>
+<li>There are pros and cons to each method, though Agile is probably the most popular method used in modern software development.
+<ul>
+<li>Regarding the pros of the waterfall method, it is easy to understand and follow.
+<ul>
+<li>Each stage is discrete and well-defined, making it easy for all team members to understand their roles.</li>
+<li>Also, since planning is done upfront, it is easier than iterative methods to estimate a budget and allocate resources.</li>
+<li>That said, waterfall lacks flexibility.</li>
+<li>Since all planning is done upfront if a requirement is changed or overlooked that change can be hard to incorporate at a later date.</li>
+<li>Inevitably, unforeseen complications happen, or agreed upon functionality shifts from what was initially envisioned.</li>
+</ul>
+</li>
+<li>Like waterfall, the V-shape model is simple and easy to use.
+<ul>
+<li>It is even more rigid than waterfall but designing test plans during the verification phase saves considerable time during coding and validation phases.</li>
+<li>Drawbacks are also similar to waterfall because it does not readily accommodate changing requirements.</li>
+<li>Once an application is in the testing phase it is extremely difficult to go back and change functionality.</li>
+</ul>
+</li>
+<li>Agile development is different, relying on ongoing research, planning, and testing during product development.
+<ul>
+<li>When adding new features to a project, development still goes through the same phases as in traditional SDLC, but with Agile, new, and changing requirements are handled quickly and easily because planning is initiated at the beginning of each sprint cycle.
+<ul>
+<li>Most resources are spent on the building phase.</li>
+<li>At the end of each cycle, the QA team, stakeholders, and the customer have some piece of working code to test against requirements and are encouraged to provide feedback.</li>
+</ul>
+</li>
+<li>As coding languages and technologies have developed in recent years, they now allow for modular design, where developers can focus on smaller chunks of code that are readily integrated into the larger product.
+<ul>
+<li>These small chunks can be released to provide the MVP.</li>
+</ul>
+</li>
+<li>Cons of Agile are that upfront planning such as budgeting and scheduling can be challenging because the overall scope of the product is not clearly defined.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Software Versions</h3>
+<ul>
+<li>Software versions tell us a lot about programs and applications.
+<ul>
+<li>Users can determine what software version they are using, and developers can provide useful information with version numbers.</li>
+<li>Version numbers indicate when the software was released, when it was updated, and if any minor changes or patches were made to the software.</li>
+<li>Software versioning is how software developers keep track of new software, updates, and patches for programs and applications.</li>
+</ul>
+</li>
+<li>Software version numbers
+<ul>
+<li>Software version numbers vary in length and meaning; however, most version numbers follow a similar format and represent similar information.
+<ul>
+<li>Version numbers can be short or long, depending on the software and the preference of the developer, with 2, 3, or 4 number sets.</li>
+<li>Each number set is divided by a period.</li>
+</ul>
+</li>
+<li>The first release of an application or program might have a 1.0 as the version number to indicate no updates, patches, or fixes to the software.
+<ul>
+<li>Note: A version still in beta or testing could have a version number lower than 1, such as 0.9.</li>
+</ul>
+</li>
+<li>A program or application with many releases and updates will have a longer number, sometimes 4 different number sets within the version number</li>
+<li>Some software developers may use dates for their versioning.
+<ul>
+<li>For example: Ubuntu Linux version 18.04.2 was released in 2018 April.</li>
+<li>The third number set, point-2, designates an additional change or update.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Semantic numbering
+<ul>
+<li>Some version numbers follow the semantic numbering system and have 4 parts separated by a period, but not all numbering systems follow this 4-part example.</li>
+<li>In semantic numbering,
+<ul>
+<li>The first number indicates major changes to the software, such as a new release.</li>
+<li>The second number indicates that minor changes were made to the software.</li>
+<li>The third number in the version number indicates patches or minor bug fixes.</li>
+<li>The fourth number indicates a build number or a build date, and it can indicate less significant changes made.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Version compatibility
+<ul>
+<li>Lack of compatibility between old and new versions of software is a common problem.</li>
+<li>You can troubleshoot compatibility issues by viewing the software version to determine if you are using an outdated version of the software.
+<ul>
+<li>Software version numbers are identified in the About or Help section of software.
+<ul>
+<li>You can practice identifying your version number in a web browser.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Sometimes updating software to a newer version will resolve compatibility issues.
+<ul>
+<li>Some software is backwards compatible.</li>
+<li>If a program or application is backwards compatible, then the older versions of files, programs,and systems will work properly with newer versions.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Software Testing</h3>
+<ul>
+<li>Software Testing is the practice of integrating quality checks throughout the software development cycle.
+<ul>
+<li>The purpose of testing is to check whether the software matches expected requirements and ensure error-free software.
+<ul>
+<li>Software testing helps evaluate the software to identify whether or not the software product meets requirements and is error-free.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In order to test software, the team writes “test cases.”
+<ul>
+<li>These test cases are written to verify the functionality of a software application and ensure requirements have been satisfied.
+<ul>
+<li>Steps</li>
+<li>Inputs</li>
+<li>Data</li>
+<li>Expected corresponding outputs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Test cases can be written in different stages of the SDLC and may vary depending on the type of test or the method used to develop the software, such as Agile or waterfall.
+<ul>
+<li>Regardless of the test type or development method, test cases should always be written after requirements are finalized.</li>
+</ul>
+</li>
+</ul>
+<h3>Software Testing Types</h3>
+<ul>
+<li>Functional testing
+<ul>
+<li>Functional testing usually involves black box testing which is a method of testing without looking at source code or internal structure.</li>
+<li>Functional testing is only concerned with inputs and corresponding outputs of the system under test, also called the SUT.
+<ul>
+<li>It is entirely based on testing functional requirements.</li>
+</ul>
+</li>
+<li>Functional testing can be carried out manually or using automated tools.
+<ul>
+<li>Functional testing tests the SUT, to make sure it meets functional requirements.</li>
+<li>Functional testing makes certain that when user errors or input edge cases do occur, the software handles those exceptions seamlessly by displaying appropriate error messages.</li>
+</ul>
+</li>
+<li>The goal is to test the functionality of the application making sure the application is usable and accessible.</li>
+</ul>
+</li>
+<li>Non-Functional testing
+<ul>
+<li>Non-functional testing includes testing the application for attributes like performance, security, scalability, and availability.</li>
+<li>Non-functional testing checks to see if the SUTs non-functional behavior is performing properly.</li>
+<li>Non-functional testing should answer questions like the following:
+<ul>
+<li>How does the application behave under stress?</li>
+<li>What happens when many users log in at the same time?</li>
+<li>Are the instructions in documents and user manuals consistent with the application’s behavior?</li>
+<li>Does the application behave similarly under different operating systems?</li>
+<li>How does the application handle disaster recovery?</li>
+<li>How secure is the application?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Regression testing
+<ul>
+<li>Regression testing, also called maintenance testing, confirms that a recent change to the application, such as a bug fix, does not adversely affect already existing functionality.
+<ul>
+<li>Regression testing should occur when there has been a change in requirements or when defects have been fixed.</li>
+</ul>
+</li>
+<li>In order to conduct regression testing, all or some of the test cases should be selected to test against the application.
+<ul>
+<li>Regression test case selection and prioritization can be challenging and can depend on several factors.</li>
+<li>Common reasons for regression test case selection include cases that:
+<ul>
+<li>have frequent defects</li>
+<li>contain frequently used functionality</li>
+<li>contain features with recent changes</li>
+<li>complex test cases</li>
+<li>edge cases</li>
+<li>randomly successful or failed test cases</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Software Testing Levels</h3>
+<ul>
+<li>Unit testing
+<ul>
+<li>Unit testing refers to tests that verify the functionality of a specific section of code, usually at the function level.
+<ul>
+<li>It is performed by the software developer or engineer during the development phase of the software development life cycle.</li>
+</ul>
+</li>
+<li>Unit testing aims to eliminate construction errors before code is integrated with other modules.</li>
+<li>Unit testing is intended to increase the quality of the resulting software as well as the efficiency of the overall development process.</li>
+</ul>
+</li>
+<li>Integration testing
+<ul>
+<li>Integration testing seeks to identify errors when two or more smaller, independent code modules are combined.
+<ul>
+<li>Integration testing is another type of black-box testing.</li>
+</ul>
+</li>
+<li>Prior to integration testing, smaller, independent code modules that passed unit testing are incorporated into the larger software application.
+<ul>
+<li>After modules are integrated together, then integration testing can occur.</li>
+</ul>
+</li>
+<li>Integration testing exposes bugs that occur when those smaller units of code interact with each other.</li>
+<li>Integration testing uncovers deficiencies in communication with a new module in conjunction with other existing modules, databases, or external hardware.</li>
+<li>Integration testing uncovers situations where bugs develop due to differing programming logic between modules, for instance.
+<ul>
+<li>Also, sometimes during module development, requirements change, and the module isn’t fully unit tested.
+<ul>
+<li>Poor exception handling can cause problems when modules are integrated together.</li>
+</ul>
+</li>
+<li>System testing occurs after integration testing and is conducted on a complete, integrated system to evaluate the system's compliance with its specified requirements.
+<ul>
+<li>It validates the system as a fully completed software product.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>System testing
+<ul>
+<li>System testing is both functional and non-functional.</li>
+<li>System testing is done in a staging environment, which should be similar to the production environment.</li>
+</ul>
+</li>
+<li>Acceptance testing
+<ul>
+<li>Acceptance testing is formal testing with respect to user needs, requirements, and business processes.</li>
+<li>It determines whether a system satisfies the needs of the users, customers, and other stakeholders.</li>
+<li>Acceptance testing is usually done by the customer or the stakeholders during the maintenance stage of the SDLC.</li>
+</ul>
+</li>
+<li>Each level occurs at a different time in the SDLC.
+<ul>
+<li>There are 4 different levels in order to reduce the amount of time spent on testing by preventing overlap.</li>
+</ul>
+</li>
+</ul>
+<h3>Software Documentation</h3>
+<ul>
+<li>Software documentation is information about the software that describes what the product is and how to use it.
+<ul>
+<li>These can be written, video, or graphical assets associated with a software product’s development and use.
+<ul>
+<li>Documentation can be in any of these three formats.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Documentation is an essential aspect of software engineering applicable across all the phases of SDLC.
+<ul>
+<li>Software Documentation can be written for different types of audiences – such as end users, software developers, QA engineers, system administrators and other stakeholders.</li>
+</ul>
+</li>
+<li>Documentation, in any form, must be kept up to date.
+<ul>
+<li>Take for instance online user manuals. If a cloud-based application user interface changes, then the accompanying online documentation must be updated accordingly.
+<ul>
+<li>Businesses need to ensure they allot resources for this step.</li>
+</ul>
+</li>
+<li>With regards to the software development and the SDLC, updating documentation happens during the maintenance phase.
+<ul>
+<li>Ideally, documentation should also be reviewed periodically to ensure its accuracy.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>There are two types of documentation.
+<ul>
+<li>Product documentation relates to the product’s functionality.</li>
+<li>Process documentation describes how to complete a task.
+<ul>
+<li>Process documentation should provide the requirements for the quality implementation of a business process.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Software Documentation Types</h3>
+<ul>
+<li>Product documentation
+<ul>
+<li>Requirements documentation
+<ul>
+<li>Requirements documentation is written during the planning phase of the SDLC and is intended for the development team including the developers, architects, and QA personnel.</li>
+<li>Requirements documentation describes the expected features and functionality of the software system.
+<ul>
+<li>It includes the software requirements specifications, system requirement specifications, and user acceptance specifications.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Design documentation
+<ul>
+<li>Design documentation is written by the software architects and the development team to explain how the software will be built to meet the requirements.
+<ul>
+<li>It consists of both conceptual and technical design documents.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Technical documentation
+<ul>
+<li>Technical documentation includes comments written in the code to help other developers read the code to understand its behavior.</li>
+<li>It also may include working papers that explain how the code works and documents that record engineers’ ideas and thoughts during project implementation.</li>
+</ul>
+</li>
+<li>Quality assurance documentation
+<ul>
+<li>Quality assurance documentation includes all documents that pertain to a testing team’s strategy, progress, and metrics.</li>
+<li>Types of test documentation include test plans, test data, test scenarios, test cases, test strategies, and traceability matrices.
+<ul>
+<li>Traceability matrices map test cases to their requirements.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>User documentation documentation
+<ul>
+<li>User documentation is intended for end-users and explains how to operate the software or help them to install or troubleshoot the system.
+<ul>
+<li>End-user documentation includes frequently asked questions, installation and help guides, tutorials, and user manuals.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Process documentation
+<ul>
+<li>Standard operating procedures
+<ul>
+<li>SOPs often accompany process documentation.
+<ul>
+<li>Process documentation provides an overview of a process, but SOPs go through much greater detail.</li>
+<li>The SOP is written documentation that explains step-by-step how to accomplish a common, yet complex task that is organization specific.</li>
+</ul>
+</li>
+<li>For example, checking in code using a code repository is common knowledge for a software engineer.
+<ul>
+<li>However, an organization might have specific steps to follow for that organization in order to get code merged into the main branch.
+<ul>
+<li>The SOP documentation explains those steps in detail.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SOPs can be in the form of a flowchart, a hierarchical outline, or step-by-step instructions.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>7-3. Software Architecture</h2>
+<ul>
+<li>Software design and documentation take place during the design phase of the SDLC.</li>
+<li>Software architecture, simply put, is the organization of the system.
+<ul>
+<li>Software architecture serves as a blueprint for the software system that the programmers use to develop the interacting components of the software.
+<ul>
+<li>The architecture comprises the fundamental structures of a software system and explains the behavior of that system.</li>
+<li>The architecture defines how components should interact with each other, the operating environment, and the principles used to design the software.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The software architecture captures early design decisions that are often costly to change once implemented.
+<ul>
+<li>A software’s architecture addresses non-functional aspects of the application such as performance, scalability, maintainability, interoperability, security, and manageability.</li>
+</ul>
+</li>
+<li>Importance
+<ol>
+<li>It balances the differing needs of the stakeholders and serves as a basis for communication among team members.</li>
+<li>The architecture represents the earliest design decisions, and those decisions conflate other coding implementation decisions later in the development process.</li>
+<li>The well-designed architecture allows for agility due to changing requirements.</li>
+<li>A well-organized architecture increases the lifespan of the software system even when implementation details change.</li>
+</ol>
+</li>
+<li>Architectural design also guides the choice of technology stacks used for the system.
+<ul>
+<li>Remember that architecture addresses non-functional capabilities so choosing stacks that address these requirements is paramount in the design phase.
+<ul>
+<li>Recall that a tech stack is a list of all the technologies including software, programming languages, libraries, and frameworks that will be used to create the system.</li>
+</ul>
+</li>
+<li>The architects must be aware of the stack’s advantages and disadvantages to anticipate development needs.</li>
+</ul>
+</li>
+<li>Production Deployment Considerations
+<ul>
+<li>The architecture drives choices about the environment in which the software is released.</li>
+<li>The production environment is comprised of the infrastructure that runs and delivers the application to the end-user such as the servers, load balancers, and databases.</li>
+</ul>
+</li>
+</ul>
+<h3>Architectural Design Artifacts</h3>
+<ul>
+<li>Much like blueprints communicate design decisions to the builders of a house, there are also several artifacts produced during the architectural design phase that are used to communicate the software design to the stakeholders.
+<ul>
+<li>A software design document, or SDD
+<ul>
+<li>The SDD is a collection of technical specifications that indicate how the design should be implemented.</li>
+<li>It provides a functional description of the software and design considerations such as assumptions, dependencies, constraints, requirements, objectives, and methodologies.</li>
+</ul>
+</li>
+<li>An architectural diagram
+<ul>
+<li>The architectural diagram displays components, their interactions, their constraints, and their confines.</li>
+<li>It displays the architectural patterns used in the design.
+<ul>
+<li>Architectural patterns are general, reusable solutions to commonly occurring problems</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Unified modeling language, or UML Diagrams
+<ul>
+<li>UML diagrams are diagrams that communicate structure and behavior using common programming language agnostic notation.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Software Design</h3>
+<ul>
+<li>Software Design is a process during which structural components and behavioral attributes of the software are documented before it can be developed.
+<ul>
+<li>One of the key activities of the design process is modeling the software to express its design.
+<ul>
+<li>This involves creating visual or diagrammatic representations of the bigger software solution, and its sub-components, as well as the interactions between them.</li>
+<li>This can be done using simple flowcharts or more standardized methods like UML.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>A software system can be construed in terms of structural elements.
+<ul>
+<li>Structured design conceptualizes a software problem into well-organized smaller solution elements called modules and sub-modules.</li>
+<li>Structured design stresses organization in order to achieve a solution.</li>
+<li>A well-structured design should contain modules that are cohesive and loosely coupled.
+<ul>
+<li>Cohesion means that all functionally related elements are grouped together.</li>
+<li>Coupling is the communication between different modules.
+<ul>
+<li>For a system to be loosely coupled the modules should be weakly associated so changes in one component have minimal effect on another.</li>
+<li>Loose coupling is an architectural principle often used in service-oriented architectures and microservices based architectural patterns.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The diagram shows a simplified example billing system.<pre><code>     [Services rendered] → (services rendered) →     [   Billing   ]    → (total owed) → [Output total]
+                                               ↙            ↑
+                           (services rendered)   (amount insurance paid)
+                         ↙                                  ↑
+[Insurance verification] → (services rendered) →     [ Submit claim ]
+</code></pre>
+<ul>
+<li>Modules are arranged in a hierarchy and communicate with each other.</li>
+<li>The rectangles represent the modules and sub-modules.
+<ul>
+<li>You can see that “billing” is the main module, and the other rectangles are sub-modules to the main billing module.</li>
+<li>In this example the sub-modules are “insurance verification,” “submit claim,” and “output total.”</li>
+</ul>
+</li>
+<li>The arrows represent the flow of the data in the system.</li>
+</ul>
+</li>
+<li>Behavioral models
+<ul>
+<li>It describes what a system does, without explaining how it does it.</li>
+<li>The overall behavior of a system can be communicated through behavioral models.</li>
+<li>There are a number of different UML diagrams that can be used to communicate the behavior of a system.
+<ul>
+<li>State transition diagram</li>
+<li>Interaction diagram</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>UML Diagrams</h3>
+<ul>
+<li>When developing a complex software system with interconnected modules, it can be difficult to remember the relationships, behaviors, and hierarchies among different elements.</li>
+<li>UML, which stands for Unified Modeling Language, is a way to visually represent the architecture, design, and implementation of complex software systems.
+<ul>
+<li>UML is a standardized modeling language that can be used throughout development processes.</li>
+</ul>
+</li>
+<li>UML is programming language agnostic, so software developers can readily interpret and apply it to their work no matter which language they are developing in.</li>
+<li>Advantages
+<ul>
+<li>They allow you to plan out features before any coding takes place which saves time and money.</li>
+<li>The diagrams can be used to bring new team members or developers switching teams to get up to speed quickly.</li>
+<li>The diagrams can be used to facilitate communication between technical and non-technical audiences more easily.</li>
+<li>Having a visual representation of the system allows developers to navigate the source code because they can see the relationships among modules.</li>
+</ul>
+</li>
+<li>Classes
+<ul>
+<li>Structural UML Diagram
+<ul>
+<li>Refer to the next Object-oriented Analysis and Design section for details.</li>
+</ul>
+</li>
+<li>Behavioral UML Diagram
+<ul>
+<li>State Transition Diagram
+<ul>
+<li>The behavior of a system can be explained and represented with the help of a UML diagram called a state transition diagram.</li>
+<li>The state transition diagram is a collection of states and events that describes the different states that a system has and the events which cause a change of state in the system.</li>
+<li>The diagram shown is an example of a state transition diagram that models a patient going to see a doctor at a clinic.<pre><code>    ♦ → /start                         /start
+        patient check-in → [Waiting] → called for testing → [Testing]
+                         ↙                                ↙     🡓 
+        /start                                   result       result
+        called to see doctor                    positive     negative
+      ↙                                      ↙
+[With the doctor]  ← yes ←  [Is Dr. ready?]
+</code></pre>
+<ul>
+<li>The different states include “waiting,” “testing,” and “with the doctor.”</li>
+<li>The arrows represent possible transitions from one state to another and names the event that triggers the transition.</li>
+</ul>
+</li>
+<li>Interaction Diagram
+<ul>
+<li>An interaction diagram is used to model the dynamic nature of a software system.</li>
+<li>They help visualize objects and their relationships.</li>
+<li>A sequence diagram, which is the type of interaction diagram shown here, displays the communication between objects with respect to time.<pre><code>   [User]       [Appointment] [Server]
+1. Select             |           | 
+   doctor  →→→        |           |
+                      |           |
+2. Offer              |           |
+   times   ←←←        |           |
+                      |           |
+3. Submit          Submit         |
+   appt.   →→→     appt.     →→→  |
+                      |           |
+4. Confirm         Confirm        |
+   appt.   ←←←     appt.     ←←←  |
+</code></pre>
+<ul>
+<li>This example shows a patient making an appointment in an online portal.
+<ul>
+<li>This is another example of a behavioral UML diagram.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Object-oriented Analysis and Design</h3>
+<ul>
+<li>Object-oriented analysis and design, or OOAD for short, is an approach for analyzing and designing a software system when the system will use object-oriented programming languages to develop it.
+<ul>
+<li>At the heart of OOAD are objects.
+<ul>
+<li>Objects contain data, and they also have behaviors that prescribe the actions the object can take.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>e.g. A patient named Naya Patel. Naya needs to cancel an appointment she made.
+<ol>
+<li>Before creating Naya object, we must first create a generic version of a patient object.<pre><code>Patient
+-------
+- AccountNumber
+- LastName
+-------
+- MakeAppointment()
+- CancelAppointment()
+</code></pre>
+<ul>
+<li>The generic version of an object is called a “class”.</li>
+<li>Specific objects, also called instances, are created from “classes” which are blueprints or templates for an object.
+<ul>
+<li>Considering Naya Patel, Naya would be an instance of the patient class.</li>
+</ul>
+</li>
+<li>The class contains the object’s generic attributes – the properties and methods.
+<ul>
+<li>But it is only when the object is created, which is called “instantiation,” inside the code that these generic attributes are set to particular values.</li>
+<li>So, the patient class might have a variable called LastName, which is a property but does not specify what that last name is.
+<ul>
+<li>LastName is just a placeholder until that object is created and assigned a name.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Once the object has been instantiated its methods can be called to make the object perform some action such as making or canceling an appointment.</li>
+</ol>
+</li>
+<li>OOAD is used for a system that can be broken down into objects that interact with each other.
+<ul>
+<li>In this way, multiple developers can work on different aspects of the application at the same time.</li>
+</ul>
+</li>
+<li>OOAD-based Structural UML diagram
+<ul>
+<li>Class diagram<pre><code>                    [Medical personnel]
+                    - Name
+                    - Address
+                    - Employee ID
+                ↙           ↓           ↘
+[Nurse]             [Doctor]                [X-ray Technician]
+- callPatient()     - makeDiagnosis()       - takeXRay()
+- TakeVitals        - getTestResults()
+                            ↓  
+                    [Specialist]
+                    - Specialty
+</code></pre>
+<ul>
+<li>Class diagrams are commonly used to communicate a software system’s structure in OOAD.
+<ul>
+<li>The class diagram shows how the classes in an object-oriented design relate to one another.</li>
+<li>Each box represents a class and shows its attributes.
+<ul>
+<li>Recall that an object’s attributes are both its properties or its data, and its available actions, called methods.</li>
+</ul>
+</li>
+<li>A class diagram also shows the relationships between classes.</li>
+</ul>
+</li>
+<li>A subclass is said to “inherit” its parent class attributes meaning it has the same properties and methods as the parent class but also may add additional properties and methods.</li>
+<li>In this diagram, the nurse, doctor, and technician classes are subclasses of medical personnel, and the specialist class is a subclass of the doctor class.
+<ul>
+<li>This means that doctors can do anything medical personnel can do and specialists can do anything a doctor can do.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Approaches to Application Architecture</h3>
+<ul>
+<li>Component
+<ul>
+<li>A component is an individual unit of encapsulated functionality that serves as a part of an application in conjunction with other components.</li>
+<li>Components should be,
+<ul>
+<li>Reusable
+<ul>
+<li>Components should be designed such that they can be reused in different applications.</li>
+</ul>
+</li>
+<li>Replaceable
+<ul>
+<li>Component should be easily replaced with another component.</li>
+</ul>
+</li>
+<li>Independent
+<ul>
+<li>Component should be designed so it doesn’t have dependencies on other components.</li>
+</ul>
+</li>
+<li>Extensible
+<ul>
+<li>The ability to add behavior to a component without changing other components.</li>
+</ul>
+</li>
+<li>Encapsulated
+<ul>
+<li>Bundling a component’s data and methods to hide its internal state, so it doesn’t expose its specific implementation.</li>
+</ul>
+</li>
+<li>Non-context specific.
+<ul>
+<li>Designing it to operate in different environments.</li>
+<li>Data that sets its internal state should be passed to the component rather than included within or accessed by the component.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Examples
+<ul>
+<li>API
+<ul>
+<li>An API can be packaged as a component, if it can be reused across multiple systems and applications.
+<ul>
+<li>For instance, a component could be an open-source API that connects a system to a particular database.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Data Access Object
+<ul>
+<li>A component can also be the interface for a database, called a data access object, that switches the user to a different database without the application knowing about the switch.</li>
+</ul>
+</li>
+<li>Controller
+<ul>
+<li>A controller is a type of component that determines which other components need to be called for a particular event.</li>
+<li>It controls the flow of data between two other components.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Component-based architecture
+<ul>
+<li>Component-based architecture focuses on the decomposition of the design into these logical components.</li>
+<li>Component-based architecture provides a higher level of abstraction than object-oriented designs.</li>
+<li>Component-based architecture should define, compose, and implement loosely coupled independent components so they work together to create an application.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Service
+<ul>
+<li>A service is like a component, also a unit of functionality, but it is designed to be deployed independently and reused by multiple systems.
+<ul>
+<li>A service focuses on a solution to a business need.</li>
+</ul>
+</li>
+<li>A key difference between a component and a service is that a service will only have one unique, always running instance with whom multiple clients communicate.</li>
+</ul>
+<pre><code>     Service Layer             ↓[SERVICE]↑
+                    ----------------------------------
+   Component Layer    ↔[COMPONENT1]   [COMPONENT2]↔
+                    ----------------------------------
+Object/Class Layer             ┌ [CLASS] ┐
+                           [OBJECT]   [OBJECT]
+</code></pre>
+<ul>
+<li>This diagram displays the relationship between objects, components, and services in a layered architecture.
+<ul>
+<li>A service is a type of component.
+<ul>
+<li>Services are made of components and components consist of objects.</li>
+<li>It is meant to be deployed independently of the overall system.
+<ul>
+<li>Examples of services include:
+<ul>
+<li>checking a customer’s credit</li>
+<li>calculating a monthly loan payment</li>
+<li>processing a mortgage application.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Service-oriented architecture
+<ul>
+<li>In a service-oriented architecture, or SOA, services are loosely coupled and interface with each other via a communication protocol over a network.</li>
+<li>SOA supports building distributed systems that deliver services to other applications through the communication protocol.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Distributed system
+<ul>
+<li>System with multiple services located on different machines that coordinate interactions by passing messages to each other via a communication protocol such as hypertext transfer protocol, also known as HTTP.
+<ul>
+<li>Even though the services on a distributed system operate on multiple machines, a distributed system appears to the end-user as a single coherent system.</li>
+</ul>
+</li>
+<li>A distributed system shares resources such as hardware, software, and data.</li>
+<li>They are fault-tolerant, meaning if a node or a service fails the system continues to run
+<ul>
+<li>Also implying that the system may change during execution without service interruption.</li>
+</ul>
+</li>
+<li>Multiple activities run concurrently on a distributed system reducing latency and increasing throughput.</li>
+<li>They are scalable as the number of users increases.
+<ul>
+<li>The computers running the distributed system do not need to use the same kind of hardware or operating systems.</li>
+<li>A distributed system may be made up of different kinds of computers and programming languages.</li>
+</ul>
+</li>
+<li>A node is any device on a network that can recognize, process, and transmit data to other nodes on the network.
+<ul>
+<li>A distributed system consists of multiple interconnected nodes where the nodes are running one or more services in an SOA.</li>
+</ul>
+</li>
+<li>Distributed systems generally use one or more of the following basic types of architecture:
+<ul>
+<li>client-server</li>
+<li>three-tier</li>
+<li>peer-to-peer</li>
+<li>microservices</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Architectural Patterns</h3>
+<ul>
+<li>An architectural pattern is a repeatable solution to a problem in software architecture.
+<ul>
+<li>Patterns highlight common internal elements and structures of a software system.</li>
+<li>Different architecture patterns may share related characteristics.</li>
+</ul>
+</li>
+<li>Examples
+<ul>
+<li>2-tier
+<ul>
+<li>The 2-tier architecture, also called client-server, is a computing model in which the server hosts, delivers, and manages most of the resources and services delivered to the client.</li>
+<li>The interface resides on the client machine and makes requests to a server for data or services.</li>
+<li>This type of architecture usually has more than one client computer connected to a server component over a network connection.</li>
+<li>Examples
+<ul>
+<li>A text messaging app
+<ul>
+<li>The client initiates a request to send a text message through a server and the server responds by sending that message to another different client.</li>
+</ul>
+</li>
+<li>Database clients connecting with database servers.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3-tier
+<ul>
+<li>A 3-tier architecture, or an n-tier architecture when there are more than three layers, is the most common software architecture.</li>
+<li>The 3-tier architecture is composed of separate horizontal tiers that function together as a single unit of software.</li>
+<li>A tier only communicates with other tiers located directly above and below it.
+<ul>
+<li>Related components are placed within the same tier.</li>
+<li>Changes in one tier do not affect the other tier.</li>
+</ul>
+</li>
+<li>The 3-tier architecture organizes applications into three logical and physical computing tiers
+<ul>
+<li>Presentation tier
+<ul>
+<li>user interface tier</li>
+</ul>
+</li>
+<li>Application tier
+<ul>
+<li>where business logic is processed</li>
+</ul>
+</li>
+<li>Data tier
+<ul>
+<li>where the data is stored and managed</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Examples
+<ul>
+<li>Web apps
+<ul>
+<li>They use a web server to provide the user interface, an application server to process user inputs, and a database server that handles data management.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Peer-to-peer
+<ul>
+<li>The peer-to-peer architecture, or P2P for short, consists of a decentralized network of nodes that are both clients and servers.</li>
+<li>The workload is partitioned among these nodes.
+<ul>
+<li>Peers make a portion of their resources directly available to other network participants, without the need for central coordination by servers.
+<ul>
+<li>Resources are things like processing power, disk storage, or network bandwidth.</li>
+</ul>
+</li>
+<li>Peers both supply and consume resources, in contrast to the traditional client-server architecture in which the consumption happens strictly by the client and the servers, supply the resources.</li>
+</ul>
+</li>
+<li>Peer-to-peer architecture is useful for file sharing, instant messaging, collaboration, and high-performance computing.</li>
+<li>Example
+<ul>
+<li>Cryptocurrencies such as Bitcoin and Ethereum use a peer-to-peer pattern.
+<ul>
+<li>Each computer in the blockchain acts as both server and client.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Event-driven
+<ul>
+<li>An event is anything that results in a change of state.
+<ul>
+<li>An event can be thought of as an action that is triggered by the end-user, such as a mouse click, or another part of the program.</li>
+</ul>
+</li>
+<li>Event-driven architecture focuses on producers and consumers of events.
+<ol>
+<li>Producers listen for and react to triggers while consumers process an event.</li>
+<li>The producer publishes the event to an event router.</li>
+<li>The router determines which consumer to push the event to.</li>
+<li>The triggering event generates a message, called an event notification, to the consumer which is listening for the event.</li>
+</ol>
+</li>
+<li>The components in event-driven architectures are loosely coupled making the pattern appropriate for use with modern, distributed systems.</li>
+<li>Examples
+<ul>
+<li>Ride-sharing apps such as Lyft and Uber are examples of event-driven patterns.
+<ul>
+<li>The customer sends a notification that they need a ride from a particular location to another location, and that event is routed to a consumer.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Microservices
+<ul>
+<li>Microservices are an approach to building an application that breaks its functionality into modular components called services.</li>
+<li>An application programming interface, also called an API, is the part of an application that communicates with other applications.
+<ul>
+<li>An API defines how two applications share and modify each other’s data.</li>
+<li>APIs can be used to create a microservices-based architecture.
+<ul>
+<li>The API Gateway routes the API from the client to a service.</li>
+<li>Orchestration handles communication between services.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Examples
+<ul>
+<li>Social media sites are composed of microservices.
+<ul>
+<li>A user has an account.
+<ul>
+<li>That account can request different services such as adding friends, targeted ad recommendations, and displaying content.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Model-view-controller (MVC)</li>
+<li>Message-broker</li>
+<li>Blackboard</li>
+<li>Pipe-filter</li>
+<li>Controller-responder</li>
+</ul>
+</li>
+<li>Architectural patterns are not necessarily mutually exclusive.
+<ul>
+<li>In other words, two or more of these patterns can be combined.</li>
+<li>For instance, a three-tiered architecture can also be microservice-based, or a peer-to-peer architecture can also be event-driven.</li>
+</ul>
+</li>
+<li>However, not all architectural patterns can be used in conjunction with others.
+<ul>
+<li>A peer-to-peer cannot also be two-tier because a single machine in a peer-to-peer architecture represents both a client and a server whereas a two-tier architecture separates the client from the server.</li>
+</ul>
+</li>
+<li>It is up to the system architect to determine which architectural patterns the software
+system should adhere to.</li>
+</ul>
+<h3>Application Deployment Environments</h3>
+<ul>
+<li>An application environment is the combination of the hardware and software resources required to run an application. This includes:
+<ul>
+<li>The application code and/or binary executables for its various components or modules</li>
+<li>The software stack it requires for running the application such as modules and libraries it depends on, third party applications and middleware, and the operating system,</li>
+<li>Any networking components and infrastructure, as well as any physical or virtual hardware including computing or processing resources, memory, and storage.</li>
+</ul>
+</li>
+<li>Environment types depending on the application’s stage in the lifecycle are,
+<ul>
+<li>Pre-production environments
+<ul>
+<li>Those platforms that the application resides on in various forms as it gets prepared for production.</li>
+<li>Common pre-production environments are “development,” “QA,” which stands for quality assurance, and “staging.”
+<ul>
+<li>The development environment is the platform on which the application is being actively coded, and in many cases it may just be the developer's workstation.</li>
+<li>The QA environment, sometimes called “testing” is the environment that allows the QA team to test the application’s components.</li>
+<li>The staging environment is the environment that is as close to replicating the production environment as possible but is not meant for general users.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Production environments
+<ul>
+<li>Often just called “production” includes the entire solution stack consisting of both hardware and software on which the application runs as additional infrastructure components.</li>
+<li>The production environment is intended for all users.</li>
+<li>Unlike the pre-production environments, this robust environment must take the application “load” into consideration,
+<ul>
+<li>Because it is the environment intended for general use, possibly by thousands or millions of people at the same time for enterprise-level applications.</li>
+</ul>
+</li>
+<li>Production environments must also take into account non-functional requirements like security, reliability, and scalability.
+<ul>
+<li>This makes the production environment more complicated than the pre-production ones.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Infrastructure
+<ul>
+<li>On-premise
+<ul>
+<li>In on-premises deployment, the system and its infrastructure reside in-house, within the organization’s physical location, often behind a firewall.
+<ul>
+<li>Firewalls prevent unauthorized access to or from a private network.</li>
+</ul>
+</li>
+<li>If an organization desires greater security or control of an application and the data in use by that application, it may deploy the application on-premises.</li>
+<li>For on-premises software deployments, an organization is responsible for the system, hardware, related infrastructure, and maintenance required to run the application.</li>
+<li>On-premises deployment is usually more expensive when compared to cloud deployment.</li>
+</ul>
+</li>
+<li>Cloud deployments
+<ul>
+<li>Public cloud
+<ul>
+<li>when you leverage the software’s supporting infrastructure over the open internet on hardware owned by the cloud provider.
+<ul>
+<li>That hardware and the associated services are shared with other companies.</li>
+<li>Public cloud providers include Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform, and IBM Cloud.</li>
+<li>The public cloud is the most common due to its scalability and cost.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Private cloud
+<ul>
+<li>The cloud infrastructure is provisioned for exclusive use by a single organization.
+<ul>
+<li>The software system can be run on-premises, or the infrastructure could be owned, managed, and operated by a service provider.
+<ul>
+<li>For example, AWS is also a private cloud service provider.</li>
+</ul>
+</li>
+<li>The main advantage of a private cloud is increased security, but it also allows for more flexibility because it can be fully customized.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hybrid cloud
+<ul>
+<li>A mix of both public and private clouds, working together seamlessly</li>
+<li>A hybrid cloud potentially optimizes the advantages of both public and private cloud models with regard to cost, security, scalability, and flexibility.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Production Deployment Components</h3>
+<ul>
+<li>Let’s consider an n-tier architecture required to deploy an application in a production environment and represent the infrastructure using a diagram.<pre><code>Presentation Tier            [USER/CLIENT APP]         
+                    -----------------------------------
+         Web Tier           [WEB LOAD BALANCER]
+                          ↙          ↓          ↘   
+                     [SERVER1]   [SERVER2]   [SERVER3]
+                    -----------------------------------
+         App Tier           [APP LOAD BALANCER]
+                           ↙                   ↘
+                     [APP SERVER 1]     [APP SERVER 2]
+                    -----------------------------------
+          DB Tier            [DATABASE SERVER]         
+                                     ↕
+                        [HIGH-AVAILABILITY REPLICA]    
+</code></pre>
+<ul>
+<li>The top tier is the presentation tier which contains the front-end client applications.
+<ul>
+<li>All of the other tiers are located behind a firewall.</li>
+</ul>
+</li>
+<li>The next tier is the web tier which has a web load balancer that distributes incoming traffic to several web servers.</li>
+<li>The tier below the web tier is the application server tier.
+<ul>
+<li>This tier contains an app load balancer or a proxy server that routes traffic to different application servers.</li>
+</ul>
+</li>
+<li>The bottom tier is the data tier that contains the database server.
+<ul>
+<li>A high availability replica of the database is often also used to ensure reliability.</li>
+</ul>
+</li>
+<li>Some environments may have additional components or tiers.
+<ul>
+<li>Also not all of these components are necessary for every deployment.
+<ul>
+<li>For example, in some environments there might not be a need for both application servers in addition to web servers.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Now, let’s look at these components in further detail.
+<ul>
+<li>A firewall is a security device that monitors traffic between networks.
+<ul>
+<li>It permits or blocks requested data based on a set of security rules.</li>
+<li>It acts as a barrier between networks to block viruses, malware, and hackers from accessing the internal network.</li>
+</ul>
+</li>
+<li>The purpose of load balancers is to distribute network traffic efficiently amongst multiple servers, called a server farm, on a network.
+<ul>
+<li>Load balancers are used to prevent server traffic overload and are located between clients and the servers.</li>
+<li>A load balancer determines which servers are capable of fulfilling those requirements in a manner that maximizes availability and responsiveness.</li>
+<li>Load balancers ensure that no one server is overworked.</li>
+<li>They manage concurrent requests from clients and return the correct data in a fast and reliable manner.</li>
+</ul>
+</li>
+<li>Web and application servers are either software or machines that provides services, resources, data, or applications to another computer program, called the client.
+<ul>
+<li>Servers store, process, and manage network data, devices, and systems.</li>
+<li>A web server delivers content such as web pages, files, images, and videos to a client.
+<ul>
+<li>A web server primarily responds to hypertext transfer protocol requests coming from a web browser such as a user accessing a website.</li>
+</ul>
+</li>
+<li>An app server is a server that runs business logic and provides the application to the client rather than the client running the app on their own machine.
+<ul>
+<li>Its primary job is to enable interaction between the end-user and the server-side application code.</li>
+<li>The application code represents the business logic that determines how data can be created, stored, and changed.
+<ul>
+<li>That logic dictates things like transaction results and what data is written to and retrieved from a database.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>A proxy server is an intermediate server that sits in between two tiers and handles requests between those tiers.
+<ul>
+<li>A proxy server can serve multiple purposes such as load balancing, system optimization, caching, acting as a firewall, obscuring the source of the request, encryption, scanning for malware, and more.</li>
+<li>A proxy server can improve the efficiency, privacy, and security of data flowing through a network.</li>
+</ul>
+</li>
+<li>A database is a collection of related data, stored on a computer that can be accessed in various ways.
+<ul>
+<li>A database is usually controlled by software called a database management system or DBMS.
+<ul>
+<li>The DBMS controls a database by connecting the database to users or other programs.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The database server controls the flow and storage of data.
+<ul>
+<li>The DBMS connects the database server to an application so data stored in the database can be retrieved or manipulated by the application.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

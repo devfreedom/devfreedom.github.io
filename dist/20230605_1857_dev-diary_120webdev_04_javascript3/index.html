@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Dev Diary] 120 Days of WebDev - 4. JavaScript: Part 3 | devfreedom.github.io</title>
+    <meta name="title" content="[Dev Diary] 120 Days of WebDev - 4. JavaScript: Part 3 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Dev Diary❯,web development,front-end,JavaScript,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230605_1857_dev-diary_120webdev_04_javascript3/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Dev Diary] 120 Days of WebDev - 4. JavaScript: Part 3</h1>
+        <div class="text-center">Published on 5 June 2023 06:57 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Dev Diary❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Dev Diary❯</a>
+            
+            <a href="/tags/web development" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#web development</a>
+            
+            <a href="/tags/front-end" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#front-end</a>
+            
+            <a href="/tags/JavaScript" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#JavaScript</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/javascript-logo.png" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>(UNFINISHED ARTICLE)</h1>
+<h1>Asynchronous programming</h1>
+<h2>Blocking &amp; Non-blocking</h2>
+<h3>Sync-blocking</h3>
+<h3>Sync-nonblocking</h3>
+<h3>Async-blocking</h3>
+<h3>Async-nonblocking</h3>
+<h2>Call Stack, Event loop, and Event Queue</h2>
+<pre><code>┌──────────────────────────────────── WEB BROWSER ────────────────────────────────────┐  
+│                                                                                     │
+│ ┌───────── JAVASCRIPT ENGINE ──────────┐                                            │
+│ │ ┌── MEM HEAP ──┐  ┌── CALL STACK ──┐ │    ┌── WEB APIs ──┐                        │
+│ │ │              │  │                │ │  → │  DOM         │  ────────┐             │
+│ │ │              │  │                │ │    │  XMLHttpReq  │          │             │ 
+│ │ │              │  │                │ │    │  setTimeout  │          ↓             │
+│ │ │              │  │                │ │    │  etc.        │ ┌── CALLBACK QUEUE ──┐ │ 
+│ │ │              │  │                │ │    │              │ │                    │ │
+│ │ │              │  │                │ │    └──────────────┘ │                    │ │
+│ │ │              │  │                │ │                     │                    │ │
+│ │ │              │  │                │ │                     │                    │ │
+│ │ │              │  │                │ │                     │                    │ │
+│ │ │              │  │                │ │  ← ↻ [EVENT LOOP] ← │                    │ │
+│ │ └──────────────┘  └────────────────┘ │                     └────────────────────┘ │   
+│ └──────────────────────────────────────┘                                            │
+└─────────────────────────────────────────────────────────────────────────────────────┘ 
+</code></pre>
+<ul>
+<li>Memory Heap
+<ul>
+<li>This is where all the memory allocation happens for your variables, that you have defined in your program.</li>
+</ul>
+</li>
+<li>Event Loop
+<ul>
+<li>Event Loop monitors call stack to check if it's empty.</li>
+<li>If call stack is empty, Event Loop brings asynchronous code from Callback Queue to Call Stack, for execution.</li>
+</ul>
+</li>
+<li>Job Queue
+<ul>
+<li>A queue reserved only for <code>new Promise()</code>, apart from Callback Queue</li>
+<li><code>.then</code>-able methods are added to Job Queue once the promise has returned/resolved, and then gets executed.</li>
+<li>Job Queue has higher priority in executing callbacks
+<ul>
+<li>If Event Loop tick comes to Job Queue, it will execute all the jobs in Job Queue first until it gets empty, then will move to Callback Queue.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Call stack and Web APIs</h3>
+<h3>Event queue</h3>
+<h3>Job queue</h3>
+<h2>Asynchronous functions</h2>
+<h3>Callback</h3>
+<h3>Promise</h3>
+<h3>async/await</h3>
+<h2>Asynchronous web programming</h2>
+<h3>Debouncing</h3>
+<h3>Throttling</h3>
+<p>https://medium.com/@Rahulx1/understanding-event-loop-call-stack-event-job-queue-in-javascript-63dcd2c71ecd</p>
+<h1>State management</h1>
+<pre><code> ┌── STATE MGMT. ──┐            ┌── COMPONENT ──┐ 
+ │                 │            │               │ 
+ │                 │ → State  → │ → Component   │ 
+ │                 │   object   │   re-render   │ 
+ │                 │   info     │               │ 
+ │                 │            │               │         
+ │                 │            │               │ ← Behavior ← [USER]
+ │                 │            │               │ 
+ │                 │            │               │ 
+ │   New state ←   │ ← State  ← │ ← Behavior    │ 
+ │   object        │   change   │   callback    │ 
+ └─────────────────┘            └───────────────┘ 
+</code></pre>
+<ul>
+<li>State manager</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

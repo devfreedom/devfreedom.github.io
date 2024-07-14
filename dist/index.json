@@ -1,0 +1,495 @@
+[
+    
+    {
+        "url": "/20240507_1722_translation_EFF_uk_met_youtube_censorship/",
+        "title": "[번역] 유튜브와 런던 경찰의 제휴는 어떻게 영국 드릴 음악을 검열하는가",
+        "date": "7 May 2024 05:22 PM"
+    },
+    
+    {
+        "url": "/20240207_1931_study-note_compsci_database_02/",
+        "title": "[필기] 컴퓨터공학과 &lt;데이터베이스&gt; 과목 - 후반부",
+        "date": "7 February 2024 07:31 PM"
+    },
+    
+    {
+        "url": "/20240205_2246_study-note_ai_ml_openai_langchain/",
+        "title": "[필기] 머신러닝 특강 - LangChain으로 LLM 활용하기",
+        "date": "5 February 2024 10:46 PM"
+    },
+    
+    {
+        "url": "/20240205_2109_study-note_ai_ml_pytorch/",
+        "title": "[필기] 머신러닝 특강 - PyTorch 기반의 머신러닝 파이프라인 체험하기",
+        "date": "5 February 2024 09:09 PM"
+    },
+    
+    {
+        "url": "/20240202_2023_dev-diary_backend_mentoring/",
+        "title": "[개발 일기] 백엔드 멘토링 세션 - TypeScript + Prisma + MySQL",
+        "date": "1 February 2024 07:12 PM"
+    },
+    
+    {
+        "url": "/20240201_1912_dev-diary_ai_ml_nlp_mentoring/",
+        "title": "[개발 일기] 머신러닝 멘토링 세션 - PyTorch로 감정 분류기 개발하기",
+        "date": "1 February 2024 07:12 PM"
+    },
+    
+    {
+        "url": "/20240114_2043_home-server_deployment/",
+        "title": "[놀이터] [홈서버] Caddy와 Cloudflare DDNS를 사용해 웹 서비스를 안전하게 개방하기",
+        "date": "14 January 2024 08:43 PM"
+    },
+    
+    {
+        "url": "/20240108_2032_study-note_devops_coursework_09/",
+        "title": "[Study Note] Coursework: DevOps and Software Engineering - BDD",
+        "date": "8 January 2024 08:32 PM"
+    },
+    
+    {
+        "url": "/20240108_2031_study-note_devops_coursework_08/",
+        "title": "[Study Note] Coursework: DevOps and Software Engineering - TDD",
+        "date": "8 January 2024 08:31 PM"
+    },
+    
+    {
+        "url": "/20240108_2030_study-note_devops_coursework_07/",
+        "title": "[Study Note] Coursework: DevOps and Software Engineering - SDLC",
+        "date": "8 January 2024 08:31 PM"
+    },
+    
+    {
+        "url": "/20231224_1047_review_firebat_ak2/",
+        "title": "[리뷰] 홈서버와 HTPC를 동시에? 인텔 N100 프로세서 기반 미니 PC, Firebat AK2",
+        "date": "24 December 2023 10:47 AM"
+    },
+    
+    {
+        "url": "/20231025_2001_fire_hd8_hass/",
+        "title": "[놀이터] 구형 안드로이드 태블릿에 Home Assistant Core를 설치해서 가정용 IoT 서버로 활용하기... 실패!",
+        "date": "25 October 2023 08:01 PM"
+    },
+    
+    {
+        "url": "/20231023_1915_pixel4a_refurbish/",
+        "title": "[놀이터] 구글 픽셀 4a 스마트폰 수리하기",
+        "date": "23 October 2023 07:15 PM"
+    },
+    
+    {
+        "url": "/20230802_1442_troubleshooting_ubuntu_mysql/",
+        "title": "[트러블슈팅] [리눅스] 우분투에서 MySQL Workbench 설치시 libproj 의존성 오류가 발생할 때",
+        "date": "2 August 2023 02:42 PM"
+    },
+    
+    {
+        "url": "/20230731_1845_study-note_compsci_database_01/",
+        "title": "[필기] 컴퓨터공학과 &lt;데이터베이스&gt; 과목 - 전반부",
+        "date": "31 July 2023 06:45 PM"
+    },
+    
+    {
+        "url": "/20230728_1511_dev-diary_120webdev_09_docker/",
+        "title": "[Dev Diary] 120 Days of WebDev - 9. Docker",
+        "date": "28 July 2023 03:11 PM"
+    },
+    
+    {
+        "url": "/20230727_2202_troubleshooting_python/",
+        "title": "[트러블슈팅] [리눅스] 파이썬과 관련된 여러가지 문제들 해결하기",
+        "date": "27 July 2023 10:02 PM"
+    },
+    
+    {
+        "url": "/20230726_1853_study-note_devops_coursework_06/",
+        "title": "[Study Note] Coursework: DevOps and Software Engineering - CI/CD",
+        "date": "26 July 2023 06:53 PM"
+    },
+    
+    {
+        "url": "/20230726_1852_study-note_devops_coursework_05/",
+        "title": "[Study Note] Coursework: DevOps and Software Engineering - Microservices",
+        "date": "26 July 2023 06:52 PM"
+    },
+    
+    {
+        "url": "/20230724_1434_study-note_devops_coursework_04/",
+        "title": "[Study Note] Coursework: DevOps and Software Engineering - Containerization",
+        "date": "24 July 2023 02:34 PM"
+    },
+    
+    {
+        "url": "/20230704_2056_study-note_linux/",
+        "title": "[Study Note] Linux Essentials",
+        "date": "4 July 2023 08:56 PM"
+    },
+    
+    {
+        "url": "/20230702_1119_study-note_cybersecurity_coursework_07/",
+        "title": "[Study Note] Coursework: Cybersecurity Analyst - Part 7",
+        "date": "2 July 2023 11:19 AM"
+    },
+    
+    {
+        "url": "/20230625_2221_dev-diary_pinetime/",
+        "title": "[개발 일기] PineTime 스마트워치 펌웨어를 개조해서 커스텀 워치페이스 만들기",
+        "date": "25 June 2023 10:21 PM"
+    },
+    
+    {
+        "url": "/20230624_1130_study-note_cybersecurity_coursework_06/",
+        "title": "[Study Note] Coursework: Cybersecurity Analyst - Part 6",
+        "date": "24 June 2023 11:30 AM"
+    },
+    
+    {
+        "url": "/20230623_2021_study-note_cybersecurity_coursework_05/",
+        "title": "[Study Note] Coursework: Cybersecurity Analyst - Part 5",
+        "date": "23 June 2023 08:21 PM"
+    },
+    
+    {
+        "url": "/20230621_2244_study-note_devops_coursework_03/",
+        "title": "[Study Note] Coursework: DevOps and Software Engineering - Cloud Infrastructure",
+        "date": "21 June 2023 10:44 PM"
+    },
+    
+    {
+        "url": "/20230621_2243_study-note_devops_coursework_02/",
+        "title": "[Study Note] Coursework: DevOps and Software Engineering - Cloud Computing",
+        "date": "21 June 2023 10:43 PM"
+    },
+    
+    {
+        "url": "/20230621_2242_study-note_devops_coursework_01/",
+        "title": "[Study Note] Coursework: DevOps and Software Engineering - DevOps",
+        "date": "21 June 2023 10:42 PM"
+    },
+    
+    {
+        "url": "/20230621_2214_rubberducking_compsci_linux/",
+        "title": "[러버덕 타임] 리눅스에서의 권한 관리?",
+        "date": "21 June 2023 10:14 PM"
+    },
+    
+    {
+        "url": "/20230621_2206_rubberducking_compsci_db/",
+        "title": "[러버덕 타임] 데이터베이스? 그게 왜 필요하죠?",
+        "date": "21 June 2023 10:06 PM"
+    },
+    
+    {
+        "url": "/20230621_2149_rubberducking_compsci_network/",
+        "title": "[러버덕 타임] OSI Layer 1/2/3 에서 사용되는 네트워크 장비들의 차이점",
+        "date": "21 June 2023 09:49 PM"
+    },
+    
+    {
+        "url": "/20230621_2136_rubberducking_compsci_os/",
+        "title": "[러버덕 타임] 운영체제가 임계영역 문제를 해결하는 방법",
+        "date": "21 June 2023 09:38 PM"
+    },
+    
+    {
+        "url": "/20230619_1038_dev-diary_120webdev_06_react2/",
+        "title": "[Dev Diary] 120 Days of WebDev - 6. React: Part 2",
+        "date": "19 June 2023 10:38 AM"
+    },
+    
+    {
+        "url": "/20230619_1331_study-note_cybersecurity_coursework_04/",
+        "title": "[Study Note] Coursework: Cybersecurity Analyst - Part 4",
+        "date": "17 June 2023 11:32 AM"
+    },
+    
+    {
+        "url": "/20230617_1132_study-note_cybersecurity_coursework_03/",
+        "title": "[Study Note] Coursework: Cybersecurity Analyst - Part 3",
+        "date": "17 June 2023 11:32 AM"
+    },
+    
+    {
+        "url": "/20230615_1751_study-note_cybersecurity_coursework_02/",
+        "title": "[Study Note] Coursework: Cybersecurity Analyst - Part 2",
+        "date": "15 June 2023 05:51 PM"
+    },
+    
+    {
+        "url": "/20230612_2015_dev-diary_120webdev_05_react1/",
+        "title": "[Dev Diary] 120 Days of WebDev - 5. React: Part 1",
+        "date": "12 June 2023 08:15 PM"
+    },
+    
+    {
+        "url": "/20230611_1953_study-note_cybersecurity_coursework_01/",
+        "title": "[Study Note] Coursework: Cybersecurity Analyst - Part 1",
+        "date": "11 June 2023 07:53 PM"
+    },
+    
+    {
+        "url": "/20230515_2132_dev-diary_120webdev_01_html_css/",
+        "title": "[Dev Diary] 120 Days of WebDev - 1. HTML/CSS Essentials",
+        "date": "15 May 2023 09:32 PM"
+    },
+    
+    {
+        "url": "/20230425_2101_study-note_linux_shell/",
+        "title": "[필기] 리눅스 Bash shell에서 자주 사용하는 명령어 모음",
+        "date": "25 April 2023 09:01 PM"
+    },
+    
+    {
+        "url": "/20230423_1106_study-note_compsci_AI_02/",
+        "title": "[필기] 컴퓨터공학과 &lt;인공지능&gt; 과목 - 후반부",
+        "date": "23 April 2023 11:06 AM"
+    },
+    
+    {
+        "url": "/20230422_1513_review_pinetime/",
+        "title": "[리뷰] 오픈소스 스마트워치! PINE64 PineTime",
+        "date": "22 April 2023 03:13 PM"
+    },
+    
+    {
+        "url": "/20230417_1950_review_stream_tkl/",
+        "title": "[리뷰] 압도적인 가성비의 고품질 사무용 텐키리스 키보드 - Cherry Stream TKL",
+        "date": "17 April 2023 07:50 PM"
+    },
+    
+    {
+        "url": "/20230413_1722_troubleshooting_git_ssh/",
+        "title": "[트러블슈팅] [리눅스] SSH로 GitHub 접속 시 host authenticity 경고 해결하기",
+        "date": "13 April 2023 05:22 PM"
+    },
+    
+    {
+        "url": "/20230410_1826_troubleshooting_python_jupyter/",
+        "title": "[트러블슈팅] [리눅스] VSCode에서 Jupyter 확장 프로그램이 파이썬 커널을 찾지 못할 때",
+        "date": "10 April 2023 06:26 PM"
+    },
+    
+    {
+        "url": "/20230405_2210_rubberducking_compsci_os/",
+        "title": "[러버덕 타임] 기계어부터 운영체제까지",
+        "date": "5 April 2023 10:10 PM"
+    },
+    
+    {
+        "url": "/20230405_2152_rubberducking_compsci_swe/",
+        "title": "[러버덕 타임] 관점지향 프로그래밍?",
+        "date": "5 April 2023 09:52 PM"
+    },
+    
+    {
+        "url": "/20230330_1816_study-note_compsci_network/",
+        "title": "[필기] 컴퓨터공학과 &lt;네트워크&gt; 과목 - 전반부",
+        "date": "30 March 2023 06:16 PM"
+    },
+    
+    {
+        "url": "/20230327_2116_troubleshooting_ubuntu_systemapp/",
+        "title": "[트러블슈팅] [Ubuntu 20.04+] 우분투의 기본 파일 관리자를 GNOME Files에서 Nemo로 바꾸기",
+        "date": "27 March 2023 09:16 PM"
+    },
+    
+    {
+        "url": "/20230323_2010_troubleshooting_ubuntu_timezone/",
+        "title": "[트러블슈팅] 우분투를 윈도우즈와 듀얼부팅으로 사용할 때 시간대가 틀어지는 현상 해결하기",
+        "date": "23 March 2023 08:10 PM"
+    },
+    
+    {
+        "url": "/20230314_1905_troubleshooting_ubuntu_backlight/",
+        "title": "[트러블슈팅] 노트북에서 우분투 시작시 디스플레이 백라이트가 최대 또는 최소로 설정되는 증상 해결하기",
+        "date": "14 March 2023 07:05 PM"
+    },
+    
+    {
+        "url": "/20230314_1749_rubberducking_compsci_algorithm/",
+        "title": "[러버덕 타임] 알고리즘의 시간복잡도 설명하기",
+        "date": "14 March 2023 05:49 PM"
+    },
+    
+    {
+        "url": "/20230309_1919_pro-tips_ubuntu_bluetooth/",
+        "title": "[꿀팁] 우분투에서 특수코덱 없는 일반 블루투스 스피커/이어폰으로도 고품질 오디오 누리기",
+        "date": "9 March 2023 07:19 PM"
+    },
+    
+    {
+        "url": "/20230309_1900_troubleshooting_ubuntu_peripherals/",
+        "title": "[트러블슈팅] 우분투에서 마우스를 연결하면 노트북 내장 터치패드가 자동으로 비활성화 되도록 하기",
+        "date": "9 March 2023 07:00 PM"
+    },
+    
+    {
+        "url": "/20230309_1835_troubleshooting_ubuntu_bluetooth/",
+        "title": "[트러블슈팅] 우분투가 시작될 때 블루투스가 자동으로 켜지지 않도록 하기",
+        "date": "9 March 2023 06:35 PM"
+    },
+    
+    {
+        "url": "/20230309_1743_troubleshooting_ubuntu_bluetooth/",
+        "title": "[트러블슈팅] 우분투에서 블루투스 스피커 또는 이어폰 연결시 음질이 저하되는 현상",
+        "date": "9 March 2023 05:43 PM"
+    },
+    
+    {
+        "url": "/20230301_1551_dev-diary_hackathon/",
+        "title": "[개발 일기] &lt;공트365&gt; 프로토타입 개발 후기",
+        "date": "1 March 2023 03:51 PM"
+    },
+    
+    {
+        "url": "/20230227_1750_study-note_compsci_AI_01/",
+        "title": "[필기] 컴퓨터공학과 &lt;인공지능&gt; 과목 - 전반부",
+        "date": "27 February 2023 05:50 PM"
+    },
+    
+    {
+        "url": "/20230128_1237_study-note_ML_OJT_04/",
+        "title": "[Study Note] Coursework: The Comprehensive Practice in Machine Learning - Part 4",
+        "date": "28 January 2023 12:37 PM"
+    },
+    
+    {
+        "url": "/20230127_2050_study-note_ML_OJT_03/",
+        "title": "[Study Note] Coursework: The Comprehensive Practice in Machine Learning - Part 3",
+        "date": "27 January 2023 08:50 PM"
+    },
+    
+    {
+        "url": "/20230126_1921_study-note_ML_OJT_02/",
+        "title": "[Study Note] Coursework: The Comprehensive Practice in Machine Learning - Part 2",
+        "date": "26 January 2023 07:21 PM"
+    },
+    
+    {
+        "url": "/20221211_1734_study-note_compsci_algorithm/",
+        "title": "[필기] 컴퓨터공학과 &lt;알고리즘&gt; 과목 - 전반부",
+        "date": "11 December 2022 05:34 PM"
+    },
+    
+    {
+        "url": "/20221204_1842_study-note_ML_OJT_01/",
+        "title": "[Study Note] Coursework: The Comprehensive Practice in Machine Learning - Part 1",
+        "date": "4 December 2022 06:42 PM"
+    },
+    
+    {
+        "url": "/20221030_1653_study-note_product_mgmt_coursework_03/",
+        "title": "[필기] &lt;한 번에 끝내는 서비스 기획의 모든 것&gt; 강의 - Part 2",
+        "date": "30 October 2022 04:53 PM"
+    },
+    
+    {
+        "url": "/20221030_1650_translation_EFF_face_recognition/",
+        "title": "[번역] 안면인식의 위협에 저항하다",
+        "date": "30 October 2022 04:50 PM"
+    },
+    
+    {
+        "url": "/20221030_1642_translation_EFF_ad_tracking/",
+        "title": "[번역] 안드로이드와 iOS에서 광고 ID 추적을 해제하는 방법 및 그렇게 해야 하는 이유를 알려드립니다",
+        "date": "30 October 2022 04:42 PM"
+    },
+    
+    {
+        "url": "/20221030_1639_translation_EFF_encryption_web/",
+        "title": "[번역] 인터넷을 암호화하다",
+        "date": "30 October 2022 04:39 PM"
+    },
+    
+    {
+        "url": "/20221030_1633_translation_EFF_social_media/",
+        "title": "[번역] 대중은 미국 국토안보부가 이민자들의 소셜 미디어를 감시하고자 수백만 달러의 예산을 어떻게 사용하고 있는지를 알 권리가 있습니다",
+        "date": "30 October 2022 04:33 PM"
+    },
+    
+    {
+        "url": "/20221030_1619_translation_EFF_stalkerware/",
+        "title": "[번역] 전자 프론티어 재단(EFF)은 테크크런치에서 보도한 스토커웨어 앱 네트워크를 미국 연방거래위원회(FTC)가 조사하기를 촉구합니다",
+        "date": "30 October 2022 04:19 PM"
+    },
+    
+    {
+        "url": "/20220921_2131_study-note_python/",
+        "title": "[필기] &lt;웹 스크래핑을 위한 파이썬&gt; 강의",
+        "date": "21 September 2022 09:31 PM"
+    },
+    
+    {
+        "url": "/20220920_2150_study-note_product_mgmt_coursework_02/",
+        "title": "[필기] &lt;한 번에 끝내는 서비스 기획의 모든 것&gt; 강의 - Part 1",
+        "date": "20 September 2022 09:50 PM"
+    },
+    
+    {
+        "url": "/20220920_2147_study-note_product_mgmt_coursework_01/",
+        "title": "[필기] &lt;한 번에 끝내는 서비스 기획의 모든 것&gt; 강의 - Part 0",
+        "date": "20 September 2022 09:47 PM"
+    },
+    
+    {
+        "url": "/20220919_2212_study-note_nand2Tetris/",
+        "title": "[필기] &lt;Nand2Tetris&gt; 강의 - Unit 1",
+        "date": "19 September 2022 10:12 PM"
+    },
+    
+    {
+        "url": "/20220918_1546_translation_programmer_05/",
+        "title": "[번역] 5. 당신이 대단한 프로그래머라는 신호들",
+        "date": "18 September 2022 03:46 PM"
+    },
+    
+    {
+        "url": "/20220918_1534_translation_programmer_04/",
+        "title": "[번역] 4. 당신이 유능한 프로그래머라는 신호들",
+        "date": "18 September 2022 03:34 PM"
+    },
+    
+    {
+        "url": "/20220918_1510_translation_programmer_03/",
+        "title": "[번역] 3. 당신이 평범한 프로그래머라는 신호들",
+        "date": "18 September 2022 03:10 PM"
+    },
+    
+    {
+        "url": "/20220918_1400_translation_programmer_02/",
+        "title": "[번역] 2. 당신이 형편없는 프로그래머라는 신호들",
+        "date": "18 September 2022 02:00 PM"
+    },
+    
+    {
+        "url": "/20220917_2047_translation_programmer_01/",
+        "title": "[번역] 1. 당신이 프로그래머가 되어서는 안된다는 신호들",
+        "date": "17 September 2022 08:47 PM"
+    },
+    
+    {
+        "url": "/20220911_1931_troubleshooting_python/",
+        "title": "[트러블슈팅] Selenium WebDriver 사용할 때 &#39;data:,&#39;라는 URL에서 멈추면서 자동화가 실행이 안되는 경우",
+        "date": "11 September 2022 07:31 PM"
+    },
+    
+    {
+        "url": "/20220911_1736_study-note_interview/",
+        "title": "[필기] 개발 직군 기술면접 예상 질문",
+        "date": "11 September 2022 05:36 PM"
+    },
+    
+    {
+        "url": "/20220904_1100_study-note_docker/",
+        "title": "[필기] &lt;도커를 활용한 클라우드 컴퓨팅&gt; 강의",
+        "date": "4 September 2022 11:00 AM"
+    },
+    
+    {
+        "url": "/20220904_1050_study-note_python/",
+        "title": "[필기] &lt;파이썬 입문&gt; 강의",
+        "date": "4 September 2022 10:50 AM"
+    }
+    
+]

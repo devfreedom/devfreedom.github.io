@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[트러블슈팅] [Ubuntu 20.04+] 우분투의 기본 파일 관리자를 GNOME Files에서 Nemo로 바꾸기 | devfreedom.github.io</title>
+    <meta name="title" content="[트러블슈팅] [Ubuntu 20.04+] 우분투의 기본 파일 관리자를 GNOME Files에서 Nemo로 바꾸기 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮트러블슈팅❯,우분투,리눅스,운영체제,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230327_2116_troubleshooting_ubuntu_systemapp/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[트러블슈팅] [Ubuntu 20.04+] 우분투의 기본 파일 관리자를 GNOME Files에서 Nemo로 바꾸기</h1>
+        <div class="text-center">Published on 27 March 2023 09:16 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮트러블슈팅❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮트러블슈팅❯</a>
+            
+            <a href="/tags/우분투" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#우분투</a>
+            
+            <a href="/tags/리눅스" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#리눅스</a>
+            
+            <a href="/tags/운영체제" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#운영체제</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/ubuntu-logo.png" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <p>우분투에는 기본 파일 관리자로 그놈(GNOME) 데스크탑 환경의 공식 파일 관리 애플리케이션인 '그놈 파일즈(GNOME Files)'가 탑재되어 있습니다. 예전 이름인 노틸러스(Nautilus)가 더 익숙하신 분들도 있겠네요. 하지만 그놈 파일즈는 듀얼 패널, 트리 뷰, 편집 가능한 툴바, 팝업 없이 파일 이름 변경하기 등 각종 기능들이 지원되지 않아 사용하기에 불편한 점이 다소 있습니다. 한편 리눅스 민트의 시나몬(Cinnamon) 데스크탑 환경에는 니모(Nemo)라는 파일 관리자가 기본으로 탑재되어 있는데, 니모는 위에서 언급한 기능 외에도 다양한 기능들을 추가적으로 지원하기 때문에 우분투에서 사용하기에 좋은 대안이 될 수 있습니다.</p>
+<p>우분투에서는 그놈 파일즈가 기본 시스템 애플리케이션으로 지정이 되어 있기 때문에, 니모를 설치하더라도 각종 시스템 기본 동작에서는 니모 대신 그놈 파일즈가 실행됩니다. 그래서 설정을 변경해줄 필요가 있습니다. 우분투 기본 파일 관리자를 그놈 파일즈에서 니모로 대체하는 방법은 다음과 같습니다.</p>
+<ol>
+<li>
+<p>터미널에서 다음 루트 권한 명령어로 니모를 설치합니다.</p>
+<pre><code>$ sudo apt install nemo
+</code></pre>
+</li>
+<li>
+<p>다음 명령어를 사용해 기본 파일 관리자를 니모로 변경합니다.</p>
+<pre><code>$ xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+</code></pre>
+</li>
+</ol>
+<p>이 작업을 통해서 우분투의 그놈 파일즈는 그대로 두고, 대신 새로 설치한 니모를 기본 파일 관리자로 지정해 사용하게 됩니다. 이후 니모 대신 그놈 파일즈를 기본 파일 관리자로 다시 원상복구하려면 다음 과정을 거치면 됩니다.</p>
+<ol>
+<li>
+<p>터미널에서 다음 명령어로 기본 파일 관리자를 그놈 파일즈로 변경합니다.</p>
+<pre><code>$ xdg-mime default nautilus.desktop inode/directory application/x-gnome-saved-search
+</code></pre>
+</li>
+<li>
+<p>다음 명령어로 니모를 우분투에서 삭제합니다.</p>
+<pre><code>$ sudo apt purge nemo nemo*
+</code></pre>
+</li>
+</ol>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,3147 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Study Note] Linux Essentials | devfreedom.github.io</title>
+    <meta name="title" content="[Study Note] Linux Essentials | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Study Note❯,Linux,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230704_2056_study-note_linux/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Study Note] Linux Essentials</h1>
+        <div class="text-center">Published on 4 July 2023 08:56 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Study Note❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Study Note❯</a>
+            
+            <a href="/tags/Linux" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#Linux</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/linux.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>1. File Systems and Disk Management</h1>
+<h2>1-1. File System</h2>
+<ul>
+<li>A file system is a method that is used by an operating system to store, retrieve, organize, and manage files and directories on mass storage devices.
+<ul>
+<li>A file system maintains information, such as the date of creation and modification of individual files, their file size, file type, and permissions.
+<ul>
+<li>It also provides a structured form for data storage.</li>
+</ul>
+</li>
+<li>A file system by itself does not interpret the data contained in files because this task is handled by specific applications.</li>
+</ul>
+</li>
+<li>ext4
+<ul>
+<li>The newest default file system for Linux distributions.</li>
+<li>It is backwards-compatible with the ext2 and ext3 file systems.</li>
+<li>Among ext4’s improvements over ext3 are journaling, support of volumes of up to one exbibyte (EiB), and files up to 16 TiB in size.</li>
+<li>Ext4 is the default filesystem for CentOS/RHEL 7 and Ubuntu installations.</li>
+</ul>
+</li>
+<li>swap
+<ul>
+<li>This is not a true file system, but rather is a portion of the hard disk that is used in situations when Linux runs out of physical memory and needs more of it.</li>
+<li>Linux pushes some of the unused files from RAM to “swap” to free up memory.</li>
+</ul>
+</li>
+</ul>
+<h3>File System Label</h3>
+<ul>
+<li>File system labels are assigned to file systems for easy identification.
+<ul>
+<li>The labels may be up to 16 characters long and can be displayed or changed using the <code>e2label</code> command.</li>
+<li>The syntax for setting file system labels is <code>e2label /dev/{device name}{partition number} [label name]</code>.</li>
+<li>They can also be set using the <code>tune2fs -L [volume label] [device]</code> command.</li>
+</ul>
+</li>
+</ul>
+<h3>Journaling</h3>
+<ul>
+<li>A journaling file system is a method that is used by an operating system to quickly recover after an unexpected interruption, such as a system crash.
+<ul>
+<li>Journaling file systems can remove the need for a file system check when the system boots.</li>
+<li>By using journaling file systems, the system does not write modified files directly on the disk.
+<ul>
+<li>Instead, a journal is maintained on the disk.</li>
+</ul>
+</li>
+<li>The journaling file system process involves the following phases.
+<ol>
+<li>The journal describes all the changes that must be made to the disk.</li>
+<li>A background process makes each change as and when it is entered in the journal.</li>
+<li>If the system shuts down, pending changes are performed when it is rebooted.</li>
+<li>Incomplete entries in the journal are discarded.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>A journaled file system works well with small files and small drives.
+<ul>
+<li>With the growth of file and drive sizes, performance will suffer.</li>
+<li>Some of the reasons for poor performance include
+<ul>
+<li>Filesystem recovery time after a power failure or improper shutdown</li>
+<li>Bitmap method of tracking the filesystem</li>
+<li>Wasted space and fragmentation</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>1-2. Partitions</h2>
+<ul>
+<li>A partition is a section of the hard disk that logically acts as a separate disk.
+<ul>
+<li>Partitions enable you to convert a large hard disk to smaller manageable chunks, leading to better organization of information.</li>
+<li>A partition must be formatted and assigned a filesystem before data can be stored on it.</li>
+<li>Partitions are identified using a partition table, which is stored in the boot record.
+<ul>
+<li>The partition table can contain entries for a maximum of four primary partitions.</li>
+<li>The size of each partition can vary but cannot exceed the total free space of the hard disk.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Partition Size</h3>
+<ul>
+<li>/
+<ul>
+<li>Minimum 1 GB.</li>
+</ul>
+</li>
+<li>/boot
+<ul>
+<li>100 MB.</li>
+</ul>
+</li>
+<li>swap
+<ul>
+<li>Double the RAM size.</li>
+</ul>
+</li>
+<li>/var
+<ul>
+<li>Minimum 250 MB.
+<ul>
+<li>If the possibility of the installation of many applications exists in the future, allocate the appropriate size.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>/home
+<ul>
+<li>Varies based on the number of users.</li>
+</ul>
+</li>
+</ul>
+<h3>Disk Partitions</h3>
+<ul>
+<li>Primary
+<ul>
+<li>A disk partition that can contain one filesystem or logical drive and is sometimes referred to as volumes.</li>
+<li>A maximum of four primary partitions are allowed.</li>
+<li>The swap filesystem and the boot partition are normally created in a primary partition.</li>
+</ul>
+</li>
+<li>Extended
+<ul>
+<li>An extended partition can contain several filesystems, which are referred to as logical disks or logical drives.</li>
+<li>There can be only one extended partition, which can be further subdivided.</li>
+<li>This partition type does not contain any data and has a separate partition table.</li>
+</ul>
+</li>
+<li>Logical
+<ul>
+<li>A part of a physical disk drive that has been partitioned and allocated as an independent unit and functions as a separate drive.</li>
+<li>A logical partition is created within an extended partition.</li>
+<li>There is no restriction on the number of logical partitions, but it is advisable to limit it to 12 logical partitions per disk drive.</li>
+</ul>
+</li>
+</ul>
+<h3>Swap Space</h3>
+<ul>
+<li>Swap space is a partition on the hard disk that is used when the system runs out of physical memory.
+<ul>
+<li>Linux pushes some of the unused files from the RAM to the swap space to free up memory.</li>
+<li>Usually, the swap space equals twice the RAM capacity.</li>
+<li>Types
+<ul>
+<li>Device swap
+<ul>
+<li>Device swap space is configured when you partition the hard disk.</li>
+<li>It is used by the operating system to run large applications.</li>
+</ul>
+</li>
+<li>Filesystem swap
+<ul>
+<li>Filesystem swap space is configured primarily when you install Linux.</li>
+<li>It is utilized by the operating system as an emergency resource when the available swap space runs out.</li>
+</ul>
+</li>
+<li>Pseudo-swap
+<ul>
+<li>Pseudo-swap space allows large applications to run on computers with limited RAM.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Swap file
+<ul>
+<li>Created for storing data that is to be transferred from a system’s memory to a disk</li>
+<li>It is dynamic and changes in size when data is moved in and out of the memory.</li>
+<li>It is used as a medium to transfer data from RAM on to the hard disk.</li>
+</ul>
+</li>
+<li>Swap partition
+<ul>
+<li>A swap partition is an area of virtual memory on a hard disk to complement the physical RAM in the computer.</li>
+<li>Swap partitions are created by Linux because they perform better than swap filesystems.</li>
+</ul>
+</li>
+<li><code>mkswap</code>
+<ul>
+<li>The mkswap command is a system administration command that is used to create swap space on a disk partition.</li>
+<li>The syntax of the mkswap command is <code>mkswap [options] {device} {size}</code>.
+<ul>
+<li>The device argument of mkswap is generally a disk partition, such as /dev/hda2 or /dev/sdb3, but it can also be a file.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>swapon</code> and <code>swapoff</code>
+<ul>
+<li>A number of commands are used to manage swap partitions. The most important commands are swapon and swapoff.</li>
+<li><code>swapon</code>
+<ul>
+<li>Used to activate a swap partition on a specified device.</li>
+<li>It provides a number of options for specifying devices.</li>
+</ul>
+</li>
+<li><code>swapoff</code>
+<ul>
+<li>Used to deactivate the swap space on devices.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>1-3. Partition Management</h2>
+<ul>
+<li>fstab
+<ul>
+<li>The fstab file is a configuration file that stores information about storage devices and partitions and where and how the partitions should be mounted.</li>
+<li>The fstab file is located in the /etc directory.
+<ul>
+<li>It can be edited only by a root user.</li>
+</ul>
+</li>
+<li>The fstab file consists of a number of lines—one for each filesystem.
+<ul>
+<li>Each line in an fstab file has six fields that are separated by spaces.
+<ul>
+<li>Device or partition name
+<ul>
+<li>Specifies the name of the device or filesystem that has to be mounted.</li>
+</ul>
+</li>
+<li>Default mount point
+<ul>
+<li>Indicates where the filesystem has to be mounted.</li>
+</ul>
+</li>
+<li>Filesystem type
+<ul>
+<li>Specifies the type of filesystem used by the device or partition.</li>
+</ul>
+</li>
+<li>Mount options
+<ul>
+<li>Specifies a set of comma-separated options that will be activated when the filesystem is mounted.</li>
+</ul>
+</li>
+<li>Dump options
+<ul>
+<li>Indicates if the dump utility should back up the filesystem. Usually, zero is specified as the dump option to indicate that dump can ignore the filesystem.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>fdisk</code>
+<ul>
+<li>fdisk is a menu-driven utility program that is used for creating, modifying, or deleting partitions on a disk drive.</li>
+<li>Using fdisk, a new partition table can be created, or existing entries in the partition table can be modified.
+<ul>
+<li>The fdisk utility understands the DOS and Linux type partition tables.
+<ul>
+<li>Depending on the partition table created, the DOS FDISK or the Linux fdisk program is invoked.</li>
+</ul>
+</li>
+<li>The fdisk utility also allows you to specify the size of partitions.</li>
+</ul>
+</li>
+<li>The syntax of the fdisk utility is <code>fdisk [options] {device name}</code>.</li>
+</ul>
+</li>
+<li><code>mkfs</code>
+<ul>
+<li>The mkfs command is used to build a Linux filesystem on a device, which is usually a hard disk partition.</li>
+<li>The syntax of the mkfs command is <code>mkfs [filesystem type] [options] {device}</code>.
+<ul>
+<li>e.g. <code>mkfs.ext4 /dev/hda{partition number}</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>mke2fs</code>
+<ul>
+<li>The mke2fs utility is used to create ext2, ext3, and ext4 filesystems, and it has various options.</li>
+<li>This command is a more specific version of the mkfs command described previously, that may be used to create ext2, ext3, and ext4 filesystems only.</li>
+<li>The syntax of the mke2fs utility is <code>mke2fs [options] {device}</code>.
+<ul>
+<li>e.g. The command <code>mke2fs -t ext4 /dev/sda{partition number}</code> will allow you to build an ext4 filesystem.
+<ul>
+<li>WARNING: Running this command will format your disk, deleting all contents!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>1-4. File System Management</h2>
+<h3>Mount Point</h3>
+<ul>
+<li>A mount point is an access point to information stored on a local or remote storage device.
+<ul>
+<li>The mount point is typically an empty directory on which a filesystem is loaded, or mounted, to make the filesystem accessible to users.</li>
+<li>If the directory already has content, the content becomes invisible to the users until the mounted filesystem is unmounted.</li>
+<li>Note: You can use the /etc/fstab file to list the filesystem to be mounted and unmounted when the Linux system boots and shuts down, respectively.</li>
+</ul>
+</li>
+<li><code>mount</code>
+<ul>
+<li>In Linux, a file system cannot be accessed directly.
+<ul>
+<li>It has to be associated with a directory to make it accessible to users.</li>
+<li>This association is brought about by loading, or mounting, the filesystem in a directory by using the mount command.</li>
+</ul>
+</li>
+<li>Options
+<ul>
+<li>auto
+<ul>
+<li>Specify that the device has to be mounted automatically.</li>
+</ul>
+</li>
+<li>noauto
+<ul>
+<li>Specify that the device need not be mounted automatically.</li>
+</ul>
+</li>
+<li>user
+<ul>
+<li>Specify that all users can mount a device or a filesystem.</li>
+</ul>
+</li>
+<li>nouser
+<ul>
+<li>Specify that only the root user can mount a device or a filesystem.</li>
+</ul>
+</li>
+<li>exec
+<ul>
+<li>Allow binaries in a filesystem to be executed.</li>
+</ul>
+</li>
+<li>noexec
+<ul>
+<li>Prevent binaries in a filesystem from being executed.</li>
+</ul>
+</li>
+<li>ro
+<ul>
+<li>Mount a filesystem as read-only.</li>
+</ul>
+</li>
+<li>rw
+<ul>
+<li>Mount a filesystem with read and write permissions.</li>
+</ul>
+</li>
+<li>sync
+<ul>
+<li>Specify that input and output operations in a filesystem should be done synchronously.</li>
+</ul>
+</li>
+<li>async
+<ul>
+<li>Specify that input and output operations in a filesystem should be done asynchronously.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>unmount</code>
+<ul>
+<li>After using the file system, it needs to be disassociated from the directory by unloading, or unmounting, the file system using the umount command.</li>
+</ul>
+</li>
+</ul>
+<h3>Checkup and Repair</h3>
+<ul>
+<li><code>fsck</code>
+<ul>
+<li>The fsck command is used to check the integrity of a file system.
+<ul>
+<li>File system integrity refers to the correctness and validity of a file system.</li>
+<li>Most systems automatically run the fsck command at boot time so that errors, if any, are detected and corrected before the system is used.</li>
+<li>File system errors are usually caused by power failures, hardware failures, or improper shutdown of the system.</li>
+<li>Note: The fsck command is similar in concept to the chkdsk and scandisk commands you may be familiar with from DOS and Windows-based systems.</li>
+</ul>
+</li>
+<li>The syntax of the fsck command is <code>fsck -t {filesystem type} [options]</code>.</li>
+<li>You can use the <code>fsck -r/dev/{filesystem}</code> command to repair a file system.
+<ul>
+<li>The command will prompt you to confirm your actions.</li>
+<li>If you are simultaneously checking multiple file systems, you should not use this option because it allows you to repair only a single file system at a time.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>e2fsck</code>
+<ul>
+<li>The e2fsck command allows you to check ext2, ext3, and ext4 file systems.
+<ul>
+<li>It is identical to running the fsck command with ext2, ext3, or ext4 specified as the file system type.</li>
+<li>You need to unmount the file system before running the e2fsck command to prevent damage to the file system.</li>
+</ul>
+</li>
+<li>The syntax of the e2fsck command is <code>e2fsck /dev/{filesystem}</code>.</li>
+</ul>
+</li>
+<li><code>xfs_repair</code>
+<ul>
+<li>The xfs_repair command allows you to check an XFS file system.</li>
+<li>As with the fsck and e2fsck commands, you need to unmount the file system before running the xfs_repair command to prevent damage to the file system.</li>
+<li>The syntax of the xfs_repair command is <code>xfs_repair [options]/dev/{filesystem}</code>.</li>
+</ul>
+</li>
+</ul>
+<h3>Tuning</h3>
+<ul>
+<li><code>tune2fs</code>
+<ul>
+<li>The tune2fs utility helps tuning parameters associated with a Linux file system.
+<ul>
+<li>The tune2fs utility is available with most Linux distributions.</li>
+<li>Using this utility, a journal can be added to an existing ext2 or ext3 file system.
+<ul>
+<li>If the file system is already mounted, the journal will be visible in the root directory of the file system.</li>
+<li>If the file system is not mounted, the journal will be hidden.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>You can adjust the parameters of the extended file systems, such as ext2, ext3, and ext4, that can be tuned on a Linux machine even after installation.
+<ul>
+<li>Tunable parameters allow you to,
+<ul>
+<li>Remove reserved blocks alter reserved block count</li>
+<li>Specify the number of mounts between checks</li>
+<li>The time interval between checks</li>
+<li>The behavior of the kernel code</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The syntax of the tune2fs utility is <code>tune2fs [options] {device name}</code>.</li>
+</ul>
+</li>
+<li><code>xfs_admin</code>
+<ul>
+<li>The xfs_admin command allows you to manage the parameters of an XFS file system.
+<ul>
+<li>As with the tune2fs command, you need to unmount the file system before using the xfs_admin command to change parameters.</li>
+</ul>
+</li>
+<li>The syntax of the xfs_admin command is <code>xfs_admin [options] /dev/{filesystem}</code>.</li>
+</ul>
+</li>
+<li><code>dumpe2fs</code>
+<ul>
+<li>The dumpe2fs utility is used for managing ext2, ext3, and ext4 (extended) file systems.
+<ul>
+<li>It dumps the status of the extended file system onto the standard output device and prints the block group information for the selected device.</li>
+</ul>
+</li>
+<li>The syntax of the dumpe2fs command is <code>dumpe2fs [options] [block size] {device name}</code>.</li>
+</ul>
+</li>
+<li><code>debugfs</code>
+<ul>
+<li>The debugfs utility allows you to examine and modify ext2, ext3, and ext4 file systems.</li>
+<li>When executed, the debugfs utility opens an interactive shell that can be used to examine and modify the extended file system.</li>
+</ul>
+</li>
+<li>Tools for xfs file system
+<ul>
+<li>xfs_info
+<ul>
+<li>Display details about the XFS file system.</li>
+</ul>
+</li>
+<li>xfs_metadump
+<ul>
+<li>Copy the metadata information of the XFS file system to a file.</li>
+</ul>
+</li>
+<li>xfs_grow
+<ul>
+<li>Expand the XFS file system to fill the disk size.</li>
+</ul>
+</li>
+<li>xfs_repair
+<ul>
+<li>Repair and recover a corrupt XFS file system.</li>
+</ul>
+</li>
+<li>xfs_db
+<ul>
+<li>Debug the XFS file system.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>1-5. Backup and Restore</h2>
+<h3>Archiving</h3>
+<ul>
+<li><code>tar</code>
+<ul>
+<li>The tar command allows you to create archives of data.
+<ul>
+<li>Files archives made with tar frequently have the .tar file extension.</li>
+<li>By default it does not compress. However, it does compress the resulting archive with gzip with <code>-z</code> option.</li>
+</ul>
+</li>
+<li>You can use the command on previously created archives to extract files, store additional files, update files, and list files that were already stored.</li>
+<li>The tar command can also direct its output to available devices, files, or other programs using pipes.</li>
+<li>The syntax of the tar command is <code>tar [options] [files | directories]</code>.</li>
+</ul>
+</li>
+<li><code>tar -xvf</code>
+<ul>
+<li>The command tar -xvf will restore the entire contents of the source file or directory structure.</li>
+<li>To restore a portion of a tar file, use the path and name of the file you wish to extract.
+<ul>
+<li>You must use the exact path and name that was used when you created the tar file.</li>
+</ul>
+</li>
+<li>You can also make restores interactive by using the command <code>tar -wxvf [destination] [source]</code>.</li>
+</ul>
+</li>
+</ul>
+<h3>Compression</h3>
+<ul>
+<li><code>gzip</code>
+<ul>
+<li>GNU zip (gzip) is a compression utility that reduces the size of selected files.
+<ul>
+<li>Files compressed with gzip frequently have the .gz file extension.</li>
+</ul>
+</li>
+<li>The syntax of the gzip command is <code>gzip [options] [file name]</code></li>
+<li>Options
+<ul>
+<li><code>-d</code>: Decompresses the file.</li>
+<li><code>-f</code>: Forces compression or decompression of a file even if it has multiple links or if the file exists.</li>
+<li><code>-r</code>: Descends into the directory and compresses files recursively.</li>
+<li><code>-v</code>: Displays the name and percentage reduction of the compressed or decompressed file.</li>
+<li><code>-t</code>: Checks the compressed file for integrity.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>zip</code>
+<ul>
+<li>Most Linux distributions also include a zip command which may be used to compress files in the ZIP archive format.</li>
+</ul>
+</li>
+<li><code>unzip</code>
+<ul>
+<li>The unzip command is used to list, test, and extract compressed files in a ZIP archive.</li>
+<li>The syntax of the unzip command is <code>unzip [options] [file name] -d [directory]</code>.</li>
+<li>Note: The unzip command extracts all files from the specified ZIP archive into the current working directory.</li>
+</ul>
+</li>
+<li>File compression utilities, such as gzip, attempt to compress only regular files and ignore symbolic links.</li>
+<li>Compressed files can be restored to their original form using <code>gzip -d</code>, <code>gunzip</code>, or <code>zcat</code>.</li>
+<li>If the original file name saved in the compressed file is not suitable for its filesystem, a new name is provided from the original one.</li>
+</ul>
+<h3>Dump &amp; Restore</h3>
+<ul>
+<li><code>Dump</code>
+<ul>
+<li>The dump command “dumps” all files in a filesystem into a tape or another file.</li>
+<li>It can also be used to dump files modified after a specified date.</li>
+<li>The syntax of the dump command is <code>dump [-level #] -f [file] [filesystem/file/directory]</code>.</li>
+<li>Options
+<ul>
+<li><code>-0</code>: Make a full backup.</li>
+<li><code>-1</code> to <code>-9</code>: Make incremental or partial backups.</li>
+<li><code>-b [maximum block size]</code>: Specify the number of kilobytes per dump record.</li>
+<li><code>-f [location of the target file]</code>: Specify the target location.</li>
+<li><code>-z [compression level]</code>: Specify the compression level in the range 1 to 9.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Restore</code>
+<ul>
+<li>The restore command enables you to restore files or filesystems from backups made using the dump command.</li>
+<li>This command can be used across networks to restore data.</li>
+<li>Options
+<ul>
+<li><code>-C</code>: Compare the backup file with the source file.</li>
+<li><code>-i</code>: Run the restore command in restore mode to restore backups partially.</li>
+<li><code>-r</code>: Perform a complete recovery of the backed up files.</li>
+<li><code>-f [/location of the backup file]</code>: Specify the location of the backup file.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>2. User Account Management</h1>
+<h2>2-1. User Account</h2>
+<ul>
+<li>A user account is a collection of information that defines a user on a system. It is the representation of the user on a computer.
+<ul>
+<li>User account information includes the username, a password for the user to log in to the system, groups to which the user belongs, and rights and permissions that the user has to access the system and its resources.</li>
+<li>When an account is created, it is assigned a unique number that is called a User ID (UID). Usernames and UIDs should be unique. That is, there should never be two users with the same name or UID on one computer.</li>
+</ul>
+</li>
+<li>Default user accounts
+<ul>
+<li>Numerous user accounts are created by default upon system installation.
+<ul>
+<li>e.g. root, bin, daemon, ftp, sshd, nfsnobody, apache, rpc, gnome</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Password</h3>
+<ul>
+<li>When you create a user account, you should immediately set a password for the user using the passwd command.
+<ul>
+<li>In Linux, if a password is not set for the user account, the account gets locked automatically. This is to help prevent unauthorized access to the system.</li>
+</ul>
+</li>
+<li>If you enter a password that is a real word made up solely of alphabetic characters, you will get a bad password message stating that it is based on a dictionary word.
+<ul>
+<li>However, the password will still be assigned even though the message is displayed. It is strongly advised that you change it to a more secure password.</li>
+</ul>
+</li>
+<li>When you add a new user, information about the user is saved in the /etc/passwd file.
+<ul>
+<li>e.g. Test:x:1005:1005:Test User,3,333-555-444,:/home/Test:/bin/bash
+<ul>
+<li>A colon is used as a delimiter for each field.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>There are various fields in the /etc/passwd file.
+<ul>
+<li>User name
+<ul>
+<li>Stores the user name with which the user logs in to the system. It is recommended to limit user names to eight alphanumeric characters.</li>
+</ul>
+</li>
+<li>Password
+<ul>
+<li>Was used to store the password that is assigned to the user in an encrypted form.</li>
+<li>An “x” indicates that the encrypted password is stored in the /etc/shadow file.</li>
+</ul>
+</li>
+<li>User ID
+<ul>
+<li>Stores the unique number that is assigned to each user. Linux tracks users by the UID rather than the user name.</li>
+</ul>
+</li>
+<li>Group ID
+<ul>
+<li>Group ID (GID) of the user’s primary group.</li>
+<li>Stores the unique number that is assigned to each group. Users can be members of one or more groups.</li>
+</ul>
+</li>
+<li>Comment field
+<ul>
+<li>Information in the comment field is separated by commas in the format:
+<ul>
+<li>Full Name, Room, Home Phone, Work Phone, Other.</li>
+</ul>
+</li>
+<li>Stores the real full name of the user.</li>
+</ul>
+</li>
+<li>Home directory
+<ul>
+<li>Displays the default directory where the user is placed after logging in.</li>
+</ul>
+</li>
+<li>Login shell
+<ul>
+<li>Displays the default shell that is started when the user logs in.</li>
+<li>The absolute path of the command shell that will be available to the user.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Shadow Passwords</h3>
+<ul>
+<li>In earlier UNIX and UNIX-like systems including Linux, each user’s password is stored and encrypted in the /etc/passwd file.
+<ul>
+<li>This file needs to be readable, which makes copies of users’ encrypted passwords easily obtainable to any person trying to attack the system.</li>
+<li>Then, by using various techniques, the attackers can decipher passwords.</li>
+</ul>
+</li>
+<li>Modern distributions have overcome this problem by using shadow passwords by default.
+<ul>
+<li>Shadow passwords store the encrypted passwords in a separate highly protected file, the /etc/shadow file.</li>
+<li>This file is readable only by the root user. Therefore, it is less of a security risk compared to the /etc/passwd file because it becomes difficult for attackers to access the file, obtain the user passwords, and then decipher them.</li>
+<li>The /etc/ passwd file also contains the account or password expiration values.</li>
+</ul>
+</li>
+</ul>
+<h3>Groups</h3>
+<ul>
+<li>A group is a collection of system users having the same access rights.
+<ul>
+<li>In Linux, users can be members of one primary group and multiple supplemental groups.
+<ul>
+<li>Every user must be a member of a group.</li>
+<li>Users can also be members of more than one group.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Group membership is used to limit access to files and system resources.</li>
+<li>A User Private Group (UPG) is a unique group that is created by default whenever a new user account is created.
+<ul>
+<li>This is the primary group of the new user account. Only the new user is a member of this group.</li>
+</ul>
+</li>
+<li>Groups, like users, are identified by a system with a unique number known as GID.</li>
+<li><code>/etc/group</code>
+<ul>
+<li>The /etc/group file contains a list of groups, each on a separate line. Each line consists of four fields for attribute definition, separated by colons. The /etc/group file is also called the group database.
+<ul>
+<li>Note: The /etc/gpasswd file stores the encrypted passwords for groups.</li>
+</ul>
+</li>
+<li>Group name
+<ul>
+<li>Stores the name of the group.</li>
+</ul>
+</li>
+<li>Group password
+<ul>
+<li>Stores the password of the group in an encrypted form.</li>
+</ul>
+</li>
+<li>GID
+<ul>
+<li>Stores the group identifier; similar to a UID for groups. The default GID value is 500.</li>
+</ul>
+</li>
+<li>Members
+<ul>
+<li>Stores the names of the members of the group separated by commas.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>User Profile</h3>
+<ul>
+<li>Global user profile
+<ul>
+<li>A global user profile is a set of options, preferences, bookmarks, stored messages, attributes, permissions, and other user items that users have access to, on whichever system they log in to.</li>
+<li>Global user profiles are stored on the server.
+<ul>
+<li>Each time a user logs in, data in the global profile is copied to the local system.</li>
+<li>While the user is logged in, any changes made to the settings affect only the local copy of the profile.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Skeleton directory
+<ul>
+<li>The <code>/etc/skel</code> directory contains files and directories that are automatically copied over to a new user's home directory when such user is created by the useradd program.
+<ul>
+<li>When a user is removed from the system by an administrator with the userdel command, that user's home directory, including the files and directories that have been copied into it from /etc/skel, remains intact.</li>
+</ul>
+</li>
+<li>Several user configuration files are placed in /etc/skel by default when the operating system is installed.
+<ul>
+<li>e.g. .bash_profile, .bashrc, .bash_logout, dircolors, .inputrc and .vimrc.</li>
+</ul>
+</li>
+<li>It is usually better to keep /etc/skel as small as possible and put system-wide configuration items into global configuration files such as /etc/profile.
+<ul>
+<li>This is because the latter makes it much easier to update existing users' files because its settings take effect as soon as the system is turned on and apply to new users and old uses alike.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>2-2. Manage User Accounts</h2>
+<h3>Check User Information</h3>
+<ul>
+<li><code>id</code>
+<ul>
+<li>The id command is used to display UID and group ID (GID) information.</li>
+<li>Entering the command with no options displays information about the user who is currently logged in.</li>
+<li>You can also specify a username as an option to display ID information about a specific user.</li>
+</ul>
+</li>
+<li><code>finger</code>
+<ul>
+<li>The finger command is used to display information about users, including login name, real name, terminal name, write status, idle time, login time, office location, and office phone number.
+<ul>
+<li>Some of these fields may be empty if no information was included when the user account was created.</li>
+</ul>
+</li>
+<li>You can also view information about a specific user by entering <code>finger [user name]</code>.</li>
+<li>Many distributions of Linux do not have the finger command installed by default.
+<ul>
+<li>To add support for finger use the <code>sudo apt install finger</code> command.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Add Users</h3>
+<ul>
+<li><code>useradd</code>
+<ul>
+<li>The useradd command is used to add a new user to the operating system. You need to specify the username along with the command to create a new user account.</li>
+<li>The syntax of the useradd command is <code>useradd [options] [username]</code>.</li>
+<li>When you create a user using the useradd command, it creates the user with the username specified. It also creates a user private group with the same name as the username specified.
+<ul>
+<li>It does not set a password for the user, and it does not create a home directory for the user.</li>
+</ul>
+</li>
+<li>Special User Accounts
+<ul>
+<li>Special user accounts are required to run processes associated with certain services.
+<ul>
+<li>e.g. daemon is a user account that is used to run the daemon service.</li>
+</ul>
+</li>
+<li>In special user accounts, the UID value for the users will be less than the default UID value, which is 500.
+<ul>
+<li>Such special users will not have a home directory.</li>
+</ul>
+</li>
+<li>You can create a special user account using the <code>useradd -r [special user name]</code> command.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>useraddcommand</code>
+<ul>
+<li>If you want to create a user, the user private group, and the user’s home directory and set a password for the user, you should use the addusercommand.</li>
+<li>The syntax for the addusercommand is <code>adduser [options] [username]</code>.</li>
+</ul>
+</li>
+<li>Adding User Accounts by Editing the Password File
+<ul>
+<li>Linux allows you to add user accounts by directly editing the /etc/passwd file which contains a list of all user accounts.
+<ul>
+<li>However, this is not recommended because you may damage your system if you accidentally leave something out or alter existing user accounts.</li>
+<li>If the system is damaged, nobody will be able to log in — not even the root user.
+<ul>
+<li>In such a case, you will have to reinstall your system and redefine the user accounts.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Delete Users</h3>
+<ul>
+<li><code>userdel</code>
+<ul>
+<li>The userdel command allows you to modify the system account files, deleting all entries that refer to the login of an existing user.</li>
+<li>However, it will not allow you to remove an account if the user is currently logged in.
+<ul>
+<li>You must kill any running processes that belong to an account before deleting the account.</li>
+</ul>
+</li>
+<li>The syntax of the userdel command is <code>userdel [options] [username]</code>.</li>
+</ul>
+</li>
+</ul>
+<h3>Modify Users</h3>
+<ul>
+<li><code>usermod</code>
+<ul>
+<li>The usermod command has options that enable you to modify various user account parameters. You can change a user’s name, default groups, UID, or passwords.</li>
+<li>The syntax of the usermod command is <code>usermod [options] [username]</code>.</li>
+<li>Options
+<ul>
+<li><code>usermod -l [new username] [old username]</code>
+<ul>
+<li>Modify the login name of the user.</li>
+</ul>
+</li>
+<li><code>usermod -c “First Last” username</code>
+<ul>
+<li>Modify the user’s full name.</li>
+</ul>
+</li>
+<li><code>usermod -f [number of days] [login]</code>
+<ul>
+<li>Modify the number of days for a password to expire and to disable the account permanently.</li>
+</ul>
+</li>
+<li><code>usermod -u [new unique user ID] [login]</code>
+<ul>
+<li>Modify the numerical value of a user’s ID, which has to be unique.</li>
+</ul>
+</li>
+<li><code>usermod -d [new login directory] login</code>
+<ul>
+<li>Modify the user’s default home directory.</li>
+</ul>
+</li>
+<li><code>usermod -L [user name]</code>
+<ul>
+<li>Lock the password and suspend the user account temporarily.
+<ul>
+<li>However, if the user has some other authentication method configured, they will still be able to log in.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>usermod -U [user name]</code>
+<ul>
+<li>Unlock the password.</li>
+</ul>
+</li>
+<li><code>usermod -e [yyyy-mm-dd] [user name]</code>
+<ul>
+<li>Change the expiration date for the user account.</li>
+<li>After the expiration date, the account will be disabled.</li>
+<li>Expired accounts can be re-enabled by setting a new expiration date.</li>
+<li>If you use “” as the expiration date, the account will be enabled indefinitely with no expiration date.
+<ul>
+<li>e.g. <code>usermod -e “” user</code></li>
+</ul>
+</li>
+<li>If you use 1 as the expiration date, the account will immediately expire and be disabled.
+<ul>
+<li>e.g. <code>usermod -e 1 user</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>usermod -G [group name] [user name]</code>
+<ul>
+<li>Adds the user to the specified group.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Change User Password</h3>
+<ul>
+<li><code>passwd</code>
+<ul>
+<li>You can change the password of your user account using the passwd command.</li>
+<li>You cannot change the password for any other user account because the password command does not allow you to specify any other username.</li>
+<li>Only the root user can change the password for other users by specifying the username with the passwd command.</li>
+<li>The root user can create a password for a user by entering <code>passwd [user name]</code>, where [user name] is the name of the user for whom the password is set.</li>
+</ul>
+</li>
+</ul>
+<h3>Change User Password Policies</h3>
+<ul>
+<li><code>chage</code>
+<ul>
+<li>The chage command is used to change a number of settings that relate to the password and status of the user account.</li>
+<li>The syntax of the chage command is <code>chage [options] [username]</code>.</li>
+<li>When you run the chage command with no options, it will prompt you to set:
+<ul>
+<li>Minimum Password Age
+<ul>
+<li>The minimum number of days that must pass after the user has changed their password before they are allowed to change it again.</li>
+<li>The default is 0 which means Minimum Password Age is disabled.</li>
+</ul>
+</li>
+<li>Maximum Password Age
+<ul>
+<li>The maximum number of days the user may use a password before they must change it.</li>
+<li>The default is 99999 which is over 200 years. Effectively, this means the Maximum Password Age is disabled.</li>
+</ul>
+</li>
+<li>Last Password Change
+<ul>
+<li>The date on which the user last changed their password.</li>
+</ul>
+</li>
+<li>Password Expiration Warning
+<ul>
+<li>The number of days before the Maximum Password Age is reached when the user should be warned that their password is going to expire.
+<ul>
+<li>This reminds the user to change the password a week before the Maximum Password Age is reached.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Password Inactive
+<ul>
+<li>This setting indicates whether the password is inactive.</li>
+<li>The default is -1 which means the password is not inactive. If the value is set to 1, the password is inactive and the account is disabled.</li>
+</ul>
+</li>
+<li>Account Expiration Date
+<ul>
+<li>The last date the account can be used. After the account expiration date has passed, the account is disabled.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Options
+<ul>
+<li><code>chage -d [yyyy-mm-dd] [user name]</code>
+<ul>
+<li>Sets the date of the last password change to the date specified.</li>
+</ul>
+</li>
+<li><code>chage -E [yyyy-mm-dd] [user name]</code>
+<ul>
+<li>Sets the date when the account should expire.</li>
+</ul>
+</li>
+<li><code>chage -m [number] [user name]</code>
+<ul>
+<li>Sets the Minimum Password Age to the number of days specified. Specifying zero will allow the user to change their password immediately.</li>
+</ul>
+</li>
+<li><code>chage -M [number] [user name]</code>
+<ul>
+<li>Sets the Maximum Password Age to the number of days specified. Specifying 99999 will set the password to never expire.</li>
+</ul>
+</li>
+<li><code>chage -I [number] [user name]</code>
+<ul>
+<li>Sets the number of days the account will be inactive after the password expires.</li>
+<li>During the inactive period, the user can use the expired password to log in to change the password. After the inactive period expires, the user will not be able to change their own password to reactivate the account.</li>
+</ul>
+</li>
+<li><code>chage -W [number] [user name]</code>
+<ul>
+<li>Sets the warning period to the number of days specified. The user will be warned this number of days in advance of the password expiration date that they should change their password.</li>
+</ul>
+</li>
+<li><code>chage -l [user name]</code>
+<ul>
+<li>Lists the password aging information for the specified user.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Lock User Login</h3>
+<ul>
+<li>In Linux, you can lock a user’s login to temporarily prevent a user from logging in to a system.
+<ul>
+<li>This is done by disabling the user’s password using the <code>passwd -l</code> or <code>usermod -L</code> command.</li>
+</ul>
+</li>
+<li>The user’s login is usually locked as a security measure, to prevent unauthorized usage when the user is unavailable.</li>
+</ul>
+<h3>Manage Groups</h3>
+<ul>
+<li><code>groupadd</code>
+<ul>
+<li>The groupadd command allows you to add a group without creating a new user.</li>
+<li>The syntax of the groupadd command is <code>groupadd [group name]</code>.
+<ul>
+<li>e.g. To add a new group to the system with a name of print_users and a GID of 700, enter <code>groupadd -g 700 print_users</code> at the command line.</li>
+</ul>
+</li>
+<li>You can also use the <code>groupmod -a -G [group] [username]</code> command to add users to the group.
+<ul>
+<li>As with users, the group file can be directly edited to add groups. However, using the command is a better option as it avoids unnecessary errors that may occur by directly editing the file.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>groupdel</code>
+<ul>
+<li>The groupdel command deletes a group from the system.</li>
+<li>The syntax of the groupdel command is <code>groupdel [group name]</code>.</li>
+</ul>
+</li>
+<li><code>groupmod</code>
+<ul>
+<li>Change the group's name and the numerical value of the group's ID by modifying the system account files.</li>
+<li>The syntax of the groupmod command is <code>groupmod -g [GID]</code>.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>3. Permissions and Ownership</h1>
+<h2>3-1. Permissions</h2>
+<ul>
+<li>Permissions are access rights assigned to users, which enable them to access or modify files and directories.</li>
+<li>Permissions can be set at different levels and for different access categories.
+<ul>
+<li>The <code>ls -l</code> command can be used to view the permissions of a file.
+<ul>
+<li>The ls -l command gives you a long list of the files and directories in your current working directory. Each item in the list contains seven columns. The contents of the columns are described in the following table.
+<ul>
+<li>Permission string
+<ul>
+<li>This identifies if the item is a file or directory, the user, group, and other permission assignment, and the access method.</li>
+</ul>
+</li>
+<li>Number of links
+<ul>
+<li>Files generally have a link count of 1.</li>
+<li>For directories, the link count is the number of directories under it plus 2.
+<ul>
+<li>1 for the directory itself and 1 for the parent.</li>
+</ul>
+</li>
+<li>Links are similar to Windows shortcuts.
+<ul>
+<li>They point to the location where the file exists and allow you to access and view the file.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The owner of the file or directory</li>
+<li>The group to which the owner of the file belongs
+<ul>
+<li>All members of this group have the group permission listed in the permission string.</li>
+<li>The administrator adds users to a group so that permissions can be assigned to the group instead of to each user.</li>
+</ul>
+</li>
+<li>The size (in bytes) of the file or directory</li>
+<li>The date and time the file was created or last modified.</li>
+<li>The file or directory name.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Use the <code>ls -ld [directory name]</code> command to list directory entries of the specified directory. The contents of the directory will not be displayed.</li>
+</ul>
+</li>
+</ul>
+<h3>Permission String</h3>
+<ul>
+<li>The first character indicates the type of file
+<ul>
+<li>d for directory and hyphen(-) for file.</li>
+</ul>
+</li>
+<li>Characters at the second, third, and fourth positions denote permissions of the owner or user of the file or directory.</li>
+<li>Characters at the fifth, sixth, and seventh positions denote group permissions.</li>
+<li>Characters at the eight, ninth, and tenth positions denote permissions for others.</li>
+<li>The final character indicates the access method for the file.
+<ul>
+<li>Period (.) for SELinux security context</li>
+<li>Plus (+) for any other combination of alternate access methods</li>
+</ul>
+</li>
+</ul>
+<h3>Effective Permissions</h3>
+<ul>
+<li>Effective permissions are the permissions the subject actually has to the object in a particular situation.</li>
+<li>In Linux, effective permissions are calculated as follows:
+<ul>
+<li>If the user is the user or owner listed on the file or directory,
+<ul>
+<li>The user has the effective permissions of the permissions listed in the user portion of the permission string.</li>
+</ul>
+</li>
+<li>If the user is not the owner or user listed on the file but is a member of the group listed on the file,
+<ul>
+<li>The user has the effective permissions of the permissions listed in the group portion of the permission string.</li>
+</ul>
+</li>
+<li>If the user is not the owner or user listed on the file, and is not a member of the group listed on the file,
+<ul>
+<li>The user has the effective permissions of the permissions listed in the other portion of the permission string.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Access Categories</h3>
+<ul>
+<li>Access categories in Linux permissions decide how Linux interprets the permissions of a file.
+<ul>
+<li>If a user’s UID matches the permissions of the file, the user level permissions are applied.</li>
+<li>If the GID of the user matches the permissions, group permissions are granted.</li>
+<li>If neither of the permissions match, the general permissions for others are applied.</li>
+</ul>
+</li>
+<li>The symbols for the access categories are listed in the following table.
+<ul>
+<li>u
+<ul>
+<li>Modifies permissions at user level.</li>
+</ul>
+</li>
+<li>g
+<ul>
+<li>Modifies permissions at group level.</li>
+</ul>
+</li>
+<li>o
+<ul>
+<li>Modifies permissions for other users.</li>
+</ul>
+</li>
+<li>a
+<ul>
+<li>Modifies permissions for all users globally.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>3-2. Modify Permissions</h2>
+<ul>
+<li><code>chmod</code>
+<ul>
+<li>The chmod command enables you to modify default permissions of a file or directory. Only the owner of the file or the system administrator can change the permissions of the file or directory.</li>
+<li>The syntax of the chmod command is <code>chmod [options] [mode] [file name]</code>.</li>
+<li>Options
+<ul>
+<li><code>-c</code>
+<ul>
+<li>Reports changes that are made in permissions.</li>
+</ul>
+</li>
+<li><code>-f</code>
+<ul>
+<li>Hides most error messages.</li>
+</ul>
+</li>
+<li><code>-v</code>
+<ul>
+<li>Displays a diagnostic entry for every file processed.</li>
+</ul>
+</li>
+<li><code>-R</code>
+<ul>
+<li>Modifies permissions of files and directories recursively.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>chmod modes
+<ul>
+<li>Character mode
+<ul>
+<li><code>chmod [options] [access categories] [operators][permission levels] [file name or directory name].</code>
+<ul>
+<li>e.g.
+<ul>
+<li><code>chmod u+w, g-x, o+x example.txt</code></li>
+<li><code>chmod u=rw, g=rx, o=r example.txt</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The character mode allows you to set permissions using three components,
+<ul>
+<li>Access categories such as u/g/o/a</li>
+<li>Operators
+<ul>
+<li><code>+</code> grants permissions.</li>
+<li><code>-</code> denies permissions.</li>
+<li><code>=</code>
+<ul>
+<li>Causes the permissions assigned to overwrite other existing permissions.</li>
+<li>Assigns permissions similar to those of the reference file.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Permission attributes
+<ul>
+<li>r (read)</li>
+<li>w (write)</li>
+<li>x (execute)
+<ul>
+<li>Run a file, if it is an executable program and is combined with the read attribute.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Numeric mode
+<ul>
+<li><code>chmod [number] [file name]</code>
+<ul>
+<li>e.g. <code>chmod 763 example.txt</code></li>
+</ul>
+</li>
+<li>The numeric mode is represented by three-digit octal values.</li>
+<li>By adding the octal numbers for the permissions you want to grant, you get the overall permission number to assign to a directory or file.
+<ul>
+<li>Full permissions (read, write, and execute) are equivalent to 4 + 2 + 1, or 7.</li>
+<li>Read and write permissions are equivalent to 4 + 2, or 6.</li>
+<li>Complete permissions are expressed as a three-digit number, where each digit corresponds to the user, the group, and other permissions, respectively.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>umask</code>
+<ul>
+<li>The umask command automatically alters the default permissions on newly created files and directories.
+<ul>
+<li>The default permissions on newly created files and directories can be changed for security reasons.
+<ul>
+<li>umask affects only the current shell environment.
+<ul>
+<li>On most Linux distributions, the default system-wide umask value is set in the <em>pam_umask.so</em> or <em>/etc/profile</em> file.</li>
+</ul>
+</li>
+<li>If you want to specify a different value on a per-user basis, edit the user’s shell configuration files such as <em>~/.bashrc</em>.</li>
+</ul>
+</li>
+<li>Default permissions apply only to files and directories created AFTER the execution of the umask command.</li>
+</ul>
+</li>
+<li>The syntax of the umask command is <code>umask [octal values to 'mask' the default permission]</code>
+<ul>
+<li>If you enter umask without specifying any numbers, the command shows the current umask value.</li>
+<li>The numbers given with the umask command specify the permissions that need to be cleared from the default settings.
+<ul>
+<li>The first digit allows you to protect the directory by setting advanced permissions.</li>
+<li>The other three digits allow you to set the normal permissions.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>e.g.
+<ul>
+<li>By default, the base permissions for directories in Linux are rwxrwxrwx or 0777.</li>
+<li>By entering <code>umask 0022</code>, the permissions assigned to all directories, created from that moment until the system is restarted, will be rwxr-xr-x (0755).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>3-3. File Ownership</h2>
+<ul>
+<li>File Owner
+<ul>
+<li>A file owner is the user who creates a file or directory. The file owner can set permissions to specify whether other users or groups have rights to read, write, or execute the file.</li>
+</ul>
+</li>
+</ul>
+<h3>Modify Ownership</h3>
+<ul>
+<li><code>chown</code>
+<ul>
+<li>The chown command can be used to change the owner, the group, or both for a file or directory.</li>
+<li><code>chown [user name] [file name]</code>
+<ul>
+<li>Changes the owner but not the group.</li>
+</ul>
+</li>
+<li><code>chown [user name]:[group name] [file name]</code>
+<ul>
+<li>Changes the owner and the group.</li>
+</ul>
+</li>
+<li><code>chown [user name]: [file name]</code>
+<ul>
+<li>Changes the owner and the group.</li>
+<li>The group will be changed to the specified user's login group.</li>
+</ul>
+</li>
+<li><code>chown :[group name] [file name]</code>
+<ul>
+<li>Changes the group but not the owner.</li>
+<li>This is the same as using the <code>chgrp</code> command.</li>
+</ul>
+</li>
+<li>You can combine the chown command with the <code>-R</code> option to recursively change ownership through a directory structure.</li>
+<li>You can also use metacharacters to change ownership of groups of files at the same time.</li>
+<li>By default, the root account has permission to change ownership.
+<ul>
+<li>If logged in with a user account, you may need to use the <code>sudo</code> command with the chown command.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>chgrp</code>
+<ul>
+<li>The chgrp command is used to change the group ownership of a file or directory.</li>
+<li>The syntax of the command is <code>chgrp [group name] [filename]</code>.
+<ul>
+<li>e.g. <code>sudo chgrp root example.txt</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>3-4. Special Permissions</h2>
+<ul>
+<li>SetUID
+<ul>
+<li>When the Set User ID (SUID), or setuid, is set, the file is always executed with the permissions of the owner or user listed on the file regardless of which user attempts to execute the file.
+<ul>
+<li>A lower case “s” in the user permission string indicates that the SUID has been set and the user has the execute permission.</li>
+<li>An upper case “S” indicates that the SUID has been set but the user does not have the execute permission.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SetGID
+<ul>
+<li>When the Set Group ID (SGID), or setgid, is set on a file, the file is always executed with the permissions of the group listed on the file regardless of which group attempts to execute the file.
+<ul>
+<li>If the SGID is set on a directory, any files created in the directory will have their ownership set to the ownership of the directory.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Sticky Bit
+<ul>
+<li>This permission does not affect files. It only affects directories.</li>
+<li>At the directory level, it restricts file deletion.
+<ul>
+<li>Only the owner of a file (or the root user) can delete files in directories with the sticky bit set.</li>
+</ul>
+</li>
+<li>The sticky bit appears as a lower case “t” in the place where normally the execute permission for others would appear in the permission string, at the tenth character, if the directory had the execute permission set for others.</li>
+<li>It appears as an upper case “T” in the tenth character if the directory did not have the execute permission set for others.</li>
+</ul>
+</li>
+<li>Immutable Flag
+<ul>
+<li>The immutable flag is an extended attribute of a file or directory that prevents it from being modified.</li>
+<li>The immutable flag is not set on all files.
+<ul>
+<li>It is set only on those files, such as configuration files, that should not be modified.</li>
+</ul>
+</li>
+<li>A single directory can have a mix of mutable and immutable files and subdirectories.</li>
+<li>An immutable subdirectory can have mutable files.</li>
+</ul>
+</li>
+</ul>
+<h2>3-5. Attributes</h2>
+<ul>
+<li><code>lsattr</code>
+<ul>
+<li>The lsattr command is used to list the attributes of a file on a Linux filesystem.</li>
+<li>The syntax of the lsattr command is <code>lsattr [ -RVadv ] [file names]</code></li>
+<li>Options
+<ul>
+<li><code>-R</code>
+<ul>
+<li>Recursively list the attributes of directories and their contents.</li>
+</ul>
+</li>
+<li><code>-V</code>
+<ul>
+<li>Display the program version.</li>
+</ul>
+</li>
+<li><code>-a</code>
+<ul>
+<li>List all files in directories.</li>
+</ul>
+</li>
+<li><code>-d</code>
+<ul>
+<li>List directories like files, instead of listing their contents.</li>
+</ul>
+</li>
+<li><code>-v</code>
+<ul>
+<li>List the version number of the file.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>chattr</code>
+<ul>
+<li>The chattr command is used to change the attributes of a file on a Linux filesystem.</li>
+<li>The syntax of the chattr command is <code>chattr [-RV] [-v version] [mode][file names]</code>.</li>
+<li>Options
+<ul>
+<li><code>-R</code>
+<ul>
+<li>Recursively change the attributes of directories and their contents.</li>
+</ul>
+</li>
+<li><code>-V</code>
+<ul>
+<li>Display the output of the chattr command and print the program version.</li>
+</ul>
+</li>
+<li><code>-v [version]</code>
+<ul>
+<li>Set the version number of a file.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Mode strings
+<ul>
+<li>A mode string consists of an operator and one or more attributes.</li>
+<li>The syntax of the mode string is <code>[operator][attribute]</code></li>
+<li>Operator
+<ul>
+<li><code>+</code>
+<ul>
+<li>Attributes listed are added to the file.</li>
+</ul>
+</li>
+<li><code>-</code>
+<ul>
+<li>Attributes listed are removed from the file.</li>
+</ul>
+</li>
+<li><code>=</code>
+<ul>
+<li>The attributes listed are added; any attributes omitted will be removed.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Attribute
+<ul>
+<li>a, A, c, C, d, D, e, i, j, s, S, t, T, u</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>4. System Operation</h1>
+<h2>4-1. System Components</h2>
+<h3>Bootloader</h3>
+<ul>
+<li>Boot Loader is a program that loads the kernel so that Linux and other operating systems can boot.
+<ul>
+<li>During the installation of Linux, the boot loader you choose will be put on the Master Boot Record (MBR).</li>
+<li>This is a part of the hard drive where the computer can look for an operating system when it boots.</li>
+<li>GRand Unified Bootloader (GRUB) is the Linux boot loader that loads and starts the kernel.
+<ul>
+<li>Only one boot loader can be used on a system.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>System Initialization</h3>
+<ul>
+<li>System initialization begins when a system is booted.
+<ul>
+<li>It involves the loading of the operating system and its various components, including the boot process.</li>
+<li>System initialization is carried out by the init program in Linux.
+<ul>
+<li>The init program refers to the configuration file and initiates the processes listed in it.</li>
+<li>This prepares the system to run the required software.</li>
+</ul>
+</li>
+<li>Programs on the system will not run without system initialization.</li>
+</ul>
+</li>
+<li>The init.d directory found in the /etc directory stores initialization scripts for services.
+<ul>
+<li>These scripts, called system V scripts, control the initiation of services in a particular runlevel.
+<ul>
+<li>These runlevels are called system V runlevels.</li>
+</ul>
+</li>
+<li>The scripts are invoked from the /etc/inittab file when the system initialization begins, using the symbolic links found in the file.</li>
+<li>System V scripts are highly flexible and can be configured according to the needs of a user.
+<ul>
+<li>Some of the services listed in the init.d directory are anacron, cups, and bluetooth.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The syntax for running scripts of the services in the /etc/init.d directory is <code>/{service name} {start|stop|status|restart}</code>.</li>
+</ul>
+<h3>Init</h3>
+<ul>
+<li>Init is the first process run on boot and is responsible for managing the runlevel of your system.
+<ul>
+<li>The init is the system and session manager.</li>
+<li>In Ubuntu, the init is called the Upstart Init Daemon.</li>
+</ul>
+</li>
+<li>Upstart Init Daemon
+<ul>
+<li>Upstart Init Daemon is event-based, not runlevel-based.
+<ul>
+<li>Event-based means that jobs will be automatically started and stopped by changes to the system’s state.</li>
+<li>The Upstart Init Daemon doesn’t track runlevels.
+<ul>
+<li>Runlevels are tracked by the runlevel event generated by <code>telinit</code> or <code>shutdown</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The init daemon sets two environment variables from the runlevel event: RUNLEVEL and PREVLEVEL.
+<ul>
+<li>These environment variables are the current runlevel and the previous runlevel.</li>
+</ul>
+</li>
+<li>Upstart’s list of configuration files is located in the /etc/init directory.</li>
+</ul>
+</li>
+<li>systemd Init Daemon
+<ul>
+<li>systemd is a system and session manager used in some distributions of Linux, including Ubuntu.</li>
+<li>Its job is to start the rest of the system.
+<ul>
+<li>If daemons and services were instruments in an orchestra, systemd would be the conductor.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>systemctl</code>
+<ul>
+<li>The systemctl command enables control over the Systemd Init process. You can,
+<ul>
+<li>View running services</li>
+<li>Manage (enable/disable) services to run at boot or in the current session</li>
+<li>Determine the status of these services, and manage the system runlevel</li>
+</ul>
+</li>
+<li>The syntax of the systemctl command is <code>systemctl [options] [command]</code>.</li>
+</ul>
+</li>
+</ul>
+<h3>Runlevels</h3>
+<ul>
+<li>The runlevel specifies the group of processes that are started, stopped, and otherwise managed on Linux systems.
+<ul>
+<li>You can change the current runlevel by using the <code>telinit</code> command.</li>
+</ul>
+</li>
+<li>Runlevels
+<ul>
+<li>0
+<ul>
+<li>poweroff.target</li>
+<li>Halts the system</li>
+</ul>
+</li>
+<li>1
+<ul>
+<li>rescue.target</li>
+<li>Single-user mode</li>
+</ul>
+</li>
+<li>2
+<ul>
+<li>multi-user.target</li>
+<li>Multiuser mode without networking</li>
+</ul>
+</li>
+<li>3
+<ul>
+<li>multi-user.target</li>
+<li>Multiuser mode with networking</li>
+</ul>
+</li>
+<li>4
+<ul>
+<li>multi-user.target</li>
+<li>User configurable</li>
+</ul>
+</li>
+<li>5
+<ul>
+<li>graphical.target</li>
+<li>Used for the GUI (X11 multiuser mode)</li>
+</ul>
+</li>
+<li>6
+<ul>
+<li>reboot.target</li>
+<li>Reboots the system</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Service</h3>
+<ul>
+<li>A Linux service is an application or set of applications that perform tasks in the background.
+<ul>
+<li>The services running on a Linux system range from basic services to server services.</li>
+<li>Services can be broadly classified as critical services and noncritical services.
+<ul>
+<li>Critical services are the core services that are vital for the functioning of the Linux system.</li>
+<li>Noncritical services are services that are initiated by applications installed on the system.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>service</code>
+<ul>
+<li>The service command allows you to manage services running on your system.</li>
+<li>The syntax of the service command is <code>service [service name] [options]</code>.</li>
+</ul>
+</li>
+</ul>
+<h3>Daemons</h3>
+<ul>
+<li>A daemon is a program that runs in the background without the need for human intervention, often handling commands delivered for remote command execution.
+<ul>
+<li>It lies dormant until an event triggers it into activity.</li>
+<li>Some daemons operate at regular intervals.</li>
+<li>Most daemons are started when the system boots. Daemons are started by the operating system, by applications, or manually.</li>
+</ul>
+</li>
+<li>There are slight differences between services and daemons, but in practice they are usually the same thing.
+<ul>
+<li>The term “service” is the only word used to describe these background applications in Microsoft Windows.</li>
+<li>The term “daemon” is exclusively used in Unix and Linux.</li>
+</ul>
+</li>
+<li>e.g. lpd
+<ul>
+<li>The Line Printer Daemon, or lpd, controls the flow of print jobs to a printer.</li>
+<li>It works in the background and sends the output to the printer without affecting other processes that a user is working on at that time.</li>
+</ul>
+</li>
+</ul>
+<h3>systemd</h3>
+<ul>
+<li>The purpose of an init system is to initialize the components that must be started after the Linux kernel is booted (traditionally known as “userland” components).
+<ul>
+<li>The init system is also used to manage services and daemons for the server at any point while the system is running.</li>
+</ul>
+</li>
+<li>systemd
+<ul>
+<li>systemd is a suite of basic building blocks for a Linux system.
+<ul>
+<li>It provides a system and service manager that runs as PID 1 and starts the rest of the system, the target of most actions are “units”, which are resources that systemd knows how to manage.</li>
+<li>Units are categorized by the type of resource they represent and they are defined with files known as unit files.</li>
+<li>The type of each unit can be inferred from the suffix on the end of the file.</li>
+</ul>
+</li>
+<li>For service management tasks, the target unit will be service units, which have unit files with a suffix of .service.
+<ul>
+<li>However, for most service management commands, you can actually leave off the .service suffix, as systemd is smart enough to know that you probably want to operate on a service when using service management commands.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>systemctl</code>
+<ul>
+<li><code>systemctl enable [service]</code>
+<ul>
+<li>Enable a service to be started on boot.</li>
+</ul>
+</li>
+<li><code>systemctl list-unit-files</code>
+<ul>
+<li>List configured system services and their boot configuration.</li>
+</ul>
+</li>
+<li><code>systemctl disable [service]</code>
+<ul>
+<li>Disable a service so that it is no longer started on boot.</li>
+</ul>
+</li>
+<li><code>systemctl start [service]</code>
+<ul>
+<li>Start (activate) a service immediately.</li>
+</ul>
+</li>
+<li><code>systemctl stop [service]</code>
+<ul>
+<li>Stop (deactivate) a service immediately.</li>
+</ul>
+</li>
+<li><code>systemctl restart [service]</code>
+<ul>
+<li>Restart a service immediately.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Shutdown</h3>
+<ul>
+<li><code>shutdown</code>
+<ul>
+<li>The shutdown command is used to turn off a system.
+<ul>
+<li>After certain installations or removal of hardware, it is necessary to shut down the Linux system.</li>
+<li>This closes files and performs other tasks necessary to safely shutdown the system.</li>
+<li>It warns all users that the system is going to shutdown and no one can log in after the command is issued.</li>
+</ul>
+</li>
+<li>When you need to restart your Linux system, you should use the shutdown command with the appropriate options.</li>
+<li>The syntax of the shutdown command is <code>shutdown [-t seconds] [- options] time [warning message]</code>.
+<ul>
+<li>The -t option specifies how many seconds to wait before changing to another runlevel.</li>
+</ul>
+</li>
+<li>Options
+<ul>
+<li><code>-k</code>
+<ul>
+<li>Send warning messages to everyone, but does not really shutdown the system.</li>
+</ul>
+</li>
+<li><code>-r</code>
+<ul>
+<li>Reboot the system after shutdown.</li>
+<li>Upon reboot, if you are using a boot manager to load various operating systems, you can switch to another operating system or log in to Linux.</li>
+</ul>
+</li>
+<li><code>-h</code>
+<ul>
+<li>Halt the system after shutdown. At this point, you can safely turn off the power.</li>
+</ul>
+</li>
+<li><code>-n</code>
+<ul>
+<li>Shutdown the system without invoking init.</li>
+<li>It is recommended not to use this option.</li>
+</ul>
+</li>
+<li><code>-f</code>
+<ul>
+<li>Skip the filesystem check on reboot.</li>
+</ul>
+</li>
+<li><code>-F</code>
+<ul>
+<li>Force the filesystem check on reboot.</li>
+</ul>
+</li>
+<li><code>-c</code>
+<ul>
+<li>Cancel a shutdown in progress.</li>
+<li>This option does not use the time parameter, but can use the warning message option.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>4-2. Multitasking</h2>
+<ul>
+<li>Multitasking
+<ul>
+<li>A method of allowing the operating system to run concurrent programs simultaneously without degrading system performance.</li>
+<li>Multitasking enables several programs to share the same system resources.</li>
+<li>Processes spawned by multitasking are all active at the same time.
+<ul>
+<li>They are not in a sequence or a suspended state waiting to be run.</li>
+<li>Processes placed in a multitasking state remain active until completed, unless terminated or suspended by the user.</li>
+</ul>
+</li>
+<li>One or more users may run multiple tasks on a system.</li>
+</ul>
+</li>
+</ul>
+<h2>4-3. Processes</h2>
+<ul>
+<li>Process
+<ul>
+<li>A process is an instance of a running program that performs a data processing task.</li>
+<li>A process consists of a sequence of steps stored on a system.
+<ul>
+<li>These steps convert input data to output data.</li>
+</ul>
+</li>
+<li>Processes can be subdivided into threads.</li>
+<li>Every process is assigned a unique Process ID (PID) and includes time limits, shared memory, or child processes.
+<ul>
+<li>Process ID
+<ul>
+<li>Whenever a process is started, the system allocates a unique PID to identify the process.</li>
+<li>Every process inherits the User ID (UID) and Group ID (GID) of the user who starts the process.
+<ul>
+<li>This is similar to the ownership of files and directories on the Linux filesystem.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Processes may run in the foreground or background of the system.
+<ul>
+<li>Foreground Processes
+<ul>
+<li>A foreground process is a program with which a user interacts at a particular time.</li>
+<li>Only one foreground process can be run at a time.
+<ul>
+<li>As the user switches between programs, whatever program the user is interacting with becomes the foreground process.</li>
+</ul>
+</li>
+<li>A foreground process is initiated by entering a command at the prompt or by clicking a shortcut in the Graphical User Interface (GUI).</li>
+</ul>
+</li>
+<li>Background Processes
+<ul>
+<li>A background process is a program that is not running in the foreground.</li>
+<li>Background processes enable Linux to run multiple processes at the same time.</li>
+<li>While the user is interacting with the foreground process, any number of programs can run as background processes.
+<ul>
+<li>The shell does not have to wait for one process to end before it can run more.</li>
+</ul>
+</li>
+<li>A process can be run in the background by adding an ampersand (&amp;) separated by a space to the end of the command.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The init Process
+<ul>
+<li>The first process, called init in Linux, is started by the kernel at boot time and never terminates.</li>
+<li>The PID of the init process is always 1.</li>
+<li>In modern Linux systems, the init is often systemd.</li>
+</ul>
+</li>
+<li>Daemons
+<ul>
+<li>Daemons always run as background processes that never require user input.</li>
+<li>Other processes remain in the background temporarily, while the user is busy with the current foreground process.</li>
+</ul>
+</li>
+<li>The Program and Process Relationship
+<ul>
+<li>A program is a set of instructions describing how to carry out a task.
+<ul>
+<li>A command that resides on your system is a program.</li>
+</ul>
+</li>
+<li>When you enter a command at the prompt, a set of instructions perform a task.
+<ul>
+<li>A process is a program that executes instructions.</li>
+<li>The operating system creates a process to carry out that task.</li>
+</ul>
+</li>
+<li>Processes have unique identities and exist until their tasks are completed.
+<ul>
+<li>When the task is completed, the process is terminated.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Process Table</h3>
+<ul>
+<li>The process table is a record that summarizes the current running processes on a system.
+<ul>
+<li>It enables the administrator to keep track of all processes run by different users.</li>
+<li>Some of the details displayed in the process table include the PID, the size of the program in memory, the name of the user who owns the process, and time.</li>
+</ul>
+</li>
+<li><code>ps</code>
+<ul>
+<li>The ps command invokes the process table.</li>
+<li>Different options may be used along with the command to filter the displayed fields or processes.</li>
+<li>When the command is run without any option, it displays the processes run by the current shell with details such as,
+<ul>
+<li>PID</li>
+<li>The terminal associated with the process</li>
+<li>The accumulated CPU time</li>
+<li>The command that started the process</li>
+<li>etc.</li>
+</ul>
+</li>
+<li>The syntax of the ps command is <code>ps [options]</code>.
+<ul>
+<li>Note: Unlike many commands in Linux, the ps command supports options with and without a hyphen before them.
+<ul>
+<li>However, the function of the same options with or without a hyphen may differ greatly.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Process States</h3>
+<ul>
+<li>A process state enables you to identify the current stage of a process.
+<ul>
+<li>It is indicated by a single letter notation in the process table.</li>
+</ul>
+</li>
+<li>States
+<ul>
+<li>Uninterruptible sleep (D)
+<ul>
+<li>The process is permanently inactive.</li>
+</ul>
+</li>
+<li>Running (R)
+<ul>
+<li>The process may be running or ready to be run.</li>
+</ul>
+</li>
+<li>Interruptible sleep (S)
+<ul>
+<li>The process is waiting to be run after some specific trigger.</li>
+</ul>
+</li>
+<li>Stopped (T)
+<ul>
+<li>The process may be temporarily stopped by a job control tool or because it is being traced.</li>
+</ul>
+</li>
+<li>Dead (X)
+<ul>
+<li>The process has been killed. This state is never displayed.</li>
+</ul>
+</li>
+<li>Defunct (Z)
+<ul>
+<li>The process has ended, but only after its parent process. This implies that it has not been killed properly and it will remain as a “zombie.”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Child Process</h3>
+<ul>
+<li>A process created by a running process is called a child process.</li>
+<li>The process table contains both parent processes and child processes.
+<ul>
+<li>There may be several levels of processes.</li>
+</ul>
+</li>
+<li>The parent process can spawn a child process, the child process can spawn another child process, and so on.</li>
+<li>The parent process must be running for the child processes to run. Parent processes are assigned a unique Parent Process ID (PPID).</li>
+<li>Identifying child processes is not an easy task, especially if there are multiple processes and child processes running at the same time.
+<ul>
+<li>By examining the order of the PIDs, you may be able to determine the order in which the processes were created and infer which processes are related.</li>
+</ul>
+</li>
+</ul>
+<h3>Process Analysis</h3>
+<ul>
+<li><code>pstree</code>
+<ul>
+<li>The pstree command enables you to list the processes running on a Linux system in a tree-like format.
+<ul>
+<li>This helps you track parent and child processes.</li>
+</ul>
+</li>
+<li>All processes are listed as child processes to init and this is represented by the initial branching.
+<ul>
+<li>The processes started within a shell will branch out of the shell’s parent process.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Process identification commands enable you to extract information about a process using its name or some other attribute associated with it.
+<ul>
+<li><code>pidof</code>
+<ul>
+<li>Displays the PID of the process whose name is specified and can be used only when the name of the process is known.
+<ul>
+<li>However, it is recommended that a full path name of the process be given because more than one process could run with the same name.</li>
+</ul>
+</li>
+<li>The syntax of this command is <code>pidof [options] {string}</code>.
+<ul>
+<li>Options
+<ul>
+<li><code>-s</code>
+<ul>
+<li>Instruct the program to display only one PID.</li>
+</ul>
+</li>
+<li><code>-c</code>
+<ul>
+<li>Instruct the program to display the PIDs that are running from the same root directory.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>pgrep</code>
+<ul>
+<li>Displays the PID of processes that match any given criteria such as the name or UID of the user who invoked it, the start time, the parent PID, and so on.</li>
+<li>The syntax of this command is <code>pgrep [options] {process name}</code>.
+<ul>
+<li>Options
+<ul>
+<li><code>-f</code>
+<ul>
+<li>Specify the full path name of the process.</li>
+</ul>
+</li>
+<li><code>-l</code>
+<ul>
+<li>Print the name of the process along with its PID.</li>
+</ul>
+</li>
+<li><code>-u {userid}</code>
+<ul>
+<li>Specify the UID of the user who started it.</li>
+</ul>
+</li>
+<li><code>-G {groupid}</code>
+<ul>
+<li>Specify the GID related to the process.</li>
+</ul>
+</li>
+<li><code>-n</code>
+<ul>
+<li>Specify the most recent process.</li>
+</ul>
+</li>
+<li><code>-o</code>
+<ul>
+<li>Specify the oldest process.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Process Kill and Signals</h3>
+<ul>
+<li>Kill commands
+<ul>
+<li><code>kill</code>
+<ul>
+<li>Sends any specified signal, or by default the termination signal, to one or more processes.</li>
+<li>The PID must be specified as the argument.</li>
+<li>Note: The kill command accepts either the PID or the job number as an argument.
+- This command can also be used as a job control tool.</li>
+<li>When you use the kill command with the jobs table, you are working only with the jobs that you started.
+<ul>
+<li>However, the process table may display processes that do not belong to you.
+<ul>
+<li>As a user, you can use the kill command only with processes that you own.</li>
+<li>As root, you can kill anyone’s processes.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The syntax of this command is <code>kill [options] {PID}</code>.</li>
+</ul>
+</li>
+<li><code>pkill</code>
+<ul>
+<li>Signals processes based on the name and other identifiers as in the pgrep command.</li>
+<li>The syntax of this command is <code>pkill [options] {command}</code>.</li>
+</ul>
+</li>
+<li><code>killall</code>
+<ul>
+<li>Kills all processes by the name specified.</li>
+<li>The syntax of this command is <code>killall [options] {command}</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Signals are messages sent to a process to perform certain actions.
+<ul>
+<li>They are used to suspend or terminate processes.</li>
+<li>Signals may affect only the process specified and its child processes.</li>
+<li>Signals may be executed, caught, blocked, or ignored by processes.</li>
+</ul>
+</li>
+<li>Kill signals
+<ul>
+<li>There are many options available with the kill command and these options are referred to as kill signals.
+<ul>
+<li>You can either use the kill signal option or its corresponding numerical value to send a signal to terminate a process.</li>
+<li>Some processes cannot be eliminated by the kill command.
+<ul>
+<li>To terminate these processes, use the kill command with the -9 signal. This terminates the processes immediately.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Options
+<ul>
+<li><code>SIGKILL</code> or <code>9</code>
+<ul>
+<li>Send the kill signal to a process.</li>
+</ul>
+</li>
+<li><code>SIGTERM</code> or <code>15</code>
+<ul>
+<li>Send the termination signal to a process.</li>
+</ul>
+</li>
+<li><code>SIGSTOP</code> or <code>19</code>
+<ul>
+<li>Stop a process.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Process Management</h3>
+<ul>
+<li><code>top</code>
+<ul>
+<li>The top command lists all tasks running on a Linux system.
+<ul>
+<li>It acts as a process management tool by allowing users to prioritize, sort, or terminate processes interactively.</li>
+<li>It displays a dynamic process status, reflecting real-time changes.</li>
+</ul>
+</li>
+<li>Different keystrokes within this tool execute process management actions.
+<ul>
+<li>Enter
+<ul>
+<li>Refreshes the status of all processes.</li>
+</ul>
+</li>
+<li>Shift + n
+<ul>
+<li>Sorts tasks in the decreasing order of their PID.</li>
+</ul>
+</li>
+<li>u
+<ul>
+<li>Displays processes belonging to the user specified at the prompt.</li>
+</ul>
+</li>
+<li>k
+<ul>
+<li>Terminates the process for which you specify the PID.</li>
+</ul>
+</li>
+<li>n
+<ul>
+<li>Renices the process for which you specify the PID.</li>
+</ul>
+</li>
+<li>h
+<ul>
+<li>Displays a help screen.</li>
+</ul>
+</li>
+<li>q
+<ul>
+<li>Exits the task list.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>nice</code>
+<ul>
+<li>The nice command allows you to assign a priority level to a process.
+<ul>
+<li>The priority of a process is often called its nice value.
+<ul>
+<li>The nice value of a process indicates how “nice” the process is to others in sharing system resources.</li>
+<li>The niceness of a process may range from -20 to 19, where -20 indicates the highest priority and 19 the lowest.</li>
+<li>By default, all processes in Linux have a nice value of zero.</li>
+</ul>
+</li>
+<li>In the absence of an increment value, the nice command assumes an increment of 10 by default.</li>
+<li>Once lowered, the priority for any process cannot be increased by normal users, even if they own the process.</li>
+</ul>
+</li>
+<li>You can run a command at a priority higher or lower than the command’s normal priority.</li>
+<li>You must have the root user authority to run a command at a higher priority.</li>
+<li>The syntax of the command is <code>nice -n {priority} [command]</code>, where the priority is specified by a number.</li>
+</ul>
+</li>
+<li><code>renice</code>
+<ul>
+<li>The renice command enables you to alter the scheduling priority of a running process.</li>
+<li>When you renice a process group, it causes all processes in the process group to have their scheduling priority altered.</li>
+<li>When you renice a user, it alters the scheduling priority of all processes owned by the user.</li>
+<li>By default, the processes affected are specified by their PIDs.</li>
+<li>The syntax of the renice command is <code>renice {priority} {PID} [[-g] [groupid]] [[-u] [userid]]</code>.</li>
+</ul>
+</li>
+</ul>
+<h2>4-4. Jobs</h2>
+<ul>
+<li>A job is a process that the shell is managing and hasn't finished running.
+<ul>
+<li>Each job is assigned a sequential job ID.</li>
+<li>Because a job is a process, each job has an associated PID.</li>
+</ul>
+</li>
+</ul>
+<h3>Job Status</h3>
+<ul>
+<li>Running
+<ul>
+<li>An active job.</li>
+</ul>
+</li>
+<li>Stopped
+<ul>
+<li>A job that is suspended.</li>
+</ul>
+</li>
+<li>Terminated
+<ul>
+<li>A job that is killed.</li>
+</ul>
+</li>
+<li>Done
+<ul>
+<li>A completed job.</li>
+</ul>
+</li>
+</ul>
+<h3>Jobs Table</h3>
+<ul>
+<li><code>jobs</code>
+<ul>
+<li>You can display the jobs table using the jobs command.</li>
+<li>The jobs table is a table containing information about jobs running in the background.</li>
+<li>It contains entries only for those jobs that are running in the current shell.</li>
+<li>The jobs table contains a numeric label for each job indicating the order in which the jobs were started.
+<ul>
+<li>In addition, the jobs table includes,
+<ul>
+<li>A plus sign (+) to designate the current or the most recently started job.</li>
+<li>A minus sign (-) to designate the job that was started just prior to the most recent job.</li>
+</ul>
+</li>
+<li>It also includes the status and name of each job.
+<ul>
+<li>Note: The job name listed in the jobs table is the command that initiated the job.
+<ul>
+<li>The plus (+) and minus (-) signs indicate only the order in which jobs are started.</li>
+<li>All jobs, however, are run simultaneously.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Jobs in a New Shell
+<ul>
+<li>Any job that a user placed in the background will appear in that user’s jobs table, but other users’ jobs will not appear.</li>
+<li>If you were to start a new shell, the jobs table for the new shell will be empty.
+<ul>
+<li>However, the jobs started in the previous shell will continue to run.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Process Table vs. Jobs Table differences</h3>
+<ul>
+<li>The process table can display all processes running on the system irrespective of which user started it, including system processes started automatically at boot time.
+<ul>
+<li>However, the jobs table shows only the processes started in a user’s current shell.</li>
+</ul>
+</li>
+<li>The unique PIDs of processes are displayed in the process table.
+<ul>
+<li>While the jobs table shows only their job number according to the order in which they were started.</li>
+</ul>
+</li>
+<li>In the jobs table, only the original process is displayed as an entry.
+<ul>
+<li>But in the process table, the original process and all subsequent processes that were started are displayed.</li>
+<li>So, a single entry in the jobs table may have more than one corresponding entry in the process table.</li>
+</ul>
+</li>
+<li>Certain job control commands can be applied only by referring to processes by their job number.</li>
+<li>The process table has options that are different from the jobs table.</li>
+</ul>
+<h3>Job Handling</h3>
+<ul>
+<li>Suspend
+<ul>
+<li>Suspend a job via,
+<ul>
+<li>Foreground: press Ctrl+Z</li>
+<li>Background: Bring to foreground, then press Ctrl+Z</li>
+</ul>
+</li>
+<li>If you display the jobs table after you press Ctrl+Z to suspend a job, you will see that the current job is in a suspended state.
+<ul>
+<li>It will be labeled in the jobs table as “Stopped”.</li>
+</ul>
+</li>
+<li>Although the jobs table lists jobs running in the background, a foreground job that gets suspended appears in the jobs table to remind the user that there is a suspended job waiting to be restarted or terminated.</li>
+</ul>
+</li>
+<li>Terminate
+<ul>
+<li>Terminate a job via,
+<ul>
+<li>Foreground: press Ctrl+C</li>
+<li>Background: <code>kill %[job number]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Send the specified process to the background (or restart the suspended background process)
+<ul>
+<li><code>bg %[job number]</code>
+<ul>
+<li>This can be used to restart a specified background job that has been suspended as well.</li>
+<li>If there is only one job running in the background, then you do not have to specify the number.
+<ul>
+<li>You can type <code>bg %</code> to restart it.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bringing the specified process to the foreground
+<ul>
+<li><code>fg %[job number]</code>
+<ul>
+<li>Bring a job from the background to the foreground</li>
+<li>You do not have to enter a number after the percent sign if there is only one job running in the background.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Delayed Jobs</h3>
+<ul>
+<li>A delayed job is one that can be run at some specified time after you issue the command.
+<ul>
+<li>e.g. a CPU-intensive job that can slow down the system is one that you may want to delay for off-peak work hours.</li>
+</ul>
+</li>
+<li><code>sleep</code>
+<ul>
+<li>To delay the start of a job, use the <code>sleep</code> command followed by the delay in seconds and the command name.</li>
+<li>The sleep command suspends any action upon the specified command for the specified number of seconds and then the command specified is executed.
+<ul>
+<li>The delay can be up to 2,147,483,647 seconds. This is roughly 596,523 hours; 24,855 days; or 68 years so that the amount of time can easily be customized.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>at</code>
+<ul>
+<li>The at command executes a given set of commands at a specified date and time.
+<ul>
+<li>This command is useful for executing a set of commands only once.</li>
+<li>Using either the <code>-f</code> option or input redirection, the at command reads the list of commands from a file.
+<ul>
+<li>This file needs to be an executable shell script.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The syntax of the at command is <code>at [options] {time}</code>.</li>
+</ul>
+</li>
+</ul>
+<h3>Detached Jobs</h3>
+<ul>
+<li>A detached job is a job that can be set to run after you log out of the system.
+<ul>
+<li>If you have a task that cannot be completed until after you leave work, or if you have a task that is CPU-intensive and may slow the system, you can start the task before you leave and specify that it continues even after you log out of the system.
+<ul>
+<li>e.g. a task that will not be completed until after you leave can be set to continue running after you log out of the system.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>nohup</code>
+<ul>
+<li>The nohup command tells a program to ignore the hangup signal that was sent while disconnecting.
+<ul>
+<li>The nohup command should run in the background so that it does not tie up your terminal.</li>
+<li>The <em>nohup.out</em> file stores the output of the nohup command, which will normally be displayed on the terminal.</li>
+</ul>
+</li>
+<li>To enable a command to run in the background after you have logged out, use the syntax <code>nohup [command] &amp;</code>.</li>
+</ul>
+</li>
+<li><code>screen</code>
+<ul>
+<li>The screen command is another way that you can leave work running after you leave the system, which can then be resumed at a later point by reconnecting to your active screen session.
+<ul>
+<li>The screen command will continue to keep the interactive shell open and run your program in the background so that it does not tie up your terminal.</li>
+</ul>
+</li>
+<li>When you next connect to your server, you can restore the active screen session via the <code>screen -r</code> command.</li>
+<li>Note: The screen command is not installed by default. To install it, use the <code>sudo apt install screen</code> command.</li>
+</ul>
+</li>
+</ul>
+<h3>Cron and Cronjobs</h3>
+<ul>
+<li>Cron
+<ul>
+<li>Cron is a daemon that runs in the background on a Linux system and executes specified tasks at a designated time or date.</li>
+<li>Cron is normally used to schedule periodically executed tasks defined in the crontab file.
+<ul>
+<li>Under the <em>/etc</em> directory, you will find directories such as,
+<ul>
+<li>cron.d</li>
+<li>cron.hourly</li>
+<li>cron.daily</li>
+<li>cron.weekly</li>
+<li>cron.monthly</li>
+</ul>
+</li>
+<li>Depending on the frequency of the execution of bash script, you need to place your script file in the corresponding directory.
+<ul>
+<li>If you want to run a shell script for a frequency other than hourly, daily, weekly, or monthly, you need to place the script in the cron.d directory.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The syntax of the cron daemon is <code>cron [option] {mail command}</code>.</li>
+</ul>
+</li>
+<li>Cronjobs
+<ul>
+<li>A task scheduled via cron is called a cron job.
+<ul>
+<li>These jobs will run either at system level or at user level.</li>
+<li>The cron jobs that you create for users are stored in the <em>/var/spool/cron/[user name]</em> file.</li>
+<li>System default cron jobs are stored in the <em>/etc/crontab</em> file.</li>
+<li>Only a root user can add system level jobs</li>
+</ul>
+</li>
+<li>Scheduling a cron job is accomplished by adding the job to the system-wide <em>/etc/crontab</em> file.
+<ul>
+<li>The crontab file may also contain environment variables that will be passed to the commands at the time of execution.</li>
+<li>Jobs in the crontab file are called entries, and they include a time description, the user name to run the command, and the command.
+<ul>
+<li>The format of a crontab entry is: <code>{minute} {hour} {day of month} {month} {day of week} {user command}</code>.</li>
+<li>In addition to specifying a particular time and day, a pattern can be described by using asterisks (*) to specify all of a particular field.
+<ul>
+<li>e.g. an asterisk in the minute field indicates that the command should be carried out every minute.</li>
+</ul>
+</li>
+<li>In addition to asterisks, time ranges are permitted by separating values with a dash (-) and lists of values are specified by separating values with a comma (,).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>System crontab file
+<ul>
+<li>System crontab files are the configuration files for the cron utility.
+<ul>
+<li>They are stored in the <em>/etc/crontab</em> file.</li>
+<li>System crontab files can be edited by the root user.</li>
+</ul>
+</li>
+<li>The name of the user running the command is indicated in the sixth field of the file.
+<ul>
+<li>When you create a crontab entry for a specific user, the sixth field contains the command that needs to be run at the specified time.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>User crontab file
+<ul>
+<li>Individual users can schedule cron jobs.
+<ul>
+<li>Unlike the system-level crontab, users have their own crontab files.</li>
+</ul>
+</li>
+<li>The format of entries in this file is the same as that of the system-level crontab, with the exception of the user field.
+<ul>
+<li>Because the entire crontab file is dedicated to a single user, the user field is not included.</li>
+</ul>
+</li>
+<li>While the /etc/crontab file can be edited directly, user crontab files are best edited via the crontab utility.</li>
+</ul>
+</li>
+<li>Anacron
+<ul>
+<li>Anacron is a daemon that executes jobs at intervals, which are specified in days, without requiring the system to be running continuously.</li>
+<li>Anacron is used to control the execution of daily, weekly, or monthly jobs.</li>
+<li>The <em>/etc/anacrontab</em> file is the configuration file for the anacron utility.
+<ul>
+<li>This file has four fields.
+<ul>
+<li>The first field displays the number of days the job has not been run.</li>
+<li>The second field displays the time after which the job has to be run (after reboot).</li>
+<li>The third field displays the job identifier.</li>
+<li>The fourth field displays the job to be run by the anacron utility.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Common Scheduled Jobs</h3>
+<ul>
+<li><code>tmpreader</code>
+<ul>
+<li>The tmpreaper command can be run as a daily cron job that is used to delete files, such as the files in the /tmp directory, which have not been accessed for some time and are utilizing disk space.</li>
+<li>The syntax of the tmpreaper command is <code>tmpreaper [options] {hours}</code>.</li>
+</ul>
+</li>
+<li><code>logrotate</code>
+<ul>
+<li>The logrotate command is run as a daily cron job that is used to compress, delete, or mail log files.
+<ul>
+<li>It may be configured to run on a weekly or monthly basis depending on the log size.</li>
+</ul>
+</li>
+<li>The configuration file for logrotate is <em>/etc/logrotate.conf</em>.</li>
+</ul>
+</li>
+<li><code>logwatch</code>
+<ul>
+<li>The logwatch utility is run as a daily cron job that is used to monitor logs.
+<ul>
+<li>It is fully customizable via the /etc/logwatch/conf/logwatch.conf file.</li>
+</ul>
+</li>
+<li>The utility searches logs and reports suspicious messages, and enables you to set detail levels for reports.
+<ul>
+<li>10, 5, and 0, correspond to high, medium, and low level details, respectively.</li>
+</ul>
+</li>
+<li>The logwatch command may not be installed by default.
+<ul>
+<li>In that case, you can use the command <code>sudo apt install logwatch</code> to install it.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>4-6. System Time</h2>
+<ul>
+<li>System time is the time maintained by a computer’s internal clock.
+<ul>
+<li>It is coordinated universal time with a resolution in milliseconds.</li>
+</ul>
+</li>
+<li>Clock drift is the gradual variation in time between the hardware clock and the system clock.
+<ul>
+<li>The hardware clock is also known as the Real Time Clock (RTC).
+<ul>
+<li>It keeps track of the time when the system is turned off and not when the system is on.</li>
+</ul>
+</li>
+<li>The hardware and system clocks will drift at different rates, apart from each other and also away from the real time.</li>
+</ul>
+</li>
+<li>A leap second is the adjustment made to UTC, to account for the irregularity in the earth’s rotation.</li>
+<li>In Linux, you can use the <code>tzselect</code> command to access a menu driven utility that will allow you to select the time zone for your system according to your geographic location.
+<ul>
+<li>You need to define an environment variable, TZ, in the /etc/profile file to set the time zone for your system.</li>
+<li>/etc/timezone file is available with the Debian and Ubuntu distributions of Linux and is used to store the time zone information of the system.
+<ul>
+<li>This file typically consists of a single line entry based on the continent/time zone format, such as <code>America/New_York</code>.</li>
+</ul>
+</li>
+<li>/usr/share/zoneinfo/ directory contains time zone details relating to different countries.
+<ul>
+<li>When you export a time zone, details of that time zone are obtained from this directory.</li>
+</ul>
+</li>
+<li>The current time details of the system are stored in the /etc/localtime directory.
+<ul>
+<li>If you make any change to your system time, the /etc/localtime directory gets updated.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Epoch Time Format
+<ul>
+<li>Epoch Time, also known as Unix Time, is a system for describing a point in time based on the number of seconds that have passed since the Unix epoch, or 00:00:00 UTC on 1 January 1970.
+<ul>
+<li>Leap seconds are ignored, and every day is treated as if it contains exactly 86400 seconds.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Network Time Protocol (NTP)
+<ul>
+<li>NTP is a standard Internet protocol for synchronizing the internal system clock with the true time or the average time on a number of high accuracy clocks around the world.
+<ul>
+<li>The pool.ntp.org is a collection of servers on the Internet that provides accurate time to the Linux systems using NTP.</li>
+</ul>
+</li>
+<li>NTP is used for transmitting and receiving time on Transmission Control Protocol/Internet Protocol (TCP/IP) networks.
+<ul>
+<li>NTP is also used to set the clock of one computer to match that of another and synchronize it with the network clock.</li>
+</ul>
+</li>
+<li>A drift file is a file found in the /etc/ntp directory.
+<ul>
+<li>The NTP drift file is used by the ntpd daemon to reset the time when the system is restarted.</li>
+<li>The drift file synchronizes the system clock and the clock drift to display the time from the NTP server.</li>
+</ul>
+</li>
+<li>The ntp.conf file found in the /etc directory contains configuration options for the NTP server.
+<ul>
+<li>The file contains settings for all hosts on local and public servers.</li>
+<li>The ntpd daemon reads the ntp.conf file for synchronization settings and then connects to the NTP server.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>4-7. System Logs</h2>
+<ul>
+<li>System logs are records of system activities that are tracked and maintained by the <code>syslogd</code> utility.
+<ul>
+<li>The syslogd utility runs as a daemon.</li>
+<li>System logs are usually started at boot.</li>
+<li>System log messages include the date, the process that delivered the message, and the actual message.</li>
+</ul>
+</li>
+<li>Logging service
+<ul>
+<li>A logging service is a daemon that is used to track logs or errors that are generated in a system.
+<ul>
+<li>Log messages are stored in a separate file called the log file, which is stored in the /var/log directory.
+<ul>
+<li>The main log file is /var/log/messages.</li>
+<li>In addition to this log file, some services create their own log files.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Automated log analysis
+<ul>
+<li>During maintenance sessions, instead of manually parsing large log files, you can automate the log analysis by writing Perl or Bash scripts.
+<ul>
+<li>e.g. You can write a Perl script to automatically parse a mail log file and inform you about the rejected email messages.</li>
+</ul>
+</li>
+<li>Ensure that you make a crontab entry for the script.</li>
+</ul>
+</li>
+<li>Automatic Rotation
+<ul>
+<li>Automatic rotation is a system of regular rotation of logs to maintain a minimum log file size.</li>
+<li>The <code>logrotate</code> utility is used to perform automatic rotation.
+<ul>
+<li>When executed, logrotate adds a .1 to the end of the file name of the current version of the log files.
+<ul>
+<li>Previously rotated files are suffixed with .2, .3, and so on.</li>
+<li>Older logs have larger numbers at the end of their file names.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Using automatic rotation, all copies of a file, with dates from when they were created, will be stored.</li>
+<li>Log files can be rotated on a daily, weekly, or monthly basis.</li>
+<li>Automatic rotation saves disk space because older log files are pushed out when a size limit is reached.
+<ul>
+<li>This is important because a computer that runs out of free space on the hard drive will crash.</li>
+<li>Automatic rotation prevents logs from using up all the available free space.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Centralized Logging</h3>
+<ul>
+<li>Central network log server
+<ul>
+<li>A server that is used to implement centralized logging services</li>
+<li>This server receives all syslog messages from Linux or Windows servers and from network devices such as routers, switches, firewalls, and workstations, across a network.
+<ul>
+<li>The server logs data mining and online alerts, performs log analysis, and generates reports.</li>
+</ul>
+</li>
+<li>Centralized logging allows computers to send their logs to a central location.
+<ul>
+<li>This means the logs will be available even if the disk or computer where they were created crashes.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>syslogd</code>
+<ul>
+<li>The syslogd utility tracks remote and local system logs.
+<ul>
+<li>Logs are characterized by their hostname and program field.</li>
+<li>The settings for syslogd are configured using the /etc/syslog.conf file.</li>
+</ul>
+</li>
+<li>The syntax of the syslogd utility is <code>syslogd [options]</code>.
+<ul>
+<li>Note: The syslogd may not be installed by default. You can use the <code>sudo apt install inetutils-syslogd</code> to install it.</li>
+</ul>
+</li>
+<li>The <em>/etc/syslog.conf</em> file controls the location where the syslogd information is recorded.
+<ul>
+<li>This file consists of two columns.
+<ul>
+<li>The first column lists the facilities and severities of the messages.</li>
+<li>The second column lists the files the messages should be logged to.</li>
+<li>By default, most messages are stored in the <em>/var/log/messages</em> file.</li>
+</ul>
+</li>
+<li>Some applications maintain their own log files and directories independent of the syslog.conf file.
+<ul>
+<li>e.g.
+<ul>
+<li>/var/log/syslog
+<ul>
+<li>Stores the system log file, which contains information about the system.</li>
+</ul>
+</li>
+<li>/var/log/maillog
+<ul>
+<li>Stores mail messages.</li>
+</ul>
+</li>
+<li>/var/log/samba
+<ul>
+<li>Stores Samba messages.</li>
+</ul>
+</li>
+<li>/var/log/mrtg
+<ul>
+<li>Stores Multi Router Traffic Grapher (MRTG) messages.</li>
+<li>Multi Router Traffic Grapher (MRTG) is free software, licensed under GNU General Public License (GPL), that is used to monitor and measure the traffic load on network links.
+<ul>
+<li>The traffic load on a network is represented in graphical form.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>/var/log/httpd
+<ul>
+<li>Stores Apache web server messages.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>logger</code>
+<ul>
+<li>The logger is the command interface to the system log module.</li>
+<li>The logger has options that allow you to customize the content that needs to be logged.</li>
+</ul>
+</li>
+<li><code>rsyslog</code>
+<ul>
+<li>The rsyslog utility tracks, forwards, and stores messages via the syslog protocol and local system logs, and is a more modern alternative to the older syslogd utility.
+<ul>
+<li>Logs are characterized by their hostname and program field.</li>
+<li>The settings for rsyslog are configured using the /etc/rsyslog.conf file as well as multiple configuration files in the /etc/rsyslogd configuration directory.</li>
+</ul>
+</li>
+<li>The syntax of the rsyslog utility is <code>rsyslog [options]</code>.
+<ul>
+<li>Note: The rsyslog may not be installed by default. You can use the <code>sudo apt install rsyslog</code> to install it.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>journalctl</code>
+<ul>
+<li>The journalctl utility is a component of systemd that manages and views log files created by the journal component of systemd.
+<ul>
+<li>It may be used on its own but is often used in conjunction with a traditional syslog daemon such as syslogd or rsyslog.</li>
+<li>Log information is collected and stored via the systemdjournaldservice, and may be viewed with the journalctl utility.</li>
+<li>The settings for journald are configured in the /etc/systemd/journald.conf file.</li>
+</ul>
+</li>
+<li>The syntax of the journalctl utility is <code>journalctl [options]</code>.</li>
+<li>In its default configuration, the Systemd Journal only stores logs in memory, and logs are cleared on each system reboot.
+<ul>
+<li>The Systemd Journal logs may be persisted after a reboot by creating the directory <em>/var/log/journal</em>.
+<ul>
+<li>Systemd is configured to automatically persist logs into this directory if it exists.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Log File Analysis</h3>
+<ul>
+<li>The process of examining messages generated by logging daemons in log files is referred to as log file analysis.
+<ul>
+<li>Log messages are created in a format that is specific to an application or a vendor and are arranged in chronological order.</li>
+</ul>
+</li>
+<li>During analysis, the format of log messages from different logging sources, such as operating systems, networks, and databases, is compared with a preset format.
+<ul>
+<li>Also, log messages are categorized for each user with respect to the application, system, or system configuration accessed, to ensure user authentication.</li>
+</ul>
+</li>
+<li><code>lastlog</code>
+<ul>
+<li>The lastlog command utilizes data from the <em>/var/log/lastlog</em> file to display the latest login details of all users.
+<ul>
+<li>In addition to the login name, date, and time, it displays the terminal from where a user last logged in.</li>
+</ul>
+</li>
+<li>The lastlog command is used by administrators to view user accounts that have never been used.</li>
+</ul>
+</li>
+</ul>
+<h2>4-8. SELinux</h2>
+<ul>
+<li>Security-Enhanced Linux (SELinux) is the default security enhancement feature provided with CentOS and Red Hat Enterprise Linux, and is available on other distributions.
+<ul>
+<li>It was developed by the U.S. National Security Agency while implementing various security policies on Linux operating systems.</li>
+<li>It provides additional filesystem and network security so that unauthorized processes cannot access or tamper with data, bypass security mechanisms, violate security policies, or execute untrustworthy programs.</li>
+<li>It enforces Mandatory Access Controls (MACs) on processes and resources and allows information to be classified and protected based on its confidentiality and integrity requirements.
+<ul>
+<li>This confines the damage caused to information by malicious applications.</li>
+</ul>
+</li>
+<li>Note: You can use the <code>sudo apt install policycoreutilsselinux-utils selinux-basics</code> command to install SELinux on Ubuntu.</li>
+</ul>
+</li>
+<li>SELinux modes
+<ul>
+<li>Disabled
+<ul>
+<li>In this mode, SELinux is turned off. So, MAC will not be implemented and the default DAC method will be prevalent.</li>
+</ul>
+</li>
+<li>Enforcing
+<ul>
+<li>In this mode, all the security policies are enforced. Therefore, processes cannot violate the security policies.</li>
+</ul>
+</li>
+<li>Permissive
+<ul>
+<li>In this mode, SELinux is enabled, but the security policies are not enforced. So, processes can bypass the security policies.</li>
+<li>However, when a security violation occurs, it is logged and a warning message is sent to the user.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Security context
+<ul>
+<li>Security context is the collection of all security settings pertaining to processes, files, and directories.</li>
+<li>Security context consists of three elements,
+<ul>
+<li>User</li>
+<li>Role</li>
+<li>Type</li>
+</ul>
+</li>
+<li>Based on the security context attributes, SELinux decides how subjects access objects on the system.</li>
+<li>Note: You activate SELinux using the <code>sudoselinux-activate</code> command.</li>
+</ul>
+</li>
+<li>Access control
+<ul>
+<li>Discretionary Access Control (DAC)
+<ul>
+<li>In DAC, the system checks the resources over which a user has access rights.
+<ul>
+<li>The rights of the user are identified using the authentication information such as user identity and password.</li>
+</ul>
+</li>
+<li>Under DAC, there are two types of permissions.
+<ul>
+<li>Administrator permissions</li>
+<li>Non-administrator permissions</li>
+</ul>
+</li>
+<li>For application programs to run, administrator access has to be provided.</li>
+<li>Administrator access provides full discretion over the filesystem and exposes it to security threats.
+<ul>
+<li>e.g. A malicious program or process started by a user having administrator access can damage data in a filesystem.</li>
+</ul>
+</li>
+<li>DAC is the standard security strategy in Linux in which the User/Group/Other file permissions are managed.</li>
+</ul>
+</li>
+<li>Mandatory Access Control (MAC)
+<ul>
+<li>In MAC, the system checks the resources over which a user does not have access rights.
+<ul>
+<li>MAC is applied through SELinux.</li>
+<li>The rights of the user are identified using authentication such as the SELinux user identity, role, and type of access.</li>
+</ul>
+</li>
+<li>MAC is the opposite of DAC, where permissions have to be defined for all processes (known as subjects) as to how they access resources (known as objects) such as files, directories, devices, memory resources, and other processes.
+<ul>
+<li>An action is an operation, such as append, write, read, create, execute, and rename, that a subject can perform on an object.
+<ul>
+<li>This is implemented using security policies that control the interaction between the processes and the objects.</li>
+<li>e.g. When a subject tries to access an object, the security policy is checked to verify whether the subject is authorized to access the object before granting the access.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Security policies
+<ul>
+<li>A security policy defines access parameters for every process and resource on the system.</li>
+<li>Configuration files and policy source files located in the <em>/etc/selinux</em> directory can be configured by the root user.</li>
+<li>Types
+<ul>
+<li>Targeted
+<ul>
+<li>According to the targeted policy, except the targeted subjects and objects, all other subjects and objects will run in an unconfined environment.</li>
+<li>The untargeted subjects and objects will operate on the DAC method and the targeted ones will operate on the MAC method.</li>
+<li>A targeted policy is enabled by default.</li>
+</ul>
+</li>
+<li>Strict
+<ul>
+<li>A strict policy is the opposite of a targeted policy, where every subject and object of the system is enforced to operate on the MAC method.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

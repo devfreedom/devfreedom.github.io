@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Study Note] Coursework: Cybersecurity Analyst - Part 3 | devfreedom.github.io</title>
+    <meta name="title" content="[Study Note] Coursework: Cybersecurity Analyst - Part 3 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Study Note❯,cybersecurity,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230617_1132_study-note_cybersecurity_coursework_03/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Study Note] Coursework: Cybersecurity Analyst - Part 3</h1>
+        <div class="text-center">Published on 17 June 2023 11:32 AM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Study Note❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Study Note❯</a>
+            
+            <a href="/tags/cybersecurity" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#cybersecurity</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/cybersecurity.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>1. Compliance Frameworks and Industry Standards</h1>
+<h2>Security Challenges</h2>
+<ul>
+<li>Event
+<ul>
+<li>An event on a system or network detected by a security device or application</li>
+</ul>
+</li>
+<li>Attack
+<ul>
+<li>A security event that has been identified by correlation and analytics tools as malicious activity that is attempting to negatively impact system, information, and resources</li>
+</ul>
+</li>
+<li>Incident
+<ul>
+<li>An attack or security event that has been reviewed by security analysts and deemed worthy of deeper investigation</li>
+</ul>
+</li>
+<li>How to challenge the &quot;bad guys&quot;
+<ul>
+<li>Outsiders
+<ul>
+<li>They want to &quot;get in&quot;.</li>
+<li>Security baseline ensures we design secure offerings but setting implementation standards
+<ul>
+<li>e.g. Logging, encryption, development practice, etc.</li>
+</ul>
+</li>
+<li>Validated through baseline reviews, threat models, pentesting, etc.</li>
+</ul>
+</li>
+<li>Inadvertent actor
+<ul>
+<li>They are &quot;in&quot; but are human and make mistakes</li>
+<li>Automate procedures to reduce errors (technical controls)</li>
+<li>Operational/procedural manual process safe guards</li>
+<li>Review logs/reports to find/fix errors</li>
+<li>Test automation regularly for accuracy</li>
+</ul>
+</li>
+<li>Malicious insiders
+<ul>
+<li>They are &quot;in&quot; but are deliberately behaving badly</li>
+<li>Seperation of duties - no shared IDs, limit privileged IDs</li>
+<li>Secure coding, logging, monitoring access/operations</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Security and Compliance</h2>
+<ul>
+<li>Security
+<ul>
+<li>Designed protection</li>
+<li>Security controls
+<ul>
+<li>Physical controls
+<ul>
+<li>For the servers in the data centers</li>
+</ul>
+</li>
+<li>Technical controls
+<ul>
+<li>Features and functions of the service (e.g. encryption)</li>
+<li>What log data is collected</li>
+</ul>
+</li>
+<li>Operational controls
+<ul>
+<li>How a server is configured, updated, monitored, and patched</li>
+<li>How staff are trained and what activities they perform</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Privacy
+<ul>
+<li>How information is used, who that information is shared with, or if that information is used to track users</li>
+</ul>
+</li>
+<li>Compliance
+<ul>
+<li>Tests that security measures are in place</li>
+<li>Which and how many depend on the specific compliance</li>
+<li>Often will cover additional non-security requirements such as business practices, vendor agreements, organizational controls, etc.</li>
+</ul>
+</li>
+</ul>
+<h3>Compliance process</h3>
+<ul>
+<li>General process for any compliance/audit process
+<ol>
+<li>Establish scope
+<ul>
+<li>Controls are based on the goal and compliance</li>
+<li>Ensure all components in scope are compliant to technical controls</li>
+<li>Ensure all processes are compliant to operational controls</li>
+</ul>
+</li>
+<li>Readiness assessment</li>
+<li>Gap remediation</li>
+<li>Testing/auditing
+<ul>
+<li>Internal and self assessments</li>
+<li>External audit</li>
+<li>Set audit recertification schedules</li>
+</ul>
+</li>
+<li>Management assertion and reporting</li>
+</ol>
+</li>
+</ul>
+<h2>US Cybersecurity Federal Law</h2>
+<ul>
+<li>Computer Fraud and Abuse Act (CFAA)</li>
+<li>Federal Information Security Management Act (FISMA 2002)</li>
+<li>Federal Information Security Modernization Act (FISMA 2014)</li>
+</ul>
+<h2>EU General Data Protection Regulation (GDPR)</h2>
+<ul>
+<li>Into effect on 25 May 2018</li>
+<li>Global impact</li>
+<li>5 key GDPR obligations
+<ul>
+<li>Rights of EU data subjects
+<ul>
+<li>Data subject: An identified or identifiable living natural person</li>
+</ul>
+</li>
+<li>Security of personal data
+<ul>
+<li>Personal data: Any information relating to a data subject</li>
+</ul>
+</li>
+<li>Consent</li>
+<li>Accountability of compliance
+<ul>
+<li>4% or 20M Euros of potential penalty for non-compliance per incident</li>
+</ul>
+</li>
+<li>Data protection by design and by default
+<ul>
+<li>Controller: Determines the purpose and means of processing of personal data</li>
+<li>Processor: Processes personal data on behalf of the controller</li>
+<li>Processing: Any operation performed on personal data (including storage and access) anywhere in the world</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>ISO 27001</h2>
+<ul>
+<li>The ISO 2700 family of standards helps organizations keep information assets secure.</li>
+<li>ISO/IEC 27001 is the best known standard in the family providing requirements for an information security management system (ISMS)
+<ul>
+<li>Provides requirements for establishing, implementing, maintaining, and continually improving an information security management system</li>
+<li>ISO 27001 certification can provide credibility to a client of an organization.
+<ul>
+<li>For some industries, certification is a legal or contractual requirement.</li>
+<li>ISO develops the standards but does not issue certifications.
+<ul>
+<li>Organizations that meet the requirements may be certified by an accredited certification body following successful completion of an audit.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ISO 27018 is about privacy.</li>
+<li>ISO 27017 is about cloud security.</li>
+</ul>
+<h2>System and Organization Controls (SOC) Reports by AICPA</h2>
+<ul>
+<li>SOC2 Principles
+<ul>
+<li>Security
+<ul>
+<li>The system is protected against unauthorized access, boty physical and logical.</li>
+<li>Controls related to user provisioning, user revalidation, change management, etc.</li>
+</ul>
+</li>
+<li>Availability
+<ul>
+<li>Controls related to virus prevention, system back-ups, disaster recovery, etc.</li>
+</ul>
+</li>
+<li>Confidentiality
+<ul>
+<li>Information designated as confidential is protected by the system as committed or agreed.</li>
+</ul>
+</li>
+<li>Processing integrity
+<ul>
+<li>System processing is complete, accurate, timely, and authorized.</li>
+</ul>
+</li>
+<li>Privacy
+<ul>
+<li>With criteria set forth in Generally Accepted Privacy Principles (GAPP)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Controls
+<ul>
+<li>Primary control: Provides the feature/function/operation of the control</li>
+<li>Secondary control: Provides support or backup to ensure primary control is effective</li>
+</ul>
+</li>
+<li>Some industry/jurisdictions require SOC2 or local compliance audit</li>
+<li>Many organizations know SOC2 Type 2 consider it a stronger statement of operational effectiveness than ISO 27001 (continuous testing)</li>
+<li>Many organization's clients will accept SOC2 in lieu of the right-to-audit</li>
+</ul>
+<h3>SOC Versions</h3>
+<ul>
+<li>SOC1
+<ul>
+<li>Used for situations where the systems are being used for financial reporting</li>
+</ul>
+</li>
+<li>SOC2 Security
+<ul>
+<li>Governance: AICPA</li>
+<li>Worldview: North American/International</li>
+<li>Certification: CPA Firm Attest Examination Opinion</li>
+<li>Report: Report containing the auditor's opinion, management's assertion, description of controls, user control considerations, tests of controls, and results</li>
+<li>Best use: Measure a service organization against static security principles and criteria</li>
+<li>Higher difficulty than ISO 27001</li>
+</ul>
+</li>
+<li>SOC3
+<ul>
+<li>General use report to provide interested parties with a CPA's opinion about same controls in SOC 2</li>
+</ul>
+</li>
+</ul>
+<h3>SOC Types</h3>
+<ul>
+<li>Type 1 report
+<ul>
+<li>Service auditor expresses an opinion on if the system's description is fairly presented and if the controls are suitably designed to meet the applicable Trust Service criteria as of a point in time.</li>
+<li>Consider this the starting line.</li>
+<li>Type 1 is closest to an ISO report.</li>
+</ul>
+</li>
+<li>Type 2 report
+<ul>
+<li>Same as Type 1 report, but also includes an opinion on the operating effectiveness of the controls for a period of time</li>
+<li>Proof you are maintaining effectiveness over time, typically 6 months, renewed either every 6 months or yearly, includes the service auditor's test result of operating effectiveness.</li>
+</ul>
+</li>
+<li>Both types are available for both SOC1 and SOC2.</li>
+</ul>
+<h3>SOC Auditor Process</h3>
+<ul>
+<li>Auditors are looking for,
+<ul>
+<li>Accuracy
+<ul>
+<li>Are controls results being assessed for pass/fail</li>
+</ul>
+</li>
+<li>Completeness
+<ul>
+<li>Do controls implementation cover the entire offering, such as no gaps in inventory and personnel?</li>
+</ul>
+</li>
+<li>Timeliness
+<ul>
+<li>Are controls performed on time or early, with no gaps in coverage?</li>
+<li>If a control cannot be performed on time, are there appropriate assessment (risk) approvals before the control is considered late?</li>
+</ul>
+</li>
+<li>Resilience notice
+<ul>
+<li>Are there checks and balences in place such that if a control does fail, would you and correct? At all? Within a reasonable timeframe?</li>
+</ul>
+</li>
+<li>Consistency
+<ul>
+<li>Shifting control implementation raises concerns about above, plus increases testing</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Continuous monitoring between audits
+<ul>
+<li>Purpose
+<ul>
+<li>Ensure controls are operating as designed</li>
+<li>Identify control weaknesses and failure outside an audit setting</li>
+<li>Communicate results to appropriate stakeholders</li>
+</ul>
+</li>
+<li>Scope
+<ul>
+<li>All production devices</li>
+<li>Controls will be tested for operating.</li>
+<li>Effectiveness over time focusing on:
+<ul>
+<li>Execution against the defined security policies</li>
+<li>Execution evidence maintenance/availability</li>
+<li>Timely deviation from policy documention</li>
+<li>Timely temporary failures of a control or loss of evidence documentation and communication</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Health Insurance Portability and Accountability Act (HIPAA)</h2>
+<ul>
+<li>HIPAA (and HITECH)
+<ul>
+<li>The US Federal laws and regulations that define the control of most personal healthcare information (PHI) for companies responsible for managing such data
+<ul>
+<li>PHI: Any information about health status, provision of healthcare, or payment for healthcare that is maintained by a Covered Entity and Business Associate, and can be linked to a specific individual.</li>
+<li>Covered Entity: Companies that manage healthcare data for their customers</li>
+<li>Business Associate: Any vendor company that supports the Covered Entity</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HHS-OCR
+<ul>
+<li>US Department of Health and Human Services (HHS) Office of Civil Rights (OCR) governs HIPPA compliance.</li>
+<li>HHS-OCR can do unannounced audits on the CE+BA or just the BA.</li>
+<li>There are significant enforcement penalties on HIPAA violations
+<ul>
+<li>HHS-OCR Breach Portal a.k.a. &quot;Wall of Shame&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>HIPAA Rules</h2>
+<ul>
+<li>HIPAA Privacy Rule
+<ul>
+<li>Protection of individual's medical records and PHI, applies to heatlhcare providers and health plans with certain electronic healthcare transactions.</li>
+</ul>
+</li>
+<li>HIPAA Security Rule
+<ul>
+<li>A set of security standards for protecting certain health information that is held or transferred in electronic form</li>
+<li>Addresses technical and non-techincal safeguards that must be put in place to secure e-PHI</li>
+</ul>
+</li>
+<li>HIPAA Administrative Safeguards
+<ul>
+<li>Security management process</li>
+<li>Security personnel</li>
+<li>Information access management</li>
+<li>Workforce training and management</li>
+<li>Evaluation</li>
+</ul>
+</li>
+<li>HIPAA Technical Safeguards
+<ul>
+<li>Access controls</li>
+<li>Audit controls</li>
+<li>Integrity controls</li>
+<li>Transmission security</li>
+</ul>
+</li>
+<li>HIPAA Physical Safeguards
+<ul>
+<li>Facility access and control</li>
+<li>Workstation and device security</li>
+</ul>
+</li>
+</ul>
+<h3>The Purview of HIPAA</h3>
+<ul>
+<li>HIPAA is a U.S. Regulation
+<ul>
+<li>Other countries have similar regulations and laws.</li>
+<li>Some U.S. states have superseding regulations stricter than federal HIPAA.</li>
+<li>Some international companies will require HIPAA compliance for a either a measure of confidence, or because they intend to do business with US data.</li>
+</ul>
+</li>
+</ul>
+<h2>Payment Card Industry Data Security Standard (PCI-DSS)</h2>
+<ul>
+<li>Introduced in 2004 by MasterCard, Visa, American Express, and Discover
+<ul>
+<li>In response to security breaches and financial losses within the credit card industry</li>
+</ul>
+</li>
+<li>Applies to all entities that store, process, and/or transmit cardholder data</li>
+<li>Covers technical and operational practices for system components included in or connected to cardholder data environments</li>
+<li>Scope
+<ul>
+<li>Cardholder data
+<ul>
+<li>Primary account number</li>
+<li>Cardholder name</li>
+<li>Expiration date</li>
+<li>Service code</li>
+<li>etc.</li>
+</ul>
+</li>
+<li>Sensitive authentication data
+<ul>
+<li>Magnetic stripe</li>
+<li>IC chip</li>
+<li>PINs and PIN blocks</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PCI requirements examples
+<ul>
+<li>Approved Scanning Vendor (ASV) scans
+<ul>
+<li>Quarterly, external, 3rd-party</li>
+</ul>
+</li>
+<li>File integrity monitoring (FIM)</li>
+<li>Firewall review every 6 months</li>
+<li>Responsibility matrix</li>
+</ul>
+</li>
+</ul>
+<h2>Center for Internet Security (CIS) Critical Security Controls</h2>
+<ul>
+<li>CIS Controls are a prioritized set of actions that collectively form a defense-in-depth set of best practices that mitigate the most common attacks against systems and networks
+<ul>
+<li>Basic controls</li>
+<li>Foundational controls</li>
+<li>Organizational controls</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>2. Client System Administration and Endpoint Protection</h1>
+<h2>Client System Administration</h2>
+<ul>
+<li>Endpoint devices are the front line of attack
+<ul>
+<li>Cloud and mobile computing</li>
+<li>New devices, new applications, and new services</li>
+</ul>
+</li>
+<li>Common types of endpoint attacks
+<ul>
+<li>Spear phishing
+<ul>
+<li>An email imitating a trusted source designed to target a specific person or department</li>
+<li>Whaleing attack
+<ul>
+<li>A whaling attack is a special form of spear phishing that targets specific high-ranking victims within a company.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Watering hole
+<ul>
+<li>Malware placed on a site frequently visited by an employee or group</li>
+</ul>
+</li>
+<li>Ad network attacks
+<ul>
+<li>Using ad networks to place malware on a machine through ad software</li>
+</ul>
+</li>
+<li>Island hopping
+<ul>
+<li>Supply chain infiltration</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Endpoint Protection</h2>
+<ul>
+<li>Endpoint protection management is a policy-based approach to network security that requires endpoint devices to comply with specific criteria before they are granted access to network resources.</li>
+<li>Endpoint security systems work on a client/server model in which a centrally managed server or gateway hosts the security program and an accompanying client program is installed on each network device.</li>
+</ul>
+<h3>Unified Endpoint Management (UEM)</h3>
+<ul>
+<li>UEM is one that converges client-based management techniques with Mobile Device Management (MDM) application programming interfaces (API).</li>
+<li>Traditional client management systems
+<ul>
+<li>Involves an agent-based approach</li>
+<li>Great for maintenance and support</li>
+<li>Standardized rinse-and-repeat process</li>
+<li>Applicable for some OS and servers</li>
+</ul>
+</li>
+<li>Mobile device management
+<ul>
+<li>API-based management techniques</li>
+<li>Security and management of corporate mobile assets</li>
+<li>Specialized for over-the-air configuration</li>
+<li>Purpose-built for smartphones and tablets</li>
+</ul>
+</li>
+<li>Device management + Client management = UEM</li>
+</ul>
+<h3>Endpoint Response</h3>
+<ul>
+<li>Key mitigation capabilities for endpoints
+<ul>
+<li>Deployment of devices with network configurations</li>
+<li>Automatic quarantine/blocking of non-compliant endpoints</li>
+<li>Ability to patch thousands of endpoints at once</li>
+</ul>
+</li>
+<li>Endpoint detection and response
+<ul>
+<li>Automatic policy creation for endpoints</li>
+<li>Zero-day OS updates</li>
+<li>Continuous monitoring, patching, and enforcement of security policies across endpoints</li>
+</ul>
+</li>
+<li>Key factors to consider
+<ul>
+<li>Threat hunting</li>
+<li>Detection response</li>
+<li>User education</li>
+</ul>
+</li>
+</ul>
+<h2>Patching</h2>
+<ul>
+<li>A set of changes to a computer program or its supporting data designed to update, fix, or improve it.
+<ul>
+<li>Includes vulnerability fixes, bug fixes, usability/functionality/performance improvements</li>
+</ul>
+</li>
+<li>All OSs require some type of patching.</li>
+<li>Patching is the fundamental and most important thing an organization can do to prevent malicious attacks</li>
+</ul>
+<h3>Windows Patching</h3>
+<ul>
+<li>Patch types
+<ul>
+<li>Security updates</li>
+<li>Critical updates</li>
+<li>Software updates</li>
+<li>Service packs</li>
+</ul>
+</li>
+<li>Patching process
+<ul>
+<li>Typically monthly process by most organizations
+<ol>
+<li>Patch released
+<ul>
+<li>OS</li>
+<li>Application</li>
+</ul>
+</li>
+<li>Testing
+<ul>
+<li>Compatibility with custom applications</li>
+<li>Small test group</li>
+</ul>
+</li>
+<li>Distribute to organization
+<ul>
+<li>Send to broader group</li>
+<li>Patch vulnerabilities</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>3. Windows RBAC and Permissions</h1>
+<h2>Windows Access Control</h2>
+<ul>
+<li>After user authentication, Windows determines if the user has the correct permissions to access a resource.
+<ul>
+<li>In the access control model, users and groups (Security Principals) have assigned rights and permissions that inform OS what each user and group can do.</li>
+<li>Security principals perform actions on objects.</li>
+<li>Shared resources use Access Control Lists (ACL) to assign permissions to enforce access control in two ways,
+<ul>
+<li>Deny access to unauthorized users and groups</li>
+<li>Set well-defined limits on the access that is provided to authorized users and groups</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Privileged accounts (e.g. administrators)
+<ul>
+<li>Administrators have direct or indirect access to most or all assets in an IT organization.</li>
+<li>Administrators will configure Windows to manage access control to provide security for multiple roles and uses.</li>
+</ul>
+</li>
+<li>Principle of least privileges
+<ul>
+<li>Giving a user account or process only those privileges which are essential to perform its intended function.
+<ul>
+<li>Better system stability</li>
+<li>Better system security</li>
+<li>Ease of deployment</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Access control key concepts
+<ul>
+<li>Permissions</li>
+<li>Ownership of objects</li>
+<li>Inheritance of permissions</li>
+<li>User rights</li>
+<li>Object auditing</li>
+</ul>
+</li>
+</ul>
+<h3>Local User Accounts</h3>
+<ul>
+<li>Local user accounts are stored locally on the Windows workstation or server
+<ul>
+<li>Default local user accounts
+<ul>
+<li>Administrator</li>
+<li>Guest</li>
+<li>HelpAssistant</li>
+<li>DefaultAccount</li>
+</ul>
+</li>
+<li>Default local system accounts
+<ul>
+<li>SYSTEM</li>
+<li>NETWORK SERVICE</li>
+<li>LOCAL SERVICE</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The default local user accounts, and the local user accounts that you create are located in the Users folder.
+<ul>
+<li>Security considerations
+<ul>
+<li>Restrict and protect local accounts with administrative rights</li>
+<li>Enforce local account restrictions for remote access</li>
+<li>Deny network logon to all local administrator accounts</li>
+<li>Create unique passwords for local accounts with administrative rights</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Windows Security App</h3>
+<ul>
+<li>A client interface on Windows 10 1703 and later
+<ul>
+<li>Virus and threat protection</li>
+<li>Account protection</li>
+<li>Firewall and network protection</li>
+<li>App and browser control</li>
+<li>Device security</li>
+<li>Device performance and health</li>
+<li>Family options</li>
+</ul>
+</li>
+</ul>
+<h2>Windows Active Directory (AD)</h2>
+<ul>
+<li>AD Domain Services (ADDS) stores information about objects on the network and makes this information easy for administrators and users to find and use</li>
+<li>Objects typically include shared resources such as servers, volumes, printers, and the network user and computer accounts</li>
+<li>Security is integrated with Active Directory through authentication and access control to objects in the directory via policy-based administration</li>
+<li>Features
+<ul>
+<li>A set of rules, the schema</li>
+<li>Global catalog</li>
+<li>Query and index mechanism</li>
+<li>Replication service</li>
+</ul>
+</li>
+</ul>
+<h3>Active Directory Accounts</h3>
+<ul>
+<li>Default local accounts
+<ul>
+<li>Administrator</li>
+<li>Guest</li>
+<li>HelpAssistant</li>
+<li>KRBTGT
+<ul>
+<li>KRBTGT is an account used for Microsoft's implementation of Kerberos.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Best practices for restricting and protecting sensitive domain accounts
+<ul>
+<li>Seperate administrator accounts from user accounts
+<ul>
+<li>Allocate privileged accounts to perform these duties only,
+<ul>
+<li>Minimum: Create seperate accounts for domain admin, enterprise admin, appropriate admin</li>
+<li>Better: Create seperate accounts for admins that have reduced admin rights, such as workstation admin, and accounts with user rights over designated AD organizational units (OU).</li>
+<li>Ideal: Create multiple seperate accounts for an admin who has a variety of job responsibilities that require different trust levels.</li>
+</ul>
+</li>
+<li>Standard user account
+<ul>
+<li>For standard user tasks and line-of-business (LOB) applications</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Create dedicated workstation hosts without internet and email access
+<ul>
+<li>Admins need to manage job responsibilities that require sensitive administrator rights from a dedicated workstation because they do not have easy physical access to the servers.
+<ul>
+<li>Minimum: Build dedicated admin workstations and block internet access.</li>
+<li>Better: Do not grant administrators membership in the local administrator group on the computer in order to restrict the administrator from bypassing these protections.</li>
+<li>Ideal: Restrict workstations from having any network connectivity, except for the domain controllers and servers that the administrator accounts are used to manage.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Restrict administrator logon access to servers and workstations
+<ul>
+<li>It is a best practice to restrict administrators from using sensitive administrator accounts to sign in to lower-trust servers and workstations. The guidelines are,
+<ul>
+<li>Minimum: Restrict domain administrators from having logon access to servers and workstations. Before starting this procedure, identify all OUs in the domain that contain workstations and servers. Any computers in OUs that are not identified will not restrict administrators with sensitive accounts from signing-in to them.</li>
+<li>Better: Restrict domain administrators from non-domain controller servers and workstations</li>
+<li>Ideal: Restrict server administrators from signing in to workstations, in addition to domain administrators.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Disable the account delegation right for administrator accounts
+<ul>
+<li>Although user accounts are not marked for delegation by default, accounts in an AD domain can be trusted for delegation.
+<ul>
+<li>This means a service or computer can impersonate an account that authenticates to them to access other resources across the network.</li>
+</ul>
+</li>
+<li>It is a best practice to configure the user objects for all sensitive accounts in AD by selecting the &quot;Account is sensitive and cannot be delegated&quot; checkbox under &quot;Account Options&quot; to prevent these accounts from delegated.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Active Directory Groups</h3>
+<ul>
+<li>Security groups are used to collect user/computer accounts, and other groups into manageable units.
+<ul>
+<li>Distribution groups
+<ul>
+<li>Used to create email distribution lists</li>
+</ul>
+</li>
+<li>Security groups
+<ul>
+<li>Used to assign permissions to shared resources</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>There are two types of administrative responsibilities
+<ul>
+<li>Service administrators</li>
+<li>Data administrators</li>
+</ul>
+</li>
+<li>Group scope
+<ul>
+<li>Universal</li>
+<li>Global</li>
+<li>Domain local</li>
+</ul>
+</li>
+<li>Default groups such as Domain Admins group are security groups that are created automatically when you create an AD domain.
+<ul>
+<li>Use these predefined groups to control access to shared resources and delegate specific domain-wide admin roles.</li>
+</ul>
+</li>
+</ul>
+<h3>Windows Admin Center</h3>
+<ul>
+<li>A new, locally-deployed, browser-based Windows Server management tool without cloud dependency.
+<ul>
+<li>Particularly useful for managing servers on private networks that are not connected to the internet</li>
+</ul>
+</li>
+</ul>
+<h2>Kerberos Authentication and Logs</h2>
+<ul>
+<li>Kerberos is an authentication protocol that is used to verify the identity of a user or host.
+<ul>
+<li>Kerberos Key Distribution Center (KDC) is integrated with other Windows Server security services and uses the domain's AD domain services database.</li>
+<li>Key benefits
+<ul>
+<li>Delegated authentication</li>
+<li>Single Sign-on</li>
+<li>Interoperability</li>
+<li>More efficient authentication to servers</li>
+<li>Mutual authentication</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Logging
+<ul>
+<li>Windows Event Log contains logs from the operating system and several applications such as SQL server or Internet Information Server (IIS).
+<ul>
+<li>Use Windows Event Viewer to check the logs.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Windows Server Audit</h2>
+<ul>
+<li>9 types of events you can audit for audit policy
+<ul>
+<li>Account logon events
+<ul>
+<li>See each instance of a user login/logout from another computer</li>
+</ul>
+</li>
+<li>Account management
+<ul>
+<li>Check any changes of account name, status, password, user group, etc.</li>
+</ul>
+</li>
+<li>Directory service access
+<ul>
+<li>Check users' access to AD directory service object that has its own system access control list (SACL)</li>
+</ul>
+</li>
+<li>Logon events
+<ul>
+<li>See when someone has login/logout your computer, either physically or over a network</li>
+</ul>
+</li>
+<li>Object access
+<ul>
+<li>See when someone has used a file, folder, printer, or other object such as Windows registry keys</li>
+</ul>
+</li>
+<li>Policy change
+<ul>
+<li>See attempts to change local security policies</li>
+</ul>
+</li>
+<li>Privilege use
+<ul>
+<li>See when events such as program activiation or a process exiting occur</li>
+</ul>
+</li>
+<li>System events
+<ul>
+<li>Audit to see when someone has shutdown or restarted the computer, or when a process or program tries to do something that it does not have permission to do.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Samba</h2>
+<ul>
+<li>Samba is a free and open source software that provides seamless file and print services by using TCP/IP protocol installed on the host server.
+<ul>
+<li>Samba allows the host to interact with a Microsoft Windows client or server as if it is a Windows file and print server.</li>
+<li>Allows interoperability between Linux/Unix servers and Windows-based clients.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>4. Cryptography and Compliance Pitfalls</h1>
+<h2>Encryption</h2>
+<ul>
+<li>Encryption is a process of encoding data in a way that only authorized parties can access it.
+<ul>
+<li>Provides confidentiality, but not integrity</li>
+</ul>
+</li>
+<li>Data can be encrypted,
+<ul>
+<li>At rest</li>
+<li>In use</li>
+<li>In transit</li>
+</ul>
+</li>
+<li>Sensitive business and personal data should be encrypted at all times, everywhere.</li>
+</ul>
+<h3>Encrypting Data at Rest</h3>
+<ul>
+<li>The rule of thumb: Encrypt all sensitive data at rest: in files, config files, databases, backups, etc.
+<ul>
+<li>Symmetric key encryption is most commonly used.</li>
+<li>Follow NIST guidelines for selecting appropriate algorithm.
+<ul>
+<li>Currently it's AES with CBC mode, and Triple DES</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Pitfalls
+<ul>
+<li>Some algorithms are outdated and no longer considered secure. Phase them out.
+<ul>
+<li>e.g. DES, RC4, etc.</li>
+</ul>
+</li>
+<li>Do not use hardcoded/easily-guessed/insufficiently-random keys.
+<ul>
+<li>Select cryptographically-random keys.</li>
+<li>Do not reuse keys for different installs.</li>
+</ul>
+</li>
+<li>Do not store keys in clear text in proximity to data they protect (a.k.a. key under the doormat)
+<ul>
+<li>Store keys in secure keystores.</li>
+</ul>
+</li>
+<li>Do not use initialization vectors (IV) incorrectly.
+<ul>
+<li>Use a new random IV every time.</li>
+</ul>
+</li>
+<li>Do not use insufficient key size.
+<ul>
+<li>Preferable to select the biggest key size you can handle, but watch out for export restrictions.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Encrypting Data in Use</h3>
+<ul>
+<li>This is unfortunately a rarely-followed practice.</li>
+<li>Memory could be leaked by attacker.
+<ul>
+<li>e.g. 2014 OpenSSL Heartbleed incident</li>
+</ul>
+</li>
+<li>Keep data encrypted up until it must be used
+<ul>
+<li>Decrypt data as needed, and then promptly erase it in memory after use</li>
+<li>Keep all sensitive data encrypted except a brief moment of use</li>
+<li>Consider homomorphic encryption if possible.</li>
+</ul>
+</li>
+</ul>
+<h3>Encrypting Data in Transit</h3>
+<ul>
+<li>There is no excuse for communicating in cleartext in this modern age.
+<ul>
+<li>All communications, not just HTTP, should be encrypted
+<ul>
+<li>Including RCPs, database connections, etc.</li>
+</ul>
+</li>
+<li>TLS/SSL is most commonly used protocol
+<ul>
+<li>Public key crypto (e.g. RSA, DH) for authentication and key exchange</li>
+<li>Symmetric key crypto to encrypt the data</li>
+<li>Server Digital Certificate references certificate authority (CA) and the public key.</li>
+</ul>
+</li>
+<li>Sometimes just symmetric key encryption is employed.
+<ul>
+<li>But this requires pre-sharing of the keys.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Pitfalls
+<ul>
+<li>Do not use self-signed certificates.
+<ul>
+<li>Less problematic for internal communications but still dangerous</li>
+<li>Use properly generated certificates verified by established CA</li>
+</ul>
+</li>
+<li>Do not accept arbitrary certificates without verification.
+<ul>
+<li>Attacker can issue their own certificate and snoop on communications via MITM attacks.</li>
+</ul>
+</li>
+<li>Use certificate pinning.
+<ul>
+<li>Attacker may present a properly-generated certificate and still snoop on communications.</li>
+<li>Certificate pinning can help because presented certificate is checked against a set of expected certificates.</li>
+</ul>
+</li>
+<li>Do not use outdated versions of the protocol or insecure cipher suites.
+<ul>
+<li>Old version SSL/TLS are vulnerable.
+<ul>
+<li>e.g. DROWN, POODLE, BEAST, CRIME, BREACH, etc.</li>
+</ul>
+</li>
+<li>Review your TLS support
+<ul>
+<li>There are tools that can help you
+<ul>
+<li>e.g. Nessus, Qualys SSL Sever Test, sslscan, sslyze</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Do not allow TLS downgrade to insecure versions, or even to HTTP.
+<ul>
+<li>Lock down the versions of TLS that you support</li>
+<li>Do not allow downgrade and HTTP altogether.</li>
+</ul>
+</li>
+<li>Safeguard your private keys.
+<ul>
+<li>Do not share private keys between different customers.</li>
+<li>Store keys in secure keystores.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Additional recommendations
+<ul>
+<li>Consider implementing forward secrecy.
+<ul>
+<li>Some cipher suites protect past sessions against future compromises of secret keys or passwords.</li>
+</ul>
+</li>
+<li>Do not use compression under TLS.
+<ul>
+<li>CRIME and BREACH attacks showed that using compression with TLS for changing resources may lead to sensitive data exposure.</li>
+</ul>
+</li>
+<li>Implement HTTP Strict Transport Security (HSTS)
+<ul>
+<li>Implement <code>Strict-Transport-Security</code> header on all communications.</li>
+</ul>
+</li>
+<li>Stay informed of latest security news.
+<ul>
+<li>A protocol or cipher suite that is secure today may be broken in the future.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Hashing</h2>
+<ul>
+<li>Hash function maps data of arbitrary size to data of a fixed size
+<ul>
+<li>Provides integrity, but not confidentiality</li>
+<li>Original data is deliberately hard to reconstruct</li>
+<li>Used for integrity checking and sensitive data storage (e.g. passwords)</li>
+<li>Use secure hash functions.
+<ul>
+<li>e.g. NIST recommendations
+<ul>
+<li>SHA-2 (SHA-256 and above)</li>
+<li>SHA-3</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Purposes
+<ul>
+<li>Validating passwords
+<ul>
+<li>e.g. Salted hashes</li>
+</ul>
+</li>
+<li>Verifying data/code integrity
+<ul>
+<li>e.g. Message authentication codes and keyed hashes</li>
+</ul>
+</li>
+<li>Verifying data/code integrity and authenticity
+<ul>
+<li>e.g. Digital signatures</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Pitfalls
+<ul>
+<li>There are obsolete and broken hash functions that we still frequently see in the code. Phase them out.
+<ul>
+<li>Hash functions for which it is practical to generate collisions are not considered robust. Phase them out.
+<ul>
+<li>Collision: Two or more different inputs that correspond to the same hash value</li>
+</ul>
+</li>
+<li>MD5 has been known to be broken for more than 10 years because collisions are fairly easily generated.</li>
+<li>SHA-1 was recently proven to be unreliable.
+<ul>
+<li>Google implemented a practical proof of SHA-1 collision, a.k.a. SHAttered.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Do not use predictable plaintext.
+<ul>
+<li>When the plaintext is predictable, it can be discovered through bruteforcing.</li>
+</ul>
+</li>
+<li>Do not use unsalted hashes when validating passwords.
+<ul>
+<li>Even for large problem spaces, rainbow tables can be used to crack unsalted hashes.</li>
+<li>When salt (a random byte sequence, at least 8 bytes) is added to the plaintext, the resulting hash is completely different, so rainbow tables will no longer help.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Additional considerations
+<ul>
+<li>Use key stretching functions (e.g. PBKDF2) with a large number of iterations.
+<ul>
+<li>Key stretching functions are deliberately slow (controlled by number of iterations) in order to make bruteforce attacks impractical, both online and offline.
+<ul>
+<li>750ms to complete the operation is proper.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Future-proof your hashes.
+<ul>
+<li>Include an algorithm identifier so you can seamlessly upgrade in the future if the current algorithm becomes obsolete.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Message Authentication Codes (MAC)
+<ul>
+<li>MAC confirm that the data block came from the stated sender and has not been changed.</li>
+<li>Hash-based MACs (HMACs) are based on crypto hash functions.
+<ul>
+<li>e.g. HMAC-SHA256, HMAC-SHA3</li>
+</ul>
+</li>
+<li>They generate a hash of the message with the help of the secret key.
+<ul>
+<li>If the key is not known, attacker can't alter the message and be able to generate another valid HMAC.</li>
+</ul>
+</li>
+<li>HMACs help when data may be maliciously altered while under temporary attacker's control
+<ul>
+<li>e.g. Cookies, transmitted messages</li>
+</ul>
+</li>
+<li>Even encrypted data should be protected by HMACs, to avoid bit-flipping attacks.</li>
+</ul>
+</li>
+</ul>
+<h2>Digital Signature</h2>
+<ul>
+<li>A mathematical scheme for verifying the authenticity of digital messages and documents
+<ul>
+<li>Uses hashing and public key encryption</li>
+<li>Ensures authentication, non-repudiation, and integrity
+<ul>
+<li>Ensures that messages and documents come from authentic source, and were not maliciously modified in transit</li>
+</ul>
+</li>
+<li>Digital signatures must be verified to be useful.</li>
+</ul>
+</li>
+<li>Use cases
+<ul>
+<li>Data exchanged between nodes in the product</li>
+<li>Code transmitted over network for execution at client side (e.g. JavaScript)</li>
+<li>Service packs and bug fixes installed by customer</li>
+<li>Data temporarily saved to customer machine (e.g. backups)</li>
+</ul>
+</li>
+</ul>
+<h2>Common Cryptography Pitfalls</h2>
+<ul>
+<li>Missing encryption of data and communications
+<ul>
+<li>When you store or transmit it in clear text, it can be easily leaked or stolen
+<ul>
+<li>Also physical machine or storage may be stolen and can be accessed directly</li>
+</ul>
+</li>
+<li>There are cryptographic technology that is mature, tested, and available, there is no reason not to encrypt your data.
+<ul>
+<li>Encrypt all sensitive data you are handling, and also ensure its integrity.</li>
+<li>You have to assume that the files containing sensitive information may be exposed and analyzed.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Implementing your own crypto
+<ul>
+<li>Bruce Schneier's Law
+<ul>
+<li>&quot;Anyone, from the most clueless amateur to the best cryptographer, can create an algorithm that he himself can’t break. It’s not even hard. What is hard is creating an algorithm that no one else can break, even after years of analysis. And the only way to prove that is to subject the algorithm to years of analysis by the best cryptographers around.&quot;</li>
+</ul>
+</li>
+<li>Do not use obfuscation schemes such as BASE64 or XOR encoding, instead of trusted crypto.</li>
+<li>Do not implement your own cryptographic algorithms.</li>
+<li>Rely on proven cryptography, that was scrutinized by thousands of mathematicians and cryptographers.</li>
+</ul>
+</li>
+<li>Relying on algorithms being secret
+<ul>
+<li>Even internal algorithms can be and will be discovered, it's a matter of motivation.
+<ul>
+<li>&quot;Security by obscurity&quot; is a bad defense mechanism.</li>
+<li>The contrary is proven true all the time
+<ul>
+<li>All algorithms that keep us safe today are open source, well-studied, and severely-audited.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Reverse engineering is devoted to discovering hidden algorithms and data.
+<ul>
+<li>Even applications shipped only in compiled form can be decompiled.</li>
+</ul>
+</li>
+<li>Always assume that your algorithm will be known to the adversary</li>
+<li>Auguste Kerckhoffs' Principle
+<ul>
+<li>&quot;A cryptosystem should be secure even if everything about the system, except the key, is public knowledge.&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Using hardcoded/predictable/weak keys
+<ul>
+<li>Not safeguarding your keys renders crypto mechanisms useless.
+<ul>
+<li>Hardcoded keys or stored plaintexts can easily be discovered by an attacker.</li>
+<li>Easily guessed keys can be found by trying commonly used passwords.</li>
+<li>When keys are generated randomly, they have to be generated from cryptographically-secure source of randomness, not the regular random number generator (RNG) which is not technically random.</li>
+</ul>
+</li>
+<li>Rely on hard to guess, randomly generated keys and passwords that are stored securely.</li>
+</ul>
+</li>
+</ul>
+<h2>Safeguarding Encryption Keys</h2>
+<ul>
+<li>Encryption is futile if the encryption keys are not safeguarded.
+<ul>
+<li>Do not store them in your code, in plaintext, in config files, in databases, etc.</li>
+<li>Proper way to store keys and certificates is secure cryptographic storage.
+<ul>
+<li>e.g. Java KeyStore (JKS)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Securing Key Encrypting Key (KEK) is a tricky problem.
+<ul>
+<li>How do we secure the key that is used to encrypt the keystore?
+<ul>
+<li>Use Hardware Secure Modules (HSM)</li>
+<li>Use Virtual HSM (unbound vHSM)</li>
+<li>Derive KEK from user-entered password
+<ul>
+<li>e.g. Symantec Encryption Desktop software</li>
+</ul>
+</li>
+<li>Derive KEK from data unique to machine product is running on
+<ul>
+<li>e.g. File system metadata, random file names, file timestamps</li>
+<li>Attacker that downloads the database or the keystore will not be able to easily obtain such information.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>OpenPGP</h2>
+<ul>
+<li>OpenPGP is a commonly used open-source encryption standard.
+<ul>
+<li>It works with all data types, including text files, data files, disk partitions, directories, and emails.</li>
+<li>It is used to store shared data and transmit data across non-secured networks.</li>
+<li>Because it is open-source, OpenPGP is free for anyone to use.</li>
+<li>It provides a high level of security and is almost unbreakable.</li>
+</ul>
+</li>
+<li>OpenPGP is based on PGP (Pretty Good Privacy), a form of asymmetric encryption.
+<ul>
+<li>Asymmetric encryption involves using a cryptographic key pair, consisting of a public key and a private key, to encrypt and decrypt text.</li>
+</ul>
+</li>
+<li>Using OpenPGP can be tedious because of the need to generate and share key pairs. While it might not be necessary for most communication, OpenPGP is valuable when sharing sensitive data.</li>
+</ul>
+<h3>OpenPGP Email Encryption</h3>
+<ul>
+<li>OpenPGP will not work if only one side uses it. Both the sender and receiver must have an OpenPGP-compliant program installed to exchange encrypted emails. Also, they must each have a public and private key.</li>
+<li>Process
+<ol>
+<li>The sender and receiver must each establish their own key pair: a public key and a private key.</li>
+<li>The sender and receiver share their public keys.</li>
+<li>The sender writes an email, encrypts it using the receiver’s public key, and then sends the email to the receiver.</li>
+<li>The receiver receives the email and decrypts it using their private key.</li>
+</ol>
+</li>
+<li>OpenPGP encryption does not prevent an attacker from intercepting the email.
+<ul>
+<li>However, the attacker won’t be able to read the email’s content. Instead, they will see only the encrypted form of the message, known as ciphertext.</li>
+<li>The ciphertext will make the email’s text appear as useless gibberish.</li>
+<li>Even if the attacker has the recipient’s public key, they cannot read the email’s contents without the recipient’s private key.</li>
+</ul>
+</li>
+</ul>
+<h2>Impact of Quantum Computing</h2>
+<ul>
+<li>Risks to existing crypto
+<ul>
+<li>Symmetric encryption (e.g. AES) will be weakened
+<ul>
+<li>To maintain current levels of security, double the encryption key size.
+<ul>
+<li>e.g. from 128-bit to 256-bit keys</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Public key encryption that relies on prime number factorization will be broken.
+<ul>
+<li>e.g. RSA used in SSL/TLS, blockchain, digital signatures</li>
+<li>Plan on switching to quantum-resistant algorithms.
+<ul>
+<li>e.g. Lattice-based cryptography, homomorphic encryption</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Attacker can capture conversations now and decrypt them when quantum computing becomes available.</li>
+<li>General good practice
+<ul>
+<li>Make your encryption, hash, signing algorithms &quot;replaceable&quot;
+<ul>
+<li>So that you could exchange them for something more robust if a weakness is discovered.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

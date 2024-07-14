@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[필기] &lt;웹 스크래핑을 위한 파이썬&gt; 강의 | devfreedom.github.io</title>
+    <meta name="title" content="[필기] &lt;웹 스크래핑을 위한 파이썬&gt; 강의 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮필기❯,파이썬,프로그래밍,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20220921_2131_study-note_python/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[필기] &lt;웹 스크래핑을 위한 파이썬&gt; 강의</h1>
+        <div class="text-center">Published on 21 September 2022 09:31 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮필기❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮필기❯</a>
+            
+            <a href="/tags/파이썬" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#파이썬</a>
+            
+            <a href="/tags/프로그래밍" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#프로그래밍</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/python-logo.png" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h3>파이썬 초기 세팅</h3>
+<ul>
+<li>시작하기 전에 파이썬 언어 버전을 결정해야 함
+<ul>
+<li>python2와 python3은 호환되지 않음</li>
+<li>최신 버전의 경우 불안정할 수 있으므로 여기서는 python3.5를 사용함</li>
+</ul>
+</li>
+<li>관리자 권한으로 설치 진행</li>
+<li>설치시 Add Python to PATH 옵션을 활성화</li>
+</ul>
+<h3>파이썬 기초</h3>
+<ul>
+<li>변수
+<ul>
+<li>변수명은 반드시 문자로 시작하며, 숫자가 중간에 포함될 수 있음</li>
+<li>변수명은 대소문자를 구별함 (case-sensitive)</li>
+<li>파이썬 자체 내장 예약어들은 변수명으로 사용할 수 없음</li>
+<li>문자열은 그 값을 ' 또는 &quot; 로 반드시 묶어주어야 함</li>
+</ul>
+</li>
+<li>formatter
+<ul>
+<li>%d = decimal</li>
+<li>%f = float</li>
+<li>%s = string</li>
+<li>%c = single character</li>
+<li>다중 formatter 사용법</li>
+</ul>
+</li>
+</ul>
+<pre><code>print(&quot;This is %s item and that is %s item&quot; %(var1, var2))
+
+# 출력값: This is var1 item and that is var2 item
+</code></pre>
+<ul>
+<li><code>input(&quot;Please input the value : &quot;)</code>
+<ul>
+<li>입력값을 무조건 string으로 저장함
+<ul>
+<li>int(input()) 를 사용해 정수로 바꿔주기</li>
+<li>float(input()) 를 사용해 실수로 바꿔주기</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>slicing
+<ul>
+<li>마지막 인덱스를 지정하면 그 앞 문자까지 잘라냄</li>
+</ul>
+</li>
+<li>meta character
+<ul>
+<li>\n = line break</li>
+<li># = tab = 8개 빈칸</li>
+<li>meta character 앞에 \를 붙이면 취소됨</li>
+</ul>
+</li>
+<li>strip()과 rstrip()</li>
+<li>lower()</li>
+<li>replace(&quot;string 1&quot;, &quot;string 2&quot;)</li>
+<li>split(&quot;seperator character&quot;)</li>
+<li>len()</li>
+</ul>
+<h3>os모듈로 파일 입출력</h3>
+<ul>
+<li>'import os'를 사용해 os모듈을 사용해야 함</li>
+<li><code>os.getcwd</code>
+<ul>
+<li>= get current working directory</li>
+</ul>
+</li>
+<li><code>os.chdir(&quot;path&quot;)</code> = change dir.
+<ul>
+<li>'temp'처럼 디렉토리가 t로 시작을 할 경우, 주소를 그대로 입력하게 되면 \t 메타캐릭터가 발동되므로 반드시 역슬래시를 한번 더 사용해 escape해야 함</li>
+</ul>
+</li>
+</ul>
+<pre><code>C:\\TempDir
+</code></pre>
+<ul>
+<li><code>os.listdir(&quot;path&quot;)</code>
+<ul>
+<li>= list dir.</li>
+<li>목록을 끊어서 출력하려면 다음과 같은 반복문을 사용
+<ul>
+<li><code>for name in os.listdir(&quot;path&quot;) :</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>print(name)</h3>
+<ul>
+<li><code>os.mkdir(&quot;path&quot;)</code>
+<ul>
+<li>= make dir.</li>
+<li>폴더를 한번에 하나씩만 만들 수 있음</li>
+<li>os.makedirs(&quot;path&quot;)는 다중의 폴더를 자동으로 만들어 줌
+<ul>
+<li>단, path에 오타가 있을 경우, 상위 폴더가 없을 경우 에러를 출력해주는 mkdir과는 다르게 상위 폴더를 오타가 난 이름 그대로 자동으로 만들어버림</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>os.rmdir(&quot;path&quot;)</code>
+<ul>
+<li>= remove dir.</li>
+<li>폴더 안에 다른 파일이 없는 경우, 즉 빈 폴더만 삭제해줌</li>
+<li>os.removedirs(&quot;path&quot;)는 폴더의 내용을 포함한 폴더 전체를 무조건 삭제함</li>
+</ul>
+</li>
+<li><code>f = open(&quot;filename&quot;, &quot;mode character&quot;)</code>
+<ul>
+<li>파일을 메모리 영역으로 가져옴</li>
+<li>mode arg.는 다음을 사용할 수 있음
+<ul>
+<li>w = write = 새 파일을 만들 때 사용 (텍스트)
+<ul>
+<li>기존에 이미 내용이 작성된 파일의 경우엔 기존 내용을 새로운 내용으로 전부 덮어써버림</li>
+</ul>
+</li>
+<li>r = read = 파일을 불러와 열람할 때 사용 (텍스트)</li>
+<li>a = append = 파일에 내용을 추가할 때 사용 (텍스트)</li>
+<li>rb = read binary = 파일을 바이너리 형태로 불러옴 (그림 등의 파일)</li>
+<li>wb = write binary = 파일을 바이너리 형태로 작성함</li>
+</ul>
+</li>
+<li>f.readline()
+<ul>
+<li>파일의 내용을 한 줄씩 읽어옴</li>
+<li>파일의 내용을 여러 줄로 전부 읽어오려면 f.readlines()를 사용
+<ul>
+<li>단, 줄바꿈을 하지 않으므로 for문을 이용해 한 줄씩 출력을 해야 함</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>f.write(contents)
+<ul>
+<li>내용을 메모리에 작성하게 됨</li>
+<li>A 파일을 읽어서 B 파일에 쓸 경우에는 다음과 같이 작성
+<ul>
+<li>B.write(A.read())</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>f.close()
+<ul>
+<li>메모리에 저장된 내용을 저장장치에 파일로 저장함</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>openpyxl로 엑셀 파일 입출력</h3>
+<ul>
+<li><code>wb = openpyxl.load_workbook(&quot;filepath&quot;)</code>
+<ul>
+<li><code>sheet = wb[&quot;Sheetname&quot;]</code> 으로 작업 대상 워크시트를 지정</li>
+<li><code>dataframe_name = {}</code> 로 데이터프레임을 생성</li>
+<li>다음과 같은 반복문 코드로 워크시트의 내용을 불러올 수 있음</li>
+</ul>
+</li>
+</ul>
+<pre><code>for i in range(column_count, sheet.max_row + 1) :
+    column1 = sheet.cell(row=i, column=1).value
+    column2 = sheet.cell(row=i, column=2).value
+    dataframe_name[column1] = column2
+</code></pre>
+<h3>csv모듈로 csv 입출력</h3>
+<ul>
+<li>파일 불러오기</li>
+</ul>
+<pre><code>import csv
+f = open(&quot;filepath&quot;, encoding=&quot;utf-8&quot;)
+read = csv.reader(f)
+</code></pre>
+<h3>pandas로 파일 입출력</h3>
+<ul>
+<li><code>dataframe.to_csv(&quot;path&quot;, encoding =&quot;utf-8&quot;, index=boolean)</code>
+<ul>
+<li>데이터프레임을 csv 파일로 저장함</li>
+<li>index 파라미터 = 제일 첫 컬럼으로 인덱스를 추가할 것인지 여부를 선택</li>
+</ul>
+</li>
+</ul>
+<h3>사용자 정의 함수</h3>
+<ul>
+<li>클래스 안에 함수를 사용할 경우 self. 네임스페이스를 사용해야 함
+<ul>
+<li>원본 클래스를 복사해서 다른 클래스에서 자체적으로 함수를 사용하라는 의미</li>
+</ul>
+</li>
+<li>모듈을 불러올 때 importError가 발생할 경우, sys.path로 path 목록을 확인하기
+<ul>
+<li>모듈이 속한 디렉토리가 없다면 sys.path.append(&quot;path&quot;)로 추가해주기</li>
+</ul>
+</li>
+<li>모듈을 통째로 불러오면 메모리 부하가 늘어날 수 있으므로, 필요한 함수만 불러오는 것이 좋음
+<ul>
+<li><code>from module_name import function1, function2...</code></li>
+</ul>
+</li>
+<li>웹 스크래핑 관련 모듈
+<ul>
+<li>re = 문자열을 다루는 정규식 관련 모듈</li>
+<li>datetime</li>
+<li>calendar</li>
+<li>bisect</li>
+<li>sets</li>
+<li>decimal</li>
+<li>random</li>
+<li>math</li>
+<li>htmllib</li>
+<li>sgmllib</li>
+<li>formatter</li>
+<li>csv</li>
+<li>os.path</li>
+<li>fileinput</li>
+</ul>
+</li>
+</ul>
+<h3>정규식</h3>
+<ul>
+<li>정규식 작업을 위해서는 import re 코드를 사용해 re모듈을 불러와야 함</li>
+<li>정규식 문법
+<ul>
+<li>. = 임의의 한 문자가 존재함</li>
+<li>? = 바로 앞의 한 문자가 존재하거나 존재하지 않음</li>
+<li>* = 바로 앞의 문자가 존재하지 않거나 무한대로 존재 (길이 제한 없음)</li>
+<li>+ = 바로 앞의 문자가 한 번 이상 존재</li>
+<li>^ = 바로 뒤의 문자로 문자열이 시작함</li>
+<li>$ = 바로 앞의 문자로 문자열이 끝남</li>
+<li>{int} = 숫자만큼 반복</li>
+<li>{int,} = 숫자 이상만큼 반복</li>
+<li>{int1, int2} = 숫자 1 이상, 숫자 2 이하만큼 반복</li>
+<li>(str) = 문자나 문자열을 묶음</li>
+<li>[str1, str2, ...] = 대괄호 안에 있는 문자들이 존재하는지 검색</li>
+<li>[ ^ ] = ^ 기호 바로 뒤에 문자가 존재하지 않음</li>
+<li>[:alpha:] = 알파벳과 모든 글자 포함</li>
+<li>[:alnum:] = alphanumeric 검색</li>
+<li>[:digit:] = 숫자만 검색</li>
+<li>[:upper:] = 대문자만 검색</li>
+<li>\ = escape char = 메타캐릭터를 취소
+<ul>
+<li>\ \ = 역슬래쉬() 문자 자체를 검색</li>
+</ul>
+</li>
+<li>\d = 모든 숫자를 검색 = [0-9]</li>
+<li>\D = 숫자를 제외한 모든 문자를 검색</li>
+<li>\s = 공백을 검색</li>
+<li>\S = 공백이 아닌 문자를 검색</li>
+<li>\w = 숫자 또는 문자를 검색</li>
+<li>\W = 숫자 또는 문자가 아닌 것을 검색</li>
+</ul>
+</li>
+<li><code>re.search(&quot;regex_pattern&quot;, data)</code>
+<ul>
+<li>&quot;주어진 data로부터 앞에 정의된 regex 패턴을 찾아라&quot;</li>
+<li>지정한 패턴 중 일부만 일치해도 찾음
+<ul>
+<li>완전히 일치해야 할 경우에는 re.match()를 사용</li>
+</ul>
+</li>
+<li>일치하는 첫 번째 데이터만 반환함
+<ul>
+<li>정규식에 부합하는 모든 데이터를 반납하려면 re.findall()을 사용</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>re.compile(&quot;regex_pattern&quot;)</code>
+<ul>
+<li>정규식 패턴을 정의함</li>
+</ul>
+</li>
+<li><code>re.split(&quot;seperator char&quot;, data)</code>
+<ul>
+<li>구분자 문자와 일치하는 지점을 전후로 문자열을 나눔</li>
+</ul>
+</li>
+<li><code>re.sub(&quot;original_str&quot;, &quot;alternative_str&quot;, data)</code>
+<ul>
+<li>원본 문자열을 대체 문자열로 바꿈</li>
+</ul>
+</li>
+</ul>
+<h3>BeautifulSoup</h3>
+<ul>
+<li><code>bs = BeautifulSoup(html_document, 'parsing_engine')</code>
+<ul>
+<li>html 데이터를 불러와서 작업을 준비함</li>
+<li>파싱 엔진은 html의 경우 html.parser를 사용</li>
+<li>bs.find('html_tag', limit='count_int')
+<ul>
+<li>bs.find(html_attr=&quot;value&quot;)</li>
+<li>조건이 일치하는 하나의 항목을 찾음</li>
+<li>모든 항목을 찾으려면 bs.find_all()을 사용</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>bs4와 정규식의 조합
+<ul>
+<li><code>var = bs.find_all(re.recompile(&quot;regex_condition_html&quot;))</code></li>
+</ul>
+</li>
+<li>HTML 태그에 있는 텍스트 내용 가져오기
+<ul>
+<li><code>bs.find_all(text=&quot;string&quot;)</code></li>
+<li><code>html_tag.strings</code></li>
+<li><code>html_tag .get_text(' ', strip=true)</code>
+<ul>
+<li>strip=true 매개변수를 사용해 메타캐릭터를 제거할 수 있음</li>
+<li>첫번째 매개변수로 구분자를 설정할 수 있음'</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>soup.select('html_tag')</code>
+<ul>
+<li>bs4가 파싱한 html 중에서 특정 항목을 선택함</li>
+<li><code>soup.select('.class_name')</code>
+<ul>
+<li><code>soup.select('tag.class &gt; tag.class ')</code></li>
+</ul>
+</li>
+<li><code>soup.select('parent_tag &gt; child_tag &gt; child_tag')[array_index]</code>
+<ul>
+<li>부등호 사이에 반드시 공백이 있어야 함</li>
+</ul>
+</li>
+<li><code>soup.select('#id_name')</code>
+<ul>
+<li><code>soup.select('#id_name &gt; tag.class')</code></li>
+</ul>
+</li>
+<li><code>soup.select('html_tag[attr=value]')[array_index]'</code></li>
+</ul>
+</li>
+</ul>
+<h3>Selenium 초기 설정</h3>
+<pre><code>from selenium import webdriver
+path = '/usr/bin/chromedriver'
+driver = webderiver.Chrome(path)
+driver.get(&quot;URL&quot;)
+time.sleep(page_loading_buffer_sec)
+</code></pre>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

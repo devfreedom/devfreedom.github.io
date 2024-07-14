@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[개발 일기] &lt;공트365&gt; 프로토타입 개발 후기 | devfreedom.github.io</title>
+    <meta name="title" content="[개발 일기] &lt;공트365&gt; 프로토타입 개발 후기 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮개발 일기❯,웹개발,풀스택,자바스크립트,해커톤,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230301_1551_dev-diary_hackathon/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[개발 일기] &lt;공트365&gt; 프로토타입 개발 후기</h1>
+        <div class="text-center">Published on 1 March 2023 03:51 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮개발 일기❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮개발 일기❯</a>
+            
+            <a href="/tags/웹개발" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#웹개발</a>
+            
+            <a href="/tags/풀스택" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#풀스택</a>
+            
+            <a href="/tags/자바스크립트" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#자바스크립트</a>
+            
+            <a href="/tags/해커톤" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#해커톤</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/dev-diary.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <p>공트365는 제가 작년에 있었던 해커톤에 참가하기 위해서 기획한 프로덕트입니다. 이 해커톤은 2021년엔 '서비스 개발' 해커톤으로 개최가 되었던 행사인데요, 참가자들은 팀 빌딩을 해서 함께 서비스를 기획하고 그 기획안을 바탕으로 모바일 앱이나 웹앱 형태로 프로토타입 개발까지 완료해야 했습니다. 그래서 2022년에도 기존과 동일하게 서비스 개발 해커톤으로 개최될 것으로 예상하고 미리 프로토타입 개발을 위한 사전 준비까지 해뒀는데, 갑자기 서비스 '개발'이 아닌 '기획' 해커톤으로 다르게 개최되어서 굉장히 당황했었네요.</p>
+<p>이번 해커톤의 경우 예선 단계에서는 팀 빌딩 없이 개인 참가 형태로 간략한 서비스 기획 문서만 작성하면 됐었기 때문에 개발은 굳이 진행할 필요가 없었습니다. 하지만 제가 생각해낸 서비스 아이디어가 기술적으로 구현 가능한지를 증명해보고 싶더군요. 아니, 기획안만 보더라도 당연히 구현은 가능하다고 알 수 있는 단순한 프로덕트였지만 실제로 작동하는 프로토타입을 제가 직접 개발해내고 싶었다는게 조금 더 정확한 표현이겠네요. 그래서 이 예선 출품 기획안과 함께 개발 작업도 병행했습니다. 당시에는 다니던 회사 일이 바빠서 처음 두세달 정도는 개발하는 데 시간을 조금밖에 투자하지 못해서, 해커톤이 완전히 끝난 이후까지도 개발이 계속되어 결국 최근에야 마무리가 되었습니다. 소요된 전체 기간을 집중적으로 코딩하고 디버깅한 시간으로만 환산하면 약 2주 정도를 투입한 것 같습니다.</p>
+<p>공트365 기획안 덕분에 예선을 통과할 수 있었고, 비록 프로토타입이 요구사항은 아니었지만 실제로 개발하는 과정에서 얻은 경험을 본선 프로젝트에서 간접적으로나마 적용할 수 있었기 때문에 최종 수상을 할 수 있었다고 생각합니다. 여기서는 한 줄의 아이디어가 기획안을 거쳐 실제 프로덕트로 만들어지는 과정 중 '프로그래밍' 측면에서 겪은 기술적 우여곡절에 대해서 글을 남겨보고자 합니다.</p>
+<h2>잘못된 첫 단추, 또는 무리한 욕심</h2>
+<p>위에서 언급된대로 처음에는 서비스 개발 공모전으로 개최될 것을 예상했습니다. 재작년 해커톤에서 요구한 사항은 '기본적인 기능을 시연할 수 있는 프로토타입'을 단기간에 만들어내는 것이었습니다. 그래서 일부 수상작들은 UI/UX에 대한 고려 없이 barebone스럽게 기능만 구현한 것도 있었고, 반대로 실제 기능은 없이 UI/UX만 인터랙티브하게 구현한 것들도 있었습니다. 그래서 공트365 프로토타입을 개발할 때도 저 기준에 맞춰서 최대한 빠른 시간 내에 기본적인 레이아웃과 기능들을 구현하는데 집중했습니다. 그게 목적이었고 그런 점에서는 성공했습니다. 기술적 완성도는 상관없이 '기능의 시연이 가능한 수준'이라는 요구사항만 충족하면 되니까요.</p>
+<p>하지만 제가 원래 기획 단계에서 생각했던 가상의 완성된 공트365 서비스는 MERN 스택으로 만든 client-side rendering(CSR) 기반 single page application(SPA)이었습니다. 처음에는 '그럴듯해 보이는 프로토타입만 어떻게든 빨리 만들어야지'라는 마음가짐으로 시작했다가, 개발이 진행되면 진행될수록 '실제 프로덕트라면 어떻게 만들어야 할까'라고 기준이 점점 높아지기 시작했습니다. 그러다보니 제가 만들고 싶은 프로덕트와, 제가 실제로 만들 수 있는 프로덕트와, 공모전을 위해 만들면 되는 프로토타입 사이에 상당한 수준 차이가 있음을 체감하게 되고 그래서 괴로움이 밀려들었습니다. 차라리 그냥 겉만 멀쩡한 프로토타입만 만들고 끝낸다는 생각이었으면 엉성한 결과물을 보고도 만족스럽고 후련했을텐데, 제 실력과 한계에 비해 욕심이 너무 지나쳤던겁니다.</p>
+<p>프로토타입이라고 하더라도 처음부터 SPA 프레임워크로 뚝딱 만들면 되지 않냐고 하실수도 있는데, 일단 React는 전혀 모르기 때문에 당연히 사용하지 못했습니다. 몇 번 가지고 놀아본적은 있지만 프로젝트에서 사용할 수 있을 정도로는 제대로 공부한적이 없기 때문에 Vue.js 역시 사용하지 못했습니다. Svelte도 잠깐 건드려본 수준인데 학습곡선은 낮은듯 했지만 많이 낯설었고, Vite를 사용하는 환경으로 SvelteKit 초기 설정을 하다가 각종 오류가 나오는 것에 당황해서 더 이상 진행하지 않았습니다. SPA 프레임워크를 사용할 수 있었다고 하더라도 이론적인 개념이 부족해서 엄청나게 헤맸을겁니다. 그리고 일단 작은 규모의 프로젝트라고 하더라도 아키텍쳐, 네트워크, 데이터베이스 등을 고려해 큰 그림을 먼저 제대로 그리는 작업이 중요한데 이것도 당연히 제대로 할 수 없었죠.</p>
+<p>게다가 저는 다음과 같은 제약까지 자발적으로 걸었습니다.</p>
+<ul>
+<li>
+<p>jQuery는 사용하지 말 것</p>
+<ul>
+<li>레거시 환경을 지원해야 하는 특수한 경우를 제외하고는 이제 모던 웹에서는 제이쿼리가 불필요하다는 의견이 많았고, 습관처럼 쓰게 될까봐 사용하지 않았습니다.</li>
+</ul>
+</li>
+<li>
+<p>가급적 vanilla JavaScript를 활용할 것</p>
+<ul>
+<li>순수한 자바스크립트가 항상 정답은 아니지만 그래도 이런 실습을 통해 자바스크립트 기초 실력을 단련하고 싶었습니다.</li>
+</ul>
+</li>
+<li>
+<p>지금까지 습득한 지식에 기반해서 개발할 것</p>
+<ul>
+<li>저는 초급 웹 개발을 독학으로 배웠습니다. 입문자들이 배우기에 적절한 온라인 강의로 The App Brewery의 The Complete Web Development 과정을 해외에서 많이들 추천하길래 Udemy를 통해서 수강했습니다. 이 과정은 University College London 의과대학 출신으로 영국에서 NHS 의사로 지내시다가 본업을 프로그래머로 바꾸신 Dr. Angela Yu라는 분이 가르치는데 (일단 부럽구요), 안젤라 박사님은 웹 개발 배경지식이 없는 입문자를 위해서 친절하고 쉬운 방식으로 가르쳐 주시기 때문에 학습을 수월하게 할 수 있었습니다. 다만 최대한 진입 장벽과 부담을 낮추는데 집중한 나머지, 웹 개발과 관련된 이론과 바탕을 탄탄하게 가르치는 측면에서는 부족한 면도 있었고 그 공백을 이번 기회에 체감했습니다. HTML5, CSS3, MongoDB, Express.js, ejs, Node.js 스택에 기반한 교육과정이었고 React는 그냥 지나가는 수준으로만 다뤘습니다.</li>
+<li>그래서 HTML5, CSS3, MongoDB, Express.js, ejs, Node.js를 모두 사용하기로 했습니다. 자세한 내용은 아래에서...</li>
+</ul>
+</li>
+</ul>
+<h2>카드로 만든 집</h2>
+<p>위에서 언급했듯이 결과물은 '완성도'라는 것을 논할 수 없을 정도로 엉성하게 나왔습니다. 만들어놓고도 실망스러운 부분이 한두개가 아니지만 대표적으로 몇 가지를 언급해 보겠습니다.</p>
+<h3>ejs로 SPA를?</h3>
+<p>일단은 학습한 내용을 활용하겠답시고 서버 사이드 렌더링(SSR) 방식의 템플릿 엔진인 ejs를 사용하는 것은 아무런 문제가 없었습니다. 문제는 그러면서 동시에 SPA를 지향했다는 점입니다. 첫 단추부터가 틀린거죠. 물과 기름을 섞은 느낌입니다.</p>
+<p>물론 서버사이드 렌더링 방식으로도 SPA를 구현하는 경우가 있기는 합니다. 백엔드에서는 SSR 프레임워크(예를 들면 Node.js)를 사용하고, 프론트엔드에서는 SPA 프레임워크(예를 들면 React)를 사용하는 하이브리드 접근법입니다. 아니면 아예 Next.js처럼 SPA와 SSR가 결합된 단일 하이브리드 프레임워크를 사용하는 것이죠. SEO 최적화와 SPA UX를 동시에 노리는건데, 문제는 저는 그런 목적도 아니었고, 프론트엔드 프레임워크를 사용하지도 못하면서, 템플릿 엔진은 저런 개념과 거리가 먼데도 그저 욕심만 크게 부린겁니다.</p>
+<p>일단은 서버에서 렌더링한 ejs view를 클라이언트로 보내주고 이후에 데이터베이스로부터 비동기적으로 가져온 데이터를 placeholder 역할을 하는 ejs 템플릿에다가 넣어주는 것 까지는 충분히 가능했습니다. 하지만 사용자가 입력한 값을 데이터베이스에 create 작업을 해주고나서, 데이터베이스에서 새로운 데이터를 가져와서 그 값으로 view를 갱신해야 하는데 그걸 SPA 형식으로 구현하려면 ejs를 어떻게 사용해야 되는지 몰랐습니다. 열심히 정보를 찾아보고 시도해봤지만 방법이 없었습니다. 패기롭게 시작은 했지만 코딩을 진행하면서 &quot;어? 내가 생각했던 것들이 근본적으로 구현될 수가 없겠는데?&quot;라는 생각이 들었던 첫번째 순간이었습니다.</p>
+<p>템플릿 엔진인 ejs에서 html을 렌더링해서 클라이언트로 보내고 손 털어버리는 방식으로는 제가 생각했던 동적인 컨텐츠는 구현할 수 없다는걸 깨달았을때는 이미 늦었습니다. 원래의 구상대로라면 데이터베이스에서 데이터 전체를 가져와서 클라이언트로 뿌리는 대신에, 사용자가 view를 통해서 지정한 조건(예를 들면 경기도 평택으로 지역을 설정)에 맞게 그때마다 데이터베이스에 쿼리를 넣어서 데이터를 부분적으로 가져오고 그에 맞게 view도 클라이언트단에서 부분적으로 업데이트하는 방식을 구현하고 싶었는데 그것도 당연히 불가능했습니다. ejs라는건 그렇게 사용하라고 만든 작품이 아니니까요. 지금 생각해보면 차라리 ejs를 아예 사용하지 않는게 나았을겁니다. 그리고 jQuery의 Ajax를 사용하지도 않을거라면 그냥 Fetch API를 사용해도 됐을텐데 하는 아쉬움이 있습니다. 그때는 그저 아무것도 몰랐습니다. 그러니까 저런 말도 안되는 제약조건을 걸고선 SPA같은 소리나 했겠죠. 조언을 해줄 수 있는 사람도 없었고, 배경지식도 부족했고, 체계도 없이 독학을 해가며 혼자서 진행했으니 어쩔 수 없었습니다.</p>
+<p>그래서 어쩔 수 없이 POST 메서드로 라우팅을 한 다음에 메인 페이지를 클라이언트로 다시 보내는 방식으로 새로고침을 시키는 임시방편을 쓸 수밖에 없었습니다. 하나의 페이지만을 사용하니까 SPA와 비슷하면서도, view의 업데이트를 위해서는 POST 후에 메인 페이지 전체를 ejs로 서버사이드 렌더링해서 클라이언트로 보내주는 과정이 들어가므로 SPA가 아닌 끔찍한 괴작이 탄생한겁니다.</p>
+<h3>그나마 DOM이 도우미</h3>
+<p>그런 상황에서 CSR SPA를 흉내내기 위해서 4개의 view에 필요한 모든 DOM을 한 페이지에 때려박았습니다. 그리고 resource-expensive한 DOM manipulation을 사용했죠.</p>
+<p>MVC/MVP/MVVM 디자인 패턴따위는 고려하지 않았습니다. 고려하지 못했다고 하는게 더 정확하겠네요. 잘 몰랐으니까요. 그나마 MVC 패턴과 가장 유사하다고 할 수 있습니다. UI/UX를 핸들링하는 자바스크립트가 controller 역할을 해서 view에 해당하는 DOM을 조작하고, view에 있는 데이터 중에서 업데이트가 필요한 부분은 model 역할을 하는 백엔드 서버가 페이지 전체를 다시 렌더링해서 클라이언트로 보내주는 방식입니다.</p>
+<p>이렇게 하니까 어찌됐든 첫인상 만큼은 SPA스럽게 나왔습니다. 다만 DOM 기반의 view들을 전환하고 나면 Leaflet.js의 지도가 제대로 표시되지 않는 버그가 생겼습니다. Leaflet.js map을 담고 있는 view가 선택될 때 map을 reload하는 꼼수를 사용할 수 있기는 한데, 이건 근본적으로 DOM manipulation 기반의 형편없는 설계를 갖다버려야만 해결될 것 같습니다.</p>
+<h2>그럼에도 불구하고 그 끝은 배움</h2>
+<p>여러가지로 정말 마음에 안들고 아쉬움도 많이 남는 결과물입니다. 하지만 웹 개발에 대해서 아무것도 몰랐던 사람이, 입문형 커리큘럼의 강의를 단기간에 독학해서, 도와주는 사람도 없이 만든 것 치고는 나쁘지 않다고 생각할 뿐입니다. 그래도 혼자서 맨손으로 고통스러운 시행착오를 통해 만든 만큼 많은 것들을 배울 수 있었습니다.</p>
+<h3>Tailwind CSS</h3>
+<p>이거 정말 너무나도 편합니다. CSS 코딩에 대한 부담이 확 줄고 시간도 대폭 절약할 수 있었습니다. 물론 커스텀 CSS 스타일도 모두 직접 구현이 가능하지만, 테일윈드 CSS 프레임워크에서 기본적으로 정의해둔 CSS 컴포넌트들만 사용해도 충분했습니다. 오히려 여기에 습관이 들어서 vanilla CSS를 잘 다루지 못하게 될까봐 걱정될 정도입니다.</p>
+<p>다만 문제점도 있었습니다. Leaflet.js를 사용하려면 지도 렌더링이 이루어지는 map 컨테이너의 영역을 width와 height로 명백하게 설정해줘야 하는데, 이게 Tailwind CSS에서 독자적으로 구현하는 box model과 충돌해서 지도가 표시되지 않는 현상을 해결하느라 골치가 아팠습니다. Tailwind CSS 역시 자바스크립트를 통해서 CSS를 해석하고 변환하기 때문에, 다른 자바스크립트 라이브러리들과의 호환성이 보장되지 않을 수 있다는 점을 명심하게 되었습니다.</p>
+<h3>Leaflet.js</h3>
+<p>상호작용이 가능한 지리정보 자바스크립트 라이브러리인 Leaflet.js를 사용했습니다. 기본적으로 지도를 설정해주고 나서 데이터베이스로부터 POI 데이터셋을 가져와 지도상에 marker로 표시해주는 단순한 기능을 구현해봤습니다. 다만 위에서 언급했듯이 데이터를 세부 지역에 따라 동적으로 쿼리하고 받아오는 방식이 아니라, 모든 데이터를 클라이언트로 한번에 가져오는 방식이다보니 지도상에 표시해야 할 POI 마커가 너무 많아서 렌더링 성능이 처참했습니다. 이 문제를 해결하고자 여러가지 방안을 생각해봤습니다.</p>
+<ul>
+<li>Leaflet.js에 <a href="https://gist.github.com/Sumbera/c6fed35c377a46ff74c3">WebGL 가속</a>을 사용하기</li>
+<li>WebGL 가속을 내장하고 있는 <a href="https://robertleeplummerjr.github.io/Leaflet.glify/">Leaflet.glify</a>를 사용하기</li>
+<li>Leaflet.js 캔버스에 <a href="https://github.com/domoritz/leaflet-maskcanvas">직접적으로 마커를 추가하기</a></li>
+<li>WebGL을 사용하는 Leaflet.js 플러그인인 <a href="https://github.com/manubb/Leaflet.PixiOverlay">PixiOverlay를 사용하기</a></li>
+<li>설정한 세부 지역에 맞는 POI 데이터만 부분적으로 쿼리해서 애초에 렌더링 해야 할 마커의 숫자를 줄이기
+<ul>
+<li>아마도 이게 가장 근본적인 해결책일겁니다.</li>
+</ul>
+</li>
+<li>전부 가져온 마커들을 지역별로 나눠서 지역 layer들에 배정한 다음 Leaflet.js의 layer control로 해당 지역만 선택적으로 표시하기</li>
+</ul>
+<p>아무리 생각해도 이런 해결책들이 마음에 들지 않았는데, 마침 마커들을 군집화해서 표시해주는 <a href="https://github.com/Leaflet/Leaflet.markercluster">leaflet.markercluster</a>라는 플러그인을 발견하게 되었습니다. 이 플러그인을 사용하니 수백개의 마커를 자동으로 군집화(생략)해서 소수의 군집 마커들로 렌더링을 해주더군요. 지도를 확대하면 zoom level에 맞춰서 그제서야 국소적인 지역의 개별 마커들이 표시 되는 방식입니다. 백엔드까지 뜯어고치는 리팩토링이나 재설계 없이, 복잡하게 WebGL을 사용할 필요 없이, 성능 문제가 너무나도 간단하게 해결이 되었습니다. 물론 근본적인 해결책은 아닙니다. 서울시 서대문구만 서비스를 할 게 아니라 나중에는 전국 데이터셋을 활용해야 할텐데, 그때가 되면 결국은 지금의 형편없는 설계는 사용할 수 없는건 마찬가지라서 기술 부채는 여전히 남아있습니다. 그래도 이 플러그인은 굉장히 단순하면서도 효과적인 방식으로 수많은 POI 마커들을 렌더링해야하는 부담을 해소해준다는 점에서 나중에도 활용할 여지가 충분합니다.</p>
+<h3>ISODate</h3>
+<p>공트365 기획안은 서비스의 특성상 한국 사용자만을 고려해서 만들어졌습니다. 하지만 실제로 서비스를 하게 되면 잠시 해외에 나가 있는 한국 사람도 접속하고 사용할 수 있어야 합니다. 시차에 따른 데이터 일관성 문제가 발생하더군요. 데이터베이스에 저장되어야 하는 datetime과, 사용자가 현지에서 보고 조작하는 datetime을 어떻게 일치시키고 변환해야할까 정말 고민이 많았습니다. 다행히도 국제 표준인 ISO 8601 형식의 timestamp를 사용하는 것이 보편적이라는것을 알게 되었습니다. MongoDB에서도 UTC+0 기반의 ISODate를 지원한다는 사실 또한 알게 되었습니다. 그러면 데이터베이스에서는 UTC+0을 기준으로 하는 ISODate 형식으로 datetime을 표준화해서 저장하고, 프론트엔드에서는 이러한 timestamp를 가져와서 locale에 맞게 파싱하고 변환하는 작업을 통해 한국 시간(UTC+9)으로 사용하자는 결론에 이르렀습니다. 아직까지는 UTC+0과 UTC+9, 이렇게 두 시간 사이의 변환만 하면 되니까 간단한데 나중에 여러 시간대와 국가의 사용자들을 고려해야되는 상황이 오면 그때는 또 다른 고민이 생기겠죠. 그래도 국제적으로 시간을 다루는 구조에 있어서 시야가 넓어진 것으로 일단 만족합니다.</p>
+<h3>보안</h3>
+<p>우선 input sanitization의 중요성을 직접 코드로 체감할 수 있었습니다. SQL 인젝션 공격이니 뭐니 하는건 예전부터 너무 많이 들어봐서 익숙하기는 한데, 사용자의 악의적인 입력값을 어디서부터 어떻게 막아야 할지, 어떤 공격 시나리오가 있을 수 있는지를 잘 모르니 막막하더군요. 날짜 선택기를 구현해주는 npm 패키지인 js-datepicker를 사용할때도 혹시 사용자가 브라우저에서 제한사항들을 무력화시켜서 이걸 통해서도 악의적 입력값이 들어오지는 않을까, 이 입력값은 직접 <code>&lt;input&gt;</code>을 사용하는 것과는 달리 js-datepicker를 구성하는 자바스크립트 모듈을 거치게 될텐데, 그 내부는 어떻게 확인해야하나 싶었습니다. 다만 클라이언트 사이드에서의 입력 제한들은 충분히 우회가 가능하므로, 클라이언트 사이드에서는 화이트리스트 방식으로 1차적인 필터 역할만 기대하고 최종적으로는 서버 사이드에서 sanitization을 해야 한다는 원칙을 알게 되었습니다.</p>
+<p>그리고 민감정보인 암호를 다루기 위해 Node.js용 bcrypt 라이브러리를 사용해서 암호를 salted hashing해서 보관하고, bcrypt.compare 함수를 통해서 그 값이 입력된 암호와 일치하는지를 확인하는 기능도 만들어 보았는데 생각보다 간단했습니다. 물론 기능 자체를 구현하는것만 간단하지 실제로 보안을 충실하게 구현하는것은 별개의 문제입니다. 일반적으로는 bcrypt도 충분히 안전하다는 의견이 많지만, 찾아보니까 bcrypt 역시 FPGA를 사용한 공격에 취약할 수 있고 NIST에서는 PBKDF2를 권장하고 그런걸 보면 보안이라는게 참 어렵습니다. bcrypt 대신에 node:crypto API로 바꿔야하나... 사이버 보안과 관련해서는 별도로 공부를 해야할 것들이 산더미처럼 많고 또 중요해서 앞으로 꾸준히 해나갈 생각입니다.</p>
+<h3>SSR SPA? Hydration?</h3>
+<blockquote>
+<p>&quot;To accomplish server-side rendering of an SPA, javascript code is executed in NodeJS to generate the initial HTML. In the browser, the same javascript code is executed during a &quot;hydration&quot; process, which attaches event listeners to the HTML. Most popular UI Frameworks (Vue, React, Angular, etc) are capable of executing in both NodeJS and the browser, and offer APIs for both generating the server HTML and hydrating it in the browser. Additionally, there are popular frameworks such as NextJS and Nuxt which simplify the developer experience of server-side rendering.&quot;</p>
+</blockquote>
+<blockquote>
+<p>&quot;Hydration is the process that restores the server side rendered application on the client. This includes things like reusing the server rendered DOM structures, persisting the application state, transferring application data that was retrieved already by the server, and other processes.&quot;</p>
+</blockquote>
+<p>이것도 공부를 좀 더 해봐야겠네요.</p>
+<h2>이제 다시 시작이다</h2>
+<p>아무리 설계와 품질이 엉망이어도 어쨌든 프론트엔드, 백엔드, 데이터베이스를 모두 만들어봤다는 점에서, 풀스택 웹 개발의 첫걸음을 시작했다는 사실에 만족하고자 합니다. 그리고 꾸준히 개선하고 뜯어고치느니 차라리 뒤엎어버리고 처음부터 새로 만드는게 나은 수준이라 그냥 이 상태 그대로 놔두고자 합니다. 공개하기에 민망한 수준의 완성도입니다만 지우거나 숨기지는 않을겁니다. 오히려 이걸 보면서 항상 초심을 잊지 않고, 내 실력이 얼마나 성장했는지를 비교하고 확인할 수 있는 기준점 중 하나로 삼아보려고요.</p>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

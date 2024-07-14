@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Study Note] Coursework: DevOps and Software Engineering - CI/CD | devfreedom.github.io</title>
+    <meta name="title" content="[Study Note] Coursework: DevOps and Software Engineering - CI/CD | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Study Note❯,DevOps,software engineering,cloud computing,web development,CI/CD,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230726_1853_study-note_devops_coursework_06/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Study Note] Coursework: DevOps and Software Engineering - CI/CD</h1>
+        <div class="text-center">Published on 26 July 2023 06:53 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Study Note❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Study Note❯</a>
+            
+            <a href="/tags/DevOps" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#DevOps</a>
+            
+            <a href="/tags/software engineering" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#software engineering</a>
+            
+            <a href="/tags/cloud computing" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#cloud computing</a>
+            
+            <a href="/tags/web development" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#web development</a>
+            
+            <a href="/tags/CI/CD" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#CI/CD</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/devops.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>6. Continuous Integration / Continuous Delivery</h1>
+<ul>
+<li>CI/CD is not a one single process.
+<ul>
+<li>It’s two separate and distinct processes that happen right after each other.</li>
+<li>With CI, your team can work in small chunks in different areas of your application and then easily and regularly merge the code into the main branch.</li>
+<li>With CD, it prepares the code for the release of your application, and automates the process that is required to deploy and build your application.</li>
+</ul>
+</li>
+<li>CI is continuously integrating your code back into the main or master or trunk branch.
+<ul>
+<li>So it shouldn't diverge too far before you merge changes back into the main branch to make sure that it works.</li>
+<li>You are continuously integrating your code with the main codebase.</li>
+<li>CI is an automation process that allows you to integrate your work into your repository.</li>
+</ul>
+</li>
+<li>CD is then taking that integrated code and deploying it somewhere.
+<ul>
+<li>You may deploy it every time you integrate it, or you may not deploy it every time you integrate it.</li>
+<li>You may have Continuous Integration on one loop testing branches and pull requests.
+<ul>
+<li>And then, when you finally merge to main, you kick off the Continuous Delivery part.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>CI/CD position in DevOps pipeline
+<ul>
+<li>DevOps = Plan → Develop → Build → Test → Deploy
+<ul>
+<li>CI/CD is about Build and Test</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Phases
+<ul>
+<li>CI = Plan → Code → Build → Test
+<ul>
+<li>This is where developers plan and then code the solution, and then build it and test it in several repeating cycles until it’s complete.</li>
+<li>And then the solution is ready to be delivered.</li>
+</ul>
+</li>
+<li>CD = Release → Deploy → Operate
+<ul>
+<li>The solution is released, and the binaries are deployed into a given environment in repeating cycles, and the solution is then in live operation from that point on.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Benefits
+<ul>
+<li>Faster reaction times to code changes
+<ul>
+<li>You’re no longer waiting to see the effects of a change.</li>
+<li>It automatically gets built and tested and deployed.</li>
+</ul>
+</li>
+<li>Reduced code integration risk
+<ul>
+<li>The more often you integrate, the less time there is for change.</li>
+<li>Integrating more often means less risk of something breaking.</li>
+</ul>
+</li>
+<li>Higher code quality with CI/CD
+<ul>
+<li>Because things are constantly being reviewed and constantly being tested, and every pull request is an opportunity for a code review.</li>
+</ul>
+</li>
+<li>Knowing that the code in version control works.
+<ul>
+<li>It’s a common practice to ensure that the code in the main or master branch is always deployable.</li>
+</ul>
+</li>
+<li>CI/CD takes less deployment time
+<ul>
+<li>Because everything is already tested, and deployments are automated, so they happen faster with greater repeatability.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>CI/CD Tools</h3>
+<ul>
+<li>
+<p>Jenkins</p>
+<ul>
+<li>Main role: CI</li>
+<li>It is one of the oldest, most popular, and most complex of all the CI/CD tools.</li>
+<li>Uses the Groovy language in a Jenkinsfile</li>
+<li>Large ecosystem of plugins</li>
+<li>Jenkins does not provide visibility into the pipeline process, and requires a lot of setup and maintenance.
+<ul>
+<li>Making it uncompetitive compared to other CD tools.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Circle CI</p>
+<ul>
+<li>Main role: CI</li>
+<li>A CI/CD platform that can be used to implement DevOps practices.</li>
+<li>Provided as a service</li>
+<li>Uses circle.yaml file to control workflow</li>
+</ul>
+</li>
+<li>
+<p>Travis CI</p>
+<ul>
+<li>Main role: CI</li>
+<li>Hosted CI/CD service that helps developers build and test software projects hosted on GitHub and Bitbucket.</li>
+<li>Uses .travis.yml file to define workflow</li>
+<li>It isn’t as feature-rich as other CD implementations, but it requires minimal maintenance.</li>
+</ul>
+</li>
+<li>
+<p>Spinnaker</p>
+<ul>
+<li>Main role: CD</li>
+<li>Dedicated cloud-agnostic CD tool built in-house by Netflix.</li>
+<li>It allows you to manage CD pipelines and simplifies release rollbacks.</li>
+<li>It supports the creation of load balancers and scale clusters all natively.</li>
+</ul>
+</li>
+<li>
+<p>Concourse CI</p>
+<ul>
+<li>Main role: CI</li>
+<li>A CI tool that also contains CD capabilities.</li>
+<li>Initially built with containers in mind, although you can still run things on virtual machines.</li>
+<li>The containers are highly scalable, and due to the container-first approach, every step of the build is very flexible.
+<ul>
+<li>You just point to a Docker image to build from.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Go CD</p>
+<ul>
+<li>Main role: CD</li>
+<li>Boasts easy pipeline setup with native Docker and Kubernetes support.</li>
+<li>It comes with its own Value Stream Map tool that helps you trace each pipeline through all of the stages between commit and deployment.</li>
+<li>You can build pipelines with YAML or JSON files in a visual UI.</li>
+</ul>
+</li>
+<li>
+<p>Argo CD</p>
+<ul>
+<li>Main role: CD</li>
+<li>A declarative Continuous Delivery tool that makes CD easy to automate, audit, and understand.</li>
+<li>Originally developed by Intuit
+<ul>
+<li>As they were looking for a lighter tool than Spinnaker that would improve build and deployment times and streamline their GitOps workflow.</li>
+</ul>
+</li>
+<li>The UI is well made and easy to use and integrates well with a variety of CI tools such as Jenkins, GitHub Actions, CircleCI, and more.</li>
+<li>It follows the GitOps pattern of using Git repositories as the single source of truth for defining the desired application state.</li>
+<li>Argo CD as a Kubernetes controller, monitors the current application state compared to the desired state, visualizes the differences, and ensures parity by automatically syncing.</li>
+</ul>
+</li>
+<li>
+<p>GitHub Actions</p>
+<ul>
+<li>A CI/CD platform that enables you to automate your build, test, and deploy GitHub workflows.</li>
+<li>Unlike other tools, it only works with GitHub.</li>
+</ul>
+</li>
+<li>
+<p>GitLab CI/CD</p>
+<ul>
+<li>GitLab's built-in CI/CD platform that you use for all of the continuous methods.</li>
+<li>It’s easy to automate the process of deploying code to production since GitLab is also a source code manager.</li>
+<li>It supports all major cloud platforms, making the CI/CD pipeline very flexible to build.</li>
+</ul>
+</li>
+<li>
+<p>Tekton</p>
+<ul>
+<li>A flexible, open source CI/CD framework that abstracts the implementation details
+<ul>
+<li>So you can focus on building, testing, and deploying according to your projects’ requirements.</li>
+</ul>
+</li>
+<li>Enables you to build, test, and deploy apps in Kubernetes using an open source, vendor-neutral framework.</li>
+<li>Its main strength is its modularity, allowing you to deploy across multiple environments such as VMs, serverless, Kubernetes, and cloud providers.</li>
+<li>By standardizing the CI/CD tooling and process, Tekton works well with other CI/CD tools such as Jenkins, Skaffold, and Knative.</li>
+<li>Tekton pipelines are fully portable, so once they are created or defined, a developer in the organization can take a pipeline and reuse its components.</li>
+</ul>
+</li>
+</ul>
+<h3>Choosing the Right CI/CD Tool</h3>
+<ul>
+<li>Feature-richness
+<ul>
+<li>You may want,
+<ul>
+<li>Full audit trails</li>
+<li>Proprietary integrated secrets</li>
+<li>Fine-grained, role-based access control</li>
+<li>etc.</li>
+</ul>
+</li>
+<li>These features may only be partially available in CD tools and not ubiquitous, as some tools may be very new and overly simplistic.</li>
+<li>Having a feature-rich CD tool means that once your applications become more complex with more moving parts, you will already have the features at your disposal.</li>
+</ul>
+</li>
+<li>Compatibility
+<ul>
+<li>Picking a tool that is compatible and easily integrates with your current toolset makes setting up CD faster and reduces potential headaches.</li>
+</ul>
+</li>
+<li>Ease of setup and use
+<ul>
+<li>Tools like Tekton are easy to set up and provide clear insights into your pipelines.</li>
+<li>Beyond setup, maintenance can also take up a lot of time.</li>
+<li>Tools like Argo CD are easy to set up and maintain, while Jenkins is a handful to both set up and maintain.</li>
+</ul>
+</li>
+<li>Security scanning
+<ul>
+<li>Within your pipeline, you need tools for application security scanning and ensure overall application health.</li>
+<li>Security is often an afterthought and added at the end before an application launches.</li>
+<li>By adding security checks to your pipeline, every change that you make along the way is tested to be secure.</li>
+</ul>
+</li>
+<li>Vulnerability scanning
+<ul>
+<li>Helps identify dependencies and components vulnerabilities.</li>
+<li>Applications that are not vulnerable one day suddenly become vulnerable because of exploits found in existing code or libraries.</li>
+<li>It is critically important to add vulnerability scanning to your CD pipeline to ensure that you are not shipping code with known vulnerabilities.</li>
+</ul>
+</li>
+<li>Secret scanning for API keys and credentials
+<ul>
+<li>Prevents accidental exposure of sensitive information.</li>
+<li>Many times, developers inadvertently place passwords and other credentials in files that have been erroneously checked into source control.</li>
+<li>Scanning for secrets ensures that credentials are not leaked.</li>
+</ul>
+</li>
+<li>Static Application Security Testing (SAST)
+<ul>
+<li>Identifies vulnerabilities of the entire code base such as SQL injections and cross-site scripting.</li>
+<li>While some of these mistakes might get identified during code reviews, it’s important to ensure that your CD pipeline is checking for them in case your developers forget to.</li>
+</ul>
+</li>
+<li>Dynamic Application Security Testing (DAST)
+<ul>
+<li>Scans for incorrect security assumptions that may be hidden in the source code.</li>
+<li>Dynamic scanning checks the running application for weak spots.</li>
+<li>Better to catch these in your CD pipeline than have malicious users find them in production.</li>
+</ul>
+</li>
+<li>Code deployment
+<ul>
+<li>Automating deployments ensures that they are repeatable, so that you get the same results.
+<ul>
+<li>Regardless of whether you are deploying to development, test, staging, or production.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>6-1. Continuous Integration</h2>
+<ul>
+<li>Continuous Integration is an automation process that enables the continuous integration of code changes back into the main codebase.
+<ul>
+<li>It allows developers to regularly integrate their work into a repository so that their changes don’t drift too far from the master, or main, branch.</li>
+<li>When a developer pushes their work into the source code repository, it ensures that the software continues working properly by automatically running a series of tests to detect any breakage.</li>
+<li>CI helps to enable collaborative development across the teams
+<ul>
+<li>Because even if a developer forgets to run their unit tests, the CI process will run the tests for them and alert them of any failures.</li>
+<li>This helps to identify any integration bugs sooner rather than later.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>CI vs. Traditional development
+<ul>
+<li>Traditionally, developers work on large features or fixes and commit them into their own development branches.
+<ul>
+<li>These branches can exist for a long time, have a large scope, and generally require many code changes and edits.</li>
+</ul>
+</li>
+<li>When development is completed on these branches, only then are they tested and merged into the main branch and built for production.
+<ul>
+<li>This development method can cause drift between the main branch and the development branch, among other issues.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>CI Features</h3>
+<ul>
+<li>Short-lived branches
+<ul>
+<li>Reduces drifts
+<ul>
+<li>In CI, developers work in short-lived feature branches where they develop their code.</li>
+<li>These branches are only meant for developing small features that contribute to the code so they can be merged back into the main or master branch quickly.
+<ul>
+<li>The branch is deleted after it’s merged as its only purpose was to develop that small feature.</li>
+</ul>
+</li>
+<li>It reduces drift that may occur between feature branches and the main branch.</li>
+</ul>
+</li>
+<li>Reduces parallel changes
+<ul>
+<li>Critical or essential fixes may be implemented differently by multiple developers when working on their features.</li>
+<li>With CI, developers can quickly implement a single fix that will be tested and merged, reducing parallel changes.
+<ul>
+<li>Ultimately, this means you can deploy your code faster overall, as you don’t need to run through a large code review because you have been checking the changes every time they’ve been pushed.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Frequent pull requests
+<ul>
+<li>Making frequent pull requests back to the master or main branch is a best practice.
+<ul>
+<li>These pull requests are meant to contain code updates that serve a specific purpose.</li>
+</ul>
+</li>
+<li>It makes code changes cleaner and easier to understand.</li>
+<li>A pull request requires approval from a repository maintainer or owner to be successfully merged.
+<ul>
+<li>At a minimum, no one should be able to approve their own pull request.</li>
+<li>You want to ensure that every change has at least two sets of eyes on it.</li>
+</ul>
+</li>
+<li>These frequent pull requests serve as small pieces of a much bigger puzzle, making it easy to build upon the most updated code.</li>
+<li>Benefits
+<ul>
+<li>Facilitates increased collaboration among developers
+<ul>
+<li>Because each pull request needs to be reviewed.</li>
+</ul>
+</li>
+<li>Enables developers to react quickly
+<ul>
+<li>Required changes can be tested and put into production faster, so solutions can get to the customer faster.</li>
+</ul>
+</li>
+<li>Reducing management risk
+<ul>
+<li>Due to the frequency of Continuous Integration, you know exactly how much functionality you have built to date.</li>
+<li>It improves your ability to predict when and if you will deliver the necessary functionality on time.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Automated CI tools
+<ul>
+<li>Automated CI tools subscribe to events such as pull requests and file changes using webhooks that can then trigger a workflow.
+<ul>
+<li>That workflow can be anything, such as building an application.</li>
+</ul>
+</li>
+<li>Once complete, these tools report back with messages of a successful or failed build.
+<ul>
+<li>These tools can run tests that ensure your file changes or pull requests don’t break the entire application.</li>
+</ul>
+</li>
+<li>With these automation tools, you can streamline your development process so that testing and checking your code is never tedious.</li>
+</ul>
+</li>
+</ul>
+<h3>CI Benefits</h3>
+<ul>
+<li>Faster reaction times to code changes
+<ul>
+<li>Every time you make a change to your code and push it to a remote branch,
+<ul>
+<li>The change gets tested</li>
+<li>The change gets built</li>
+<li>You can deliver the proven solution into your customers’ hands more quickly</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Reduced code integration risk
+<ul>
+<li>Changing and integrating smaller and smaller things mean less risk of something going wrong.</li>
+</ul>
+</li>
+<li>Higher code quality
+<ul>
+<li>Changes are constantly being reviewed and constantly being tested.
+<ul>
+<li>Every pull request is an opportunity for a code review.
+<ul>
+<li>Check test cases.</li>
+<li>Check test results.</li>
+<li>Check code coverage.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Code in version control works
+<ul>
+<li>Unless you test every change, you could be deploying broken code into production.</li>
+<li>You ran your continuous integration tests and they all passed.</li>
+<li>So it’s very important to know that everything that's in that master branch in Git works.</li>
+</ul>
+</li>
+</ul>
+<h3>GitHub Actions</h3>
+<ul>
+<li>Process
+<ol>
+<li>You create a folder called .github/workflows/ in the root of your project.</li>
+<li>Place a .yaml file in that folder.</li>
+<li>Depending on how you configure GitHub Actions,
+<ul>
+<li>Whenever you push to master, a build is executed.</li>
+<li>Whenever you issue a pull request, tests are run.</li>
+</ul>
+</li>
+<li>Job runs in an isolated environment, VM or Docker container.</li>
+</ol>
+</li>
+<li>Workflow composition
+<ol>
+<li>Event
+<ul>
+<li>Something that activates the execution of a workflow</li>
+</ul>
+</li>
+<li>Jobs
+<ul>
+<li>Made up of steps that are performed on the same runner</li>
+<li>Each workflow can have multiple jobs
+<ul>
+<li>Jobs are named whatever you want</li>
+<li>Jobs run in parallel unless dependencies specified using 'needs' keyword</li>
+</ul>
+</li>
+<li>Each job contains,
+<ul>
+<li>Runner</li>
+<li>Services (optional)
+<ul>
+<li>Services are defined as Docker containers.
+<ul>
+<li>Database, message queues, etc.</li>
+</ul>
+</li>
+<li>The name you use becomes the DNS name used to access it.</li>
+</ul>
+</li>
+<li>Steps</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Runner
+<ul>
+<li>A server that performs jobs on a specific platform or OS</li>
+</ul>
+</li>
+<li>Steps
+<ul>
+<li>Tasks comprising one or more shell commands or actions</li>
+<li>Steps can have,
+<ul>
+<li><code>name:</code> an optional name displayed in the report</li>
+<li><code>id:</code> an optional ID to refer to other steps</li>
+<li><code>uses:</code> actions</li>
+<li><code>run:</code> shell commands</li>
+<li><code>env:</code> environment variables</li>
+</ul>
+</li>
+<li>Each job can have multiple steps.</li>
+</ul>
+</li>
+<li>Actions
+<ul>
+<li>Procedures that can be executed within a step</li>
+<li>Actions require the <code>uses:</code> keyword</li>
+<li>Actions can have arguments, by specifying <code>with:</code> keyword followed by name-value pairs.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3>Social Coding via SCM/VCS</h3>
+<ul>
+<li>Social Coding
+<ul>
+<li>Open source for inner source
+<ul>
+<li>What’s new is bringing 'open source' concepts into the enterprise, and coding as a community on internal projects.</li>
+<li>All repositories are public, and everyone is encouraged to fork the code and contribute.</li>
+</ul>
+</li>
+<li>Workflow
+<ol>
+<li>You open a GitHub issue and assign it to yourself so that everyone knows you’re working on it.</li>
+<li>You discuss the new feature with the repo owner, and you agree to develop it for them.
+<ul>
+<li>This allows you to leverage everything that they've done and add the feature that you need.</li>
+</ul>
+</li>
+<li>Then you fork the repo, create a branch, and make your changes.</li>
+<li>When you’re all done and have something to contribute, you issue a pull request.
+<ul>
+<li>Signaling that you are ready for a review and the repo owner can decide whether to merge your code into the main project.</li>
+<li>The repo owners are in full control.</li>
+</ul>
+</li>
+<li>They can ask for changes because they merge the code.
+<ul>
+<li>They can ask you to write more test cases if you don’t have adequate test coverage.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>They consider you an equal team member and this is a win-win situation.
+<ul>
+<li>You get to leverage another team’s code and functionality.</li>
+<li>The other team gets a new feature added for free.</li>
+</ul>
+</li>
+<li>The company saves money because code is being reused instead of rewritten, and everyone is happy.</li>
+</ul>
+</li>
+<li>Source Code Management with Version Control System
+<ul>
+<li>The practice of tracking versions of source code as it is developed.
+<ul>
+<li>This makes it easy to roll back to a previous version if errors occur.</li>
+<li>It also allows multiple people to work on different parts of the code and merge these changes into a single source of truth.</li>
+</ul>
+</li>
+<li>Centralized SCM
+<ul>
+<li>Stores the code repository and version history centrally</li>
+<li>Developers check out pieces of the code and work on it and commit changes back to the central repository.
+<ul>
+<li>Builds must be done at the central repository because that’s the only place that all of the code exists.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Distributed SCM
+<ul>
+<li>Each developer has a local clone of the entire code repository and version history.
+<ul>
+<li>This means they can perform local builds because each developer has the complete code locally.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>6-2. Continuous Delivery</h2>
+<ul>
+<li>Continuous Delivery can be defined as a series of practices designed to ensure that code can be rapidly and safely deployed to production by delivering every change to a production-like environment.
+<ul>
+<li>It doesn’t have to be a production environment.
+<ul>
+<li>Continuous Delivery just means that you are deploying the code to a development, or test, or staging environment to ensure that the code can be deployed.</li>
+<li>This also gives everyone a chance to see the code working.</li>
+</ul>
+</li>
+<li>The main or master branch must always be deployable.</li>
+</ul>
+</li>
+<li>The most important keyword : &quot;automated&quot;
+<ul>
+<li>Nobody performed any manual steps to deploy the code. It is continuously deployed automatically.</li>
+<li>Use Continuous Integration to run the tests every time there's a pull request.
+<ul>
+<li>Working in separate feature branches and using pull requests ensures that any code you have written is working correctly before you merge it back into the main branch.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Benefits
+<ul>
+<li>Automated SDLC
+<ul>
+<li>Enabling your development teams to automate the steps that transport software through the various stages of the software development lifecycle (or SDLC).</li>
+<li>Enabling you to deploy code automatically into the various stages of the software development lifecycle.
+<ul>
+<li>Once you have deployed to the development environment without incident, and to the test environment, and then the staging environment all without incident, the chances are pretty good that when you deploy to production that will also be without incident.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Reducing the deployment time by nonstop testing and deployment cycles.
+<ul>
+<li>The more you deploy, the more confidence you have that your next deployment will work, and the less time you spend debugging deployments.</li>
+</ul>
+</li>
+<li>Reducing the costs
+<ul>
+<li>People costs, infrastructure costs, and the cost of lost time due to manual failures</li>
+</ul>
+</li>
+<li>Scalability
+<ul>
+<li>Enables your development team to scale their software deployments based on the size of the project.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>CD Key principles</h3>
+<ul>
+<li>Build in quality
+<ul>
+<li>You need to ensure that you have quality built in at every step.
+<ul>
+<li>Quality isn’t free; you must plan for it.</li>
+</ul>
+</li>
+<li>This can be achieved by continually reviewing your code.
+<ul>
+<li>Every pull request is an opportunity for a code review and quality check.</li>
+<li>This is critical to make sure that everything looks good all the way along your pipeline.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Work in small batches
+<ul>
+<li>You should make your user stories small.
+<ul>
+<li>It’s best to make small changes because less change means less risk.</li>
+</ul>
+</li>
+<li>And you should continuously integrate these changes with the base code so that the changes never drift too far from the base that everyone else is working from.</li>
+</ul>
+</li>
+<li>Know that people are great at solving problems, but not so good at repetition
+<ul>
+<li>People shouldn’t be required to perform repetitive tasks.</li>
+<li>With test-driven development, you could constantly pull people’s code and run tests against it manually.
+<ul>
+<li>Computers can perform these tasks more quickly and efficiently.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Pursue relentless continuous improvement
+<ul>
+<li>The more often you do something, the better you get at it, and the less likely it is to fail.</li>
+<li>By delivering each change to a known working environment, you should continually know where you are and when things are broken.</li>
+</ul>
+</li>
+<li>Everyone is responsible for their part in the story.
+<ul>
+<li>If a build does break, it’s not a case of finger-pointing and asking, “Whose fault is it?”.</li>
+<li>What you should be asking is, “What went wrong?” and “How can we prevent this from happening in the future?”</li>
+<li>What you need to consider is more about the system’s failings rather than the people’s failings.
+<ul>
+<li>How did the system fail the people? Not the other way around.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>CD Best Practices</h3>
+<ul>
+<li>Make every change releasable
+<ul>
+<li>This means you should always include user documentation, operations runbooks, and information about what your change does.</li>
+<li>This ensures that every change will work and be documented well enough to be delivered to customers as well as serve any audit that may occur.</li>
+</ul>
+</li>
+<li>Embrace trunk-based development
+<ul>
+<li>Continuous Delivery is built upon Continuous Integration.
+<ul>
+<li>You should avoid delaying any integration caused by long-lived branches.</li>
+</ul>
+</li>
+<li>You want to use short-lived feature branches that are continuously integrated into the main codebase.
+<ul>
+<li>This is also called trunk-based development because you always come back to the trunk, otherwise known as the master or main branch.</li>
+<li>Every change is built, tested, and deployed together for the fastest feedback.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Deliver through an automated pipeline
+<ul>
+<li>A well-constructed, automated delivery pipeline is integral to a successful Continuous Delivery implementation.
+<ul>
+<li>This ensures that all code releases move into the test and production environments in a consistent, predictable way.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Automate as many processes as possible
+<ul>
+<li>You must automate as many processes as possible in your software development lifecycle to create a good, reliable delivery pipeline.
+<ul>
+<li>This pipeline is not only for code builds and deployments, but for the creation of new development environments as well.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Aim for no downtime
+<ul>
+<li>To ensure application availability while you make frequent Continuous Delivery updates, when you push a new function to production, you must first validate it before deploying it to public-running application instances.</li>
+</ul>
+</li>
+<li>Release at the granularity of test
+<ul>
+<li>If two parts of the system must be tested together, they should be released together.
+<ul>
+<li>So that you know that the parts of your system are compatible.</li>
+<li>Release automation tools are good at coordinating this kind of delivery.</li>
+<li>Alternatively, you can fully decouple.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>CD Requirements</h3>
+<ul>
+<li>Code repository
+<ul>
+<li>To host and manage all source code.</li>
+<li>Your source code management system is the single version of the truth.
+<ul>
+<li>Everything you need to build and release your code must be checked into version control.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Build server
+<ul>
+<li>To manage the building of the application.</li>
+<li>You want that environment to perform clean builds, starting from the same state every time.</li>
+</ul>
+</li>
+<li>Integration server/orchestrator
+<ul>
+<li>Handles the build automation and runs tests against your code.</li>
+<li>There should be no manual steps. Everything should be automated.</li>
+</ul>
+</li>
+<li>Storage repository
+<ul>
+<li>To store all the binaries and artifacts of the application.
+<ul>
+<li>So that once built and tested, they can be deployed easily.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>6-3. Continuous Deployment/Release</h2>
+<ul>
+<li>Continuous Deployment is NOT the same as continuous delivery.</li>
+<li>CD
+<ul>
+<li>&quot;Continuous Delivery&quot; is the automated movement of code through the development lifecycle (or delivery lifecycle) once it passes the required automation tests.
+<ul>
+<li>Delivering it somewhere other than production.
+<ul>
+<li>e.g. A development/staging/test/pre-production server.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>CR
+<ul>
+<li>&quot;Continuous Deployment/Release&quot; is reserved for when you actually continuously push to production.
+<ul>
+<li>Taking that delivered code and deploying it to actual production.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Whether and how Continuous Delivery is implemented all depends on your business needs.
+<ul>
+<li>If your business needs the delivery team to release new or updated software to production repeatedly, reliably, and quickly, then Continuous Deployment/Release will be of great benefit.</li>
+</ul>
+</li>
+</ul>
+<h2>6-4. Infrastructure as Code</h2>
+<ul>
+<li>IaC provides a great way for you to describe your infrastructure in a textual format.
+<ul>
+<li>A textual file format that you could actually use to configure your systems much like code.
+<ul>
+<li>Textual code that you can hand to an IaC tool.</li>
+<li>Textual code is normally written in the common YAML format</li>
+</ul>
+</li>
+<li>IaC tool reads the code and then builds your servers, and networks, and storage, etc.
+<ul>
+<li>Essentially the core infrastructure elements that you need.</li>
+<li>Using these tools with this textual code means that everyone gets the same environment every time, so it’s consistent and repeatable.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Why IaC?
+<ul>
+<li>Reduces manual system and software configurations
+<ul>
+<li>You can use templates or commands to describe how to install and configure the system according to your needs.</li>
+<li>Configuration Management System (CMS) made this possible.</li>
+</ul>
+</li>
+<li>Rapid provision of the same platform repeatedly
+<ul>
+<li>Due to repeatable configuration, you can rapidly provision the same platform over and over again and be sure that it will be in the same state every time.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Benefits
+<ul>
+<li>Faster time to production
+<ul>
+<li>IaC automation dramatically speeds up the process of provisioning infrastructure for development, tests, and production.
+<ul>
+<li>And for scaling or taking down production infrastructure as needed.</li>
+</ul>
+</li>
+<li>It can even automate the provisioning of legacy infrastructure, which might otherwise be governed by time-consuming processes like requiring you to open a ticket and waiting for someone to manually do it.</li>
+</ul>
+</li>
+<li>Efficient development
+<ul>
+<li>Developers can quickly provision sandboxes and Continuous Integration/Continuous Delivery environments.</li>
+<li>QA can quickly provide full-fidelity test environments.</li>
+</ul>
+</li>
+<li>Protection against staff churn
+<ul>
+<li>IaC ensures that provisioning intelligence always remains with the organization.
+<ul>
+<li>In the past, the knowledge of how to configure servers may have been known by only a few people in your organization.</li>
+</ul>
+</li>
+<li>Once you codify this knowledge using infrastructure as code, everyone is able to provision what they need.
+<ul>
+<li>The fear of losing tribal knowledge through staff churn is no longer an issue.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Lower costs and better developer
+<ul>
+<li>IaC lets organizations take maximum advantage of cloud computing's consumption-based cost structure.
+<ul>
+<li>It reduces the time, effort, and specialized skill required to provision and scale infrastructure.</li>
+</ul>
+</li>
+<li>It also enables developers to spend less time on plumbing and more time on mission-critical software solutions.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Approaches
+<ul>
+<li>Infrastructure as code tools can be either declarative or imperative.</li>
+<li>Declarative approach
+<ul>
+<li>You specify the desired state of the infrastructure resources you want to provision, and then the IaC tool determines how to achieve this state.</li>
+<li>It handles dependencies and executes commands in the proper order without you having to specify the order of execution.</li>
+<li>Tools that use this approach include Terraform, Puppet, SaltStack, CloudFormation, and to some extent, Ansible.</li>
+</ul>
+</li>
+<li>Imperative approach
+<ul>
+<li>Requires that you define the specific order of the commands needed to achieve the desired state.</li>
+<li>It’s up to you to get the dependencies correct as the tool will execute commands in the order you specify.</li>
+<li>Tools like Chef are imperative and to some extent, Ansible can be as well.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tools
+<ul>
+<li>Terraform
+<ul>
+<li>Uses a declarative approach to IaC with a pre-execution check to ensure that it will do what you expect it to do.</li>
+<li>You can use Terraform as a base tool in combination with Ansible where Terraform provisions the base infrastructure and Ansible configures the software on top of it.</li>
+<li>It is a very popular tool for cloud provisioning.</li>
+</ul>
+</li>
+<li>Ansible
+<ul>
+<li>An open source tool that automates IT tools such as intra-service orchestration, application deployment, cloud provisioning, and more.</li>
+<li>It uses familiar YAML files to describe the state that you want to achieve.</li>
+<li>Ansible is simple to set up because it doesn't require any client-side agents or bespoke security infrastructure, and it works by simply delivering modules to clients.
+<ul>
+<li>This makes it ideal for memory-constrained environments like configuring Internet of Things devices.</li>
+<li>These modules are run on the client side and the results are sent back to the Ansible server.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Chef
+<ul>
+<li>Describes the necessary steps to reach a final state rather than describing the state itself.
+<ul>
+<li>Using &quot;Cookbooks&quot; you can describe various processes by which you can configure a system to achieve the desired state.</li>
+</ul>
+</li>
+<li>One of the strengths of Chef is that it’s a popular tool and has lots of support.</li>
+<li>One of the drawbacks is that cookbooks are written in Ruby so you need to have Ruby skills on your team.</li>
+</ul>
+</li>
+<li>Puppet
+<ul>
+<li>You can use any existing platform.</li>
+<li>The main difference between Puppet and Chef is that Puppet is declarative, which some consider to be a preferred method.</li>
+</ul>
+</li>
+<li>Saltstack
+<ul>
+<li>SaltStack’s remote execution capabilities allow administrators to run commands on various machines in parallel with a flexible targeting system.</li>
+<li>SaltStack is designed to allow users to explicitly target and issue commands to multiple machines directly.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>IaC Example - Ansible</h3>
+<ul>
+<li>Inventory files
+<ul>
+<li>These files have a list of servers or devices that can be in the form of IP addresses or hostnames.
+<ul>
+<li>They can also specify groupings of servers like all of the web servers or all of the database servers.</li>
+<li>This is how Ansible knows what to operate on.</li>
+</ul>
+</li>
+<li>The inventory files make up the most basic building block of Ansible architecture.
+<ul>
+<li>You must reference the inventory files when executing Ansible or an Ansible playbook.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>VAR files
+<ul>
+<li>Contain the relevant variables that may be needed whenever a playbook is run on a device or group of devices.</li>
+<li>You can control how Ansible interacts with remote hosts or devices based on how you define variables.</li>
+</ul>
+</li>
+<li>Playbooks
+<ul>
+<li>Ansible has this notion of a playbook that contains any number of plays.</li>
+<li>Plays
+<ul>
+<li>Plays contain the instructions to be carried out on each server or device.</li>
+<li>Plays can also be targeted at specific groups of servers, like all of the web servers or all of the database servers.</li>
+</ul>
+</li>
+<li>A playbook is a collection reusable plays that are instructions that you give to Ansible to carry out.</li>
+</ul>
+</li>
+<li>Workflow
+<ul>
+<li>You could determine that you need to set up a web server, an app server, and a database server, or multiple web servers, even change the existing configuration of a server.
+<ul>
+<li>Whatever you need to do, Ansible will make all of the necessary configuration changes and provision all the things you need for your infrastructure.</li>
+</ul>
+</li>
+<li>Ansible will read the playbook, determine which servers from the inventory that the plays are appropriate for.</li>
+<li>And then execute the plays on each of these servers.</li>
+</ul>
+</li>
+<li>Ansible is idempotent.
+<ul>
+<li>It will not affect a server if it is already in the desired state.</li>
+<li>This allows you to be able to reapply a playbook and not worry about it installing things twice.</li>
+<li>Ansible will take care not to do that if it isn't needed.</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>
