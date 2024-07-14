@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Study Note] Coursework: Cybersecurity Analyst - Part 7 | devfreedom.github.io</title>
+    <meta name="title" content="[Study Note] Coursework: Cybersecurity Analyst - Part 7 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Study Note❯,cybersecurity,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230702_1119_study-note_cybersecurity_coursework_07/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Study Note] Coursework: Cybersecurity Analyst - Part 7</h1>
+        <div class="text-center">Published on 2 July 2023 11:19 AM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Study Note❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Study Note❯</a>
+            
+            <a href="/tags/cybersecurity" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#cybersecurity</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/cybersecurity.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>1. Incident Management Response and Cyberattack Frameworks</h1>
+<h2>Computer Security Incident Handling Guide</h2>
+<ul>
+<li>NIST recommendations
+<ul>
+<li>Establishing an incident response capability should include the following actions,
+<ul>
+<li>Establish a formal incident response capability.</li>
+<li>Create an incident response policy.</li>
+<li>Develop an incident response plan based on the incident response policy.</li>
+<li>Develop incident response procedures.</li>
+<li>Establish policies and procedures regarding incident-related information sharing.</li>
+<li>Consider the relevant factors when selecting an incident response team model.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Incident response team structure
+<ol>
+<li>Team model
+<ul>
+<li>Structure
+<ul>
+<li>Central incident response team
+<ul>
+<li>Where they handle incidents throughout the organization</li>
+<li>This model is usually used by small organizations usually in one geography</li>
+</ul>
+</li>
+<li>Distributed incident response team
+<ul>
+<li>Where the organization has multiple incident response teams responsible for either a business unit in a large organization or geographically dispersed</li>
+<li>There should be a coordinating team identified.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Staffing model
+<ul>
+<li>In-house employees</li>
+<li>Partial outsourcing
+<ul>
+<li>Outsource 24 hours a day, seven days a week monitoring of intrusion detection sensors, firewalls, and other security devices to an offsite managed security services provider a.k.a. MSSP</li>
+</ul>
+</li>
+<li>Full outsourcing to an on-site contractor
+<ul>
+<li>This model is most likely to be used when the organization needs a full-time on-site incident response team but doesn't have enough available qualified employees</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Team model selection
+<ul>
+<li>Considerations
+<ul>
+<li>24/7 availability
+<ul>
+<li>Whether they will have full-time versus part-time team members</li>
+</ul>
+</li>
+<li>Employee morale
+<ul>
+<li>Incident response work is very stressful as usually it will require on-call responsibilities of the team members.</li>
+</ul>
+</li>
+<li>Willing available experience and properly skilled people
+<ul>
+<li>Particularly in 24-hour support</li>
+<li>Segregating roles particularly reducing the amount of administrative work that team members are responsible for performing can be a significant boost to that morale.</li>
+</ul>
+</li>
+<li>Costs
+<ul>
+<li>Whether employees are required to be on-site 24/7 versus using an outsourced organization that may support multiple clients</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Incident response personnel
+<ul>
+<li>The computer security incident response team is a group of the IT professionals that provides an organization with the services and support surrounding the prevention and management and coordination of these potential cybersecurity related emergencies.</li>
+<li>Incident handling requires specialized knowledge and experience in several technical areas.
+<ul>
+<li>Knowledge required varies based on the severity of the organization's risks.
+<ul>
+<li>It's not necessary for every team member to be a technical expert.</li>
+</ul>
+</li>
+<li>Members of the incident response team should have excellent technical skills such as,
+<ul>
+<li>System administration</li>
+<li>Network administration</li>
+<li>Programming</li>
+<li>Technical support</li>
+<li>Intrusion detection</li>
+<li>etc.</li>
+</ul>
+</li>
+<li>Every team member should have good soft skills such as,
+<ul>
+<li>Teamwork skills</li>
+<li>Communication skills</li>
+<li>Problem-solving skills</li>
+<li>Critical thinking abilities</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Incident response team services
+<ul>
+<li>The main focus of incident response team is performing incident response.
+<ul>
+<li>But it's fairly rare for a team to perform incident response only.</li>
+</ul>
+</li>
+<li>Some incident response teams also perform the intrusion detection, advisory distribution where a team may issue advisories within the organization regarding new vulnerabilities and threats.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>NIST incident response lifecycle
+<ol>
+<li>Preparation</li>
+<li>Detection and analysis</li>
+<li>Containment, eradication, and recovery</li>
+<li>Post-incident activity</li>
+</ol>
+</li>
+</ul>
+<h2>IBM X-Force IRIS Cyberattack Framework</h2>
+<h3>Cyberattack preparation framework</h3>
+<ol>
+<li>Attacker determines objective
+<ul>
+<li>'Attack beginnings' stage</li>
+</ul>
+</li>
+<li>Prepare attack
+<ul>
+<li>'Attack beginnings' stage</li>
+<li>This stage includes all the known methods that attackers use to advance from target selection to launching their attack.
+<ul>
+<li>Conduct external reconnaissance</li>
+<li>Prepare malware software tools</li>
+<li>Align tactics, techniques, and procedures (TTPs) to target</li>
+<li>Prepare attack infrastructure</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Launch attack
+<ul>
+<li>'Launch and execute attack' stage</li>
+<li>Once the attack infrastructure is ready, the attacker launches an attack against the target.
+<ul>
+<li>Direct attacks
+<ul>
+<li>Stolen credentials</li>
+<li>Phishing email with a malicious file or domain attached</li>
+</ul>
+</li>
+<li>Indirect attacks
+<ul>
+<li>Infection of a work laptop while connected to a home network</li>
+<li>Compromise of a website or online advertisement</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Successful compromise or failed attempt</li>
+</ol>
+<h3>Cyberattack execution framework</h3>
+<ol>
+<li>Access environment
+<ul>
+<li>'Launch and execute attack' stage</li>
+<li>Once the attack is determined successful, the attacker will work quickly to establish a foothold.
+<ul>
+<li>Initial compromise
+<ul>
+<li>The attacker gains access to at least one host on the network or has logging in to a user's account.</li>
+</ul>
+</li>
+<li>Establish foothold
+<ul>
+<li>The attacker ensures continued access to, and control of, at least one host or user account within the network.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Expand access
+<ul>
+<li>'Continuing attack and expanding network access` stage
+<ul>
+<li>Escalate privileges</li>
+<li>Conduct internal reconnaissance</li>
+<li>Move laterally</li>
+<li>Maintain persistence</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Strengthen attacks
+<ul>
+<li>'Continuous phase' stage
+<ul>
+<li>Operational security
+<ul>
+<li>Throughout attack preparation, operational security represents all the actions attackers take to hide their attack preparations from the victims or defenders.</li>
+</ul>
+</li>
+<li>Defense evasion and monitoring
+<ul>
+<li>This aspect of attack activity exists throughout the execution cycle and reflects the efforts bad actors may use to evade detection.</li>
+<li>Tactics include the use of malicious software designed to disguise the attack presence and data masking</li>
+</ul>
+</li>
+<li>Feedback pipeline
+<ul>
+<li>The feedback pipeline exists from the time the attack preparation begins, all the way through the execution stage.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Attacker meets objective
+<ul>
+<li>'Attack objective execution' stage</li>
+<li>Once the execution phases are completed successfully, the attacker moves towards the final goal which could include,
+<ul>
+<li>Disruption through financial or data theft</li>
+<li>Ideological messaging</li>
+<li>Industrial espionage</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3>Defense Tips - Increase Network Security</h3>
+<ul>
+<li>To effectively prevent bad actors from entering your network, take a holistic view of cyberattack techniques, from the attacker's perspective.</li>
+<li>'Attack beginnings' stage
+<ul>
+<li>Threat profile
+<ul>
+<li>Build a threat profile of adversarial actors who are likely to target the company. Consider,
+<ul>
+<li>Have threat actors targeted the organization?</li>
+<li>What type of attacker would be interested in the organization?</li>
+<li>Where are these threat groups?</li>
+<li>What are the attacker's goals?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Assets safeguard
+<ul>
+<li>Take steps to safeguard the assets attackers are likely to target, such as your most critical data.
+<ul>
+<li>Determine whether threat actors have interest in the organization and its assets, intellectual property, customers or proprietary data.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Domain management
+<ul>
+<li>To prevent C&amp;C servers from crafting domains that look legitimate to unsuspecting targets, purchase all the likely typo-changed domains associated with your company name, and monitor for suspicious domain registrations.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>'Launch and execute attack' stage
+<ul>
+<li>Hardening
+<ul>
+<li>Harden the attack surface and deter most attackers from viewing the organization as an easy target with methods, such as efficient and timely patch management.
+<ul>
+<li>Include patch management performance metrics in the system administration process and use automated checks for patches.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Privilege control
+<ul>
+<li>Apply the concept of least privilege.
+<ul>
+<li>Make sure users and systems only have access privileges that correspond with their role.
+<ul>
+<li>Remove excess privileges.</li>
+<li>Only allow users and systems to perfrom authorized tasks.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Endpoint security
+<ul>
+<li>To disrupt attacks, implement strong endpoint detection and mitigation strategies.</li>
+</ul>
+</li>
+<li>Threat hunting
+<ul>
+<li>Employ a threat-hunting program to aid in threat identification and mitigation.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>'Continuing attack and expanding network access' stage
+<ul>
+<li>Threat hunting
+<ul>
+<li>Refine your threat-hunting program.
+<ul>
+<li>As unknown threats are discovered, migrate associated threat indicators as signatures into detection and protection platforms, to automatically identify any other instances.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Analytics
+<ul>
+<li>Invest in a centralized logging and analysis platform to automatically prioritize data, and place it into tiers ranging from benign activities to those likely indicating maliciousness.</li>
+<li>Whitelist and create a baseline for normal activity, and perform frequency analysis.</li>
+</ul>
+</li>
+<li>Policies
+<ul>
+<li>Enforce strong user password policies by,
+<ul>
+<li>Enabling multi-factor authentication (MFA)</li>
+<li>Restricting the ability to use the same password across systems</li>
+<li>Storing password hashes in secured locations to prevent password-stealing methods</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>'Continuous phase' stage
+<ul>
+<li>Analytics
+<ul>
+<li>To disrupt defense evasion and monitoring tactics, analyze all network traffic and endpoints, and search often for anomalous behavior.</li>
+</ul>
+</li>
+<li>Honeypot
+<ul>
+<li>Set up a honeypot, a deceptive file or system designed to trick attackers into accessing it.
+<ul>
+<li>To trigger an immediate alert to security teams with details regarding the activity on the honeypot, including user information and logged keystrokes.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Monitoring
+<ul>
+<li>Monitor or restrict unusual data transfers. specifically,
+<ul>
+<li>Monitor for and inspect the creation of RAR files, which can be used to exfiltrate information.</li>
+<li>Investigate spikes in emails to external addresses.</li>
+<li>Monitor for the creation of auto forward rules and new email delegates.</li>
+<li>Monitor for excessive traffic leaving through file transfer protocol (FTP) or domain name sever (DNS).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>'Attack objective execution' stage
+<ul>
+<li>Organize
+<ul>
+<li>Build and train a dedicated team to respond to security incidents.</li>
+<li>Practice relevant attack scenarios using tabletop exercises or simulations that mimic a cyberattack.</li>
+<li>Thoroughly examine available forensics to...
+<ul>
+<li>Understand attack details</li>
+<li>Establish mitigation priorities</li>
+<li>Provide data to law enforcement</li>
+<li>Plan risk reduction strategies</li>
+</ul>
+</li>
+<li>Consider an incident response retainer with trusted security partners.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Data Breach</h2>
+<ul>
+<li>A data breach involves data either belonging to the organization only, but more often both inside and outside the organization.
+<ul>
+<li>Organization only
+<ul>
+<li>This type of breach will cause profits and new business.</li>
+</ul>
+</li>
+<li>Data inside and outside of the organization
+<ul>
+<li>This type of breach will involve loss of business revenue and typically legal sanctions.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Technical aspects
+<ul>
+<li>Isolating network segments</li>
+<li>Removing malware</li>
+<li>Limiting system access to downed systems</li>
+</ul>
+</li>
+<li>Communications
+<ul>
+<li>Federal organizations or law enforcement agencies</li>
+</ul>
+</li>
+<li>Who should be involved?
+<ul>
+<li>Management and technical incident response team
+<ul>
+<li>The team must be defined in the incident response strategy prior to a data breach.</li>
+</ul>
+</li>
+<li>Legal personnel</li>
+<li>Public relations</li>
+</ul>
+</li>
+</ul>
+<h2>Data Breach Case Study - Target Corporation</h2>
+<ul>
+<li>In November and December 2013, there was a successful cyberattack against Target, which is one of the largest retail companies in the United States.</li>
+<li>The attacker gaind access to Target's computer network, stole the financial and personal information of 110M Target customers, and removed this information from Target's network to a server in Eastern Europe.</li>
+</ul>
+<h3>Kill Chain Timeline</h3>
+<ol>
+<li>Target had been certified in September 2013 as compliant with the PCI-DSS.
+<ul>
+<li>Attackers steal Fazio credentials</li>
+<li>Attackers first breach Target network</li>
+<li>Attackers test malware on Target POS</li>
+</ul>
+</li>
+<li>Target's Symantec software identifies malicious activity and first FireEye alerts triggered
+<ul>
+<li>POS malware fully installed</li>
+<li>Attackers install data exfiltration malware</li>
+</ul>
+</li>
+<li>More FireEye alerts were triggered
+<ul>
+<li>Attackers install upgraded versions of exfiltration malware</li>
+<li>Attackers begin exfiltrating data</li>
+</ul>
+</li>
+<li>DOJ notifies Target</li>
+<li>Target confirms breach and removes most malware
+<ul>
+<li>Attackers lose foothold in Target network</li>
+</ul>
+</li>
+<li>Target publicly announces 40M credit and debit card records stolen afger story broken on 2013-12-18</li>
+<li>Target confirms a further 70M data records stolen</li>
+</ol>
+<h3>Red Flags</h3>
+<ul>
+<li>First trigger - already compromised
+<ul>
+<li>FireEye event</li>
+<li>False position prone
+<ul>
+<li>Users do not fully trust</li>
+</ul>
+</li>
+<li>No additional activity information
+<ul>
+<li>What traffic preceded and followed, from and to where?</li>
+</ul>
+</li>
+<li>Business context
+<ul>
+<li>Are critical assets exposed?</li>
+</ul>
+</li>
+<li>Network context
+<ul>
+<li>Can the attackers reach critical assets?</li>
+</ul>
+</li>
+<li>No business process for triaging and analyzing was defined.</li>
+<li>The attack was ignored.</li>
+</ul>
+</li>
+<li>More alerts - no linkage
+<ul>
+<li>Different areas of network</li>
+<li>Not correlated with other activity or in the context of the business or network</li>
+<li>Not enough visibility or context</li>
+<li>Still ignored</li>
+</ul>
+</li>
+<li>DOJ notification - 40M records are gone
+<ul>
+<li>Too late</li>
+<li>Nightmare business scenario unfolds</li>
+</ul>
+</li>
+<li>Continued breaches undetected - 70M extra records are gone
+<ul>
+<li>Worst case scenario for business</li>
+</ul>
+</li>
+</ul>
+<h3>Vulnerabilities</h3>
+<ul>
+<li>Attackers took advantage of weak security at a Target vendor, gaining a foothold in Target's inner network.
+<ul>
+<li>Recon - Weaponize - Deliver</li>
+</ul>
+</li>
+<li>Target missed warnings from its anti-intrusion software that attackers were installing malware in its network.
+<ul>
+<li>Deliver - Exploit</li>
+</ul>
+</li>
+<li>Attackers took advantage of weak controls within Target's network and successfully maneuvered into the network's most sensitive areas.
+<ul>
+<li>Deliver - Exploit - Install</li>
+</ul>
+</li>
+<li>Target missed information provided by its anti-intrusion software about the attackers' escape plan, allowing attackers to steal as many as 110M customer records.
+<ul>
+<li>Command and control - Action</li>
+</ul>
+</li>
+</ul>
+<h3>Aftermath</h3>
+<ul>
+<li>Target reached a settlement in a class-action lawsuit brought by banks for about $58M in May 2016</li>
+<li>In May 2017, Target paid $18.5M to settle claims by 47 states.</li>
+<li>Target reached a confidential settlements with several card issuers and individual banks</li>
+<li>Target incurred total $292M expenses related to the data breach and $90M were offset by insurance.</li>
+</ul>
+<h3>Prevention</h3>
+<ul>
+<li>Security logs and events</li>
+<li>Network flow data</li>
+<li>Vulnerability data</li>
+<li>Network topology</li>
+<li>Asset profile with business context, risk, ownerships</li>
+<li>Correlation rules</li>
+<li>User behavioral analysis</li>
+<li>Increased incident relevance</li>
+<li>One incident case and analysis workflow</li>
+<li>Integrated forensics and rapid confirmation of attack</li>
+<li>Massive reduction of window of exposure</li>
+</ul>
+<h2>Watering Hole Attack</h2>
+<ol>
+<li>Stake out the watering hole
+<ul>
+<li>e.g. Insert iframe that redirects visitors to a zero-day malware download</li>
+</ul>
+</li>
+<li>Catch the visiting &quot;gazelles&quot;</li>
+<li>The prey returns to the herd</li>
+</ol>
+<h3>Watering Hole Attack Case Study - U.S. Regional Financial Institutes</h3>
+<ul>
+<li>In July 2012, several regional consumer financial services websites were hacked.
+<ul>
+<li>The hackers planted a hidden iframe on the consumer portal.</li>
+<li>Customers of the bank were redirected to a malicious download site when they visited to do their online banking.</li>
+</ul>
+</li>
+<li>Attackers used different variants of the Gh0st RAT trojan horse, making detection very hard.
+<ul>
+<li>Variant A
+<ul>
+<li>Exploited a known Microsoft vulnerability (CVE-2012-1889)</li>
+<li>Patch for all Microsoft operation systems was released on 2012-07-10.</li>
+<li>Variant was not recognized by any antivirus vendor.</li>
+</ul>
+</li>
+<li>Variant B
+<ul>
+<li>Exploited a known Java vulnerability (CVE-2012-1723)</li>
+<li>Patch was released by Oracle, 2012-06-12.</li>
+<li>Variant was recognized by McAfee VSE as of 2012-07-17.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>After being infected, compromised hosts made contact with a remote command-and-control server in China.
+<ul>
+<li>Infected machines attempted to communicate with one of two Chinese C&amp;C servers.</li>
+<li>If communications are successfully established, the C&amp;C server gains complete, real-time control of a system on the protected network.</li>
+<li>The RAT malware allows a remote attacker to access data, log system activity, capture key logs, take screenshots, activate the system's camera, and record from the system's microphone.</li>
+</ul>
+</li>
+<li>If the attack is not detected fast enough, the infected machine becomes the new launchpad of deepening the penetration.
+<ul>
+<li>The infected machine &quot;legitimately&quot; distributes more malware inside the enterprise network to gain a stronger foothold if detected.</li>
+<li>The malware's first goal is to obtain privileged user identities, which it then uses to gain access to valuable assets inside the enterprise network.</li>
+<li>Most attacks use ports and scans that typically are not executed from either the infected machines or user IDs.</li>
+<li>After valuable assets are found, they are slowly exfiltrated to not raise any suspicion.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>2. Phishing Scams and Point-Of-Sale Attack</h1>
+<h2>Phishing</h2>
+<ul>
+<li>Fraudulent messages being sent to trick you into divulging personal information
+<ul>
+<li>Phishing comes from the analogy that Internet scammers are using e-mail lures to 'fish' for passwords and financial data from the internet users.
+<ul>
+<li>Phishing is also known as 'brand spoofing' and 'carding'.</li>
+<li>First used by hackers to describe stealing AOL accounts</li>
+</ul>
+</li>
+<li>Such personal information can be used to steal your identity, bank account, credentials, and access to your computer system.</li>
+</ul>
+</li>
+<li>Types
+<ul>
+<li>Phishing</li>
+<li>Spear Phishing</li>
+<li>Whaling</li>
+</ul>
+</li>
+<li>Tactics
+<ul>
+<li>Using a message
+<ul>
+<li>'From:' address that looks very close to one of the legitimate addresses</li>
+</ul>
+</li>
+<li>Situational persuasion
+<ul>
+<li>An alarm, financial lure, or otherwise attractive situation that either makes the recipient panic, or tempts the recipient into taking an action.</li>
+</ul>
+</li>
+<li>Stolen identity
+<ul>
+<li>Sending the email from an email using a legitimate account holder's software or credentials</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>How they get you
+<ul>
+<li>Say they've noticed some suspicious activity or log-in attempts</li>
+<li>Claim there's a problem with your account or your payment information</li>
+<li>Say you must confirm some personal information</li>
+<li>Include a fake invoice</li>
+<li>Want you to click on a link to make a payment</li>
+<li>Say you are eligible to register for a government refund</li>
+<li>Offer a coupon for free stuff</li>
+</ul>
+</li>
+<li>Spoofed domains
+<ul>
+<li>Spoofed domains can be difficult for users to visually discern, and often mirror legitimate domains used by the impersonated company.</li>
+<li>An authentic-looking website can help convince a user to divulge personal data on a malicious website if it resembles the original closely enough.</li>
+</ul>
+</li>
+<li>Encryption can be misleading
+<ul>
+<li>HTTPS doesn't mean everything is secure.
+<ul>
+<li>HTTPS only encrypts the data exchanged between a user's browser and the website the user is visiting.</li>
+<li>HTTPS links in phishing emails are still very dangerous and can't protect you against phishing attacks.</li>
+</ul>
+</li>
+<li>Studying HTTP on phishing sites provides insight into how phishers are fooling internet users by turning an internet security feature against them.</li>
+</ul>
+</li>
+<li>Look at the email
+<ul>
+<li>Suspicious sender's address</li>
+<li>Generic greetings and signature</li>
+<li>Spoofed hyperlinks and websites</li>
+<li>Spelling and layout</li>
+<li>Suspicious attachments</li>
+</ul>
+</li>
+</ul>
+<h3>Impact of Phishing</h3>
+<ul>
+<li>The nature of phishing itself has changed into more sophisticated cybercrime attacks that mount advanced persistent threats (APTs) against organizations, and steal individuals' financial identities with devastating consequences for both users and organizations.</li>
+<li>Phishing statistics
+<ul>
+<li>The average financial cost of a data breach is $3.86M.</li>
+<li>Phishing accounts for 90% of data breaches.</li>
+<li>15% of people successfully phished, will be targeted at least one more time within a year.</li>
+<li>76% of businesses reported being a victim of a phishing attack in the last year.</li>
+<li>BEC scams accounted for over $12B in losses.</li>
+<li>Phishing attempts have grown 65% in the last year.</li>
+<li>Around 1.5M new phishing sites are created each month.</li>
+<li>30% of phishing messages get opened by targeted users.</li>
+</ul>
+</li>
+<li>Identity theft
+<ul>
+<li>There were 650K cases of identity theft in 2019.</li>
+<li>Those aged 30 to 39 reported the most cases of identity theft in 2019.</li>
+<li>Credit card fraud was the most common type of identity theft in 2019, more than doubled from 2017.</li>
+<li>Almost 165M records containing personal data were exposed through data breaches in 2019.</li>
+<li>The Capital One incident was the biggest data breach of 2019, exposing the personal data of 100M U.S. customers.</li>
+</ul>
+</li>
+<li>Business impact
+<ul>
+<li>Phishing e-mails are still the main weapon.</li>
+<li>Phishing attacks are no longer isolated incidents.</li>
+<li>An attack occurs on average every 39 seconds.</li>
+<li>Nearly half of all small businesses have been attacked with disastrous results.</li>
+<li>60% of small-and-medium-sized business that get hacked go out of business after just 6 months.</li>
+</ul>
+</li>
+</ul>
+<h2>Phishing Case Study - Google &amp; Facebook</h2>
+<ul>
+<li>Scammers stole over $100M from Facebook and Google.
+<ul>
+<li>They just emailed the tech giant and asked for it.</li>
+<li>The scheme included setting up a fake business and sending phishing emails to employees of Facebook and Google.</li>
+<li>The scheme ultimately duped those multi-billion-dollar companies out of more than $100M in total between 2013 and 2015.</li>
+</ul>
+</li>
+</ul>
+<h3>Timeline</h3>
+<ul>
+<li>Prosecutors accused Rimasauskas in 2016 of incorporating a company that posed as Taiwan-based Quanta Computer which actually does business with Facebook and Google.</li>
+<li>Rimasauskas served as the &quot;sole member of the board of directors&quot; of the fake company.</li>
+<li>Starting in 2013, Rimasauskas and his co-conspirators created fairly convincing forgery emails using fake email accounts.</li>
+<li>They sent phishing emails with fake invoices to employees at Facebook and Google.</li>
+<li>Rimasauskas' work also involved forged invoices, contracts, and letters that falsely appeared to have been executed and signed by executives and agents of the companies he was impersonating.</li>
+</ul>
+<h3>Vulnerabilities</h3>
+<ul>
+<li>Spear phishing
+<ul>
+<li>This type of attack targets specific users or groups.</li>
+<li>Finance team in this case</li>
+</ul>
+</li>
+<li>Systems
+<ul>
+<li>The tough part about this attack was that all the systems were bypassed.</li>
+</ul>
+</li>
+<li>People
+<ul>
+<li>Given the large transactions this team was used to facilitating, these requests were not unusual.</li>
+</ul>
+</li>
+<li>Delayed response
+<ul>
+<li>$100M+ in payments was taken due to lack of detection.</li>
+</ul>
+</li>
+</ul>
+<h3>Cost</h3>
+<ul>
+<li>The scam took $98M from Facebook in 2015 and $23M from Google.</li>
+<li>Both companies have recovered most of that money, since the scheme was discovered and the ring leader was arrested.</li>
+<li>He was sentenced to 30 years in July 2019.</li>
+</ul>
+<h3>Prevention</h3>
+<ul>
+<li>Early detection</li>
+<li>Review invoices and payment-related communications</li>
+<li>Create payment processes</li>
+<li>Implement two-factor authentication</li>
+<li>Email system automation</li>
+<li>Employee education and training</li>
+<li>SPAM filter</li>
+<li>Critical patches</li>
+<li>Antivirus</li>
+<li>Encryption</li>
+</ul>
+<h2>Point-of-Sale (POS) Breach</h2>
+<ul>
+<li>The main objective of point-of-sale (POS) breaches is to steal 16-digit credit card numbers.
+<ul>
+<li>60% of POS transactions are performed via credit card, which is big business for cybercriminals.</li>
+</ul>
+</li>
+<li>The industries most affected by POS data breaches are restaurants, retail stores, grocery stores, hotels, etc.
+<ul>
+<li>Data breaches happen more frequently to small-and-medium-sized businesses because they are easier to compromise than the computer networks or large retailers.</li>
+</ul>
+</li>
+<li>PCI-DSS is the main payment card industry information security standard, created in 2006 by PCI security standards council.
+<ul>
+<li>The goal is to protect cardholder data and sensitive authentication data wherever it is processed, stored, or transmitted.</li>
+<li>Security controls and processes for PCI-DSS requirements
+<ul>
+<li>Build and maintain a secure network and systems.</li>
+<li>Protect cardholder data.</li>
+<li>Maintain a vulnerability management program.</li>
+<li>Implement strong access control measures.</li>
+<li>Regularly monitor and test networks.</li>
+<li>Maintain an information security policy.</li>
+</ul>
+</li>
+<li>Other PCI-DSS requirements
+<ul>
+<li>Install and maintain a firewall configuration to protect cardholder data.</li>
+<li>Do not use vendor-supplied defaults for system passwords and other security parameters.</li>
+<li>Encrypt transmission of cardholder data across open, public networks.</li>
+<li>Use and regularly update antivirus software.</li>
+<li>Develop and maintain secure systems and applications.</li>
+<li>Restrict access to cardholder data by business need-to-know</li>
+<li>Assign a unique ID to each person with computer access.</li>
+<li>Restrict physical access to cardholder data.</li>
+<li>Track and monitor all access to network resources and cardholder data.</li>
+<li>Any commercial entities involved with payment card processing must never store sensitive authentication data after authorization.
+<ul>
+<li>3-digit CVC/CVV</li>
+<li>Magnetic stripe or IC chip data, a.k.a. Full Track Data</li>
+<li>Cardholder's PIN</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Being only PCI Compliant is not enough.
+<ul>
+<li>Semi-integrated payment approach</li>
+<li>Mobile device management (MDM)</li>
+<li>Point-to-point encryption</li>
+<li>Employee education</li>
+<li>Tokenization</li>
+</ul>
+</li>
+</ul>
+<h2>POS Malware</h2>
+<ul>
+<li>POS systems require network connection in order to contact external credit card processors so that the transactions are validated.
+<ul>
+<li>Sufficiently skilled and determined attackers can go after a business's POS terminals on a large scale and compromise the credit cards of thousands of users at a time.</li>
+<li>The same network connectivity can also be leveraged to help exfiltrate any stolen information.</li>
+</ul>
+</li>
+<li>Operating systems
+<ul>
+<li>Most POS run on Windows or Linux, making them small computers.</li>
+</ul>
+</li>
+<li>How?
+<ul>
+<li>Once inside, the POS malware can select which data to steal and upload to a remote server.</li>
+<li>Most POS malwares come equipped with backdoor and command-and-control features.</li>
+</ul>
+</li>
+<li>When?
+<ul>
+<li>Industry uses end-to-end encryption of sensitive payment data, which comes from the card's magnetic strip or chip, when it's transmitted, received, or stored.</li>
+<li>Decryption only occurs in the POS device's RAM, where it's processed.</li>
+</ul>
+</li>
+</ul>
+<h3>Common POS Malware Types</h3>
+<ul>
+<li>Alina
+<ul>
+<li>This malware scans the system's memory to check if the contents match regular expressions, which indicate the presence of card information that can be stolen.</li>
+<li>Evolved into JackPOS and Backoff malware.</li>
+</ul>
+</li>
+<li>vSkimmer
+<ul>
+<li>If it does not find its server, it checks for the presence of a removable drive with the label 'KARTOXA007'. If this drive is found, it drops a file that contains any stolen information into it, allowing a method of offline data exfiltration.</li>
+</ul>
+</li>
+<li>Dexter
+<ul>
+<li>Its information theft activities are not limited to just stealing card information.</li>
+<li>It also steals various system information and installs a keylogger onto affected systems.</li>
+<li>Evolved into Soraya malware.</li>
+</ul>
+</li>
+<li>FYSNA
+<ul>
+<li>Using the Tor network to communicate with its C&amp;C server makes detection and investigation difficult, by making all of the network traffic made by the malware extremely difficult to analyze.</li>
+</ul>
+</li>
+<li>Decebel
+<ul>
+<li>Decebel checks if sandboxing or analysis tools are present on a machine before running.</li>
+<li>This aims to make detection and analysis more difficult.</li>
+</ul>
+</li>
+<li>BlackPOS
+<ul>
+<li>BlackPOS uses FTP to upload information to a server of the attacker's choosing.</li>
+<li>This allows attackers to consolidate stolen data from multiple POS terminals on a single server.</li>
+<li>Evolved into BrutPOS and BlackPOS v2 malware.</li>
+</ul>
+</li>
+<li>Other malwares
+<ul>
+<li>Rdasrv
+<ul>
+<li>Evolved into BrutPOS</li>
+</ul>
+</li>
+<li>ChewBacca</li>
+</ul>
+</li>
+</ul>
+<h3>End goals</h3>
+<ul>
+<li>Criminals sell the information to brokers who buy the information in bulk.</li>
+<li>Brokers sell the information to carders.</li>
+<li>Carders use a carder website to obtain payment information, which they will purchase prepaid credit/debit cards with.
+<ul>
+<li>Those prepaid cards will be used to buy gift cards, which are used to buy goods and sell for profit.</li>
+<li>The items are shipped to a re-shipper, making the transaction from end to end very difficult to follow.</li>
+</ul>
+</li>
+</ul>
+<h2>POS Breach Prevention Best Practices</h2>
+<ul>
+<li>More often, hackers can gain entry to your network via a phishing attack, unpatched vulnerabilities in your POS software, etc.</li>
+<li>The smartest method of prevention is to utilize tools for real-time detection and PCI compliance monitoring.
+<ul>
+<li>Actively monitoring your POS network for changes.</li>
+<li>Using compliant, best-of-class, end-to-end encryption around cardholder data.</li>
+<li>Limiting the hosts that can communicate with POS systems.</li>
+<li>Adopting POS terminals that support payment cards equipped with an IC chip, which is more secure than magnetic stripes.</li>
+<li>Utilizing employee screening and training to minimize insider threats.</li>
+<li>Training employees to immediately detect and report possible signs of tampering.</li>
+</ul>
+</li>
+</ul>
+<h2>POS Attack Case Study - Home Depot</h2>
+<ul>
+<li>The attack was completed using stolen credentials from one of the retailer's vendors.
+<ul>
+<li>Those credentials were used to obtain access to the network, privileges elevated, and access to POS systems, to record credit card details.</li>
+<li>The malware infection went unnoticed for 5 months between April and September 2014.</li>
+</ul>
+</li>
+</ul>
+<h3>Timeline</h3>
+<ul>
+<li>Stolen credentials were used to obtain access to the network.</li>
+<li>Those privileges were subsequently elevated.</li>
+<li>Access to the POS system was obtained and malware was downloaded to record credit card details.</li>
+<li>The malware infection went unnoticed for 5 months.</li>
+<li>Home Depot began an investigation on September 2nd.</li>
+<li>On September 8th, 2014, Home Depot released a statement indicating that its payment card systems were breached.</li>
+</ul>
+<h3>Vulnerabilities</h3>
+<ul>
+<li>Vulnerability management program
+<ul>
+<li>No regularly scheduled scan</li>
+</ul>
+</li>
+<li>Systems
+<ul>
+<li>Configuration of the hardware, software, and network</li>
+</ul>
+</li>
+<li>Vendor credentials
+<ul>
+<li>Credentials were not properly managed</li>
+</ul>
+</li>
+<li>Delayed response
+<ul>
+<li>Lack of monitoring capabilities led to 5-month delay</li>
+</ul>
+</li>
+<li>The attackers exploited a zero-day vulnerability in Windows, which allowed them to pivot from the vendor-specific environment to the Home Depot corporate environment.</li>
+</ul>
+<h3>Cost</h3>
+<ul>
+<li>56M payment cards stolen</li>
+<li>$19.5M payout to customers that had been impacted by the breach, including credit monitoring services.</li>
+<li>A minimum of $134.5M to credit card companies and banks</li>
+<li>The total cost of the retail data breach is approximately $179M, not including legal fees, which would expect the total cost close to $200M.</li>
+</ul>
+<h3>Prevention</h3>
+<ul>
+<li>Following the breach, changes were implemented with a focus on making retail transactions more secure.
+<ul>
+<li>The chip-and-PIN card is embedded with security chip in addition to the traditional magnetic stripe.</li>
+<li>Vendors began promoting an alternative method to payment cards using mobile payment methods, like Apple Pay and Google Wallet.</li>
+<li>Additional security was also provided by point-to-point (P2P) encryption.</li>
+</ul>
+</li>
+<li>The only risk that still remains with P2P encryption is, if someone were to install a credit card skimmer on the actual PIN pad, which is still occuring.</li>
+</ul>
+<hr>
+<h1>3. 3rd Party Breach and Ransomware</h1>
+<h2>3rd Party Breach</h2>
+<ul>
+<li>Supply-chain attacks, a.k.a. Value-chain/3rd-party attacks, are attacks originated from one of your 3rd parties that has access to your system.
+<ul>
+<li>e.g. Data management companies, law firms, e-mail providers, web hosting companies, subsidiaries, vendors, subcontractors, external software/hardware companies, analytics partner, etc.</li>
+</ul>
+</li>
+<li>Statistics
+<ul>
+<li>$2.1M is the average annual spend on vetting 3rd parties.
+<ul>
+<li>However, 64% say the processes used are only somewhat or not effective.</li>
+</ul>
+</li>
+<li>40% of organizations use manual procedures like spreadsheets, and 51% employ risk scanning tools to vet their 3rd parties.
+<ul>
+<li>However, 34% said results of these tools are only somewhat valuable, while 20% said results don't provide any insights.</li>
+</ul>
+</li>
+<li>3rd parties are spending 15,000 hours a year on completing assessments, at an average cost of $1.9 million annually.
+<ul>
+<li>However, over 55% said these assessments only somewhat or do not accurately reflect their security posture.</li>
+</ul>
+</li>
+<li>Only 8% of assessments result in action, such as disqualification of a vendor or a requirement to remediate gaps.
+<ul>
+<li>However, if assessments revealed gaps, only 26% of respondents say their organizations terminated the relationship.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3rd-party breach types
+<ul>
+<li>Cloud-based services
+<ul>
+<li>e.g. Cloud storage, web hosting</li>
+</ul>
+</li>
+<li>Payment
+<ul>
+<li>e.g. Credit card processing, point-of-sale systems</li>
+</ul>
+</li>
+<li>JavaScript library
+<ul>
+<li>e.g. Web analytics</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3rd-party breaches in 2020
+<ul>
+<li>Instagram
+<ul>
+<li>Usernames and passwords</li>
+</ul>
+</li>
+<li>Carson City, United States
+<ul>
+<li>Residents' personal and payment information</li>
+</ul>
+</li>
+<li>Amazon
+<ul>
+<li>8M sales records</li>
+</ul>
+</li>
+<li>GE
+<ul>
+<li>Direct deposit forms, IDs, marriage and birth certificates</li>
+</ul>
+</li>
+<li>radio.com
+<ul>
+<li>Listener's personal information and credentials</li>
+</ul>
+</li>
+<li>T-Mobile
+<ul>
+<li>Customer names, phone numbers, addresses</li>
+</ul>
+</li>
+<li>MSU
+<ul>
+<li>Names, phone numbers, addresses, credit card information</li>
+</ul>
+</li>
+<li>Marriot
+<ul>
+<li>5.2M customer information</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Cyber supply-chain risks</h3>
+<ul>
+<li>When companies began extensively outsourcing and globalizing the supply chain in the 1980-1990s, they did so without understanding the risks suppliers posed.</li>
+<li>Lack of physical or cyber security at supplier sites could result in a breach of corporate data systems or product corruption.</li>
+<li>How well do suppliers vet their own personnel?
+<ul>
+<li>Of particular concern are personnel in supplier companies that have access to the data, systems, or facilities of their customers.</li>
+</ul>
+</li>
+<li>How well do the vendors vet their service providers?
+<ul>
+<li>Any service provider, from janitorial services to system maintenance, or any provider with access to company information poses a potential cyber risk.</li>
+</ul>
+</li>
+<li>How well do the vendors vet their products and software?
+<ul>
+<li>Of particular concern are products with embedded IT that will be integrated into their customer's systems.</li>
+</ul>
+</li>
+</ul>
+<h3>3rd Party Breach Impacts</h3>
+<ul>
+<li>Over 63% of breaches linked to a 3rd party.
+<ul>
+<li>Financial services
+<ul>
+<li>Reported the second most 3rd-party breaches despite their 3rd parties spending the most time on assessments (over 17,000 hours per year).</li>
+</ul>
+</li>
+<li>Health &amp; Pharmaceuticals
+<ul>
+<li>Less likely to have a 3rd-party breach and most likely to use a combination of tools to assess 3rd parties.</li>
+</ul>
+</li>
+<li>Public sector
+<ul>
+<li>Use a combination of tools to assess 3rd parties and tend to believe their results are valuable.</li>
+</ul>
+</li>
+<li>Retail
+<ul>
+<li>Reported the most 3rd-party data breaches despite their 3rd parties spending over 16,578 hours on assessments.</li>
+</ul>
+</li>
+<li>Technology &amp; Software
+<ul>
+<li>Most likely to have multiple 3rd-party data breaches, and over 41% still use manual procedures to assess 3rd parties.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Key findings
+<ul>
+<li>Third-party breaches remain an expensive problem.</li>
+<li>IT security professionals still believe their TPCRM programs are immature.</li>
+<li>Using a combination of automated tools provides better results.</li>
+<li>Risk prioritization processes are viewed as critical, but current processes are ineffective.</li>
+<li>If 3rd-party security gaps are discovered, organizations are not proactive in mitigating these risks.</li>
+<li>No one function-controls the budget for 3rd-party cyber risk management (TPCRM) programs.</li>
+<li>Investing in better assessment and vetting tools can increase effectiveness in TPCRM, while decreasing the cost of maintaining the program.</li>
+<li>There is a massive disparity between the resources invested (both human and financial), and the value received from today's approach to TPCRM.</li>
+</ul>
+</li>
+<li>Issues with vendors
+<ul>
+<li>Statistics
+<ul>
+<li>Mitigation or remediation is requested - 33%</li>
+<li>Relationship is terminated - 28%</li>
+<li>Collaborate with 3rd party to improve its security measures - 27%</li>
+<li>Risk is transferred using insurance - 12%</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Consumer impact
+<ul>
+<li>Loss of trust and business
+<ul>
+<li>65% of data breach victims lost trust in an organization.</li>
+<li>80% of consumers will defect from a business if their information is compromises in a breach</li>
+</ul>
+</li>
+<li>Negative word of mouth
+<ul>
+<li>85% tell others about their experience</li>
+<li>33.5% use social media to complain about their experience.</li>
+<li>20% comment directly on the company's website.</li>
+</ul>
+</li>
+<li>Lose out to competitors
+<ul>
+<li>52% of consumers would consider paying for the same products or services from a provider with better security.</li>
+<li>52% of consumers said security is an important or main consideration when purchasing products or services.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The need of risk management controls
+<ul>
+<li>Assessing compliance with regulations</li>
+<li>Vetting 3rd-party security practices</li>
+<li>Establishing data breach and cyber exploit incident response procedures</li>
+</ul>
+</li>
+</ul>
+<h3>NIST SCRM Guidance</h3>
+<ul>
+<li>A primary objective of cyber SCRM is to identify, assess, and mitigate products and services that may contain potentially malicious functionality, are counterfeit, or are vulnerable due to poor manufacturing and development practices within the cyber supply chain.</li>
+<li>Cyber SCRM activities may include,
+<ul>
+<li>Determining cybersecurity requirements for suppliers</li>
+<li>Enacting cybersecurity requirements through formal agreement</li>
+<li>Communicating to suppliers how those cybersecurity requirements will be verified and validated</li>
+<li>Verifying that cybersecurity requirements are met through a variety of assessment methodologies</li>
+</ul>
+</li>
+</ul>
+<h3>Best Practices</h3>
+<ul>
+<li>Evaluation of the security and privacy practices of all 3rd parties
+<ul>
+<li>Conduct regular audit and assessments to evaluate security and privacy practices of 3rd parties.</li>
+</ul>
+</li>
+<li>Frequent review of 3rd-party management policies and programs
+<ul>
+<li>Implement formal processes to regularaly evaluate security and privacy practices of 3rd and Nth parties, particularly to address new technologies and innovations like IoT devices.</li>
+</ul>
+</li>
+<li>Oversight by the board of directors
+<ul>
+<li>Involve senior leadership and boards of directors in 3rd-party risk management programs.</li>
+<li>High-level attention to 3rd-party risk may increase the budget available to address these threats.</li>
+</ul>
+</li>
+<li>An inventory of all 3rd parties with whom you share information
+<ul>
+<li>Track all 3rd parties that have access to sensitive data and how many of these parties are sharing this data with others.</li>
+</ul>
+</li>
+<li>3rd-party notification when data is shared with Nth parties
+<ul>
+<li>Mandate that 3rd parties provide information and transparency into their Nth-party relationships prior to sharing sensitive data.</li>
+</ul>
+</li>
+</ul>
+<h2>3rd Party Breach Case Study - Quest Diagnostics</h2>
+<ul>
+<li>Quest is one of the largest providers of clinical laboratory testing services in the United States.</li>
+<li>The sensitive data of 11.9M patients was accessed, ranging from credit card numbers to bank account information and even social security numbers.</li>
+</ul>
+<h3>Timeline</h3>
+<ul>
+<li>Quest's discovery of the 3rd-party data breach appears to have been internal.</li>
+<li>An unauthorized user gained access to Quest Diagnostic's sensitive data via a billing collections vendor named American Medical Collection Agency (AMCA).</li>
+<li>The hacker had access to the information for roughly 7 months, from August 2018 to March 2019.</li>
+<li>AMCA discovered the breach on May 14 and reported it to Quest.</li>
+<li>The first the public heard of the breach was when Quest disclosed it as part of an early June filing with the Securities and Exchange Commission (SEC).</li>
+</ul>
+<h3>Vulnerabilities</h3>
+<ul>
+<li>3rd party auditing
+<ul>
+<li>No review of policies and procedures of their 3rd party providers</li>
+<li>No tracking of data provided to 3rd parties</li>
+</ul>
+</li>
+<li>Disclosure of breach data once discovered
+<ul>
+<li>Very strict guidelines from the U.S. Department of Health and Human Services (HHS) must be followed.</li>
+</ul>
+</li>
+</ul>
+<h3>Cost</h3>
+<ul>
+<li>3rd party data breach at Quest Diagnostics exposed the trifecta of data; PII, medical conditions, and financial account information.</li>
+<li>Financial cost to Quest is not yet known, there are several class-action lawsuits against Quest Diagnostics at this time.</li>
+<li>AMCA was unable to recover, and filed for Chapter 11 protection after the 8-month long breach.</li>
+</ul>
+<h3>Prevention</h3>
+<ul>
+<li>Evaluation of the security and privacy practices of all 3rd parties</li>
+<li>An inventory of all 3rd parties with whom you share information</li>
+<li>Frequent review of 3rd-party management policies and programs</li>
+<li>3rd party notification when data is shared with Nth parties</li>
+<li>Oversight by the board of directors</li>
+</ul>
+<h2>Ransomware</h2>
+<ul>
+<li>Ransomware types
+<ul>
+<li>Crypto
+<ul>
+<li>The ransomware that will encrypt specific (groups of) files on your computer and refuses you access until you pay the ransom.</li>
+</ul>
+</li>
+<li>Locker
+<ul>
+<li>The ransomware that will just lock you out of your entire device until the ransom is paid.</li>
+</ul>
+</li>
+<li>Leakware/Doxware
+<ul>
+<li>The ransomware that threatens to release footage of you from your own webcam or any incriminating files that you may have on your computer, unless the ransom is paid.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Attack vectors
+<ul>
+<li>Phishing</li>
+<li>Remote Desktop protocol (RDP)</li>
+<li>Software vulnerabilities</li>
+<li>Malicious links</li>
+</ul>
+</li>
+<li>Danger
+<ul>
+<li>Ransomware can be devastating.</li>
+<li>Recovery can be a difficult process that may require the services of a reputable data recovery specialist.
+<ul>
+<li>Some victims pay to recover their files. However, there is no guarantee that individuals will recover their files if they pay the ransom.</li>
+</ul>
+</li>
+<li>Ransomware is very effective.
+<ul>
+<li>Ransomwares instill fear and panic into their victims, causing them to click on a link or pay a ransom, and users' systems can become infected with additional malware.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ransomware of Things (RoT)
+<ul>
+<li>As organization become increasingly dependent on tech solutions, the scope for ransomware only increases.</li>
+<li>The increasing use of internet-connected industrial control systems, smart buildings, and vehicles including autonomous vehicles, is creating new areas of exploitation.</li>
+<li>Remote-locking of vehicles, homes, and buildings could be abused for extortion.
+<ul>
+<li>Manipulation of BAS such as those controlling HVAC could serve as a basis for new schemes.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Examples</h3>
+<ul>
+<li>Locky
+<ul>
+<li>Encrypts over 160 file types</li>
+<li>Uses phishing to target those with designer, engineering, or developer file types</li>
+</ul>
+</li>
+<li>WannaCry
+<ul>
+<li>Spread across 150 countries in 2017</li>
+<li>Capitalized on out-of-date software in the healthcare industry</li>
+<li>4 billion in losses worldwide</li>
+</ul>
+</li>
+<li>Bad Rabbit
+<ul>
+<li>Used fake Adobe Flash website to install ransomware</li>
+</ul>
+</li>
+<li>Ryuk
+<ul>
+<li>Spread in 2018</li>
+<li>Disabled the Windows System Restore button</li>
+<li>Encrypted networked drives as well</li>
+</ul>
+</li>
+<li>Troldesh
+<ul>
+<li>Was popular in 2015 and went for quantity over quality</li>
+<li>Caught victims through spam email links and attachments</li>
+</ul>
+</li>
+<li>Jigsaw
+<ul>
+<li>Named after the Saw horror films</li>
+<li>Tormented victims by deleting files incrementally, with each hour the ransom was not paid</li>
+</ul>
+</li>
+<li>CryptoLocker
+<ul>
+<li>Spread through email attachments</li>
+<li>Impacted half million computers</li>
+<li>Was countered by law enforcement</li>
+</ul>
+</li>
+<li>Petya
+<ul>
+<li>Precursor to GoldenEye</li>
+<li>Encrypted entire hard drive</li>
+</ul>
+</li>
+<li>GoldenEye
+<ul>
+<li>Resurfaced around the same time WannaCry was popular</li>
+<li>Targeted high profile users and locked them out completely.</li>
+</ul>
+</li>
+<li>GandCrab
+<ul>
+<li>Claimed to have used the users webcam to record personal moments, and threatened to release the footage unless a ransom was paid.</li>
+</ul>
+</li>
+</ul>
+<h3>Prevention</h3>
+<ul>
+<li>Keep a backup of all your data.
+<ul>
+<li>Having a full backup removes the threat of losing your data.</li>
+</ul>
+</li>
+<li>Keep your software up to date and use complex passwords for your network and computer.
+<ul>
+<li>It is your first line of defense.</li>
+</ul>
+</li>
+<li>Use an anti-malware or related security software.
+<ul>
+<li>Having security software scanning for malicious attachments or changes to your computer combats phishing.</li>
+</ul>
+</li>
+<li>Stay vigilant in verifying any link or attachment you click on.
+<ul>
+<li>This goes beyond emails. Websites can be spoofed, and visiting or clicking on links can download ransomware.</li>
+</ul>
+</li>
+</ul>
+<h2>Ransomware Case Study - City of Atlanta</h2>
+<ul>
+<li>In the early morning of March 22, 2018, the City of Atlanta suffered a widespread ransomware attack.</li>
+<li>The breach shuttered many devices at City Hall for about 5 days in an extensive infection.</li>
+<li>The virus used to attack the city was the SamSam ransomware.</li>
+<li>To unlock the city's systems and data, hackers demanded $51,000 in Bitcoin, which the city refused to pay.</li>
+</ul>
+<h3>Timeline</h3>
+<ul>
+<li>March 22, 2018, ransomware cyberattack dealt a widespread blow to the city of Atlanta, the state capital and home to the nation's busiest airport.</li>
+<li>Atlanta disabled the Wi-Fi at Hartsfield-Jackson Atlanta International Airport until April 2nd.</li>
+<li>In May, the city restored its online water bill payment system.</li>
+<li>In June, the court's online bill payment option and docket boards returned.</li>
+</ul>
+<h3>Vulnerabilities</h3>
+<ul>
+<li>There was no plan in place if an attack occured.</li>
+<li>Operations during an attack
+<ul>
+<li>Business continuity and operational impact assessment was happening during the attack.</li>
+</ul>
+</li>
+<li>Readiness of systems
+<ul>
+<li>Lack of spending upgrading their infrastructure</li>
+<li>Large number of vulnerabilities logged in a January 2018 audit.</li>
+</ul>
+</li>
+</ul>
+<h3>Cost</h3>
+<ul>
+<li>The attack could cost taxpayers $17M, up from earlier estimates of $2.7M.</li>
+<li>The latest cost estimate includes about $6M in existing contracts for security services and software upgrades, and $11M in potential costs associated with the attack, including new desktops, laptops, smartphones, and tablets.</li>
+<li>This would mark one of the U.S.' costliest cyberattacks affecting a local government in 2018, despite city officials declining to pay the ransom demanded by the hackers.</li>
+</ul>
+<h3>Prevention</h3>
+<ul>
+<li>IT officials must know their network architecture, invest in email infrastructure, and remain vigilant at all levels, scrutinizing emails and their attachments, and looking for browser vulnerabilities.</li>
+<li>Multi-factor authentication is immensely valuable, and segmentation is crucial.</li>
+<li>State and local governments should have security zones segmented well within their own network.</li>
+<li>Agencies should have a plan to do backups, to back up data regularly and make it secure.</li>
+<li>Agencies should consult guidelines from the NIST.</li>
+</ul>
+<h3>And Moving Forward</h3>
+<ul>
+<li>Atlanta officials highlight the importance of protecting government data and information.</li>
+<li>The city's approach to cybersecurity now rests on three pillars.
+<ul>
+<li>Governance with compliance</li>
+<li>Vulnerability management</li>
+<li>Overall threat management</li>
+</ul>
+</li>
+<li>To limit the financial impact of an incident or breach, a cyberinsurance policy can serve as a road map.</li>
+<li>An organization should step back from the smaller day-to-day tasks of enterprise-level IT management and cybersecurity, to see the larger view.</li>
+<li>Since becoming Atlanta's CIO in October 2018, Gary Brantley has focused on building a continuity plan.</li>
+<li>Running through drills can reveal critical weaknesses that allow cyberattacks to take place.
+<ul>
+<li>Also simple prevention efforts can protect against extensive damage.</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

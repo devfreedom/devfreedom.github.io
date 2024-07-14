@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[러버덕 타임] 운영체제가 임계영역 문제를 해결하는 방법 | devfreedom.github.io</title>
+    <meta name="title" content="[러버덕 타임] 운영체제가 임계영역 문제를 해결하는 방법 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮러버덕❯,컴퓨터공학,프로그래밍,운영체제,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230621_2136_rubberducking_compsci_os/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[러버덕 타임] 운영체제가 임계영역 문제를 해결하는 방법</h1>
+        <div class="text-center">Published on 21 June 2023 09:38 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮러버덕❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮러버덕❯</a>
+            
+            <a href="/tags/컴퓨터공학" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#컴퓨터공학</a>
+            
+            <a href="/tags/프로그래밍" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#프로그래밍</a>
+            
+            <a href="/tags/운영체제" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#운영체제</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/rubber-duck.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <p>운영체제는 임계영역에서 발생하는 온갖 문제들을 어떤 방식으로 해결할까요? 한번 정리해서 적어봤습니다.</p>
+<hr>
+<h2>임계 영역이란?</h2>
+<p>임계 영역, 또는 임계 구역이란 병렬 컴퓨팅에서 어떤 프로세스가 공유 자원에 액세스 하고 있을 경우 해당 프로세스의 영역을 의미합니다. 프로세스들은 일반적으로 서로에 대해서 모르고 서로 합의하지도 않고 독자적이고(asynchronous) 동시적(concurrent)으로 행동을 합니다. 이로 인해서 임계 영역에서의 문제가 발생할 수 있습니다.</p>
+<p>예를 들어 봅시다. 여러 프로세스가 접근할 수 있는 공유 자원이 있다고 할 때, 만약 2개 이상의 프로세스가 공유 자원에 동시에 경쟁적으로(race condition) 쓰기 연산을 수행하게 되면 데이터의 무결성이 손상되는 문제가 발생할 수 있습니다. 이 외에도 임계 영역으로 인해서 발생할 수 있는 문제에는 다음과 같은 것들이 있습니다.</p>
+<ul>
+<li>교착상태(deadlock): 두 개 이상의 프로세스에 있어서, 상대방이 임계 영역을 떠나고 공유 자원 접근권을 반납하기를(release) 서로 기다리기만 하다가 그 어떠한 프로세스도 움직이지 못하는 교착상태가 생길 수 있습니다.</li>
+<li>기아상태(starvation): 임계 영역이 너무 오랫동안 점유되거나 특정 프로세스가 항상 우선권을 가지게 되는 경우, 다른 프로세스가 자신의 차례를 기다리기만 하거나 또는 진입할 기회가 박탈되어서 진행되지 못하는 기아상태가 발생할 수 있습니다.</li>
+<li>오버헤드(overhead): 아래에서 서술할, 임계 영역 문제를 해결하기 위한 방법으로 mutex lock이나 semaphore를 사용하는 경우, 프로세스가 임계 영역에 진입하고 공유 자원을 사용하기 위해서는 진입권을 얻거나 놓아주는 작업이 필요합니다. 여기에는 추가적인 계산 비용, 즉 오버헤드가 소요됩니다.</li>
+</ul>
+<p>임계 영역 문제를 해결하기 위해서는 다음과 같은 조건을 충족해야 합니다.</p>
+<ul>
+<li>상호 배제(mutual exclusion): 오직 하나의 프로세스만이 임계 영역에서 실행될 수 있어야 합니다. 기본적으로 공유 자원을 사용하는 임계 영역에 오직 하나의 단일한 접근권만을 제공하자는 것입니다. 특정 프로세스가 임계 영역에서 공유 자원을 사용 중일 경우 다른 프로세스들이 임계 영역에 접근하지 못하도록 제한하는 정책입니다.</li>
+<li>진행(progress): 만약 임계 영역이 비어있고, 하나 이상의 프로세스가 임계 영역에 진입하려고 한다면, 임계 영역 이후의 잔여(remainder) 영역에 있지 않은 '진입 대기중인' 프로세스들만이 진입 결정에 참여할 수 있으며, 그들 중에서 어떤 프로세스가 진입할 것인지에 관한 결정은 무기한 연장할 수 없습니다. 즉, 진입을 원하는 프로세스들 중에서 무슨 프로세스를 진입시킬 것인지를 결정하는 과정과 그것을 조만간 진행시키는 과정이 필요합니다. 그래야만 프로세스들이 진입 결정을 끝없이 기다리는 현상을 방지할 수 있습니다.</li>
+<li>제한된 대기(bounded waiting): 어떠한 프로세스가 진입권을 요청한 시점과, 해당 진입권이 허가되는 시점 사이에, 임계 영역에 진입하는 다른 프로세스의 수가 제한되어야 합니다. 이러한 제한이 없다면, 어떤 프로세스가 진입을 요청한 이후로 그것이 허락되기 전에, 다른 프로세스들이 몇 번이고 반복해서 임계 영역을 사용하게 되고, 해당 프로세스는 자신의 순서를 무작정 기다리게 되기 때문입니다.</li>
+</ul>
+<p>'동기화(synchronization)'란 프로세스들이 제멋대로 행동하지 않도록, 프로세스가 알고 있는 정보를 서로 알려주는(일치시켜 주는) 것을 의미합니다. 임계 영역 문제의 해결에는 동기화도 활용됩니다.</p>
+<p>임계 영역 문제를 해결하는 몇 가지 방안들을 소개하고자 합니다.</p>
+<h3>소프트웨어 기반</h3>
+<ol>
+<li>
+<p>Dekker's algorithm</p>
+<ul>
+<li>데커 알고리즘은 수학자 Theodorus Dekker가 상호 배제를 동시성(concurrency) 프로그래밍으로 고안한 방법이며, 두 개의 프로세스가 공유 메모리를 통해 소통하는 방식으로 충돌을 방지합니다. 상호 배제를 올바르게 구현한 최초의 알고리즘으로 알려져 있습니다.</li>
+<li>이 알고리즘은 '임계 영역에 진입하고자 요청한 프로세스'를 나타내는 boolean 값을 담은 배열인 wants_to_enter[n] 값과, '임계 영역에 진입할 차례인 프로세스'를 나타내는 turn값에 기반해서 진입의 권한을 부여합니다. 진입을 요청하는 프로세스가 있는지를 공유 메모리인 wants_to_enter[n] 값을 통해 확인하고는, turn 값을 기반으로 만약 임계 영역이 비어있다면 진입시키고, 다른 프로세스가 이미 임계 영역에 진입된 상태라면 해당 프로세스를 busy waiting 시켜서 자신의 차례를 기다리게 합니다. 이를 이중 while 문을 통한 상태 변경으로 구현합니다. 데커 알고리즘은 교착상태와 기아상태를 방지합니다.</li>
+</ul>
+</li>
+<li>
+<p>Peterson's algorithm</p>
+<ul>
+<li>피터슨 알고리즘은 수학자 Gary Peterson이 상호 배제를 동시성 프로그래밍을 통해 고안한 방법이며 데커 알고리즘과 상당히 유사합니다.</li>
+<li>wants_to_enter[n]대신 flag[n] 변수를 사용해 '임계 영역에 진입하고자 요청한 프로세스'를 나타냅니다.</li>
+<li>'임계 영역에 진입하고자 요청한 프로세스'를 나타내는 flag[n]값이 true인 경우, 나머지 프로세스가 임계 영역에 진입할 생각이 없는 경우 및 나머지 프로세스가 프로세스 n에게 우선권을 주는 경우에는 '임계 영역에 진입할 차례인 프로세스'를 나타내는 turn값을 n으로 설정하면서 프로세스 n이 임계 영역으로의 진입권을 갖게 되는 방식입니다.</li>
+<li>데커 알고리즘과의 차이는 바로 '어떠한 프로세스가 다른 프로세스에게 진입을 양보할 수 있다'는 것입니다. 그리고 두 개 이상의 프로세스에 대해서도 적용이 가능하기는 합니다. 피터슨 알고리즘은 상호 배제, 진행, 제한된 대기를 모두 만족합니다.</li>
+</ul>
+</li>
+<li>
+<p>n-process algorithm</p>
+<ul>
+<li>2개 이상의, n개의 프로세스에서 상호 배제를 다양한 방식으로 구현한 알고리즘들이 있습니다.</li>
+<li>Dijkstra's 알고리즘은 flag[n] 변수에 true/false 값 대신에 idle, want-in, in-CS라는 상태값을 사용하고, 무기한 연기의 가능성이 있다는 단점이 있습니다.</li>
+<li>Knuth's 알고리즘은 무기한 연기의 가능성은 없지만 지연 시간이 큽니다.</li>
+<li>Eisenberg and Mcguire's 알고리즘은 제한된 대기를 보장합니다.</li>
+<li>Lamport's (Bakery) 알고리즘은 붐비는 식당에서 번호표를 나눠주어 순서대로 입장시키고 음식을 제공하듯이, 티켓팅 기반으로 임계 영역 진입의 우선 순위를 제어하며 상호 배제, 진행, 제한된 대기를 만족합니다.</li>
+</ul>
+</li>
+</ol>
+<p>소프트웨어 기반 해결책은 일반적으로 속도가 느리고 구현이 복잡하며 상호 배제 과정을 실행하는 도중에 선점(preemption)당할 우려가 있습니다. while문을 사용하는 busy waiting으로 인한 자원 낭비도 있습니다. 현대적인 CPU에서는 비순차적 실행(out-of-order execution)을 사용하기 때문에 load/store 명령을 예측하기 어렵고, 아래에 서술할 하드웨어적 보조 수단이 마련된 덕분에 데커 알고리즘이나 피터슨 알고리즘과 같은 순수한 소프트웨어적 방법을 사용하기에는 적절하지 않습니다.</p>
+<h3>커널 및 하드웨어 기반</h3>
+<ol start="4">
+<li>
+<p>Test-and-set</p>
+<ul>
+<li>Boolean 값을 '검사하고 지정'하는 함수를 하드웨어가 마련해서, 중단(interrupt)될 수 없는, 단일한 원자적(atomic) 명령어 형태로 제공하는 것입니다. 일반적으로 어셈블리 명령어로써 제공합니다. 이 함수를 이용한 잠금/해제 메커니즘으로 상호 배제를 저수준(low-level)에서 구현할 수 있습니다. 명령어는 관리자 권한으로 커널 내에서만 동작하게 되며, 다중 프로세서 구조에서 구현하기에는 까다롭습니다. test-and-set 방식에 expected 변수를 추가한 compare-and-swap 방식도 있습니다.</li>
+</ul>
+</li>
+<li>
+<p>인터럽트 해제</p>
+<ul>
+<li>비선점형 커널에서처럼, 프로세스가 임계 영역에 있는 동안에는 방해받지 않고 계속 실행되게끔 인터럽트를 끄는 방식으로 상호 배제를 단순하게 구현하는 것입니다. 하지만 다중 프로세서 구조에서 모든 프로세서의 인터럽트를 끄고 켤 수 없는 경우라던가, (클럭) 인터럽트의 변화에 시스템이 영향을 받게 되는 문제가 생깁니다.</li>
+</ul>
+</li>
+<li>
+<p>Mutex lock</p>
+<ul>
+<li>뮤텍스(Mutex)는 Mutual Exclusion, 즉 '상호 배제'의 약자입니다. 뮤텍스 락은 Test-and-set 보다는 조금 높은 수준에서 다루기 수월해서, 세마포어와 함께 상호 배제를 위해 일반적으로 사용되는 방법입니다.</li>
+<li>뮤텍스 락의 작동 방식은 다음과 같습니다. 공유 자원이 있는 임계 영역을 헛간이라고 생각해 봅시다. 헛간에는 출입구 역할을 하는 하나의 문이 달려 있습니다. 임계 영역에 진입하고자 하는 프로세스는 자기가 헛간에 들어가고 나면 다른 프로세스는 들어올 수 없도록 문을 잠글 수 있는 자물쇠(lock)를 달라고 요청하며, 진입이 허가되면 해당 프로세스는 자물쇠를 받아(acquire) 헛간으로 들어가서 입구를 잠가버립니다. 그러면 다른 프로세스는 헛간에 들어올 수 없게 됩니다. 그렇게 헛간 속 단 하나의 프로세스는 공유 자원을 단독적으로 사용을 하게 되고, 작업을 마치면 해당 프로세스는 문을 열고 헛간에서 나와 자물쇠를 반납합니다(release). 기다리던 다음 프로세스도 이러한 방법으로 헛간을 사용하게 됩니다.</li>
+<li>뮤텍스 락에서 프로세스는 '임계 영역을 혼자서 사용하기 위해 입구를 잠글 자물쇠를 달라'는 acquire()와, '임계 영역을 사용하고 나갈 테니 자물쇠를 반납하겠다'는 release()라는 atomic 연산을 사용합니다.</li>
+</ul>
+</li>
+<li>
+<p>Semaphore</p>
+<ul>
+<li>세마포어는 프로세스들의 수행 시점을 제어하여 임계 영역 문제를 해소합니다. 세마포어는 뮤텍스 락과 비슷하지만, 잠김/풀림의 이진 형식 대신에 0보다 큰 정수 형식의 변수를 갖습니다. 세마포어는 '가용 자원'의 숫자를 나타내는 카운터라고 할 수 있습니다.
+<ul>
+<li>세마포어가 1인 경우 '이진 세마포어', 그 이상인 경우 '카운팅 세마포어'라고 합니다.</li>
+<li>세마포어가 0보다 큰 값일 경우 어떠한 프로세스는 해당 가용 자원 중 하나를 사용할 수 있습니다. 만약 세마포어 값이 3일 경우, 최대 3개의 프로세스가 3개의 공유 자원에 접근할 수 있다는 의미입니다. 어떤 프로세스가 임계 영역에 진입을 하게 되면, 이 프로세스는 세마포어를 하나 감소시키게 되고, 따라서 세마포어 값은 2가 됩니다. 만약 세마포어가 0일 경우 다른 프로세스들이 임계 영역에서 공유 자원을 모두 사용하고 있고 남은 가용 자원이 없다는 의미이므로, 임계 영역에 있는 프로세스가 작업을 마치고 빠져나와 (세마포어를 증가시키고) 가용 자원에 여유가 생길 때까지 다른 프로세스들은 대기열(queue)에서 기다려야 합니다. 이런 방식으로 세마포어는 상호 배제를 구현합니다.</li>
+</ul>
+</li>
+<li>세마포어에서 프로세스는 '임계 영역에 진입하고 싶으니 기다리겠다'는 의미의 wait()과 '임계 영역에서 나갈테니 가용 공간이 생기고 다음 프로세스가 들어올 수 있다'고 알려주는 signal()이라는 atomic 연산을 사용합니다.</li>
+<li>뮤텍스 락은 일종의 '이진 세마포어'처럼 작동하나, 엄밀히 구분하자면 뮤텍스 락은 잠금장치를 취득(acquire lock)하고 놓아주는(release lock) 메커니즘이고, 세마포어는 기다렸다가(wait) 자리가 생기면 그때 들어오라는(signal) 메커니즘이라는 차이가 있습니다.</li>
+<li>뮤텍스 락과 세마포어의 비교
+<ul>
+<li>뮤텍스 락과 세마포어에 공통적으로 해당되는 사항은 다음과 같습니다.
+<ul>
+<li>임계 영역이 전부 점유되었을 때, 진입을 대기하는 프로세스는 그냥 쉬면서(sleep) 기다리거나, 아니면 임계 영역에 진입하겠다는 요청을 지속적으로 수행(busy waiting)할 수 있습니다. 뮤텍스 락에서는 전자를 sleep lock, 후자를 spin lock이라고 부르고, 세마포어에서는 전자를 block-wakeup, 후자를 busy-waiting이라고 부릅니다.</li>
+<li>임계 영역의 순환이 원활해 프로세스가 임계 영역으로 진입할 차례가 빨리 오게 되는 경우에는 굳이 프로세스를 재웠다가(sleep) 깨우는(wake) context switching을 통해 오버헤드를 낭비하는 대신 깨어있는 상태에서 진입 조건을 지속적으로 체크하는 것이 효율적일 수 있습니다.</li>
+<li>반면 임계 영역의 순환이 원활하지 않아 프로세스가 임계 영역으로 진입할 차례가 빨리 오지 않는 경우, 임계 영역이 크거나, 프로세서가 느리고, 대기중인 프로세스가 많아서 busy waiting이 오히려 CPU에 큰 부담을 주는 경우에는 차라리 context switching을 통해 프로세스를 재우고 나중에 임계 영역에 진입할 수 있을 때 깨우는 것이 나을 수 있습니다.</li>
+<li>context switching 비용과 busy waiting 비용을 저울질해서 효율적인 방법을 선택해야 합니다.</li>
+</ul>
+</li>
+<li>뮤텍스와 세마포어의 차이점은 다음과 같습니다.
+<ul>
+<li>뮤텍스는 동기화 할 프로세스가 오직 하나 뿐이며, 세마포어는 하나 이상입니다.</li>
+<li>뮤텍스의 경우에는 자물쇠를 얻은(acquire) 스레드만 그것을 놓아줄(release) 수 있지만, 카운팅 세마포어의 경우에는 세마포어를 소유하고 있지 않은 스레드도 signal()을 사용해 세마포어를 놓아줄 수 있습니다.</li>
+<li>세마포어는 뮤텍스가 될 수 있지만, 뮤텍스는 세마포어가 될 수 없습니다. 뮤텍스가 '이진 세마포어'처럼 작동한다는 점과 release 권한의 차이점을 비추어 볼 때, 세마포어가 더 넓은 범위의 개념이라고 볼 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Monitor</p>
+<ul>
+<li>모니터는 이진 세마포어를 고수준(high-level) 언어에서 구현한 것입니다.</li>
+<li>모니터는 세마포어의 상호 배제 로직을 추상화해서 접근을 인터페이스로만 제공하고, 공유 자원도 캡슐화해서 외부에서 굳이 들여다볼 수 없도록 한 것입니다. 다루기가 쉽고 실수의 여지가 줄어듭니다.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>본문은 다음의 자료들을 참고해서 공부를 한 내용이고, 저는 학생이다보니 틀린 내용이 있을 수 있습니다. 알려주시면 정정하도록 하겠습니다.</p>
+<ul>
+<li>Critical Section. In <em>Wikipedia</em>.</li>
+<li>Mutual Exclusion. In <em>Wikipedia</em>.</li>
+<li>Peterson's algorithm. In <em>Wikipedia</em>.</li>
+<li>Dekker's algorithm. In <em>Wikipedia</em>.</li>
+<li>Test-and-set. In <em>Wikipedia</em>.</li>
+<li>Geeksforgeeks. (n.d.). <em><a href="https://www.geeksforgeeks.org/g-fact-70/">Critical Section in Synchronization</a></em>.</li>
+<li>Bell, J. T. (n.d.). <em><a href="https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/5_Synchronization.html">Process Synchronization</a></em>. University of Chicago Illinois.</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

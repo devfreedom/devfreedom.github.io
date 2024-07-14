@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[필기] &lt;Nand2Tetris&gt; 강의 - Unit 1 | devfreedom.github.io</title>
+    <meta name="title" content="[필기] &lt;Nand2Tetris&gt; 강의 - Unit 1 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮필기❯,nand2tetris,컴퓨터공학,논리회로,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20220919_2212_study-note_nand2Tetris/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[필기] &lt;Nand2Tetris&gt; 강의 - Unit 1</h1>
+        <div class="text-center">Published on 19 September 2022 10:12 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮필기❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮필기❯</a>
+            
+            <a href="/tags/nand2tetris" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#nand2tetris</a>
+            
+            <a href="/tags/컴퓨터공학" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#컴퓨터공학</a>
+            
+            <a href="/tags/논리회로" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#논리회로</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/nand2tetris.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <p>Coursera에서 Coursera For Students 프로그램을 폐지한다는 이메일을 얼마 전에 받았습니다. 학생들에게 매년 무료로 교육과목 1개와 모든 guided project를 제공하는 혜택입니다. 코세라의 지도형 실습 프로젝트는 굉장히 불편하게 만들어져 있어서 굳이 관심이 없고, 어떤 교육과목에 마지막 기회를 쓸까 고민을 많이 했습니다. 아무래도 일반적인 교양 분야 수업에 쓰기는 아깝고, 그렇다고 거창한 Specialization 과정에서 딱 한 과목만 듣자니 좀 애매하더군요.</p>
+<p>이왕이면 쓸모있는 컴퓨터공학 분야나 소프트웨어 개발 분야로 듣자는 생각을 했고 해외 웹에서의 의견을 찾아봤는데 그 중 이스라엘의 예루살렘 히브리 대학교(The Hebrew University of Jerusalem)에서 만든 <a href="https://www.nand2tetris.org/">From Nand To Tetris</a> (nand2tetris) 라는 교육과목을 많이들 추천하더라고요. 말 그대로 NAND 게이트에서부터 테트리스 게임 소프트웨어까지, 컴퓨터 소프트웨어 공학의 머리부터 발끝까지를 나름대로 직관적이고 쉽게 설명해준다고 합니다. (Hacker News에서 극찬을...)</p>
+<p>코세라에서는 Part 1과 Part 2로 나뉘어져 있는데, Part 1은</p>
+<ol>
+<li>부울 함수와 게이트 로직</li>
+<li>부울 연산과 ALU</li>
+<li>메모리</li>
+<li>기계어</li>
+<li>컴퓨터 아키텍쳐</li>
+<li>어셈블러</li>
+</ol>
+<p>순서대로 개념을 익혀나가고, 파트 2는 가상 머신, 고수준 언어, 컴파일러, 운영체제 등등 '기계'에서 '사람' 방향으로 배우게 됩니다. 파트 2는 어느 정도는 익숙한 개념들이 얼핏 보여서, 이왕이면 나에게 낯선 새로운 것을 배워보는게 낫겟다 싶어서 최종적으로 파트 1을 선택했습니다.</p>
+<p>시작은 했는데 처음부터 숨이 막혀오네요. 끝까지 제대로 배울 수 있을지 모르겠습니다. 배경지식이 없어도 따라할 수 있게 만들었다고는 하는데, 제 생각에는 컴퓨터라는 기계에 대한 최소한의 배경지식은 있어야 하지 않을까 싶네요.</p>
+<hr>
+<h2>Unit 0</h2>
+<h3>The Road Ahead</h3>
+<ul>
+<li>Don’t worry about the “how” = implementation</li>
+<li>Worry only about the “what” = abstraction
+<ul>
+<li>what our programming language promises to do</li>
+</ul>
+</li>
+</ul>
+<h3>From Nand to Hack</h3>
+<ul>
+<li>The Hack Computer = ROM + CPU + RAM</li>
+<li>Nand2Tetris Part 1
+<ul>
+<li>(assembler)-&gt; Computer architecture -(digital design)-&gt; CPU/RAM/Chipset -(gate logic)-&gt; Elementary logic gates -(electrical engineering)-&gt; Hardware</li>
+</ul>
+</li>
+<li>Nand2Tetris Part 2
+<ul>
+<li>Human thoughts -(code)-&gt; High-level language -(compiler)-&gt; VM code -(VM translator)-&gt; Low-level code -(assembler)</li>
+</ul>
+</li>
+</ul>
+<h3>From Hack to Tetris</h3>
+<ul>
+<li>High-level language: rich language and built-in operations</li>
+<li>This course is about assembly language, not high-level language</li>
+</ul>
+<h2>Unit 1</h2>
+<h3>Boolean Logic</h3>
+<ul>
+<li>Boolean values: True/False, 0/1, Yes/No</li>
+<li>Boolean operations
+<ul>
+<li>x AND y
+<ul>
+<li>Returns 1 only when both are 1</li>
+<li>The rest, returns 0</li>
+</ul>
+</li>
+<li>x OR y
+<ul>
+<li>Returns 0 only when both are 0</li>
+<li>The rest, returns 1</li>
+</ul>
+</li>
+<li>NOT(x)
+<ul>
+<li>Returns the opposite value</li>
+<li>returns 1 for 0, and returns 0 for 1</li>
+</ul>
+</li>
+<li>Boolean operations can be combined
+<ul>
+<li>e.g. 1 AND (0 OR (NOT (1))) = 0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Boolean functions
+<ul>
+<li>e.g. f(x,y,z) = (x AND y) OR (NOT(x) AND z)</li>
+</ul>
+</li>
+<li>Boolean Identities
+<ul>
+<li>Commutative laws = interchangeable
+<ul>
+<li>e.g. (x AND y) = (y AND x)</li>
+</ul>
+</li>
+<li>Associative laws
+<ul>
+<li>e.g. (x AND (y AND z)) = ((x AND y) AND z)</li>
+</ul>
+</li>
+<li>Distributive laws
+<ul>
+<li>e.g. (x OR (y AND z)) = (x OR y) AND (x OR z)</li>
+</ul>
+</li>
+<li>De Morgan laws
+<ul>
+<li>e.g. NOT(x AND y) = NOT(x) OR NOT(y)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Boolean algebra
+<ul>
+<li>Manipulate boolean operations</li>
+<li>e.g. NOT(NOT(x) AND NOT(x OR y))
+<ul>
+<li>= NOT(NOT(x) AND (NOT(x) AND NOT(y))    # use De Morgan law</li>
+<li>= NOT((NOT(x) AND NOT(x)) AND NOT(y))    # use associative law</li>
+<li>= NOT(NOT(x) AND NOT(y))    # use Idempotence law</li>
+<li>= NOT(NOT(x)) OR NOT(NOT(y))    # use double negation</li>
+<li>= x OR y</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>These are all verifiable by listing all possible boolean input combinations using Truth Table</li>
+</ul>
+<h3>Boolean Functions Synthesis</h3>
+<ul>
+<li>Sample Truth Table</li>
+</ul>
+<pre><code>x / y / z / f
+=============
+0 / 0 / 0 / 1
+0 / 0 / 1 / 0
+0 / 1 / 0 / 1
+0 / 1 / 1 / 0
+1 / 0 / 0 / 1
+1 / 0 / 1 / 0
+1 / 1 / 0 / 0
+1 / 1 / 1 / 0
+</code></pre>
+<ul>
+<li>From Truth Table to Boolean Expression
+<ul>
+<li>Why? To design a computer by composing it from primitive gates and operations</li>
+<li>Step 1. Build a boolean function that results in ‘f’ value, from the first row
+<ul>
+<li>e.g. NOT(x) AND NOT(y) AND NOT(z) = 1</li>
+</ul>
+</li>
+<li>Step 2. Built an another function/clause for each row that has the value of 1
+<ul>
+<li>3rd row 0/1/0/1 has its ‘f’ value as 1
+<ul>
+<li>e.g. NOT(x) AND y AND NOT(z) = 1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Step 3. Repeat, 5th row 1/0/0/1 in this case
+<ul>
+<li>e.g. x AND NOT(y) AND NOT(z) = 1</li>
+</ul>
+</li>
+<li>Step 4. Combine all of them using OR operation
+<ul>
+<li>(NOT(x) AND NOT(y) AND NOT(z)) OR (NOT(x) AND y AND NOT(z)) OR (x AND NOT(y) AND NOT(z))</li>
+</ul>
+</li>
+<li>Step 5. Simplify the expression by extinguishing duplicates
+<ul>
+<li>= (NOT(x) AND NOT(z)) OR (NOT(y) AND NOT(z))</li>
+<li>= NOT(z) AND (NOT(x) OR NOT(y))</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Mathematical theorem
+<ul>
+<li>Theory 1. Any boolean function can be represented using an expression containing AND, OR, and NOT operations.</li>
+<li>But do we really need OR operation?
+<ul>
+<li>We can replace OR with AND and NOT
+<ul>
+<li>Proof: (x OR y) = NOT(NOT(x) AND NOT(y))  # De Morgan law</li>
+</ul>
+</li>
+<li>We can’t replace AND and NOT though
+<ul>
+<li>We need AND to combine two possible values</li>
+<li>We need NOT because if not, zeroes with AND will always return zero as output</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>NAND function
+<ul>
+<li>NAND gives 0 only if both of its inputs are 1, the rest returns 1</li>
+<li>NAND = the negation of x AND y</li>
+<li>x NAND y = NOT(x AND y)</li>
+</ul>
+</li>
+<li>Theory 2. Any boolean function can be represented using an expression containing only NAND operations.
+<ul>
+<li>Proof
+<ul>
+<li>NOT(x) = (x NAND x)</li>
+<li>(x AND y) = NOT(x NAND y)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Gate Logic</h3>
+<ul>
+<li>A technique for implementing boolean functions using logic gates</li>
+<li>Logic gates
+<ul>
+<li>Elementary: NAND, AND, OR, NOT, etc.
+<ul>
+<li>e.g. NAND gate
+<ul>
+<li>if (a==1 and b==1)</li>
+<li>then out=0 else out=1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Composite: Mux, Adder, etc.</li>
+</ul>
+</li>
+<li>Composite gates
+<ul>
+<li>(a AND b) AND c
+<ul>
+<li>if (a==1 and b==1 and c==1)</li>
+<li>then out=1 else out=0</li>
+</ul>
+</li>
+<li>The order of the input bits does not impact the chip’s output</li>
+</ul>
+</li>
+<li>Gate interface = Gate obstruction
+<ul>
+<li>How the user thinks about what the gate is supposed to do = ‘what’</li>
+<li>There should be only one unique way to describe what the gate is supposed to do</li>
+<li>But there are different ways to achieve this
+<ul>
+<li>One gate obstruction, many different gate implementations</li>
+<li>e.g. more efficient, less expensive, more simple, etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Circuit implementations
+<ul>
+<li>This course does not deal with physical circuitry implementations</li>
+<li>No electronic engineering</li>
+</ul>
+</li>
+</ul>
+<h3>Hardware Description Language(HDL)</h3>
+<ul>
+<li>As a gate architect, demand a full and complete description of the desired gate’s behavior</li>
+<li>e.g. XOR gate
+<ul>
+<li>Requirement: Outputs 1 if one, and only one, of its inputs, is 1.</li>
+<li>HDL file which is ‘gate interface’ looks like below</li>
+<li>Also take a look at how its gate diagram looks like</li>
+</ul>
+</li>
+</ul>
+<pre><code>HIP Xor {
+    In a, b;
+    OUT out;
+    PARTS:
+        // implementation code 
+}
+</code></pre>
+<ul>
+<li>What’s needed for HDL?
+<ul>
+<li>HDL is a functional and declarative language, a static description of gate diagrams
+<ul>
+<li>Good documentation</li>
+<li>Good self-readable descriptive names for chips and connections</li>
+<li>Good indentation for readability</li>
+</ul>
+</li>
+<li>The order of HDL statement is insignificant</li>
+<li>Before using a chip part, you must know the interface
+<ul>
+<li>e.g. NOT(in= , out= ), AND(a= , b= , out= ), OR(a= , b= , out= )</li>
+</ul>
+</li>
+<li>Connections like partName(a=a, ...) and partName(..., out=out) are common</li>
+</ul>
+</li>
+<li>Common HDLs
+<ul>
+<li>VHDL</li>
+<li>Verilog</li>
+</ul>
+</li>
+</ul>
+<h3>Hardware Simulation</h3>
+<ul>
+<li>Hardware simulator is designed to simulate and test HDL files
+<ul>
+<li>This course uses a hardware simulator written in Java</li>
+<li>Interactive simulation
+<ul>
+<li>Test HDL files simultaneously and interactively</li>
+</ul>
+</li>
+<li>Script-based simulation
+<ul>
+<li>Writes two seperate files, one is HDL code, the other one is test script</li>
+<li>Hardware simulator loads both and runs the test script</li>
+</ul>
+</li>
+<li>Output-compare file comparison
+<ul>
+<li>Record the result of the simulation called an 'output file'</li>
+<li>Compare the output file to a desired output called 'compare file'</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Behavioral simulation
+<ul>
+<li>The chip logic can be implemented in some high-level language</li>
+<li>Enables high-level planning and testing of a hardware architecture before writing any HDL code</li>
+</ul>
+</li>
+<li>Hardware construction projects
+<ul>
+<li>The players
+<ul>
+<li>System architects (Professors)
+<ul>
+<li>Decide which chips are needed</li>
+<li>Creates chip API, test script, compare file</li>
+</ul>
+</li>
+<li>Hardware developers (You)
+<ul>
+<li>Build the chips using the following convenient specifications
+<ul>
+<li>The chip interface(*.hdl)</li>
+<li>What the chip is supposed to do (*.cmp)</li>
+<li>How to test the chip (*.tst)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Multi-bit Buses</h3>
+<ul>
+<li>Arrays of bits
+<ul>
+<li>It is conceptually convenient to think about such a group of bits as a single entity, sometimes termed &quot;bus&quot;</li>
+<li>HDLs will usually provide some convenient notation for handling these buses</li>
+</ul>
+</li>
+<li>e.g. 16-bit adder
+<ul>
+<li>16-bit input A and 16-bit input B -(16-bit adder)-&gt; 16-bit output</li>
+</ul>
+</li>
+</ul>
+<pre><code>CHIP Add16 {
+	IN a[16], b[16];
+	OUT out[16];
+	PARTS:
+		// implementation code }
+</code></pre>
+<ul>
+<li>e.g. 3-way 16-bit input
+<ul>
+<li>This way we can manipulate inside HDL, the busses and entities</li>
+</ul>
+</li>
+</ul>
+<pre><code>CHIP Add3Way16 {
+	IN first[16], second[16], third[16];
+	OUT out[16];
+	PARTS:
+		add16(a=first, b=second, out=temp);
+		add16(a=temp, b=third, out=out); }
+</code></pre>
+<ul>
+<li>e.g. Let's do 'multi-way chips'
+<ul>
+<li>Bus is just a bunch of bits together</li>
+<li>We can get access to seperate bits in a bus</li>
+</ul>
+</li>
+</ul>
+<pre><code>CHIP Add4Way{
+	IN a[4];
+	OUT out;
+	PARTS:
+		AND(a=a[0], b=a[1], out=t01);
+		AND(a=t01, b=a[2], out=t012);
+		AND(a=t012, b=a[3], out=out); }
+</code></pre>
+<ul>
+<li>e.g. Computes a bit-wise and of its two 4-bit input buses
+<ul>
+<li>Buses can be composed from (and broken into) sub-buses</li>
+</ul>
+</li>
+</ul>
+<pre><code>CHIP And4 {
+	IN a[4], b[4];
+	OUT out[4];
+	PARTS:
+		AND(a=a[0], b=b[0], out=out[0]);
+		AND(a=a[1], b=b[1], out=out[1]);
+		AND(a=a[2], b=b[2], out=out[2]);
+		AND(a=a[3], b=b[3], out=out[3]);
+</code></pre>
+<ul>
+<li>Buses can be composed from (and broken into) sub-buses</li>
+</ul>
+<pre><code>IN lsb[8], msb[8]
+Add16(a[0...7]=lsb, a[8...15]=msb, b=..., out=...);
+Add16(..., out[0...3]=t1, out[4...15]=t2);
+</code></pre>
+<ul>
+<li>Some syntactic choices of our HDL
+<ul>
+<li>Overlaps of sub-buses are allowed on output buses of parts</li>
+<li>Width of internal pins is deduced automatically</li>
+<li>&quot;false&quot; and &quot;true&quot; may be used as buses of any width</li>
+</ul>
+</li>
+</ul>
+<h3>Project 1</h3>
+<ul>
+<li>Elementary logic gates: Not, And, Or, Xor, Mux, DMux</li>
+<li>16-bit variants: Not16, And16, Or16, Mux16</li>
+<li>Multi-way variants: Or8Way, Mux4Way16, Mux8Way16, DMux4Way, DMux8Way</li>
+<li>Multiplexor(Mux)
+<ul>
+<li>2-way Mux enables selecting and outputting, one out of two possible inputs</li>
+</ul>
+</li>
+</ul>
+<pre><code>if (sel==0)
+	out = a
+else
+	out = b
+</code></pre>
+<ul>
+<li>Demultiplexor(DMux)
+<ul>
+<li>Acts like the inverse of multiplexor, works as a distributor</li>
+<li>Receives a single input, and based on the selection bit, channels it to either a or b output</li>
+</ul>
+</li>
+</ul>
+<pre><code>if (sel==0)
+	{a, b} = {in, 0}
+else
+	{a, b} = {0, in}
+</code></pre>
+<ul>
+<li>And16 = AND operator for 16-bit bus
+<ul>
+<li>Calculation logic is not sequential, 16-bit data gets calaculated at once</li>
+</ul>
+</li>
+<li>Mux4Way16
+<ul>
+<li>4 inputs, 2 selection bits for each 2 input pairs, single output</li>
+</ul>
+</li>
+<li>End-note
+<ul>
+<li>Create and edit your *.hdl files using a text editor</li>
+<li>A chip cannot be used in its own implemention</li>
+<li>When running an HDL program in the hardware simulator, errors are reported in red at the left-bottom corner</li>
+<li>Multi-bit buses (unit 1.6) are indexed right(least significant bit) to left(most significant bit)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>Unit 1까지 학습을 마쳐봤습니다. Unit 1의 과제는 16개의 기초적인 칩에 대한 HDL을 작성하고 테스트 스크립트를 돌려서 올바른 결과값을 출력해야 하는 프로젝트입니다. 개념은 나름대로 이해가 되는데 정작 직접 이걸 구현하려고 하니까 바로 막혀버리네요. 차분하게 로직을 작성하고 테스트하려면 넉넉한 시간이 필요할 것 같습니다. 이 과목은 프로젝트 중심으로 진행되는데, 코세라 수료증 따려고 시작한 공부도 아니고 요즘 다른 우선순위에 시간을 더 열심히 써야하는 상황이라서 일단 과제 작성은 후순위로 미루고 시간이 날 때 강의만 먼저 수강해야겠습니다. 어차피 제가 얻고자 했던건 개괄적이고 이론적인 지식이라서...</p>
+<p>아, 그리고 확실히 어느 정도의 배경 지식은 필요합니다. 직접 엔지니어링을 하려면 논리적 사고력도 필수적이구요. 어렵네요. 아무리 쉽게 풀어서 설명하더라도 결국 이것도 컴퓨터공학임은 틀림이 없다는게 체감이 됩니다.</p>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

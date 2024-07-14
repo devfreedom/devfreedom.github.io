@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[필기] &lt;한 번에 끝내는 서비스 기획의 모든 것&gt; 강의 - Part 1 | devfreedom.github.io</title>
+    <meta name="title" content="[필기] &lt;한 번에 끝내는 서비스 기획의 모든 것&gt; 강의 - Part 1 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮필기❯,서비스 기획,프로덕트 관리,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20220920_2150_study-note_product_mgmt_coursework_02/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[필기] &lt;한 번에 끝내는 서비스 기획의 모든 것&gt; 강의 - Part 1</h1>
+        <div class="text-center">Published on 20 September 2022 09:50 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮필기❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮필기❯</a>
+            
+            <a href="/tags/서비스 기획" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#서비스 기획</a>
+            
+            <a href="/tags/프로덕트 관리" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#프로덕트 관리</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/product-management.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h2>Part 1. 서비스기획 개론</h2>
+<h3>문제 발견 및 기회 창출 - 고객 및 제품 문제 발견</h3>
+<ul>
+<li>페인포인트 = 사용자가 불편을 느끼는 지점과 부분</li>
+<li>모든 것은 페인포인트에서 시작된다</li>
+<li>수집 방법
+<ul>
+<li>고객센터: 가장 강력한 소비자의 불만이 전달되는 채널</li>
+<li>앱스토어 리뷰</li>
+<li>소셜 미디어</li>
+<li>커뮤니티</li>
+<li>서비스 오류 로그</li>
+<li>유저 리서치</li>
+</ul>
+</li>
+<li>분석 방법
+<ul>
+<li>커스터머 저니 맵</li>
+<li>데이터 분석(텍스트 분석)
+<ul>
+<li>분류 분석: 제품 및 속성에 대한 분류 체계를 마련하여 분석하는 방법
+<ul>
+<li>카테고리 - 대분류 - 중분류 - 소분류 등으로 체계를 마련
+<ul>
+<li>e.g. 뱅킹 서비스 - 내역 - 종합거래내역 - 기간 선택</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>감성 분석: 긍정어, 부정어에 대한 사전 구축을 통한 뉘앙스 파악
+<ul>
+<li>e.g. 긍정어 (좋아요/만족해요/편해요) - 중립 - 부정어 (오류/안돼요/이상해요)</li>
+</ul>
+</li>
+<li>키워드 분석: 언급이 많은 키워드를 파악, 감성 분석과 결합하기
+<ul>
+<li>e.g. 뱅킹 서비스 - 종합거래내역 - 오류 - 통신 불가 - 안돼요 - 불편해요</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>문제 발견 및 기회 창출 - 제품의 차별화 및 기회 창출</h3>
+<ul>
+<li>STP 전략
+<ul>
+<li>Segmentation
+<ul>
+<li>고객의 니즈나 라이프스타일 등에 따라 고객을 아주 작은 집단으로 나누기</li>
+<li>인구통계학적/지리적/심리적/행동적 기준을 활용</li>
+</ul>
+</li>
+<li>Targeting
+<ul>
+<li>시장세분화를 통해 구분된 소비자 층 중에서 우리의 고객이 될 가능성이 가장 높은 핵심 소비자층을 표정시작으로 선별
+<ul>
+<li>e.g. 매년 해외여행을 하는 사람 중, 구독서비스에 거부감이 없고, 월 10만원을 여행 상품 서칭에 투자할 수 있는 소비자</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Positioning
+<ul>
+<li>잠재고객 마음 속에 제품을 인지시키는 정체성이나 이미지
+<ul>
+<li>e.g. 볼보 자동차 = 안전</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SWOT 분석</li>
+<li>차별화 전략
+<ul>
+<li>차별화된 제품이나 서비스를 제공해 시장에서 제품/가격/이미지의 경쟁우위를 달성
+<ul>
+<li>e.g. 토스=편리함, 스포티파이=개인화, 머스트잇=제품차별화</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>문제 발견 및 기회 창출 - 마켓 리서치</h3>
+<ul>
+<li>리서치를 하는 이유
+<ul>
+<li>새로운 사업/서비스의 당위성을 찾기 위해</li>
+<li>변화하는 시장환경에 대응할 수 있는 서비스를 출시하기 위해</li>
+</ul>
+</li>
+<li>정보 얻기
+<ul>
+<li>언론/기사</li>
+<li>검색엔진
+<ul>
+<li>구글 검색 활용하기
+<ul>
+<li>키워드 검색</li>
+<li>filetype:pdf 검색을 활용해 문서 얻기</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>증권사 리포트
+<ul>
+<li>증권사 홈페이지</li>
+<li>와이즈리포트 (유료)</li>
+<li>네이버 금융 (제휴 증권사의 리서치)</li>
+</ul>
+</li>
+<li>뉴스레터 구독
+<ul>
+<li>아웃스탠딩 (outstanding.kr)</li>
+<li>일분톡 (ilbuntok.com)</li>
+<li>STARTUP WEEKLY (glance.media)</li>
+</ul>
+</li>
+<li>The VC: 스타트업 투자자, 펀드, 투자 (유치) 이력, 기업 정보 등</li>
+</ul>
+</li>
+</ul>
+<h3>사용자 &amp; 서비스 분석</h3>
+<ul>
+<li>유저 리서치</li>
+<li>UX리서치
+<ul>
+<li>UX = 사용자가 제품을 통해서 문제를 해결하는 과정에 관한 것 = 목적/과정/결과(만족)</li>
+<li>UI = 사용자에게 제품의 표면이 어떻게 보이고 기능하는지에 관한 것 = 외관과 기능</li>
+<li>제품에 대한 시장의 반응 및 선호도를 조사하는 것에서 더 나아가 사용자들의 행동과 태도를 관찰하고 문제 해결방법의 근거를 찾아서 실질적인 해법을 찾는 것을 의미</li>
+<li>정성적 리서치 = &quot;Why?&quot;
+<ul>
+<li>사용자 인터뷰, 포커스 그룹, 필드 스터디 등</li>
+</ul>
+</li>
+<li>정량적 리서치 = &quot;How many? How much?&quot;
+<ul>
+<li>A/B테스트, 사용자 설문, 웹로그 분석 등</li>
+</ul>
+</li>
+<li>상황에 따라 정성적/정량적 리서치를 선택적으로 활용</li>
+</ul>
+</li>
+<li>User persona
+<ul>
+<li>실제 사용자들의 행동 패턴과 특징을 수집하여 만들어진, 주요 고객을 대표하는 특정 인물</li>
+<li>철저하게 데이터 분석과 시장 조사를 통해 페르소나 수립 근거가 있어야 함</li>
+<li>페르소나 만들기
+<ul>
+<li>기본 정보: 사진, 이름, 나이, 성별, 직업, 거주지역 등을 구체적으로 설정
+<ul>
+<li>e.g. 홍길동, 29세, 남성, 차량 보유, 기혼, 서울 거주</li>
+</ul>
+</li>
+<li>니즈 파악: 동기, 불만사항, 목적 등
+<ul>
+<li>e.g. 저는 해외여행을 가본 적이 없어서 어떻게 여행을 시작해야 하는지 몰라요. 올해는 꼭 첫 해외여행을 가고 싶어요. (경험 부족, 새로운 것에 도전적인 성격)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Customer journey map
+<ul>
+<li>고객 또는 잠재고객이 회사에서 목표를 달성하기 위해서 거치는 프로세스를 시각적으로 표현한 것
+<ul>
+<li>고객의 동기, 즉 고객의 니즈와 페인포인트를 파악할 수 있다</li>
+<li>고객 중심의 사고방식을 전개할 수 있다</li>
+<li>서비스 개선의 우선 순위를 정할 수 있다</li>
+<li>새로운 타겟이 될만한 고객층을 발굴할 수 있다</li>
+</ul>
+</li>
+<li>구성 요소
+<ul>
+<li>Phase: 관심 - 둘러보기 - 신청하기</li>
+<li>User action: 포털 배너 광고 / 홍보 메일 수신 - 이벤트 페이지 접속 / 서비스 안내 확인 - 회원가입 / 여행스타일 선택 / 결제수단 선택 / 결제완료</li>
+<li>User feeling: 행복/기대 - 만족/행복 - 귀찮음/기대/신중/만족</li>
+<li>Touch point: 배너/메일 - 이벤트 랜딩 페이지 - (N/A)</li>
+<li>Strength: (N/A) - 제품의 경쟁력 - (N/A)</li>
+<li>Weakness: (N/A) - (N/A) - 다소 부담스러운 금액</li>
+<li>Opportunities</li>
+</ul>
+</li>
+<li>템플릿을 활용하면 좋음</li>
+</ul>
+</li>
+<li>A/B 테스트
+<ul>
+<li>전체 사용자를 대상으로 대조군, 실험군으로 나누어서 두 가지 콘텐츠를 비교해 어떤 그룹에서 더 높은 성과를 보이는지 정략적으로 평가하는 방법</li>
+<li>새로운 기획을 시작하려고 할 때 어떤 접근 방법이 가장 좋은 성과를 보여줄 지 확실하지 않은 상황에서 활용</li>
+<li>뉴스레터, 광고, 문자메세지, 웹페이지, 모바일 앱 등에 적용</li>
+<li>서비스 분석 - 가설 수립 - A/B 디자인 - 테스트 진행 - 분석 및 의사결정 - (...반복...) = 고객경험 개선</li>
+<li>사용자 그룹 분리 방법
+<ul>
+<li>노출 분산 방식
+<ul>
+<li>페이지가 보여질 때 일정 확률로 나누어 노출함</li>
+<li>통계적 유의성이 높지만, 사용자들에게 혼란을 줄 수 있음</li>
+<li>알고리즘 테스트에 적합함</li>
+</ul>
+</li>
+<li>사용자 분산 방식
+<ul>
+<li>사용자를 A그룹과 B그룹으로 나누어 각 그룹에 고정적으로 A안과 B안을 노출함</li>
+<li>헤비유저에 따라 결과값이 왜곡될 수 있음</li>
+<li>UI/UX 테스트에 적합함</li>
+</ul>
+</li>
+<li>시간 분할 방식
+<ul>
+<li>시간대를 분할하여 A안과 B안을 노출함</li>
+<li>보안/설계상의 문제로 분산 방식이 사용이 어려울 때 대안적인 수단으로 활용 가능</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>A/B테스트는 주로 사내에서 진행되고 영업비밀에 해당되므로 풍부한 케이스 스터디가 어려움</li>
+<li>사소한 것이라도 기획자의 직관에만 의존하면 편견에 의해 왜곡될 수 있으므로 시행하는 것이 좋음</li>
+</ul>
+</li>
+</ul>
+<h3>서비스 기획 전체 프로세스</h3>
+<ul>
+<li>리서치/분석
+<ul>
+<li>고객 니즈 파악</li>
+<li>시장조사, 벤치마킹</li>
+<li>트렌드 분석</li>
+</ul>
+</li>
+<li>요구사항 정의
+<ul>
+<li>추진 배경, 목적, 목표 설정</li>
+<li>PRD 작성</li>
+<li>리스크 검토 진행</li>
+<li>내용: 리서치 자료, 담당자, 제품의 주요 기능명, 설명 등</li>
+</ul>
+</li>
+<li>기획 문서 작성
+<ul>
+<li>서비스 정책과 프로세스 작성</li>
+<li>IA, 와이어프레임, 스토리보드 등 작성</li>
+<li>WBS 작성</li>
+</ul>
+</li>
+<li>유관부서 리뷰
+<ul>
+<li>개발/디자인팀 리뷰</li>
+<li>QA팀 리뷰</li>
+<li>마케팅 팀 리뷰</li>
+</ul>
+</li>
+<li>디자인/개발</li>
+<li>취약점 점검
+<ul>
+<li>취약점 점검 요청</li>
+</ul>
+</li>
+<li>QA
+<ul>
+<li>테스트 케이스 작성</li>
+</ul>
+</li>
+<li>배포/오픈
+<ul>
+<li>서비스 모니터링</li>
+<li>서비스 지표 관리</li>
+</ul>
+</li>
+</ul>
+<h3>목표 설정</h3>
+<ul>
+<li>서비스 기획에서 가장 중요한 부분</li>
+<li>서비스 목적에 따른 목표 설정이 필요함</li>
+<li>정성적 목표보다는 정량적 목표를 설정하여 트래킹하는 것이 중요함
+<ul>
+<li>e.g. 매월 이용자가 10%씩 증가하는 서비스 만들기</li>
+</ul>
+</li>
+<li>OKR(Objective and Key Results)
+<ul>
+<li>조직 및 구성원 개인들의 목표를 설정하고 성과를 측정하는 방법</li>
+<li>Objective
+<ul>
+<li>달성하고자 하는 이상적 목표</li>
+<li>공격적인 목표 설정
+<ul>
+<li>e.g. 목표: 계절과일 정기배송 하기</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Key result
+<ul>
+<li>목표 달성을 위한 구체적인 방법</li>
+<li>측정 가능해야 함
+<ul>
+<li>e.g. 핵심 결과: 과일 수급이 원활하도록 농장 10곳과 계약하기, 고객이 원하는 계절별 과일 카테고리 파악하기, 새벽배송이 가능한 택배사와 계약하기,</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>OKR과 함께 CFR을 활용
+<ul>
+<li>Conversation</li>
+<li>Feedback</li>
+<li>Recognition</li>
+</ul>
+</li>
+<li>KPI(Key Performance Index)
+<ul>
+<li>정량적 수치적 장기적 목표에 집중</li>
+<li>현재 진행 상황을 파악하는데에 집중</li>
+<li>반면 OKR은 목적지향적, 동기부여적, 단기적</li>
+</ul>
+</li>
+</ul>
+<h3>제품 로드맵 설정</h3>
+<ul>
+<li>시간 경과에 따라서 제품/서비스 또는 팀의 비전/방향/우선순위에 따라 제품/서비스가 앞으로 어떻게 진행될 것인지 나타내는 문서</li>
+<li>제품의 전략이나 방향성과 명확하게 연결되어야 함</li>
+<li>고객 피드백 및 경쟁 환경의 변화에 대응해야 함</li>
+<li>대상
+<ul>
+<li>내부 제품을 만드는 팀을 위한 로드맵</li>
+<li>영업팀을 위한 내부 로드맵</li>
+<li>경영진을 위한 내부 로드맵</li>
+</ul>
+</li>
+</ul>
+<h3>요구사항 정의서(Product Requirements Document)</h3>
+<ul>
+<li>기획하는 단계에서 '왜 이 제품/서비스를 만들어야 하는가?'에 중점을 둔 문서</li>
+<li>각 stakeholder들의 관점 차이를 해소하고, 기획한 의도 및 주요기능을 유관부서 등에 명확하게 전달하는 문서</li>
+<li>별도의 문서로 존재하거나 또는 기획문서의 내용으로써 포함될 수 있음</li>
+<li>구성요소
+<ul>
+<li>개요
+<ul>
+<li>문제 정의</li>
+<li>목적 및 배경</li>
+<li>주요 사용자/고객</li>
+<li>유저 스토리/저니맵</li>
+<li>사용자 가치</li>
+<li>개발 원칙</li>
+</ul>
+</li>
+<li>기회 및 임팩트
+<ul>
+<li>기회</li>
+<li>가설 및 가설 검증 지표</li>
+<li>임팩트 예측 (사용자가 얻게 될 가치)</li>
+</ul>
+</li>
+<li>제품 정의 및 요구사항, 마일스톤, FAQ
+<ul>
+<li>구체적인 제품 정의 및 요구사항을 기술</li>
+<li>마일스톤 또는 WBS</li>
+<li>FAQ</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>프로젝트 일정관리(Work Breakdown Structure)</h3>
+<ul>
+<li>프로젝트를 효율적으로 진행하기 위해 업무 일정을 계획하고 관리할 수 있는 기초 문서</li>
+<li>업무 분업 구조 또는 작업 분해 구조를 의미함</li>
+<li>프로젝트 전체 업무를 더 작고 관리하기 쉬운 작은 요소로 세분화하는 단계</li>
+<li>목적
+<ul>
+<li>효율적인 업무 수행</li>
+<li>작업의 책임과 역할 명확화</li>
+<li>작업 진척 모니터링</li>
+</ul>
+</li>
+<li>구성요소
+<ul>
+<li>구분: 큰 단위 업무를 기재함</li>
+<li>태스크: 가장 작은 단위로 쪼개진 세부 업무 명칭 기재</li>
+<li>담당자/담당조직: 태스크를 수행하게 될 담당 주체</li>
+<li>기간: 태스크의 시작일 및 종료일</li>
+<li>Gantt 차트: 전체 기간 대비 각 태스크의 소요 기간을 색으로 표시함</li>
+<li>비고: 태스크 수행 시 예외사항이나 제약사항을 기재</li>
+</ul>
+</li>
+</ul>
+<h3>정보 구조도(Information Architecture)</h3>
+<ul>
+<li>서비스 구축 시 기본 설계 구조도이며, 일종의 사이트맵 형식을 구체화한 문서</li>
+<li>서비스의 기능들이 어떻게 구성되어 있는지, 화면의 상하구조 파악에 도움이 됨</li>
+<li>종류
+<ul>
+<li>계층 패턴</li>
+<li>탭 패턴</li>
+<li>허브 앤 스포크 패턴</li>
+<li>리니어 패턴</li>
+<li>네스티드 돌 패턴</li>
+<li>벤토 박스 패턴</li>
+<li>기타 등등</li>
+</ul>
+</li>
+</ul>
+<h3>와이어프레임(Wireframe)</h3>
+<ul>
+<li>앱/웹 서비스를 만들 때 동선과 구조를 제안하기 위한 화면 설계도</li>
+<li>디자인 요소가 들어가기보다는 선을 이용해 윤곽을 잡는 것을 의미함</li>
+<li>기획자의 요구사항, 서비스 기능의 요소를 모두 파악하여 전략적으로 설계할 필요가 있음</li>
+<li>와이어프레임은 디자이너, 개발자 등과 의사소통을 하기 위한 수단</li>
+<li>와이어프레임은 '개념' 일 뿐 '디자인'이 아님</li>
+<li>제작 방법
+<ul>
+<li>펜과 종이를 사용한 스케치</li>
+<li>파워포인트 활용</li>
+<li>그래픽 툴 활용</li>
+<li>UI/UX 툴 활용 (Sketch, Figma, Adobe XD)</li>
+</ul>
+</li>
+<li>내용
+<ul>
+<li>화면에 어떤 정보가 나타나야 하는가?</li>
+<li>어떤 레이아웃과 모습을 보여줘야 하는가?</li>
+<li>세부 컨텐츠가 있다면 어떻게 표현해야 하는가?</li>
+<li>다음 화면으로는 어떻게 이어지는가?</li>
+<li>공통영역(내비바, 푸터 등)은 적절히 기능을 하는가?</li>
+</ul>
+</li>
+<li>프로토타입과의 차이점
+<ul>
+<li>프로토타입
+<ul>
+<li>본격적으로 개발에 들어가기 전, UI/UX 상호작용을 시뮬레이션 하기 위해 동적으로 만드는 모형</li>
+<li>정적인 화면으로 설계된 와이어프레임보다, 사용자들의 경험에 대한 테스트를 진행해 볼 수 있음</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>스토리보드/상세기획서/화면설계서</h3>
+<ul>
+<li>일반적으로 '기획서'라고 칭하는 문서</li>
+<li>서비스 기획 문서들의 최종 산출물</li>
+<li>최종적으로 유관부서에 공유하는 문서</li>
+<li>구성요소
+<ul>
+<li>표지 (+목차)</li>
+<li>서비스 개요
+<ul>
+<li>목표 및 주요기능</li>
+</ul>
+</li>
+<li>서비스 구성
+<ul>
+<li>IA, 서비스 정책</li>
+<li>주요 서비스 프로세스</li>
+</ul>
+</li>
+<li>상세 기획
+<ul>
+<li>화면 UI 시나리오</li>
+<li>화면별 와이어프레임 + 기능 상세설명</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>테스트</h3>
+<ul>
+<li>분석 - 서비스 설계 - 디자인/개발 - &lt;테스트&gt; - 오픈/운영</li>
+<li>기능단위 테스트
+<ul>
+<li>디자인/개발이 1차적으로 완료되면 일단은 PM이나 개발팀에서 기능단위 테스트를 먼저 수행함</li>
+<li>개발팀 내부에서 진행하거나, PM 등이 기능단위 테스트를 진행함 = Sanity test</li>
+<li>이것이 끝나고 나서, 개발된 서비스 전체의 동선을 살피면서 제품이 기획된 대로 동작하는지 등을 살펴보는 QA 단계로 넘어감</li>
+</ul>
+</li>
+<li>QA
+<ul>
+<li>일정한 효율과 품질이 보장되어야 하는 활동 = 품질보장</li>
+<li>개발 완료 후 서비스 오픈 전에 제품이 안정적으로 작동되는지, 문제 사항은 없는지 살펴봄</li>
+<li>원칙적으로는 QA팀에서 진행하게 되나, PM 또는 기획자가 진행하는 경우도 있음</li>
+<li>QA 순서
+<ul>
+<li>기획서 분석</li>
+<li>테스트 범위 설정 (단말 등)</li>
+<li>테스트 케이스(TC) 검토 및 작성</li>
+<li>테스트 진행 후 버그 리포트 작성</li>
+<li>최종 테스트 진행</li>
+<li>결과 리포트 작성</li>
+</ul>
+</li>
+<li>체크리스트
+<ul>
+<li>QA팀에 요청하기 전에 스스로 기획한 기능이 잘 개발되어있는지 사전 기능 테스트 진행</li>
+<li>QA팀에 요청할때는 충분한 일정을 감안하여 요청할 것</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>서비스 오픈</h3>
+<ul>
+<li>서비스 오픈 전 (D-7)
+<ul>
+<li>최종 QA 및 테스트 결과 확인하기</li>
+<li>서버, 앱 배포 일정, 배포 시나리오 확인하기</li>
+<li>마케팅/프로모션 확인하기</li>
+<li>고객센터 및 유관부서 업무매뉴얼 작성 및 서비스 오픈 공유</li>
+</ul>
+</li>
+<li>오픈 당일
+<ul>
+<li>오픈 이후에 운영 환경에서 테스트 진행하기</li>
+<li>모니터링</li>
+</ul>
+</li>
+<li>오픈 이후
+<ul>
+<li>고객센터, 앱스토어 리뷰 등에 올라오는 CS대응 및 개선 포인트 찾기</li>
+<li>지속적인 서비스 로그 모니터링</li>
+<li>일별/주별/월별 지표 분석</li>
+</ul>
+</li>
+</ul>
+<h3>회고</h3>
+<ul>
+<li>프로젝트를 수행하면서 목표 달성 여부, 문제점, 개선점 등을 이야기 해보는 시간
+<ul>
+<li>프로젝트를 진행하면서 어떤 일들이 일어났는지를 살펴본다
+<ul>
+<li>제품 및 개인의 성장을 위해서</li>
+<li>협업자의 관점에서 이해하기 위해서</li>
+<li>나의 업무를 확인하기 위해서</li>
+</ul>
+</li>
+<li>좋았던 부분, 아쉬웠던 부분을 정리한다</li>
+<li>개인적인 바램이나 앞으로의 계획을 추가할 것을 검토하고, 액션 아이템을 도출하기</li>
+</ul>
+</li>
+<li>KPT = Keep &amp; Problem &amp; Try 방법론
+<ul>
+<li>Keep
+<ul>
+<li>현재 만족하고 있는 부분</li>
+<li>계속 이어갔으면 하는 부분</li>
+</ul>
+</li>
+<li>Problem
+<ul>
+<li>불편하게 느끼는 부분</li>
+<li>개선이 필요하다고 생각하는 부분</li>
+</ul>
+</li>
+<li>Try
+<ul>
+<li>Problem에 대한 해결책</li>
+<li>다음 회고 때 판별 가능한 것</li>
+<li>당장 실행가능한 것</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>타임라인 리뷰 방법론
+<ul>
+<li>프로젝트 진행 기간 동안 이슈사항 또는 사건들을 타임라인으로 표시하여 회고하는 방법</li>
+<li>프로젝트 기간이 너무 길 경우, 주요 사건들에 대해서만 리뷰를 진행할 수도 있음</li>
+<li>5F = 프로젝트를 진행하면서 있었던 주요 사건들을 시간축으로 정렬하여 5가지 F로 나누어 돌아보는 방법
+<ul>
+<li>Fact = 사실</li>
+<li>Feeling = 느낌</li>
+<li>Finding = 교훈</li>
+<li>Future action = 향후 행동</li>
+<li>Feedback = 피드백</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Growth hacking</h3>
+<ul>
+<li>데이터를 기반으로 정의한 핵심지표를 바탕으로, 실험을 통해 인사이트를 얻고, 이를 빠르게 반복하면서, 제품이나 서비스를 성장시키는 것</li>
+<li>UX 리서치 - 고객 여정 지도 - 그로스 해킹</li>
+<li>Minimum Viable Product (MVP)
+<ul>
+<li>시장에 대해 잘 모른다는 전제 하에 고객/시장의 반응을 확인하기 위한 과정</li>
+<li>실제로 제품을 만들어서 반응을 보고 수집하는 과정</li>
+</ul>
+</li>
+<li>Product-Market Fit (PMF)
+<ul>
+<li>다수의 고객이 원하는 제품을 만드는 것</li>
+<li>스타트업의 다수는 PMF를 찾지 못해서 실패함</li>
+<li>PMF를 판단하는 지표들
+<ul>
+<li>Retention rate = 서비스를 지속적으로 사용하는 고객들의 비율
+<ul>
+<li>PMF가 적절하지 않을 경우 시간이 지나면서 리텐션율이 떨어짐</li>
+<li>40% 전후의 리텐션율은 굉장히 우수한 것으로 평가됨</li>
+</ul>
+</li>
+<li>Conversion rate = 노출 - 유입 - 구매 - 재구매 등의 funnel 단계별로 넘어가는 사용자의 비율
+<ul>
+<li>고객의 관심과 방문이 제품 구매나 회원가입 등의 결과로 이어지는지</li>
+<li>서비스 사용성이나 UI/UX의 영향을 많이 받음</li>
+</ul>
+</li>
+<li>Net Promoter Score = 사람들에게 서비스가 입소문으로 전파되는 순수 추천 지수
+<ul>
+<li>사용자들이 서비스에 얼마나 만족하는지를 보여주는 지표</li>
+<li>추천 여부를 0~10의 범위로 점수를 매기게 함
+<ul>
+<li>0~6점을 매긴 고객은 detractor</li>
+<li>7~8점을 매긴 고객은 neutral</li>
+<li>9~10점을 매긴 고객은 promoter</li>
+</ul>
+</li>
+<li>추천고객 비율에서 비추천고객 비율을 뺀 점수</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>AARRR
+<ul>
+<li>스타트업 성장을 위한 지표관리 및 분석방법론</li>
+<li>Acquisition - Activation - Retention - Revenue - Referral 단계의 funnel
+<ul>
+<li>신규 고객을 어떻게 유치할 것인가?
+<ul>
+<li>신규 고객들은 어떤 방법으로 우리 제품/서비스를 처음 접하고 있는가?</li>
+<li>온/오프라인 광고, 이메일, SNS 등 다수의 채널이 존재함</li>
+<li>CPA, CAC, 신규 방문자 수, 신규 방문자 유입 경로 등의 지표를 활용</li>
+</ul>
+</li>
+<li>고객들이 우리 서비스의 핵심 기능을 잘 사용하는가?
+<ul>
+<li>고객의 제품/서비스 첫 사용 경험은 긍정적인가?</li>
+<li>세부 퍼널에 대한 분석이 동반됨</li>
+<li>웹사이트 트래픽, 체류시간, PV, 회원가입률, 구매전환율 등의 지표를 활용</li>
+</ul>
+</li>
+<li>고객들이 우리 서비스를 지속적으로 재사용하는가?
+<ul>
+<li>고객들이 우리 서비스를 지속적으로 사용하는가?</li>
+<li>초기 비즈니스에서 굉장히 중요한 부분</li>
+<li>가장 개선이 어려운 부분이기도 함</li>
+<li>고객 동선 전반에 걸쳐서 측정해야 함</li>
+<li>리텐션율, 이탈률 등의 지표를 활용</li>
+</ul>
+</li>
+<li>고객들이 우리 서비스에 돈을 지불하는가?
+<ul>
+<li>서비스의 비즈니스 모델을 확인하고 그것이 잘 동작하는지 확인</li>
+<li>비용 대비 수익에 대한 확인이 필요</li>
+<li>ARPU, 총매출 등의 지표를 활용</li>
+</ul>
+</li>
+<li>고객들이 주변 지인들에게 서비스를 소개/추천하는가?
+<ul>
+<li>CAC, 바이럴 계수 등의 지표를 활용</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>지표관리
+<ul>
+<li>좋은 지표란 무엇인가?
+<ul>
+<li>상대적이다 = 비교가 쉬운 지표가 좋은 지표</li>
+<li>이해하기 쉽다 = 변화하는 데이터를 현실에 대입하기 쉬움</li>
+<li>비율로 표현된다 = 막연한 증감을 나타내기 보다는 수치화되고 비교 가능한 지표가 좋은 지표</li>
+<li>행동을 바꾼다 = 지표로 나타난 문제점에 대한 해결책을 찾도록 만드는 지표가 좋은 지표</li>
+</ul>
+</li>
+<li>지표 선택에서 중요한 다섯 요소
+<ul>
+<li>정성적/정량적 지표 = 서술이나 평가로 나타나는 지표인가? 수치로 나타나는 지표인가?</li>
+<li>허상/실질 지표 = 페이지뷰 등은 그 의미가 빈약한 허상 지표, 리텐션율이나 컨버전율이 더 중요</li>
+<li>탐색/보고 지표 = 알려지지 않은 사실을 찾아내는 추론적 지표인가? 일상적 경영활동 지표인가?</li>
+<li>선행/후행 지표 = 미래를 예측하고자 하는 지표인가? 과거를 설명하는 지표인가?</li>
+<li>상관/인과 지표 = 상관관계에 관한 지표인가? 인과관계에 관한 지표인가?</li>
+</ul>
+</li>
+<li>One Metric That Matters
+<ul>
+<li>지금 단계에서 가장 중요하게 관리하고 추구해야 할 단일 지표</li>
+<li>제품/서비스 성공의 핵심 중 하나는 정확한 목표/방향을 정하고 그것을 유지하는 것</li>
+<li>OMTM은 고정되어 있는 것이 아니고 외부 환경, 내부 역량, 성장 단계 등 시간이 흐르면서 변함</li>
+<li>KPI와 다른 점
+<ul>
+<li>KPI는 과업 기반의 회사에서 많이 쓰임</li>
+<li>팀/부서 단위로 서로 다르게 설정됨</li>
+<li>업무 과정에서 일반적으로 성과측정을 위해 활용되는 정량적 지표</li>
+<li>달성 여부 자체가 굉장히 중요함</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>마케팅 관련 지표
+<ul>
+<li>Page view = 페이지 표시 카운트</li>
+<li>Unique view = 사람당 중복 방문을 제외한 순수 방문 수</li>
+<li>Cost per mile = 광고가 1000번 노출됐을 때 책정되는 광고 과금액</li>
+<li>Cost per click = 광고가 한번 클릭됐을 때 책정되는 광고 과금액</li>
+<li>Cost per install = 앱 설치 건당 책정되는 광고 과금액</li>
+<li>Cost per action = 고객이 광고 클릭을 넘어 특정 행동을 했을 때 책정되는 광고 과금액</li>
+<li>Cost per view = 광고를 시청하는 건당 책정되는 광고 과금액</li>
+<li>Click-through rate = 광고 노출 대비 광고 클릭이 일어난 비율</li>
+<li>Daily/Weekly/Monthly active users = 하루/1주/1개월 동안 방문한 순수 사용자 수</li>
+<li>Paying users = 구매자/결제자 수</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>프로젝트 관리 방법론</h3>
+<ul>
+<li>워터폴
+<ul>
+<li>프로젝트의 최종 목적, 필요 기술, 요구 사항이 명확하게 정의되고 파악되어 있는 경우에 사용</li>
+<li>장점
+<ul>
+<li>각 단계마다 문서와 구조적 설계를 하여 새로운 협업자가 팀에 합류해도 쉽게 적응할 수 있음</li>
+<li>각 단계의 결과를 예측하기 쉽고, 평가 프로세스가 분명함</li>
+<li>시간을 효율적으로 관리할 수 있음</li>
+</ul>
+</li>
+<li>단점
+<ul>
+<li>특정 단계의 문제가 발생할 경우 전체 타임라인에 영향을 줄 수 있음</li>
+<li>한 단계가 끝나면 전 단계로 역추적하기 어려움</li>
+<li>QA가 프로세스 후반에 진행됨</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>애자일
+<ul>
+<li>less documentation, user-oriented, code-oriented</li>
+<li>장점
+<ul>
+<li>변화하는 요구사항을 수용하기 쉬움</li>
+<li>최종 목표가 확실하지 않은 프로젝트에 용이함</li>
+<li>사용자 의견을 수용하기 쉬움</li>
+</ul>
+</li>
+<li>단점
+<ul>
+<li>계획의 불확실성</li>
+<li>팀을 구성하기 어려움</li>
+<li>최종 제품이 요구사항과 다를 수 있음</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

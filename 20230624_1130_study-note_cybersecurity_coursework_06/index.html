@@ -1,0 +1,2696 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Study Note] Coursework: Cybersecurity Analyst - Part 6 | devfreedom.github.io</title>
+    <meta name="title" content="[Study Note] Coursework: Cybersecurity Analyst - Part 6 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Study Note❯,cybersecurity,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230624_1130_study-note_cybersecurity_coursework_06/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Study Note] Coursework: Cybersecurity Analyst - Part 6</h1>
+        <div class="text-center">Published on 24 June 2023 11:30 AM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Study Note❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Study Note❯</a>
+            
+            <a href="/tags/cybersecurity" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#cybersecurity</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/cybersecurity.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>1. Cyber Threat Intelligence</h1>
+<h2>Threat Intelligence Strategy Map</h2>
+<ol>
+<li>Collect
+<ul>
+<li>Integrate data</li>
+<li>Sources
+<ul>
+<li>Internal and external</li>
+<li>Technical and human</li>
+<li>Raw and packaged</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Process
+<ul>
+<li>Put data in context
+<ul>
+<li>Normalize</li>
+<li>Correlate</li>
+<li>Confirm</li>
+<li>Enrich</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Analyze
+<ul>
+<li>Find insight and actions
+<ul>
+<li>Investigate</li>
+<li>Contain</li>
+<li>Remediate</li>
+<li>Prioritize</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Share
+<ul>
+<li>Inform decisions</li>
+<li>Personalize, based on
+<ul>
+<li>Who, for what purpose</li>
+<li>What, how often</li>
+<li>What kind of format and medium</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3>Sharing Threat Intelligence</h3>
+<ul>
+<li>Level 1 analysts</li>
+<li>Level 2/3 analysts</li>
+<li>Operational leaders</li>
+<li>Strategic leaders</li>
+</ul>
+<h2>Intelligence Areas by Crowdstrike</h2>
+<ul>
+<li>Tactical
+<ul>
+<li>Role: Mechanic</li>
+<li>Focused on performing malware analysis and enrichment</li>
+<li>As well as ingesting atomic, static, and behavioral threat indicators into defensive cybersecurity systems.</li>
+<li>Stakeholders
+<ul>
+<li>SOC analyst</li>
+<li>SIEM</li>
+<li>Firewall</li>
+<li>Endpoints</li>
+<li>IDS/IPS</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Operational
+<ul>
+<li>Role: Race car driver</li>
+<li>Focused on understanding adversarial capabilities, infrastructure, TTPs</li>
+<li>And then leveraging that understanding to conduct more targeted and prioritized cybersecurity operations.</li>
+<li>Stakeholders
+<ul>
+<li>Threat hunter</li>
+<li>SOC analyst</li>
+<li>Vulnerability management</li>
+<li>Incidence response</li>
+<li>Insider threat</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Strategic
+<ul>
+<li>Role: The owner</li>
+<li>Focused on understanding high-level trends and adversarial motives</li>
+<li>And then leveraging that understanding to engage in strategic security and business decision-making</li>
+<li>Stakeholders
+<ul>
+<li>CISO</li>
+<li>CIO</li>
+<li>CTO</li>
+<li>Executive board</li>
+<li>Strategic intel</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Threat Intelligence Sources</h2>
+<ul>
+<li>BleepingComputer</li>
+<li>DARKReading</li>
+<li>Trend Micro</li>
+<li>Krebs on Security</li>
+<li>InfoSecurity Magazine</li>
+<li>X-Force Exchange</li>
+</ul>
+<h2>Threat Intelligence Platform Capabilities</h2>
+<ul>
+<li>Primary feature areas
+<ul>
+<li>Collect</li>
+<li>Correlate</li>
+<li>Enrichment and Contextualization</li>
+<li>Analyze</li>
+<li>Integrate</li>
+<li>Act</li>
+</ul>
+</li>
+<li>Platforms
+<ul>
+<li>Recorded Future
+<ul>
+<li>Centralize and contextualize all sources of threat data</li>
+<li>Collaborate on analysis from a single source of truth</li>
+<li>Customize intelligence to increase relevance</li>
+</ul>
+</li>
+<li>FireEye
+<ul>
+<li>Subscriptions include,
+<ul>
+<li>Fusion intelligence</li>
+<li>Strategic intelligence</li>
+<li>Operational intelligence</li>
+<li>Vulnerability intelligence</li>
+<li>Cyber physical/crime/espionage intelligence</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>IBM X-Force Exchange
+<ul>
+<li>Cloud-based threat intelligence sharing platform</li>
+<li>Access and share threat data</li>
+<li>Integrate with other solutions</li>
+<li>Boost security operations</li>
+</ul>
+</li>
+<li>TruSTAR
+<ul>
+<li>Intelligence Management Platform</li>
+<li>Streamlined workflow integrations</li>
+<li>Secure access control</li>
+<li>Advanced search
+Automated data ingest and normalization</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Threat Intelligence Framework</h2>
+<h3>Mitre ATT&amp;CK</h3>
+<ul>
+<li>Levels
+<ul>
+<li>Level 1
+<ul>
+<li>For those just starting out who may not have many resources</li>
+<li>Cyber threat intelligence is all about knowing what your adversaries do and using that information to improve decision-making.</li>
+</ul>
+</li>
+<li>Level 2
+<ul>
+<li>For mid-level teams starting to mature</li>
+<li>If you have a team of threat analysts who regularly review information about adversaries, a next-level action you can take is to map intelligence to ATT&amp;CK yourself rather than using what others have already mapped.</li>
+</ul>
+</li>
+<li>Level 3
+<ul>
+<li>For more advanced cybersecurity teams and resources</li>
+<li>If your CTI team is advanced, you can start to map more information to ATT&amp;CK, and then use that information to prioritize how you defend.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Process
+<ol>
+<li>Understand ATT&amp;CK</li>
+<li>Find the behavior</li>
+<li>Research the behavior</li>
+<li>Translate the behavior into a tactic</li>
+<li>Figure out what technique applies to the behavior</li>
+<li>Compare your results to other analysts</li>
+</ol>
+</li>
+</ul>
+<h3>U.S. Office of Director of National Intelligence</h3>
+<ol>
+<li>Preparation
+<ul>
+<li>External actions</li>
+<li>Objectives
+<ul>
+<li>Plan activity</li>
+<li>Conduct research and analysis</li>
+<li>Develop resources and capabilities</li>
+<li>Acquire victim-specific knowledge</li>
+<li>Complete preparation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Engagement
+<ul>
+<li>External actions</li>
+<li>Objectives
+<ul>
+<li>Deploy capability</li>
+<li>Interact with intended victim</li>
+<li>Exploit vulnerabilities</li>
+<li>Deliver malicious capability</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Presence
+<ul>
+<li>Internal actions</li>
+<li>Objectives
+<ul>
+<li>Establish controlled access</li>
+<li>Hide</li>
+<li>Expand presence</li>
+<li>Refine focus of activity</li>
+<li>Establish persistence</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Effect/Consequence
+<ul>
+<li>Internal actions</li>
+<li>Objectives
+<ul>
+<li>Enable other operations</li>
+<li>Deny access</li>
+<li>Extract data</li>
+<li>Alter data and/or computer, network, or system behavior</li>
+<li>Destroy HW/SW/data</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2>Intelligent Detection Best Practices</h2>
+<ol>
+<li>Predict and prioritize security weaknesses
+<ul>
+<li>Gather threat intelligence information</li>
+<li>Manage vulnerabilities and risks</li>
+<li>Augment vulnerability scan data with context for optimized prioritization</li>
+<li>Manage device configurations
+<ul>
+<li>Firewalls, switches, routers, IPS/IDS</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Detect deviations to identify malicious activity
+<ul>
+<li>Establish baseline behaviors</li>
+<li>Monitor and investigate anomalies</li>
+<li>Monitor network flows</li>
+</ul>
+</li>
+<li>React in real time to exploits
+<ul>
+<li>Correlate logs, events, network flows, identities, assets, vulnerabilities, and configurations, and add context to it</li>
+<li>Use automated and cognitive solutions to make data actionable by existing staff</li>
+</ul>
+</li>
+</ol>
+<h2>Security Intelligence</h2>
+<ul>
+<li>The real-time collection, normalization, and analytics of the data generated by users, applications, and infrastructure that impacts the IT security and risk posture of an enterprise</li>
+</ul>
+<h3>Exploit Timeline</h3>
+<p>(↓ Vulnerability)</p>
+<ol>
+<li>Pre-exploit
+<ul>
+<li>Prediction/Prevention phase
+<ul>
+<li>Gain visibility over the organization's security posture and identify security gaps</li>
+<li>Detect deviations from the norm that indicate early warnings of APTs</li>
+<li>Prioritize vulnerabilities to optimize remediation processes and close critical exposures before exploit</li>
+</ul>
+</li>
+<li>&quot;What are the major risks and vulnerabilities?&quot;</li>
+<li>&quot;Are we configured to protect against advanced threats?&quot;
+(↓ Exploit)</li>
+</ul>
+</li>
+<li>Post-exploit
+<ul>
+<li>Reaction/remediation phase
+<ul>
+<li>Automatically detect threats with prioritized workflow to quickly analyze impact</li>
+<li>Gather full situational awareness through advanced security analytics</li>
+<li>Perform forensic investigation, reducing time to find the root cause</li>
+<li>Use results to drive faster remediation
+(Remediation)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3>3 Pillars of Effective Threat Detection</h3>
+<ul>
+<li>See everything</li>
+<li>Automate intelligence</li>
+<li>Become proactive</li>
+</ul>
+<h3>Security Effectiveness Reality</h3>
+<ul>
+<li>Bloat
+<ul>
+<li>Average number of tools organizations report in their IT environment = 50-70</li>
+</ul>
+</li>
+<li>Overlap
+<ul>
+<li>Average number of tools with overlapping capabilities = 35%</li>
+</ul>
+</li>
+<li>Misconfiguration
+<ul>
+<li>Average number of tools left underutilized at default settings = 80%</li>
+</ul>
+</li>
+<li>53% of attacks successfully infiltrate without detection.</li>
+<li>Alerts are generated for only 9% of attacks.</li>
+</ul>
+<h3>Key Takeaways</h3>
+<ul>
+<li>Visibility is a key concern for many organizations, whether it's the type of data being processed within the infrastructure or uncertainty of data location.</li>
+<li>Organizations are concerned with privileged user and/or credential abuse.</li>
+<li>Endpoint alerts and network access devices are the top sources of incident information, providing alerts and investigation support, respectively.</li>
+<li>Many organizations (74%) have blend of on-premise and cloud environments, in many cases using multiple cloud providers.</li>
+</ul>
+<hr>
+<h1>2. Data Security and Mobile Endpoint Protection</h1>
+<h2>Data Security</h2>
+<ul>
+<li>Protecting the
+<ul>
+<li>Confidentiality</li>
+<li>Integrity</li>
+<li>Availability</li>
+</ul>
+</li>
+<li>of data
+<ul>
+<li>In transit</li>
+<li>At rest
+<ul>
+<li>Databases</li>
+<li>Unstructured data (files)</li>
+<li>On endpoints</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>against
+<ul>
+<li>Deliberate attack
+<ul>
+<li>Hackers</li>
+<li>Denial of Service</li>
+</ul>
+</li>
+<li>Inadvertent attacks
+<ul>
+<li>Operator error</li>
+<li>Natural disaster</li>
+<li>Component failure</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Data Security Top Challenges</h2>
+<ul>
+<li>Explosive data growth</li>
+<li>New privacy regulations
+<ul>
+<li>e.g.
+<ul>
+<li>EU GDPR</li>
+<li>US California Consumer Protection Act (CCPA)</li>
+<li>Brazil Lei Geral de Proteção de Dados Pessoais (LGPD)</li>
+<li>PCI DSS</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Operational complexity</li>
+<li>Cybersecurity skills shortage</li>
+</ul>
+<h3>Industry-specific Data Security Challenges</h3>
+<ul>
+<li>Healthcare
+<ul>
+<li>Process and store combination of personal health information and payment card data</li>
+<li>Subject to strict data privacy regulations such as HIPAA</li>
+<li>May also be subject to financial standards and regulations</li>
+<li>Highest cost per breach record</li>
+<li>Data security critical for both business and regulatory compliance</li>
+</ul>
+</li>
+<li>Transportation
+<ul>
+<li>Critical part of national infrastructure</li>
+<li>Combines financially sensitive information and personal identification information</li>
+<li>Relies on distributed IT infrastructure and 3rd-party vendors</li>
+</ul>
+</li>
+<li>Financial industries and insurance
+<ul>
+<li>Most targeted industry: 19% more cyberattacks in 2018</li>
+<li>Strong financial motivation for both external and internal attacks</li>
+<li>Numerous industry-specific regulations require complex compliance measures</li>
+</ul>
+</li>
+<li>Retail
+<ul>
+<li>Among most highly targeted groups for data breaches</li>
+<li>Large number of access points in retail data lifecycle</li>
+<li>Customers and associates access and share sensitive data in physical outlets, online, mobile applications</li>
+</ul>
+</li>
+</ul>
+<h2>Common Data Security Pitfalls</h2>
+<ul>
+<li>Failure to move beyond compliance</li>
+<li>Failure to recognize the need for centralized data security</li>
+<li>Failure to define who owns responsibility for the data itself</li>
+<li>Failure to address known vulnerabilities</li>
+<li>Failure to prioritize and leverage data activity monitoring</li>
+</ul>
+<h2>Top 12 Critical Data Protection Capabilities</h2>
+<ul>
+<li>Data discovery
+<ul>
+<li>Determine where data resides.</li>
+<li>Discover databases or file sources in your network that potentially contain sensitive or regulated data.</li>
+<li>To protect your data, you must know where your data lives.</li>
+<li>Cross-silo, centralized efforts</li>
+</ul>
+</li>
+<li>Data classification
+<ul>
+<li>Parse discovered data sources to determine the kind of data they contain, matching against a predefined set of patterns or keywords.</li>
+<li>Assign labels based on the data type to inform policies.</li>
+<li>Allows you to determine what protective measures are necessary.</li>
+<li>Data may fall under multiple classifications.</li>
+<li>Standards and regulations (SOX, HIPAA, PCI, etc.) define classifications for data.</li>
+</ul>
+</li>
+<li>Vulnerability assessment
+<ul>
+<li>Scan data environments to detect vulnerabilities and exposures
+<ul>
+<li>Missing patches</li>
+<li>Weak passwords</li>
+<li>Unauthorized access and changes</li>
+<li>Misconfigured privileges</li>
+<li>Account sharing</li>
+<li>Other behavioral vulnerabilities</li>
+</ul>
+</li>
+<li>Iterative process</li>
+<li>Requires coordination across silos and centralized effort</li>
+</ul>
+</li>
+<li>Data risk analysis
+<ul>
+<li>Identify data sources with the greatest risk of exposure or audit failure and help security professionals prioritize where to focus first.</li>
+<li>Build on classification and vulnerability assessment.</li>
+</ul>
+</li>
+<li>Data and file activity monitoring
+<ul>
+<li>Capture and record real-time data access activity, with visibility into transactions for platforms and protocols by users including database admins, developers, outsourced personnel and applications.</li>
+<li>Centralized policies</li>
+<li>Resource-intensive
+<ul>
+<li>Scanning many transactions for small number of suspicious transactions</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Real-time alerting
+<ul>
+<li>Detect abnormal activity to identify risk around sensitive data access, privileged user actions, change control, application user activities and security exceptions.</li>
+</ul>
+</li>
+<li>Blocking, masking, and quarantining
+<ul>
+<li>Obscure data and/or blocking further action by risky users when activities deviate from regular baselines or pre-defined policies</li>
+<li>Provide only level of access to data necessary</li>
+</ul>
+</li>
+<li>Active analytics
+<ul>
+<li>Capture insight into key threats such as,
+<ul>
+<li>SQL injections</li>
+<li>Malicious stored procedures</li>
+<li>Denial of service</li>
+<li>Data leakage</li>
+<li>Account takeover</li>
+<li>Schema tampering</li>
+<li>Data tampering</li>
+<li>Other anomalies</li>
+</ul>
+</li>
+<li>Develop recommendations for actions to reduce risk.</li>
+</ul>
+</li>
+<li>Encryption
+<ul>
+<li>Render sensitive data useless to cybercriminals, unauthorized employees, and 3rd-party service providers by encoding it in such a way that only authorized individuals can read it by decrypting the encoded data with a key.</li>
+<li>Protect data at-rest and in-transit</li>
+</ul>
+</li>
+<li>Tokenization
+<ul>
+<li>A special type of format-preserving encryption that substitutes sensitive data with a token, which can be mapped to the original value.</li>
+<li>Substitutes key data with a token that is issued by a trusted 3rd-party where the token can be accessed but not redeemed by an untrusted party.</li>
+</ul>
+</li>
+<li>Key management
+<ul>
+<li>Securely distribute keys across complex encryption landscape</li>
+<li>Centralize key management</li>
+<li>Enable organized and secure key management that keeps data private and compliant</li>
+</ul>
+</li>
+<li>Automated compliance report
+<ul>
+<li>Pre-built capabilities mapped to specific regulations such as GDPR, HIPAA, PCI-DSS, CCPA, etc.</li>
+<li>Includes,
+<ul>
+<li>Audit workflows to streamline approval processes</li>
+<li>Out-of-the-box reports</li>
+<li>Pre-built classification patterns for regulated data</li>
+<li>Tamper-proof audit repository</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Mobile Endpoint Protection</h2>
+<ul>
+<li>Compared to traditional endpoints
+<ul>
+<li>Users do not interface directly with the OS.</li>
+<li>A series of applications act as a broker between the user and the OS.</li>
+<li>OS stability can be easily monitored and any anomalies reported that present risk</li>
+<li>Anti-virus software can &quot;see&quot; the apps that are installed on a device, and read certain signatures, but cannot peek inside at their contents.</li>
+</ul>
+</li>
+</ul>
+<h3>Primary Threats to Mobile Endpoints</h3>
+<ul>
+<li>System-based
+<ul>
+<li>Jailbreaking and Rooting</li>
+<li>Systems that were previously read-only can be altered in malicious ways.</li>
+<li>One primary function is gain access to apps that are not approved or bootleg.</li>
+<li>Vulnerabilities and exploits in the core code can open devices to remote attacks that provide root access.</li>
+</ul>
+</li>
+<li>App-based
+<ul>
+<li>Primarily comes in the form of phishing scams via SMS or email.</li>
+<li>Malicious code can infect even public apps.
+<ul>
+<li>Be wary of granting apps access to sensitive data.</li>
+</ul>
+</li>
+<li>Apps may request access to hardware features irrelevant to their functionality.</li>
+<li>Web content in mobile browsers, especially those that prompt for app installations, can be the root cause of many attacks.</li>
+</ul>
+</li>
+<li>External
+<ul>
+<li>Network-based attacks may collect sensitive data.</li>
+<li>Vulnerabilities can be exploited by tethering devices to external media.</li>
+<li>Social engineering is often used to gain unauthorized access to mobile devices.</li>
+</ul>
+</li>
+</ul>
+<h3>Protecting Mobile Assets</h3>
+<ul>
+<li>MDM
+<ul>
+<li>Mobile devices require constant monitoring as they are generally in use all day long.</li>
+<li>Control the content allowed on devices and restrict access to extraneous, potentially hazardous features.</li>
+<li>Lock devices down so they are inaccessible if lost or stolen.</li>
+</ul>
+</li>
+<li>App security
+<ul>
+<li>Any number of systems can be used to monitor as much or as little information as is possible.</li>
+<li>Report on the health and reliability of applications, oftentimes before they even make it on to devices.</li>
+</ul>
+</li>
+<li>User training
+<ul>
+<li>Many times though, there will be gaps that cannot be addressed due to system limitations.
+<ul>
+<li>e.g., monitoring iCloud messages</li>
+</ul>
+</li>
+<li>Educating users on the threats that can impact them is the number one line of defense.
+<ul>
+<li>This is especially on BYOD scenarios where prohibitive management isn't possible.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Day-to-day Operations</h3>
+<ul>
+<li>Monitor device OS versions.</li>
+<li>Monitor app installs and versions.</li>
+<li>Monitor and enforce encryption.</li>
+<li>Distribute secure payloads.</li>
+<li>Automate compliance actions.</li>
+<li>Ensure proper NAC policies are enforced.</li>
+<li>Educate users regularly.</li>
+<li>Update contingency plans.</li>
+</ul>
+<hr>
+<h1>3. Scanning</h1>
+<h2>Vulnerability Scanner</h2>
+<ul>
+<li>Capabilities
+<ul>
+<li>Keeping an up-to-date database of vulnerabilities</li>
+<li>Detection of genuine vulnerabilities without an excessive number of false positives</li>
+<li>Ability to conduct multiple scans at the same time</li>
+<li>Ability to perform trend analyses and create clear reports of the results</li>
+<li>Provide recommendations for effective countermeasures to eliminate discovered vulnerabilities</li>
+</ul>
+</li>
+<li>Components
+<ul>
+<li>Engine scanner
+<ul>
+<li>Performs security checks according to its installed plug-ins, identifying system information, and vulnerabilities</li>
+</ul>
+</li>
+<li>Database
+<ul>
+<li>Stores vulnerability information, scan results, and other data used by the scanner</li>
+</ul>
+</li>
+<li>Report module
+<ul>
+<li>Provides scan result reporting such as,
+<ul>
+<li>Technical reports for system administrators</li>
+<li>Summary reports for security managers</li>
+<li>High-level graph and trend reports for corporate executive leadership</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>User interface
+<ul>
+<li>Allows the administrator to operate the scanner</li>
+<li>It may be either a GUI or just a command line interface</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Host and Network</h3>
+<ul>
+<li>Internal
+<ul>
+<li>It can be through malware or virus that is downloaded onto a network through internet or USB.</li>
+<li>It can be a disgruntled employee who has the internal network access.</li>
+<li>It can be through the outside attacker who has gained the access to the internal network.</li>
+<li>The internal scan is done by running the vulnerability scanner on the critical components of the network from a machine which is a part of the network.
+<ul>
+<li>This important component may include core router, switches, workstations, web server, database, etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>External
+<ul>
+<li>The external scan is important as it is required to detect the vulnerabilities to those internet-facing assets through which an attacker can gain internal access.</li>
+<li>The external scan is done by running a vulnerability scanner on the host from the internet.</li>
+<li>It is always a good idea to eliminate the open issues/loopholes before it can be used and exploited by a malicious user or an attacker.</li>
+</ul>
+</li>
+</ul>
+<h3>Common Vulnerability Scoring System (CVSS)</h3>
+<ul>
+<li>The CVSS is a way of assigning severity rankings to computer system vulnerabilities, ranging from zero (least severe) to 10 (most severe)
+<ul>
+<li>It provides a standardized vulnerability score across the industry, helping critical information flow more effectively between sections within an organization and between organizations.</li>
+<li>The formula for determining the score is public and freely distributed, providing transparency.</li>
+<li>It helps prioritize risk; CVSS rankings provide both a general score and more specific metrics.</li>
+</ul>
+</li>
+<li>Score breakdown
+<ul>
+<li>Base scores
+<ul>
+<li>How easy it is to exploit the vulnerability</li>
+<li>How much damage an exploit targeting that vulnerability could inflict</li>
+<li>Base subscores
+<ul>
+<li>Base-Exploitability subscore
+<ul>
+<li>Attack vector</li>
+<li>Attack complexity</li>
+<li>Privileges required</li>
+<li>User interaction</li>
+</ul>
+</li>
+<li>Base-Impact subscore
+<ul>
+<li>Confidentiality</li>
+<li>Integrity</li>
+<li>Availability</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Environmental
+<ul>
+<li>Provides a more customized metric specific to an organization or work environment</li>
+<li>Scores
+<ul>
+<li>Security requirements subscore</li>
+<li>Impact subscore</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Temporal
+<ul>
+<li>How aware people are of the vulnerability</li>
+<li>What remedial steps are being taken</li>
+<li>Whether threat actors are targeting it</li>
+<li>Scores
+<ul>
+<li>Exploit code maturity</li>
+<li>Remediation level</li>
+<li>Report confidence</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Overall</li>
+</ul>
+</li>
+</ul>
+<h2>Security Technical Implementation Guides (STIGs)</h2>
+<ul>
+<li>The Defense Information Systems Agency (DISA) is the entity responsible for maintaining the security posture of the US DoD IT infrastructure.
+<ul>
+<li>DISA developed a security standard for various DoD agencies to utilize the same standard across all application instances that exist.</li>
+</ul>
+</li>
+</ul>
+<h2>Center for Internet Security (CIS)</h2>
+<ul>
+<li>CIS Benchmarks are the only consensus-based best practice security configuration guides both developed and accepted by government, business, industry, and academia.</li>
+<li>CIS Controls are a prioritized set of actions that collectively form a defense-in-depth set of best practices that mitigate the most common attacks against systems and networks.
+<ul>
+<li>Critical tenets
+<ul>
+<li>Offense informs defense</li>
+<li>Prioritization</li>
+<li>Measurements and metrics</li>
+<li>Continuous diagnostics and mitigation</li>
+<li>Automation</li>
+</ul>
+</li>
+<li>Implementation groups
+<ul>
+<li>IG1
+<ul>
+<li>CIS Sub-controls for small, commercial, off-the-shelf or home office environments (low-sensitivity data)</li>
+</ul>
+</li>
+<li>IG2
+<ul>
+<li>CIS Sub-controls focused on helping security teams manage sensitive client or company information</li>
+<li>IG2 organizations should follow IG1 steps as well</li>
+</ul>
+</li>
+<li>IG3
+<ul>
+<li>CIS Sub-controls that reduce the impact of zero-day attacks and targeted attacks from sophisticated adversaries</li>
+<li>IG3 organizations should follow IG1 and IG2 steps as well.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>20 CIS controls
+<ul>
+<li>Basic</li>
+<li>Foundational</li>
+<li>Organizational</li>
+</ul>
+</li>
+</ul>
+<h2>Port Scanning</h2>
+<ul>
+<li>A port scanner is a simple computer program that checks all of ports, and responds with one of three possible responses.
+<ul>
+<li>Open, accepted</li>
+<li>Closed, not listening</li>
+<li>Filtered/Dropped/Blocked</li>
+</ul>
+</li>
+<li>Port scanning is a method of determining which ports on a network are open and could be receiving or sending data.
+<ul>
+<li>It is also a process for sending packets to specific ports on a host and analyzing responses to identify vulnerabilities.</li>
+</ul>
+</li>
+</ul>
+<h3>Types of Scans</h3>
+<ul>
+<li>Ping
+<ul>
+<li>Simplest port scan</li>
+<li>Sending ICMP echo requests to see who is responding.</li>
+</ul>
+</li>
+<li>TCP Half Open
+<ul>
+<li>A popular, deceptive scan</li>
+<li>Also known as SYN scan</li>
+<li>It notes the connection and leaves the target hanging.</li>
+</ul>
+</li>
+<li>TCP Connect
+<ul>
+<li>Takes a step further than TCP Half Open by completing the TCP connection.</li>
+<li>This makes it slower and noisier than half open.</li>
+</ul>
+</li>
+<li>UDP
+<ul>
+<li>When you run a UDP port scan, you send either an empty packet or a packet that has a different payload per port, and will only get a response if the port is closed.</li>
+<li>It is faster than TCP but doesn't contain as much data.</li>
+</ul>
+</li>
+<li>Stealth
+<ul>
+<li>These TCP scans are quieter than the other options and can get past firewalls.</li>
+<li>They will still get picked up by the most recent IDS.</li>
+</ul>
+</li>
+</ul>
+<h3>Common Ports</h3>
+<ul>
+<li>Port 0 to 1023
+<ul>
+<li>Well-known port</li>
+</ul>
+</li>
+<li>Port 1024 to 49151
+<ul>
+<li>Registered port</li>
+</ul>
+</li>
+<li>Port 49152 to 65535
+<ul>
+<li>Dynamic and private port</li>
+</ul>
+</li>
+<li>Port 20
+<ul>
+<li>UDP</li>
+<li>for FTP</li>
+</ul>
+</li>
+<li>Port 22
+<ul>
+<li>TCP</li>
+<li>for SSH</li>
+</ul>
+</li>
+<li>Port 53
+<ul>
+<li>UDP</li>
+<li>for DNS</li>
+</ul>
+</li>
+<li>Port 80
+<ul>
+<li>TCP</li>
+<li>for HTTP</li>
+</ul>
+</li>
+</ul>
+<h3>Nmap</h3>
+<ul>
+<li>Network Mapper (Nmap) is an open source tool for network exploration and security auditing.</li>
+<li>Designed to rapidly scan large networks</li>
+<li>Nmap uses raw IP packets in novel ways to determine
+<ul>
+<li>What hosts are available on the network</li>
+<li>What applications and services those hosts are offering</li>
+<li>What OS they are running</li>
+<li>What type of packet filters/firewalls are in use</li>
+<li>etc.</li>
+</ul>
+</li>
+<li>Many sysadmins find it useful for routine tasks such as,
+<ul>
+<li>Network inventory</li>
+<li>Managing service upgrade schedules</li>
+<li>Monitoring host</li>
+<li>Monitoring service uptime</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+<h2>Sniffer</h2>
+<ul>
+<li>Sniffer operates at the data-link layer of the OSI model.
+<ul>
+<li>Sniffer do not have to play by the same rules as the applications and services that reside further up the stack.</li>
+</ul>
+</li>
+<li>Sniffers can capture everything on the wire and record it for later review.</li>
+<li>Sniffers allow users to see all of the data contained in the packet.</li>
+</ul>
+<h3>Wireshark</h3>
+<ul>
+<li>Wireshark is the most popular traffic analyzer in the world.</li>
+<li>Wireshark intercepts traffic, and converts that binary traffic into human-readable format.
+<ul>
+<li>This makes it easy to identify what traffic is crossing your network, how much of it, how frequently, how much latency there is between certain hops, and so forth.</li>
+</ul>
+</li>
+<li>Use cases
+<ul>
+<li>Network administrators use it to troubleshoot network problems.</li>
+<li>Network security engineers use it to examine security problems.</li>
+<li>QA engineers use it to verify network applications.</li>
+<li>Developers use it to debug protocol implementations.</li>
+<li>People use it to learn network protocol internals.</li>
+</ul>
+</li>
+<li>Features
+<ul>
+<li>Deep inspection of hundreds of protocols and more</li>
+<li>Live capture and offline analysis</li>
+<li>Standard 3-pane packet browser</li>
+<li>Multi-platform</li>
+<li>The most powerful display filters in the industry</li>
+<li>Rich VoIP analysis</li>
+<li>Supports many different capture file formats
+<ul>
+<li>e.g. EtherPeek, TokenPeek, AiroPeek</li>
+</ul>
+</li>
+<li>gzip-compressed capture files can be decompressed on-the-fly</li>
+<li>Decryption support for various protocols
+<ul>
+<li>e.g. IPsec, ISAKMP, Kerberos, SSL/TLS, WPA2</li>
+</ul>
+</li>
+<li>Packet list rule coloring</li>
+<li>Export to XML, CSV, PostScript, plaintext</li>
+</ul>
+</li>
+<li>Packet Capture (PCAP) file format
+<ul>
+<li>Recorded packet data pulled from a network scan</li>
+<li>Use cases
+<ul>
+<li>Monitoring bandwidth usage</li>
+<li>Identifying rogue DHCP servers</li>
+<li>Detecting malware</li>
+<li>DNS resolution</li>
+<li>Incidence response</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>4. Security Architecture</h1>
+<ul>
+<li>The foundation of robust security is a clearly-communicated structure with a systematic analysis of the threats and controls.</li>
+<li>As IT systems increase in complexity, they require a standard set of techniques, tools, and communication.</li>
+<li>Architectural thinking is about creating and communicating good structure and behavior, with the intent of avoiding chaos.</li>
+<li>Architecture needs to be
+<ul>
+<li>described before it can be created</li>
+<li>with different levels of elaboration for communication</li>
+<li>include a solution for implementation and operations</li>
+<li>affordable</li>
+<li>secure</li>
+</ul>
+</li>
+</ul>
+<h2>High-level Architectural Models</h2>
+<ul>
+<li>Levels of abstraction
+<ul>
+<li>Enterprise architecture
+<ul>
+<li>Considers the needs of the whole &quot;enterprise&quot; that is within scope
+<ul>
+<li>This could be an entire organization, or a large single department, if that's the scope</li>
+</ul>
+</li>
+<li>Maps the main components of problem space and solution at a very high level</li>
+<li>Shows how the main components interrelate with each other and interlink to external organizations</li>
+<li>Does not describe the internals of the main components or how they will be implemented</li>
+<li>Instead this could include,
+<ul>
+<li>A model showing generic business processes</li>
+<li>A model showing proposed generic IT components that provide high-level business services</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Solution architecture
+<ul>
+<li>Describes the main elements of the solution</li>
+<li>Describes how specific products or technologies are used</li>
+<li>Adds a context that might describe the different environments</li>
+<li>Adds some technology perspectives to provide further detail</li>
+<li>More detailed than the enterprise architecture</li>
+<li>Shows the internal data and use of reusable or off-the-shelf components</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Building blocks
+<ul>
+<li>General features
+<ul>
+<li>Package of function defined to meet a business need</li>
+<li>Could be an actor, business service, application, or data entity</li>
+<li>Defined boundary, but can work with other building blocks</li>
+<li>Interface/boundary loosely coupled from implementation</li>
+</ul>
+</li>
+<li>Architectural Building Blocks (ABB)
+<ul>
+<li>For enterprise architecture</li>
+<li>Capture and define architecture requirements
+<ul>
+<li>e.g. function, data, application</li>
+</ul>
+</li>
+<li>Product and vendor-neutral</li>
+<li>Guide the development of a solution architecture</li>
+<li>Components
+<ul>
+<li>Data security</li>
+<li>Application security</li>
+<li>Identity and access management</li>
+<li>Infrastructure and endpoint security</li>
+<li>Detect and respond</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Solution Building Blocks (SBB)
+<ul>
+<li>For solution architecture</li>
+<li>Specify technical components to implement a function</li>
+<li>Add context of the platforms and environments</li>
+<li>They may be product/vendor aware</li>
+<li>Components
+<ul>
+<li>Key security manager</li>
+<li>Certificate authority</li>
+<li>Web application firewall (WAF)</li>
+<li>Static application security test (SAST)</li>
+<li>Hardware token</li>
+<li>Privilege access manager</li>
+<li>Application firewall</li>
+<li>NIPS</li>
+<li>Incident workflow manager</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Enterprise Security Architecture Example
+<ul>
+<li>e.g. Hybrid multicloud security domains
+<ul>
+<li>Governance, Risk, and Compliance</li>
+<li>Multicloud Security Management
+<ul>
+<li>Application security</li>
+<li>Data security</li>
+<li>Identity and access management</li>
+<li>Infrastructure and endpoint security</li>
+<li>Threat detection and response</li>
+</ul>
+</li>
+<li>Physical security</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>6W for IT Architecture</h3>
+<ul>
+<li>Who?
+<ul>
+<li>Stakeholders include the client, end users, auditors, 3rd-parties, regulators.</li>
+</ul>
+</li>
+<li>Where?
+<ul>
+<li>Locations for IT applications include access points for end users, connections to any 3rd-parties andthe data centers.</li>
+</ul>
+</li>
+<li>When?
+<ul>
+<li>An IT system may be required to support a new product launch or to an organizational change.</li>
+</ul>
+</li>
+<li>Why?
+<ul>
+<li>Understanding the business rationale for an IT system is critical.</li>
+</ul>
+</li>
+<li>What?
+<ul>
+<li>Includes words, tables, and pictures to describe the functional requirements.
+<ul>
+<li>e.g. A requirements catalogue supported by use-case diagrams and tables of detailed business rules</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>hoW?
+<ul>
+<li>Describes the proposed solution in words and pictures
+<ul>
+<li>e.g. conceptual and physical models which decompose the solution into components</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Security Architecture Patterns</h2>
+<ul>
+<li>A reusable solution to a commonly occurring problem</li>
+<li>It is a description or template for how to solve a problem that can be used in many different situations.</li>
+<li>It is not a finished design as it needs context.</li>
+<li>It can be represented in many different formats.</li>
+<li>Vendor-specific or agnostic</li>
+<li>Available at all levels of abstraction</li>
+</ul>
+<h2>Application Security</h2>
+<ul>
+<li>Software development cycle
+<ol>
+<li>Plan</li>
+<li>Develop</li>
+<li>Test</li>
+<li>Deploy</li>
+<li>Maintain</li>
+<li>Plan</li>
+<li>...</li>
+</ol>
+</li>
+<li>Methodologies
+<ul>
+<li>Waterfall
+<ul>
+<li>Top-down approach</li>
+</ul>
+</li>
+<li>Spiral
+<ul>
+<li>Minimizing risk
+<ul>
+<li>Evaluate security at the end of each cycle</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Agile/Scrum</li>
+<li>Iterative
+<ul>
+<li>Breaks up development into smaller prototypes</li>
+<li>Lessons-learned through repeated cycles</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Pentesting for Applications</h3>
+<ul>
+<li>White-box testing
+<ul>
+<li>Pentesters are provided with detailed information about the systems they target
+<ul>
+<li>Bypasses many reconnaissance steps that normally precede attacks</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Black-box testing
+<ul>
+<li>Does not provide any information prior to the attack</li>
+<li>Simulates an external hacker trying to gain access to information about the business and technical background</li>
+</ul>
+</li>
+<li>Gray-box testing, a.k.a. Partial knowledge test
+<ul>
+<li>Balance between cost/time efficiency and fully-fledged simulation</li>
+</ul>
+</li>
+</ul>
+<h3>Source Code Analysis Tools</h3>
+<ul>
+<li>Static Application Security Testing (SAST)
+<ul>
+<li>Frequently used</li>
+<li>Perform testing prior to the launch of an application to strengthen code</li>
+<li>Fewer false positives</li>
+<li>For more implementations, requires access to the application source code, expert configuration, and lots of processing power.</li>
+</ul>
+</li>
+<li>Dynamic Application Security Testing (DAST)
+<ul>
+<li>Available to find visible vulnerabilities by feeding the URL into an automated scanner
+<ul>
+<li>Highly scalable</li>
+<li>Easily integrated</li>
+<li>Quick</li>
+</ul>
+</li>
+<li>Requires expert configuration</li>
+<li>High possibility of false positives and negatives</li>
+</ul>
+</li>
+<li>Interactive Application Security Testing (IAST)
+<ul>
+<li>Assesses applications from within, using software instrumentation</li>
+<li>Combines the strengths of SAST and DAST</li>
+<li>Providing access to code, HTTP traffic, library information, back-end connections, and configuration information</li>
+<li>Some IAST products require the applications to be attacked, while others can be used during normal quality assurance testing.</li>
+</ul>
+</li>
+</ul>
+<h3>Applications from 3rd-party Vendors</h3>
+<ul>
+<li>3rd-party applications need to be assessed for
+<ul>
+<li>Security standards</li>
+<li>Security patching</li>
+<li>Testing standards being used</li>
+</ul>
+</li>
+<li>Supplier risk assessment
+<ul>
+<li>Identify how any risks would impact your organization's business.
+<ul>
+<li>It could be a financial, operational, or strategic risk.</li>
+</ul>
+</li>
+<li>Next step would be to determine the likelihood the risk would interrupt the business.</li>
+<li>And finally there is a need to identify how the risk would impact the business.</li>
+</ul>
+</li>
+</ul>
+<h3>Web Application Firewall (WAF)</h3>
+<ul>
+<li>Regular firewall serve as a safety gate between servers.</li>
+<li>WAF is able to filter the content of specific web applications.
+<ul>
+<li>Filters, monitors, and blocks HTTP traffic to and from a web application.</li>
+<li>By inspecting HTTP traffic, WAF can prevent attack stemming from web application flaws such as SQL injection, cross-site scripting, viral inclusion, security misconfigurations, etc.</li>
+</ul>
+</li>
+</ul>
+<h3>Common Application Threats</h3>
+<ul>
+<li>Input validation
+<ul>
+<li>Buffer overflow</li>
+<li>Cross-site scripting (XSS)</li>
+<li>SQL injection</li>
+<li>Canonicalization</li>
+</ul>
+</li>
+<li>Exception management
+<ul>
+<li>Information disclosure</li>
+<li>Denial of service (DOS)</li>
+</ul>
+</li>
+<li>Authentication
+<ul>
+<li>Network eavesdropping</li>
+<li>Brute-force attack</li>
+<li>Dictionary attacks</li>
+<li>Cookie replay</li>
+<li>Credential theft</li>
+</ul>
+</li>
+<li>Authorization
+<ul>
+<li>Elevation of privilege</li>
+<li>Disclosure of confidential data</li>
+<li>Data tampering</li>
+<li>Luring attack</li>
+</ul>
+</li>
+<li>Auditing and logging
+<ul>
+<li>User denies performing an operation</li>
+<li>Attacker exploits an application without trace</li>
+<li>Attacker covers his or her tracks</li>
+</ul>
+</li>
+<li>Configuration management
+<ul>
+<li>Unauthorized access to administration interfaces</li>
+<li>Unauthorized access to configuration stores</li>
+<li>Retrieval of clear text configuration data</li>
+<li>Lack of individual accountability
+<ul>
+<li>Over-privileged process and service accounts</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Threat Modeling</h3>
+<ul>
+<li>
+<p>Methodology</p>
+<ul>
+<li>Microsoft STRIDE model</li>
+<li>Process for Attack Simulation and Threat Analysis (PASTA)</li>
+<li>Trike threat model</li>
+<li>Visual, Agile, Simple Threat Modeling (VAST)</li>
+</ul>
+</li>
+<li>
+<p>Standards</p>
+<ul>
+<li>CERT Secure Coding</li>
+<li>Common Weakness Enumeration (CWE)</li>
+<li>DISA-STIG</li>
+<li>ISO 27034/24772</li>
+<li>PCI-DSS</li>
+<li>NIST 800-53</li>
+</ul>
+</li>
+<li>
+<p>Regulations</p>
+<ul>
+<li>Gramm-Leach-Bliley Act</li>
+<li>HIPAA</li>
+<li>Sarbanes-Oxley Act (SOX)</li>
+</ul>
+</li>
+</ul>
+<h2>DevSecOps</h2>
+<ul>
+<li>DevOps + Security
+<ul>
+<li>Integrated, automated, continuous security, always.</li>
+<li>Why DevSecOps?
+<ul>
+<li>Reduce risk and cost</li>
+<li>Increase quality</li>
+<li>Improve team synergy</li>
+<li>Enhance visibility</li>
+<li>Meet compliance</li>
+<li>Accelerate development</li>
+<li>Secure and rapid innovation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Strategy and governance alignment
+<ul>
+<li>Define your strategy upfront, and apply it throughout</li>
+<li>Consider any data sovereignty requirements</li>
+<li>Address any audit &amp; compliance requirements</li>
+<li>Establish your risk management process</li>
+<li>Automated checks for continuous assurance</li>
+</ul>
+</li>
+<li>People and culture
+<ul>
+<li>Training and awareness</li>
+<li>Explain and embrace new ways of working</li>
+<li>Equip teams &amp; individuals with the right level of ownership &amp; tools</li>
+</ul>
+</li>
+<li>Learning
+<ul>
+<li>Continuous improvement and feedback</li>
+<li>Lessons learned</li>
+<li>Best practices level-set</li>
+<li>Ongoing collaboration</li>
+<li>Blameless post-mortems</li>
+</ul>
+</li>
+</ul>
+<h3>IBM DevSecOps reference architecture</h3>
+<ul>
+<li>Plan
+<ul>
+<li>NIST equivalent: Identify
+<ul>
+<li>Threat modeling &amp; risk analysis
+<ul>
+<li>Model the threats with experimentation and validation.</li>
+<li>Analyze risks to your system.</li>
+<li>e.g.
+<ul>
+<li>Validate</li>
+<li>Experiment</li>
+<li>Data protection</li>
+<li>Privacy design</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Security backlog
+<ul>
+<li>Produce security epics informed by abuse cases.</li>
+<li>Add to project backlog.</li>
+<li>e.g.
+<ul>
+<li>Common abuse cases (OWASP)</li>
+<li>Contextual abuse cases</li>
+<li>Compliance requirements</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Architecture &amp; design
+<ul>
+<li>Informed architecture &amp; design, with security at its core</li>
+<li>e.g.
+<ul>
+<li>Layered protection</li>
+<li>Integrated security</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Use tools and techniques to ensure security is integral to the design, development, and operation of all systems.</li>
+<li>Enable empowerment and ownership by the Accreditor/Risk Onwer participating in Plan &amp; Design activities.</li>
+<li>Security Coach role to drive security integration.</li>
+</ul>
+</li>
+<li>Code &amp; Build
+<ul>
+<li>NIST equivalent: Protect
+<ul>
+<li>Secure app code
+<ul>
+<li>Secure coding best practice guidance</li>
+<li>Real-time code feedback</li>
+<li>Catch before commit</li>
+</ul>
+</li>
+<li>Secure infrastructure configuration
+<ul>
+<li>Secure infrastructure configuration best practice guidance</li>
+<li>Image hardening</li>
+</ul>
+</li>
+<li>OSS/COTS validation
+<ul>
+<li>Vulnerability and license scanning</li>
+<li>Remedial guidance before commit</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Apply the model to everything-as-code.
+<ul>
+<li>Containers</li>
+<li>Apps</li>
+<li>Platform</li>
+<li>Machines</li>
+</ul>
+</li>
+<li>Shift security to the left and embrace security-as-code.</li>
+<li>Security Engineer to drive technical integration and uplift team security knowledge.</li>
+<li>e.g.
+<ul>
+<li>Code
+<ul>
+<li>Static Application Security Testing (SAST)</li>
+<li>Abuse case review</li>
+<li>Pre-commit security hooks</li>
+<li>Code/config quality</li>
+<li>Compliance checks</li>
+<li>Identity and access review</li>
+<li>Open Source Software (OSS) Licensing</li>
+<li>COTS &amp; OSS vulnerability scanning</li>
+<li>COTS &amp; OSS hardening review</li>
+</ul>
+</li>
+<li>Build
+<ul>
+<li>Static Application Security Testing (SAST)</li>
+<li>Code quality</li>
+<li>Compliance checks</li>
+<li>Identity and access review</li>
+<li>Component control (vulnerability/licenses)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Test
+<ul>
+<li>NIST equivalent: Protect
+<ul>
+<li>Internal/external testing
+<ul>
+<li>Integrate and automate security testing seamlessly with DevOps activities</li>
+</ul>
+</li>
+<li>Continuous assurance
+<ul>
+<li>Automated checks to ensure systems are always protected and conform with requirements</li>
+</ul>
+</li>
+<li>Compliance checking
+<ul>
+<li>Address industry-specific accreditation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>e.g.
+<ul>
+<li>DAST/IAST</li>
+<li>Penetration testing</li>
+<li>Abuse case</li>
+<li>Compliance checks</li>
+<li>Identity and access testing</li>
+<li>Vulnerability scan</li>
+<li>Hardening test</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Release, Deploy &amp; Decommission
+<ul>
+<li>NIST equivalent: Protect
+<ul>
+<li>Continuous component control
+<ul>
+<li>Monitor and act on changes to component security</li>
+<li>Block vulnerable component deployment</li>
+</ul>
+</li>
+<li>Application and infrastructure orchestration
+<ul>
+<li>Orchestrate and automate the deployment of your secure application and underlying infrastructure.</li>
+</ul>
+</li>
+<li>Data cleansing and retention
+<ul>
+<li>Build data cleansing into your decommissioning activities</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Orchestrate everything and include security</li>
+<li>Manage secure creation and destruction of your workloads</li>
+<li>Automate sign-off to certified levels of data destruction</li>
+<li>e.g.
+<ul>
+<li>Release
+<ul>
+<li>Continuous component controls</li>
+<li>Versioning of infrastructure</li>
+</ul>
+</li>
+<li>Deploy
+<ul>
+<li>Cloud provider security practices
+<ul>
+<li>IAM policies</li>
+<li>Encryption</li>
+<li>Inventory</li>
+</ul>
+</li>
+<li>CI/CD Toolchain is sole deployment mechanism</li>
+<li>Repeatable, parameterized Infra-as-Code patterns for environment creation</li>
+<li>Immutable images
+<ul>
+<li>Containers</li>
+<li>Virtual machines</li>
+</ul>
+</li>
+<li>Centralized key-value and secret stores</li>
+<li>Data sovereignty</li>
+</ul>
+</li>
+<li>Decommission
+<ul>
+<li>Pets vs Cattle; Destroy and create again</li>
+<li>Infra-as-Code tools manage removal of compute instance &amp; persistent storage</li>
+<li>Deregistration to update inventory and ensure clean removal of secrets</li>
+<li>IAM controls to regulate authorization</li>
+<li>SaaS data removal requests and policies</li>
+<li>Data backup cleansing</li>
+<li>Crypto-shredding</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Operate &amp; Monitor
+<ul>
+<li>NIST equivalent: Detect, Respond, Recover
+<ul>
+<li>Detect and visualize
+<ul>
+<li>Visualization of your environments adds context and clarity</li>
+</ul>
+</li>
+<li>Respond and Recover
+<ul>
+<li>Playbooks drive your response and recovery efforts</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If you don't detect it, you can't fix it.</li>
+<li>Integrated operational security helps ensure the security health of the system is as good as it can be with the latest information.</li>
+<li>Playbooks-as-code run automatically, as issues are detected they are remediated and reported on.</li>
+<li>e.g.
+<ul>
+<li>Detect &amp; Visualize
+<ul>
+<li>Catalogue</li>
+<li>Inventory</li>
+<li>Compliance</li>
+<li>User behavior analytics</li>
+<li>RASP</li>
+<li>Configuration monitoring</li>
+<li>Continuous scanning
+<ul>
+<li>Container</li>
+<li>Infrastructure</li>
+<li>Network</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Respond
+<ul>
+<li>Virtual patching</li>
+<li>Automated remediation</li>
+<li>Reporting</li>
+<li>Feedback loop from production to engineering</li>
+<li>Blue vs Red team game days</li>
+</ul>
+</li>
+<li>Recover
+<ul>
+<li>Maximize service</li>
+<li>Root cause analysis</li>
+<li>Attack-driven defense</li>
+<li>Shift from MTBF to MTTR</li>
+<li>Chaos engineering</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Application Security Defects</h2>
+<ul>
+<li>Reality
+<ul>
+<li>Security bugs are being weaponized.</li>
+<li>Security researchers are trying to cash in on the fame.</li>
+<li>Bugs in security software are sensational.</li>
+<li>All major software vendors are targets.
+<ul>
+<li>Especially security softwares</li>
+</ul>
+</li>
+<li>Actual security breaches could lead to litigation and law enforcement investigations</li>
+</ul>
+</li>
+<li>Writing secure software is not easy.
+<ul>
+<li>Developers face many challenges.
+<ul>
+<li>Time
+<ul>
+<li>Developers: Under time pressures to develop and test huge amounts of functionality</li>
+<li>Hackers: May have unlimited time</li>
+</ul>
+</li>
+<li>Focus
+<ul>
+<li>Developers: Have to properly develop and protect a wide surface of functionality, so security is not the primary focus</li>
+<li>Hackers: Concentrate on finding security holes, often just one vulnerability is enough to compromise the product</li>
+</ul>
+</li>
+<li>Motivation and resources
+<ul>
+<li>Developers: Responsible for product's primary functionality, often not personally affected by product successes or failures</li>
+<li>Hackers: Motivated by bragging rights, illicit profits, politics; sometimes are supported by nation-states</li>
+</ul>
+</li>
+<li>Specialization
+<ul>
+<li>Developers: Specialize in the functionality of the product</li>
+<li>Hackers: Specialize in security penetration</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Yet, with good security education, and solid design and implementation practices, we can make sure our products are secure.</li>
+</ul>
+</li>
+</ul>
+<h3>Mitigating Product Security Risk</h3>
+<ul>
+<li>Prevent new bugs
+<ul>
+<li>Check 'SANS 25 Most Dangerous Programming Errors'.</li>
+<li>Think like a hacker.
+<ul>
+<li>How can your code be abused?</li>
+</ul>
+</li>
+<li>Build software defenses into your software.
+<ul>
+<li>Input validation</li>
+<li>Output sanitization</li>
+<li>Strong encryption</li>
+<li>Strong authentication/authorization</li>
+</ul>
+</li>
+<li>Choose secure frameworks rather than simply relying on developer security skills.
+<ul>
+<li>People make mistakes.</li>
+<li>Frameworks make sure an accidental bug does not slip through.</li>
+</ul>
+</li>
+<li>Don't think that if your product is isolated from the internet then it is not at risk.</li>
+<li>Don't think that if a file or a database is local then it doesn't need to be protected.
+<ul>
+<li>The majority of breaches are launched from inside.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Address existing bugs
+<ul>
+<li>Redesign product front-end, not only to be good-looking and functional, but also secure.</li>
+<li>Implement smart architectural changes that fix security flaws at the top.</li>
+<li>Do not spot-fix issues.
+<ul>
+<li>Think of how the vulnerability can be fixed across the board and prevented in the future.</li>
+</ul>
+</li>
+<li>Security bugs are special, because of their potential impact.
+<ul>
+<li>Fix bugs as quickly as possible.</li>
+<li>Increase their priority.</li>
+</ul>
+</li>
+<li>Deliver security patches with faster release vehicles.</li>
+</ul>
+</li>
+</ul>
+<h2>Cross-site Scripting (XSS) Attack</h2>
+<ul>
+<li>XSS attack is the most common security issue found in many security products.
+<ul>
+<li>Notably WordPress and Drupal</li>
+<li>XSS attack is on OWASP Top 10 list and SANS Top 25 list</li>
+</ul>
+</li>
+<li>XSS attack allows attackers to inject client-side scripts into the web page.</li>
+<li>XSS attack can come from anywhere.
+<ul>
+<li>HTTP parameters</li>
+<li>HTTP headers and cookies</li>
+<li>Data in JSON and XML files</li>
+<li>Databases</li>
+<li>Files uploaded by users</li>
+</ul>
+</li>
+<li>XSS attack can be used to,
+<ul>
+<li>Harvest credentials</li>
+<li>Take over user sessions</li>
+<li>CSRF</li>
+<li>Steal cookies and local store data</li>
+<li>Elevate privileges</li>
+<li>Redirect users to malicious sites</li>
+</ul>
+</li>
+</ul>
+<h3>XSS Attack Common Scenario</h3>
+<ul>
+<li>Suppose we have a web application feature that allows you to add new users.</li>
+<li>Let's assume we are using Java Server Pages(JSP) and the rendering code is as follows,<pre><code>&lt;tr&gt;
+    &lt;td&gt;&lt;%= fullName%&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;%= userName%&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;%= role%&gt;&lt;/td&gt;
+&lt;/tr&gt;
+</code></pre>
+</li>
+<li>Suppose a malicious user enters the following specially-crafted string as user's full name.<pre><code>Joe Hacker&lt;script&gt;alert('GOTCHA!')&lt;/script&gt;
+</code></pre>
+<ul>
+<li>The entered value is output as-is, the generated HTML will look like this,<pre><code>&lt;tr&gt;
+    &lt;td&gt;Joe Hacker&lt;script&gt;alert('GOTCHA!')&lt;/script&gt;&lt;/td&gt;
+    &lt;td&gt;jhacker&lt;/td&gt;
+    &lt;td&gt;User&lt;/td&gt;
+&lt;/tr&gt;
+</code></pre>
+<ul>
+<li><code>&lt;script&gt;</code> will be activated.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>This is very dangerous because you are letting unauthorized person inject functionality into your application.</li>
+<li>Once the record is added, every time it will be loaded, the dialog box will pop up.
+<ul>
+<li>This is called Stored XSS, which is more dangerous than Reflected XSS.
+<ul>
+<li>Reflected XSS is usually sent as part of an e-mail or a malicious link, and affects just one user.</li>
+<li>Stored XSS is retained by the application and affects other users, such as application administrator.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Stored XSS attack can be even used for loading fake login payload that mimics the original application's functionality.<pre><code>Joe Hacker&lt;div id=&quot;login&quot; style=&quot;some inline CSS styles that mimic the original UI&quot;&gt;&lt;form&gt;&lt;p&gt;Your session has expired, please log in again:&lt;/p&gt;Username:&lt;input type=&quot;text&quot; name=&quot;username&quot; size=&quot;10&quot;/&gt;&lt;br&gt;Password:&lt;input type=&quot;text&quot; name=&quot;password&quot; size=&quot;10&quot;/&gt;&lt;br&gt;&lt;br&gt;&lt;input type=&quot;submit&quot; value=&quot;Login&quot;/&gt;&lt;/form&gt;&lt;/div&gt;
+</code></pre>
+<pre><code>  - If there was a malicious user input like this, every time the list of users is rendered, this dialog will be displayed and trick some users into entering their credentials.
+  - The stolen usernames and passwords can then be sent to an external site and used for further exploitation.
+</code></pre>
+</li>
+</ul>
+<h3>XSS Attack Prevention</h3>
+<ul>
+<li>Preventing XSS with HTML encoding
+<ul>
+<li>Output encoding works well for server-side generated pages and is quite effective in neutralizing most XSS payloads.
+<ul>
+<li>HTML encoding for labels and messages</li>
+<li>URL encoding for values stored in links</li>
+</ul>
+</li>
+<li>e.g.
+<ul>
+<li>Potentially-malicious input: <code>&lt;b&gt;Test&lt;/b&gt;</code></li>
+<li>HTML-encoded input: <code>&amp;lt;b&amp;gt;Test&amp;lt;/b&amp;gt;</code>
+<ul>
+<li>When HTML is rendered, the script markup is interpreted as harmless plaintext: <code>&lt;b&gt;Test&lt;/b&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Enforcing the charset
+<ul>
+<li>Some XSS attacks take advantage of rare encodings such as UTF7.</li>
+<li>If the charset of the page is not enforced, the browser will default to auto-detect and XSS payloads will execute.</li>
+<li>To enforce the charset output header, use <code>Content-type: text/html; charset=UTF8</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Preventing XSS with JavaScript escaping
+<ul>
+<li>XSS can be introduced within JavaScript code as seen in the example below.<pre><code>&lt;script language=&quot;javascript&quot;&gt;
+    // In this case, '-alert(1)-' is introduced as &lt;%=search%&gt;
+    document.cookie='lastSearch=&lt;%=search%&gt;';
+&lt;/script&gt;
+</code></pre>
+</li>
+<li>Escaping single quotes will prevent injection. For example, <code>x=''-alert(1)-''</code> becomes <code>x='\'-alert(1)-\''</code></li>
+</ul>
+</li>
+<li>Preventing XSS by using safe DOM elements
+<ul>
+<li>XSS in modern rich client UIs is often made possible by unsafe handling of the DOM.</li>
+<li>Using the innerHTML attribute allows the user input to be rendered as HTML, and XSS with JavaScript events is possible. such as,
+<ul>
+<li><code>searchResult.innerHtml = &lt;img src=error onerror=alert(1)&gt;</code></li>
+</ul>
+</li>
+<li>The safe alternative is to use textContent.</li>
+</ul>
+</li>
+<li>Use Eval and Dynamic Code Generation with care.
+<ul>
+<li>JavaScript eval() function which accepts a JavaScript expression as a string argument and executes it.
+<ul>
+<li>Use of eval() function is discouraged.</li>
+<li>If it's unavoidable, its parameter must be carefully scrutinized.</li>
+</ul>
+</li>
+<li>Same care is needed when the code generates pieces of JavaScript dynamically.
+<ul>
+<li>This practice is discouraged as well.</li>
+<li>For example, the code below will simply execute whatever is provided as the <code>searchObj</code> query parameter.<pre><code>&lt;script language=&quot;javascript&quot;&gt;
+    // In this case, alert(1); is introduced as searchObj
+    var searchObj = eval(&quot;&lt;%=request.getParameter(&quot;searchObj&quot;);%&gt;&quot;);
+&lt;/script&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Input validation
+<ul>
+<li>Whitelisting (recommended)
+<ul>
+<li>Reduces the attack surface to a known quantity</li>
+<li>If possible, most input should be whitelisted to alphanumeric to prevent XSS (and many other attacks)</li>
+<li>In some cases, may be relaxed to allow single quotes or other characters, to allow input names like O'Brien.</li>
+<li>Special characters should only be allowed on an exception basis.</li>
+</ul>
+</li>
+<li>Blacklisting (not recommended)
+<ul>
+<li>Creative attacker may bypass blacklist by trying a previously-unknown method.</li>
+<li>OWASP XSS Evasion page should give you a good idea on the staggering number of possible XSS variations that is impossible to cover by blacklists.</li>
+</ul>
+</li>
+<li>Client-side input validation (not recommended)
+<ul>
+<li>Can only be used to assist with product usability.</li>
+<li>Attackers can easily bypass it by sending the request directly to the server.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Use proven validation and encoding functionality
+<ul>
+<li>Protect both input and ouput.
+<ul>
+<li>Defense-in-depth principle</li>
+</ul>
+</li>
+<li>As you validate the input and encode the output, use proven and reputable libraries.</li>
+<li>It is preferable not to roll your own functionality.
+<ul>
+<li>It is very easy to make a mistake that does not cover some edge case, and that will render your defense ineffective.</li>
+</ul>
+</li>
+<li>It is best to implement a framework that has one central set of functionality that validates and encodes data.
+<ul>
+<li>Peppering your code with checks may lead to some missed unprotected case that attacker will take advantage of.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>XSS Attack Prevention Key Takeaways</h3>
+<ul>
+<li>DO NOT use blacklists or rely on client-side validation.</li>
+<li>DO NOT roll your own validation or encoding functionality.
+<ul>
+<li>Rely on proven libraries.</li>
+</ul>
+</li>
+<li>DO encode all data output as part of HTML and JavaScript.</li>
+<li>DO use strict whitelists on accepting the input.</li>
+</ul>
+<h2>SIEM Platforms</h2>
+<ul>
+<li>A SIEM system collects logs and other security-related documentation for analysis.
+<ul>
+<li>The core function is to manage network security by monitoring flows and events.</li>
+<li>SIEM consolidates log events and network flow data from thousands of devices, endpoints, and applications distributed throughout a network.
+<ul>
+<li>It then uses an advanced Sense Analytics engine to normalize and correlate this data and identifies security offenses requiring investigation.</li>
+</ul>
+</li>
+<li>Capture log event and network flow data in near real-time, and apply advanced analytics to reveal security offenses.</li>
+</ul>
+</li>
+<li>A SIEM system can be rules-based or employ a statistical correlation engine to establish relationships between event log entries.</li>
+<li>It can be available on-premises and in a cloud environment</li>
+<li>SIEM tuning
+<ul>
+<li>To get the SIEM to sort out all false-positive offenses so only those that need to be investigated are presented to the investigators</li>
+</ul>
+</li>
+</ul>
+<h2>SIEM Concepts</h2>
+<ul>
+<li>Key terms
+<ul>
+<li>Log collection</li>
+<li>Normalization</li>
+<li>Correlation</li>
+<li>Aggregation</li>
+<li>Reporting</li>
+</ul>
+</li>
+<li>Events
+<ul>
+<li>Typically a log of a specific action such as a user login, or a FW permit
+<ul>
+<li>occurs at a specific time and the event is logged at that time.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Flows
+<ul>
+<li>A record of network activity between two hosts that can last for seances to days depending on the activity within the session</li>
+<li>For example, a web request might download multiple files such as images, ads, video, and last for 5 to 10 seconds. Or a user who watches a Netflix movie might be in a network session that lasts up to 2 hours.</li>
+</ul>
+</li>
+<li>Data Collection
+<ul>
+<li>The process of collecting flows and logs from different sources into a common repository</li>
+<li>It can be performed by sending data directly into the SIEM, or an external device can collect data from the source and move it to the SIEM system on-demand or scheduled.</li>
+<li>Considerations
+<ul>
+<li>CPU</li>
+<li>Memory</li>
+<li>Storage capacity</li>
+<li>License</li>
+<li>Number of sources</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Normalization
+<ul>
+<li>The normalization process involves turning raw data into a format that has fields such as IP address that the SIEM can use.</li>
+<li>Normalization involves parsing raw event data and preparing the data to display readable information.</li>
+<li>Normalization allows for predicable and consistent storage for all records, and indexes these records for fast searching and sorting.</li>
+</ul>
+</li>
+<li>License throttling
+<ul>
+<li>Monitors the number of incoming events to the system, to manage input queues and EPS licensing.</li>
+</ul>
+</li>
+<li>Coalescing
+<ul>
+<li>Events are parsed and then coalesced based on common attributes across events.
+<ul>
+<li>In IBM QRadar, event coalescing starts after three events have been found with matching properties within a 10 second period.</li>
+</ul>
+</li>
+<li>Event data received by QRadar is processed in to normalized fields, along with the original payload.
+<ul>
+<li>When coalescing is enabled, the following five properties are evaluated.
+<ul>
+<li>QID</li>
+<li>Source IP</li>
+<li>Destination IP</li>
+<li>Destination port</li>
+<li>Username</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Rule
+<ul>
+<li>A programmed procedure that attempts to correlate events and generates new events that report on correlation when it occurs.</li>
+</ul>
+</li>
+<li>Rule threshold
+<ul>
+<li>The point at which a rule is triggered and a correlation event generated</li>
+</ul>
+</li>
+<li>Event threshold
+<ul>
+<li>The number of times the event must occur before triggering the rule threshold.</li>
+</ul>
+</li>
+<li>Rule action
+<ul>
+<li>An automatic procedure that occurs when all rule conditions and threshold settings have been met.</li>
+</ul>
+</li>
+<li>Trend
+<ul>
+<li>A resource that defines how and over what time period data will be aggregated and evaluated for trends.</li>
+<li>A trend executes a specified query on a defined schedule and time duration.</li>
+</ul>
+</li>
+</ul>
+<h3>SIEM and AI</h3>
+<ul>
+<li>Business security difficulties
+<ul>
+<li>Unaddressed threats
+<ul>
+<li>Information is often overlooked simply because analysts do not know how it's connected</li>
+</ul>
+</li>
+<li>Insights overload
+<ul>
+<li>Volume, variety, and speed of insights overwhelms us</li>
+</ul>
+</li>
+<li>Lack of cybersecurity talent
+<ul>
+<li>Overworked, understaffed and overwhelmed</li>
+</ul>
+</li>
+<li>Worsening dwell times
+<ul>
+<li>Lack of consistent, high-quality and context-rich investigations leads to a breakdown of existing processes and high probability of missing crucial insights. This can expose your organization to risk.</li>
+</ul>
+</li>
+<li>Stakes are at an all-time high</li>
+</ul>
+</li>
+<li>With the help of A.I.
+<ul>
+<li>Human expertise
+<ul>
+<li>Common sense</li>
+<li>Morals</li>
+<li>Compassion</li>
+<li>Abstraction</li>
+<li>Dilemmas</li>
+<li>Generalization</li>
+</ul>
+</li>
+<li>Security analytics
+<ul>
+<li>Data correlation</li>
+<li>Pattern identification</li>
+<li>Anomaly detection</li>
+<li>Prioritization</li>
+<li>Data visualization</li>
+<li>Workflow</li>
+</ul>
+</li>
+<li>Artificial intelligence
+<ul>
+<li>Cognitive capabilities</li>
+<li>Unstructured analysis</li>
+<li>Natural language</li>
+<li>Machine learning</li>
+<li>Bias elimination</li>
+<li>Tradeoff analytics</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>e.g. IBM QRadar Advisor with Watson</li>
+</ul>
+<h2>SIEM Deployment</h2>
+<ul>
+<li>Considerations
+<ul>
+<li>Compliance</li>
+<li>Cost-benefit</li>
+<li>Cybersecurity</li>
+</ul>
+</li>
+<li>Security Operations Center (SOC)
+<ul>
+<li>Triad
+<ul>
+<li>People
+<ul>
+<li>Formal training</li>
+<li>On-the-job experience</li>
+<li>Vendor-specific training</li>
+<li>Internal training</li>
+</ul>
+</li>
+<li>Technology
+<ul>
+<li>Endpoint</li>
+<li>Netflow</li>
+<li>Network monitoring</li>
+<li>Threat intel</li>
+<li>Forensics</li>
+<li>Incident detection and management</li>
+</ul>
+</li>
+<li>Process
+<ul>
+<li>Preparation</li>
+<li>Identification</li>
+<li>Containment</li>
+<li>Eradication</li>
+<li>Recovery</li>
+<li>Lessons-learned</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SOC data collection process
+<ol>
+<li>Visibility
+<ul>
+<li>By centralizing these various sources of data into a security monitoring system, the SOC gains actionable insight into possible anomalies indicative of threat activity.</li>
+</ul>
+</li>
+<li>Analysis
+<ul>
+<li>Security operations analysts can analyze data from various sources and further interrogate and triage devices of interest to scope an incident.</li>
+</ul>
+</li>
+<li>Action
+<ul>
+<li>Based on findings, automated and manual interventions can be made to include patching, firewall modification, system quarantine or reimage, and credential revocation.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Events collector
+<ul>
+<li>The event collector collects events from local and remote log sources, and normalizes raw log source events to format them for use by QRadar.
+<ul>
+<li>The event collector bundles or coalesces identical events to conserve system usage and sends the data to the event processor.</li>
+</ul>
+</li>
+<li>The event collector can use bandwidth limiters and schedules to send events to the event processor, to overcome WAN limitations such as intermittent connectivity.</li>
+</ul>
+</li>
+<li>Event processor
+<ul>
+<li>The event processor processes events that are collected from one or more event collector components.</li>
+<li>Processes events by using the Custom Rules Engine (CRE)</li>
+</ul>
+</li>
+<li>Flow collector
+<ul>
+<li>The flow collector generates flow data from raw packets that are collected from monitor ports such as SPANS, TAPs, and monitor sessions, or from external flow sources such as netflow, sflow, jflow.</li>
+<li>This data is then converted to QRadar flow format and sent down the pipeline for processing.</li>
+</ul>
+</li>
+<li>Flow processor
+<ul>
+<li>Flow deduplication
+<ul>
+<li>A process that removes duplicate flows when multiple flow collectors provide data to flow processors appliances.</li>
+</ul>
+</li>
+<li>Asymmetric recombination
+<ul>
+<li>Responsible for combining two sides of each flow when data is provided asymmetrically.</li>
+<li>This process can recognize flows from each side and combine them in to one record.
+<ul>
+<li>However, sometimes only one side of the flow exists.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>License throttling
+<ul>
+<li>Monitors the number of incoming flows to the system to manage input queues and licensing.</li>
+<li>When a data stream entering a SIEM exceeds the volume it is licensed to handle,
+<ul>
+<li>The data stream is throttled to accept only the amound allowed by the license.</li>
+<li>The excess data is stored in a queue until it can be processed</li>
+<li>The excess data is dropped</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Forwarding
+<ul>
+<li>Applies routing rules for the system, such as sending flow data to offsite targets, external syslog systems, JSON systems, and other SIEMs.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>SIEM Deployment Scale by Gartner</h3>
+<ul>
+<li>Small
+<ul>
+<li>Around 300 log sources and 1500 EPS</li>
+</ul>
+</li>
+<li>Medium
+<ul>
+<li>Up to 1000 log sources and 7000 EPS</li>
+</ul>
+</li>
+<li>Large
+<ul>
+<li>More than 1000 log sources and 15000 EPS</li>
+</ul>
+</li>
+</ul>
+<h3>All-in-one Deployment</h3>
+<ul>
+<li>Reasons to add event or flow collectors to an all-in-one deployment
+<ul>
+<li>Your data collection requirements exceed the collection capability of your processor.</li>
+<li>You must collect events and flows at a different location than where your processor is installed.</li>
+<li>You are monitoring packet-based flow sources.</li>
+<li>As your deployment grows, the workload exceeds the processing capacity of the all-in-one appliance.</li>
+<li>Your security operations center employs more analysts who do more concurrent searches.</li>
+<li>The types of monitored data, and the retention period for that data increases, which increases processing and storage requirements.</li>
+<li>As your security analyst team grows, you require better search performance.</li>
+</ul>
+</li>
+</ul>
+<h2>SIEM Vendors</h2>
+<ul>
+<li>Magic Quadrant
+<ul>
+<li>Leaders
+<ul>
+<li>Splunk</li>
+<li>IBM</li>
+<li>Exabeam</li>
+<li>Securonix</li>
+<li>Rapid7</li>
+<li>LogRhythm</li>
+<li>Dell Technologies (RSA)</li>
+</ul>
+</li>
+<li>Visionaries
+<ul>
+<li>Logpoint</li>
+</ul>
+</li>
+<li>Niche players
+<ul>
+<li>FireEye</li>
+<li>AT&amp;T Cybersecurity</li>
+<li>McAfee</li>
+<li>Fortinet</li>
+<li>Micro Focus</li>
+<li>SolarWinds</li>
+<li>HanSight</li>
+<li>ManageEngine</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>IBM QRadar</h3>
+<ul>
+<li>Originated from the SIEM product by Q1 Labs, bought by IBM</li>
+<li>Based on proprietary Ariel Data Store and Ariel Query Language</li>
+<li>Components
+<ul>
+<li>Vulnerability manager</li>
+<li>User behavior analytics</li>
+<li>Network insights</li>
+</ul>
+</li>
+<li>User Behavior Analytics
+<ul>
+<li>Security ecosystem
+<ul>
+<li>Detecting insider threats requires a 360 degree view of both logs and flows.
+<ul>
+<li>Threat intel</li>
+<li>Network</li>
+<li>Cloud</li>
+<li>Identity and access</li>
+<li>Data</li>
+<li>Apps</li>
+<li>Mobile</li>
+<li>Endpoint</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>5. Threat Hunting</h1>
+<h2>Security Challenges</h2>
+<ul>
+<li>Almost half of breaches are caused by malicious or criminal acts</li>
+<li>Average 191 days to detect and 66 days to resolve a situation</li>
+<li>Agencies are faced with more frequent and sophisticated attacks</li>
+<li>Cyber skills shortage</li>
+<li>Too many tools from too many vendors</li>
+<li>The rise of advanced threats
+<ul>
+<li>Highly-resourced bad guys</li>
+<li>Highly sophisticated</li>
+<li>Can evade detection from rule-and-policy-based defenses</li>
+<li>Dwell in the network</li>
+<li>Can cause the most damage</li>
+</ul>
+</li>
+<li>Countermeasure challenges
+<ul>
+<li>Outdated security platforms</li>
+<li>Increasing levels of cyber crime</li>
+<li>Limited marketplace skills</li>
+<li>Increased citizen expectation</li>
+<li>Continuous and ever-increasing attack sophistication</li>
+<li>Lack of real-time correlated cyber intelligence</li>
+</ul>
+</li>
+<li>The detection of advanced threats, hidden, unknown, and emerging, is challenging.
+<ul>
+<li>20% of threats are unknown, undetected, but can cause the most (80%) damage.</li>
+<li>91% of security leaders report that threat hunting increased the speed and accuracy of response</li>
+</ul>
+</li>
+</ul>
+<h2>SOC Cyber Threat Hunting</h2>
+<ul>
+<li>Cyber Threat Hunting is the act of proactively and aggressively identifying, intercepting, tracking, investigating, and eliminating cyber adversaries as early as possible in the Cyber Kill Chain.
+<ul>
+<li>The earlier you locate and track your adversaries' tactics, techniques, and procedures (TTPs), the less impact these adversaries will have on your business.
+<ul>
+<li>Problem: Humans are the transnational criminals creating cyber threats</li>
+<li>Solution: Proactive cyber threat investigation and hunting</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Actionable intelligence</li>
+<li>Know your enemy, the cyber kill chain
+<ul>
+<li>Reconnaisance
+<ul>
+<li>Research, identify, gather, select targets</li>
+</ul>
+</li>
+<li>Weaponization
+<ul>
+<li>Prepare to deliver malware and exploit</li>
+</ul>
+</li>
+<li>Delivery
+<ul>
+<li>Initiate launch of malware to target</li>
+</ul>
+</li>
+<li>Exploitation
+<ul>
+<li>Access and exploit target vulnerabilities</li>
+</ul>
+</li>
+<li>Installation
+<ul>
+<li>Deploy malware in target environment</li>
+<li>Acquire persistent access</li>
+</ul>
+</li>
+<li>Command and control
+<ul>
+<li>Manipulate and control remotely</li>
+</ul>
+</li>
+<li>(STOP RIGHT HERE)</li>
+<li>Actions on objectives
+<ul>
+<li>Take action to achieve goals
+<ul>
+<li>Exfiltration</li>
+<li>Destruction</li>
+<li>Intrusion</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Approach
+<ul>
+<li>People
+<ul>
+<li>Experienced security analysts with strong investigation skills</li>
+</ul>
+</li>
+<li>Internal data &amp; systems
+<ul>
+<li>Foundational data from current security systems</li>
+</ul>
+</li>
+<li>External data &amp; intelligence
+<ul>
+<li>Known indicators from outside sources</li>
+</ul>
+</li>
+<li>Statistical analysis
+<ul>
+<li>Anomaly detection with statistical modeling</li>
+</ul>
+</li>
+<li>Intelligence analysis
+<ul>
+<li>Investigation and research to make correlations and links</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Advance your SOC
+<ul>
+<li>Tier 1
+<ul>
+<li>SOC analysts
+<ul>
+<li>Firewall</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tier 2
+<ul>
+<li>SOC analysts and incident responders
+<ul>
+<li>SIEM</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tier 3
+<ul>
+<li>Threat researchers and cyber analysts
+<ul>
+<li>Threat hunting methodology</li>
+</ul>
+</li>
+<li>Indicators of concern (IoC)
+<ul>
+<li>Proactive</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

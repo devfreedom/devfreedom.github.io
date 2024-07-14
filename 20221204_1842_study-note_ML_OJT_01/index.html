@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Study Note] Coursework: The Comprehensive Practice in Machine Learning - Part 1 | devfreedom.github.io</title>
+    <meta name="title" content="[Study Note] Coursework: The Comprehensive Practice in Machine Learning - Part 1 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Study Note❯,machine learning,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20221204_1842_study-note_ML_OJT_01/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Study Note] Coursework: The Comprehensive Practice in Machine Learning - Part 1</h1>
+        <div class="text-center">Published on 4 December 2022 06:42 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Study Note❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Study Note❯</a>
+            
+            <a href="/tags/machine learning" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#machine learning</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/artificial-intelligence.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <p>The place where I worked recently had provided online IT courses for employees, so I had decided to dip my toe in machine learning to see and learn how it actually works. I had to expect a rough start because I didn't have much relevant background knowledge (especially mathematics) prior to this course and machine learning itself is quite an advanced study. And yes, it turned out to be pretty rough. Even though this course wasn't really beginner-friendly unlike what it said, I could at least understand the underlying mechanisms of machine learning techniques. Skimming on the theoretical background was my primary goal so it was okay for that.</p>
+<p>The following series of articles are a summary of what I've learned from this course. This course came with practice sessions where you could get hands-on experience in machine learning, but I didn't have enough free time to code those things at that time. I'm planning to get back to the material and try it by myself in the near future.</p>
+<h3>Use cases of machine learning</h3>
+<ul>
+<li>Regression
+<ul>
+<li>Predict the future outcome of the target attribute, based on the input data</li>
+<li>Heavy use of statistics
+<ul>
+<li>Regressional analysis, multivariate statistics, time series analysis, etc.</li>
+</ul>
+</li>
+<li>e.g. Stock market price, FOREX rate, risk analysis, CRM, ad bidding, etc.</li>
+</ul>
+</li>
+<li>Classification
+<ul>
+<li>Predict the class or decide the rank of individual data, based on the input data</li>
+<li>e.g. Fraud detection system, spam mail filtering, drug efficacy verification</li>
+</ul>
+</li>
+<li>Suggestion
+<ul>
+<li>Recommend personalized options and alternatives</li>
+<li>e.g. Automated Spotify playlist, LinkedIn's 'people you may know' feature</li>
+</ul>
+</li>
+<li>Alteration
+<ul>
+<li>Strengthen the input data by interpolating or estimating missing values</li>
+<li>e.g. Repairing corrupt data, improving the quality of the census data</li>
+</ul>
+</li>
+</ul>
+<h3>Machine learning methodology</h3>
+<ul>
+<li>Supervised learning
+<ul>
+<li>Used when the training data has a target variable inside</li>
+</ul>
+</li>
+<li>Unsupervised learning
+<ul>
+<li>Used when the training data doesn't have a target variable in it</li>
+<li>Extract data patterns without making function models
+<ul>
+<li>To discover a hidden structure inside the data</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Reinforcement learning
+<ul>
+<li>Data interacts with a machine learning environment to find the answer by itself</li>
+<li>Training while generating the target variable</li>
+<li>Gamification = reward and penalize based on how approximate it is to the answer</li>
+<li>e.g. Object detection</li>
+</ul>
+</li>
+</ul>
+<h3>Machine learning workflow</h3>
+<ul>
+<li>Step 1. Feed the existing data</li>
+<li>Step 2. Exploratory data analysis (EDA)
+<ul>
+<li>Data feature extraction, seperation of train/validation/test data</li>
+</ul>
+</li>
+<li>Step 3. Modelling
+<ul>
+<li>Establish a model → evaluate the model → optimize the model</li>
+</ul>
+</li>
+<li>Step 4. Get the new predicted data
+<ul>
+<li>→ Feed the new data into the model for model improvement
+<ul>
+<li>Continuous feedback and evaluation is needed</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Machine learning workflow pseudocode</h3>
+<pre><code># Data pre-processing
+data = load_data(&quot;raw_data.csv&quot;)
+data_final = process_data(data)
+
+# Cleanse missing and biased data
+detect_outlier(data)
+munge_data(data)
+wrangle_data(data)
+
+# Seperate training data from testing data
+split_data(data_final)
+
+# Evaluate a model by comparing actual data to predicted data
+model = build_model(training_data)
+predicted_data = model.predict(testing_data)
+model_accuracy = compare(predicted_data, testing_data.target)
+</code></pre>
+<h3>Decision tree</h3>
+<ul>
+<li>The sorting that reduces entropy the most is the best
+<ul>
+<li>&quot;How to classify things in the most certain way possible?&quot;</li>
+<li>Probability = the ratio of specific data to the whole</li>
+<li>Entropy = a (measurable) state of disorder, uncertainty and randomness
+<ul>
+<li>Information entropy = −∑xP(x)log<sub>2</sub>P(x)
+<ul>
+<li>log<sub>2</sub> = number of bits needed to express the information</li>
+<li>i = variety = &quot;how many baskets do we need to group these items into?&quot;</li>
+<li>p(x<sub>i</sub>) = the possibility of picking the specific group of items from the whole</li>
+<li>If the probability is 1 then the entropy is 0</li>
+<li>e.g. 3 blue pencils, 2 red pencils in a box
+<ul>
+<li>Information of blue pencils = −log<sub>2</sub>(3/5)</li>
+<li>Information of red pencils = −log<sub>2</sub>(2/5)</li>
+<li>Entropy = −(3/5)log<sub>2</sub>(3/5)−(2/5)log<sub>2</sub>(2/5) = 0.97</li>
+</ul>
+</li>
+<li>The average value of all necessary bits</li>
+<li>The average expected value of the information</li>
+</ul>
+</li>
+<li>The more information it has, the more storage it needs, the bigger the entropy is</li>
+<li>Information gain = delta of entropy
+<ul>
+<li>Entropy(T) − Entropy(A)</li>
+<li>Entropy before split minus entropy after split</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Root node → 1st decision nodes → 2nd decision nodes → ... → leaf/terminal nodes
+<ul>
+<li>Leaf nodes = target attributes</li>
+<li>Data gets splitted at each iteration</li>
+<li>Repeat until the entropy becomes close to 0</li>
+<li>Making a good decision tree = maximizing information gains
+<ul>
+<li>Decision nodes should be placed in ascending order of entropy</li>
+<li>Most information gain → least information gain</li>
+</ul>
+</li>
+<li>Data distribution changes as the split iterates
+<ul>
+<li>Re-calculate the entropy again to find the attribute that has the most information gain</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Notable decision tree algorithms</strong>
+<ul>
+<li>CART</li>
+<li>C4.5</li>
+<li>C5.0</li>
+<li>Commonality of decision tree algorithms
+<ul>
+<li>Uses entropy</li>
+<li>Uses Gini Index</li>
+<li>Related to how to split and classify data</li>
+<li>Uses the most influential attribute</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Entropy alternatives</strong>
+<ul>
+<li>Entropy calculation is relatively slow due to logarithmic function</li>
+<li>Gini Index = 1−∑pi²</li>
+<li>Chi-square = x² = ∑²∑²(n<sub>ij</sub>−E<sub>ij</sub>)/(E<sub>ij</sub>)
+<ul>
+<li>n<sub>ij</sub> = observed value</li>
+<li>E<sub>ij</sub> = expected value</li>
+<li>Unlike entropy which splits data into the most certain way, Chi-square splits data into the least relevant way</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Regression analysis</h3>
+<ul>
+<li><strong>Least squares approximation</strong>
+<ul>
+<li>&quot;What linear equation on a scatterplot would accurately represent the data, with minimum errors?&quot;</li>
+<li>Error = model-based linear equation − actual data
+<ul>
+<li>Expressed as cost/loss/error function
+<ul>
+<li>Cost function = ∑<sub>i</sub> = (y-y<sub>i</sub>)² = ∑e² = sum of squared deviation</li>
+</ul>
+</li>
+<li>The distance between linear equation and actual data
+<ul>
+<li>Absolute value distance = |f(x)−y|</li>
+<li>Minkowski distance</li>
+<li>Squared distance = (f(x)−y)²</li>
+</ul>
+</li>
+<li>Generalized Linear Model</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Essential regression analysis</strong>
+<ul>
+<li>Finding the graph that minimizes the cost function
+<ul>
+<li>= finding the model that moves towards the minimum cost function, by using 'least squares approximation'</li>
+</ul>
+</li>
+<li>y=f(x)
+<ul>
+<li>x = actual value = independent variable</li>
+<li>y = predicted value = dependent/target variable</li>
+</ul>
+</li>
+<li>Simple regression = when there is one single independent variable</li>
+<li>Multiple regression = when there are more than one independent variables</li>
+<li>Uses supervised learning to predict the data</li>
+<li>In general, social science uses linear regression model, while natural science uses non-linear regression model</li>
+</ul>
+</li>
+<li><strong>Regression analysis evaluation</strong>
+<ul>
+<li>Coefficient of determination = R-squared(R²)
+<ul>
+<li>&quot;How well does the model represent the data?&quot;</li>
+<li>R² is between 0 and 1 (the higher the better)</li>
+<li>The model with R² above 0.6 in social science, above 0.9 in natural science, is considered as acceptable</li>
+</ul>
+</li>
+<li>F-statistic(= F-Value) and P-value
+<ul>
+<li>Statistical evaluation of the 'reliability' of the regression model</li>
+<li>F-statistic = the higher the better</li>
+<li>P-value should be lower than 0.05 (statistically significant) or 0.01 (highly significant)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Clustering analysis</h3>
+<ul>
+<li><strong>Distance measure</strong>
+<ul>
+<li>Variables = x = { x<sub>1</sub>, x<sub>2</sub>, ... x<sub>k</sub> }</li>
+<li>Distance matrix = D = { D<sub>ij</sub> }</li>
+<li>&quot;What is distance? How to define the distance between data?&quot;
+<ul>
+<li>The distance needs to be defined as formula</li>
+</ul>
+</li>
+<li>Common basic distance measures
+<ul>
+<li>Euclidean distance</li>
+<li>Manhattan distance</li>
+<li>Minkowski distance</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Clustering methods</strong>
+<ul>
+<li>Single-linkage clustering
+<ul>
+<li>Choose the minimum value among distances between clusters</li>
+</ul>
+</li>
+<li>Complete-linkage clustering
+<ul>
+<li>Choose the maximum value among distances between clusters</li>
+</ul>
+</li>
+<li>Average-linkage clustering
+<ul>
+<li>Calculate the average value among distances between clusters</li>
+</ul>
+</li>
+<li>Centroid-linkage clustering
+<ul>
+<li>Calculate the distance between average vectors of each cluster</li>
+<li>Uses weighted average based on each cluster's size</li>
+<li>x̅ = (n<sub>1</sub>x̅<sub>1</sub> + n<sub>1</sub>x̅<sub>2</sub>) / (n<sub>1</sub> + n<sub>2</sub>)</li>
+</ul>
+</li>
+<li>Ward-linkage clustering
+<ul>
+<li>Error Sum of Squares(ESS) distance
+<ul>
+<li>The linkage function specifying the distance between two clusters is computed as the increase in the &quot;error sum of squares&quot; (ESS) after fusing two clusters into a single cluster</li>
+<li>Ward's Method seeks to choose the successive clustering steps so as to minimize the increase in ESS at each step</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>All the methods above performs clustering by fusing the nearest (= minimum distance) data one by one, until there is one single cluster left</li>
+</ul>
+</li>
+<li><strong>Types of clustering analysis</strong>
+<ul>
+<li>Dendrogram
+<ul>
+<li>Calculate all data points by using distance matrix</li>
+<li>Hierarchical clustering</li>
+<li>Requires much memory space</li>
+<li>Difficult to use when the data is big enough</li>
+<li>Useful to see the overall cluster pattern</li>
+</ul>
+</li>
+<li>K-means clustering
+<ul>
+<li>Calculate average vector among data</li>
+<li>Determine the cluster by repeating the calculation of cluster's average vector until it doesn't change anymore</li>
+<li>Non-hierarchical clustering</li>
+<li>Not suitable for non-circular clusters</li>
+<li>K-means workflow
+<ul>
+<li>e.g. 2 clusters
+<ul>
+<li>Step 1. Calculate all distances between the center of the cluster and all data points</li>
+<li>Step 2. Check the nearest cluster core for each data points</li>
+<li>Step 3. Assign a cluster to each data points</li>
+<li>Step 4. Calculate average vector among data points in the same cluster</li>
+<li>Step 5. Calculate all distances between the new center of the cluster and all data points, repeat until there is no change in the center position
+<ul>
+<li>The movement of the cluster center will decrease after each iteration</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>How to determine the numbers of clusters to define?
+<ul>
+<li>There is no algorithm or rule to accurately determine the number</li>
+<li>We can only assume the most efficient number of clusters through visualization or Exploratory Data Analysis (EDA)</li>
+<li>Too many clusters are not efficient</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DBSCAN
+<ul>
+<li>Bind data into clusters by density</li>
+<li>Group by higher density</li>
+<li>Non-hierarchical clustering</li>
+<li>Can detect noises automatically</li>
+<li>Catches elliptic clusters as well</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>K-Nearest Neighbor</h3>
+<ul>
+<li>Examine 'K' numbers of data nearby and predict the 'most voted' attribute
+<ul>
+<li>K is subjective, not determined, therefore multiple tests are needed</li>
+<li>Calculate first, and then classify
+<ul>
+<li>= Case-based learning</li>
+<li>= Memory-based learning</li>
+<li>= Supervised learning</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>e.g. Red pencils and blue pencils in a box
+<ul>
+<li>Premise
+<ul>
+<li>There is one type of attribute = color</li>
+<li>There are two levels of attribute = red / blue</li>
+<li>There are pencils that we don't know its color</li>
+<li>Let's assume that there are 5 neighbors in one cluster, K = 5</li>
+</ul>
+</li>
+<li>Group 5 pencils as a cluster and check the color
+<ul>
+<li>Cluster A has 3 red pencils, 2 blue pencils, and one pencil of unknown color
+<ul>
+<li>Since there are more red pencils than blue pencils, let's assume the unknown color to be 'red'</li>
+</ul>
+</li>
+<li>Cluster B has 2 red pencils, 3 blue pencils, and one pencil of unknown color
+<ul>
+<li>Since there are more blue pencils than red pencils, let's assume the unknown color to be 'blue'</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Weighted KNN
+<ul>
+<li>Previously we ignored the distance between pencils</li>
+<li>y = argmax<sub>v</sub>∑<sub>D<sub>x</sub></sub>I(v=y<sub>i</sub>)
+<ul>
+<li>argmax = find the 'v' value that gives the maximum solution
+<ul>
+<li>'v' is the target attribute</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Possible issues</strong>
+<ul>
+<li>Deviation
+<ul>
+<li>Different dataset has different deviation</li>
+<li>Data normalization is recommended
+<ul>
+<li>Workaround 1 : Convert all data values into 0(min)~1(max)</li>
+<li>Workaround 2 : Convert all data values into Z-score</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Accuracy and reliability depends on K value
+<ul>
+<li>If K is too small, overfitting happens</li>
+<li>If K is too big, underfitting happens</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

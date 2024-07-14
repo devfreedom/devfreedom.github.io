@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Study Note] Coursework: DevOps and Software Engineering - Containerization | devfreedom.github.io</title>
+    <meta name="title" content="[Study Note] Coursework: DevOps and Software Engineering - Containerization | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Study Note❯,DevOps,software engineering,cloud computing,web development,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230724_1434_study-note_devops_coursework_04/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Study Note] Coursework: DevOps and Software Engineering - Containerization</h1>
+        <div class="text-center">Published on 24 July 2023 02:34 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Study Note❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Study Note❯</a>
+            
+            <a href="/tags/DevOps" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#DevOps</a>
+            
+            <a href="/tags/software engineering" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#software engineering</a>
+            
+            <a href="/tags/cloud computing" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#cloud computing</a>
+            
+            <a href="/tags/web development" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#web development</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/devops.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>4. Containerization</h1>
+<ul>
+<li>Organizations are moving to containers to overcome challenges around isolation, utilization, provisioning, performance, and more.</li>
+</ul>
+<h2>4-1. Container</h2>
+<ul>
+<li>A container is a standard unit of software that encapsulates everything that programmers need to build, ship, and run applications.
+<ul>
+<li>Infrastructure, operating system, and container engine are layered, from bottom to top.
+<ul>
+<li>Container engine(runtime) runs and manages multiple apps, seperately but simultaneously, on a single operating system.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Benefits compared to physical servers
+<ul>
+<li>Isolation and allocation
+<ul>
+<li>For physical servers, there is no way to define resource boundaries for apps in a physical server.</li>
+</ul>
+</li>
+<li>Server utilization
+<ul>
+<li>Physical servers tend to be either over-utilized or under-utilized, not optimal.</li>
+<li>Containers improve utilization.</li>
+</ul>
+</li>
+<li>Provisioning and costs
+<ul>
+<li>Physical server requires long periods for provisioning resources and expensive maintenance costs.</li>
+<li>Containers lower costs.</li>
+</ul>
+</li>
+<li>Performance
+<ul>
+<li>Physical servers are constrained during peak workloads.</li>
+<li>Containers lower deployment time.</li>
+</ul>
+</li>
+<li>Portability
+<ul>
+<li>Applications in physical servers are not portable across multiple environments and operating systems.</li>
+</ul>
+</li>
+<li>Resiliency
+<ul>
+<li>Physical servers are complex, time-consuming, and expensive.</li>
+</ul>
+</li>
+<li>Scalability
+<ul>
+<li>Physical servers have limited scalability and resiliency.</li>
+<li>Containers support next-gen applications such as microservices.</li>
+</ul>
+</li>
+<li>Automation
+<ul>
+<li>Physical servers are difficult to implement for multiple platforms.</li>
+<li>Containers automate processes.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Characteristics
+<ul>
+<li>The container engine virtualizes the operating system.</li>
+<li>A container is lightweight, fast, isolated, and secure.</li>
+<li>Offers easy portability
+<ul>
+<li>Multiple platforms</li>
+<li>Multiple operating systems</li>
+<li>Multiple languages</li>
+</ul>
+</li>
+<li>Require less memory space</li>
+<li>Binaries and libraries within container enable apps to run.</li>
+<li>One machine can host multiple containers.</li>
+</ul>
+</li>
+<li>Challenges
+<ul>
+<li>Security impacted if operating system is affected</li>
+<li>Difficult to manage thousands of containers</li>
+<li>Complex to migrate legacy projects to container technology</li>
+<li>Difficult to right-size containers for specific scenarios</li>
+</ul>
+</li>
+<li>Vendors
+<ul>
+<li>Docker
+<ul>
+<li>Robust and most popular container platform today</li>
+</ul>
+</li>
+<li>Podman
+<ul>
+<li>Daemon-less architecture providing more security than Docker containers</li>
+</ul>
+</li>
+<li>LXC
+<ul>
+<li>Preferred for data-intensive apps and ops</li>
+</ul>
+</li>
+<li>Vagrant
+<ul>
+<li>Offers hightest levels of isolation on the running physical machine</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>4-2. Docker</h2>
+<ul>
+<li>Docker is an open platform for developing, shipping, and running applications as containers.
+<ul>
+<li>Written in Go</li>
+<li>Uses Linux kernel's cgroups to deliver functionality</li>
+<li>Docker uses namespaces technology to provide an isolated workspace called the “container.”
+<ul>
+<li>Docker creates a set of namespaces for every container and each aspect runs in a separate namespace with access limited to that namespace.</li>
+</ul>
+</li>
+<li>Docker inspired additional innovations afterwards.</li>
+</ul>
+</li>
+<li>Why popular?
+<ul>
+<li>Simple architecture</li>
+<li>Scalability</li>
+<li>Easy portability</li>
+</ul>
+</li>
+<li>Benefits
+<ul>
+<li>Consistent and isolated environments</li>
+<li>Repeatibility and automation</li>
+<li>Versioning for easy testing, rollbacks, and redeployments</li>
+<li>Collaboration, modularity, and scaling
+<ul>
+<li>Docker supports Agile and CI/CD DevOps practices.</li>
+</ul>
+</li>
+<li>Portability and flexibility
+<ul>
+<li>Docker speeds up the deployment process across multiple environments.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Drawbacks
+<ul>
+<li>Docker containers are not a good fit for applications such as,
+<ul>
+<li>Applications based on monolithic architecture</li>
+<li>Applications that require high performance or security</li>
+<li>Applications using rich GUI features</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Docker Objects</h3>
+<ul>
+<li>Dockerfile
+<ul>
+<li>A Dockerfile is a text file that contains instructions needed to create an image.
+<ul>
+<li>You can create a Dockerfile using any editor from the console or terminal.</li>
+</ul>
+</li>
+<li>A Dockerfile must always begin with a FROM instruction that defines a base image.
+<ul>
+<li>Often the base image is from a public repository, like an operating system or a specific language like Go or Node.js.</li>
+</ul>
+</li>
+<li>The RUN instruction executes commands.</li>
+<li>The CMD instruction defines a default command for execution.
+<ul>
+<li>A Dockerfile should have only one CMD instruction.</li>
+<li>If the Dockerfile has several CMD instructions, only the last CMD instruction will take effect.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Image
+<ul>
+<li>A Docker Image is a read-only template with instructions for creating a Docker container.</li>
+<li>The Dockerfile provides instructions to build the image.</li>
+<li>Each Docker instruction creates a new layer in the image.
+<ul>
+<li>When you change the Dockerfile and rebuild the image, the Docker engine only rebuilds the changed layers.</li>
+<li>Images can share these layers, which saves a lot of disk space as well as network bandwidth when sending and receiving images.</li>
+</ul>
+</li>
+<li>When you instantiate this image, you get a running container.
+<ul>
+<li>At this point, a writeable container layer is placed on top of the read-only layers.</li>
+<li>The writeable layer is needed because containers are not immutable as images.</li>
+</ul>
+</li>
+<li>An image name has a unique format that consists of three parts:
+<ul>
+<li>Hostname: Identifies the image registry</li>
+<li>Repository: A group of related container images</li>
+<li>Tag: Provides information about a specific version or variant of an image</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Container
+<ul>
+<li>A Docker container is a runnable instance of an image.
+<ul>
+<li>You can use the Docker API or CLI to create, start, stop, or delete an image.</li>
+</ul>
+</li>
+<li>You can connect to multiple networks, attach storage to the container, or create a new image based on its current state.</li>
+<li>Docker keeps containers well isolated from each other and their host machine.</li>
+</ul>
+</li>
+<li>Network
+<ul>
+<li>When using Docker, networks help isolate container communications.</li>
+</ul>
+</li>
+<li>Storage
+<ul>
+<li>By default, data doesn’t persist when the container no longer exists.</li>
+<li>Docker uses volumes and bind mounts to persist data even after a container stops.</li>
+</ul>
+</li>
+<li>Plugins and Add-ons
+<ul>
+<li>Plugins, such as storage plugins, provide the ability to connect to external storage platforms.</li>
+</ul>
+</li>
+</ul>
+<h3>Docker Container Images</h3>
+<ul>
+<li>Workflow
+<ol>
+<li>Create a Dockerfile</li>
+<li>Use the Dockerfile to create a container image
+<ul>
+<li>The <code>build</code> command is used with a Dockerfile to build a container image.
+<ul>
+<li>e.g. <code>docker build -t my-app v1</code></li>
+</ul>
+</li>
+<li>To verify the creation of the image, use <code>docker images</code> command.</li>
+</ul>
+</li>
+<li>Use the container image to create a running container
+<ul>
+<li>The <code>run</code> command is used with an image to create a running container.
+<ul>
+<li>e.g. <code>docker run my-app:v1</code></li>
+</ul>
+</li>
+<li>To verify the details of the container created, use <code>docker ps -a</code> command.</li>
+</ul>
+</li>
+<li>To store images in a configured registry, use <code>docker push</code> command.
+<ul>
+<li>e.g. <code>docker push my-app:v1</code></li>
+</ul>
+</li>
+<li>To retrive images from a configured registry, use <code>docker pull</code> command.
+<ul>
+<li>e.g. <code>docker pull nginx</code></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3>Docker Architecture</h3>
+<ul>
+<li>The Docker client-server architecture provides a complete application environment.
+<ul>
+<li>Docker components include the client, the host, and the registry.</li>
+</ul>
+</li>
+<li>Workflow
+<ol>
+<li>You’ll use either the Docker command line interface or REST APIs via the Docker client to send instructions to the Docker host server, commonly called the host.
+<ul>
+<li>The Docker host contains the daemon, known as <code>dockerd</code>.</li>
+<li>The Docker host also includes and manages,
+- Images
+- Containers
+- Namespaces
+- Networks
+- Storage
+- Plugins and add-ons</li>
+</ul>
+</li>
+<li>The daemon listens for Docker API requests or commands such as <code>docker run</code> and processes those commands.</li>
+<li>The daemon does the heavy lifting to build, run, and distribute Docker containers.</li>
+<li>Docker stores the container images in a registry.</li>
+</ol>
+</li>
+<li>Communications
+<ul>
+<li>The Docker ​client can communicate with local ​and remote Docker hosts.
+<ul>
+<li>You can run the Docker client and daemon on the same system, or​ connect your Docker client to a remote Docker daemon.​</li>
+<li>Docker daemons can also communicate with other daemons to manage Docker services.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Registry
+<ul>
+<li>Docker stores and distributes images in a registry.
+<ul>
+<li>Registry access is either public, such as Docker Hub, which is accessible by everyone, or private.</li>
+<li>Enterprises usually opt to use a private registry for security reasons.</li>
+<li>Registry locations are hosted using a third-party provider, such as IBM Cloud Container Registry, or self-hosted in private data centers or on the cloud.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Registry Access
+<ol>
+<li>Developers build and push the images using automation or a build pipeline into a registry, where Docker stores these images.
+<ol>
+<li>Use an existing base image or a Dockerfile.</li>
+<li>Issue the build command that creates a container image with a name.</li>
+<li>issue the push command to store the image to the registry.</li>
+<li>The host first checks locally if the image is already available, and then issues the run command with the image name to create the container.
+<ul>
+<li>If the image is unavailable within the host, the Docker client connects to the registry and pulls the image to the host.</li>
+<li>The daemon then creates a running container using the image.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Local machines, cloud systems, and on-premises systems can pull those images.</li>
+</ol>
+</li>
+</ul>
+<h2>4-3. Container Orchestration</h2>
+<ul>
+<li>Container orchestration is a process that automates the container lifecycle of containerized applications.
+<ul>
+<li>Lifecycle
+<ul>
+<li>Deployment</li>
+<li>Management</li>
+<li>Scaling</li>
+<li>Networking</li>
+<li>Availability</li>
+</ul>
+</li>
+<li>Container orchestration is a critical part of an organization's orchestration, automation, and response (SOAR) requirements.</li>
+</ul>
+</li>
+<li>Features
+<ul>
+<li>Defines container image and registry</li>
+<li>Improves provisioning and deployment</li>
+<li>Secures network connectivity between containers</li>
+<li>Ensures availability and performance
+<ul>
+<li>by relocating the containers to another host if an outage or shortage of system resources occurs.</li>
+</ul>
+</li>
+<li>Manages scalability and load balancing</li>
+<li>Resource allocation and scheduling to the underlying infrastructure</li>
+<li>Rolling updates and rollbacks</li>
+<li>Health checks and automated error handling</li>
+</ul>
+</li>
+<li>Benefits
+<ul>
+<li>Streamlines complexity</li>
+<li>Enables hands-off deployment and scaling</li>
+<li>Increases speed, agility, and efficiency</li>
+<li>Seamlessly integrates into CI/CD workflows</li>
+<li>Allows development teams to use resources more efficiently</li>
+</ul>
+</li>
+<li>Workflow
+<ul>
+<li>Configuration files
+<ul>
+<li>YAML or JSON files configure containers to,
+<ul>
+<li>Find resources</li>
+<li>Establish a network</li>
+<li>Store logs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Deployment scheduling
+<ul>
+<li>Automatically schedules new container deployment</li>
+<li>Finds the right host based on predefined settings or restrictions</li>
+</ul>
+</li>
+<li>Manages container lifecycle
+<ul>
+<li>Configuration file specs inform container decisions
+<ul>
+<li>System parameters (e.g. CPU, memory)</li>
+<li>File parameters (e.g. proximity, metadata)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Scaling and productivity
+<ul>
+<li>Automation is used to,
+<ul>
+<li>Maintain productivity</li>
+<li>Support scaling</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tools
+<ul>
+<li>Marathon
+<ul>
+<li>Open-source cluster manager</li>
+<li>Scales container infrastructure by automating management and task monitoring</li>
+</ul>
+</li>
+<li>Nomad
+<ul>
+<li>Free, open-source cluster management and scheduling tool</li>
+<li>Supports various app types on all major operating systems</li>
+</ul>
+</li>
+<li>Docker Swarm
+<ul>
+<li>Open-source container orchestration platform</li>
+<li>Automates deployment of containerized apps</li>
+</ul>
+</li>
+<li>Kubernetes
+<ul>
+<li>Standard for open-source container orchestration platforms</li>
+<li>Robust feature set, broadly supported</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>4-4. Kubernetes</h2>
+<ul>
+<li>An open-source system for automating deployment, scaling, and management of containerized applications
+<ul>
+<li>a.k.a. K8s</li>
+<li>The de facto choice for container orchestration</li>
+<li>It is easily portable across clouds and on-premises</li>
+<li>&quot;Containers-as-a-service&quot; concept</li>
+<li>Kubernetes facilitates declarative management in which it automatically performs the necessary operations towards achieving the called for state.</li>
+</ul>
+</li>
+<li>Key factors
+<ul>
+<li>Kubernetes is NOT a traditional, all-inclusive platform as a service.</li>
+<li>Kubernetes is NOT rigid or opinionated.
+<ul>
+<li>But, more of a flexible model that supports an extremely diverse variety of workloads, including stateless, stateful, and data-processing workloads.</li>
+</ul>
+</li>
+<li>Kubernetes does NOT provide continuous integration/continuous delivery pipelines to build applications or deploy source code.</li>
+<li>Kubernetes does NOT prescribe logging, monitoring, and alerting solutions.
+<ul>
+<li>Organizations are free to select and integrate third-party and open source tools.</li>
+</ul>
+</li>
+<li>Kubernetes does NOT provide built-in middleware, databases, or other services.</li>
+</ul>
+</li>
+<li>Ecosystem
+<ul>
+<li>Services, support, and tools that are widely available</li>
+<li>Provides additional K8s services
+<ul>
+<li>Building container images</li>
+<li>Storing images in a container registry</li>
+<li>Application logging and monitoring</li>
+<li>CI/CD</li>
+</ul>
+</li>
+<li>Public cloud
+<ul>
+<li>Prisma</li>
+<li>Google</li>
+<li>Amazon</li>
+<li>IBM</li>
+</ul>
+</li>
+<li>Open source frameworks
+<ul>
+<li>Red Hat</li>
+<li>VMware</li>
+<li>SUSE</li>
+<li>D2iQ</li>
+<li>Docker</li>
+<li>Cloud Foundry</li>
+</ul>
+</li>
+<li>Management
+<ul>
+<li>Digital Ocean</li>
+<li>Supergiant</li>
+<li>Kubermatic</li>
+<li>CloudSoft</li>
+<li>Techtonic</li>
+<li>Weaveworks</li>
+</ul>
+</li>
+<li>Tools
+<ul>
+<li>JFrog</li>
+<li>Univa</li>
+<li>Aspen</li>
+<li>Mesh</li>
+<li>Bitnami</li>
+<li>Cloud 66</li>
+</ul>
+</li>
+<li>Monitoring &amp; logging
+<ul>
+<li>sumalogic</li>
+<li>New Relic</li>
+<li>Grafana</li>
+<li>sysdig</li>
+<li>Datadog</li>
+<li>iguazio</li>
+<li>SignalFX</li>
+<li>Dynatrace</li>
+</ul>
+</li>
+<li>Security
+<ul>
+<li>Guardcore</li>
+<li>Blackduck</li>
+<li>yubico</li>
+<li>TwistLock</li>
+<li>cilium</li>
+<li>alcide</li>
+</ul>
+</li>
+<li>Load balancing
+<ul>
+<li>VMware</li>
+<li>AVI networks</li>
+<li>nginx</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>K8s Concepts</h3>
+<ul>
+<li>Pods
+<ul>
+<li>The smallest deployable compute object in K8s and the higher-level abstractions to run workloads</li>
+</ul>
+</li>
+<li>Services
+<ul>
+<li>Exposes application running on a set of pods</li>
+</ul>
+</li>
+<li>Storage
+<ul>
+<li>K8s supports both persistent and temporary storage for pods</li>
+</ul>
+</li>
+<li>Configuration
+<ul>
+<li>Resources that K8s provides for configuring pods</li>
+</ul>
+</li>
+<li>Security
+<ul>
+<li>Security for cloud-native workloads enforces security for pod and API access</li>
+</ul>
+</li>
+<li>Policies
+<ul>
+<li>Policies for groups of resources help ensure that pods match to the nodes
+<ul>
+<li>so that the kubelet can find and run the pod</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Schedule/Eviction
+<ul>
+<li>Runs and proactively terminates one or more pods on resource-starved nodes</li>
+</ul>
+</li>
+<li>Preemption
+<ul>
+<li>Terminates lower priority pods so that higher priority pos can run on nodes</li>
+</ul>
+</li>
+<li>Administration
+<ul>
+<li>Management details necessary to administer a Kubernetes cluster</li>
+</ul>
+</li>
+</ul>
+<h3>K8s Capabilities</h3>
+<ul>
+<li>Automated rollouts and rollbacks
+<ul>
+<li>Progressively rolls out changes to application or configuration</li>
+<li>Monitors application health and ensures instances are running</li>
+<li>Rolls back changes</li>
+</ul>
+</li>
+<li>Storage orchestration
+<ul>
+<li>Automatically mounts your chosen storage system whether from local storage, network storage, or public cloud</li>
+</ul>
+</li>
+<li>Horizontal scaling
+<ul>
+<li>Scales loads automatically based on metrics or via commands</li>
+</ul>
+</li>
+<li>Automated bin packing
+<ul>
+<li>Increases resource utilization and cost savings using a mix of critical and best-effort workloads</li>
+<li>Performs container auto-placement based on resource requirements and conditions without sacrificing high availability (HA)</li>
+</ul>
+</li>
+<li>Secret and configuration management
+<ul>
+<li>Stores and manages sensitive information (credentials, keys, or tokens) securely</li>
+<li>Deploys and updates secrets/configuration without rebuilding images</li>
+<li>IPv4/IPv6 dual stack support</li>
+</ul>
+</li>
+<li>Batch execution
+<ul>
+<li>Manages batch and CI workloads, and replaces failed containers if configured</li>
+</ul>
+</li>
+<li>Self-healing
+<ul>
+<li>Restarts, replaces, reschedules, and kills failing or unresponsive containers</li>
+<li>Exposes containers to clients only if healthy and running</li>
+</ul>
+</li>
+<li>Service discovery and load balancing
+<ul>
+<li>Discovers pods using their own IP addresses or a single DNS name</li>
+<li>Load-balances traffic across pods for better performance and high availability</li>
+</ul>
+</li>
+<li>Designed for extensibility
+<ul>
+<li>Easily-extensible by adding or providing additional features to your K8s cluster without any source code modifications.</li>
+</ul>
+</li>
+</ul>
+<h3>K8s Architecture</h3>
+<ul>
+<li>K8s cluster
+<ul>
+<li>A deployment of Kubernetes is called a Kubernetes cluster.
+<ul>
+<li>A Kubernetes cluster is a cluster of nodes that runs containerized applications.</li>
+<li>Each cluster has one master node (the Kubernetes Control Plane) and one or more worker nodes.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Node
+<ul>
+<li>Nodes are the worker machines in a Kubernetes cluster. In other words, user applications are run on nodes.
+<ul>
+<li>Nodes can be virtual or physical machines.</li>
+</ul>
+</li>
+<li>Nodes are not created by Kubernetes itself, but rather by the cloud provider.
+<ul>
+<li>This allows Kubernetes to run on a variety of infrastructures.</li>
+</ul>
+</li>
+<li>Each node is managed by the control plane and contain the services necessary to run applications.</li>
+<li>Nodes include pods, which are the smallest deployment entity in Kubernetes.
+<ul>
+<li>Pods include one or more containers.</li>
+<li>Containers share all the resources of the node and can communicate among themselves.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>K8s control plane
+<ul>
+<li>Control plane maintains the intended cluster state by making decisions about the cluster and detecting and responding to events in the cluster.
+<ul>
+<li>Like a thermostat, you specify the desired temperature, and the thermostat regulates heating and cooling systems continuously to achieve the specified state.</li>
+</ul>
+</li>
+<li>Elements
+<ul>
+<li>Kube-controller manager
+<ul>
+<li>Runs all the controller processes that monitor the cluster state, and ensure the actual state of a cluster matches the desired state.</li>
+</ul>
+</li>
+<li>cloud-controller manager
+<ul>
+<li>Runs controllers that interact with the underlying cloud providers.
+<ul>
+<li>These controllers effectively link clusters into a cloud provider’s API.</li>
+</ul>
+</li>
+<li>Allows both Kubernetes and the cloud providers to evolve freely without introducing dependencies on the other.</li>
+</ul>
+</li>
+<li>kube-api-server
+<ul>
+<li>Exposes the Kubernetes API</li>
+<li>The API server serves as the front-end for the control plane.
+<ul>
+<li>All communication in the cluster utilizes this API.</li>
+<li>e.g. The Kubernetes API server accepts commands to view or change the state of the cluster.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>kube-scheduler
+<ul>
+<li>Assigns newly created Pods to nodes
+<ul>
+<li>This basically means that the kube-scheduler determines where your workloads should run within the cluster.</li>
+<li>The scheduler selects the most optimal node according to Kubernetes scheduling principles, configuration options, and available resources.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>etcd
+<ul>
+<li>A highly available, distributed key value store that contains all the cluster data.</li>
+<li>When you tell Kubernetes to deploy your application, that deployment configuration is stored in etcd.</li>
+<li>Etcd defines the state in a Kubernetes cluster, and the system works to bring the actual state to match the desired state.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Kubelet
+<ul>
+<li>This controller communicates with the kube-apiserver to receive new and modified pod specifications, and ensure that the pods and their associated containers are running as desired.</li>
+<li>The kubelet also reports to the control plane on the pods’ health and status.</li>
+<li>In order to start a pod, the kubelet uses the container runtime.</li>
+</ul>
+</li>
+<li>Container runtime
+<ul>
+<li>The container runtime is responsible for downloading images and running containers.</li>
+<li>Rather than providing a single container runtime, Kubernetes implements a Container Runtime Interface that permits pluggability of the container runtime.
+<ul>
+<li>e.g. Runtimes
+<ul>
+<li>Docker</li>
+<li>Podman</li>
+<li>Cri-o</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>K8s proxy
+<ul>
+<li>A network proxy that runs on each node in a cluster.</li>
+<li>This proxy maintains network rules that allow communication to Pods running on nodes.
+<ul>
+<li>i.e. communication to workloads running on your cluster</li>
+<li>This communication can come from within or outside of the cluster.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>K8s Objects</h3>
+<ul>
+<li>Entity
+<ul>
+<li>A person, place, or thing with an identity and associated data</li>
+</ul>
+</li>
+<li>Object
+<ul>
+<li>A bundle of software data that has an identity, a state, and a behavior
+<ul>
+<li>Variables, data structures, and specific functions</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>K8s objects are &quot;persistent&quot; entities
+<ul>
+<li>e.g.
+<ul>
+<li>Pods</li>
+<li>Namespaces</li>
+<li>ReplicaSets</li>
+<li>Deployments</li>
+</ul>
+</li>
+<li>K8s object main fields
+<ul>
+<li>Object spec
+<ul>
+<li>Provided by user</li>
+<li>Defines desired state</li>
+</ul>
+</li>
+<li>Status
+<ul>
+<li>Provided by K8s</li>
+<li>Defines current state</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>How to manage K8s objects using K8s API
+<ul>
+<li>via client libraries</li>
+<li>via kubectl CLI</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Pods
+<ul>
+<li>The simplest unit in Kubernetes</li>
+<li>A Pod represents a process or a single instance of an application running in the cluster.
+<ul>
+<li>A Pod usually encapsulates one or more containers</li>
+</ul>
+</li>
+<li>Creating replicas of a Pod serves to scale an application horizontally.</li>
+<li>YAML files are often used to define the objects that you want to create.
+<ul>
+<li>The “kind” field specifies the kind of object to be created.</li>
+<li>The “spec” field provides the appropriate fields for the object to be created, such as the containers that will run in this Pod.
+<ul>
+<li>A PodSpec must contain at least one container.</li>
+</ul>
+</li>
+<li>The image field dictates which image will run in the Pod.</li>
+<li>And the ports array lists the ports that the container exposes.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Labels
+<ul>
+<li>Labels are key/value pairs attached to objects, for identification.</li>
+<li>However, a label does not uniquely identify a single object.
+<ul>
+<li>Many objects can have the same labels.</li>
+<li>This helps to organize and group objects.</li>
+</ul>
+</li>
+<li>Label selectors are the core grouping method in Kubernetes.
+<ul>
+<li>They allow you to identify a set of objects.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Namespaces
+<ul>
+<li>Namespaces provide a mechanism for isolating groups of resources within a single cluster.
+<ul>
+<li>This is useful when teams share a cluster for cost-saving purposes or for maintaining multiple projects in isolation.</li>
+<li>Namespaces are ideal when the number of cluster users is large.</li>
+</ul>
+</li>
+<li>Namespaces provide a scope for the names of objects.</li>
+<li>Each object must have a unique name for that resource type within that namespace.</li>
+</ul>
+</li>
+<li>ReplicaSets
+<ul>
+<li>A set of identical running replicas of a Pod that are horizontally scaled.
+<ul>
+<li>The configuration files for a ReplicaSet and a Pod are different from each other.</li>
+</ul>
+</li>
+<li>ReplicaSet does not own pods, it uses pod labels instead.</li>
+<li>The replicas field specifies the number of replicas that should be running at any given time.
+<ul>
+<li>Whenever this field is updated, the ReplicaSet creates or deletes Pods to meet the desired number of replicas.</li>
+</ul>
+</li>
+<li>A Pod template is included in the ReplicaSet spec which defines the Pods that should be created by the ReplicaSet.</li>
+<li>Creating ReplicaSets directly is not recommended. Instead, create a Deployment.</li>
+</ul>
+</li>
+<li>Deployment
+<ul>
+<li>A higher-level object that provides updates for both Pods and ReplicaSets</li>
+<li>Deployments run multiple replicas of an application using ReplicaSets and offer additional management capabilities on top of these ReplicaSets.</li>
+<li>Deployments are suitable for stateless applications.
+<ul>
+<li>For stateful applications, Stateful Sets are used.</li>
+</ul>
+</li>
+<li>One key feature provided by Deployments but not by ReplicaSets is rolling updates.
+<ul>
+<li>A rolling update scales up a new version to the appropriate number of replicas and scales down the old version to zero replicas.</li>
+</ul>
+</li>
+<li>The ReplicaSet ensures that the appropriate number of Pods exist, while the Deployment orchestrates the roll out of a new version.</li>
+</ul>
+</li>
+</ul>
+<h3>K8s Service</h3>
+<ul>
+<li>Service
+<ul>
+<li>A Service is a REST object, like Pods.
+<ul>
+<li>Services are a logical abstraction for a set of Pods in a cluster.</li>
+<li>They provide policies for accessing the Pods and cluster, and act as a load balancer across the Pods.</li>
+</ul>
+</li>
+<li>Each Service is assigned a unique IP address for accessing applications deployed on Pods.
+<ul>
+<li>Service eliminates the need for a separate service discovery process.</li>
+<li>A Service supports multiple protocols such as TCP, which is the default protocol, UDP, and others, and supports multiple port definitions.</li>
+<li>The port number with the same name can vary in each backend Pod.</li>
+<li>Service can have an optional selector and can optionally map incoming ports to a targetPort.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Why Service?
+<ul>
+<li>A service is needed because Pods in a cluster can be destroyed and new Pods can be created at any time.
+<ul>
+<li>This volatility leads to discoverability issues because of changing IP addresses.</li>
+</ul>
+</li>
+<li>A Service keeps track of Pod changes and exposes a single IP address or a DNS name and utilizes selectors to target a set of Pods.
+<ul>
+<li>For native Kubernetes applications, API endpoints are updated whenever changes are detected to the Pods in the Service.</li>
+<li>For non-native applications, Kubernetes uses a virtual-IP-based bridge or load balancer in between the applications and the backend Pods.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ClusterIP
+<ul>
+<li>ClusterIP is the default and most common service type.</li>
+<li>Kubernetes assigns a cluster-internal IP address to the ClusterIP Service that makes the Service only reachable within the cluster.
+<ul>
+<li>A ClusterIP service cannot make requests to Service from outside the cluster.</li>
+</ul>
+</li>
+<li>You can set the ClusterIP address in the Service definition file, and the ClusterIP Service provides inter-service communication within the cluster.</li>
+</ul>
+</li>
+<li>NodePort
+<ul>
+<li>Creates and routes the incoming requests automatically to the ClusterIP Service</li>
+<li>A NodePort exposes the Service on each Node’s IP address at a static port.
+<ul>
+<li>For security purposes, production use is not recommended.</li>
+</ul>
+</li>
+<li>Kubernetes exposes a single Service with no load-balancing requirements for multiple services.</li>
+</ul>
+</li>
+<li>External LoadBalancer
+<ul>
+<li>Creates NodePort and ClusterIP Services automatically</li>
+<li>An ELB integrates and automatically directs traffic to the NodePort Service.</li>
+<li>To expose a Service to the Internet, you need a new ELB with an IP address.
+<ul>
+<li>You can use a cloud provider’s ELB to host your cluster.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>External Name
+<ul>
+<li>Maps to a DNS name and not to any selector
+<ul>
+<li>Requires a <code>spec.externalName</code> parameter</li>
+</ul>
+</li>
+<li>The External Name Service maps the Service to the contents of the externalName field that returns a CNAME record and its value.</li>
+<li>You can use an External name to create a Service that represents external storage, and enable Pods from different namespaces to talk to each other.</li>
+</ul>
+</li>
+<li>Ingress
+<ul>
+<li>An API object that, when combined with a controller, provides routing rules to manage external users’ access to multiple services in a Kubernetes cluster.</li>
+<li>In production, Ingress exposes applications to the Internet via port 80 (for HTTP) or port 443 (for HTTPS)</li>
+<li>While the cluster monitors Ingress, an external Load Balancer is expensive and is managed outside the cluster.</li>
+</ul>
+</li>
+<li>DaemonSet
+<ul>
+<li>An object that makes sure that Nodes run a copy of a Pod</li>
+<li>As nodes are added to a cluster, Pods are added to the nodes.
+<ul>
+<li>Pods are garbage collected when removed from a cluster.</li>
+</ul>
+</li>
+<li>If you delete a DaemonSet, all Pods are removed.</li>
+<li>DaemonSets are ideally used for storage, logs, and monitoring nodes.</li>
+</ul>
+</li>
+<li>StatefulSet
+<ul>
+<li>An object that manages stateful applications, manages deployment and scaling of Pods, and provides guarantees about the ordering and uniqueness of Pods.</li>
+<li>A StatefulSet maintains a sticky identity for each Pod request and provides persistent storage volumes for your workloads.</li>
+</ul>
+</li>
+<li>Job
+<ul>
+<li>Job creates Pods and tracks the Pod completion process.
+<ul>
+<li>Jobs are retried until completed.</li>
+<li>A job can run several Pods in parallel.</li>
+</ul>
+</li>
+<li>Deleting a job will remove the created Pods.</li>
+<li>Suspending a Job will delete its active Pods until the job resumes.</li>
+<li>CronJob is regularly used to create Jobs on an iterative schedule.</li>
+</ul>
+</li>
+</ul>
+<h3>Kubectl</h3>
+<ul>
+<li>Kubectl is the Kubernetes command line interface.
+<ul>
+<li>Provides many features for users who work with Kubernetes clusters and manage running cluster workloads</li>
+<li>Helps users deploy applications, inspect and manage cluster resources, view logs, and more</li>
+</ul>
+</li>
+<li>Syntax
+<ul>
+<li><code>kubectl [command] [type] [name] [flags]</code>
+<ul>
+<li>Keeping each component in order is critical.</li>
+</ul>
+</li>
+<li>Command
+<ul>
+<li>Any operation to be performed</li>
+<li>e.g. create, get, apply, delete</li>
+</ul>
+</li>
+<li>Type
+<ul>
+<li>Resource type</li>
+<li>e.g. pod, deployment, replicaset</li>
+</ul>
+</li>
+<li>Name
+<ul>
+<li>Resource name, if applicable</li>
+</ul>
+</li>
+<li>Flags
+<ul>
+<li>Special options or modifiers that override default values</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Key command types
+<ul>
+<li>Imperative commands
+<ul>
+<li>e.g. <code>kubectl run nginx --image nginx</code></li>
+<li>Create, update, and delete live objects directly</li>
+<li>Operations should be specified as arguments or flags</li>
+<li>Easiest to learn</li>
+<li>No audit trail, which is important for tracking changes.</li>
+<li>Not very flexible
+<ul>
+<li>Limited options, no template, no integration with change review processes</li>
+</ul>
+</li>
+<li>Useful for development and test environments</li>
+</ul>
+</li>
+<li>Imperative object configuration
+<ul>
+<li>Overcomes imperative commands' limitation by using a configuration file
+<ul>
+<li>Using the same configuration templates in multiple environments will produce identical results.</li>
+<li>A configuration file may be stored in a source control system like Git, it can integrate with change processes, and it provides audit trails and templates for creating new objects.</li>
+</ul>
+</li>
+<li>kubectl command specifies required operations, optional flags, and at least one file name.
+<ul>
+<li>The specified configuration file must contain a full definition of the objects in YAML or JSON format.</li>
+<li>e.g. To create the objects defined in the file, run the command <code>kubectl create -f nginx.yaml</code>.</li>
+</ul>
+</li>
+<li>Using it requires understanding of the object schema, and requires writing a YAML or JSON file.</li>
+<li>You need to specify all necessary command operations.</li>
+</ul>
+</li>
+<li>Declarative object configuration
+<ul>
+<li>Overcomes imperative object configuration's limitation by defining the desired state in a shared configuration file
+<ul>
+<li>Declarative object configuration stores configuration data in files.
+<ul>
+<li>When you deploy, Kubernetes automatically determines the necessary operations.</li>
+</ul>
+</li>
+<li>Operations are identified by Kubectl instead of being specified by the user.</li>
+<li>This works on directories or individual files.</li>
+</ul>
+</li>
+<li>Configuration files define a desired state, and Kubernetes actualizes that state.
+<ul>
+<li>This approach is the ideal method for production systems.</li>
+</ul>
+</li>
+<li>e.g. <code>kubectl apply -f nginx/</code> command mentions a directory, then applies configuration data to all files in that directory.
+<ul>
+<li>The user is not required to perform any operations since they are performed by the system automatically.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Commonly used commands
+<ul>
+<li>apply</li>
+<li>create</li>
+<li>describe</li>
+<li>get</li>
+<li>delete</li>
+<li>autoscale</li>
+<li>edit</li>
+<li>exec</li>
+<li>expose</li>
+<li>label</li>
+</ul>
+</li>
+</ul>
+<h3>Hands-on : ReplicaSet</h3>
+<ol>
+<li>Create a deployment.
+<ul>
+<li><code>kubectl create -f deployment.yaml</code></li>
+</ul>
+</li>
+<li>Deployment automatically creates a pod. Check the status.
+<ul>
+<li><code>kubectl get pods</code></li>
+</ul>
+</li>
+<li>Check the deployment status.
+<ul>
+<li><code>kubectl get deploy</code></li>
+</ul>
+</li>
+<li>Scale the deployment horizontally.
+<ul>
+<li><code>kubectl scale deploy hello-world --replicas=3</code></li>
+<li>2 more pods are created automatically.</li>
+</ul>
+</li>
+<li>If you delete or add pods manually after this, which won't match the desired numbers of pods, the ReplicaSet will maintain the desired state by replacing the deleted pod or removing the added pod.</li>
+</ol>
+<h3>Autoscaling</h3>
+<ul>
+<li>Horizontal Pod Autoscaler (HPA)
+<ul>
+<li>Adjusts the number of replicas of an application by increasing or decreasing the number of pods.</li>
+<li>Automatically updates a workload resource (like a deployment) by horizontally scaling the workload to match the demand.
+<ul>
+<li>Horizontal scaling, or “scaling out,” automatically increases or decreases the number of running pods as application usage changes.</li>
+</ul>
+</li>
+<li>An HPA uses a cluster operator that sets targets for metrics like CPU or memory utilization and the maximum and minimum desired number of replicas.</li>
+<li>You can manually create the HPA object from a YAML file, but you should use the autoscale command instead.
+<ul>
+<li>Similar to the autoscale command, you can set the minimum and maximum number of pods.</li>
+<li>The CPU-percent flag shows up as “targetCPUUtilizationPercentage”.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Vertical Pod Autoscaler (VPA)
+<ul>
+<li>Adjusts the resource requests and limits of a container by increasing or decreasing the resource size or speed of the pods.</li>
+<li>Vertical scaling, or “scaling up,” refers to adding more resources to an existing machine.
+<ul>
+<li>A VPA lets you scale a service vertically within a cluster.</li>
+</ul>
+</li>
+<li>The cluster operator sets targets for metrics like CPU or memory utilization, similar to an HPA.
+<ul>
+<li>The cluster then reconciles the size of the service’s pod or pods based on their current usage and the desired target.</li>
+</ul>
+</li>
+<li>You should not use VPAs with HPAs on resource metrics like CPU or memory.
+<ul>
+<li>However, you can use them together on custom or external metrics.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Cluster Autoscaler (CA)
+<ul>
+<li>Adjusts the number of nodes in the cluster when pods fail to schedule, or demand increases or decreases in relation to the nodes’ capacity.</li>
+<li>Autoscales the cluster itself, increasing and decreasing the number of available nodes that pods can run on.</li>
+<li>Pods are autoscaled using HPA or VPA. But when the nodes themselves are overloaded with pods, you can use a CA to autoscale the nodes so that the pods can rebalance themselves across the cluster.</li>
+<li>A cluster autoscaler ensures there is always enough compute power to run your tasks, and that you aren’t paying extra for unused nodes.</li>
+</ul>
+</li>
+</ul>
+<h3>Hands-on: Autoscaling</h3>
+<ol>
+<li>Check the status of existing pods and ReplicaSets.
+<ul>
+<li>Let's say we have one pod and one ReplicaSet for a deployment.
+<ul>
+<li><code>kubectl get pods</code></li>
+<li><code>kubectl get rs</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Set autoscaling using attributes.
+<ul>
+<li><code>kubectl autoscale deploy hello-world --min=2 --max=5 --cpu-percent=50</code></li>
+</ul>
+</li>
+<li>Check the status of ReplicaSets.
+<ul>
+<li>The deployment still uses the ReplicaSet to scale up and down.</li>
+<li>There are two pods running, as desired.
+<ul>
+<li><code>kubectl describe rs hello-world-7492b273a2</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3>K8s Deployment Strategies</h3>
+<ul>
+<li>Kubernetes deployment strategies are used to,
+<ul>
+<li>Deploy, update, or rollback ReplicaSets, Pods, Services, and Applications</li>
+<li>Pause/Resume Deployments</li>
+<li>Scale Deployments manually or automatically</li>
+</ul>
+</li>
+<li>Recreate
+<ul>
+<li>In the recreate strategy, Pods running the live version of the application are all shut down simultaneously, and a new version of the application is deployed on newly created Pods.</li>
+<li>Recreate is the simplest deployment strategy.</li>
+<li>There is a short downtime between the shutdown of the existing deployment and the new deployment.</li>
+<li>Steps
+<ol>
+<li>A new version of the application (v2) is ready for deployment.</li>
+<li>All Pods running the current version (v1) are shut down or deleted.</li>
+<li>New (v2) Pods are created.</li>
+<li>The rollback process is completed in the reverse order, replacing version 2 (v2) with version 1 (v1).</li>
+</ol>
+</li>
+<li>Pros
+<ul>
+<li>Simple setup</li>
+<li>Short downtime occurs between shutdown and new deployment</li>
+</ul>
+</li>
+<li>Cons
+<ul>
+<li>Application version completely replaced</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Rolling (Revamped)
+<ul>
+<li>In a rolling strategy, each Pod is updated one at a time.
+<ul>
+<li>A single v1 Pod is replaced with a new v2 Pod.</li>
+<li>Each v1 Pod is updated in this way until all Pods are v2.</li>
+</ul>
+</li>
+<li>During a rolling strategy update, there is hardly any downtime since users are directed to either version.</li>
+<li>Steps
+<ol>
+<li>A new version of the application (v2) is ready for deployment.</li>
+<li>One of the Pods running the current version (v1) is shut down or deleted.</li>
+<li>A new (v2) Pod is created to replace the (v1) Pod that was removed.</li>
+<li>Steps 2 and 3 are repeated until all (v1) Pods are removed and replaced with (v2) Pods.</li>
+<li>The rollback process is reversed, where v2 Pods are replaced by v1 Pods.</li>
+</ol>
+</li>
+<li>Pros
+<ul>
+<li>Simple setup</li>
+<li>Suitable for stateful applications that need to handle rebalancing of the data</li>
+</ul>
+</li>
+<li>Cons
+<ul>
+<li>Rollout/rollback takes time</li>
+<li>You cannot control traffic distribution</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Blue/green
+<ul>
+<li>In a blue/green strategy, the blue environment is the live version of the application.</li>
+<li>The green environment is an exact copy that contains the deployment of the new version of the application.</li>
+<li>The green environment is thoroughly tested. Once all changes, bugs, and issues are addressed, user traffic is switched from the blue environment to the green environment.</li>
+<li>Steps
+<ol>
+<li>Create a new environment identical to the current production environment.</li>
+<li>Design the new version and test it thoroughly until it is ready for production.</li>
+<li>Route all user traffic to the new version.</li>
+<li>To perform a rollback, switch the environments back.</li>
+</ol>
+</li>
+<li>Pros
+<ul>
+<li>Instant rollout/rollback (no downtime)</li>
+<li>New version is available immediately to all users</li>
+</ul>
+</li>
+<li>Cons
+<ul>
+<li>Expensive (requires double resources)</li>
+<li>Rigorous testing required before releasing to production</li>
+<li>Handling stateful applications is difficult</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Canary
+<ul>
+<li>In a canary strategy, the new version of the application is tested using a small set of random users alongside the current live version of the application.
+<ul>
+<li>Once the new version of the application is successfully tested, it is then rolled out to all users.</li>
+</ul>
+</li>
+<li>Steps
+<ol>
+<li>Design a new version of the application.</li>
+<li>Route a small sample of user requests to the new version.</li>
+<li>Test for efficiency, performance, bugs, and issues, and rollback as needed.</li>
+<li>Repeat steps 1 to 3. Once all issues are resolved, route all traffic to the new version.</li>
+<li>Rollback has no downtime since few users are exposed to the new version.</li>
+</ol>
+</li>
+<li>Pros
+<ul>
+<li>Convenient for reliability, error, and performance monitoring</li>
+<li>Fast rollback</li>
+</ul>
+</li>
+<li>Cons
+<ul>
+<li>Slow rollout, gradual user access</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>A/B testing
+<ul>
+<li>The A/B testing strategy, also known as split testing, evaluates two versions of an application (version A and version B).
+<ul>
+<li>With A/B testing, each version has features that cater to different sets of users.</li>
+<li>You can select which version is best for global deployment based on user interaction and feedback.</li>
+</ul>
+</li>
+<li>Steps
+<ol>
+<li>Design a new version of the application by adding mostly UI features.</li>
+<li>Identify a small set of users based on conditions like weight, cookie value, query parameters, geolocalization, browser version, screen size, operating system, and language.</li>
+<li>Route requests from the user set to the new version.</li>
+<li>Check for bugs, efficiency, performance, and issues.</li>
+<li>Once all issues are resolved, route all traffic to the new version.</li>
+<li>Rollbacks can be implemented, but downtime can impact the user.</li>
+</ol>
+</li>
+<li>Pros
+<ul>
+<li>Multiple versions can run in parallel</li>
+<li>Full control over traffic distribution</li>
+</ul>
+</li>
+<li>Cons
+<ul>
+<li>Requires intelligent load balancer</li>
+<li>Difficult to troubleshoot errors for a given session, distributed tracing becomes mandatory</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Shadow
+<ul>
+<li>In a shadow strategy, a “shadow version” of the application is deployed alongside the live version.</li>
+<li>User requests are sent to both versions, and both handle all requests, but the shadow version does not forward responses back to the users.</li>
+<li>This lets developers see how the shadow version performs using real-world data without interrupting user experience.</li>
+<li>To perform a rollback, switch the environments back.</li>
+<li>Pros
+<ul>
+<li>Performance testing with production traffic</li>
+<li>No user impact</li>
+<li>No downtime</li>
+</ul>
+</li>
+<li>Cons
+<ul>
+<li>Expensive (double resources)</li>
+<li>Not a true user test, can lead to misinterpreted results</li>
+<li>Complex setup</li>
+<li>Requires monitoring for two environments</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>To create a good strategy,
+<ul>
+<li>Consider the product type and the target audience</li>
+<li>Shadow and canary strategies use live user requests, as opposed to using a sample of users.</li>
+<li>The A/B testing strategy is useful if the version of the application requires minor tweaks or UI feature changes.</li>
+<li>The blue/green strategy is useful if your version of the application is complex or critical and needs proper monitoring with no downtime during deployment.</li>
+<li>The canary strategy is a good choice if you want zero downtime and are comfortable exposing your version of the application to the public.</li>
+<li>A rolling strategy gradually deploys the new version of the application. There is no downtime, and it is easy to roll back.</li>
+<li>The recreate strategy is a good choice if the application is not critical and users aren’t impacted by a short downtime.</li>
+</ul>
+</li>
+</ul>
+<h3>Rolling Updates</h3>
+<ul>
+<li>Rolling updates are automated updates that occur on a scheduled basis.
+<ul>
+<li>Roll out automated and controlled app changes across pods</li>
+<li>Work with pod templates like deployments</li>
+<li>Allow for rollback as needed</li>
+</ul>
+</li>
+<li>Steps
+<ol>
+<li>To prepare your application to enable rolling updates, Add liveness probes and readiness probes to deployments.
+<ul>
+<li>That way deployments are appropriately marked as &quot;ready&quot;.</li>
+</ul>
+<pre><code>livenessProbe:
+    httpGet:
+        path: /
+        port: 9080
+    initialDelaySeconds: 300
+    periodSeconds: 15
+readinessProbe:
+    httpGet:
+        path: /
+        port: 9080
+        initialDelaySeconds: 45
+        periodSeconds: 5
+</code></pre>
+</li>
+<li>Add a rolling update strategy to the YAML file.<pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: hello-world
+spec:
+    replicas: 10
+    (...)
+    strategy:
+        type: RollingUpdate
+        rollingUpdate:
+            maxUnavailable: 50%
+            maxSurge: 2
+</code></pre>
+</li>
+<li>Check the rollout status
+<ul>
+<li><code>kubectl rollout status deployments/hello-world</code></li>
+</ul>
+</li>
+<li>If you want to roll back due to errors and issues, undo it.
+<ul>
+<li><code>kubectl rollout undo deployments/hello-world</code></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Rollout scenarios
+<ul>
+<li>All-at-once rollout</li>
+<li>All-at-once rollback</li>
+<li>One-at-a-time rollout</li>
+<li>One-at-a-time rollback</li>
+</ul>
+</li>
+</ul>
+<h3>ConfigMaps &amp; Secrets</h3>
+<ul>
+<li>ConfigMap
+<ul>
+<li>ConfigMap is an API object that stores non-confidential data in key-value pairs.
+<ul>
+<li>ConfigMap provides configuration data to pods and deployments so that the configuration data is not hard coded inside the application code.
+<ul>
+<li>Meant for non-sensitive information as they do not provide secrecy or encryption</li>
+</ul>
+</li>
+<li>Data stored in a ConfigMap cannot exceed 1 megabyte.
+<ul>
+<li>For larger amounts of data, consider mounting a volume or use a separate database or file service.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ConfigMap has optional data and binaryData fields.
+<ul>
+<li>In this case, there is no “spec&quot; field in the template</li>
+<li>The Config name must be a valid DNS subdomain name.</li>
+</ul>
+</li>
+<li>ConfigMap is portable.
+<ul>
+<li>Reusable for multiple deployments, thus decoupling the environment from the deployments themselves</li>
+</ul>
+</li>
+<li>You can create a ConfigMap by,
+<ul>
+<li>Using string literals
+<ul>
+<li>e.g. <code>kubectl create ConfigMap my-config --from-literal=MESSAGE=&quot;hello world&quot;</code>
+<ul>
+<li>Reference<pre><code>env:
+- name: MESSAGE
+  valueFrom:
+    configMapKeyRef:
+      name: my-config
+      key: MESSAGE
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Using an existing “properties” or ”key” = “value” file
+<ul>
+<li>e.g. <code>kubectl create cm my-config --from-file=my.properties</code>
+<ul>
+<li>Check the ConfigMap with <code>kubectl describe ConfigMap my-config</code><pre><code>Name:         my-config
+Namespace:    default
+Labels:       &lt;none&gt;
+Annotations:  &lt;none&gt;
+Data
+====
+my.properties:
+----
+MESSAGE=hello from the my.properties file
+Events: &lt;none&gt;
+</code></pre>
+</li>
+<li>Reference<pre><code>env:
+- name: MESSAGE
+  valueFrom:
+    configMapKeyRef:
+      name: my-config
+      key: my.properties
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Providing a ConfigMap YAML descriptor file.
+<ul>
+<li>e.g.
+<ol>
+<li><code>kubectl get cm</code></li>
+<li><code>kubectl apply -f my-config.YAML</code><pre><code>apiVersion: v1
+data:
+  my.properties: MESSAGE=hello world
+  kind: ConfigMap
+  metadata:
+    name: my-config
+    namespace: default
+</code></pre>
+</li>
+<li><code>kubectl describe cm my-config</code><pre><code>Name:         my-config
+Namespace:    default
+Labels:       &lt;none&gt;
+Annotations:  kubectl.kubernetes.io/last-applied-configuration:
+
+(...)
+
+Data
+====
+my.properties:
+----
+MESSAGE=hello from the my.properties file
+Events: &lt;none&gt;
+</code></pre>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The deployment or Pods consume a ConfigMap by,
+<ul>
+<li>Using environment variables with the configMapKeyRef attribute</li>
+<li>Mounting a file that contains all environment variables in the “key=value” format, using the volumes plugin</li>
+</ul>
+</li>
+<li>Kubernetes applies the ConfigMap to the pod or the deployment just before running the pod or deployment.</li>
+</ul>
+</li>
+<li>Secret
+<ul>
+<li>Using a string literal
+<ol>
+<li>Create a secret using a string literal.
+<ul>
+<li><code>kubectl create secret generic api-creds --from-literal=key=HELLOWORLDKEY</code></li>
+</ul>
+</li>
+<li>The GET command verifies that the secret was created.
+<ul>
+<li><code>kubectl get secret</code></li>
+</ul>
+</li>
+<li>To prove that our secret is indeed a secret, use the DESCRIBE command and check that you don’t see any secret, written using displayed text.
+<ul>
+<li><code>kubectl describe secret api-creds</code><pre><code>Name:         api-creds
+Namespace:    default
+Labels:       &lt;none&gt;
+Annotations:  &lt;none&gt;
+Type:  Opaque
+Data
+====
+key: 13 bytes
+</code></pre>
+</li>
+</ul>
+</li>
+<li>You can print out the secret in YAML format. You’ll see that the value is fully encoded.
+<ul>
+<li><code>kubectl get secret api-creds -o YAML</code></li>
+</ul>
+</li>
+<li>To use the secret, add another environment to the deployment descriptor as shown and then use the application key by referring to the application as <code>process.env.API_CREDS</code>.</li>
+</ol>
+</li>
+<li>Using volume mounts
+<ol>
+<li>Create the same secret as done previously.</li>
+<li>In the descriptor YAML file, use a volume for the secret with a corresponding volumeMount.<pre><code>volumeMounts:
+- name: api-creds
+  mountPath : &quot;/etc/api&quot;
+  readOnly: true
+volumes:
+- name: api-creds
+  secret:
+    secretName: api-creds
+</code></pre>
+</li>
+<li>Each container in the descriptor file has its own volumeMount but shares the volume.</li>
+<li>The api-creds secret is mounted as a file at /etc/api/api-creds.</li>
+<li>The application will read and process the file to extract the secret.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

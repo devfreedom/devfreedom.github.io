@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Dev Diary] 120 Days of WebDev - 5. React: Part 1 | devfreedom.github.io</title>
+    <meta name="title" content="[Dev Diary] 120 Days of WebDev - 5. React: Part 1 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Dev Diary❯,web development,front-end,JavaScript,TypeScript,React,JSX,TSX,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230612_2015_dev-diary_120webdev_05_react1/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Dev Diary] 120 Days of WebDev - 5. React: Part 1</h1>
+        <div class="text-center">Published on 12 June 2023 08:15 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Dev Diary❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Dev Diary❯</a>
+            
+            <a href="/tags/web development" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#web development</a>
+            
+            <a href="/tags/front-end" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#front-end</a>
+            
+            <a href="/tags/JavaScript" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#JavaScript</a>
+            
+            <a href="/tags/TypeScript" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#TypeScript</a>
+            
+            <a href="/tags/React" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#React</a>
+            
+            <a href="/tags/JSX" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#JSX</a>
+            
+            <a href="/tags/TSX" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#TSX</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/react-logo.png" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>(UNFINISHED ARTICLE)</h1>
+<p>I have read somewhere that if Vue.js is JavaScript wrapped in HTML, React is HTML wrapped in JavaScript. And now I see, that person is goddamn right. React feels like a dynamic HTML generator written in JavaScript. While Vue.js feels like a JavaScript-powered web publisher. Very interesting.</p>
+<p>React is definitely less abstract, less opinionated, more flexible. That means, it can be harder for Average Joe to learn. I can feel that the learning curve is indeed steep, but that's probably because of React's own way of doing things - exotic structure and mechanism. I have a feeling that once I get used to the uniqueness of React and JSX, maybe it's not too difficult to push forward.</p>
+<hr>
+<h1>React and JSX</h1>
+<h2>create-react-app</h2>
+<p>Create React App is a React boilerplate generator.</p>
+<h3>Install and run using npx</h3>
+<ul>
+<li>npx is an npm package runner. npx makes it easy to install and manage dependencies hosted in npm registry. It simplifies the process and provides a better for executables.</li>
+<li>To install create-react-app,
+<ul>
+<li><code>$ npx create-react-app@latest . --template typescript</code></li>
+<li><code>$ npm install -g create-react-app</code> is no longer supported</li>
+</ul>
+</li>
+<li>To create a boilerplate React app,<pre><code>create-react-app app-name --template typescript
+</code></pre>
+</li>
+<li>To run a React app,<pre><code>$ npm run start
+</code></pre>
+</li>
+</ul>
+<h2>React naming convention</h2>
+<ul>
+<li>React is an unopinionated framework. It doesn't have any specific guidelines or statements about naming conventions.</li>
+<li>For file names
+<ul>
+<li>camelCase.jsx</li>
+<li>PascalCase.jsx</li>
+<li>kebab-case.jsx</li>
+</ul>
+</li>
+</ul>
+<h2>Using JavaScript inside JSX</h2>
+<ul>
+<li>If you want to comment on something in JSX you need to use JavaScript comments inside of curly braces
+<ul>
+<li>e.g. <code>{/* Comment here /}</code></li>
+</ul>
+</li>
+<li>Use curly brackets to wrap and use JavaScript values
+<ul>
+<li>e.g. <code>&lt;Counter title=&quot;First counter&quot; initValue={10}&gt;&lt;/Counter&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h2>How to import modules</h2>
+<pre><code>import defaultExport from &quot;module-name&quot;;
+import * as name from &quot;module-name&quot;;
+import { export1 } from &quot;module-name&quot;;
+import { export1 as alias1 } from &quot;module-name&quot;;
+import { export1 , export2 } from &quot;module-name&quot;;
+import { foo , bar } from &quot;module-name/path/to/specific/un-exported/file&quot;;
+import { export1 , export2 as alias2 , [...] } from &quot;module-name&quot;;
+import defaultExport, { export1 [ , [...] ] } from &quot;module-name&quot;;
+import defaultExport, * as name from &quot;module-name&quot;;
+import &quot;module-name&quot;;
+</code></pre>
+<h2>React app code example</h2>
+<pre><code>// File: App.tsx
+
+import React from 'react';
+import './App.css';
+
+// Define strong types for TypeScript
+type CounterProps = {
+    title: string;
+    initValue: number;
+}
+
+function Counter(props: CounterProps) {
+
+    // Pass props.initValue to React.useState() to set the state
+    const countState = React.useState(props.initValue);
+    let count = countState[0];
+    let setCount = countState[1];
+
+    function up() {
+        setCount(count + 1);
+    };
+
+    // Define inline CSS styles
+    const layoutStyle = {
+        border: &quot;10px solid black&quot;,
+        backgroundColor: &quot;#eeeeee&quot;,
+    };
+
+    return(
+        // Use inline CSS styles
+        &lt;div style=&quot;{layoutStyle}&quot;&gt;
+            &lt;h1&gt;{props.title}&lt;/h1&gt;
+
+            // Obstructive event handler for now
+            &lt;button onClick={up}&gt;+&lt;/button&gt; {count}
+        &lt;/div&gt;
+    );
+}
+
+function App() {
+    return (
+        &lt;div&gt;
+            &lt;Counter title=&quot;First counter&quot; initValue={10}&gt;&lt;/Counter&gt;      
+            &lt;Counter title=&quot;Second counter&quot; initValue={20}&gt;&lt;/Counter&gt;
+        &lt;/div&gt;
+    );
+}
+
+export default App;
+</code></pre>
+<h2>React Components</h2>
+<ul>
+<li>
+<p>React Component is independent and reusable bits of code, wrapped in a user-defined HTML tag</p>
+<ul>
+<li>e.g.<pre><code>function App (){
+    return(
+        &lt;Fragment&gt;
+            &lt;p&gt;Hello&lt;/p&gt;
+            &lt;p&gt;World&lt;/p&gt;
+        &lt;/Fragment&gt;
+    );
+};
+</code></pre>
+</li>
+<li>A React component needs to be wrapped in a single HTML parent element
+<ul>
+<li><code>div</code> tag</li>
+<li>empty <code>&lt;&gt; &lt;/&gt;</code> tag
+<ul>
+<li>= <code>Fragment</code> tag</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Naming convention</p>
+<ul>
+<li>The name of JSX function that defines a React component uses PascalCase
+<ul>
+<li>e.g. <code>function Counter()</code> instead of <code>function counter()</code></li>
+</ul>
+</li>
+<li>React component props uses PascalCase
+<ul>
+<li>e.g. <code>type CounterProps = { title: string; initValue: number; }</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Every single HTML tag inside the component, which is going to be returned, must have corresponding closing tags.</p>
+<ul>
+<li>even for void elements that normally don't need a closing tag in HTML5, needs closing tags in React
+<ul>
+<li>e.g.<pre><code>function App(){
+    return(
+        &lt;Fragments&gt;
+            Hello&lt;br&gt;World;    # ERROR!
+        &lt;/Fragments&gt;
+    );
+}
+</code></pre>
+<pre><code>  - `&lt;br&gt;` needs to be `&lt;br&gt;&lt;/br&gt;`
+</code></pre>
+</li>
+</ul>
+</li>
+<li>Or just use self-closing tags instead
+<ul>
+<li>e.g. <code>&lt;br /&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>React Props</p>
+<ul>
+<li>React Props are like function arguments in JavaScript and attributes in HTML.
+<ul>
+<li>Passed from parent element into child element (?)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Function-type React component</p>
+<ul>
+<li>Function component goes to JS Stack
+<ul>
+<li>Not allocated in memory, only alive during runtime</li>
+<li>HTML properties can only be passed into function component as React Props, one-way, read-only
+<ul>
+<li>e.g. <code>Counter()</code> is a function-type React component
+<ul>
+<li><code>Counter</code>'s HTML attributes pass into function component <code>Counter()</code>'s argument <code>props</code>
+<ul>
+<li>initValue={10} → props.initValue</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>But function component cannot change HTML properties accordingly
+<ul>
+<li>Function component cannot manipulate HTML properties, and re-render the component based on new updated values, despite necessity upon interaction</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Function component can't have lifecycle and state
+<ul>
+<li>Therefore React Hooks can do this for function components instead</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Class-type React component</p>
+<ul>
+<li>Class component goes to JS Heap
+<ul>
+<li>Allocated in memory</li>
+<li>Class component can have built-in codes for lifecycle and state</li>
+</ul>
+</li>
+<li>e.g.<pre><code>type MyProps = {
+// using `interface` is also ok
+    message: string;
+}
+type MyState = {
+    count: number; // like this
+}
+class App extends React.Component&lt;MyProps, MyState&gt; {
+    state: MyState = {
+        // optional second annotation for better type inference
+        count: 0,
+    }
+    render() {
+        return (
+            &lt;div&gt;
+                {this.props.message} {this.state.count}
+            &lt;/div&gt;
+        );
+    }
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2>React Hook</h2>
+<ul>
+<li>A Hook is a special function that lets you “hook into” React features.</li>
+</ul>
+<h2>State Management</h2>
+<ul>
+<li>
+<p>What is state?</p>
+</li>
+<li>
+<p>If the state is object or array, manipulating some of its elements do not trigger re-rendering because it's not the whole state that has changed.</p>
+<ul>
+<li>In order to trigger re-rendering, clone the state and then manipulate elements from there.</li>
+</ul>
+</li>
+</ul>
+<h3>React setState() Hook</h3>
+<ul>
+<li></li>
+<li>If <code>setCount</code> gets changed, the React component <code>Counter</code> gets reloaded
+<ul>
+<li>With the old <code>count</code> value, which is the initial <code>prop.initValue</code>,</li>
+<li>not with the new <code>count</code> value, which is re-generated by <code>setCount</code>
+<ul>
+<li>Again, React Props can only be passed into a function like an argument, one-way, read-only.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>To fix this problem, React components should have in-house state information, via React Hooks (for function component), or in-class state (for class component).</li>
+</ul>
+<h3>React useState() Hook</h3>
+<ul>
+<li>Call useState at the top level of your component to declare a state variable.
+<ul>
+<li>The convention is to name state variables like [something, setSomething] using array destructuring.</li>
+<li>useState is a Hook, so you can only call it at the top level of your component or your own Hooks.
+<ul>
+<li>You can’t call it inside loops or conditions.</li>
+</ul>
+</li>
+<li>In Strict Mode (non-production mode), React will call your initializer function twice in order to help you find accidental impurities.</li>
+</ul>
+</li>
+<li>useState returns an array with exactly two values:
+<ul>
+<li>The current state. During the first render, it will match the initialState you have passed.</li>
+<li>The set function that lets you update the state to a different value and trigger a re-render.
+<ul>
+<li>The set function returned by useState lets you update the state to a different value and trigger a re-render. You can pass the next state directly, or a function that calculates it from the previous state.</li>
+<li>set functions do not have a return value.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Refactor React useState() Hook using destructuring assignment</h3>
+<pre><code>// function Counter(props: CounterProps) {
+//     const countState = React.useState(props.initValue);
+//     let count = countState[0];
+//     let setCount = countState[1];
+//     ...
+// }
+
+// REFACTORED: Destructuring assignment
+function Counter( { title, initValue } : CounterProps ) {
+
+    // REFACTORED: Destructuring assignment
+    const [count, setCount] = React.useState(initValue);
+
+    function up() {
+        setCount(count + 1);
+    };
+
+    const layoutStyle = {
+        border: &quot;10px solid black&quot;,
+        backgroundColor: &quot;#eeeeee&quot;,
+    };
+
+    return(
+        &lt;div style=&quot;{layoutStyle}&quot;&gt;
+            &lt;h1&gt;{title}&lt;/h1&gt;
+            &lt;button onClick={up}&gt;+&lt;/button&gt; {count}
+        &lt;/div&gt;
+    );
+};
+
+function App() {
+  return (
+    &lt;div className=&quot;App&quot;&gt;
+      &lt;Counter title=&quot;Counter&quot; initValue={10}/&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>Refactor useState() using arrow function</h3>
+<pre><code>// REFACTORED: Store Counter() function in a variable
+const Counter = ({ title, initValue } : CounterProps) =&gt; {
+  console.log(&quot;Counter being rendered&quot;)
+  const [count, setCount] = useState(initValue);
+  
+  const clickHandler = () =&gt; {
+        // REFACTORED: Use arrow function with argument to manipulate current state
+        setCount((oldCount) =&gt; oldCount +1);
+  };
+
+  return(
+    &lt;div&gt;
+      &lt;h1&gt;{title}&lt;/h1&gt;
+      &lt;button onClick={clickHandler}&gt;+&lt;/button&gt; {count}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>React useEffect() Hook</h2>
+<ul>
+<li>Side effect
+<ul>
+<li>The additional effects that needs to be processed asynchronously, after the component has been rendered initially
+<ul>
+<li>so that it doesn't get triggered every time upon re-rendering</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>React/JSX and CSS</h2>
+<ul>
+<li>e.g.<pre><code>...
+
+const testStyle = {
+    border: &quot;10px solid black&quot;,
+    backgroundColor: &quot;#eeeeee&quot;
+};
+
+...
+
+return(
+    &lt;div className=&quot;App&quot;&gt;
+        &lt;div style={testStyle}&gt;
+            &lt;p&gt;Hello World&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+);
+
+...
+</code></pre>
+</li>
+<li>Inline CSS styles for JSX needs to be defined as object, not string.</li>
+<li>Inline CSS properties for JSX use camelCase, unlike kebab-case in CSS.
+<ul>
+<li>e.g. <code>backgroundColor</code>, not <code>background-color</code></li>
+</ul>
+</li>
+<li>React components cannot use the word <code>class</code> for HTML class attribute.
+<ul>
+<li>because JavaScript/TypeScript is already occupying the <code>class</code> keyword</li>
+<li>use <code>className</code> instead
+<ul>
+<li>e.g. <code>&lt;button className=&quot;btn&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Issues
+<ul>
+<li>If we use an external CSS file for components, such CSS classes and its names might affect other components.</li>
+<li>Solution: Instead of using a generic external CSS file, import CSS stylesheet as module.</li>
+</ul>
+</li>
+</ul>
+<h3>create-react-app CSS Modules</h3>
+<ul>
+<li>create-react-app supports CSS Modules alongside regular stylesheets using the <code>stylesheetname.module.css</code> file naming convention.
+<ul>
+<li>CSS Modules let you use the same CSS class name in different files without worrying about naming clashes.</li>
+</ul>
+</li>
+<li>To avoid CSS class name duplication, create-react-app reads CSS class names from <code>stylesheetname.module.css</code>, and then creates and uses randomly-generated seperate CSS class names based on original names.</li>
+<li>e.g.
+<ul>
+<li>App.module.css<pre><code>.title{
+    color:red,
+}
+</code></pre>
+<ul>
+<li>The value of <code>counterModuleStyle.title</code> is randomly-generated and non-duplicate <code>.app_title_9u83b</code>, not the original <code>.title</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Refactoring external CSS using CSS Modules</h3>
+<pre><code>import React from 'react';
+import './App.css&quot;;
+
+// ADDED: Import external CSS Modules
+import counterModuleStyle from &quot;./App.module.css&quot;
+
+function Counter( { title, initValue } : CounterProps ) {
+    const [count, setCount] = React.useState(initValue);
+
+    function up() {
+        setCount(count + 1);
+    };
+
+    return(
+        &lt;div style=&quot;{layoutStyle}&quot;&gt;
+
+            // ADDED: Use CSS styles from CSS Modules
+            &lt;h1 className={counterModuleStyle.title}&gt;{props.title}&lt;/h1&gt;
+
+            &lt;button className=&quot;btn&quot; onClick={up}&gt;+&lt;/button&gt; {count}
+        &lt;/div&gt;
+    );
+};
+
+function App() {
+    return (
+        &lt;div&gt;
+            &lt;Counter title=&quot;First counter&quot; initValue={10}&gt;&lt;/Counter&gt;      
+            &lt;Counter title=&quot;Second counter&quot; initValue={20}&gt;&lt;/Counter&gt;
+        &lt;/div&gt;
+    );
+};
+
+export default App;
+</code></pre>
+<h2>{children} property</h2>
+<h2><code>&lt;input&gt;</code> element default value</h2>
+<ul>
+<li>defaultValue</li>
+<li>defaultChecked</li>
+</ul>
+<h2>Event handling</h2>
+<ul>
+<li>Event handling function
+<ul>
+<li>Declare an event handling function and assign it to the element</li>
+<li>Pass an anonymous event handling function into the element</li>
+</ul>
+</li>
+<li>DOM element's event passes an event object into the event handling function
+<ul>
+<li>The content of the event object varies depending on the DOM element</li>
+</ul>
+</li>
+</ul>
+<p>https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key</p>
+<p>When using map() for an array of elements, using <code>key</code> property is recommended.</p>
+<pre><code>// Original code
+[A, B, C, D].map((el, index) =&gt; &lt;div key={el}&gt;{el}&lt;/div&gt;)
+
+// Result
+&lt;div key={A}&gt;{A}&lt;/div&gt;  // Rendered
+&lt;div key={B}&gt;{B}&lt;/div&gt;  // Rendered
+&lt;div key={C}&gt;{C}&lt;/div&gt;  // Rendered
+&lt;div key={D}&gt;{D}&lt;/div&gt;  // Rendered
+
+// Then, element &quot;E&quot; is added in the middle
+
+// Result
+&lt;div key={A}&gt;{A}&lt;/div&gt;  // Skips re-rendering
+&lt;div key={B}&gt;{B}&lt;/div&gt;  // Skips re-rendering
+&lt;div key={E}&gt;{E}&lt;/div&gt;  // Rendered
+&lt;div key={C}&gt;{C}&lt;/div&gt;  // Skips re-rendering
+&lt;div key={D}&gt;{D}&lt;/div&gt;  // Skips re-rendering
+</code></pre>
+<pre><code>- Only the difference gets rendered
+</code></pre>
+<p>Using <code>index</code> as a value for <code>key</code> is not recommended. Here is why.</p>
+<pre><code>// Code
+[A, B, C, D].map((el, index) =&gt; &lt;div key={index}&gt;{el}&lt;/div&gt;)
+
+// Result
+&lt;div key={0}&gt;{A}&lt;/div&gt;  // Rendered
+&lt;div key={1}&gt;{B}&lt;/div&gt;  // Rendered
+&lt;div key={2}&gt;{C}&lt;/div&gt;  // Rendered
+&lt;div key={3}&gt;{D}&lt;/div&gt;  // Rendered
+
+// Then, element &quot;E&quot; is added in the middle
+
+// Result
+&lt;div key={0}&gt;{A}&lt;/div&gt;  // Skips re-rendering
+&lt;div key={1}&gt;{B}&lt;/div&gt;  // Skips re-rendering
+&lt;div key={2}&gt;{E}&lt;/div&gt;  // Rendered
+&lt;div key={3}&gt;{C}&lt;/div&gt;  // Re-rendered
+&lt;div key={4}&gt;{D}&lt;/div&gt;  // Re-rendered
+</code></pre>
+<pre><code>- Unnecessary re-rendering happens because of key misalignment
+</code></pre>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

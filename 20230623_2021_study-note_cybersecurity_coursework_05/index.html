@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Study Note] Coursework: Cybersecurity Analyst - Part 5 | devfreedom.github.io</title>
+    <meta name="title" content="[Study Note] Coursework: Cybersecurity Analyst - Part 5 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Study Note❯,cybersecurity,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230623_2021_study-note_cybersecurity_coursework_05/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Study Note] Coursework: Cybersecurity Analyst - Part 5</h1>
+        <div class="text-center">Published on 23 June 2023 08:21 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Study Note❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Study Note❯</a>
+            
+            <a href="/tags/cybersecurity" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#cybersecurity</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/cybersecurity.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>1. Penetration Testing</h1>
+<h2>Pentest Approaches</h2>
+<ul>
+<li>Internal / External
+<ul>
+<li>Internal employees
+<ul>
+<li>Approximately 80% of attacks happen internally to companies.</li>
+</ul>
+</li>
+<li>External hackers
+<ul>
+<li>Black box testing involves testing a system with no prior knowledge of its internal workings.</li>
+<li>A tester provides an input, and observes the output generated by the system under test.
+<ul>
+<li>This makes it possible to identify how the system responds to expected and unexpected user actions, its response time, usability issues and reliability issues.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Web App / Mobile App
+<ul>
+<li>Is the code secure?</li>
+<li>Is it up-to-date with the security policy?</li>
+<li>Authentication security</li>
+</ul>
+</li>
+<li>Social engineering
+<ul>
+<li>e.g. phishing, sending emails with malwares attached, fraudulent phone calls, in-person manipulation, misinformation, etc.</li>
+</ul>
+</li>
+<li>Wireless network, Embedded and IoT devices
+<ul>
+<li>Wireless network for internal use</li>
+<li>Unsecure endpoint devices on such networks</li>
+</ul>
+</li>
+<li>Industrial Control Systems (ICS) penetration
+<ul>
+<li>Systems with legacy, deprecated, end-of life cybersecurity components</li>
+</ul>
+</li>
+</ul>
+<h2>Pentest Process</h2>
+<ol>
+<li>Planning
+<ul>
+<li>Work out a contract</li>
+<li>An agreement with the company</li>
+<li>Define the scope of the attack
+<ul>
+<li>Clear boundary is a must.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Discovery
+<ul>
+<li>Reconnaissance phase</li>
+<li>Gain information as much as possible.</li>
+</ul>
+</li>
+<li>Attack
+<ul>
+<li>Actual penetration attack</li>
+</ul>
+</li>
+<li>Report</li>
+</ol>
+<h2>Pentest Planning</h2>
+<ul>
+<li>Setting objectives
+<ul>
+<li>What are the goals of the pentest?</li>
+<li>What are your targets?</li>
+</ul>
+</li>
+<li>Establishing boundaries
+<ul>
+<li>Legal and ethical ramifications to consider</li>
+<li>Pentest attacks are real.
+<ul>
+<li>They have the potential to interrupt availability of key functions and services.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Informing need-to-know employees
+<ul>
+<li>Since there will always be some social engineering, it might be wise to inform local security so no one is arrested during the test.</li>
+</ul>
+</li>
+</ul>
+<h2>Pentest Discovery</h2>
+<ul>
+<li>Vulnerability scanning can help identify outdated software versions, missing patches, misconfigurations, etc.</li>
+<li>Validate compliance with or deviations from an organization's security policy.</li>
+<li>This is done by identifying the operating systems, major software applications running on the hosts, and matching them with information on known vulnerabilities stored in the scanners' vulnerability database.</li>
+<li>Google Dork
+<ul>
+<li>A Google Dork query, a.k.a. &quot;dork&quot;, is a search string that uses advanced search operators to find information that is not readily available on the website.
+<ul>
+<li>Admin login pages</li>
+<li>Username and passwords</li>
+<li>Vulnerable entities</li>
+<li>Sensitive documents</li>
+<li>Govt/military data</li>
+<li>Email lists</li>
+<li>Bank account details</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Passive discovery
+<ul>
+<li>e.g.
+<ul>
+<li>Monitoring employees</li>
+<li>Listening to network traffic</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Active discovery
+<ul>
+<li>e.g.
+<ul>
+<li>Network mapping</li>
+<li>Port scanning</li>
+<li>Password cracking</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Scanning tools
+<ul>
+<li>Network mapper (e.g. nmap)</li>
+<li>Network analyzer and profiler (e.g. Wireshark)</li>
+<li>Password crackers (e.g. JohnTheRipper)</li>
+<li>Hacking tools (e.g. Metasploit)</li>
+</ul>
+</li>
+</ul>
+<h3>Additional Discovery</h3>
+<ul>
+<li>Passive-online
+<ul>
+<li>Wire sniffing
+<ul>
+<li>Capturing data packet across the computer network</li>
+</ul>
+</li>
+<li>Man-in-the-middle (MITM)
+<ul>
+<li>Hijacking a session in real-time to obtain access</li>
+</ul>
+</li>
+<li>Replay attack
+<ul>
+<li>A valid data transmission is maliciously or fraudulently repeated or delayed</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Active-online
+<ul>
+<li>Password-guessing, a.k.a. Brute Force Attack</li>
+<li>Trojan/Spyware/Keyloggers
+<ul>
+<li>A spy software which collects different types of data from the session</li>
+</ul>
+</li>
+<li>Hash injection
+<ul>
+<li>Authenticate to a remote server or service by using the underlying NTLM or LanMan hash of a user's password</li>
+</ul>
+</li>
+<li>Phishing
+<ul>
+<li>Users are tricked into clicking a malicious link, which can lead to the installation of malware, a ransomware attack, or disclosure of information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Offline
+<ul>
+<li>Pre-computed hashes
+<ul>
+<li>Data structure that uses a hash function to store, order, and/or access data in an array</li>
+</ul>
+</li>
+<li>Distributed Network Attack (DNA)
+<ul>
+<li>DNA is a password cracking system sold by AccessData.</li>
+<li>DNA can perform brute-force cracking of 40-bit RC2/RC4 keys.</li>
+<li>For longer keys, DNA can attempt password cracking.
+<ul>
+<li>It's computationally infeasable to attempt a brute-force attack on a 128-bit key.</li>
+</ul>
+</li>
+<li>DNA can mine suspects' hard drive for potential passwords.</li>
+</ul>
+</li>
+<li>Rainbow table
+<ul>
+<li>Precomputed table for reversing cryptographic hash functions, usually for cracking password hashes.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tech-less
+<ul>
+<li>Social engineering</li>
+<li>Shoulder surfing
+<ul>
+<li>Obtaining optic access to the premises and view the access input</li>
+</ul>
+</li>
+<li>Dumpster diving
+<ul>
+<li>Examining the trash in search of discarded but not destroyed information</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Pentest Attack</h2>
+<ol>
+<li>Discovery phase</li>
+<li>Attack phase
+<ol>
+<li>Gaining access
+<ul>
+<li>Enough data has been gathered in the discovery phase to make an informed attempt to access the target.</li>
+</ul>
+</li>
+<li>Escalating privileges
+<ul>
+<li>If only user-level access was obtained in the last step, the pentester will now seek to gain complete control of the system (administrator-level access).</li>
+</ul>
+</li>
+<li>System browsing
+<ul>
+<li>The information-gathering process begins again to identify mechanisms to gain access to additional systems.</li>
+<li>This might lead to additional discovery phase.</li>
+</ul>
+</li>
+<li>Install additional tools
+<ul>
+<li>Additional penetration testing tools are installed to gain additional information or a combination of both.</li>
+<li>This might lead to gaining additional access phase.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h3>Exploited Vulnerabilities</h3>
+<ul>
+<li>Misconfigurations</li>
+<li>Kernel flaws</li>
+<li>Insufficient input validations</li>
+<li>Symbolic links</li>
+<li>File descriptor attacks</li>
+<li>Race conditions</li>
+<li>Buffer overflows</li>
+<li>Incorrect file and directory permissions</li>
+</ul>
+<h3>Usual Security Risk Origin/Categories</h3>
+<ol>
+<li>Lack of OS hardening</li>
+<li>Missing patch</li>
+<li>Lack of application hardening</li>
+<li>Easily guessable credentials</li>
+<li>Network design flaw</li>
+</ol>
+<h2>Pentest Reporting</h2>
+<ul>
+<li>Executive summary
+<ul>
+<li>Background</li>
+<li>Overall posture</li>
+<li>Risk ranking</li>
+<li>General findings</li>
+<li>Recommendations</li>
+<li>Roadmap</li>
+</ul>
+</li>
+<li>Technical review
+<ul>
+<li>Introduction
+<ul>
+<li>Personnel involved</li>
+<li>Contact information</li>
+<li>Assets involved in testing</li>
+<li>Objectives of test</li>
+<li>Scope of test</li>
+<li>Strength of test</li>
+<li>Approach</li>
+<li>Threat/grading structure</li>
+</ul>
+</li>
+<li>Scope
+<ul>
+<li>Information gathering</li>
+<li>Passive intelligence</li>
+<li>Active intelligence</li>
+<li>Corporate intelligence</li>
+<li>Personnel intelligence</li>
+</ul>
+</li>
+<li>Vulnerability assessment
+<ul>
+<li>A definition of the methods used to identify the vulnerability</li>
+<li>Evidence/classification of the vulnerability</li>
+</ul>
+</li>
+<li>Vulnerability confirmation
+<ul>
+<li>Reviews all of the steps taken to confirm the defined vulnerability</li>
+<li>Exploitation timeline</li>
+<li>Targets selected for exploitation</li>
+<li>Exploitation activities</li>
+</ul>
+</li>
+<li>Post-exploitation
+<ul>
+<li>Escalation path</li>
+<li>Acquisition of critical information</li>
+<li>Value of information</li>
+<li>Access to core business systems</li>
+<li>Access to compliance-protected data sets</li>
+<li>Additional information/systems accessed</li>
+<li>Ability of persistence</li>
+<li>Ability for exfiltration</li>
+<li>Countermeasure</li>
+<li>Effectiveness</li>
+</ul>
+</li>
+<li>Risk/Exposure
+<ul>
+<li>Covers the business risk in the following subsections,
+<ul>
+<li>Evaluate incident frequency</li>
+<li>Estimate loss magnitude per incident</li>
+<li>Derive risk</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Pentest Tools</h2>
+<ul>
+<li>Kali Linux (Kali Tools)</li>
+<li>Nmap</li>
+<li>JohnTheRipper</li>
+<li>Metasploit</li>
+<li>Wireshark</li>
+<li>Hack The Box</li>
+</ul>
+<hr>
+<h1>2. Incident Response</h1>
+<h2>Events vs Incidents</h2>
+<ul>
+<li>Events
+<ul>
+<li>An event can be something as benign as unremarkable as typing on a keyboard or receiving an email.</li>
+<li>In some cases if there is an Intrusion Detection System (IDS), the alert can be considered an event until validated as a threat.</li>
+</ul>
+</li>
+<li>Incidents
+<ul>
+<li>An incident is an event that negatively affects IT systems and impacts on the business.</li>
+<li>It's an unplanned interruption or reduction in quality of an IT service.</li>
+<li>An event can lead to an incident, but not vice versa.</li>
+</ul>
+</li>
+</ul>
+<h2>What is Incident Response?</h2>
+<ul>
+<li>Incident response refers to an organization’s processes and technologies for detecting and responding to cyberthreats, security breaches or cyberattacks.</li>
+<li>An incident response is necessary for rapidly detecting incidents, minimizing loss and destruction, mitigating the weaknesses that were exploited, and restoring IT services.
+<ul>
+<li>Incident response supports responding to incidents systematically so that the appropriate actions are taken.</li>
+<li>It helps personnel to minimize loss or theft of information and disruption of services caused by incidents.
+<ul>
+<li>And to use information gained during incident handling to prevent and better prepare for handling future incidents.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>IR Team Models</h3>
+<ul>
+<li>Central</li>
+<li>Distributed</li>
+<li>Coordinating</li>
+</ul>
+<h3>IR Team Coordination</h3>
+<ul>
+<li>Management</li>
+<li>Information assurance</li>
+<li>IT support</li>
+<li>Legal</li>
+<li>Physical security &amp; facilities management</li>
+<li>Business continuity planning</li>
+<li>Human resources</li>
+<li>Public affairs &amp; media relations</li>
+</ul>
+<h3>Common Attack Vectors</h3>
+<ul>
+<li>External/Removable media</li>
+<li>Attrition</li>
+<li>Web</li>
+<li>Email</li>
+<li>Impersonation</li>
+<li>Loss or theft of equipment</li>
+</ul>
+<h3>Baseline Questions</h3>
+<ul>
+<li>Who attacked you? Why?</li>
+<li>When and how did it happen?</li>
+<li>Did this happen because you have poor security processes?</li>
+<li>How widespread is the incident?</li>
+<li>What steps are you taking, to determine what happened and to prevent future occurrences?</li>
+<li>What is the impact of the incident?</li>
+<li>Was any personally identifiable information exposed?</li>
+<li>What is the estimated cost of this incident?</li>
+</ul>
+<h2>Incident Response Phases</h2>
+<ol>
+<li>Preparation</li>
+<li>Detection &amp; Analysis</li>
+<li>Containment, Eradication, and Recovery</li>
+<li>Post-incident Activity</li>
+</ol>
+<h3>IR Preparation</h3>
+<ul>
+<li>IR response policy
+<ul>
+<li>IR team
+<ul>
+<li>The composition of the incident response team within the organization</li>
+</ul>
+</li>
+<li>Roles
+<ul>
+<li>The role of each of the team members</li>
+</ul>
+</li>
+<li>Means, tools, and resources
+<ul>
+<li>These will be used to identify and recover compromised data.</li>
+</ul>
+</li>
+<li>Policy testing
+<ul>
+<li>The persons responsible for testing the policy</li>
+</ul>
+</li>
+<li>Action plan
+<ul>
+<li>How to put the policy into action</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Resources
+<ul>
+<li>Incident handler communications and facilities
+<ul>
+<li>Contact information</li>
+<li>On-call information</li>
+<li>Incident reporting mechanisms</li>
+<li>Issue tracking system</li>
+<li>Smartphones</li>
+<li>Encryption software</li>
+<li>War room</li>
+<li>Secure storage facility</li>
+</ul>
+</li>
+<li>Incident analysis hardware and software
+<ul>
+<li>Digital forensic workstations and/or backup devices</li>
+<li>Laptops</li>
+<li>Spare workstations, servers, and networking equipment</li>
+<li>Blank removable media</li>
+<li>Portable printer</li>
+<li>Packet sniffers and protocol analyzers</li>
+<li>Digital forensic software</li>
+<li>Removable media</li>
+<li>Evidence gathering accessories</li>
+</ul>
+</li>
+<li>Incident analysis resources
+<ul>
+<li>Port lists</li>
+<li>Documentation</li>
+<li>Network diagrams and lists of critical assets</li>
+<li>Current baselines</li>
+<li>Cryptographic hashes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Prevention is the best
+<ul>
+<li>Risk assessment
+<ul>
+<li>Periodic risk assessments of systems and apps should determine what risks are posed by combinations of threats and vulnerabilities.</li>
+</ul>
+</li>
+<li>Network security
+<ul>
+<li>The network perimeter should be configured to deny all activity that is not expressly permitted.</li>
+</ul>
+</li>
+<li>User awareness and training
+<ul>
+<li>Users should be made aware of policies and procedures regarding appropriate use of networks, systems, and applications.</li>
+</ul>
+</li>
+<li>Host security
+<ul>
+<li>All hosts should be hardened appropriately using standard configurations, adhere to strict ACLs, and be monitored continuously.</li>
+</ul>
+</li>
+<li>Malware prevention
+<ul>
+<li>Software to detect and stop malware should be deployed throughout the organization.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Checklist
+<ul>
+<li>Are all members aware of the security policies of the organization?</li>
+<li>Do all members of the computer incident response team know whom to contact?</li>
+<li>Do all incident responders have access to journals and access to incident response toolkits to perform the actual incident response process?</li>
+<li>Have all members participated in incident response drills to practice the incident response process and to improve overall proficiency on a regularly established basis?</li>
+</ul>
+</li>
+</ul>
+<h3>IR Detection and Analysis</h3>
+<ul>
+<li>Precursors
+<ul>
+<li>A precursor is a sign that an incident may occur in the future.</li>
+<li>e.g.
+<ul>
+<li>Web server log entries that show the usage of a vulnerability scanner</li>
+<li>An announcement of a new exploit that targets a vulnerability of the organization's mail server</li>
+<li>A threat from a group stating that the group will attack the organization</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Indicators
+<ul>
+<li>An indicator is a sign that an incident ma have occured or may be occuring now.</li>
+<li>e.g.
+<ul>
+<li>Antivirus software alerts when it detects that a host is infected with malware</li>
+<li>A system administrator sees a filename with unusual characters</li>
+<li>A host records an auditing configuration change in its log</li>
+<li>An application logs multiple failed login attempts from an unfamiliar remote system</li>
+<li>An email administrator sees a large number of bounced emails with suspicious content</li>
+<li>A network administrator notices an unusual deviation from typical network traffic flows</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Monitoring systems
+<ul>
+<li>IDS / IPS</li>
+<li>Data Loss Prevention (DLP)
+<ul>
+<li>A set of tools and processes used to ensure that sensitive data is not lost, misused, or accessed by unauthorized users</li>
+</ul>
+</li>
+<li>Security Information and Event Management (SIEM)
+<ul>
+<li>SIEM carries out analysis of event and log data in real-time with Security Information Management (SIM)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Documentation
+<ul>
+<li>The current status of the incident</li>
+<li>A summary of the incident</li>
+<li>Indicators related to the incident</li>
+<li>Other incidents related to this incident</li>
+<li>Actions taken by all incident handlers on this incident</li>
+<li>Chain of custody, if applicable</li>
+<li>Impact assessments related to the incident</li>
+<li>Contact information for other involved parties</li>
+<li>A list of evidence gathered during the incident investigation</li>
+<li>Comments from incident handlers</li>
+<li>Next steps to be taken
+<ul>
+<li>e.g. rebuild the host, upgrade an application, etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Functional impact categories
+<ul>
+<li>None
+<ul>
+<li>No effect to the organization's ability to provide all services to all users.</li>
+</ul>
+</li>
+<li>Low
+<ul>
+<li>Minimal effect; the organization can still provide all critical services to all users but has lost efficiency.</li>
+</ul>
+</li>
+<li>Medium
+<ul>
+<li>Organization has lost ability to provide a critical service to a subset of system users.</li>
+</ul>
+</li>
+<li>High
+<ul>
+<li>Organization is no longer able to provide some critical services to any users.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Information impact categories
+<ul>
+<li>None
+<ul>
+<li>No information was exfiltrated, changed, deleted, or otherwise compromised.</li>
+</ul>
+</li>
+<li>Privacy breach
+<ul>
+<li>Sensitive personally identifiable information (PII) was accessed or exfiltrated.</li>
+</ul>
+</li>
+<li>Proprietary breach
+<ul>
+<li>Unclassified proprietary information, such as protected critical infrastructure information (PCII), was accessed or exfiltrated.</li>
+</ul>
+</li>
+<li>Integrity loss
+<ul>
+<li>Sensitive or proprietary information was changed or deleted.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Recoverability effort categories
+<ul>
+<li>Regular
+<ul>
+<li>Time to recovery is predictable with existing resources.</li>
+</ul>
+</li>
+<li>Supplemented
+<ul>
+<li>Time to recovery is predictable with additional resources.</li>
+</ul>
+</li>
+<li>Extended
+<ul>
+<li>Time to recovery is unpredictable; additional resources and outside help are needed</li>
+</ul>
+</li>
+<li>Not recoverable
+<ul>
+<li>Recovery from the incident is not possible.
+<ul>
+<li>e.g. sensitive data exfiltrated and posted publicly; launch investigation</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Notifications
+<ul>
+<li>Chief Information Officer</li>
+<li>Local and head of information security</li>
+<li>Other incident response teams within the organization</li>
+<li>External incident response teams, if appropriate</li>
+<li>System owner</li>
+<li>Human resources</li>
+<li>Public affairs</li>
+<li>Legal department</li>
+<li>Law enforcement, if appropriate</li>
+</ul>
+</li>
+</ul>
+<h3>Containment, Eradication, and Recovery</h3>
+<ul>
+<li>Containment
+<ul>
+<li>An essential part of containment is decision-making.</li>
+<li>Predetermined strategies and procedures
+<ul>
+<li>Potential damage to and theft of resources</li>
+<li>Need for evidence preservation</li>
+<li>Service availability</li>
+<li>Time and resources needed to implement the strategy</li>
+<li>Effectiveness of the strategy</li>
+<li>Duration of the solution</li>
+</ul>
+</li>
+<li>Forensics in incident response
+<ul>
+<li>Capture a backup image of the system as-is</li>
+<li>Gather evidence</li>
+<li>Follow chain of custody protocols</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Eradication and recovery
+<ul>
+<li>After an incident has been contained, eradication may be necessary to eliminate components of the incident. Such as,
+<ul>
+<li>Deleting malware</li>
+<li>Disabling breached user accounts</li>
+<li>Identifying and mitigating all vulnerabilities that were exploited</li>
+</ul>
+</li>
+<li>Recovery may involve such actions as,
+<ul>
+<li>Restoring systems from clean backups</li>
+<li>Rebuilding systems from scratch</li>
+<li>Replacing compromised files with clean versions</li>
+<li>Installing patches</li>
+<li>Changing passwords</li>
+<li>Tightening network perimeter security
+<ul>
+<li>e.g. firewall rulesets, boundary router access control lists</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>High level of testing and monitoring are often deployed to ensure restored systems are no longer impacted by the incident.
+<ul>
+<li>This could take weeks or months depending on how long it takes to bring back compromised systems into production.</li>
+</ul>
+</li>
+<li>Checklist
+<ul>
+<li>Can the problem be isolated?
+<ul>
+<li>Are all affected systems isolated from non-affected systems?</li>
+<li>Have forensic copies of affected systems been created for further analysis?</li>
+</ul>
+</li>
+<li>If possible, can the system be reimaged and then hardened with patches and/or other countermeasures to prevent or reduce the risk of attacks?</li>
+<li>Have all malware and other artifacts left behind by the attackers been removed and the affected systems hardened against further attacks?</li>
+<li>What tools are you going to use to test, monitor, and verify that the systems being restored to productions are not compromised by the same methods that cause the original incident?</li>
+</ul>
+</li>
+</ul>
+<h3>Post-incident Activities</h3>
+<ul>
+<li>&quot;Lessons-learned&quot; meeting with all involved parties
+<ul>
+<li>Exactly what happened, and at what times?</li>
+<li>How well did staff and management perform in dealing with the incident?
+<ul>
+<li>Were the documented procedures followed?</li>
+<li>Were they adequate?</li>
+</ul>
+</li>
+<li>What information was needed sooner?</li>
+<li>Were any steps or actions taken that might have inhibited the recovery?</li>
+<li>What would the staff and management do differently the next time a similar incident occurs?</li>
+<li>How could information sharing with other organizations have been improved?</li>
+<li>What corrective actions can prevent similar incidents in the future?</li>
+<li>What precursors or indicators should be watched for in the future to detect similar incidents?</li>
+</ul>
+</li>
+<li>Other activities
+<ul>
+<li>Utilizing data collected</li>
+<li>Evidence retention</li>
+<li>Documentation</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>3. Digital Forensics</h1>
+<h2>The Need for Forensics</h2>
+<ul>
+<li>Criminal investigation</li>
+<li>Incident handling</li>
+<li>Operational troubleshooting</li>
+<li>Log monitoring</li>
+<li>Data recovery</li>
+<li>Data acquisition</li>
+<li>Due diligence</li>
+<li>Regulatory compliance</li>
+</ul>
+<h2>Objectives</h2>
+<ul>
+<li>Digital forensics helps to recover, analyze, and preserve computer and related materials in such a manner that it helps the investigation agency to present them as evidence in a court of law.
+<ul>
+<li>It helps to postulate the motive behind the crime and identity of the main culprit.</li>
+</ul>
+</li>
+<li>Designing procedures at a suspected crime scene which helps you to ensure that the digital evidence obtained is not corrupted.</li>
+<li>Data acquisition and duplication
+<ul>
+<li>Recovering deleted files and deleted partitions to extract the evidence and validate them</li>
+</ul>
+</li>
+<li>Helps you to identify the evidence quickly, and also allows you to estimate the potential impact of the malicious activity on the victim</li>
+<li>Producing a computer forensic report which offers a complete report on the investigation process.</li>
+<li>Preserving the evidence by following the chain of custudy.</li>
+</ul>
+<h2>Forensics Process</h2>
+<ol>
+<li>Collection
+<ul>
+<li>Identify, label, record, and acquire data from the possible sources while preserving the integrity of the data</li>
+</ul>
+</li>
+<li>Examination
+<ul>
+<li>Processing large amounts of collected data to assess and extract data of particular interest</li>
+</ul>
+</li>
+<li>Analysis
+<ul>
+<li>Analyze the results of the examination, using legally justifiable methods and techniques</li>
+</ul>
+</li>
+<li>Reporting
+<ul>
+<li>Reporting the results of the analysis</li>
+</ul>
+</li>
+</ol>
+<h2>Collection</h2>
+<ol>
+<li>Develop a plan to acquire the data
+<ul>
+<li>Create a plan that prioritizes the sources, establishing the order in which the data should be acquired.</li>
+</ul>
+</li>
+<li>Acquire the data
+<ul>
+<li>Use forensics tools to collect the volatile data, duplicate non-volatile data sources, and securing the original data sources.</li>
+</ul>
+</li>
+<li>Verify the integrity of the data
+<ul>
+<li>Forensics tools can create hash values for the original source so the duplicate can be verified as being complete and untampered with.</li>
+</ul>
+</li>
+</ol>
+<h3>Types of Data</h3>
+<ul>
+<li>Optical discs</li>
+<li>Internal/External drives</li>
+<li>Volatile data</li>
+<li>Network activity</li>
+<li>Application usage</li>
+<li>Portable digital devices</li>
+</ul>
+<h2>Examination</h2>
+<ul>
+<li>Bypassing controls
+<ul>
+<li>Operating systems and applications may have data compression, encryption, ACLs, etc.</li>
+</ul>
+</li>
+<li>A sea of data
+<ul>
+<li>Hard drives may have hundreds of thousands of files, not all of which are relevant.</li>
+</ul>
+</li>
+<li>Tools
+<ul>
+<li>There are various tools and techniques that exist to help filter and exclude data from searches to expedite the process.</li>
+</ul>
+</li>
+</ul>
+<h2>Analysis</h2>
+<ul>
+<li>A forensics analysis should include four elements,
+<ul>
+<li>People</li>
+<li>Places</li>
+<li>Items</li>
+<li>Events</li>
+</ul>
+</li>
+<li>Coordination between multiple sources of data is crucial in making a complete picture of what happened in the incident.</li>
+<li>NIST provides the example of an IDS log linking the event to a specific user account, and the host IDS log indicating what actions that user performed.</li>
+</ul>
+<h3>Notable cases</h3>
+<ul>
+<li>The BTK Killer, Dennis Rader
+<ul>
+<li>A floppy disk Rader sent to police revealed his true identity.</li>
+</ul>
+</li>
+<li>Dr. Conrad Murray's lethal prescriptions
+<ul>
+<li>Investigators discovered documentation on Dr. Murray's computer showing his authorization of lethal amounts of the drugs</li>
+</ul>
+</li>
+<li>The Craigslist killer, Philip Markoff
+<ul>
+<li>Investigators tracked the IP address from the emails used in the Craigslist correspondence.</li>
+</ul>
+</li>
+</ul>
+<h2>Reporting</h2>
+<ul>
+<li>A case summary is meant to form the basis of opinions.</li>
+<li>While there are a variety of laws that relate to expert reports, the general rules are,
+<ul>
+<li>If it is not in your report, you can't testify about it.</li>
+<li>Your report needs to detail the basis for your conclusions.</li>
+<li>Detail every test conducted, the methods and tools used, and the results.</li>
+</ul>
+</li>
+</ul>
+<h3>Report Composition</h3>
+<ol>
+<li>Overview/Case summary</li>
+<li>Forensic acquisition and examination preparation</li>
+<li>Findings and report (analysis)</li>
+<li>Conclusion</li>
+</ol>
+<h3>SANS Institute Best Practices</h3>
+<ul>
+<li>Take screenshots</li>
+<li>Bookmark evidence via forensic application of choice</li>
+<li>Use built-in logging/reporting options within your forensic tool</li>
+<li>Highlight and exporting data items into .csv or .txt files</li>
+<li>Use a digital audio recorder and handwritten notes when necessary</li>
+</ul>
+<h2>File Data</h2>
+<ul>
+<li>File systems
+<ul>
+<li>Windows
+<ul>
+<li>FAT (16/32)</li>
+<li>NTFS</li>
+<li>exFAT</li>
+<li>ReFS</li>
+</ul>
+</li>
+<li>Unix
+<ul>
+<li>EXT2/3/4</li>
+<li>ReiserFS</li>
+<li>XFS</li>
+<li>JFS</li>
+<li>Btrfs</li>
+</ul>
+</li>
+<li>MacOS
+<ul>
+<li>HFS+</li>
+<li>APFS</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>What's not in file systems</h3>
+<ul>
+<li>Deleted files
+<ul>
+<li>When you delete a file, the file is typically not erased from the media.</li>
+<li>Instead, the information in the data structure that points to the location of the file is marked as deleted.
+<ul>
+<li>The memory registers used by the file are marked as available for new storage but are otherwise not changed.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Slack space
+<ul>
+<li>If a file requires less space than the file allocation unit size, an entire file allocation unit is still reserved for the file.</li>
+</ul>
+</li>
+<li>Free space
+<ul>
+<li>Free space is the area on media that is not allocated to any partition.</li>
+<li>The free space may still contain pieces of data.</li>
+</ul>
+</li>
+</ul>
+<h3>MAC time data</h3>
+<ul>
+<li>It is important to know as much as information about relevant files as possible.</li>
+<li>Recording the modification, access, and creation (MAC) times of files allows analysts to help establish a timeline of the incident.
+<ul>
+<li>Modification time</li>
+<li>Access time</li>
+<li>Creation time</li>
+</ul>
+</li>
+</ul>
+<h3>Backup</h3>
+<ul>
+<li>Forensic analysis should always be conducted on a copy of the original data.</li>
+<li>Logical backup
+<ul>
+<li>A backup copy of a logical volume
+<ul>
+<li>It does not capture other data that may be present on the media.
+<ul>
+<li>e.g. deleted files, residual data in slack space</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Can be used on live systems if using a standard backup software</li>
+<li>May be resource-intensive</li>
+</ul>
+</li>
+<li>Imaging
+<ul>
+<li>Generates a bit-for-bit copy of the original media, including free space and slack space.</li>
+<li>Bitstream images require more storage space and take longer to perform than logical backups.</li>
+<li>Should not be used on a live system since data is always changing.</li>
+<li>If evidence is needed for legal or HR reasons, a full bitstream image should be taken, and all analysis will be done on the duplicate.</li>
+<li>Types
+<ul>
+<li>Disk-to-disk</li>
+<li>Disk-to-file</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Tools for Techniques</h3>
+<ul>
+<li>File viewers</li>
+<li>Uncompressing files</li>
+<li>GUI for data structures</li>
+<li>Identifying known files</li>
+<li>String searches and pattern matches</li>
+<li>Metadata</li>
+</ul>
+<h2>Operating System Data</h2>
+<ul>
+<li>Volatile data
+<ul>
+<li>Slack space</li>
+<li>Free space</li>
+<li>Network configuration and connections</li>
+<li>Running processes</li>
+<li>Open files</li>
+<li>Login sessions</li>
+<li>Operating system time</li>
+</ul>
+</li>
+<li>Non-volatile data
+<ul>
+<li>Configuration files</li>
+<li>Logs</li>
+<li>Application files</li>
+<li>Data files</li>
+<li>Swap files</li>
+<li>Dump files</li>
+<li>Hibernation files</li>
+<li>Temporary files</li>
+</ul>
+</li>
+</ul>
+<h3>Collection and Prioritization of Volatile Data</h3>
+<ul>
+<li>Network connections</li>
+<li>Login sessions</li>
+<li>Contents of memory</li>
+<li>Running processes</li>
+<li>Open files</li>
+<li>Network configuration</li>
+<li>Operating system time</li>
+</ul>
+<h3>Collecting Non-volatile Data</h3>
+<ul>
+<li>Consider power-down options</li>
+<li>File system data collected</li>
+<li>Users and groups</li>
+<li>Passwords</li>
+<li>Network shares</li>
+<li>Logs
+<ul>
+<li>Other logs can be collected depending on the incident under analysis
+<ul>
+<li>In case of a network hack
+<ul>
+<li>Collect logs of all the network devices lying in the route of the hacked device and the perimeter router (ISP router).</li>
+</ul>
+</li>
+<li>In case it is an unauthorized access
+<ul>
+<li>Save the web server logs, application server logs, application logs, router or switch logs, firewall logs, database logs, IDS logs, etc.</li>
+</ul>
+</li>
+<li>In case of a trojan/virus/worm attack
+<ul>
+<li>Save the antivirus logs apart from the event logs (pertaining to the antivirus).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Windows</h3>
+<ul>
+<li>Investigators can search out evidence by analyzing the following important locations of the Windows.
+<ul>
+<li>Recycle Bin</li>
+<li>Registry</li>
+<li>Thumbs.db</li>
+<li>Files</li>
+<li>Browser history</li>
+<li>Print spooling</li>
+</ul>
+</li>
+</ul>
+<h3>macOS</h3>
+<ul>
+<li>macOS 10 offers a novel technique to create a forensic duplicate.
+<ul>
+<li>To do so, the perpetrator's computer should be placed into a &quot;Target Disk Mode&quot;</li>
+<li>Using this mode, the forensic examiner creates a forensic duplicate of perpetrator's hard disk with the help of a Firewire cable connection between the two PCs.</li>
+</ul>
+</li>
+</ul>
+<h3>Linux</h3>
+<ul>
+<li>Linux can provide an empirical evidence if the Linux embedded machine is recovered from a crime scene.
+<ul>
+<li>In this case, forensic investigators should analyze the following folders and directories.</li>
+<li><code>/etc[%SystemRoot%/System32/config]</code>
+<ul>
+<li>This contains system configurations directory that holds seperate configuration files for each application.</li>
+</ul>
+</li>
+<li><code>/var/log</code>
+<ul>
+<li>This directory contains application logs and security logs. They are kept for 4-5 weeks.</li>
+</ul>
+</li>
+<li><code>/home/$USER</code>
+<ul>
+<li>This directory holds user data and configuration information.</li>
+</ul>
+</li>
+<li><code>/etc/passwd</code>
+<ul>
+<li>This directory has user account information.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Application Data</h2>
+<ul>
+<li>Application components
+<ul>
+<li>Config settings
+<ul>
+<li>Configuration file</li>
+<li>Runtime options</li>
+<li>Added to source code</li>
+</ul>
+</li>
+<li>Authentication
+<ul>
+<li>External authentication</li>
+<li>Proprietary authentication</li>
+<li>Pass-through authentication</li>
+<li>Host/User environment</li>
+</ul>
+</li>
+<li>Logs
+<ul>
+<li>Event</li>
+<li>Audit</li>
+<li>Error</li>
+<li>Installation</li>
+<li>Debugging</li>
+</ul>
+</li>
+<li>Data
+<ul>
+<li>Can live temporarily in memory and/or permanently in files</li>
+<li>File format may be generic or proprietary</li>
+<li>Data may be stored in databases</li>
+<li>Some applications create temp files during session or improper shutdown</li>
+</ul>
+</li>
+<li>Supporting files
+<ul>
+<li>Documentation</li>
+<li>Links</li>
+<li>Graphics</li>
+</ul>
+</li>
+<li>App architecture
+<ul>
+<li>Local</li>
+<li>Client/server</li>
+<li>Peer-to-peer</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Application types
+<ul>
+<li>Email</li>
+<li>Web usage</li>
+<li>Interactive communications</li>
+<li>Data concealment tools</li>
+<li>Security applications</li>
+<li>Document usage</li>
+<li>File sharing</li>
+</ul>
+</li>
+<li>Web data from host
+<ul>
+<li>The hosts running the web browsers
+<ul>
+<li>Favorite web sites</li>
+<li>History w/ timestamps of websites visited</li>
+<li>Cached web data files</li>
+<li>Cookies</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Web data from server
+<ul>
+<li>Typically keep logs of the requests they receive
+<ul>
+<li>Timestamps</li>
+<li>IP addresses</li>
+<li>Web browser version</li>
+<li>Type of request</li>
+<li>Resource requested</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Collecting application data from,
+<ul>
+<li>Filesystems</li>
+<li>Volatile OS data</li>
+<li>Network traffic</li>
+</ul>
+</li>
+</ul>
+<h2>Network Data</h2>
+<ul>
+<li>Sources of network data
+<ul>
+<li>Firewalls and routers</li>
+<li>Packet sniffers and protocol analyzers</li>
+<li>Intrusion Detection System</li>
+<li>Remote access</li>
+<li>Network forensic analysis tools</li>
+<li>Security event management software</li>
+</ul>
+</li>
+<li>Data value
+<ul>
+<li>IDS software</li>
+<li>System Event Management (SEM) software</li>
+<li>Network Forensic Analysis Tool (NFAT)</li>
+<li>Firewalls, routers, proxy servers, RAS</li>
+<li>Internet Service Provider (ISP) Records</li>
+<li>Network monitoring</li>
+<li>Packet sniffers</li>
+<li>DHCP Servers</li>
+</ul>
+</li>
+<li>Attacker identification
+<ul>
+<li>Contact IP address owner
+<ul>
+<li>Can help identify who is responsible for an IP address. Usually an escalation.</li>
+</ul>
+</li>
+<li>Send network traffic
+<ul>
+<li>Not recommended for organizations</li>
+</ul>
+</li>
+<li>Application content
+<ul>
+<li>Data packets could contain information about the attacker's identity</li>
+</ul>
+</li>
+<li>Seek ISP assistance
+<ul>
+<li>Requires court order and is only done to assist in the most serious of attacks</li>
+</ul>
+</li>
+<li>History of IP addresses
+<ul>
+<li>Can look for trends of suspicious activity</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>4. Scripting</h1>
+<h2>History of Scripting</h2>
+<ul>
+<li>IBM's Job Control Language (JCL)
+<ul>
+<li>Often cited as one of the first scripting languages.</li>
+<li>Developed as a means of ensuring that all required resources are available before a job is scheduled to run.</li>
+</ul>
+</li>
+<li>Calvin Mooers' TRAC language
+<ul>
+<li>Generally credited with inventing command substitution, the ability to embed commands in scripts that when interpreted insert a character string into the script.</li>
+</ul>
+</li>
+<li>Unix shells
+<ul>
+<li>Innovated the ability to send the output of one program into the input of another, making it possible to do complex tasks in one line of shell code</li>
+</ul>
+</li>
+</ul>
+<h2>Script Usage</h2>
+<ul>
+<li>Scripts have multiple uses, but automation is the name of the game.
+<ul>
+<li>Image rollovers</li>
+<li>Validation</li>
+<li>Backup</li>
+<li>Testing</li>
+</ul>
+</li>
+</ul>
+<h2>Scripting Concepts</h2>
+<ul>
+<li>Scripts
+<ul>
+<li>Small interpreted programs</li>
+<li>Script can use functions, procedures, external calls, variables, etc.</li>
+</ul>
+</li>
+<li>Variables
+<ul>
+<li>Most scripts need to calculate a result or execute a series of instructions.
+<ul>
+<li>A great way to do so is storing any information we need in a variable.</li>
+</ul>
+</li>
+<li>A variable is a memory address paired with a symbolic name (or identifier) which contain a value.
+<ul>
+<li>This identifier can be used to reference, manipulate, replace or delete the value.</li>
+</ul>
+</li>
+<li>Memory space needed for a variable may be allocated only when the variable is first used and freed when it is no longer needed.</li>
+</ul>
+</li>
+<li>Arguments/Parameters
+<ul>
+<li>Parameters are pre-established variables which will be used to perform the related process of our function.
+<ul>
+<li>Parameters appear in procedure definitions.</li>
+<li>Arguments appear in procedure calls.</li>
+</ul>
+</li>
+<li>In the function call function1(2), the value 2 is the argument of the function.
+<ul>
+<li>Loosely, a parameter is a type.</li>
+<li>And an argument is an instance.</li>
+</ul>
+</li>
+<li>Although parameters are also commonly referred to as arguments, arguments are sometimes thought of as the actual values, or references assigned to the parameter variables when the subroutine is called at runtime.</li>
+</ul>
+</li>
+<li>If statement
+<ul>
+<li>If (boolean condition)
+<ul>
+<li>then (consequent)</li>
+</ul>
+</li>
+<li>Else (alternative)</li>
+<li>End-if</li>
+</ul>
+</li>
+<li>Loops
+<ul>
+<li>For loop</li>
+<li>While loop</li>
+<li>Until loop</li>
+</ul>
+</li>
+</ul>
+<h2>Scripting Languages</h2>
+<ul>
+<li>JavaScript
+<ul>
+<li>Most popular as client-side language</li>
+<li>Originally developed as object-oriented, now multi-paradigm
+<ul>
+<li>Event-driven programming</li>
+<li>Functional programming</li>
+<li>Imperative programming
+<ul>
+<li>Object-oriented</li>
+<li>Prototype-based</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>JavaScript has APIs for working with text, arrays, dates, regex, DOM, etc.
+<ul>
+<li>But the language itself doesn't include any I/O such as networking, storage, graphics.</li>
+<li>JavaScript relies upon the host environment in which it is embedded to provide these features.</li>
+</ul>
+</li>
+<li>Variables in JavaScript can be defined using either <code>var</code>, <code>let</code>, or <code>const</code> keywords.</li>
+</ul>
+</li>
+<li>GNU Bash
+<ul>
+<li>Unix shell and command language as a free software replacement for the Bourne shell
+<ul>
+<li>Widely used as the default shell for most Linux distros</li>
+</ul>
+</li>
+<li>Bash is a command processor.
+<ul>
+<li>Read and execute commands from a file, called a shell script.</li>
+<li>Supports filename globbing (wildcard matching), piping, heredocs, command substitution, variables, and control structures for condition-testing and iteration.</li>
+<li>The keywords, syntax, dynamically-scoped variables and other basic features of the language are all copied from sh.</li>
+<li>Other features such as history are copied from csh and ksh.</li>
+</ul>
+</li>
+<li>Bash is a POSIX-compliant shell, but with a number of extensions.</li>
+<li>Variable usage example<pre><code>#!/bin/bash
+# A simple variable example
+myvariable=Hello
+anothervar=Fred
+echo $myvariable $anothervar
+echo
+sampledir=/etc
+ls $sampledir
+</code></pre>
+</li>
+</ul>
+</li>
+<li>Perl
+<ul>
+<li>Perl variables do not have to be explicitly declared to reserve memory space.</li>
+<li>The declaration happens automatically when you assign a value to a variable.</li>
+<li>The equal sign (=) is used to assign values to variables.
+<ul>
+<li>e.g. <code>$name = &quot;John Doe&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PowerShell
+<ul>
+<li>Windows command-line shell and scripting language</li>
+<li>Administrative tasks are generally performed by cmdlets (command-lets) which are specialized .NET classes implementing a particular operation.
+<ul>
+<li>cmdlets may be used by scripts, and scripts may be packaged into modules.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Binary
+<ul>
+<li>Adding a binary payload to a shell script could, for instance, be used to create a single file shell script that installs your entire software package which could be composed of hundreds of files.</li>
+<li>You merely append the tar or gzip file of your package as a binary payload to the script file, when the script runs, it extracts the payload and does its task with the extracted files.</li>
+</ul>
+</li>
+<li>Hex
+<ul>
+<li>Advanced hex editors have scripting systems that let the user create macro-like functionality as a sequence of user interface commands for automating common tasks.</li>
+<li>This can be used for providing scripts that automatically patch files, or to write more complex/intelligent templates.</li>
+</ul>
+</li>
+</ul>
+<h2>Python</h2>
+<ul>
+<li>Benefits
+<ul>
+<li>Open source</li>
+<li>Easy to learn and implement</li>
+<li>Portable</li>
+<li>High-level</li>
+<li>Can be used for almost anything in cybersecurity</li>
+<li>Extensive libraries</li>
+</ul>
+</li>
+<li>Libraries
+<ul>
+<li>Scientific computing
+<ul>
+<li>Pandas</li>
+<li>Numpy</li>
+<li>Scipy</li>
+</ul>
+</li>
+<li>Data visualization
+<ul>
+<li>Matplotlib</li>
+<li>Seaborn</li>
+</ul>
+</li>
+<li>Algorithmic
+<ul>
+<li>Scikit-learn</li>
+<li>StatsModels</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

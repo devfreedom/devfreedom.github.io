@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Study Note] Coursework: Cybersecurity Analyst - Part 1 | devfreedom.github.io</title>
+    <meta name="title" content="[Study Note] Coursework: Cybersecurity Analyst - Part 1 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Study Note❯,cybersecurity,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230611_1953_study-note_cybersecurity_coursework_01/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Study Note] Coursework: Cybersecurity Analyst - Part 1</h1>
+        <div class="text-center">Published on 11 June 2023 07:53 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Study Note❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Study Note❯</a>
+            
+            <a href="/tags/cybersecurity" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#cybersecurity</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/cybersecurity.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>1. Introduction</h1>
+<h2>NIST's CIA Triad</h2>
+<ul>
+<li>Confidentiality
+<ul>
+<li>Prevention of sensitive information from unauthorized access and attempts
+<ul>
+<li>Roughly equivalent to privacy</li>
+</ul>
+</li>
+<li>Preserving authorized restrictions on information access and disclosure, including means for protecting personal privacy and proprietary information</li>
+<li>Loss of confidentiality is the unauthorized disclosure of information.</li>
+<li>How to implement?
+<ul>
+<li>Encryption</li>
+<li>Authentication</li>
+<li>Access controls</li>
+<li>Physical security</li>
+<li>Permissions</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Integrity
+<ul>
+<li>The consistency, accuracy, and trustworthiness of data over its entire lifecycle</li>
+<li>Guarding against improper information modification or destruction</li>
+<li>Including ensuring information non-repudiation and authenticity</li>
+<li>Integrity loss is the unauthorized modification or destruction of information.</li>
+<li>How to implement?
+<ul>
+<li>Technical controls
+<ul>
+<li>Algorithms</li>
+<li>Hashes</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Availability
+<ul>
+<li>System and information should be readily available for authorized stakeholders</li>
+<li>Timely and reliable access to information</li>
+<li>Loss of availability is the disruption of access to an information system</li>
+<li>How to implement?
+<ul>
+<li>Technical implementations
+<ul>
+<li>RAIDs</li>
+<li>Clusters</li>
+<li>ISP redundancy</li>
+<li>Backups</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Non-repudiation</h3>
+<ul>
+<li>Valid proof of the identity of the data sender or receiver
+<ul>
+<li>Technical implementations
+<ul>
+<li>Digital signatures</li>
+<li>Logs</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>CIA Triad Add-ons</h3>
+<ul>
+<li>Authenticity: Property of being genuine and verifiable</li>
+<li>Accountability: Mapping actions to an identity</li>
+</ul>
+<h2>Key Terms</h2>
+<ul>
+<li>Vulnerability
+<ul>
+<li>A flaw, loophole, oversight, or error that can be exploited to violate system security policy</li>
+<li>e.g. A software or an application that has code vulnerable</li>
+</ul>
+</li>
+<li>Exploit
+<ul>
+<li>A defined way to breach the security of an IT system through a vulnerability</li>
+</ul>
+</li>
+<li>Risk
+<ul>
+<li>The probability of an event or that an event could actually happen, involving exposure to a danger</li>
+</ul>
+</li>
+<li>Threat
+<ul>
+<li>An event, natural or man-made, able to cause negative impact to an organization</li>
+</ul>
+</li>
+</ul>
+<h2>Security Threat Sources</h2>
+<ul>
+<li>Internal factors
+<ul>
+<li>Personnel with huge risks</li>
+<li>e.g. Internal employees and former employees</li>
+</ul>
+</li>
+<li>External factors
+<ul>
+<li>Human factors from outside</li>
+<li>Malicious events
+<ul>
+<li>e.g. Attack coming from a specific country, targeting one of our DMZ servers</li>
+</ul>
+</li>
+<li>Malwares
+<ul>
+<li>e.g. Viruses, Trojans, or worms created by hackers</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Natural factors
+<ul>
+<li>e.g. Lightning, hurricanes, tornadoes, tsunami</li>
+</ul>
+</li>
+</ul>
+<h2>Vulnerability Assessment</h2>
+<ul>
+<li>The process of identifying, analyzing, and ranking vulnerabilities in the specific environment
+<ul>
+<li>e.g. Many systems are shipped with known and unknown security holes and bugs, for instance.
+<ul>
+<li>This is also associated with misconfigurations like when you get a modem and these modem has, for instance, the username and password admin</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Cybersecurity Programs</h2>
+<h3>Approach</h3>
+<ul>
+<li>Security program
+<ul>
+<li>Evaluate, identify and model threats</li>
+<li>Use cases, risk, monitoring, and control</li>
+</ul>
+</li>
+<li>Asset management
+<ul>
+<li>Classification</li>
+<li>Documentation</li>
+<li>Asset control</li>
+<li>Implementation steps</li>
+</ul>
+</li>
+<li>Administrative controls
+<ul>
+<li>Policies, standards, compliance, and procedures</li>
+<li>User education and incident response</li>
+<li>Disaster recovery and physical security</li>
+</ul>
+</li>
+<li>Technical controls
+<ul>
+<li>Network infrastructures and endpoints</li>
+<li>Identity and vulnerability management</li>
+<li>Monitoring and logging</li>
+</ul>
+</li>
+</ul>
+<h2>Security Challenges</h2>
+<ul>
+<li>Security is not as simple as it seems</li>
+<li>Protection of enforcement structure can complicate solutions</li>
+<li>Solutions can be attacked themselves</li>
+<li>Security architectural decisions can be difficult
+<ul>
+<li>We already know what to do, but where to do that?</li>
+</ul>
+</li>
+<li>Key management is really hard</li>
+<li>Protectors have to be right all the time
+<ul>
+<li>...while attackers just once</li>
+</ul>
+</li>
+<li>No one likes security until its needed
+<ul>
+<li>...just like a seat belt</li>
+</ul>
+</li>
+<li>Security architectures require constant effort
+<ul>
+<li>Strategic vs tactical perspectives</li>
+</ul>
+</li>
+<li>Security is often a decision after thought
+<ul>
+<li>Iced on rather than baked in</li>
+</ul>
+</li>
+<li>Security is viewed as in the way</li>
+</ul>
+<h2>Critical Thinking in Cybersecurity</h2>
+<h3>Importance</h3>
+<ul>
+<li>The controlled and purposeful goal-oriented mindset where there are no clear answers</li>
+<li>Critical thinking is very important due to the nature of cybersecurity
+<ul>
+<li>Multifaceted and diverse</li>
+<li>Fast-paced and constantly-changing environment</li>
+<li>Multiple stakeholders and adversaries</li>
+<li>Subjected and impossible to measure
+<ul>
+<li>= Art + Science</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>5 Key Skills</h3>
+<ul>
+<li>Challenge assumptions
+<ul>
+<li>List systematically and then challenge
+<ol>
+<li>Explicitly list all assumptions</li>
+<li>Examine each with key questions</li>
+<li>Categorize based on evidence</li>
+<li>Refine and remove</li>
+<li>Identify additional data needs</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Consider alternatives
+<ul>
+<li>Brainstorm full of possibilities
+<ul>
+<li>From negative to positive</li>
+<li>The six Ws
+<ul>
+<li>Who/what/when/where/why/how</li>
+</ul>
+</li>
+<li>Null hypothesis
+<ul>
+<li>Establish the opposite of your main hypothesis
+<ul>
+<li>Useful for anomalous data</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Evaluate data
+<ul>
+<li>Scientific approach</li>
+<li>Lookout for inconsistent data
+<ul>
+<li>Establish a baseline for normality
+<ul>
+<li>And then detect anomalies</li>
+</ul>
+</li>
+<li>Be proactive</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Identify key drivers
+<ul>
+<li>What are the driving forces at play?
+<ul>
+<li>Technology</li>
+<li>Regulatory</li>
+<li>Society</li>
+<li>Supply chain</li>
+<li>Employees</li>
+<li>Threat actors</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Understand context
+<ul>
+<li>Most important</li>
+<li>Reframe the problem by putting yourself in other's shoes
+<ul>
+<li>Problem framing technique
+<ul>
+<li>&quot;The elevator is too old and slow.&quot;
+<ul>
+<li>Make the elevator faster</li>
+</ul>
+</li>
+<li>&quot;Waiting is boring.&quot;
+<ul>
+<li>Shorten perceived wait time</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Key components</li>
+<li>Factors at play</li>
+<li>Relationships</li>
+<li>Similarities/differences</li>
+<li>Redefine</li>
+</ul>
+</li>
+</ul>
+<h2>Cybersecurity Organizations</h2>
+<ul>
+<li>Women in Cybersecurity (WiCys)</li>
+<li>The SANS Institute</li>
+<li>The Open Wep Application Project (OWASP)</li>
+<li>Information Systems Security Association (ISSA)</li>
+<li>Forum of Incident Response and Security Teams (FIRST)</li>
+</ul>
+<hr>
+<h1>2. Security Attacks, Actors and their Motive</h1>
+<h2>Main Types of Actors and their Motivation</h2>
+<ul>
+<li>Actors
+<ul>
+<li>Internal users
+<ul>
+<li>Most likely to cause security problems
+<ul>
+<li>either intentionally or not</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hackers
+<ul>
+<li>Have enough knowledge and time to attack</li>
+<li>Could be paid by private or public organizations</li>
+</ul>
+</li>
+<li>Hacktivism
+<ul>
+<li>Motivated by political action and movements</li>
+</ul>
+</li>
+<li>Governments
+<ul>
+<li>Have enough power to cause large financial and operational losses</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Motivation
+<ul>
+<li>Just play</li>
+<li>Political action and movements</li>
+<li>Gain money</li>
+<li>For hire</li>
+</ul>
+</li>
+</ul>
+<h2>Organizational Threats</h2>
+<ul>
+<li>Threat by purpose
+<ul>
+<li>Accidental threats do not involve malicious intent</li>
+<li>Intentional threats require a human with ill intent
+<ul>
+<li>If an intentional threat results in action, it becomes an attack</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Threat by activity
+<ul>
+<li>Passive threats do not involve any change to a system</li>
+<li>Active threats involve significant change to a system
+<ul>
+<li>If an organization responds to an intentional threat, then the threat is classified as both open case and active threat.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>e.g. Data communication threat
+<ul>
+<li>Destruction of information and resources</li>
+<li>Corruption/modification of information</li>
+<li>Theft/removal/loss of information</li>
+<li>Disclosure of information</li>
+<li>Interruption of services</li>
+</ul>
+</li>
+</ul>
+<h3>Internet Security Threats</h3>
+<ul>
+<li>Mapping
+<ul>
+<li>Finding out what services are implemented on network, before attacking
+<ul>
+<li>Ping: determine what hosts have addresses on network</li>
+<li>Port scanning: Attempt on establishing TCP connections to each port in sequence to see what happens</li>
+</ul>
+</li>
+<li>Countermeasure
+<ul>
+<li>Record traffic entering network</li>
+<li>Look for suspicious activities
+<ul>
+<li>IP address</li>
+<li>Sequentially-scanned ports</li>
+</ul>
+</li>
+<li>Use a host scanner</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Packet sniffing
+<ul>
+<li>Broadcast media using broadcast UD methods such as UDP</li>
+<li>Network interface controller (NIC) running in promiscuous mode can read all unencrypted data packets
+<ul>
+<li>Prosmiscuous mode (often shortened to &quot;promisc mode&quot;) is a mode for a wired or wireless NIC that causes the controller to pass all traffic it receives to the CPU, rather than passing only the frames that the controller is intended to receive.</li>
+</ul>
+</li>
+<li>Countermeasure
+<ul>
+<li>Set up only one host per segment of broadcast media
+<ul>
+<li>switched Ethernet at hub</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>IP Spoofing
+<ul>
+<li>Can generate raw IP packets directly from application, putting any value into IP source address field, to impersonate
+<ul>
+<li>Receiver can't tell if source is spoofed</li>
+</ul>
+</li>
+<li>Countermeasure
+<ul>
+<li>Ingress filtering
+<ul>
+<li>Blocking the router from forwarding outgoing packets with invalid source addresses
+<ul>
+<li>e.g. datagram source address not in routrer's network</li>
+</ul>
+</li>
+<li>However, ingress filtering can't be mandated for all networks</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Denial of Service (DOS)
+<ul>
+<li>Flood of maliciously generated packets swamps receiver</li>
+<li>Distributed DOS (DDOS) = multiple coordinated sources swamp receiver</li>
+<li>Countermeasure
+<ul>
+<li>Filter out and remove flooded packets before reaching the host</li>
+<li>Use traceback to identify the source of floods</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Host insertions
+<ul>
+<li>Generally an insider threat</li>
+<li>A computer host with malicious intent is inserted in sleeper mode on the network</li>
+<li>Countermeasure
+<ul>
+<li>Maintain an accurate inventory of computer hosts by MAC address</li>
+<li>Use a host scanning capability to match discoverable hosts against known inventory
+<ul>
+<li>Missing hosts are OK</li>
+<li>New hosts are NOT OK</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Other Threats</h3>
+<ul>
+<li>Malware
+<ul>
+<li>Virus
+<ul>
+<li>Requires human interaction to self-replicate</li>
+</ul>
+</li>
+<li>Worms
+<ul>
+<li>Spreads by itself</li>
+</ul>
+</li>
+<li>Trojan horses
+<ul>
+<li>Disguise as a legitimate package</li>
+</ul>
+</li>
+<li>Spyware
+<ul>
+<li>Designed to collect system and user data, and then report back to a malicious actor</li>
+</ul>
+</li>
+<li>Adware</li>
+<li>Remote Administration Tool (RAT)
+<ul>
+<li>Allows the attacker to gain unauthorized access and control</li>
+</ul>
+</li>
+<li>Rootkit
+<ul>
+<li>Intended to take full or partial control of a system at the lowest level</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ransomware</li>
+<li>Botnets
+<ul>
+<li>A set of compromised hosts that enables black hat hackers to exploit those computer resources to mount attacks
+<ul>
+<li>e.g. spam. DOS, phishing, spyware, etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Keyloggers</li>
+<li>Logic bombs</li>
+<li>Advanced Persistent Threats (APT)
+<ul>
+<li>Low-key undetected spying for a long period of time
+<ul>
+<li>Usually targets military, governmental, and financial organizations with high value information</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Threat Protection</h3>
+<ul>
+<li>Technical control
+<ul>
+<li>Antivirus</li>
+<li>IPS, IDS, UTM</li>
+<li>Updates</li>
+</ul>
+</li>
+<li>Administrative control
+<ul>
+<li>Security policies</li>
+<li>Training</li>
+<li>Revision and tracking</li>
+</ul>
+</li>
+</ul>
+<h2>Attacks</h2>
+<ul>
+<li>An attack is an action by a human with intent to violate security
+<ul>
+<li>Result(success/fail) doesn't matter</li>
+</ul>
+</li>
+<li>Passive attacks
+<ul>
+<li>Harder to detect because the original message is unchanged and could pass an integrity check.
+<ul>
+<li>Eavesdropping
+<ul>
+<li>Attack on the confidentiality of the message</li>
+</ul>
+</li>
+<li>Traffic analysis</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Active attacks = Security architecture attack
+<ul>
+<li>Explicit interception and modification
+<ul>
+<li>Masquerade
+<ul>
+<li>Identity theft (impersonation)</li>
+<li>Attack on the authentication of the origin of the message</li>
+</ul>
+</li>
+<li>Replay
+<ul>
+<li>A copy of a legitimate message is captured by an opponent and re-transmitted.</li>
+<li>Attack on the integrity of the system's data</li>
+</ul>
+</li>
+<li>Modification
+<ul>
+<li>The content of a legitimate message is altered.</li>
+<li>Attack on the integrity of the message</li>
+</ul>
+</li>
+<li>Denial of Service
+<ul>
+<li>Attack on the availability of the system</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>The Cyber Kill Chain</h3>
+<ul>
+<li>Intrusion kill chain
+<ol>
+<li>Reconnaissance</li>
+<li>Weaponization</li>
+<li>Delivery</li>
+<li>Exploitation</li>
+<li>Installation</li>
+<li>Command &amp; Control</li>
+<li>Actions on Objective</li>
+</ol>
+</li>
+</ul>
+<h3>Social Engineering</h3>
+<ul>
+<li>The use of humans for cyber purposes</li>
+<li>Tools
+<ul>
+<li>The Social-Engineer Toolkit (seToolkit)
+<ul>
+<li>Open-source penetration testing framework designed for social engineering</li>
+<li>https://github.com/trustedsec/social-engineer-toolkit</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Phishing
+<ul>
+<li>Phishing is a form of social engineering where attackers deceive people into revealing sensitive information or installing malware such as ransomware.</li>
+<li>Tools
+<ul>
+<li>Gophish
+<ul>
+<li>Open-source phishing framework
+https://github.com/gophish/gophish</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Vishing
+<ul>
+<li>Voice phishing</li>
+</ul>
+</li>
+</ul>
+<h2>Security Service</h2>
+<ul>
+<li>Definition
+<ul>
+<li>X.800: &quot;A service provided by a protocol layer of communicating open systems, which ensures adequate security of the systems or of data transfers&quot;
+<ul>
+<li>Authentication
+<ul>
+<li>Assurance that the communicating entity is the one claimed
+<ul>
+<li>have both peer-entity &amp; data origin authentication</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Non-repudiation
+<ul>
+<li>Protection against denial by one of the parties in a communication</li>
+</ul>
+</li>
+<li>Access control
+<ul>
+<li>Prevention of the unauthorized use of a resource</li>
+</ul>
+</li>
+<li>Data confidentiality</li>
+<li>Data integrity</li>
+<li>Availability</li>
+</ul>
+</li>
+<li>RFC 2828: &quot;A processing or communication service provided by a system to give a specific kind of protection to system resources&quot;</li>
+</ul>
+</li>
+<li>Purpose
+<ul>
+<li>Enhance security of systems and information transfers</li>
+<li>Counter security attacks</li>
+<li>Often replicates functions normally associated with physical documents</li>
+</ul>
+</li>
+</ul>
+<h2>Security Mechanisms</h2>
+<ul>
+<li>Combination of hardware, software, and processes that implements a specific security policy
+<ul>
+<li>e.g. protocol suppression, ID, and authentication</li>
+</ul>
+</li>
+<li>Specific mechanisms
+<ul>
+<li>Cryptography</li>
+<li>Digital signatures</li>
+<li>Access controls</li>
+<li>Data integrity</li>
+<li>Authentication exchange</li>
+<li>Traffic padding</li>
+<li>Routing control</li>
+<li>Notarization</li>
+</ul>
+</li>
+<li>Pervasive mechanisms
+<ul>
+<li>Trusted functionality</li>
+<li>Security labels</li>
+<li>Event detection</li>
+<li>Security audit trails</li>
+<li>Security recovery</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>3. Key Security Concepts</h1>
+<h2>Access Management</h2>
+<ul>
+<li>Access criteria
+<ul>
+<li>Groups</li>
+<li>Timeframe and specific dates</li>
+<li>Physical location</li>
+<li>Transaction type</li>
+</ul>
+</li>
+<li>&quot;Need to know&quot;
+<ul>
+<li>Allowing access to information only needed for the role</li>
+</ul>
+</li>
+<li>Single Sign-On (SSO)
+<ul>
+<li>Centralized access</li>
+</ul>
+</li>
+</ul>
+<h3>Authentication</h3>
+<ul>
+<li>Identity proof</li>
+<li>Kerberos (SSO)</li>
+<li>Mutual authentication
+<ul>
+<li>e.g. MSCHAPv2</li>
+</ul>
+</li>
+<li>Security ID (SID)
+<ul>
+<li>e.g. Active Directory</li>
+</ul>
+</li>
+<li>Discretionary Access Control List (DACL)</li>
+</ul>
+<h2>Incident Response</h2>
+<ul>
+<li>Monitoring and detection of security events on a computer or a computer network and the execution of proper resources to those events</li>
+<li>Security team or incident management will regularly check and monitor the security events occuring on computer systems or network.</li>
+</ul>
+<h3>Incident Response Components</h3>
+<ul>
+<li>Events: An observed change</li>
+<li>Incident: An event negatively effects the CIA triad that impacts the business</li>
+<li>Response team: Computer security incident response team</li>
+<li>Investigation: Seeks to determine the circumstances of the incident
+<ul>
+<li>Every incident warrants or requires an investigation.</li>
+</ul>
+</li>
+</ul>
+<h3>Incident Response Key Concepts</h3>
+<ul>
+<li>E-discovery
+<ul>
+<li>Data inventory</li>
+<li>Data classification</li>
+<li>Data management</li>
+</ul>
+</li>
+<li>Automated systems
+<ul>
+<li>SIEM, SOA, UBA</li>
+<li>Big data analysis</li>
+<li>Honeypots/honeytokens</li>
+</ul>
+</li>
+<li>BCP &amp; Disaster recovery
+<ul>
+<li>Business continuity process (BCP) preparedness</li>
+</ul>
+</li>
+<li>Post-incident
+<ul>
+<li>Root-cause analysis</li>
+<li>Differentiating between error, problem, and isolated incident</li>
+</ul>
+</li>
+</ul>
+<h3>Incident Response Process</h3>
+<ul>
+<li>Prepare
+<ol>
+<li>Conduct a criticality assessment</li>
+<li>Carry out a cyber security threat analysis supported by realistic scenarios and rehearsals</li>
+<li>Consider the implications of people, process, technology and information</li>
+<li>Create an appropriate control framework</li>
+<li>Review your state of readiness</li>
+</ol>
+</li>
+<li>Respond
+<ol>
+<li>Identify cybersecurity incident</li>
+<li>Define objectives and investigate situation</li>
+<li>Take appropriate action</li>
+<li>Recover systems, data, and connectivity</li>
+</ol>
+</li>
+<li>Follow up
+<ol>
+<li>Investigate incident more thoroughly</li>
+<li>Report incident to relevant stakeholders</li>
+<li>Carry out a post-incident review</li>
+<li>Communicate and build on lessons learned</li>
+<li>Update key information, controls, and processes</li>
+<li>Perform trend analysis</li>
+</ol>
+</li>
+</ul>
+<h2>Frameworks and their Purpose</h2>
+<h3>IT Governance Process</h3>
+<ul>
+<li>Policies
+<ul>
+<li>Strategic and tactical plans are enforced by policies.</li>
+</ul>
+</li>
+<li>Procedures
+<ul>
+<li>Each policy may have a procedure associated with details regarding the operative process.</li>
+</ul>
+</li>
+<li>Strategic and tactical plans
+<ul>
+<li>Each organization must have a set of strategic plans based on the goals and objectives.</li>
+</ul>
+</li>
+<li>Others
+<ul>
+<li>Documentation</li>
+<li>Guidelines</li>
+<li>Baselines</li>
+<li>Standards</li>
+<li>Technical procedures</li>
+</ul>
+</li>
+</ul>
+<h3>Audit</h3>
+<ul>
+<li>Audit can be internal or external.</li>
+<li>Sans Institutes Audit Process
+<ol>
+<li>Define the audit scope and limitations</li>
+<li>Look for information, gathering information</li>
+<li>Do the audit via different methods</li>
+<li>Feedback based on the findings</li>
+<li>Deliver a report</li>
+<li>Discuss the results</li>
+</ol>
+</li>
+<li>The OCTAVE method
+<ol>
+<li>Organizational view</li>
+<li>Technological view</li>
+<li>Risk analysis</li>
+</ol>
+</li>
+</ul>
+<h3>OWASP Framework</h3>
+<ul>
+<li>Top 10 web app risks in 2013
+<ol>
+<li>Injection</li>
+<li>Broken authentication and session management</li>
+<li>Cross-site scripting (XSS)</li>
+<li>Insecure direct object references</li>
+<li>Security misconfiguration</li>
+<li>Sensitive data exposure</li>
+<li>Missing function level access control</li>
+<li>Cross-site request forgery (CSRF)</li>
+<li>Using known vulnerable components</li>
+<li>Unvalidated redirects and forwards</li>
+</ol>
+</li>
+<li>Top 10 mobile app risks in 2016
+<ol>
+<li>Weaker server-side controls</li>
+<li>Insecure data storage</li>
+<li>Insufficient transport layer protection</li>
+<li>Unintended data leakage</li>
+<li>Poor authentication and authorization</li>
+<li>Broken cryptography</li>
+<li>Client-side injection</li>
+<li>Security decisions via untrusted inputs</li>
+<li>Improper session handling</li>
+<li>Lack of binary protections</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h1>4. Key Security Tools</h1>
+<h2>Firewalls</h2>
+<ul>
+<li>Isolates organization's internal net from larger Internet, allowing some packets to pass, blocking others
+<ul>
+<li>A filter between administered network and public Internet</li>
+</ul>
+</li>
+<li>Why firewalls?
+<ul>
+<li>Prevent denial of service attacks
+<ul>
+<li>e.g. SYN flooding
+<ul>
+<li>Attacker establishes many bogus TCP connections leaving no resources for real connections</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Prevent illegal modification/access of internal data
+<ul>
+<li>e.g. Attacker replaces the company's homepage with something else</li>
+</ul>
+</li>
+<li>Allow only authorized access to inside network</li>
+</ul>
+</li>
+<li>Firewall types
+<ul>
+<li>Application-level</li>
+<li>Packet-filtering</li>
+</ul>
+</li>
+</ul>
+<h3>Stateless-ness and Stateful-ness</h3>
+<ul>
+<li>Firewalls are...
+<ul>
+<li>They handle packets differently.</li>
+<li>They are multi-homed.
+<ul>
+<li>Multiple NICs connected to different networks</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Stateless firewalls
+<ul>
+<li>a.k.a. Packet filter</li>
+<li>Based on Layer 3 and Layer 4</li>
+<li>Lack of state means less secure</li>
+</ul>
+</li>
+<li>Stateful firewalls
+<ul>
+<li>Have state tables that allow firewall to compare current packets with previous packets</li>
+<li>Could be slower than packet filters but far more secure.</li>
+<li>Application firewalls can make decision based on Layer 7 information.</li>
+</ul>
+</li>
+<li>Proxy firewalls
+<ul>
+<li>Acts as intermediary servers</li>
+<li>Proxies terminate connections and initiate new ones, like a MITM.</li>
+<li>Two 3-way handshakes between two devices</li>
+</ul>
+</li>
+</ul>
+<h3>Packet-filtering</h3>
+<ul>
+<li>Internal network connected to Internet via router firewall</li>
+<li>Router filters packet-by-packet, decision to forward/drop packet based on,
+<ul>
+<li>Source/destination IP address</li>
+<li>TCP/UDP source and destination port numbers</li>
+<li>ICMP message type</li>
+<li>TCP SYN and ACK bits</li>
+</ul>
+</li>
+<li>e.g.
+<ul>
+<li>Block incoming and outgoing datagrams with IP protocol field = 17 and with either source or destination port = 23
+<ul>
+<li>All incoming and outgoing UDP flows and telnet connections are blocked</li>
+</ul>
+</li>
+<li>Block inbound TCP segments with ACK = 0
+<ul>
+<li>Prevents external clients from making TCP connections with internal clients, but allows internal clients to connect to outside</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Application Gateways</h3>
+<ul>
+<li>Filters packets on application data as well as on IP/TCP/UDP fields.</li>
+<li>e.g.
+<ul>
+<li>Allow select internal users to telnet outside
+<ol>
+<li>Require all telnet users to telnet through gateway.</li>
+<li>For authorized users, gateway sets up telnet connection to destination host. Gateway relays data between 2 connections.</li>
+<li>Router filter blocks all telnet connections not originating from gateway.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Limitations of Firewalls and Gateways</h3>
+<ul>
+<li>IP spoofing
+<ul>
+<li>Router can't know if data really comes from claimed source</li>
+</ul>
+</li>
+<li>Each app might need its own gateway for special treatment</li>
+<li>Client software must know how to contact gateway</li>
+<li>Filters often use all-or-nothing policy for UDP</li>
+<li>Tradeoff based on degree of communication with outside world, level of security</li>
+<li>Many highly-protected sites still suffer from attacks</li>
+</ul>
+<h3>XML Gateway, A New Bird</h3>
+<ul>
+<li>XML traffic passes through a conventional firewall without inspection
+<ul>
+<li>All across normal web ports</li>
+</ul>
+</li>
+<li>XML gateway examines the payload of the XML message
+<ul>
+<li>Well-formed (meaning to spec) payload</li>
+<li>No executable code</li>
+<li>Target IP address makes sense</li>
+<li>Source IP is known</li>
+</ul>
+</li>
+</ul>
+<h2>Antivirus/Antimalware</h2>
+<ul>
+<li>Specialized software that can detect, prevent, and destroy malwares</li>
+<li>Scans the system and search for matches against the malware definitions (hashes)</li>
+<li>These definitions get constantly updated by vendors</li>
+</ul>
+<h2>Cryptography</h2>
+<h3>Cryptography Introduction</h3>
+<ul>
+<li>Secure communication that may be understood by the intended recipient only
+<ul>
+<li>Cryptography = secret writing</li>
+</ul>
+</li>
+<li>Both data in motion and data at rest need to be secured.</li>
+<li>Cryptography has thousands of years of history.</li>
+<li>Key concepts
+<ul>
+<li>CIA triad</li>
+<li>Non-repudiation</li>
+<li>Cryptoanalysis</li>
+<li>Cipher</li>
+<li>Plaintext</li>
+<li>Ciphertext</li>
+<li>Encryption</li>
+<li>Decryption</li>
+</ul>
+</li>
+<li>Cryptographic strength
+<ul>
+<li>Relies on math not secrecy</li>
+<li>Public algorithms
+<ul>
+<li>Ciphers that have stood the test of time</li>
+</ul>
+</li>
+<li>Modern ciphers use modular math.</li>
+<li>XOR gate is the secret sauce behind modern encryption.</li>
+</ul>
+</li>
+<li>Stream cipher encrypt/decrypt bit per bit.</li>
+<li>Block cipher encrypt/decrypt in blocks or several sizes depending on the algorithm.</li>
+</ul>
+<h3>Types of Cryptography</h3>
+<ul>
+<li>Symmetric encryption
+<ul>
+<li>e.g. DES, Triple DES, AES</li>
+<li>Uses the same key to encrypt and decrypt</li>
+<li>Security depends on keeping the key secret at all times.</li>
+<li>Strengths include speed and cryptogrpahic strength per bit of key.</li>
+<li>The bigger the key, the stronger the algorithm</li>
+<li>Key needs to be shared using a secure, out-of-band method.</li>
+</ul>
+</li>
+<li>Asymmetric encryption
+<ul>
+<li>Uses two keys
+<ul>
+<li>One key can be made public, the other one needs to be kept private.</li>
+<li>One for encryption and one for decryption</li>
+<li>Public Key Infrastructure (PKI)</li>
+</ul>
+</li>
+<li>Uses one-way algorithms to generate the two keys
+<ul>
+<li>e.g. factoring prime numbers, discrete logarithm</li>
+</ul>
+</li>
+<li>Used in digital certificates</li>
+<li>Slower than symmetric encryption</li>
+</ul>
+</li>
+<li>Hash functions
+<ul>
+<li>e.g. SHA-1, MD5
+<ul>
+<li>These older algorithms are prone to hash collisions.</li>
+<li>SHA-2 is the newer and recommended alternative.</li>
+</ul>
+</li>
+<li>Provides encryption using an algorithm and no key</li>
+<li>A variable-length plaintext is hashed into a fixed-length hash value, often called a &quot;message digest&quot; or &quot;hash&quot;</li>
+<li>If the hash of a plaintext changes, the plaintext itself has changed.
+<ul>
+<li>Provides integrity verification</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Cryptographic Attacks</h3>
+<ul>
+<li>Brute force</li>
+<li>Rainbow tables</li>
+<li>Social engineering</li>
+<li>Known plaintext</li>
+<li>Known ciphertext</li>
+</ul>
+<h3>The Language of Cryptography</h3>
+<ul>
+<li>Fictional characters used in network security and cryptography
+<ul>
+<li>Bob and Alice want to communicate securely.</li>
+<li>Trudy may intercept, delete, add messages
+<ul>
+<li>Alice = friend</li>
+<li>Bob = friend</li>
+<li>Trudy = intruder</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Process<pre><code>    Alice                                               Bob
+(encryption key) ↴                              ⬐ (decryption key)
+
+[PLAINTEXT] → Encryption → [CIPHERTEXT] → Decryption → [PLAINTEXT]
+              algorithm                   algorithm
+                                ↕
+                          (crypto attack)    
+                              Trudy
+</code></pre>
+<ul>
+<li>Symmetric key cryptography
+<ul>
+<li>Both Alice and Bob have the same identical key</li>
+</ul>
+</li>
+<li>(Asymmetric) Public key cryptography, from Alice to Bob
+<ul>
+<li>Alice's encryption key (Bob's public key)</li>
+<li>Bob's decryption key (Bob's private key)</li>
+</ul>
+<ol>
+<li>Alice requests Bob’s public key and uses it to encrypt her message.</li>
+<li>Alice then sends the encrypted message to Bob who decrypts it using his private key.</li>
+</ol>
+</li>
+<li>(Asymmetric) Public key cryptography, between Alice and Bob
+<ul>
+<li>Both Alice and Bob needs their own encryption and decryption keys.
+<ul>
+<li>Total 4 unique keys are needed.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Data Encryption Standard (DES)</h3>
+<ul>
+<li>Symmetric key crypto
+<ul>
+<li>56-bit symmetric key</li>
+<li>64-bit plaintext input</li>
+</ul>
+</li>
+<li>Former US encryption standard</li>
+<li>Operation
+<ol>
+<li>Initial permutation</li>
+<li>16 identical rounds of function application, each using different 48 bits of key</li>
+<li>Final permutation</li>
+</ol>
+</li>
+<li>DES challenge
+<ul>
+<li>An 8-word sentence got brute-forced in 4 months</li>
+<li>How to make DES more secure?
+<ul>
+<li>Use 3 keys sequentially on each datum (3-DES)</li>
+<li>Use cipher-block chaining</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Advanced Encryption Standard (AES)</h3>
+<ul>
+<li>New US/NIST encryption standard replacing DES</li>
+<li>Processes data in 128-bit blocks</li>
+<li>128, 192, 256-bit keys available</li>
+<li>Brute force taking 1 second on DES, takes 149 trillion years for AES</li>
+</ul>
+<h2>Hackers</h2>
+<ul>
+<li>White Hat
+<ul>
+<li>Ethical hackers</li>
+<li>Work done under contract for security reasons</li>
+</ul>
+</li>
+<li>Grey Hat
+<ul>
+<li>They may look for vulnerabilities in an unauthorized manner and report back to the possible victim</li>
+</ul>
+</li>
+<li>Black Hat
+<ul>
+<li>Bad guys</li>
+<li>For personal recognition, money, political agenda, social change, etc.</li>
+</ul>
+</li>
+</ul>
+<h3>Threat (malicious) Actors</h3>
+<ul>
+<li>An entity that is partially or wholly responsible for an incident that affects or potentially affects an organization's security</li>
+<li>Script kiddies</li>
+<li>Hacktivists</li>
+<li>Organized crime</li>
+<li>Insiders</li>
+<li>Competitors</li>
+<li>Nation states
+<ul>
+<li>Notable APTs
+<ul>
+<li>Fancy Bear (APT28)</li>
+<li>Lazarus Group (APT38)</li>
+<li>ScarCruft (APT37)</li>
+<li>Cozy Bear (APT29)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Penetration Testing</h2>
+<ul>
+<li>A method of evaluating computer and network security by simulating an attack on a computer system or network from external and internal threats</li>
+<li>Finding security vulnerabilities that an attacker could exploit
+<ul>
+<li>= ethical hacking</li>
+<li>e.g. Mile 2 CPTE training</li>
+</ul>
+</li>
+</ul>
+<h3>Pentest Methodologies</h3>
+<ul>
+<li>Open Source Security Testing Methodology Manual (OSSTMM)</li>
+<li>NIST SP 800-42 Guideline on Network Security Testing</li>
+<li>FFIEC Information Technology Examination</li>
+<li>Information Systems Security Assessment Framework (ISSAF)</li>
+</ul>
+<h2>Vulnerability Test</h2>
+<ul>
+<li>Vulnerability assessment methodology
+<ol>
+<li>Identify indicators</li>
+<li>Exposure</li>
+<li>Sensitivity
+<ul>
+<li>Exposure and sensitivity determine potential impacts</li>
+</ul>
+</li>
+<li>Adaptive Capacity
+<ul>
+<li>Vulnerability</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2>Digital Forensics</h2>
+<ul>
+<li>A branch of forensic science
+<ul>
+<li>Locard's principle
+<ul>
+<li>The perpetrator of a crime will bring something into the crime scene and leave with something from it, and that both can be used as forensic evidence.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Includes the identification, recovery, investigation, validation, and presentation of facts regarding digital evidence found on computers or similar digital storage media devices</li>
+</ul>
+<h3>Chain of Custody</h3>
+<ul>
+<li>Refers to the chronological documentation or paper trail that records the sequence of custody, control, transfer, analysis and disposition of physical or electronic evidence</li>
+<li>It is often a process that has been required for evidence to be shown legally in court</li>
+</ul>
+<h3>Forensic Tools</h3>
+<ul>
+<li>Hardware
+<ul>
+<li>Faraday cage</li>
+<li>Tool sets
+<ul>
+<li>Forensic laptops and power supplies</li>
+<li>Digital camera</li>
+<li>Case folder</li>
+<li>Blank forms</li>
+<li>Evidence collection and packaging supplies</li>
+<li>Empty hard drives</li>
+<li>Hardware write blockers</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Software
+<ul>
+<li>Volatility</li>
+<li>FTK</li>
+<li>Encase</li>
+<li>dd</li>
+<li>Autopsy (The Sleuth Kit)</li>
+<li>Bulk Extractor</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

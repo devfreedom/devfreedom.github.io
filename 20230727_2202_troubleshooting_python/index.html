@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[트러블슈팅] [리눅스] 파이썬과 관련된 여러가지 문제들 해결하기 | devfreedom.github.io</title>
+    <meta name="title" content="[트러블슈팅] [리눅스] 파이썬과 관련된 여러가지 문제들 해결하기 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮트러블슈팅❯,파이썬,리눅스,프로그래밍,Python,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230727_2202_troubleshooting_python/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[트러블슈팅] [리눅스] 파이썬과 관련된 여러가지 문제들 해결하기</h1>
+        <div class="text-center">Published on 27 July 2023 10:02 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮트러블슈팅❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮트러블슈팅❯</a>
+            
+            <a href="/tags/파이썬" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#파이썬</a>
+            
+            <a href="/tags/리눅스" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#리눅스</a>
+            
+            <a href="/tags/프로그래밍" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#프로그래밍</a>
+            
+            <a href="/tags/Python" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#Python</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/python-logo.png" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <p>파이썬으로 프로그래밍을 하거나 파이썬으로 작성된 프로그램을 사용할 때 겪는 여러가지 문제들과 실수들을 짚어보는 시간입니다.</p>
+<h2>파이썬 가상환경 (VENV) 에서 pip로 패키지를 설치할 때 전역 설치가 되어버리는 현상</h2>
+<p>파이썬 가상환경이 활성화된 상태인데도 <code>pip install [패키지명]</code> 명령어로 패키지를 설치하면 다음과 같은 메세지가 나오면서 패키지가 시스템에 전역 설치가 되어버리는 현상입니다.</p>
+<pre><code>Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pandas in ./.local/lib/python3.10/site-packages (2.0.0)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in ./.local/lib/python3.10/site-packages (from pandas) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/lib/python3/dist-packages (from pandas) (2022.2.1)
+(...)
+</code></pre>
+<h3>원인</h3>
+<p>간단한 실수입니다. 가상환경 내부에다가도 pip를 설치해줬어야죠... (그게 바로 접니다)</p>
+<p>가상환경 내부에 pip가 없으니까 시스템상에 전역 설치되어있는 pip를 사용하게 되고, 전역 설치된 pip를 사용하니까 당연히 패키지가 전역 설치되게 됩니다.</p>
+<h3>해결</h3>
+<ol>
+<li>일단 현재 어디에 설치된 pip를 사용하고 있는지를 확인해봅니다. 아마 시스템에 설치된 pip의 경로를 표시할겁니다.<pre><code>$ which pip
+</code></pre>
+</li>
+<li>가상환경을 활성화시키고 가상환경 내부에서 pip를 설치해줍니다. 여기서는 Anaconda를 사용하는 경우를 예로 들겠습니다.<pre><code>$ activate conda [가상환경 이름]
+$ conda install pip
+</code></pre>
+</li>
+<li>이제 가상환경이 어디에 설치된 pip를 사용하고 있는지를 다시 한번 확인합니다. 이제는 정상적으로 가상환경 내부에 설치된 pip의 경로를 표시할겁니다.<pre><code>$ which pip
+</code></pre>
+</li>
+</ol>
+<h2>파이썬 또는 애플리케이션의 버전을 업데이트한 이후부터 애플리케이션이 작동되지 않고 크래쉬 될때</h2>
+<p>어느날부터 OpenSSL을 사용하는 파이썬 어플리케이션을 리눅스 데스크탑에서 실행시키면, 아무런 반응이 없다가 시스템상에서 애플리케이션이 크래쉬됬다는 팝업창이 뜨는 증상이 시작됐습니다.</p>
+<p>도대체 무슨 상황인지 알 수가 없어서 터미널에서 직접 애플리케이션을 실행시켰는데 다음과 같은 에러메세지가 나옵니다.</p>
+<pre><code>Traceback (most recent call last):
+    File &quot;/home/user/.local/lib/python3.10/site-packages/pkg_resources/__init__.py&quot;, line 534, in load_entry_point
+    return get_distribution(dist).load_entry_point(group, name)
+  File &quot;/home/user/.local/lib/python3.10/site-packages/pkg_resources/__init__.py&quot;, line 2930, in load_entry_point
+    return ep.load()
+  File &quot;/home/user/.local/lib/python3.10/site-packages/pkg_resources/__init__.py&quot;, line 2517, in load
+    return self.resolve()
+  File &quot;/home/user/.local/lib/python3.10/site-packages/pkg_resources/__init__.py&quot;, line 2523, in resolve
+    module = __import__(self.module_name, fromlist=['__name__'], level=0)
+  File &quot;/usr/lib/python3/dist-packages/OpenSSL/__init__.py&quot;, line 8, in &lt;module&gt;
+    from OpenSSL import crypto, SSL
+  File &quot;/usr/lib/python3/dist-packages/OpenSSL/crypto.py&quot;, line 3279, in &lt;module&gt;
+    _lib.OpenSSL_add_all_algorithms()
+AttributeError: module 'lib' has no attribute 'OpenSSL_add_all_algorithms'
+</code></pre>
+<h3>원인</h3>
+<p>파이썬용 OpenSSL 버전 호환성 문제입니다.</p>
+<h3>해결</h3>
+<p>시스템에 설치된 pyOpenSSL 패키지의 버전을 업데이트해서 해결했습니다. 일단 pip를 최신 버전으로 업데이트하고, 그 다음 pyOpenSSL 버전도 업데이트 해줍니다.</p>
+<pre><code>$ python3 -m pip install --upgrade pip
+$ python3 -m pip install --upgrade pyopenssl
+$ pip install pip --upgrade
+$ pip install pyopenssl --upgrade
+</code></pre>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

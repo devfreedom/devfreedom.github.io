@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[필기] &lt;한 번에 끝내는 서비스 기획의 모든 것&gt; 강의 - Part 2 | devfreedom.github.io</title>
+    <meta name="title" content="[필기] &lt;한 번에 끝내는 서비스 기획의 모든 것&gt; 강의 - Part 2 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮필기❯,서비스 기획,프로덕트 관리,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20221030_1653_study-note_product_mgmt_coursework_03/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[필기] &lt;한 번에 끝내는 서비스 기획의 모든 것&gt; 강의 - Part 2</h1>
+        <div class="text-center">Published on 30 October 2022 04:53 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮필기❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮필기❯</a>
+            
+            <a href="/tags/서비스 기획" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#서비스 기획</a>
+            
+            <a href="/tags/프로덕트 관리" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#프로덕트 관리</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/product-management.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h2>Part 2-2. 내 기획 프로토타이핑 하기</h2>
+<h3>프로덕트 매니저에게 프로토타입이란?</h3>
+<ul>
+<li>실제 제품 개발보다 적은 리소스로 사용자/고객, 시장을 학습하는 도구와 프로세스
+<ul>
+<li>제품을 만들기 전에 사용자의 문제를 해결할 가설을 미리 실험하기 위함</li>
+</ul>
+</li>
+<li>검증하고자 하는 구체적 가설, 검증 방법, 측정 지표, 그리고 결론이 있어야 함
+<ul>
+<li>실제 제품으로 구현되기 전에 어떤 위험을 파악하고 어떤 시도를 폐기해야 할 지 분명하게 결론</li>
+</ul>
+</li>
+<li>아래의 것들은 프로토타입이 아니다
+<ul>
+<li>모든 문제와 가설을 전부 테스트 해 볼 수 있도록 완전한 기능을 구현되어 있음</li>
+<li>심미성, 인터랙션, 합목적 UI, 디자인 시스템 등이 전부 마련되어 있지만 코드만 없음</li>
+<li>실제 사용자와 고객에게 서비스를 하되, 그저 기능이 적은 미완성 제품</li>
+</ul>
+</li>
+<li>프로토타입의 종류
+<ul>
+<li>Low/High Fidelity: 사용자의 실제 인터랙션을 시뮬레이션하고 실험하기 위한 UI/UX 프로토타입
+<ul>
+<li>기대효과
+<ul>
+<li>잠재 고객이나 동료들에게 시각적으로 직관적으로 프리젠테이션</li>
+<li>제품의 첫인상, 사용자가 기대하는 인터랙션, 정보 설계의 유효성, 사용성 등 전반적 UX를 측정</li>
+<li>실제 프로토타입 실험 시 가능하다면 Wizard of Oz를 함께 수행하여 더욱 정밀한 테스트</li>
+<li>제품 발견 과정 중 수요측정 이후에 해당함</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Proof-of-concept: 기술적인 관점에서 제품을 실제로 구현해낼 수 있는지 실험 (엔지니어의 코드)</li>
+<li>Minimum Viable Product: 최소한의 실제 기능과 데이터로 사용자의 특수성을 수집하는 프로토타입</li>
+<li>Wizard of Oz: 완성된 제품과 같지만 뒤에서는 모든 것을 사람이 수행하며 사용자의 실제 니즈를 검증하는 프로토타입</li>
+<li>Fake Door Demand: 진짜같은 링크를 제공하고, 사용자가 클릭하면 테스트임을 알려 수요를 측정하는 프로토타입</li>
+</ul>
+</li>
+<li>프로토타입을 만들기 전 사전 체크사항
+<ul>
+<li>서비스 컨셉을 명확하게 하기</li>
+<li>Information Architecture 확정</li>
+<li>서비스 플로우 설계하기</li>
+<li>저해상도의 UI/UX 상세 설계하기</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

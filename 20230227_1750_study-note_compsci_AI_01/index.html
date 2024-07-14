@@ -1,0 +1,2364 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[필기] 컴퓨터공학과 &lt;인공지능&gt; 과목 - 전반부 | devfreedom.github.io</title>
+    <meta name="title" content="[필기] 컴퓨터공학과 &lt;인공지능&gt; 과목 - 전반부 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮필기❯,인공지능,머신러닝,파이썬,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230227_1750_study-note_compsci_AI_01/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[필기] 컴퓨터공학과 &lt;인공지능&gt; 과목 - 전반부</h1>
+        <div class="text-center">Published on 27 February 2023 05:50 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮필기❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮필기❯</a>
+            
+            <a href="/tags/인공지능" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#인공지능</a>
+            
+            <a href="/tags/머신러닝" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#머신러닝</a>
+            
+            <a href="/tags/파이썬" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#파이썬</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/neural-network.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <p>작년에 사내 IT교육을 수강하면서 접해본 머신러닝을 컴퓨터공학과 정규 과목으로 다시 한번 만나게 되었습니다. 주 내용은 머신러닝 구현에 필요한 이론과 개념을 배우고, 파이썬으로 머신러닝을 실습하면서, 인공지능과 관련된 인문학적 담론도 함께 배우는 수업입니다. 저번에는 일도 바쁘고 수업도 어려워서 머신러닝 이론만 훑어보고 실습은 굳이 해보지는 않았는데 이번에는 피할 수 없게 되었습니다.</p>
+<hr>
+<h1>1. 기계학습</h1>
+<h2>1-1. 기계학습의 개념</h2>
+<ul>
+<li>컴퓨터가 배울 수 있는 능력, 즉 프로그램으로 정의하지 않아도 컴퓨터 스스로 학습하여 실행할 수 있는 능력에 대한 연구분야
+<ul>
+<li>인공지능에 대한 '방법론'</li>
+</ul>
+</li>
+<li>전통적 프로그램
+<ul>
+<li>정해진 규칙 (프로그래머가)</li>
+<li>새로운 규칙 (프로그램을 수정해서)</li>
+<li>자료 축적 불필요</li>
+</ul>
+</li>
+<li>기계학습
+<ul>
+<li>스스로 학습</li>
+<li>프로그램 수정 불필요</li>
+<li>자료 축적 필요</li>
+</ul>
+</li>
+</ul>
+<h2>1-2. 기계학습의 종류</h2>
+<ul>
+<li>지도(supervised) 학습: 컴퓨터에게 정답(labeled data)을 알려주고, 그것을 바탕으로 컴퓨터가 자료를 학습하고 예측함
+<ul>
+<li>분류(classification)와 회귀(regression)로 나뉨
+<ul>
+<li>분류: 컴퓨터가 기준에 맞게 분류된 데이터를 학습하고 나서, 새로운 데이터가 정해진 선택지 중 어떤 것인지를 판단하도록 함
+<ul>
+<li>e.g. 컴퓨터가 스팸메일 기록을 분석 및 학습한 다음 그 결과를 바탕으로 새로 들어온 이메일이 스팸 메일인지 아닌지를 자동으로 분류하기</li>
+</ul>
+</li>
+<li>회귀: 누적된 데이터를 주고서는 연속된 값, 즉 실수값을 예측하도록 함
+<ul>
+<li>e.g. 공부 시간과 학습 성적의 상관관계를 기반으로 미래의 성적 예측하기</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>비지도(unsupervised) 학습: 정답이나 오답 없이 컴퓨터가 스스로 데이터 자체로부터 특정 패턴을 추정하도록 함
+<ul>
+<li>e.g. 동물 사진들을 주고서는 컴퓨터가 사진들 사이의 패턴을 스스로 분석하게 하여 동물별로 분류하게 하기 (군집화/clustering)</li>
+</ul>
+</li>
+<li>강화(reinforcement) 학습: 기계학습의 행동에 대한 보상을 극대화하여 훈련
+<ul>
+<li>컴퓨터(agent) → 행동(action) → 환경 (environment) → 상태(state) &amp; 보상(reward) → 컴퓨터(agent) → ...반복...</li>
+<li>2014년 DeepMind의 '벽돌 깨기 게임(Atari Breakout) 기계학습' 사례
+<ul>
+<li>아무런 사전 정보를 알려주지 않은 채 컴퓨터에게 게임만 던져줌</li>
+<li>학습 4시간만에 최고 득점을 할 수 있는 방법을 알아냄</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>2. Python</h1>
+<ul>
+<li>파이썬이란?
+<ul>
+<li>간단하고 배우기 쉬움</li>
+<li>컴파일이 필요없는 스크립트 언어</li>
+<li>풍부한 라이브러리 생태계</li>
+<li>딥러닝 프레임워크를 파이썬 API로 제공</li>
+<li>Python 3를 사용해야 함</li>
+</ul>
+</li>
+<li>파이썬 라이브러리
+<ul>
+<li>표준(built-in) 라이브러리 예시: math, random, pickle, csv, os, time, urllib</li>
+<li>외부(3rd-party) 라이브러리 예시: numpy, matplotlib</li>
+<li>기계학습 특화 라이브러리 예시
+<ul>
+<li>pandas: 데이터 CRUD 및 전처리</li>
+<li>scipy: 과학적 계산</li>
+<li>scikit-learn: 기계학습 알고리즘 제공</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>기계학습용 파이썬 프레임워크 예시
+<ul>
+<li>TensorFlow
+<ul>
+<li>구글이 오픈소스로 개발</li>
+<li>프론트엔드는 파이썬, 코어는 C++로 작성</li>
+<li>GPU를 사용함</li>
+<li>시각화 툴인 TensorBoard를 제공함</li>
+<li>Tensor = 스칼라, 벡터, 행렬을 일반화해서 n차원의 배열을 지칭하는 용어</li>
+</ul>
+</li>
+<li>Keras
+<ul>
+<li>TensorFlow 위에서 작동하는 add-on 프레임워크</li>
+<li>직관적인 API</li>
+<li>현재는 TensorFlow 내부에 통합됨</li>
+</ul>
+</li>
+<li>PyTorch
+<ul>
+<li>Lua로 개발된 Torch를 파이썬 API로 개발</li>
+<li>디버깅이 쉬운 직관적 코드</li>
+<li>언제든 데이터에 따라 모델을 조정할 수 있는 '동적 그래프'</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Jupyter Notebook
+<ul>
+<li>iPython Notebook이라는 파이썬 통합개발환경(IDE)이었으나 이후 확장함</li>
+<li>다양한 운영체계와 프로그래밍 언어를 지원함</li>
+<li>문서와 코드를 동시에 지원</li>
+<li>웹 서버와 클라이언트 구성으로 구현되어 있음
+<ul>
+<li>온라인(웹)과 오프라인(localhost)를 모두 지원</li>
+<li>웹 서버 프로세스를 종료해서는 안됨</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Anaconda를 활용해 한 번에 개발 환경을 구축할 수 있음</li>
+<li>윈도우즈 환경에서 파이썬 개발 환경을 구축할 경우 python PATH 설정에 주의</li>
+</ul>
+<h2>2-1. Object-oriented programming</h2>
+<ul>
+<li>객체지향 프로그래밍 패러다임에서는 모든 것이 '객체'로 추상화되어있음</li>
+<li>객체는 데이터와 함수로 구성되어 있음</li>
+<li>객체간의 상호작용으로 데이터와 함수 호출 등을 주고받음
+<ul>
+<li>Dot notation을 사용해 객체의 함수나 데이터를 호출할 수 있음</li>
+</ul>
+</li>
+<li>모든 객체들은 독립적으로 존재하며 고유의 속성과 기능을 가지고 있음</li>
+<li>Code example<pre><code>d_seg_sedan = Car(4900, 1900, 1545, 5, 450)         # 변수 d_seg_sedan은 전장 4.9m, 전폭 1.9m, 무게 1.545kg, 5인승, 450l의 트렁크를 가진 자동차
+driver = Person()                                   # 변수 driver는 사람
+driver.kickstart(d_seg_sedan)                       # driver가 d_seg_sedan에 시동을 건다는 의미
+d_seg_sedan.move(driver)                            # sedan이 driver에 의해 움직인다는 의미
+print(driver.position)                              # driver의 현재 위치를 출력함
+</code></pre>
+</li>
+</ul>
+<h3>Object</h3>
+<ul>
+<li>Class
+<ul>
+<li>객체를 만드는 설계도<pre><code>class Car:
+    def __init__(self, length, width, weight, seater, trunk):
+        self.length = length            
+        self.width = width
+        self.weight = weight
+        self.seater = seater
+        self.trunk = trunk
+        self.speed = 0
+    def drive(self, gear):
+        self.gear = &quot;D&quot;
+        print(&quot;Gear: Drive&quot;)
+    def reverse(self, gear):
+        self.gear = &quot;R&quot;
+        print(&quot;Gear: Reverse&quot;)
+    def neutral(self, gear):
+        self.gear = &quot;N&quot;
+        print(&quot;Gear: Neutral&quot;)
+    def move(self, driver):
+        driver.position += 10
+    def accelerate(self):
+        self.speed += 10
+</code></pre>
+</li>
+<li>self. 로 시작하는 로컬 변수를 '인스턴스 변수'라고 지칭</li>
+<li>클래스 내부에서 선언되는 함수를 '메소드'라고 지칭</li>
+<li>Constructor
+<ul>
+<li>생성자인 initializer 메소드를 사용해 클래스로부터 객체를 생성함</li>
+<li>e.g. Car 객체를 호출하면 해당 객체 내부의 생성자인 init 메소드가 호출됨
+<ul>
+<li>매개변수로 넘겨준 값 4900, 1900, 1545, 5, 450은 각 로컬 변수에 저장됨</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>self Parameter
+<ul>
+<li>클래스로부터 객체를 생성할 때 해당 객체의 자기 자신을 의미함</li>
+<li>e.g. c_seg_hatchback.shift(&quot;R&quot;)를 호출할 경우, c_seg_hatchback이 shift() 메소드의 self가 되고, &quot;R&quot;이 self.gear가 됨</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>3. 수학 기초</h1>
+<h2>3-1. 행렬</h2>
+<ul>
+<li>선형대수학에서 연립방정식의 계수와 변수를 분리하여 표현하고자 한 개념</li>
+<li>많은 데이터를 다루어야 하는 기계학습에서 유용함
+<ul>
+<li>간결한 표기</li>
+<li>실수를 저지를 여지를 줄여줌</li>
+<li>컴퓨터 연산에 적합함</li>
+</ul>
+</li>
+<li>스칼라: 크기만 있고 방향을 가지지 않은, 사칙연산이 가능한 물리량 = 0차원
+<ul>
+<li>e.g. 질량, 부피, 거리, 속력, 실수, 정수</li>
+</ul>
+</li>
+<li>벡터: 스칼라에 방향이 더해진 것 = 1차원 배열
+<ul>
+<li>e.g. 속도, 가속도, 운동량, 전기장</li>
+</ul>
+</li>
+<li>행렬: 2차원 배열</li>
+<li>텐서: n차원 배열 (스칼라, 벡터, 행렬을 모두 포함함)</li>
+<li>행 벡터: 가로(=열) 크기가 m개고 세로(=행) 크기가 1인 행렬 w</li>
+<li>열 벡터: 가로(=열) 크기가 1개고 세로(=행) 크기가 m인 행렬 w
+<ul>
+<li>기계학습에서 벡터라고 하면 주로 '열 벡터'를 지칭</li>
+</ul>
+</li>
+<li>A ∈ R<sup>m,n</sup>, B ∈ R<sup>m,n</sup> 행렬의 곱은?
+<ul>
+<li>C = AB = R<sup>m×p</sup></li>
+<li>(단, Cᵢⱼ = ∑aᵢₖbₖⱼ)</li>
+<li>(M × N) (N × P) = (M × P)</li>
+</ul>
+</li>
+<li>전치(transpose)
+<ul>
+<li>행과 열의 인덱스를 바꾸는 것 (대각선을 기준으로 서로 위치를 뒤집는 것)</li>
+<li>(Aᵀ)ᵀ = A</li>
+<li>(AB)ᵀ = BᵀAᵀ</li>
+<li>(A+B)ᵀ = Aᵀ + Bᵀ</li>
+</ul>
+</li>
+<li>내적(inner/dot product)
+<ul>
+<li>같은 크기인 x와 y가 주어졌을 때 x를 전치하고 y를 곱하는 것</li>
+<li>결과는 스칼라값으로 나옴</li>
+</ul>
+</li>
+<li>외적(outer product)
+<ul>
+<li>크기가 같을 필요가 없는 x와 y가 주어졌을 때, x를 전치된 y와 곱하는 것</li>
+<li>결과는 행렬값으로 나옴</li>
+</ul>
+</li>
+<li>행렬의 크기가 연산 가능할 때, 다음과 같은 법칙들이 성립함
+<ul>
+<li>결합법칙: A(BC) = (AB)C</li>
+<li>분배법칙
+<ul>
+<li>A(B+C) = AB+AC</li>
+<li>(B+C)A = BA+CA</li>
+<li>k(AB) = (kA)B = A(kB)</li>
+</ul>
+</li>
+<li>교환법칙은 성립되지 않음
+<ul>
+<li>A×B ≠ B×A</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>단위행렬(identity matrix)
+<ul>
+<li>주 대각선에 있는 성분(element)이 모두 1이고 나머지 성분은 모두 0인 행렬 I</li>
+<li>어떤 행렬에 I를 곱해도 그 행렬에는 변화가 없음</li>
+<li>곱셈의 항등원</li>
+</ul>
+</li>
+</ul>
+<h2>3-2. 함수와 뉴론</h2>
+<h3>함수</h3>
+<ul>
+<li>y = f(x)</li>
+<li>독립변수 x → (입력) → 함수 f → (출력) → 종속변수 y</li>
+<li>e.g.
+<ul>
+<li>이산 코사인 변환 함수 (Discrete Cosine Transform)</li>
+<li>푸리에 변환 함수 (Fourier Transform)</li>
+</ul>
+</li>
+<li>기계학습이란? '만능 함수 제조기'
+<ul>
+<li>e.g. 각종 동물들 사진 묶음을 주면 그 중에서 고양이를 찾아낼 수 있는 함수를 만들기
+<ul>
+<li>충분한 데이터가 필요함</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>뉴론</h3>
+<ul>
+<li>기계학습에 사람의 두뇌 메커니즘을 적용하기</li>
+<li>생체 뉴론은 일종의 작은 생물학적 연산자
+<ul>
+<li>... 수상돌기 → (입력) → 뉴론 → (출력) → 축색돌기 → 시냅스 → 수상돌기 → (입력) → 뉴론 → (출력) → 축색돌기 ...</li>
+<li>생체 뉴론의 시냅스는 인공 뉴론의 가중치에 해당함</li>
+</ul>
+</li>
+<li>뉴론 연산자
+<ul>
+<li>입력에 바로 반응하지 않고, 임계값(threshold)에 도달할 때까지 입력을 축적한 후 출력</li>
+<li>입력은 다수, 출력은 하나</li>
+<li>다수의 뉴론들을 신경망으로 구성</li>
+</ul>
+</li>
+<li>인공 뉴론을 만든다는 것은 '함수'를 만든다는 것</li>
+</ul>
+<h2>3-3. 미분</h2>
+<ul>
+<li>수학에서 기울기란 '변화율'을 의미함
+<ul>
+<li>변화율을 알아야 추세, 미래의 결과값을 파악할 수 있음</li>
+<li>직선의 기울기는 구하기 쉬움
+<ul>
+<li>e.g. f(x) = -2x + 5
+<ul>
+<li>기울기 = -2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>곡선의 기울기는 어떻게 구해야 하는가?
+<ul>
+<li>평균 변화율
+<ul>
+<li>특정 범위 내에서 곡선의 평균적인 기울기</li>
+<li>{ f(x₂) - f(x₁) } / x₂ - x₁</li>
+</ul>
+</li>
+<li>순간 변화율
+<ul>
+<li>특정 지점에서 곡선의 기울기</li>
+<li>x₂와 x₁ 사이의 거리를 0에 가깝게 줄여주면 됨 (극한)
+<ul>
+<li>x₂를 x₁과 동일해질 정도로 극한으로 밀어붙이기</li>
+<li><em>lim</em> { f(x₂) - f(x₁) } / x₂ - x₁ = f'(x₁)
+<ul>
+<li>f'(x₁) = x₁에서의 접선의 기울기 = x₁에서의 미분계수</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>일부 함수는 x=0에서의 미분계수가 존재하지 않음
+<ul>
+<li>e.g. 좌우 접점을 원점으로 하는 U자 모양의 그래프를 그리는 함수
+<ul>
+<li>x=0 지점에서의 기울기는 수평으로 누워버리게 됨</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>기본적인 미분법</h3>
+<ul>
+<li>f(x) = c 일 경우, f'(x) = 0</li>
+<li>f(x) = cg(x) 일 경우, f'(x) = cg'(x)</li>
+<li>f(x) = g(x) ± t(x) 일 경우, f'(x) = g'(x) ± t'(x)</li>
+<li>f(x) = g(x)t(x) 일 경우, f'(x) = g'(x)t(x) + g(x)t'(x)</li>
+<li>f(x) = t(x)/g(x) 일 경우, f'(x) = { t'(x)g(x)-t(x)g'(x) } / g²(x)</li>
+<li>f(x) = xⁿ 이면, f'(x) = nx<sup>n-1</sup></li>
+<li>f(x) = f(g(x))ⁿ 이면, f'(x) = n(g(x))<sup>n-1</sup>g'(x)</li>
+</ul>
+<h3>삼각함수의 미분법</h3>
+<ul>
+<li>f(x) = sin x 일 경우, f'(x) = cos x</li>
+<li>f(x) = cos x 일 경우, f'(x) = -sin x</li>
+<li>f(x) = tan x 일 경우, f'(x) = { 1 / cos(x) }² = sec² x</li>
+</ul>
+<h3>지수함수의 미분법</h3>
+<ul>
+<li>a &gt; 0, a ≠ 1 인 a<sup>x</sup> 에 대해서</li>
+<li>f(x) = a<sup>x</sup> 일 경우, f'(x) = a<sup>x</sup><em>ln</em>a</li>
+<li>f(x) = e<sup>x</sup> 일 경우, f'(x) = e<sup>x</sup></li>
+</ul>
+<h3>합성함수의 미분법</h3>
+<ul>
+<li>t = f(x), u = g(x) 인 경우, f(x)와 g(x) 모두 미분 가능하다면</li>
+<li>f(g(x))' = f'(g(x)) × g'(x)
+<ul>
+<li>e.g. f(g(x)) = 1 / (1 + e<sup>-x</sup>) 일 때, f(g(x))' 는 무엇인가?
+<ul>
+<li>f(x) = 1/x, g(x) = 1 + e<sup>-x</sup></li>
+<li>f'(x) = -1/x²</li>
+<li>g'(x) = -e<sup>-x</sup></li>
+<li>f'(g(x)) = 1 / (1 + e<sup>-x</sup>)²</li>
+<li>f(g(x))' = f'(g(x)) × g'(x)
+<ul>
+<li>= 1 / { (1 + e<sup>-x</sup>)² × e<sup>-x</sup> }
+<ul>
+<li>이것이 바로 sigmoid 함수의 미분</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>함수가 여러개의 변수를 갖는다면?</h3>
+<ul>
+<li>f(x)가 아니라 f(x,y)인 경우, 미분하려는 변수만 미분하고 나머지는 상수 취급하면 됨
+<ul>
+<li>e.g. f(x,y) = x² + xy + y²
+<ul>
+<li>f<sub>x</sub>(x,y) = 2x + y</li>
+<li>f<sub>y</sub>(x,y) = 2y + x</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>미분을 이용해서 최대와 최소 구하기</h3>
+<ul>
+<li>e.g. f(x) = x² - 2x
+<ul>
+<li>f'(x) = x에서의 f(x)의 기울기 = 2x - 2</li>
+<li>기울기가 0이 되는 순간이 곧 그 함수의 최소값/최대값
+<ul>
+<li>= 기울기가 음수에서 양수로 변하는, 양수에서 음수로 변하는 바로 그 지점</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>4. numpy와 배열</h1>
+<h2>4-1. Numerical Python</h2>
+<ul>
+<li>다차원 배열, 행렬 연산, 각종 선형대수학 함수와 난수 지원</li>
+<li>간결한 코드와 빠른 속도</li>
+<li>import numpy as np</li>
+</ul>
+<h2>4-2. 배열</h2>
+<ul>
+<li>ndarray 클래스
+<ul>
+<li>ndim: 차원, axis 개수, rank</li>
+<li>shape: 형상, 각 차원의 배열 크기</li>
+<li>size: 배열의 모든 원소 개수</li>
+<li>dtype: 원소의 data type</li>
+</ul>
+</li>
+</ul>
+<h3>배열의 생성 방법들</h3>
+<ul>
+<li>np.array() 메소드를 사용하기
+<ul>
+<li>pprint()를 통해 출력</li>
+</ul>
+</li>
+<li>배열 생성 함수를 사용하기
+<ul>
+<li>반드시 형상을 지정해줘야 함</li>
+<li>zeros: 모든 원소가 0인 배열 생성</li>
+<li>ones: 모든 원소가 1인 배열 생성</li>
+<li>full: 사용자가 지정한 단일 값으로 배열 생성</li>
+<li>empty: 임의의 값으로 배열 생성</li>
+<li>eye: 단위 행렬 생성</li>
+</ul>
+</li>
+<li>데이터를 만들고 나서 배열로 변환하기
+<ul>
+<li>arange()는 start에서 stop 미만까지 step 간격으로 데이터 생성</li>
+<li>linspace()는 start부터 stop까지의 범위에서 num개의 데이터를 균일한 간격으로 생성</li>
+<li>logspace()는 start부터 stop까지의 범위에서 로그 스케일로 num개의 데이터를 생성</li>
+</ul>
+</li>
+</ul>
+<h3>배열 인덱싱</h3>
+<ul>
+<li>e.g. 2차원 배열 A = shape(3,4)<pre><code>1  2  3  4
+5  6  7  8
+9 10 11 12
+</code></pre>
+<ul>
+<li>원소 7
+<ul>
+<li>2번째 행 3번째 열에 있음
+<ul>
+<li>= A[1, 2]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>원소 12
+<ul>
+<li>3번째 행 4번째 열에 있음
+<ul>
+<li>= A[2, 3]</li>
+</ul>
+</li>
+<li>맨 마지막 행과 열에 있음
+<ul>
+<li>= A[-1, -1]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>첫번째 행
+<ul>
+<li>A[0]</li>
+</ul>
+</li>
+<li>첫번재 열
+<ul>
+<li>A[:, 0]</li>
+</ul>
+</li>
+<li>좌측 상단의 2-by-2 행렬
+<ul>
+<li>A[:2, :2]</li>
+</ul>
+</li>
+<li>전체
+<ul>
+<li>A[:, :]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>배열 슬라이싱</h3>
+<ul>
+<li>원본 배열에서 슬라이싱한 subarray는 실제로 잘라낸 독립된 배열이 아니라 원본 배열의 별도 view에 불과함
+<ul>
+<li>subarray에서 데이터를 조작하면 원본 배열도 조작되므로 주의!</li>
+</ul>
+</li>
+<li>원본에서 잘라낸 독립된 별도의 배열을 만들고자 할 때는 원본을 슬라이싱하지 말고 copy()를 사용해서 사본을 만들어야 함</li>
+</ul>
+<h3>내적과 외적</h3>
+<ul>
+<li>np.dot() 메소드를 사용</li>
+</ul>
+<h3>배열 브로드캐스팅</h3>
+<ul>
+<li>형상이 다른 배열간에 덧셈과 뺄셈을 수행할 수 있도록 함</li>
+<li>낮은 차원의 배열을 높은 차원의 배열로 확장하는 개념</li>
+<li>두 배열의 형상이 같도록 전처리를 하고 나서 연산을 수행함</li>
+<li>e.g.<pre><code>A = 0   B = 0 1 2
+    1
+    2
+
+A' = 0 0 0   B' = 0 1 2
+        1 1 1        0 1 2
+        2 2 2        0 1 2
+
+A + B = A' + B'
+</code></pre>
+</li>
+</ul>
+<h3>난수 배열</h3>
+<ul>
+<li>numpy.random 모듈 사용</li>
+<li>randint()는 정수 표본을 추출해서 배열을 반환</li>
+<li>normal()은 정규분포 확률 밀도에서 표본을 추출하여 배열로 반환</li>
+<li>random(size=None)은 0과 1 범위의 난수를 균등 분포에서 표본을 추출하여 배열로 반환</li>
+</ul>
+<hr>
+<h1>5. 인공 뉴론</h1>
+<h2>5-1. 인공 뉴론의 개념</h2>
+<ul>
+<li>x₁ → (w₁) → w₁x₁ → y
+<ul>
+<li>= y = w₁x₁</li>
+<li>= y = ax = 일차함수
+<ul>
+<li>여기서 a는 기울기, w₁은 가중치(weight)</li>
+<li>가중치에 따라 입력 신호가 커지거나 작아짐</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>인공 뉴론의 동작 원리</h3>
+<ul>
+<li>인공 뉴론은 다음과 같이 동작함<pre><code>x₁ → (w₁) ↘
+            Σ → y
+x₂ → (w₂) ↗
+</code></pre>
+<ul>
+<li>순입력(net input) = w₁x₁ + w₂x₂</li>
+<li>임계값(threshold) = θ</li>
+<li>순입력이 임계값보다 크면 활성화, 순입력이 임계값보다 작거나 같으면 비활성화
+<ul>
+<li>y = 0, if (w₁x₁ + w₂x₂ ≤ θ)</li>
+<li>y = 1, if (w₁x₁ + w₂x₂ &gt; θ)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>편향(bias)</h3>
+<ul>
+<li>항상 켜져있는 노드<pre><code>x₁ → (w₁) ↘
+1  → (𝑏)  → Σ → y
+x₂ → (w₂) ↗
+</code></pre>
+</li>
+<li>입력값 대신에 항상 1을 편향 𝑏에 곱해서 순입력에 더하게 됨</li>
+<li>뉴론에 입력되는 입력값의 한 부분으로 간주하여 계산 가능
+<ul>
+<li>y = 0, if (𝑏 + w₁x₁ + w₂x₂ ≤ 0)</li>
+<li>y = 1, if (𝑏 + w₁x₁ + w₂x₂ &gt; 0)</li>
+<li>임계값 θ를 우변에서 좌변으로 이항하면 𝑏가 됨
+<ul>
+<li>𝑏 = -θ</li>
+<li>(이항하면 부호가 반대가 되므로)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>인공 뉴론 계산</h3>
+<ul>
+<li>e.g.
+<ul>
+<li>w = (w₁, w₂) = (0.6, 0.3)</li>
+<li>θ = 0.5</li>
+<li>(x₁, x₂) = (0, 1)</li>
+</ul>
+</li>
+<li>이 경우 순입력 = w₁x₁ + w₂x₂ = 0 + 0.3
+<ul>
+<li>순입력이 임계값 0.5보다 작으므로 뉴런은 활성화되지 않음</li>
+</ul>
+</li>
+</ul>
+<h3>AND 게이트 뉴론</h3>
+<ul>
+<li>기대하는 진리표는 다음과 같음<pre><code>x₁   x₂   y
+-------------
+0    0    0
+0    1    0
+1    0    0
+1    1    1
+</code></pre>
+<ul>
+<li>문제는 여기에 영향을 미치는 가중치와 편향이 너무 많다는 것</li>
+</ul>
+</li>
+<li>e.g.
+<ul>
+<li>y = 0, if (𝑏 + w₁x₁ + w₂x₂ ≤ 0)</li>
+<li>y = 1, if (𝑏 + w₁x₁ + w₂x₂ &gt; 0)</li>
+<li>위의 식을 만족하는 가중치와 편향의 조합 중 AND 게이트의 역할을 수행하는 조합은?
+<ul>
+<li>e.g. (w₁, w₂) = (0.5, 0.5), b = -0.7 일 때 AND 게이트가 성립</li>
+<li>e.g. (w₁, w₂) = (0.5, 0.5), b = -0.3 일 때 AND 게이트가 성립</li>
+<li>e.g. (w₁, w₂) = (0.5, 0.5), b = -0.2 일 때 AND 게이트가 성립
+<ul>
+<li>그렇다면 이 조합을 가지고 AND 게이트를 만들 수 있음</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>파이썬으로 구현한 AND 게이트<pre><code>def AND(x1, x2):
+    x = np.array([1, x1, x2])           # 입력값을 동일한 크기의 리스트로 선언해야 함
+    w = np.array([-0.7, 0.5, 0.5])      # w = bias + (weight1, weight2)
+        return int(np.dot(w,x) &gt; 0)     # true/false로 반환되는 결과값을 0/1로 바꿔주어야 함
+</code></pre>
+<ul>
+<li>이 게이트를 식으로 나타내보면
+<ul>
+<li>AND(x₁, x₂)   -0.7 + 0.5x₁ + 0.5x₂ ≤ 0</li>
+<li>AND(x₁, x₂)   -0.7 + 0.5x₁ + 0.5x₂ &gt; 0</li>
+<li>-0.7 + 0.5x₁ + 0.5x₂ = 0</li>
+<li>x₂ = -(0.5/0.5)x₁ + (0.7/0.5) = -x₁ + 1.4 = 직선 형태의 일차함수</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>6. 활성화 함수</h1>
+<ul>
+<li>인공 뉴론의 구조를 다시 한번 살펴보면,<pre><code>1  → (𝑏)  ↘
+x₁ → (w₁)   ↘
+               z = Σ → h(z) → y
+x₂ → (w₂)   ↗
+x₃ → (w₃) ↗
+x₄ ...
+</code></pre>
+<ul>
+<li>z = 𝑏 + w₁x₁ + ... + wₙxₙ = Σwx = <em>입력값 x</em>와 <em>가중치 w의 총합</em>을 곱한 것</li>
+<li>순입력 z를 받아서 뉴런을 활성화시킬 것인지 아닌지를 판단하는 함수가 바로 activation 함수
+<ul>
+<li>y = h(z) 가 바로 활성화 함수</li>
+<li>활성화가 되면 최종 출력값은 y가 됨</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>e.g. 입력되는 숫자가 22보다 크거나 같을 경우에만 입력값을 제곱하는 뉴론을 구현하기
+<ul>
+<li>z = x₁²</li>
+<li>y = h(z)
+<ul>
+<li>= 22, if (z &lt; 22)</li>
+<li>= z, if (z ≥ 22)</li>
+</ul>
+</li>
+<li>Code example<pre><code>def activation_function(z):
+    if z &lt; 22 : 
+        z = 22
+    return z
+
+def generate_square_number(x):
+    sqr_num = x * x
+    return activation_function(x)
+
+test_input = [10, 15, 20, 25, 30, 35]
+test_output = [ generate_square_number(x) for x in test_input ]
+print(test_output)
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2>6-1. Sigmoid Function</h2>
+<ul>
+<li>σ(x) = 1 / (1 + e<sup>-x</sup>)
+<ul>
+<li>e는 자연 상수 2.7182...</li>
+</ul>
+</li>
+<li>Code example<pre><code>import numpy as np
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+</code></pre>
+</li>
+<li>Logistic classification, cost function에서 주로 사용함
+<ul>
+<li>딥러닝에서는 vanishing gradient problem으로 인해 잘 사용되지 않음</li>
+</ul>
+</li>
+<li>입력값을 0과 1 사이의 출력값, 즉 '확률'으로 변환해줌
+<ul>
+<li>0과 1은 출력하지 못함
+<ul>
+<li>0 초과 1 미만의 값을 출력함</li>
+</ul>
+</li>
+<li>미분계수(도함수)가 항상 양수</li>
+</ul>
+</li>
+<li>Sigmoid 함수의 미분
+<ul>
+<li>(e<sup>x</sup>)' = e<sup>x</sup></li>
+<li>(e<sup>-x</sup>)' = -e<sup>-x</sup></li>
+<li>du<sup>n</sup>/dx = nu<sup>n-1</sup> × du/dx</li>
+</ul>
+</li>
+</ul>
+<h2>6-2. Step Function</h2>
+<ul>
+<li>단극성 계단 함수: 임계값 보다 작은 입력값에서는 0을 출력(neuron is inactive), 임계값보다 크거나 같은 입력값에서는 1을 출력(fire the neuron)</li>
+<li>양극성 계단 함수: 임계값 보다 작은 입력값에서는 -1을 출력(neuron is inactive), 임계값보다 크거나 같은 입력값에서는 1을 출력(fire the neuron)</li>
+<li>인공 뉴론의 동작 원리와 유사함
+<ul>
+<li>e.g. 단극성 계단 함수
+<ul>
+<li>y = 0, if (z = w₁x₁ + w₂x₂ &lt; θ)</li>
+<li>y = 1, if (z = w₁x₁ + w₂x₂ ≥ θ)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>파이썬에서 numpy 배열을 계단 함수에 입력할 경우 오류가 발생함
+<ul>
+<li>e.g.<pre><code>def step(x):
+    return (x &gt; 0)
+
+input = np.array([-2, -1, 0, 1, 2])
+output = step(input)
+print (output)
+</code></pre>
+<ul>
+<li>ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+<ul>
+<li>함수의 출력값이 0 또는 1이 아닌, true 또는 false의 불린 값으로 return되기 때문</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>해결 방법 1. 불린 출력값에 상수 1을 곱해주도록 함수를 변경<pre><code>def step(x):
+    return (x &gt; 0) * 1
+</code></pre>
+</li>
+<li>해결 방법 2. 불린 출력값을 integer 타입으로 변환하도록 함수를 변경<pre><code>def step(x):
+    return np.array(x &gt; 0, dtype=np.int)
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2>6-3. Hyperbolic Tangent (tanh) Function</h2>
+<ul>
+<li>시그모이드와 유사하게 출력 범위로 -1에서 1 사이를 가지지만, 시그모이드보다 빠르게(가파르게) 수렴하는 특징을 가짐</li>
+<li>tanh(x) = (1 - e<sup>-x</sup>) / (1 + e<sup>-x</sup>)
+<ul>
+<li>= { 2 / (1 + e<sup>-2x</sup>) } - 1</li>
+<li>= 2sigmoid(2x) - 1</li>
+</ul>
+</li>
+<li>tanh'(x) = 1 - tanh²(x)</li>
+</ul>
+<h2>6-4. Rectified Linear Unit (ReLU) Function</h2>
+<ul>
+<li>Vanishing gradient problem
+<ul>
+<li>은닉층이 많은 다층 퍼셉트론에서 도함수 값을 연쇄적으로 곱해나가는 경우, 시그모이드와 쌍곡탄젠트의 경우 가중치에 따른 결과값 기울기가 0에 수렴하여 gradient descent 기법을 사용할 수 없게 되어 버리는 문제가 발생
+<ul>
+<li>e.g. 시그모이드 함수의 경우 -4 이하, 4 이상의 영역에서 미분계수(기울기)가 0으로 간주되어 학습이 종료되고 오차가 잔존하는 문제가 발생</li>
+</ul>
+</li>
+<li>ReLU 함수는 이 문제를 간단하게 해결해줌</li>
+</ul>
+</li>
+<li>h(x) = x, if (x ≥ 0)</li>
+<li>h(x) = 0, if (x &lt; 0)
+<ul>
+<li>0보다 작은 입력값에서는 출력을 소멸시켜 버리고, 0보다 큰 입력값에서는 입력을 그대로 출력함</li>
+<li>선형함수이므로 미분이 간단함</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>7. Perceptron</h1>
+<ul>
+<li>퍼셉트론은 최초의 인공신경망 개념
+<ul>
+<li>심리학을 전공한 Frank Rosenblatt의 논문에서 고안됨</li>
+</ul>
+</li>
+<li>다음과 같은 인공 뉴런 구조에서 퍼셉트론 모델은<pre><code>1  → (𝑏)  ↘
+x₁ → (w₁)   ↘
+               z = Σ → h(z) → y
+x₂ → (w₂)   ↗
+x₃ → (w₃) ↗
+x₄ ...
+
+y = h(z)
+</code></pre>
+<ul>
+<li>입력값으로 열 벡터 [ x₀, x₁, ... , xₙ ] 를 가지고,</li>
+<li>가중치로 열 벡터 [ w₀, w₁, ... , wₙ ] 를 가지고,</li>
+<li>편향으로 x₀과 w₀을 가짐</li>
+<li>따라서 순입력 z = w₀x₀ + w₁x₁ + ... + wₙxₙ = Σwx
+<ul>
+<li>= 𝘄ᵀ𝘅
+<ul>
+<li>볼드체로 표시하는 이유는 '벡터 또는 행렬'을 의미하기 때문</li>
+<li>여기서 T는 transpose, 즉 전치를 의미함</li>
+<li>열 벡터 w와 x를 내적(𝘄ᵀ𝘅)하면 그 결과로 스칼라 값이 나옴</li>
+<li>편향인 x₀과 w₀를 포함함</li>
+</ul>
+</li>
+<li>순입력 z 계산 code example<pre><code>import numpy as np                      
+np.random.seed(0)                               # 수월한 디버깅을 위해서 난수를 생성하는 상수(seed)를 고정
+x = np.array(np.arange(4)).reshape(4,1)         # 1차원 배열로 생성한 입력값 x를 열 벡터로 바꿔줌 (reshape)
+w = np.array(np.random.random(4)).reshape(4,1)  # 가중치 w도 입력값과 동일한 차원의 열 벡터로 바꿔줌 (reshape)
+z = np.dot(w.T, x).squeeze()                    # w값을 전치해주고(transpose) 나서 𝘄ᵀ와 𝘅를 내적하고, 그 스칼라 결과값은 단일하므로 1차원으로 축소 (squeeze)
+print(z)
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>7-1. 퍼셉트론 알고리즘 구현</h2>
+<ul>
+<li>기본 개념
+<ul>
+<li>가중치를 0에서 1 사이의 범위에 있는 작은 난수로 초기화를 하고,</li>
+<li>각 학습자료 x<sup>(i)</sup>에 대해,</li>
+<li>출력값인 ŷ = h(𝘄ᵀ𝘅) 를 계산하고,
+<ul>
+<li>hat operator가 붙은 변수는 '예측값(estimate)'를 의미함</li>
+</ul>
+</li>
+<li>가중치인 wⱼ를 조정함
+<ul>
+<li>wⱼ: = wⱼ + Δwⱼ</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>용어 설명
+<ul>
+<li>x<sup>(i)</sup> = i번째 입력된 학습자료</li>
+<li>xⱼ<sup>(i)</sup> = i번째 입력된 학습자료의 j번째 특성</li>
+<li>ŷ = 퍼셉트론의 출력값, 즉 대략적으로 예상된 결과값</li>
+<li>y = 클래스 레이블, 즉 실제값</li>
+<li>wⱼ = j번째 특성에 대한 가중치</li>
+<li>Δwⱼ = 가중치를 미세하게 변경(delta)할 조정값</li>
+</ul>
+</li>
+<li>가중치 조정값 Δwⱼ를 계산하는 방법
+<ul>
+<li>Δwⱼ = η(y<sup>(i)</sup>-ŷ<sup>(i)</sup>) × xⱼ<sup>(i)</sup>
+<ul>
+<li>η = 0에서 1 사이 범위를 가지는 학습률</li>
+<li>j = 특성의 수에다가 편향인 1을 더함
+<ul>
+<li>e.g. 학습자료가 2차원이라면 가중치도 2개여야 하고, 여기에 편향이 하나 더해지므로 j는 0, 1, 2, 이렇게 3이 됨
+<ul>
+<li>Δw₀ = η(y<sup>(i)</sup>-ŷ<sup>(i)</sup>) × 1</li>
+<li>Δw₁ = η(y<sup>(i)</sup>-ŷ<sup>(i)</sup>) × x₁<sup>(i)</sup></li>
+<li>Δw₂ = η(y<sup>(i)</sup>-ŷ<sup>(i)</sup>) × x₂<sup>(i)</sup></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>e.g. step function을 사용하는 퍼셉트론에서,
+<ul>
+<li>만약 y와 ŷ이 같다면?
+<ul>
+<li>실제값과 예측값이 차이가 없으므로 Δwⱼ = 0</li>
+<li>가중치를 변경시킬 필요가 없음</li>
+</ul>
+</li>
+<li>하지만 y와 ŷ가 다르다면?
+<ul>
+<li>예측값이 실제값과 다르므로 가중치에 조정값을 부여해서 조정을 해야 할 필요가 있음</li>
+<li>Δwⱼ = η{1<sup>(i)</sup>-(-1<sup>(i)</sup>)} × xⱼ<sup>(i)</sup> = η(2) × xⱼ<sup>(i)</sup>
+<ul>
+<li>이 경우는 가중치가 증가함</li>
+</ul>
+</li>
+<li>Δwⱼ = η{(-1<sup>(i)</sup>)-1<sup>(i)</sup>} × xⱼ<sup>(i)</sup> = η(-2) × xⱼ<sup>(i)</sup>
+<ul>
+<li>이 경우는 가중치가 감소함</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>7-2. Linear Binary Classifier</h2>
+<ul>
+<li>전제 조건
+<ul>
+<li>데이터는 2차원 좌표평면 상에서 직선으로 분류가 가능함</li>
+<li>입력값은 주어지고, 가중치를 임의로 정할 수 있고, 활성화 함수를 사용할 수 있음
+<ul>
+<li>A 아니면 B, 왼쪽 아니면 오른쪽, 위 아니면 아래 이런식으로 분류를 해야 하기 때문에 활성화 함수로 step function을 사용함</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>작동 방식
+<ol>
+<li>좌표평면에 주어진 데이터들을 어떠한 직선을 기준으로 A 아니면 B로 분류하도록 퍼셉트론을 제작</li>
+<li>퍼셉트론이 특정 가중치를 사용해 분류를 수행
+<ul>
+<li>직선의 기울기와 절편은 모두 w에 포함되어 있음</li>
+<li>퍼셉트론이 기울기와 절편을 결정해 좌표평면상에 직선 그래프를 그림</li>
+</ul>
+</li>
+<li>분류 결과가 적절한지를 평가하고 가중치를 다시 바꿈
+<ul>
+<li>퍼셉트론이 더욱 정확한 분류를 위해 직선 그래프의 기울기를 바꿈</li>
+</ul>
+</li>
+<li>반복 학습으로 최적의 가중치 찾아내기
+<ul>
+<li>퍼셉트론은 데이터를 두 묶음으로 완전하게 분리하는 직선 그래프를 찾아내어 그림</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>문제점
+<ul>
+<li>경계선 상에 데이터가 많을수록 새로운 데이터를 잘 분류하지 못하는 경우가 생김</li>
+<li>과대적합과 과소적합에 유의해야 함
+<ul>
+<li>Overfitting
+<ul>
+<li>주어진 학습 자료 자체만 완벽하게 분류를 하려고 함
+<ul>
+<li>e.g. 주요 면접 질문만 달달 외워서 정해진대로 답변을 하는 취업 준비생</li>
+</ul>
+</li>
+<li>학습한 자료와 다른 데이터가 주어지면 오히려 오차가 많아지게 됨
+<ul>
+<li>e.g. 준비하지 못한 돌발 질문이 쏟아지거나 압박 면접에서는 결과가 좋지 않음</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Underfitting
+<ul>
+<li>오차가 너무 많이 허용되는 경우</li>
+<li>오차 기준이 느슨하다보니 주어진 학습 자료 자체도 제대로 학습하지 못함</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>완벽한 학습, 완벽한 알고리즘은 없음
+<ul>
+<li>목적과 평가 기준에 맞는 최소한의 오차가 허용될 뿐</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>7-3. Linear Binary Classifier 실습</h2>
+<ul>
+<li>전제 조건
+<ul>
+<li>초기 가중치 𝘄ᵀ = [0, 1, 0.5]</li>
+<li>학습률 η = 0.1</li>
+<li>학습 자료
+<ul>
+<li>x<sup>(1)</sup> = [1.0, 1.0]</li>
+<li>x<sup>(2)</sup> = [2.0, -2.0]</li>
+<li>x<sup>(3)</sup> = [-1.0, -1.5]</li>
+<li>x<sup>(4)</sup> = [-2.0, -1.0]</li>
+<li>x<sup>(5)</sup> = [-2.0, 1.0]</li>
+<li>x<sup>(6)</sup> = [1.5, -0.5]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Δw를 적용해 조정된 가중치 계산<pre><code>i     (x₀ⁱ, x₁ⁱ, x₂ⁱ)     (w₀, w₁, w₂)          𝘄ᵀ      ŷⁱ     yⁱ     η      Δw
+──────────────────────────────────────────────────────────────────────────────────────────────
+1     (1, 1.0, 1.0)       (0.0, 1.0, 0.5)       1.5      1      1     0.1    0
+2     (1, 2.0, -2.0)      (0.0, 1.0, 0.5)       1.0      1     -1     0.1    (-0.2, -0.4, 0.4)
+3     (1, -1.0, -1.5)     (-0.2, 0.6, 0.9)     -2.15    -1     -1     0.1    0
+4     (1, -2.0, -1.0)     (-0.2, 0.6, 0.9)     -2.3     -1     -1     0.1    0
+5     (1, -2.0, 1.0)      (-0.2, 0.6, 0.9)     -0.25    -1      1     0.1    (0.2, -0.4, 0.2)
+6     (1, 1.5, -0.5)      (0.0, 0.2, 1.1)      -0.25    -1      1     0.1    (0.2, 0.3, -0.1)
+fin.        -             (0.2, 0.5, 1.0)        -       -      -      -            -
+</code></pre>
+</li>
+<li>최종 가중치를 구했으므로 데이터를 분류할 수 있는 직선 그래프, 즉 판별식(decision boundary)을 추론해내면 됨
+<ul>
+<li>h(z)=0이어야 하므로</li>
+<li>w₀ + w₁x₁ + w₂x₂ = 0</li>
+<li>0.2 + 0.5x₁ + 1.0x₂ = 0</li>
+<li>x₂ = -0.5x₁ - 0.2
+<ul>
+<li>일차방정식 형태로 만들면 직선 그래프를 그릴 수 있음</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Epoch</h3>
+<ul>
+<li>기계학습 결과가 만족스럽지 않을 경우, 같은 학습 자료로 학습을 반복 수행할 수 있음</li>
+<li>에폭은 학습 반복 횟수를 의미함</li>
+</ul>
+<h3>선형 이진 분류기 Code Example</h3>
+<pre><code>import numpy as np
+
+# 입력값 x를 numpy array로 선언함
+x = np.array( [ [1.0, 1.0], [2.0, -2.0], [-1.0,-1.5], [-2.0, -1.0], [-2.0, 1.0], [1.5, -0.5] ] )
+
+# 값이 1인 편향 b를 앞에 추가해주는 numpy concatenation 수행
+xb = np.c_[ np.ones(len(x)), x ]
+
+# 실제값인 클래스 레이블 y 선언하기
+y = np.array( [1, -1, -1, -1, 1, 1] )
+
+# 클래스 레이블의 최댓값과 최소값을 변수로 선언하기
+# 양극성 step function의 출력값을 1과 -1로 수동으로 지정해주는 대신, 주어진 데이터에서 가져오는 방식
+# 이렇게 하면 단극성 step function도 주어진 데이터를 통해 자동으로 구현 가능
+maxlabel, minlabel = y.max(), y.min()
+
+&quot;&quot;&quot;
+# 초기 가중치 w 수동으로 지정하기
+w = np.array( [0, 1.0, 0.5] )
+
+# 또는 초기 가중치 w를 랜덤으로 생성해서 지정할 수도 있음
+# 다만 아래와 같이 퍼셉트론 함수 내에서 난수를 생성할 경우 이 부분은 불필요함
+random_number = np.random.RandomState(1)                          # 먼저 임의의 난수를 생성하고 나서
+w = random_number.normal(loc=0.0, scale=0.01, size=xb.shape[1])   # 편향이 추가된 입력값 xb의 크기에 맞춰서 난수를 정규화함 (가우시안 정규분포)
+&quot;&quot;&quot;
+
+# 학습률, 에폭, 난수 고정 변수 선언하기
+eta = 0.1
+epochs = 5
+random_seed = 1
+
+# 퍼셉트론 알고리즘을 함수로 구현
+def perceptron(xb, y, w=None, eta, epochs, random_seed):        # 초기 가중치 w는 없어도 상관 없음
+    # 초기 가중치 w가 없다면 임의로 생성
+    if w is None:
+        np.random.seed(random_seed)                             # 난수 생성기를 상수로 고정시키기
+        w = np.random.random((xb.shape[1], 1))                  # 생성된 난수를 초기 가중치로 사용
+
+    # 에폭값만큼 학습 반복 수행
+    for _ in range(epochs):
+        for xi, yi in zip(xb, y):                               # xb와 y를 zip함수를 사용해 iterable list로 묶은 후, 각 항목에 대해 xi와 yi를 선언하기
+            xi = xi.reshape(w.shape)                            # xi를 열 벡터로 전환하기
+            z = np.dot(w.T, xi)                                 # 순입력 z를 계산함 ( np.dot(w.T, xi) = np.dot(xi, w) )
+            y_hat = np.where(z&gt;=0.0, maxlabel, minlabel)        # z가 0보다 크면 y_hat을 1로, z가 0보다 작으면 y_hat을 -1로 설정하는 step function 구현
+            if y_hat != yi:                                     # 만약 분류가 정확하지 않아서 ŷⁱ값과 yⁱ값이 다르다면,
+                delta_w = eta * (yi - y_hat) * xi               # 가중치 조정값 Δw을 선언하고 계산하기
+                w += delta_w                                    # 가중치 조정값 Δw을 가중치 w에 적용
+    
+    # 조정된 최종 가중치 w 출력
+    return w
+
+# 퍼셉트론 실행
+w_final = perceptron(xb, y, w, eta, epochs, random_seed)
+
+# 최종 가중치 w를 결과로 출력
+print(w_final)
+</code></pre>
+<h2>7-4. 퍼셉트론의 한계?</h2>
+<ul>
+<li>최적 분류의 한계
+<ul>
+<li>직선으로 해내는 분류는 최적의 분류가 아닐 수 있음</li>
+<li>직선 그래프의 기울기와 절편이 단 하나의 값이 아닌 여러 값이 나올 수 있다면, 최적의 분류는 도대체 무엇인가?</li>
+</ul>
+</li>
+<li>XOR problem
+<ul>
+<li>1969년 MIT의 Marvin Minsky는 퍼셉트론이 XOR problem을 풀지 못한다는 것을 밝혀냈음</li>
+<li>다층 퍼셉트론은 XOR problem을 풀어낼 수 있지만, 그렇게 학습시킬 방법은 찾지 못함
+<ul>
+<li>e.g. 선형 이진 분류기는 다음과 같이 좌표평면에 있는 XOR 데이터를 직선 그래프로 분류해낼 수 없음<pre><code>↑ y
+|
+|●(0,1)   ◆(1,1)
+|
+|
+|◆(0,0)   ●(1,0)
+└──────────────────&gt; x
+</code></pre>
+<ul>
+<li>하지만 다층 퍼셉트론을 사용하면 직선이 아닌 곡선 그래프로 (0,0) &amp; (1,1) vs (0,1) &amp; (1,0) 이렇게 두 그룹으로 묶을 수 있음</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>1974년 하버드 대학원생 Paul Werbos가 다층 퍼셉트론을 학습시킬 수 있는 backpropagation 개념을 제안
+<ul>
+<li>'인공 신경망'의 사용</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>8. 기계학습 workflow</h1>
+<h2>8-1. 기계학습에서의 함수</h2>
+<ul>
+<li>일반 프로그래밍에서의 함수는 다음과 같음
+<ul>
+<li>입력값 x → f(x) → 출력값 y
+<ul>
+<li>함수 f(x)는 프로그래머가 정의/설계/구현해야 함</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>기계학습에서의 함수는 다음과 같음
+<ul>
+<li>학습단계: 입력값 x &amp; 사전 출력값 y → perceptron(x,y)
+<ul>
+<li>함수 perceptron(x,y)는 기계가 스스로 생성함</li>
+</ul>
+</li>
+<li>예측단계: 입력값 x &amp; 사전 출력값 y → perceptron(x,y) → 예측값 y_hat
+<ul>
+<li>기계가 생성해낸 함수가 출력한 예측값 y_hat이 사전에 실제로 주입했던 출력값 y과 얼마나 근접한지 확인하여 함수의 정확도를 평가</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>8-2. 자료 준비 단계</h2>
+<ul>
+<li>
+<p>Raw data의 수집과 전처리</p>
+<ul>
+<li>전처리
+<ul>
+<li>Shuffling
+<ul>
+<li>자료의 순서를 무작위로 섞어줌</li>
+</ul>
+</li>
+<li>Feature scaling
+<ul>
+<li>Normalization / Min-max scaling
+<ul>
+<li>모든 자료가 0부터 1 사이의 범위를 가지도록 정규화</li>
+<li>X<sub>norm</sub> = ( X - X<sub>min</sub> ) / ( X<sub>max</sub> - X<sub>min</sub> )</li>
+</ul>
+</li>
+<li>Standardization
+<ul>
+<li>자료의 범위를 제한하지 않고 대신 평균값이 0, 표준편차가 1이 되도록 표준화</li>
+<li>Code example<pre><code>mu = x.mean(axis=0)
+sigma = x.std(axis=0)
+x = (x - mu) / sigma
+</code></pre>
+</li>
+<li>정규화와는 달리 특이값에 영향을 덜 받음
+<ul>
+<li>e.g. 데이터 [1, 3, 2, 4, 5, 12854] 에서 정규화 수행 시 특이값 12854을 제외한 나머지 값들이 과소해지는 문제 발생</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>모델을 훈련시킬 training set을 준비</p>
+<ul>
+<li>학습을 위한 자료로써 가장 많이 할당되어야 함</li>
+<li>주로 전체 자료의 70~80%</li>
+</ul>
+</li>
+<li>
+<p>모델을 검증할 validation set을 준비</p>
+<ul>
+<li>모델의 hyperparameter를 fine-tuning하고 완성도를 높이기 위해 사용</li>
+</ul>
+</li>
+<li>
+<p>모델의 최종 성능을 평가할 test set을 준비</p>
+<ul>
+<li>학습 과정에는 전혀 관여하지 않음</li>
+</ul>
+</li>
+<li>
+<p>&quot;어떤 자료를 어떻게 수집해서 어떻게 분류하고 분배할 것인가?&quot;가 관건</p>
+</li>
+<li>
+<p>자료 준비 및 전처리 예시</p>
+<ul>
+<li>e.g. 다음과 같은 데이터셋이 있을 경우<pre><code>1.96	 0.83	1
+2.52	 1.83	1
+2.76	 2.82	1
+3.16	 3.34	1
+1.10	-1.14	0
+-1.33	 0.34	0
+0.76	-3.07	0
+-0.37	-1.91	0
+</code></pre>
+<ul>
+<li>여기서 처음 두 개의 열은 feature를 의미하며, n번째 feature는 아랫첨자 ₙ을 사용해서 표기함
+<ul>
+<li>첫 번째 열은 x₁, 두 번째 열은 x₂</li>
+<li>세 번째 열은 클래스 레이블 y</li>
+</ul>
+</li>
+<li>각 행은 sample 또는 example이 되며, i번째 샘플은 윗첨자 ⁽ⁱ⁾ 을 사용해 표기함
+<ul>
+<li>e.g.
+<ul>
+<li>x₁⁽¹⁾ = 1.96</li>
+<li>x₂⁽¹⁾ = 0.83</li>
+<li>y⁽¹⁾ = 1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>전처리 code example<pre><code>import numpy as np
+
+# 데이터 불러오기
+data = np.genfromtxt('data.txt')        # shape(100,3) 형상으로 자료를 읽어들임
+np.random.seed(1)                       # random.seed 고정
+np.random.shuffle(data)                 # slicing 하기 전에 데이터 shuffle 진행
+x = data[:, :2]                         # 처음 두 개의 열을 특성 x₁, x₂로 할당하여 slice
+y = data[:, 2]                          # 3번째 열을 클래스 레이블 y로 할당하여 slice
+y = y.astype(np.int)                    # y는 실수값이므로 int 형식으로 변환함 
+
+# 데이터 분배하기
+num = int(x.shape[0] * 0.8)             # 전체 데이터를 '학습 80%' vs '평가 20%'의 비율로 나누기
+x_train, x_test = x[:num], y[num:]      # x 데이터셋을 8:2로 slicing
+y_train, y_test = y[:num], y[num:]      # y 데이터셋을 8:2로 slicing
+
+# 데이터 정규화/표준화 수행
+# 코드는 생략
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2>8-3. 학습 단계</h2>
+<ul>
+<li>머신러닝 알고리즘을 선택</li>
+<li>인공 뉴런이나 신경망 등을 구현</li>
+<li>주어진 training set으로 학습 수행</li>
+<li>머신러닝 모델이 완성됨
+<ul>
+<li>모델이 의도한 대로 작동하는지를 validation set을 사용하여 validation 수행
+<ul>
+<li>hyperparameter들을 조정해가며 성능을 높이는 fine-tuning 수행</li>
+</ul>
+</li>
+<li>모델이 검증 단계를 통과하면 다음 단계로 넘어가고, 통과하지 못하면 처음부터 다시 시작해야 함</li>
+</ul>
+</li>
+</ul>
+<h2>8-4. 평가 단계</h2>
+<ul>
+<li>test set을 사용해 모델의 최종 성능을 평가함
+<ul>
+<li>모델이 평가 단계를 통과하면 실전 배치</li>
+<li>모델이 평가 단계에 실패하면 원인을 분석하고 오류를 검토해 처음으로 돌아가 재학습설계를 수행</li>
+</ul>
+</li>
+<li>모델의 예측과 평가 code example<pre><code># 예측함수 구현
+def perceptron_predict(X, w):
+    z = np.dot(X, w)                         # 예측할 입력/검증/테스트 자료 X와 가중치 w       
+    y_hat = np.where(z&gt;0., 1, 0)             # (m_samples, 1)의 형상을 가지며, 0 또는 1을 반환
+    return y_hat
+
+# 예측함수 활용
+y_hat = perceptron_predict(X_test, w)        # test set을 사용해 예측함수 작동시키기
+missed = 0                                   # '모델이 데이터를 잘못 분류한 횟수'를 저장하는 변수
+m_samples = len(y_test)                      # test set 갯수 가져오기
+
+&quot;&quot;&quot;
+for m in range(m_samples):                   # 데이터 갯수만큼 iterator 작동시키기
+    if y_hat[m] != y_test[m]:                # 만약 예측값 y_hat과 실제값 y_test가 다르다면,
+        missed += 1                          # missed를 1 증가시킴
+&quot;&quot;&quot;
+
+missed = np.sum(y_hat.flatten() != y_test)   # 위에서 사용한 for문 대신에 np.sum()을 사용할수도 있음
+
+print('Misclassified: {}/{}'.format(missed, m_samples))
+</code></pre>
+</li>
+</ul>
+<h2>8-5. 배포 단계</h2>
+<ul>
+<li>모델을 실전에 배치해서 모델이 새로운 자료를 받고, 훈련된대로 prediction을 수행하고, 레이블을 반환하게 됨</li>
+</ul>
+<hr>
+<h1>9. 객체지향으로 퍼셉트론 구현하기</h1>
+<h2>9-1. 필요 변수</h2>
+<ul>
+<li>데이터들은 일련의 카테고리, 즉 속성으로 나눌 수 있음
+<ul>
+<li>e.g. 자동차의 속성: 전고, 전장, 세그먼트, 트렁크 용량, 탑승 인원, 무게 등</li>
+</ul>
+</li>
+<li>퍼셉트론을 객체지향 패러다임으로 구현하는 경우에서는 객체가 지속적으로 가지고 있을 속성을 '인스턴스 변수'로 지정하면 됨
+<ul>
+<li>e.g. 가중치 w, 학습률 eta, 반복횟수 epochs, 랜덤시드 random_seed
+<ul>
+<li>입력값 x, 출력값 y, 순입력 z, 클래스 레이블 y_hat 등은 바뀔 가능성이 높으므로 인스턴스가 아닌 '로컬 변수'로 지정하는 것이 적절함</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>9-2. 필요 메소드</h2>
+<ul>
+<li>다음과 같은 작업을 정의하는 메소드가 필요함
+<ul>
+<li>학습 (fit)</li>
+<li>순입력 (net_input)</li>
+<li>활성화 (activate)</li>
+<li>예측 (predict)</li>
+</ul>
+</li>
+</ul>
+<h2>9-3. 객체지향으로 퍼셉트론 클래스를 설계하는 Code Example</h2>
+<pre><code>import numpy as np
+
+class Perceptron:
+    def __init__(self, eta=0.1, epochs=10, random_seed=1):
+        self.eta = eta
+        self.epochs = epochs
+        self.random_seed = random_seed
+    
+    def fit(self, X, y, X0=False):                      # X0는 편향의 유무를 의미함
+        if X0 == False:                                 # 만약 편향이 존재하지 않는다면,
+            X = np.c_[np.ones(len(y)), X]               # 값이 1인 편향 b를 앞에 추가해주는 numpy concatenation 수행
+        np.random.seed(self.random_seed)
+        self.w = np.random.random(X.shape[1])           # 가중치 w는 계산의 편의를 위해 1차원으로 초기화
+        self.max_y, self.min_y = y.max(), y.min()       # 양극성 step function의 출력값을 수동으로 지정하는 대신, 주어진 클래스 레이블에서 최댓값과 최소값을 가져와서 변수 max_y와 min_y로 사용하기
+
+        # 반복 학습 중 발생하는 오류 갯수를 기록하는 cost(=loss) 변수를 배열로 선언함
+        # 인스턴스 변수로 사용하기 위해서 self 파라미터 사용
+        # 변수 이름에 single trailing underscore를 사용하는 이유는 scikit-learn의 naming convention을 따르기 위함
+        # scikit-learn에서는 'fit()이 호출되어 예측값이 학습이 되고 나서야 어떠한 값이 저장되는 변수'에 이러한 작명을 사용함
+        # 레퍼런스: https://scikit-learn.org/stable/developers/develop.html#estimated-attributes
+        self.cost_ = [] 
+
+        # 마찬가지의 이유와 작명법에 기반하여, '학습 이후 조정된 가중치 w'를 저장하는 변수는 w_ 라는 이름으로 선언함
+        self.w_ = np.array([self.w])
+
+        for i in range(self.epochs):
+            errors = 0
+            for xi, yi in zip(X, y):
+                y_hat = self.activate(xi)               
+                delta = self.eta * (yi - y_hat) * xi
+                self.w = self.w + delta
+                if(y != y_hat): errors += 1
+            self.cost_.append(errors)                   # 1회 학습당 오류 갯수를 cost로 기록
+            self.w_ = np.vstack([self.w_, self.w])
+        
+        return self                                     # self를 반환하는 것은 method chaining에 활용하는데 유용함
+    
+    def net_input(self, X): 
+        if X.shape[0] == self.w.shape[0]:               # 편향값이 1이 아닌 경우를 검사하기 위함
+            z = np.dot(self.w.T, X)
+        else:
+            z = np.dot(X, self.w[1:]) + self.w[0]
+        return z
+
+    def activate(self, X):                              # step function 활성화 함수를 구현함
+        mid = (self.max_y + self.min_y) / 2
+        return np.where(self.net_input(X) &gt; mid, self.max_y, self.min_y)
+
+    def predict(self, X):                               # activate()가 곧 predict 과정이지만, 머신러닝 workflow의 일관성을 위해서 별도로 모듈화
+        return self.activate(X)
+</code></pre>
+<h2>9-4. 객체지향으로 퍼셉트론 객체를 구현하고 시동하는 code example</h2>
+<pre><code>import mlmodule                                       # 이번 실습을 위해 미리 만들어놓은 전처리용 모듈이 있다고 가정함
+X, y = mlmodule.sample_data()                         # 모듈에서 데이터를 가져옴
+ppn = Perceptron(eta=0.1, epochs=10)                  # 변수를 Perceptron 클래스로 초기화
+ppn.fit(X, y)                                         # 학습 시작
+mlmodule.plot(X, y, ppn.w)                            # ppn.w를 first class object로써 모듈에 전달해 plotting 수행
+</code></pre>
+<h2>9-5. Multi-layer Perceptron</h2>
+<ul>
+<li>XOR problem을 어떻게 해결할 수 있을까?
+<ul>
+<li>단일 퍼셉트론은 기본적으로 선형 이진 분류를 수행할 수 있음</li>
+<li>그렇다면 단일 퍼셉트론으로 AND 게이트, NAND 게이트, OR 게이트를 각각 구현한 후, 이를 조합해 XOR 게이트를 만든다면?<pre><code>x₁ ───┬──&gt;┌      ┐ 
+     ┌┼──&gt;│ NAND │ h₁ 
+     ││   └      ┘ ↘
+     ││               [ AND ] → y
+     ││   ┌      ┐ ↗
+     │└──&gt;│  OR  │ h₂
+x₂ ──┴───&gt;└      ┘ 
+</code></pre>
+</li>
+<li>또는 NAND 게이트만 3개 조합해도 XOR 게이트를 만들어낼 수 있음</li>
+<li>이런 원리를 사용해 게이트들을 수많은 layer들로 조합해내면 복잡한 논리를 구현할 수 있음</li>
+</ul>
+</li>
+<li>다층 구조 인공 신경망
+<ul>
+<li>e.g. 3층 신경망 (0층, 1층 2층)<pre><code>입력층(0)    은닉층(1)    출력층(2)
+─────────────────────────────────
+   x₁  ─────&gt;  Σ|∫   
+       ╲ \ ↗       ╲
+        ╲ ╱↘        ↘
+         ╳     Σ|∫ ─────&gt;  Σ/∫
+        ╱ ╲↗        ↗
+       ╱ / ↘       ╱
+   x₂  ─────&gt;  Σ|∫   
+─────────────────────────────────
+   ↑      ↑      ↑
+  노드   가중치   뉴론
+</code></pre>
+</li>
+<li>생물학적 신경망 vs 인공 신경망
+<ul>
+<li>뉴론 = 노드</li>
+<li>수상돌기 = 입력</li>
+<li>축색돌기 = 출력</li>
+<li>시냅스 = 가중치</li>
+</ul>
+</li>
+<li>비선형 입력 자료의 학습을 가능하게 함</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>10. 순방향 신경망</h1>
+<h2>10-1. 개념 설명</h2>
+<pre><code> 입력층(0)                   은닉층(1)                      출력층(2)
+────────────────────────────────────────────────────────────────────────
+   x₁  ─────&gt; w₁₁⁽¹⁾  ↗  z₁⁽¹⁾ | a₁⁽¹⁾  ───↘ w₁₁⁽²⁾  ↘
+       ╲ \ ↗  w₂₁⁽¹⁾  ↗                 ╲ ↗  w₁₂⁽²⁾  ↗  z₁⁽²⁾ | a₁⁽²⁾
+        ╲ ╱↘  w₁₂⁽¹⁾  ↘                 ╱╲ ↗ w₂₁⁽²⁾  ↗ 
+         ╳               z₂⁽¹⁾ | a₂⁽¹⁾    ╳     
+        ╱ ╲↗  w₂₂⁽¹⁾  ↗                 ╲╱ ↘ w₂₂⁽²⁾  ↘   
+       ╱ / ↘  w₁₃⁽¹⁾  ↘                 ╱ ↘  w₃₁⁽²⁾  ↘  z₂⁽²⁾ | a₂⁽²⁾
+   x₂  ─────&gt; w₂₃⁽¹⁾  ↘      Σ | ∫      ───↗ w₃₂⁽²⁾  ↗
+────────────────────────────────────────────────────────────────────────
+                               ↑                              ↑   
+   X → np.dot(A⁽⁰⁾, W⁽¹⁾)  =  Z⁽¹⁾  →  p.dot(A⁽¹⁾, W⁽²⁾)  =  Z⁽²⁾
+</code></pre>
+<ul>
+<li>Z = Σ(가중치×입력) = net input = weighted sum</li>
+<li>Z⁽ˡ⁾: l층에서의 뉴론의 입력
+<ul>
+<li>Z⁽ˡ⁾ = W⁽ˡ⁾ᵀ × A⁽ˡ⁻¹⁾
+<ul>
+<li>l층의 입력 Z⁽ˡ⁾ = l층의 가중치를 전치하고, 그 앞층의 출력 A와 내적한 것</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>A⁽ˡ⁾: l층에서의 뉴론의 출력
+<ul>
+<li>A⁽ˡ⁾ = g(Z⁽ˡ⁾)
+<ul>
+<li>l층의 출력 A⁽ˡ⁾ = l층의 순입력 Z에 활성화 함수를 적용한 것</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>L: 전체 층의 수</li>
+<li>W: 가중치</li>
+<li>ŷ: 최종 출력
+<ul>
+<li>여기서는 A⁽²⁾가 됨</li>
+</ul>
+</li>
+</ul>
+<h3>단일 layer 단위에서 살펴보기</h3>
+<pre><code>        l층의 가중치 W⁽ˡ⁾
+    ─────────────────────&gt; [ Z⁽ˡ⁾ | g(Z⁽ˡ⁾) ] ─────────&gt;
+     이전 층의 출력 A⁽ˡ⁻¹⁾                          A⁽ˡ⁾
+</code></pre>
+<h2>10-2. 가중치 표기법</h2>
+<ul>
+<li>wᵢⱼ 표기법
+<ul>
+<li>e.g. 순입력 Z</li>
+</ul>
+<pre><code>Z⁽ˡ⁾ =  ┌ w₁₁⁽ˡ⁾   w₁₂⁽ˡ⁾   w₁₃⁽ˡ⁾ ┐ T    ┌ x₁ ┐
+        └ w₂₁⁽ˡ⁾   w₂₂⁽ˡ⁾   w₂₃⁽ˡ⁾ ┘   ×  └ x₂ ┘
+    
+        ┌ w₁₁⁽ˡ⁾   w₂₁⁽ˡ⁾ ┐     ┌ x₁ ┐
+     =  │ w₁₂⁽ˡ⁾   w₂₂⁽ˡ⁾ │  ×  │    │
+        └ w₁₃⁽ˡ⁾   w₂₃⁽ˡ⁾ ┘     └ x₂ ┘
+
+        ┌ w₁₁⁽ˡ⁾*x₁ + w₂₁⁽ˡ⁾*x₂ ┐     ┌ z₁⁽ˡ⁾ ┐
+     =  │ w₁₂⁽ˡ⁾*x₁ + w₂₂⁽ˡ⁾*x₂ │  =  │ z₂⁽ˡ⁾ │
+        └ w₁₃⁽ˡ⁾*x₁ + w₂₃⁽ˡ⁾*x₂ ┘     └ z₃⁽ˡ⁾ ┘
+</code></pre>
+<ul>
+<li>e.g. 출력 A</li>
+</ul>
+<pre><code>                 ┌ a₁⁽ˡ⁾ ┐
+A⁽ˡ⁾ = g(Z⁽ˡ⁾) = │ a₂⁽ˡ⁾ │
+                 └ a₃⁽ˡ⁾ ┘
+</code></pre>
+</li>
+<li>wᵢⱼᵀ 표기법 (= wⱼᵢ 표기법)
+<ul>
+<li>가중치 행렬을 미리 전치시키는 표기법
+<ul>
+<li>스탠퍼드 대학교의 Andrew Ng 교수는 이 표기법을 사용함</li>
+</ul>
+</li>
+</ul>
+<pre><code>        ┌ w₁₁⁽¹⁾   w₂₁⁽¹⁾ ┐ 
+w⁽¹⁾ =  │ w₁₂⁽¹⁾   w₂₂⁽¹⁾ │ 
+        └ w₁₃⁽¹⁾   w₂₃⁽¹⁾ ┘ 
+
+w⁽²⁾ =  ┌ w₁₁⁽²⁾   w₂₁⁽²⁾   w₃₁⁽²⁾ ┐  
+        └ w₁₂⁽²⁾   w₂₂⁽²⁾   w₃₂⁽²⁾ ┘ 
+</code></pre>
+<ul>
+<li>따라서 계산에서도 전치를 누락시켜야 함
+<ul>
+<li>Z⁽ˡ⁾ = W⁽ˡ⁾ × A⁽ˡ⁻¹⁾</li>
+<li>미리 전치된 가중치를 사용하므로 계산이 간단해짐</li>
+</ul>
+</li>
+<li>e.g. 순입력 Z</li>
+</ul>
+<pre><code>        ┌ w₁₁⁽ˡ⁾   w₂₁⁽ˡ⁾ ┐     ┌ x₁ ┐
+Z⁽ˡ⁾ =  │ w₁₂⁽ˡ⁾   w₂₂⁽ˡ⁾ │  ×  │    │
+        └ w₁₃⁽ˡ⁾   w₂₃⁽ˡ⁾ ┘     └ x₂ ┘
+
+        ┌ w₁₁⁽ˡ⁾*x₁ + w₂₁⁽ˡ⁾*x₂ ┐     ┌ z₁⁽ˡ⁾ ┐
+     =  │ w₁₂⁽ˡ⁾*x₁ + w₂₂⁽ˡ⁾*x₂ │  =  │ z₂⁽ˡ⁾ │
+        └ w₁₃⁽ˡ⁾*x₁ + w₂₃⁽ˡ⁾*x₂ ┘     └ z₃⁽ˡ⁾ ┘
+</code></pre>
+</li>
+</ul>
+<h2>10-3. 순방향 신경망 예시</h2>
+<ul>
+<li>입력 자료 X = (n, m)의 형상을 가지는 행렬<pre><code>┌ x₁⁽¹⁾  x₁⁽²⁾  ...  x₁⁽ᵐ⁾ ┐
+│ x₂⁽¹⁾  x₂⁽²⁾  ...  x₂⁽ᵐ⁾ │
+│ ...    ...    ...   ...  │
+└ xₙ⁽¹⁾  xₙ⁽²⁾  ...  xₙ⁽ᵐ⁾ ┘
+</code></pre>
+<ul>
+<li>이 예제에서는 n이 2고 m이 1인 (2,1) 형상의 X를 사용함<pre><code>X = ┌ 1.0 ┐
+    └ 0.0 ┘
+</code></pre>
+</li>
+</ul>
+</li>
+<li>가중치 표기법: wᵢⱼᵀ (가중치는 이미 전치됨)
+<ul>
+<li>가중치 W는 임의로 지정함
+<ul>
+<li>단, 가중치에 0을 너무 많이 사용하면 학습이 잘 되지 않을 수 있음</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>신경망은 다음과 같이 구성됨<pre><code>입력층(0)                 은닉층(1)                    출력층(2)
+────────────────────────────────────────────────────────────────────
+1.0  ─────&gt;  0.1  ↗  z₁⁽¹⁾ | a₁⁽¹⁾  ───↘  0.3  ↘
+    ╲ \ ↗   0.4  ↗                 ╲ ↗   0.2  ↗  z₁⁽²⁾ | a₁⁽²⁾
+        ╲ ╱↘   0.2  ↘                 ╱╲ ↗  0.1  ↗ 
+        ╳             z₂⁽¹⁾ | a₂⁽¹⁾    ╳     
+        ╱ ╲↗   0.2  ↗                 ╲╱ ↘  0.2  ↘   
+    ╱ / ↘   0.3  ↘                 ╱ ↘   0.1  ↘  z₂⁽²⁾ | a₂⁽²⁾
+0.0  ─────&gt;  0.0  ↘      Σ | ∫      ───↗  0.1  ↗
+────────────────────────────────────────────────────────────────────
+</code></pre>
+</li>
+</ul>
+<h3>진행 과정</h3>
+<ol>
+<li>
+<p>은닉층(1)의 순입력 Z⁽¹⁾를 계산하기</p>
+<pre><code>       ┌ 0.1   0.4 ┐     ┌ 1.0 ┐
+Z⁽¹⁾ = │ 0.2   0.2 │  ×  │     │
+       └ 0.3   0.0 ┘     └ 0.0 ┘
+
+       ┌ 0.1 ┐
+     = │ 0.2 │
+       └ 0.3 ┘
+</code></pre>
+</li>
+<li>
+<p>이를 sigmoid 활성화 함수에 적용해 은닉층(2)의 출력 A⁽¹⁾를 구하기</p>
+<pre><code>               ┌ 0.1 ┐
+A⁽¹⁾ = sigmoid(│ 0.2 │)
+               └ 0.3 ┘
+
+       ┌ 0.525 ┐
+     = │ 0.500 │
+       └ 0.574 ┘
+</code></pre>
+</li>
+<li>
+<p>이를 사용해 출력층(2)의 순입력 Z⁽²⁾를 계산하기</p>
+<pre><code>       ┌ 0.3  0.2  0.1 ┐     ┌ 0.525 ┐
+Z⁽²⁾ = │               │  ×  │ 0.500 │
+       └ 0.2  0.1  0.1 ┘     └ 0.574 ┘
+
+     = ┌ 0.325 ┐
+       └ 0.217 ┘
+</code></pre>
+</li>
+<li>
+<p>이를 sigmoid 활성화 함수에 적용해 출력층(2)의 출력 A⁽²⁾ 구하기</p>
+<pre><code>               ┌ 0.325 ┐
+A⁽²⁾ = sigmoid(│       │)
+               └ 0.217 ┘
+
+     = ┌ 0.581 ┐
+       └ 0.554 ┘
+
+     = ŷ = 이 신경망의 최종 출력이자 예측값 y_hat             
+</code></pre>
+</li>
+</ol>
+<h2>10-4. 순방향 신경망 실습</h2>
+<ul>
+<li>MNIST handwritten digit dataset
+<ul>
+<li>숫자 0부터 9까지를 손글씨로 적은, 28×28 픽셀 크기의 사진이 약 6만장 준비되어 있음</li>
+</ul>
+</li>
+<li>입력층의 크기: 28픽셀 × 28픽셀 = 784
+<ul>
+<li>입력층의 형상: (784, 1)</li>
+</ul>
+</li>
+<li>은닉층의 크기: 여기서는 임의로 약 100개를 설정함
+<ul>
+<li>은닉층 형상: (100, 1)</li>
+<li>은닉층의 크기는 임의로 지정을 해야 하는 사항
+<ul>
+<li>최적의 은닉층을 산출해낼 수 있는 공식이나 방법론은 없음</li>
+<li>입력층보다 작고 출력층보다 크면 됨</li>
+<li>시행착오를 통해서 적절한 크기를 찾아내야 함</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>출력층의 크기: 숫자 0부터 9까지 10개로 분류해야 함 = 10
+<ul>
+<li>출력층 형상: (10, 1)</li>
+</ul>
+</li>
+<li>신경망은 다음과 같이 구성됨<pre><code>입력층(0)             은닉층(1)                   출력층(2)
+─────────────────────────────────────────────────────────────
+  x₁    ───────&gt;   z₁⁽¹⁾ | a₁⁽¹⁾   ───────&gt;   z₁⁽²⁾ | a₁⁽²⁾  
+  ⋮      ╲ ╳ ╳ ↗         ⋮          ╲ ╳ ╳ ↗         ⋮
+  ⋮      ╳ ╳ ╳ ↘         ⋮          ╳ ╳ ╳ ↘         ⋮
+  ⋮      ╳ ╳ ╳ →         ⋮          ╳ ╳ ╳ →         ⋮
+  ⋮      ╳ ╳ ╳ ↗         ⋮          ╳ ╳ ╳ ↗         ⋮
+  ⋮      ╱ ╳ ╳ ↘         ⋮          ╱ ╳ ╳ ↘         ⋮
+ x₇₈₄   ───────&gt; z₁₀₀⁽¹⁾ | a₁₀₀⁽¹⁾ ───────&gt;  z₁₀⁽²⁾ | a₁₀⁽²⁾
+─────────────────────────────────────────────────────────────
+               ↑                           ↑     
+784 × 100 = 78400개의 가중치    100 × 10 = 1000개의 가중치
+</code></pre>
+<ul>
+<li>전체 노드의 개수: 784 + 100 + 10 = 894</li>
+<li>전체 가중치 개수: 78400 + 1000 = 79400</li>
+</ul>
+</li>
+<li>이 실습에서 가중치는 임의로 정하는 대신 사전에 학습된 가중치를 불러와서 사용함
+<ul>
+<li>wᵢⱼᵀ 표기법을 사용하는 가중치이므로 전치를 할 필요가 없음</li>
+</ul>
+</li>
+</ul>
+<h3>MNIST 순방향 신경망 Code Example</h3>
+<pre><code>import numpy as np
+import mlmodule                                   # 이번 실습을 위해 미리 만들어놓은 전처리용 모듈이 있다고 가정함
+
+g = lambda x : 1 / (1 + np.exp(-x))               # sigmoid 활성화 함수를 정의함
+
+(X, y) = mlmodule.load_mnist_number(7)            # 숫자 7이 적힌, 미리 준비한 MNIST 학습자료를 불러옴
+W1 = mlmodule.load_mnist_weight('w_xh.weights')   # 사전에 학습된 입력층→은닉층 가중치를 불러옴
+
+Z1 = np.dot(W1, X)                                # 은닉층의 순입력 Z1를 계산
+                                                    # (wᵢⱼᵀ 표기법을 사용하므로, 전치 없이 바로 곱하면 됨)
+
+A1 = g(Z1)                                        # Z1에 활성화 함수를 적용해서 은닉층의 출력 A1를 계산
+
+W2 = mlmodule.load_mnist_weight('w_hy.weights)    # 사전에 학습된 은닉층→출력층 가중치를 불러옴
+
+Z2 = np.dot(W2, A1)                               # 출력층의 순입력 Z2를 계산
+
+y_hat = g(Z2)                                     # Z2에 활성화 함수를 적용해서 출력층의 최종 출력이자 신경망의 예측값인 y_hat을 계산 
+
+print('Image:', y)                                # 우리가 숫자 7에 해당하는 이미지를 골랐음을 표시하고,
+print('Prediction:', np.round_(y_hat, 3))         # 이 이미지가 무슨 숫자인지를 신경망이 예측한 결과값을 표시함
+                                                    
+
+# 출력값은 다음과 같이 나옴
+
+# Image: 7
+# Prediction: [0, 0.002, 0.001, 0, 0, 0.001, 0, 0.979, 0.006, 0.003]
+
+# index 0부터 9까지의 배열로, 숫자 0에서 9 중에서 어떤 숫자인지를 신경망이 추정한 '확률'로써 출력함
+# 입력받은 이미지가 숫자 7일 확률이 97.9%라고 신경망은 추정하고 있음
+</code></pre>
+<hr>
+<h1>11. Adaptive Linear Neuron (ADALINE)</h1>
+<ul>
+<li>심리학자 Bernard Widrow가 1960년에 스탠포드 대학교에서 논문으로 발표</li>
+<li>퍼셉트론을 향상시킨 알고리즘</li>
+<li>퍼셉트론과의 차이점
+<ul>
+<li>활성화 함수
+<ul>
+<li>퍼셉트론: step function
+<ul>
+<li>출력되는 오차는 -1, 0, 1가 됨</li>
+</ul>
+</li>
+<li>아달라인: identity function
+<ul>
+<li>넣은 값을 그대로 반환함</li>
+<li>출력되는 오차는 모든 실수값이 됨</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>가중치
+<ul>
+<li>퍼셉트론: 각 sample마다 가중치를 변경 및 조정</li>
+<li>아달라인: 모든 sample에 대한 오차를 측정한 후, 한꺼번에 조정</li>
+</ul>
+</li>
+<li>오차
+<ul>
+<li>퍼셉트론: 학습을 잘 했는지 못 했는지 단편적인 정보(-1/0/1)만 제공</li>
+<li>아달라인: 오차의 실제 크기를 알 수 있으므로 이 정보를 사용해 가중치를 효과적으로 조정 가능</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>11-1. Cost function</h2>
+<ul>
+<li>사분면에 다음과 같이 데이터들이 존재한다고 할 때, 데이터의 경향성을 가장 잘 설명하는, 데이터를 가장 정확하게 대변하는 직선 f(x)를 어떻게 추측하고 찾아낼 수 있을까?<pre><code>  y↑     f(x) = ax + b
+   |       .╱
+   |     . ╱.
+   |    . ╱
+   |    .╱..
+   |  . ╱.
+   |  .╱   .
+   |. ╱. .     
+───┼──────────────────&gt; 
+   |╱                 x
+</code></pre>
+</li>
+</ul>
+<h3>Least Square Approximation</h3>
+<ul>
+<li>'데이터의 실제 값'과 '추측된 경향성' 사이의 '오차'를 측정하는 방법에는 다음과 같이 샘플 데이터 A와 샘플 데이터 B가 경향성 그래프로부터 얼마나 떨어져 있는지 그 y축 거리를 사용하는 방법이 있음<pre><code>   y↑     f(x) = ax + b
+    |        ╱
+    |       ╱
+    |  A . ╱↑
+    |    ↓╱ |
+    |    ╱  |
+    |   ╱   . B
+    |  ╱      
+ ───┼──────────────────&gt; 
+    |╱                 x
+</code></pre>
+<ul>
+<li>다만 일부 데이터는 거리가 양수, 일부 데이터는 거리가 음수이므로, 이를 단순히 합쳐버리면 오차가 상쇄되어버리는 현상이 발생함
+<ul>
+<li>이를 방지하고자 거리(오차)를 '제곱'해서 사용하고, 이것이 바로 제곱오차(square error)
+<ul>
+<li>'1차원 직선 거리' 형태였던 오차가 '2차원 정사각형 면적'형태로 바뀜</li>
+<li>왜 절대값을 사용하지 않을까?
+<ul>
+<li>일부 지점에서 미분이 불가능하고 계산이 불편하기 때문</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>제곱오차, 즉 정사각형들의 면적 합이 최소가 되는 그래프 f(x)를 찾아내는 방법을 통해 '데이터를 가장 정확하게 대변하는 경향성'을 추론해내는 것을 최소제곱법(least square approximation)이라고 함
+<ul>
+<li>여기서의 f(x)를 cost(=loss) function이라고 함
+<ul>
+<li>'실제 데이터'와 '추측된 경향성' 사이의 괴리인 '오차(오류)'를 함수로써 나타낸 것</li>
+<li>비용 함수의 값이 작다는 것은, 실제 데이터와 추측된 경향성 사이의 오차가 적다는 것이고, 그만큼 데이터를 정확하게 대변한다는 의미</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>제곱오차를 모두 더하는 오차제곱합(sum of squares error)의 일반식
+<ul>
+<li>E(a,b) = ⁿΣᵢ₌₁(yᵢ-(axᵢ+b))²
+<ul>
+<li>각 데이터의 제곱오차를 모두 더하는 공식</li>
+</ul>
+</li>
+<li>yᵢ를 클래스 레이블로, axᵢ+b를 예측값 ŷ로 정의하게 되면 이것이 바로 아달라인에서의 비용함수가 됨</li>
+</ul>
+</li>
+</ul>
+<h2>11-2. 아달라인에서의 비용 함수</h2>
+<ul>
+<li>J(w) = 1/2 × ᵐΣᵢ₌₁(y⁽ⁱ⁾ - ŷ⁽ⁱ⁾)²
+<ul>
+<li>오차제곱합(SSE) 일반식과의 차이점
+<ul>
+<li>앞에 1/2가 붙은 이유는 비용 함수를 미분했을 때 값이 복잡해지지 않도록 하기 위함
+<ul>
+<li>미분 결과값에 큰 영향을 끼치지 않으므로 편의를 위해 임의로 상수를 적용</li>
+</ul>
+</li>
+<li>모든 샘플에 대한 오차를 한 번에 모아 가중치를 조정하기 위해, 샘플의 총 갯수 m만큼 합계 연산을 수행하는 ᵐΣᵢ₌₁를 사용</li>
+<li>미리 주어진 i번째 샘플 y⁽ⁱ⁾와, 아달라인이 예측한 i번째 예측값 ŷ⁽ⁱ⁾ 사이의 거리를 제곱함</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>아달라인의 비용 함수는 epoch수 만큼 매회 학습을 할 때마다 바뀌게 됨
+<ul>
+<li>그 이유는 아달라인 비용 함수 J(w)의 구조를 보면 알 수 있음</li>
+<li>J(w) = 1/2 × ᵐΣᵢ₌₁(y⁽ⁱ⁾ - z⁽ⁱ⁾)²
+<ul>
+<li>ŷ⁽ⁱ⁾ = 순입력 z⁽ⁱ⁾를 활성화 함수에 적용한 h(z⁽ⁱ⁾) 이기 때문
+<ul>
+<li>하지만 아달라인의 활성화 함수는 입력을 그대로 출력하는 identity function이므로, ŷ⁽ⁱ⁾ = h(z⁽ⁱ⁾) = z⁽ⁱ⁾</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>= 1/2 × ᵐΣᵢ₌₁(y⁽ⁱ⁾ - ⁿΣⱼ₌₁(wⱼxⱼ⁽ⁱ⁾))²
+<ul>
+<li>순입력 z⁽ⁱ⁾ = ⁿΣⱼ₌₁(wⱼxⱼ⁽ⁱ⁾) 이기 때문</li>
+<li>이 식에서 볼 수 있듯이, 가중치 wⱼ는 학습을 할 때마다 바뀌기 때문에, 아달라인의 비용 함수도 epoch수 만큼 달라지게 됨</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>11-3. Gradient Descent</h2>
+<ul>
+<li>아달라인 비용 함수를 최소화하는 w를 어떻게 찾아낼 수 있을까?
+<ul>
+<li>아달라인 비용 함수 J(w)를 w로 미분하면 될까?
+<ul>
+<li>학습 횟수마다 J(w)는 계속 바뀌기 때문에 J(w)를 미분해서 그 기울기가 0인 값을 찾아내는 단순한 방법은 사용할 수 없음</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>경사하강법을 사용해야 함
+<ul>
+<li>적어도 초기 가중치 w₀에 대한, 초기 비용함수 J(w₀)의 미분값 J'(w₀)은 구할 수 있음
+<ul>
+<li>J'(w₀) 값이 양수라면, 이 값이 감소되는 방향으로, 가중치 w를 감소시켜야 함</li>
+<li>J'(w₀) 값이 음수라면, 이 값이 증가되는 방향으로, 가중치 w를 증가시켜야 함
+<ul>
+<li>그래야만 J(w)의 기울기인 J'(w)가 0이 되는 극점, 즉 비용 함수의 최저값을 찾을 수 있기 때문</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>경사하강법을 예시를 통해 이해하기</h3>
+<pre><code>   J(w) ↑               J'(c)
+    =   |                ╱
+   cost |               ╱   ◆ J(d)
+        |              ╱   
+        |             ╱
+        |J(a)        ◆ J(c)
+        | ◆         ╱ 
+        |     J(b) ╱           
+     ───┼──────◆──────────────────── J'(b)  
+        |        ╱               
+   ─────┼───────────────────────────────────&gt; 
+        |      ╱                            w
+        | ↑    ↑     ↑      ↑
+        | a    b     c      d 
+</code></pre>
+<ul>
+<li>epoch = 100 이라고 가정해봅시다.
+<ul>
+<li>4번의 학습에 해당하는 가중치 a, b, c, d가 산출되었습니다.</li>
+</ul>
+</li>
+<li>각 가중치에는 그 가중치를 사용하는 비용 함수 J(w)가 있기 마련입니다.
+<ul>
+<li>예를 들어 가중치가 b일 때, 가중치 b를 사용하는 비용 함수 J(b)가 있고,</li>
+<li>가중치가 c일 때, 가중치 c를 사용하는 비용 함수 J(c)가 있습니다.</li>
+</ul>
+</li>
+<li>학습을 4번 수행한 현재 상황에서는, 비용 함수 J(w)의 값은 총 4개가 분포되어 있습니다.
+<ul>
+<li>우리는 이렇게 분포된 비용 함수들 중에서, 그 비용이 가장 적은, 즉 '최저 비용'을 가지는 가중치 및 그 비용 함수를 찾아야 합니다.</li>
+</ul>
+</li>
+<li>우리는 아직 어떤 가중치일때의 비용 함수 J(w)가 비용이 가장 적은지를 알 수 없습니다. 왜냐하면 가중치는 계속 변화하기 때문이고, 아직 96번의 epoch가 남아있기 때문입니다.
+<ul>
+<li>다만 우리가 알고 있는 사실은, 모든 가중치 wₐₗₗ과 그 J(wₐₗₗ)값들을 이어서 그린 그래프가 있다고 가정했을 때, 어떠한 가중치 x에서의 비용 함수 J(x)가 가장 최저값일 경우, 그 지점에서의 기울기(=미분값)는 0이 될 것이라는 사실입니다.</li>
+<li>지금 상황에서 봤을 때,
+<ul>
+<li>가중치가 a일 때의 비용 함수 J(a)를 미분하면, 미분값 J'(a)는 음수의 어떠한 기울기일 것입니다.</li>
+<li>가중치가 b일 때의 비용 함수 J(b)를 미분하면, 미분값 J'(b)는 0의 기울기일 것입니다. 여기가 극점이자, 이것이 바로 최저 비용을 가지는 비용 함수입니다.</li>
+<li>가중치가 c일 때의 비용 함수 J(c)를 미분하면, 미분값 J'(c)는 양수의 어떠한 기울기일 것입니다.</li>
+<li>가중치가 d일 때의 비용 함수 J(d)를 미분하면, 미분값 J'(d)는 양수의 어떠한 기울기일 것입니다.
+<ul>
+<li>즉, 지금 상황에서는 가중치 b에서의 비용 함수 J(b)와 그 비용이 가장 낮다는 것을 알 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>이 원리를 사용해서, 초기 가중치 w₀에서의 비용 함수 J(w₀)의 기울기를 구한 다음, 그 경사의 '반대 방향', 즉 기울기가 0에 가까워지는 방향으로 가중치를 계속 이동시킴으로써 결국 그 경사가 0이 되는 지점, 즉 최저값을 산출해내는 것이 바로 '경사하강법' 입니다.
+<ul>
+<li>초기 가중치 w₀에서의 비용 함수 미분값 J'(w₀), 즉 그 기울기가 음수(-)라면, 기울기가 점점 증가해서 0이 될 수 있게끔, '증가하는(+)' 방향으로 가중치를 이동시킵니다.</li>
+<li>초기 가중치 w₀에서의 비용 함수 미분값 J'(w₀), 즉 그 기울기가 양수(+)라면, 기울기가 점점 감소해서 0이 될 수 있게끔, '감소하는(-)' 방향으로 가중치를 이동시킵니다.</li>
+<li>이 예시에서는 초기 가중치가 a이고, 이 가중치를 사용하는 비용 함수 J(a)의 기울기 J'(a)는 음수이므로, 이 기울기가 증가하는 방향으로 가중치를 조정해야 합니다. 즉, 가중치를 증가시켜야 합니다.
+<ul>
+<li>그래프에서도 확인할 수 있듯이, 가중치가 a → b 방향으로 증가해야만 극점이자 비용이 최저값인 J(b)에 다다를 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>아달라인 비용함수의 최소값 구하는 방법</h3>
+<ul>
+<li>step direction: -J'(w)
+<ul>
+<li>위에서 언급된대로 경사의 기울기와 반대 방향이 되도록 가중치가 변화되어야 함</li>
+</ul>
+</li>
+<li>step size: -η × J'(w)
+<ul>
+<li>epoch가 반복될 때마다 J'(w)의 변화량이 너무 작다면, 학습률을 높여서 경사를 조금 더 빠르게 내려올 수 있도록 함</li>
+<li>epoch가 반복될 때마다 J'(w)의 변화량이 너무 크다면, 학습률을 낮춰서 경사를 조금 더 천천히 내려올 수 있도록 함</li>
+</ul>
+</li>
+</ul>
+<h3>아달라인 경사하강법의 구현</h3>
+<ul>
+<li>아달라인 경사하강법에서의 가중치 조정값인 Δw 계산하기
+<ul>
+<li>Δw = ∂J(w)/∂wⱼ = ∂/∂wⱼ × 1/2 × Σᵢ(y⁽ⁱ⁾ - h(z⁽ⁱ⁾))²
+<ul>
+<li>∂ = 편미분 연산자</li>
+<li>Δw를 g(x)로 간주하고, 합성함수의 미분 f(g(x))'를 수행하면 f'(g(x))g'(x) 이 되고,</li>
+<li>h(z) = identity function = z = Σwx 가 되므로,
+<ul>
+<li>Δw = 1/2 × Σᵢ[2(y⁽ⁱ⁾ - h(z⁽ⁱ⁾)) × ∂/∂wⱼ × {y⁽ⁱ⁾ - Σᵢ(wⱼxⱼ⁽ⁱ⁾)}]
+<ul>
+<li>여기서 y⁽ⁱ⁾와 xⱼ⁽ⁱ⁾를 상수취급하면,
+<ul>
+<li>Δw = -Σᵢ(y⁽ⁱ⁾ - h(z⁽ⁱ⁾)) × xⱼ⁽ⁱ⁾</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>w<sub>new</sub> = w<sub>old</sub> + Δw = w<sub>old</sub> + {η × Σᵢ(y⁽ⁱ⁾ - h(z⁽ⁱ⁾)) × xⱼ⁽ⁱ⁾}</li>
+</ul>
+<h2>11-4. 객체지향으로 아달라인을 구현하는 Code Example</h2>
+<pre><code>import numpy as np
+
+class AdalineGradientDescent:
+    def __init__(self, eta=0.01, epochs=10, random_seed=1):
+        self.eta = eta
+        self.epochs = epochs
+        self.random_seed = random_seed
+    
+    def fit(self, X, y, X0=False):                      # X0는 편향의 유무를 의미함
+        if X0 == False:                                 # 만약 편향이 존재하지 않는다면,
+            X = np.c_[np.ones(len(y)), X]               # 값이 1인 편향 b를 앞에 추가해주는 numpy concatenation 수행
+        np.random.seed(self.random_seed)
+        self.w = np.random.random(X.shape[1])           # 가중치 w는 계산의 편의를 위해 1차원으로 초기화
+        self.max_y, self.min_y = y.max(), y.min()       # 양극성 step function의 출력값을 수동으로 지정하는 대신, 주어진 클래스 레이블에서 최댓값과 최소값을 가져와서 변수 max_y와 min_y로 사용하기
+
+        # 반복 학습 중 발생하는 오류 갯수를 기록하는 cost(=loss) 변수를 배열로 선언함
+        # 인스턴스 변수로 사용하기 위해서 self 파라미터 사용
+        # 변수 이름에 single trailing underscore를 사용하는 이유는 scikit-learn의 naming convention을 따르기 위함
+        # scikit-learn에서는 'fit()이 호출되어 예측값이 학습이 되고 나서야 어떠한 값이 저장되는 변수'에 이러한 작명을 사용함
+        # 레퍼런스: https://scikit-learn.org/stable/developers/develop.html#estimated-attributes
+        self.cost_ = [] 
+
+        # 마찬가지의 이유와 작명법에 기반하여, '학습 이후 조정된 가중치 w'를 저장하는 변수는 w_ 라는 이름으로 선언함
+        self.w_ = np.array([self.w])
+
+        for i in range(self.epochs):
+
+            # Δw = w&lt;sub&gt;old&lt;/sub&gt; + {η × Σᵢ(y⁽ⁱ⁾ - h(z⁽ⁱ⁾)) × xⱼ⁽ⁱ⁾} 수식에서의 z⁽ⁱ⁾ 부분을 구현함
+            Z = self.net_input(X)                       
+
+            y_hat = self.activate(Z)                    # 퍼셉트론과 달리 입력값을 그대로 출력하는 identity function을 활성화 함수로 사용
+
+            # Δw = w&lt;sub&gt;old&lt;/sub&gt; + {η × Σᵢ(y⁽ⁱ⁾ - h(z⁽ⁱ⁾)) × xⱼ⁽ⁱ⁾} 수식에서의 (y⁽ⁱ⁾ - h(z⁽ⁱ⁾)) 부분을 구현함
+            errors = (y - y_hat)
+
+            # Δw = w&lt;sub&gt;old&lt;/sub&gt; + {η × Σᵢ(y⁽ⁱ⁾ - h(z⁽ⁱ⁾)) × xⱼ⁽ⁱ⁾} 수식에서의 {η × Σᵢ(y⁽ⁱ⁾ - h(z⁽ⁱ⁾)) × xⱼ⁽ⁱ⁾} 부분을 구현함
+            self.w[1:] += self.eta * np.dot(errors, X)
+            self.w[0] += self.eta * np.sum(errors)
+
+            # 아달라인에서는 퍼셉트론과 달리 cost function을 별도로 정의해서 사용함
+            # Δw = ∂J(w) / ∂wⱼ = ∂/∂wⱼ × 1/2 × Σᵢ(y⁽ⁱ⁾ - h(z⁽ⁱ⁾))² 수식에서의 1/2 × Σᵢ(y⁽ⁱ⁾ - h(z⁽ⁱ⁾))² 부분을 구현함
+            cost = 0.5 * np.sum(errors**2)
+
+            self.cost_.append(errors)                   # 1회 학습당 오류 갯수를 cost로 기록
+            self.w_ = np.vstack([self.w_, self.w])
+        
+        return self                                     # self를 반환하는 것은 method chaining에 활용하는데 유용함
+    
+    def net_input(self, X): 
+        if X.shape[0] == self.w.shape[0]:               # 편향값이 1이 아닌 경우를 검사하기 위함
+            z = np.dot(self.w.T, X)
+        else:
+            z = np.dot(X, self.w[1:]) + self.w[0]
+        return z
+
+    def activate(self, X):                              # 퍼셉트론과 달리 입력값을 그대로 출력하는 활성화 함수인 identity function을 구현
+        return X                                        
+
+    def predict(self, X):                               # 퍼셉트론과 달리 이미 학습해둔 가중치에다가 step function을 적용해서 입력을 한큐에 분류함
+        mid = (self.max_y + self.min_y) / 2
+        Z = self.net_input(X)
+        y_hat = self.activation(Z)
+        return np.where(self.net_input(X) &gt; mid, self.max_y, self.min_y)
+</code></pre>
+<h2>11-5. Fisher's Iris dataset</h2>
+<ul>
+<li>통계 생물학자 Ronald Fisher가 1936년 University of California Urvine 논문에서 사용한 붓꽃 품종 분류 데이터</li>
+<li>순방향 신경망의 예시에서는 입력 자료 X를 (샘플의 개수 n × 특성의 개수 m) 의 형상을 가지는 행렬로 언급했는데, 상황에 따라 (m × n) 형상으로도 사용 가능
+<ul>
+<li>기존에 존재하는 데이터셋을 그대로 가져올때는 해당 데이터셋이 어떤 샘플과 특성과 형상으로 구성되어 있는지를 먼저 파악하고 나서, 그 데이터셋에 맞게 진행해야 함</li>
+<li>UC 어바인 대학교에서 가져오는 원본 iris 데이터는 (m × n) 형상으로 구성되어 있음
+<ul>
+<li>샘플 갯수는 150개</li>
+<li>열 1: 꽃받침의 가로 길이 (sepal length)</li>
+<li>열 2: 꽃받침의 세로 길이 (sepal width)</li>
+<li>열 3: 꽃잎의 가로 길이 (petal length)</li>
+<li>열 4: 꽃잎의 세로 길이 (petal width)</li>
+<li>열 5: 붓꽃의 품종 3종 (Setosa/Versicolor/Virginia)</li>
+<li>형상 = (150, 5)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>아달라인을 사용해서 붓꽃 분류 학습기를 구현한 Code Example</h3>
+<pre><code>import pandas as pd
+df = pd.read_csv('iris.data', header=None)
+df.head()
+
+import mlmodule                                         # 이번 실습을 위해 미리 만들어놓은 전처리용 모듈이 있다고 가정함
+X, y = mlmodule.iris_data()                             # 모듈에서 붓꽃 데이터를 가져옴                                                            
+
+# 만약 샘플의 수가 너무 많다면 처리속도 향상을 위해 데이터 정규화를 활용할 수 있음
+# mlmodule.standardize(X, y)                              
+
+adaline = AdalineGradientDescent(epochs=10, eta=0.1)
+adaline.fit(X, y)
+mlmodule.plot(X, y, adaline.w)                          # 전처리 모듈을 사용해 그래프를 표시함
+
+# 만약 분류를 제대로 하지 못해서 직선 그래프가 표시되지 않고 있다면, 비용함수의 값을 그래프를 통해 확인할 필요가 있음
+mlmodule.plot(range(1, len(adaline.cost_) + 1), np.log10(adaline.cost_), marker='o')
+
+# 비용함수가 증가하는 방향으로 그래프가 표시된다면 학습률의 조정이 필요하다는 의미임
+# step size가 너무 크기 때문에 비용함수의 최저값을 놓쳐버리는 현상이 발생한다면 학습률을 낮추어야 함
+</code></pre>
+<h2>11-6. 고차 함수에서의 경사하강법과 모멘텀</h2>
+<ul>
+<li>붓꽃 데이터셋과 같은 단순한 데이터의 학습에는 J(w) 그래프가 유선형을 가지는 2차 함수를 사용하고, 기울기인 J'(w)가 0이 되는 지점, 즉 비용함수의 최저값도 비교적 수월하게 찾을 수 있음</li>
+<li>하지만 복잡한 데이터에서 사용해야 하는 3차, 4차, n차 함수의 경우 그래프를 그려보면 기울기인 J'(w)가 0이 되는 지점이 여러개가 나온다는 사실을 알 수 있음
+<ul>
+<li>특정 범위 내에서만, 가장 낮은 J(w) 값을 가지면서 동시에 기울기인 J'(w)도 0이 되는 local minimum
+<ul>
+<li>기울기가 '양수 → 0 → 음수' 또는 '음수 → 0 → 양수'로 반전되는 것이 아닌, '양수 → 0 → 양수' 또는 '음수 → 0 → 음수'로 그 방향이 유지되는 saddle point</li>
+</ul>
+</li>
+<li>전체 범위에서, 가장 낮은 J(w) 값을 가지면서 동시에 기울기인 J'(w)도 0이 되는 진정한 최저값인 global minimum</li>
+</ul>
+</li>
+<li>비용함수의 진짜 최소값인 global minimum을 찾아내야 할 필요가 있음
+<ul>
+<li>하지만 경사하강법은 그래프의 경사를 그대로 따라가다가 기울기가 0이 되는 지점이 발견되면 그것이 local minimum인지 saddle point인지 global minimum인지 구분하지 못한 채 비용함수의 최저값을 달성한 줄 알고 학습을 끝내버리는 문제가 있음
+<ul>
+<li>이 문제를 해결하기 위해서 momentum을 적용함
+<ul>
+<li>경사를 따라 하강하다가 기울기가 0이 되더라도, 멈추는 대신 관성을 가지고 이동을 계속함</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>momentum = v = γv + η(dJ(w)/dw)
+<ul>
+<li>v: 속력</li>
+<li>γ: 가속도
+<ul>
+<li>일반적으로는 0.9 정도를 사용</li>
+<li>Iris dataset은 단순한 데이터라서 0.5 정도를 사용</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>붓꽃 분류 학습기에 모멘텀을 적용한 Code Example</h3>
+<pre><code># 여기서는 fit() 메소드만 살펴봄
+
+def fit(self, X, y, X0=False):                      # X0는 편향의 유무를 의미함
+    if X0 == False:                                 # 만약 편향이 존재하지 않는다면,
+        X = np.c_[np.ones(len(y)), X]               # 값이 1인 편향 b를 앞에 추가해주는 numpy concatenation 수행
+    np.random.seed(self.random_seed)
+    self.w = np.random.random(X.shape[1])           # 가중치 w는 계산의 편의를 위해 1차원으로 초기화
+    self.max_y, self.min_y = y.max(), y.min()       # 양극성 step function의 출력값을 수동으로 지정하는 대신, 주어진 클래스 레이블에서 최댓값과 최소값을 가져와서 변수 max_y와 min_y로 사용하기
+
+    # 반복 학습 중 발생하는 오류 갯수를 기록하는 cost(=loss) 변수를 배열로 선언함
+    # 인스턴스 변수로 사용하기 위해서 self 파라미터 사용
+    # 변수 이름에 single trailing underscore를 사용하는 이유는 scikit-learn의 naming convention을 따르기 위함
+    # scikit-learn에서는 'fit()이 호출되어 예측값이 학습이 되고 나서야 어떠한 값이 저장되는 변수'에 이러한 작명을 사용함
+    # 레퍼런스: https://scikit-learn.org/stable/developers/develop.html#estimated-attributes
+    self.cost_ = [] 
+
+    # 마찬가지의 이유와 작명법에 기반하여, '학습 이후 조정된 가중치 w'를 저장하는 변수는 w_ 라는 이름으로 선언함
+    self.w_ = np.array([self.w])
+
+
+
+    # **************
+    # 모멘텀을 준비함
+    # **************
+    
+    # zeros_like()를 사용해서, 동일한 형상을 가지되 그 내용이 0으로 채워진 속력을 준비함
+    self.v1 = np.zeros_like(self.w[1:])
+    self.v2 = np.zeros_like(self.w[0])
+
+    # 가속도 설정
+    gamma = 0.5                                     
+
+
+
+    for i in range(self.epochs):
+
+        # Δw = w&lt;sub&gt;old&lt;/sub&gt; + {η × Σᵢ(y⁽ⁱ⁾ - h(z⁽ⁱ⁾)) × xⱼ⁽ⁱ⁾} 수식에서의 z⁽ⁱ⁾ 부분을 구현함
+        Z = self.net_input(X)                       
+
+        y_hat = self.activate(Z)                    # 퍼셉트론과 달리 입력값을 그대로 출력하는 identity function을 활성화 함수로 사용
+
+        # Δw = w&lt;sub&gt;old&lt;/sub&gt; + {η × Σᵢ(y⁽ⁱ⁾ - h(z⁽ⁱ⁾)) × xⱼ⁽ⁱ⁾} 수식에서의 (y⁽ⁱ⁾ - h(z⁽ⁱ⁾)) 부분을 구현함
+        errors = (y - y_hat)
+
+ 
+        
+        # ***************************
+        # 여기에서 모멘텀 공식을 적용함
+        # ***************************
+
+        self.v1 = gamma*self.v1 + self.eta*np.dot(errors, X)
+        self.v2 = gamma*self.v2 + self.eta*np.sum(errors)
+
+        # 가속도가 더해진 값으로 가중치를 조정해줌
+        self.w[1:] += self.v1
+        self.w[0] += self.v2
+
+
+
+        # 아달라인에서는 퍼셉트론과 달리 cost function을 별도로 정의해서 사용함
+        # Δw = ∂J(w) / ∂wⱼ = ∂/∂wⱼ × 1/2 × Σᵢ(y⁽ⁱ⁾ - h(z⁽ⁱ⁾))² 수식에서의 1/2 × Σᵢ(y⁽ⁱ⁾ - h(z⁽ⁱ⁾))² 부분을 구현함
+        cost = 0.5 * np.sum(errors**2)
+
+        self.cost_.append(errors)                   # 1회 학습당 오류 갯수를 cost로 기록
+        self.w_ = np.vstack([self.w_, self.w])
+    
+    return self                                     # self를 반환하는 것은 method chaining에 활용하는데 유용함
+</code></pre>
+<hr>
+<p>살벌하네요. 다시는 쳐다보기 싫어서 기억 저편에 묻어뒀던 '&lt;수학의 정석&gt; 수학II &amp; 미적분'을 꺼내야 했습니다. 이해가 어려운 부분은 인터넷에서 각종 학습자료를 찾아서 공부했구요. 하지만 한편으로는 배우는 맛이 강렬해서 어려운 난이도에도 불구하고 동기부여가 됐습니다. 이전에 별도로 수강했던 주먹구구식 머신러닝 강의보다는 훨씬 친절하고, 교수님이 개념도 차근차근 순차적으로 가르쳐 주셔서 만족스러웠습니다.</p>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[꿀팁] 우분투에서 특수코덱 없는 일반 블루투스 스피커/이어폰으로도 고품질 오디오 누리기 | devfreedom.github.io</title>
+    <meta name="title" content="[꿀팁] 우분투에서 특수코덱 없는 일반 블루투스 스피커/이어폰으로도 고품질 오디오 누리기 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮꿀팁❯,우분투,리눅스,운영체제,블루투스,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230309_1919_pro-tips_ubuntu_bluetooth/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[꿀팁] 우분투에서 특수코덱 없는 일반 블루투스 스피커/이어폰으로도 고품질 오디오 누리기</h1>
+        <div class="text-center">Published on 9 March 2023 07:19 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮꿀팁❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮꿀팁❯</a>
+            
+            <a href="/tags/우분투" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#우분투</a>
+            
+            <a href="/tags/리눅스" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#리눅스</a>
+            
+            <a href="/tags/운영체제" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#운영체제</a>
+            
+            <a href="/tags/블루투스" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#블루투스</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/ubuntu-logo.png" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <p>블루투스 기술은 프로토콜 그 자체도 매우 복잡하지만, 리눅스에서는 특히나 더 엉망입니다. 블루투스 스택과 관리자가 상당히 파편화되어있고 작동 방식도 제각각 다른 경우가 많아서 호환성이 상당히 낮다고 할 수 있습니다. BlueZ에서 인식되지 않는 블루투스 장치가 Blueman에서는 인식되는 경우도 있고, 제가 경험한 바로는 심지어 일반적인 블루투스 마우스조차 사용할 수 없었습니다. '블루투스 장치'로 페어링은 정상적으로 되지만 '마우스'로 인식이 되지 않는 증상이어서 커서를 움직일 수 없는 증상이었습니다. 그마저도 기기를 껐다가 켜면 페어링조차 풀려서 블루투스 장치 목록에 똑같은 이름의 마우스가 여러 개 등록되는 지경까지 이르렀네요.</p>
+<p>하드웨어로의 접근이 상당히 개방적인 리눅스의 저주라고 할 수 있는데, 그렇다고 해서 꼭 단점만 있는 것은 아닙니다. 지금 설명드릴 내용은 오히려 그 개방성을 적극적으로 사용해서 기기의 성능을 향상시키는 사례입니다.</p>
+<p>일반적으로 블루투스에서는 A2DP 프로파일 오디오 출력에 블루투스 표준 음향 코덱인 SBC(low-complexity Sub Band Codec)를 사용합니다. 최대 44.1kHz 328kbps(48kHz 345kbps)의 비트레이트를 지원하는데요, 스펙은 다음과 같습니다.</p>
+<ul>
+<li>오디오 채널: Joint Stereo, Stereo, Dual Channel, Mono</li>
+<li>주파수 밴드 수: 4 또는 8</li>
+<li>오디오 프레임 당 오디오 블록 수: 4, 8, 12, 16</li>
+<li>양자화 과정에서 사용되는 최대 및 최소 bitpool: 2 ~ 53</li>
+</ul>
+<p>오디오 채널은 기본값으로는 Stereo나 Joint Stereo를 사용하게 되는데 이 모드는 왼쪽 오른쪽 두 채널을 합해 하나의 비트풀을 사용합니다. 하지만 오디오 채널을 Dual Channel모드로 바꿔주게 되면 왼쪽과 오른쪽에 비트풀을 각각 적용하게 되어 비트풀의 숫자를 바꾸지 않더라도 가용 비트레이트가 두 배 가량 증가하게 됩니다. 음질이 그만큼 좋아지게 됩니다.</p>
+<p>러시아의 개발자 <a href="https://github.com/ValdikSS">ValdikSS</a>는 안드로이드 시스템, 정확히는 AOSP기반 커스텀 롬으로 유명한 <a href="https://www.lineageos.org/engineering/Bluetooth-SBC-XQ/">LineageOS에 이런 방식을 적용해서</a> 블루투스 오디오 음질을 대폭 향상시키는 데 기여했습니다. ValdikSS는 비트풀값이 다른 코덱 변수와 연동되지 않고 독립된 변수로써 조작이 가능한 점은 A2DP 규격의 설계적 오류인 것 같다고 언급하는데, 덕분에 이를 활용해서 블루투스 음질을 향상시킬 수 있게 된겁니다.</p>
+<p>Dual Channel 모드를 적용한 SBC 코덱은 SBC XQ 또는 SBC Dual Channel HD라고 지칭하는 것으로 보입니다. SBC XQ의 최대 장점은 호스트 기기나 클라이언트 기기가 별도의 독점 유료 오디오 코덱인 LDAC이나 aptX를 탑재하지 않더라도, 모든 블루투스 장치에서 그에 버금가는 (심지어 능가하는) 고품질 오디오를 누릴 수 있다는 점입니다. 제가 실제로 SBC만 지원하는 블루투스 스피커와 이어폰을 리니지OS에서 SBC XQ로 연결해서 음악 감상을 해봤는데 충분히 체감할 수 있는 음질 향상이 있었습니다. 다만 안타깝게도 개발자에게 여러 개인적인 사정이 있었고, 리니지OS도 AOSP에 맞춰 업데이트가 이루어지면서 merge conflict가 발생해 코드 커밋이 abandoned 상태로 남아 되어 더 이상 SBC XQ는 지원되지 않고 있습니다. 그 대신 대안으로 Dual Channel 모드를 사용하지 않고도 더 나은 호환성을 보장하는 음질 향상 방법을 찾아냈다고 개발자가 언급한 적이 있어서 기대는 됩니다만 아직까지 소식이 들리지 않고 있네요.</p>
+<p>구글이 점점 플랫폼과 생태계에 대한 통제를 (그리고 보안도) 강화하고 있기 때문에 자유도가 점점 줄어들고 있는 안드로이드에서는 어쩔 수 없지만, 다행히 PC용 리눅스에서는 이 방법을 여전히 직접 사용할 수 있습니다. 개발자 <a href="https://github.com/kn100">Kevin Norman</a>은 <a href="https://kn100.me/improving-bluetooth-audio-linux/">본인의 블로그</a>에서 그 방법을 소개하고 있습니다.</p>
+<p>일단은 지금 가지고 있는 블루투스 오디오 기기가 LDAC이나 aptX 등의 고음질 코덱을 지원한다면 먼저 그 코덱을 시도해볼 것을 추천하고 있습니다. <a href="https://github.com/EHfive/pulseaudio-modules-bt/wiki/Packages">pulseaudio-modules-bt</a> 모듈을 설치한 뒤 PulseAudio를 재시작하면 고음질 코덱을 선택할 수 있다고 합니다.</p>
+<p>만약 여전히 SBC XQ를 사용하고 싶다면 다음 작업을 해주면 됩니다.</p>
+<ol>
+<li>
+<p>현재 활성화된 블루투스 오디오 기기를 끄고 연결을 해제합니다.</p>
+</li>
+<li>
+<p>PulseAudio 설정 파일을 텍스트 에디터로 불러옵니다.</p>
+<pre><code>$ sudo gedit /etc/pulse/default.pa
+</code></pre>
+</li>
+<li>
+<p>다음과 같은 내용을 가진 줄을 찾습니다.</p>
+<pre><code>load-module module-bluetooth-discover
+</code></pre>
+</li>
+<li>
+<p>해당 줄에 다음과 같이 옵션을 추가합니다. <em>sbc_cmode=dual</em>은 Dual Channel 모드를 강제하고, <em>sbc_min_bp=53</em>는 최소 비트풀을, <em>sbc_max_bp=53</em>는 최대 비트풀을, <em>sbc_freq=44k</em>는 44.1KHz 주파수를 강제하게 됩니다.</p>
+<pre><code>load-module module-bluetooth-discover a2dp_config=&quot;sbc_cmode=dual sbc_min_bp=53 sbc_max_bp=53 sbc_freq=44k&quot;
+</code></pre>
+</li>
+<li>
+<p>다음 명령으로 PulseAudio를 재시작합니다.</p>
+<pre><code>$ pulseaudio -k
+</code></pre>
+</li>
+</ol>
+<p>이 방법을 우분투에 적용해 실제로 블루투스 스피커를 사용해본 결과, 역시나 충분히 체감할 수 있는 음질 향상이 있었습니다. 다만 저 설정을 그대로 사용하면 최소와 최대 비트풀이 모두 53으로 고정되다보니 조금이라도 블루투스 신호가 약해지거나 접속이 불안정해지면 음악이 끊기기 시작했습니다. 이런 증상이 생긴다면 <em>sbc_min_bp</em> 설정값을 적당히 낮은 숫자로 바꿔주시면 됩니다. 아무래도 비트레이트가 높아 데이터량이 증가하기 때문에 고음질을 유지하기 위해서는 가급적 2.4GHz 주파수 간섭이 없는 환경에서 블루투스 오디오 기기를 가까이 두고 사용하시는게 좋습니다. 와이파이는 5GHz 대역을 사용하고 키보드나 마우스는 유선으로 사용하면 도움이 되겠네요.</p>
+<hr>
+<h3>추가 정보</h3>
+<p>우분투 22.10 버전부터는 PulseAudio가 아니라 PipeWire가 기본 오디오 서버로 교체되면서 이 방법은 사용할 수 없게 되었습니다.</p>
+<p>대신 PipeWire에서 자체적으로 SBC XQ를 지원합니다. 블루투스 오디오 장치가 연결된 상태에서, 우분투 시스템 설정에서 '소리' 항목으로 들어가면 'High Fidelity Playback (A2DP Sink, codec SBC-XQ)'를 선택할 수 있습니다.</p>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

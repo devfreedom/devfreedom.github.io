@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Study Note] Coursework: The Comprehensive Practice in Machine Learning - Part 2 | devfreedom.github.io</title>
+    <meta name="title" content="[Study Note] Coursework: The Comprehensive Practice in Machine Learning - Part 2 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Study Note❯,machine learning,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230126_1921_study-note_ML_OJT_02/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Study Note] Coursework: The Comprehensive Practice in Machine Learning - Part 2</h1>
+        <div class="text-center">Published on 26 January 2023 07:21 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Study Note❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Study Note❯</a>
+            
+            <a href="/tags/machine learning" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#machine learning</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/artificial-intelligence.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h3>Naive bayes</h3>
+<ul>
+<li><strong>Bayes' theorem</strong>
+<ul>
+<li>The probability if Event A and Event B are independent = P(A) × P(B)</li>
+<li>The probability if Event B happens under Event A's condition = P(B|A)</li>
+<li>The probability of Event A and Event B in a row = P(A) × P(B|A)
+<ul>
+<li>P(A) = prior probability</li>
+<li>P(B|A) = posterior probability</li>
+<li>P(A) × P(B|A) = P(A⋂B)</li>
+</ul>
+</li>
+<li>The probability of Event B and Event A in a row = P(B) × P(A|B) = P(A⋂B)</li>
+<li>P(A) × P(B|A) = P(B) × P(A|B) = P(A⋂B)</li>
+<li>P(A|B) = { P(B|A) × P(A) } / P(B) = P(A⋂B) / P(B)</li>
+</ul>
+</li>
+<li>Bayes' theorem use case in machine learning
+<ul>
+<li>e.g. Calculate the probability if a certain keyword should be classified as 'spam' or not
+<ul>
+<li>If there is only one keyword to classify
+<ul>
+<li>P(spam|'extended car warranty') = P('extended car warranty'|spam) × P(spam) / P('extended car warranty')</li>
+</ul>
+</li>
+<li>If there are multiple keywords to classify
+<ul>
+<li>Premise
+<ul>
+<li>Events happen concurrently</li>
+<li>Extinguish uncalculable probabilities by assuming the probabilities are the same
+<ul>
+<li>Simplify the usage of Bayes' theorem, which is not axiomatized, and not worrying too much about potential paradoxes, hence &quot;Naive Bayes&quot;</li>
+</ul>
+</li>
+<li>Array X = the list of keywords</li>
+</ul>
+</li>
+<li>P(spam|X) = P(spam) × P(X<sub>1</sub>|spam) × P(X<sub>2</sub>|spam) × P(X<sub>3</sub>|spam) ...
+<ul>
+<li>P(not spam|X) = P(not spam) × P(X<sub>1</sub>|not spam) × P(X<sub>2</sub>|not spam) × P(X<sub>3</sub>|not spam) ...</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If there are multiple keywords to classify into multiple groups
+<ul>
+<li>Use multiclass option</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Suitable for text mining to predict and classify the classes of given text data</li>
+</ul>
+</li>
+</ul>
+<h3>Support vector machine (SVM)</h3>
+<ul>
+<li>About finding a proper dividing line (= hyperplane) on a scatterplot, which seperates/divides/classifies data of different classes
+<ul>
+<li>Support vector = the parallel-translated hyperplane that touches the nearest data point</li>
+<li>Margin = the distance between the original hyperplane and support vectors</li>
+<li>SVM is about finding the support vector with a maximum margin</li>
+</ul>
+</li>
+<li><strong>d = ω<sup>T</sup> × x + ω<sub>0</sub></strong>
+<ul>
+<li>d = hyperplane, the function we need to find</li>
+<li>If the data/cluster is non-linear, then it needs to be converted/mapped to linear
+<ul>
+<li>e.g. If there is a circular cluster of data
+<ul>
+<li>x² + y² = r² → y = √(r² - x²)</li>
+</ul>
+</li>
+<li>Transformation is abstracted in Φ(x), which means the function to map linear/non-linear data
+<ul>
+<li>d = ω<sup>T</sup> × Φ(x) + ω<sub>0</sub></li>
+<li>Ironically this makes defining a hyperplane more difficult, a.k.a &quot;the curse of dimensionality&quot;</li>
+</ul>
+</li>
+<li>Representer theorem defines weighted ω as W = Σα<sub>i</sub>Φ(x<sub>i</sub>)
+<ul>
+<li>weighted d' = Σ{α<sub>i</sub>×Φ(x<sub>i</sub>)×Φ(x<sub>i</sub>)} + ω<sub>0</sub>
+<ul>
+<li>Φ(x<sub>i</sub>)×Φ(x<sub>i</sub>) = K(x<sub>i</sub>, x) = kernel function
+<ul>
+<li>We can define a hyperplane if we can figure out a kernel function</li>
+<li>There are pre-defined kernel functions for certain data patterns, which we can utilize to build a SVM model</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Common kernel function types</strong>
+<ul>
+<li>Linear</li>
+<li>Non-linear</li>
+<li>Polynomial</li>
+<li>Gaussian radial basis function (RBF)</li>
+<li>Laplacian radial basis function (RBF)</li>
+<li>Sigmoid</li>
+</ul>
+</li>
+<li>Performant for non-linear and high-dimensional data</li>
+<li>Supports multiclass</li>
+<li>Good for complex real-life data model</li>
+<li>Difficult to grasp its mathematical algorithm</li>
+<li>Resolves decision tree's drawback
+<ul>
+<li>Decision tree splits data in a linear way
+<ul>
+<li>which is not suitable for non-linear datasets</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Term frequency - inverse document frequency (TF-IDF)</h3>
+<ul>
+<li>Text is made of sentences
+<ul>
+<li>Sentence is made of words
+<ul>
+<li>Morpheme is the smallest element to use for text analysis</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Morpheme analysis libraries are not one-size-fits-all
+<ul>
+<li>Choose a library based on the needs of text mining and the context of the data</li>
+<li>Diverse testings are needed</li>
+</ul>
+</li>
+<li>e.g. Dataset A
+<ul>
+<li>[&quot;The quick brown fox jumps over the lazy dog&quot;, &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&quot;, &quot;Teach Your Dog How To Jump Over Things&quot;, &quot;The Fox (What Does the Fox Say?)&quot;, &quot;Brown University is a private Ivy League research university in Providence, Rhode Island.&quot; ]</li>
+<li>How to distinguish the importance of words?
+<ul>
+<li>Pre-processing
+<ul>
+<li>Remove the words that are not meaningful varaibles
+<ul>
+<li>e.g. &quot;the&quot;, &quot;over&quot;, &quot;how&quot;, &quot;what&quot;, &quot;is&quot;, &quot;a&quot;, &quot;in&quot;</li>
+<li>Articles, interrogative pronouns, etc.</li>
+<li>These are called &quot;stop words&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Term frequency score (TF score)
+<ul>
+<li>TF score represents the frequency of certain words</li>
+<li>The ratio of the frequency of certain words to the frequency of all words</li>
+<li>TF<sub>ij</sub> = F<sub>ij</sub> / ΣF<sub>kj</sub>
+<ul>
+<li>F = frequency</li>
+<li>j = document</li>
+<li>i = certain word</li>
+<li>k = all words</li>
+</ul>
+</li>
+<li>Issue
+<ul>
+<li>Bag-of-words model
+<ul>
+<li>A text (such as a sentence or a document) is represented as the bag (multiset) of its words, disregarding grammar and even word order but keeping multiplicity</li>
+</ul>
+</li>
+<li>&quot;Are words that appear more frequently and prevalent the ones that are more important?&quot;
+<ul>
+<li>&quot;Not always.&quot;
+<ul>
+<li>Because TF score is roughly proportional to the length of the document</li>
+<li>Not an accurate representation of &quot;importance&quot;, just &quot;prevalency&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Inverse document frequency (IDF)
+<ul>
+<li>&quot;The words that are included in important documents are the ones that are more important.&quot;</li>
+<li>The inverse of &quot;the proportion of certain documents that has certain words from all documents&quot;
+<ul>
+<li>Inverse because it means that those certain words are more distant from common words, which emphasizes its importance</li>
+</ul>
+</li>
+<li>IDF<sub>i</sub> = log |D| / |(D<sub>ji</sub> ∈ D<sub>j</sub>)|
+<ul>
+<li>|D| = the number of all documents</li>
+<li>|(D<sub>ji</sub> ∈ D<sub>j</sub>)| = the number of documents that have certain words</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TF-IDF score
+<ul>
+<li>To properly calculate the importance of certain words, we can use TF-IDF score which implies both &quot;frequency&quot; and &quot;quotation&quot; of the words</li>
+<li>TFIDF<sub>ij</sub> = TF<sub>ij</sub> × IDF<sub>ij</sub></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Principal component analysis (PCA) &amp; DBSCAN</h3>
+<ul>
+<li>Data is made of different classes/attributes
+<ul>
+<li>Data is easier to analyze and comprehend when it's converted from high-dimension to low-dimension
+<ul>
+<li>e.g. 3-axis 3D graph → 2-axis scatterplot with a corresponding linear graph for the reduced axis</li>
+<li>a.k.a. dimensionality reduction</li>
+<li>To avoid &quot;the curse of dimensionality&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Principal component analysis (PCA)</strong>
+<ul>
+<li>Building a new axis that reduces dimension while keeping the original data as intact as possible
+<ul>
+<li>The new axis should represent the most previous changes</li>
+</ul>
+</li>
+<li>X<sup>T</sup> × X = V × D × V<sup>T</sup> , X = U × V<sup>T</sup>
+<ul>
+<li>X = original data</li>
+<li>N = number of data</li>
+<li>P = original dimension</li>
+<li>U = scores matrix = N × K matrix</li>
+<li>V = loading matrix = orthogonal matrix = P × K matrix</li>
+<li>D = diagonal matrix</li>
+</ul>
+</li>
+<li>Finding the right K that minimizes information loss</li>
+</ul>
+</li>
+<li><strong>Density-based spatial clustering of applications with noise (DBSCAN)</strong>
+<ul>
+<li>K-means clustering has some issue with stretched, narrow, long-shaped data because it's suitable for circle-shaped data
+<ul>
+<li>DBSCAN can be an alternative for such a case</li>
+</ul>
+</li>
+<li>PCA-DBSCAN workflow
+<ul>
+<li>Step 1. Data compression</li>
+<li>Step 2. Calculate kNN distance function</li>
+<li>Step 3. Perform cluster analysis</li>
+</ul>
+</li>
+<li>Neighbor vector = A set of data vector (dot objects) which is included in a circle that centers a certain data vector and has &quot;Ɛ&quot; radius</li>
+<li>Core vector = A data vector that has &quot;n&quot; number of neighbor vectors
+<ul>
+<li>n = threshold/cutoff value to determine if it's a core vector or not</li>
+</ul>
+</li>
+<li>The relation between core vector &quot;p&quot; and its neighbor vector &quot;q&quot; is represented as &quot;p → q&quot;
+<ul>
+<li>= q is directly accessible to p</li>
+<li>If &quot;p → p1 → p2 → ... → q&quot;, then &quot;p ⇒ q&quot;
+<ul>
+<li>= q is accessible to p</li>
+</ul>
+</li>
+<li>If &quot;r ⇒ p&quot;, &quot;r ⇒ q&quot;, then &quot;p ⇔ q&quot;
+<ul>
+<li>= p and q are linked</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Cluster = a collection of all data vectors which is accessible to one core vector &quot;p&quot;</li>
+<li>Noise = any data that don't belong to any clusters</li>
+</ul>
+</li>
+</ul>
+<h3>Neural network</h3>
+<ul>
+<li>Machine learning methodology that mimics biological cerebral nerves
+<ul>
+<li>Computer learns to perform some task by analyzing training examples</li>
+<li>Perceptron
+<ul>
+<li>Introduced by Frank Rosenblatt</li>
+<li>An algorithm for supervised learning of binary classifiers</li>
+<li>e.g. The first ever perceptron concept
+<ul>
+<li>There are three input nodes: x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>
+<ul>
+<li>x<sub>1</sub> is carried by weight w<sub>1</sub>=0.1</li>
+<li>x<sub>2</sub> is carried by weight w<sub>2</sub>=0.2</li>
+<li>x<sub>3</sub> is carried by weight w<sub>3</sub>=0.3</li>
+</ul>
+</li>
+<li>There is a bias: b = -0.4
+<ul>
+<li>Bias value allows you to shift the activation function curve up or down</li>
+</ul>
+</li>
+<li>Weighted sum of three inputs and bias = S = 0.1x<sub>1</sub> + 0.2x<sub>2</sub> + 0.3x<sub>3</sub> - 0.4</li>
+<li>Apply the weighted sum to the activation function
+<ul>
+<li>Signum/sign function
+<ul>
+<li>One of elementary neural activation functions to activate each node in the neural network by scaling the input values to range between -1 to 1
+<ul>
+<li>y = sign(S)</li>
+</ul>
+</li>
+<li>If the weighted sum &quot;S&quot; is equal to or greater than the threshold &quot;t&quot;, return the output &quot;1&quot;
+<ul>
+<li>Input is accepted and passed as an output</li>
+</ul>
+</li>
+<li>If the weighted sum &quot;S&quot; is lesser than the threshold &quot;t&quot;, return the output &quot;-1&quot;
+<ul>
+<li>Input is dismissed/ignored</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Multi-layer perceptron
+<ul>
+<li>Introduced by Marvin Minsky</li>
+<li>Input layer → hidden layer → output layer
+<ul>
+<li>Input layer → hidden layer
+<ul>
+<li>Output = O<sub>h</sub> = f(W<sub>x</sub>+b)</li>
+</ul>
+</li>
+<li>Hidden layer → output layer
+<ul>
+<li>Output = O<sub>o</sub> = f(WO<sub>h</sub>+b)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Gradient descent
+<ul>
+<li>The process of using gradients to find the minimum value of the cost function</li>
+<li>Backpropagation
+<ul>
+<li>Calculating those gradients by moving in a backward direction in the neural network</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Types of activation function
+<ul>
+<li>Signum/sign function
+<ul>
+<li>Output is either -1 or 1</li>
+</ul>
+</li>
+<li>Step function
+<ul>
+<li>Output is either 0 or 1</li>
+</ul>
+</li>
+<li>Linear function</li>
+<li>Sigmoid function</li>
+<li>Hyperbolic tangent function</li>
+<li>Softmax function</li>
+<li>ReLU</li>
+<li>Leaky ReLU</li>
+<li>Swish function</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

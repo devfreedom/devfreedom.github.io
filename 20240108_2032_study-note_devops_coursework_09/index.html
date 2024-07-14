@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Study Note] Coursework: DevOps and Software Engineering - BDD | devfreedom.github.io</title>
+    <meta name="title" content="[Study Note] Coursework: DevOps and Software Engineering - BDD | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Study Note❯,DevOps,software engineering,behavior-driven development,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20240108_2032_study-note_devops_coursework_09/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Study Note] Coursework: DevOps and Software Engineering - BDD</h1>
+        <div class="text-center">Published on 8 January 2024 08:32 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Study Note❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Study Note❯</a>
+            
+            <a href="/tags/DevOps" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#DevOps</a>
+            
+            <a href="/tags/software engineering" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#software engineering</a>
+            
+            <a href="/tags/behavior-driven development" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#behavior-driven development</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/devops.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>9. Behavior-driven Development</h1>
+<h2>9-1. BDD Introduction</h2>
+<ul>
+<li>Behavior driven development, or BDD, focuses on the system's behavior as observed from the outside in.
+<ul>
+<li>It's not concerned with the internal workings of the system like test driven development, or TDD.</li>
+<li>It is observing how the system behaves just like a user of the system would.
+<ul>
+<li>This makes BDD great for integration testing to see if all of the components are behaving together.</li>
+<li>It forces you to think &quot;from the outside in.&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In other words, you implement those behaviors that contribute most directly to business outcomes.
+<ul>
+<li>One advantage of BDD is that it describes behaviors in a single syntax that domain experts, testers, developers, and customers can easily understand.
+<ul>
+<li>This improves communication across the team.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>BDD vs TDD</h3>
+<ul>
+<li>In TDD, you test the system's functions from the inside out or the bottom up.
+<ul>
+<li>It's testing the inner workings of the functions.</li>
+<li>For TDD, you care about the call.
+<ul>
+<li>Did it get the right return code?</li>
+<li>Did it bring back the right data in the right format?</li>
+</ul>
+</li>
+<li>We use TDD for unit testing.</li>
+</ul>
+</li>
+<li>In BDD, you're observing how the system behaves just like a user of the system would experience it.
+<ul>
+<li>BDD tests the behavior of the system from the outside in and considers how the system should behave.
+<ul>
+<li>BDD is a test-first approach for development too, like TDD.
+<ul>
+<li>However, BDD is a higher level of testing.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>It's not concerned with the internal workings of the system like TDD.</li>
+</ul>
+</li>
+<li>e.g. Think of your virtual shopping cart when ordering items online.
+<ul>
+<li>For BDD, you might ask &quot;When I add something to my shopping cart, does it appear in my shopping cart?&quot;
+<ul>
+<li>I don't care what API was called, and I don't care about the data that was transferred.
+<ul>
+<li>I just care that what I expect to appear in my shopping cart does appear there.</li>
+</ul>
+</li>
+<li>Likewise, when you remove something from your cart, the observed behavior should be that the item no longer shows up in your cart.
+<ul>
+<li>Again, you're not concerned with the API calls in the background that make this happen.</li>
+<li>You're concerned with the outward behavior of the system.
+<ul>
+<li>That is, when you click the button labeled &quot;remove from cart,&quot; you expect the item to be removed from your cart and, therefore, no longer present.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>BDD in Software Testing Process</h3>
+<ol>
+<li>Unit testing
+<ul>
+<li>At this level of the software testing process, you test individual units or components of a software system.</li>
+<li>The purpose is to validate that each unit is performing as designed.</li>
+</ul>
+</li>
+<li>Integration testing.
+<ul>
+<li>At this level, you're combining individual units and testing them as a group, and the purpose of this is to expose faults in the interactions between the units.</li>
+</ul>
+</li>
+<li>System testing
+<ul>
+<li>At this level, you're testing the complete system end to end.</li>
+<li>The purpose is to evaluate the system's compliance with the specified high-level requirements and make sure the whole system is working together.</li>
+</ul>
+</li>
+<li>User acceptance testing
+<ul>
+<li>At this level, the user tests the system for acceptability.</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>So where does BDD fit into the process?
+<ul>
+<li>Usually, you perform BDD at the integration, system, or acceptance test levels.</li>
+<li>At those levels, enough of the system is running that you can evaluate its behavior.</li>
+</ul>
+</li>
+</ul>
+<h3>Benefits of BDD</h3>
+<ul>
+<li>BDD describes behaviors in a single syntax.
+<ul>
+<li>The single syntax that domain experts, testers, developers, and stakeholders can easily understand.
+<ul>
+<li>Domain experts can talk in their own language and you can document it in that same language.</li>
+<li>So the domain experts can be really specific about what they need and you can express this easily.</li>
+</ul>
+</li>
+<li>It is beneficial to be able to describe behaviors in a single syntax that is directly accessible to everyone.
+<ul>
+<li>It significantly improves communications across all involved parties.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Notations originating in the BDD approach - particularly the given-when-then syntax - are closer to everyday language than the notations in the TDD tools.
+<ul>
+<li>The language is very natural, and they have a shallower learning curve, making BDD very approachable.</li>
+<li>The most commonly used syntax in BDD is called Gherkin.
+<ul>
+<li>It got the name Gherkin because one of the first BDD tools was called Cucumber.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In the BDD specification, it describes how the system should behave in a situation.
+<ul>
+<li>Tools targeting the BDD approach generally afford automatic generation of technical and user documentation from the BDD specification.
+<ul>
+<li>This automatic generation means that the documentation is always in sync with what you're building.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>You can generate tests directly from the BDD specification to confirm that the behavior was implemented.
+<ul>
+<li>So you use the specification to test the system and prove to your stakeholders that the delivered behavior is exactly they asked for.</li>
+</ul>
+</li>
+</ul>
+<h3>BDD Workflow</h3>
+<ol>
+<li>The developers, testers, and stakeholders explore the problem domain to make sure that everyone understands it,
+<ul>
+<li>and they collaborate to produce concrete examples, or scenarios, that describe the behavior they want.</li>
+<li>You document these examples in the Gherkin syntax.
+<ul>
+<li>The result is a specification of the behavior of the system that you will build.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The team uses a BDD test runner like Behave to run those examples in that specification as automated test cases.
+<ul>
+<li>Behave parses the Gherkin syntax and looks for test steps that it can use to confirm that the system behaves as expected.
+<ul>
+<li>Running these examples with Behave tells you what test steps are missing.</li>
+</ul>
+</li>
+<li>You'll get a report that says, &quot;Here are the test steps that you need to write to prove the behavior of the system.&quot;
+<ul>
+<li>Then you write those steps and you make everything work.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>As the team works on the solution, Behave tells you which examples are implemented and working and warns you about the ones that aren't.
+<ul>
+<li>Before you know it, you have one document that acts as both specification and tests for your software.
+<ul>
+<li>It represents exactly how the system should work.</li>
+<li>This document is not some Word document in some library that somebody forgets about, and then later you find out that the system doesn't even work that way because you've made changes and you forgot to update the documentation.
+<ul>
+<li>This is a living document checked into your source control system, and you run test cases against it.</li>
+</ul>
+</li>
+<li>Nobody ever forgets about this document because every time you run your test suite, the document is used to confirm the way the system should behave.
+<ul>
+<li>It's almost like the documentation drives the system instead of the other way around.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3>Gherkin Syntax</h3>
+<ul>
+<li>In Gherkin syntax, every example has at least three lines, referred to as steps, and each step must start with a keyword.</li>
+<li>Gherkin syntax is commonly referred to as Given, When, Then for the three required keywords.
+<ul>
+<li>Given
+<ul>
+<li>Given a set of preconditions.</li>
+<li>These are the conditions required to put the system into the state it needs to be to perform the tests.
+<ul>
+<li>e.g. an e-commerce application
+<ul>
+<li>&quot;Given I have two items in my shopping cart.&quot;</li>
+<li>This tells the test system that we need to make sure that there are two items in the shopping cart before we proceed.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>When
+<ul>
+<li>When an event occurs.</li>
+<li>These events are the actions that the user takes to interact with the system under test.
+<ul>
+<li>e.g. &quot;When I remove an item from my cart.&quot;</li>
+<li>This tells the test system that it needs to remove an item from the cart under test.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Then
+<ul>
+<li>Then some testable outcome is observed.</li>
+<li>This is the expected outcome of the action that the user performs.
+<ul>
+<li>e.g. &quot;Then I should only have one item in my shopping cart.&quot;</li>
+<li>This step tells the test system to check that an item is actually removed from the cart by the When event.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>To improve readability, you can also use the And and But keywords.
+<ul>
+<li>And
+<ul>
+<li>Say you have a series of steps, and each step begins with the same keyword,
+<ul>
+<li>&quot;Given this, Given that, Given some other thing.&quot; - That's three Givens in a row.</li>
+<li>To make a series more readable and more fluid, you could use And keywords to replace each repeated keyword after the first step in the series.
+<ul>
+<li>e.g. &quot;Given this, And that, And some other thing.&quot;
+<ul>
+<li>It reads a lot nicer.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>You can also write,
+<ul>
+<li>&quot;When this happens, And that happens,&quot; or,</li>
+<li>&quot;Then this is observed, And that is observed.&quot;
+<ul>
+<li>&quot;And&quot; will always take on the meaning of the previous Given, When, or Then that comes before it.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>But
+<ul>
+<li>For steps that state what should not occur, you could also replace the keyword with But instead of And.
+<ul>
+<li>e.g. &quot;But that is not observed.&quot;</li>
+</ul>
+</li>
+<li>You can still use And, but the But keyword is just an extra option to improve readability.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Summary
+<ul>
+<li>Given some precondition,</li>
+<li>When some event happens,</li>
+<li>Then some testable outcome is observed.</li>
+<li>If you have more than one Given, When, or Then,
+<ul>
+<li>you can substitute it for an And or a But to make the reading easier.</li>
+</ul>
+</li>
+<li>With these keywords, you can create sentences that will both express and test the system's expected and actual behavior.</li>
+</ul>
+</li>
+</ul>
+<h3>BDD Specification</h3>
+<ul>
+<li>A specification is made up of one or more features, which represent user stories.
+<ul>
+<li>Feature is a high-level description of a user story.
+<ul>
+<li>You can have as many features as needed.</li>
+<li>Place each feature in its own specification file,
+<ul>
+<li>or you could certainly place them all in one file or group them however you like.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Scenario is a situation that describes a single behavior of a feature.
+<ul>
+<li>Each scenario formulates a complete test case for the behavior.</li>
+</ul>
+</li>
+<li>To build the BDD specification, you write a feature, and then write scenarios using the Given, When, Then syntax.</li>
+</ul>
+</li>
+<li>In a Gherkin document, the first keyword is usually Feature, followed by a colon and the title.</li>
+</ul>
+<pre><code>Feature: &lt;title&gt;
+
+As a &lt;role&gt;
+I want &lt;functionality&gt;
+So that &lt;benefit&gt;
+</code></pre>
+<ul>
+<li>From there, features use the standard user-story syntax:
+<ul>
+<li>&quot;As some role, I want some functionality, So that I gain some benefit.&quot;
+<ul>
+<li>This is a syntax that most agile teams are using when they define their user stories, so you should recognize this if you follow agile practices.</li>
+</ul>
+</li>
+<li>If you write your stories this way on your Kanban board, you can simply cut and paste them into your BDD spec.</li>
+</ul>
+</li>
+<li>Each feature contains one or more concrete examples, or scenarios.
+<ul>
+<li>A scenario is a situation that describes a single behavior of a feature, and you use the Given, When, Then syntax to write that description.
+<ul>
+<li>Each scenario formulates a complete test case for the behavior.</li>
+</ul>
+</li>
+<li>You'll run tests against these scenarios when you use the Behave test tool in the labs.</li>
+<li>Write as many scenarios as you need to describe the various behaviors of the feature.</li>
+</ul>
+</li>
+<li>What's great about the BDD specification is that this document is exactly what you build together with your stakeholders,
+<ul>
+<li>and this is the document that you use with a BDD tool like Behave to run your BDD tests.</li>
+<li>You have one document that everyone can understand, including your test tools.</li>
+</ul>
+</li>
+</ul>
+<h3>BDD Spec Example - Retail Industry</h3>
+<pre><code>Feature: Returns go to stock
+
+As a store owner
+I want to add items back to stock when they're returned
+So that I can keep track of stock
+
+Scenario 1: Refunded items should be returned to stock
+  Given that a customer previously bought a black sweater from me 
+  And I have 3 black sweaters in stock
+  When they return the black sweater for a refund
+  Then I should have 4 black sweaters in stock
+
+Scenario 2: Exchanged items should be returned to stock
+  Given that a customer previously bought a blue shirt from me
+  And I have 2 blue shirts in stock
+  And I have 3 black shirts in stock
+  When they return the blue shirt for a replacement in black
+  Then I should have 3 blue shirts in stock
+  And I should have 2 black shirts in stock
+</code></pre>
+<ol>
+<li>You start the document with the keyword Feature followed by a colon and then the title.
+<ul>
+<li>The title should express what this feature is about.
+<ul>
+<li>It will be displayed by the tool when you run the test cases so that you know which feature the tests are reporting on.</li>
+</ul>
+</li>
+<li>This feature's title is &quot;Returns go to stock,&quot; so now you know the scope of this feature.
+<ul>
+<li>It is for handling returns, specifically the expected behavior for returning items to stock.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Then below the feature line you have the user story:
+<ul>
+<li>&quot;As a store owner, I want to add items back to stock when they're returned, So that I can keep track of the stock.&quot;</li>
+<li>The BDD tools do not parse this user story in any way.
+<ul>
+<li>They just display these lines when executing the tests so that you know the user story for this feature.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Next, you have the first scenario.
+<ul>
+<li>This also has a title that appears when you run this scenario: &quot;Refunded items should be returned to stock.&quot;
+<ul>
+<li>This title lets you know that this scenario is dealing with refunds.</li>
+<li>A refund is when a customer returns an item and requests to receive their money back.</li>
+</ul>
+</li>
+<li>The BDD tool will parse the rest of this scenario.
+<ul>
+<li>Remember: this scenario is not only for the humans to read but also for the computer to process.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Each line will fire a step that executes part of a test case.
+<ul>
+<li>&quot;part of a test case&quot; because the test case is the entire scenario.</li>
+<li>The first step in the scenario specifies a precondition: &quot;Given that a customer previously bought a black sweater from me.&quot;
+<ul>
+<li>This sets up the context, which is the initial state of the test.</li>
+<li>It says that before you run the test, you need a customer, and that customer needs an order for a black sweater.</li>
+</ul>
+</li>
+<li>The second step specifies another precondition: &quot;And I have three black sweaters in stock.&quot;
+<ul>
+<li>Remember that the keyword And will take on the meaning of the previous keyword.
+<ul>
+<li>In this case, the previous keyword was Given, so this step is equivalent to &quot;Given I have three black sweaters in stock.&quot;</li>
+</ul>
+</li>
+<li>Again, it tells you that before you can evaluate this test, you need to ensure that there are three black sweaters in stock.</li>
+</ul>
+</li>
+<li>The third step is &quot;When they return the black sweater for a refund.&quot;
+<ul>
+<li>This is the event that causes something to happen.</li>
+<li>This step will invoke a return of the black sweater and request a refund from the system under test.</li>
+</ul>
+</li>
+<li>Finally, the last step is &quot;Then I should have four black sweaters in stock.&quot;
+<ul>
+<li>This is the test assertion of what the observed outcome should be.</li>
+<li>In this step, the BDD tool checks to see that the stock actually contains four black sweaters.
+<ul>
+<li>If it does, the scenario passes.</li>
+<li>If it does not, the scenario fails.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The second scenario is &quot;Exchanged items should be returned to stock.&quot;
+<ul>
+<li>Unlike the first scenario, this second scenario is not about refunds; it's about customers exchanging their purchased item for a different item.</li>
+<li>&quot;Given that a customer previously bought a blue shirt from me.&quot;
+<ul>
+<li>You know that Given refers to the initial state before running the test.</li>
+<li>When the BDD tool sees this, it executes a step that ensures that you have a customer and that the customer has an order with a blue shirt in it.</li>
+</ul>
+</li>
+<li>&quot;And I have two blue shirts in stock.&quot;
+<ul>
+<li>The And after the Given is like another Given, so the tool will execute a step to ensure that two blue shirts are in stock.</li>
+</ul>
+</li>
+<li>&quot;And I have three black shirts in stock.&quot;
+<ul>
+<li>Again, the And is a Given, so the tool will execute a step that ensures that three black shirts are in stock.</li>
+<li>At this point, you have the initial state with two blue shirts and three black shirts in stock.</li>
+</ul>
+</li>
+<li>&quot;When they return a blue shirt for a replacement in black.&quot;
+<ul>
+<li>The When keyword designates the event.</li>
+<li>This tests the return function to see if it's behaving as expected.</li>
+</ul>
+</li>
+<li>&quot;Then I should have three blue shirts in stock.&quot;
+<ul>
+<li>The Then keyword indicates a behavior validation.</li>
+<li>This step is a test assertion that asserts that, after the previous exchange, three blue shirts should be in stock because the returned blue shirt has gone back into stock.</li>
+</ul>
+</li>
+<li>&quot;And I should have two black shirts in stock.&quot;
+<ul>
+<li>Once again, And takes on the meaning of the previous keyword, so this step is the same as &quot;Then I should have two black shirts in stock.&quot;</li>
+<li>Since the Then step measures the outcome, it checks that two black shirts are in stock because one black shirt was removed from stock to exchange it with the blue shirt.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3>Tools for BDD</h3>
+<ul>
+<li>Many popular programming languages have support from one or more BDD tools.</li>
+<li>The key to selecting one of these tools is starting with the tool that supports the programming language that you're using.
+<ul>
+<li>For example, if you choose Cucumber, you have to write your step files in Ruby.</li>
+<li>So, if your project is in Python or another language, Cucumber won't be much help.</li>
+</ul>
+</li>
+<li>The next important factor is the supported specification syntax.
+<ul>
+<li>That means, for example, the tool needs to support Gherkin.
+<ul>
+<li>Not all BDD tools support Gherkin, so you might want to look for the ones that do because Gherkin provides a simple syntax that both stakeholders and developers can easily write and understand.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ruby
+<ul>
+<li>Cucumber
+<ul>
+<li>Cucumber is probably the oldest tool on the list</li>
+<li>It has a free and open source and a paid version.</li>
+<li>It also uses plain text format that you can check into your version control.</li>
+<li>Cucumber uses the Gherkin syntax for specifications.
+<ul>
+<li>Gherkin and Cucumber started together, so Gherkin is the syntax that most people will be familiar with for BDD.</li>
+</ul>
+</li>
+<li>In addition to Ruby, it also supports Java and .NET as well as web applications developed in any language.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Python
+<ul>
+<li>Lettuce</li>
+<li>Behave
+<ul>
+<li>If you check the Cucumber website for a Python version, it points you to the Behave website, so you could say that Behave is the Python version of Cucumber.</li>
+<li>It also supports plain text files that you can check into version control.</li>
+<li>It supports feature files written in Gherkin and steps written in Python.</li>
+<li>It also supports environment setup and test fixtures to set up and tear down the environment at different stages, giving you tremendous control over the test environment.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Java
+<ul>
+<li>JBehave
+<ul>
+<li>The Java version of Behave</li>
+</ul>
+</li>
+<li>Concordion
+<ul>
+<li>Concordion is an open source tool for the Java framework.</li>
+<li>But instead of writing Gherkin files, you write your specifications using a normal language using paragraphs.</li>
+<li>It has been ported to other languages including C-sharp, Python, and Ruby.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>JavaScript
+<ul>
+<li>DaSpec</li>
+<li>Jasmine/Yadda</li>
+</ul>
+</li>
+<li>PHP
+<ul>
+<li>Behat</li>
+<li>Kahlan</li>
+</ul>
+</li>
+<li>.Net
+<ul>
+<li>SpecFlow</li>
+</ul>
+</li>
+<li>Groovy
+<ul>
+<li>Spock</li>
+</ul>
+</li>
+</ul>
+<h2>9-2. BDD using Behave</h2>
+<h3>Behave Overview</h3>
+<ul>
+<li>Folder structure example<pre><code>- features
+  - 1st.feature
+  - 2nd.feature
+  - 3rd.feature
+  - 4th.feature
+  - 5th.feature
+  ...
+  - steps
+    - web_steps.py
+    - load_steps.py
+</code></pre>
+<ul>
+<li>Behave looks for a folder named &quot;features.&quot;
+<ul>
+<li>All of the files that control Behave must be under the top-level features folder.</li>
+<li>Inside the features folder, Behave looks for files with an extension of .feature.
+<ul>
+<li>You can name those files whatever you want.</li>
+<li>You can have multiple feature files or just one; it's up to you.</li>
+</ul>
+</li>
+<li>Behave will process each one it finds in the features folder.</li>
+</ul>
+</li>
+<li>The features folder also contains a subfolder called &quot;steps.&quot;
+<ul>
+<li>Inside the steps folder is a collection of Python files that have the steps that match the Gherkin statements in the feature files.
+<ul>
+<li>It doesn't matter what you name these steps files, but most people use &quot;_steps&quot; in the name to signify that they're steps files.</li>
+</ul>
+</li>
+<li>Best practice suggests that you place all of the generic steps that manipulate the web interface, regardless of application, into a file called &quot;web_steps.py.&quot;
+<ul>
+<li>This is a recommendation that started with Ruby on Rails and Cucumber, and Rails even generated this web file for you.</li>
+</ul>
+</li>
+<li>If you have additional Python files containing steps, you could store them in the steps folder as well.
+<ul>
+<li>Behave will load all of the steps in the Python files in this folder.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Note that there's not a one-to-one correlation between the feature files and the step files.
+<ul>
+<li>e.g. five feature files with only two step files.</li>
+<li>As long as the Python steps cover all of the statements in the feature files, everything will work.</li>
+</ul>
+</li>
+<li>So to use Behave, first you need to set up your folder structure correctly.
+<ul>
+<li>You create your features folder and your feature files and your steps folder under that for your Python steps files.</li>
+<li>Once your folders and files are set up, you run the Behave tool from within the parent of that features folder.</li>
+<li>Behave reads the steps in each feature file, looks for a matching Python step in the steps files, and executes those functions.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Step matching example
+<ul>
+<li>Feature file<pre><code>Feature: &lt;description of feature&gt;
+
+As a &lt;stakeholder&gt;
+I want &lt;some function&gt;
+So that &lt;I can achieve some goal&gt;
+
+Scenario: Test something
+
+Given some known state
+And some other known state
+When some action is taken
+Then some outcome is observed
+And some other outcome is observed
+</code></pre>
+<ul>
+<li>This file contains the scenarios that you built with your stakeholders.</li>
+</ul>
+</li>
+<li>Steps file<pre><code># steps.py
+from behave import given, when, then
+
+@given('some known state')
+def step_impl(context):
+    set_up(some, state)
+
+@when('some action is taken')
+def step_impl(context):
+    perform(some, action)
+
+@given('some other known state')
+def step_impl(context):
+    set_up(other, state)
+
+@then('some outcome is observed')
+def step_impl(context):
+    assert(outcome, observed)
+
+@then('some other outcome is observed')
+def step_impl(context):
+    assert(other_outcome, observed)
+</code></pre>
+<ul>
+<li>It contains the Python statements that Behave will match to the feature file.
+<ul>
+<li>Notice that all of the Python functions in this file have the same name: &quot;step_impl.&quot;
+<ul>
+<li>Behave will ignore these function names.</li>
+<li>It only looks for the Python decorators that wrap the functions.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>When Behave begins to execute, it scans the feature file to find the first scenario.
+<ul>
+<li>Then it processes the first sentence of that scenario: &quot;Given some known state.&quot;</li>
+<li>At this point, Behave looks for a Python step that starts with the Given keyword and has the text &quot;some known state.&quot;
+<ul>
+<li>Behave finds the step in the steps.py file and executes it.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Then Behave looks for the next sentence in the scenario: &quot;And some other known state.&quot;
+<ul>
+<li>Because And comes after a Given, Behave will look in the steps file for a Python step that starts with the Given keyword and matches the string &quot;some other known state.&quot;</li>
+<li>Behave finds the step and executes it.</li>
+<li>Notice the steps do not have to be in any particular order in the steps file.
+<ul>
+<li>Behave will find them regardless of the order of appearance in the file.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The next sentence in the feature file is &quot;When some action is taken.&quot;
+<ul>
+<li>This time, Behave looks in the steps file for the When keyword followed by &quot;some action is taken.&quot;</li>
+<li>It doesn't match the Given or Then steps even if they have the same text.</li>
+<li>A When in the feature file will only match a When in the steps file.
+<ul>
+<li>Behave finds the step and executes it.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Next, Behave processes &quot;Then some outcome is observed.&quot;
+<ul>
+<li>It looks for a Then step with the text &quot;some outcome is observed,&quot; and it executes that function.</li>
+</ul>
+</li>
+<li>Finally, it processes &quot;And some other outcome is observed.&quot;
+<ul>
+<li>Because the And keyword follows the Then, Behave looks for a Then step with the text &quot;some other outcome is observed&quot; and executes it.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Behave reads through each scenario of a feature file, step by step.
+<ul>
+<li>It processes each step's keyword and text string, finds a matching keyword and text string pair in the Python steps file, and it executes that function.</li>
+<li>It's simple yet eloquent.</li>
+</ul>
+</li>
+</ul>
+<h3>Behave Test Fixtures</h3>
+<ul>
+<li>Behave has a set of test fixtures that you could run before or after feature scenarios, steps, or tags to control the test execution environment.<pre><code>before_all(context)
+after_all(context)
+</code></pre>
+<ul>
+<li>As their name implies, any code you place in these fixtures will execute once before all the features and then again after all the features.</li>
+<li>This set is ideal for setting up web drivers from tools like Selenium.
+<ul>
+<li>With Selenium drivers, you can use a real browser to perform your testing.</li>
+</ul>
+</li>
+<li>This set is also ideal for establishing the context values that all the steps can access and for shutting down any drivers after Behave processes all the features.</li>
+</ul>
+<pre><code>before _feature(context, feature)
+after_feature(context, feature)
+</code></pre>
+<ul>
+<li>These functions run before and after each feature.
+<ul>
+<li>Every feature pass-in is an instance of the feature class.</li>
+</ul>
+</li>
+<li>If you use multiple features, this set can be ideal for setting up a clean environment before and after each feature runs.</li>
+</ul>
+<pre><code>before_scenario(context, scenario)
+after_scenario(context, scenario)
+</code></pre>
+<ul>
+<li>These functions run before and after each scenario.
+<ul>
+<li>The scenario is passed in as an instance of the scenario class.</li>
+</ul>
+</li>
+<li>With these functions, you could have even more granular control over each scenario execution environment.</li>
+</ul>
+<pre><code>before_step(context, step)
+after_step(context, step)
+</code></pre>
+<ul>
+<li>These run before and after every step.
+<ul>
+<li>The step passed in is an instance of the step class.</li>
+<li>Very granular control</li>
+</ul>
+</li>
+</ul>
+<pre><code>before_tag(context, tag)
+after_tag(context, tag)
+</code></pre>
+<ul>
+<li>You can tag sections of your feature file with a name and then these functions run before and after the section tag with a given name.
+<ul>
+<li>Behave invokes tags by the order they're found in the feature file.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Behave Environment Setup</h3>
+<ul>
+<li>You set up your behave environment and a file called environment.py, and this is where you declare your test fixtures.
+<ul>
+<li>This one file environment.py controls the environment at whatever level of granularity you need.</li>
+</ul>
+</li>
+</ul>
+<pre><code># environment.py
+
+from os import getenv
+from selenium import webdriver
+
+WAIT_SECONDS = int(getenv('WAIT_SECONDS', '60'))
+BASE_URL = getenv('BASE_URL', 'http://localhost:8080')
+
+def before_all(context):
+    &quot;&quot;&quot; Executed once before all tests &quot;&quot;&quot;
+    options = webdriver.ChromeOptions()
+    options.add_argument(&quot;--headless&quot;)
+    options.add_argument(&quot;--no-sandbox&quot;)    # Bypass OS security model
+    context.driver = webdriver.Chrome(options=options)
+    context.wait_seconds = WAIT_SECONDS
+    context.driver.implicitly_wait(context.wait_seconds)    # seconds
+    context.base_url = BASE_URL
+
+def after_all(context):
+    &quot;&quot;&quot; Executed after all tests &quot;&quot;&quot;
+    context.driver.quit()
+</code></pre>
+<ol>
+<li>You start with your imports. You need to import any configuration parameters from the environment.</li>
+<li>You should declare any global variables you want to get from the environment.
+<ul>
+<li>In this example, you get an environment variable called wait_seconds that controls how long Selenium waits for a response from the UI.</li>
+<li>You will also get an environment variable called Base_URL that tells you the location of the system under test.
+<ul>
+<li>By changing the base URL environment variable, you can point Behave to your local computer or any remote computer that you want to test.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The first function you define is before_all, which will run before Behave processes any feature files.
+<ul>
+<li>Notice that this function has one parameter passed in the context.
+<ul>
+<li>This context will be passed to every step in your test suite. Therefore, anything you assign to this context will be available to all of the steps.</li>
+</ul>
+</li>
+<li>The first item you define in place in the context is the WebDriver.
+<ul>
+<li>You set the options to use Headless Chrome driver, but you could have used Firefox or Safari driver or any number of other drivers.</li>
+<li>The only prerequisite is that web browser is installed in the test system that's running Behave.</li>
+</ul>
+</li>
+<li>You assign this driver to a variable called driver in the context.
+<ul>
+<li>Again, this context is parsed to each step, thus, all the steps will have access to the WebDriver by simply referencing context.driver and we'll use it to drive their actions on the UI.</li>
+</ul>
+</li>
+<li>Next, you save the wait_seconds global variable in the context.
+<ul>
+<li>That way, all the steps can access it to know how long to wait for the UI to respond.</li>
+</ul>
+</li>
+<li>You then set an attribute on the WebDriver to implicitly wait this number of seconds by default.</li>
+<li>Finally, you create a variable called base_ URL in the context and set it to the global variable base_URL that you got from the environment.
+<ul>
+<li>This way every step, we'll know what URL to run the test against.</li>
+</ul>
+</li>
+<li>All of these Python statements will execute once before Behave processes any of the feature files.
+<ul>
+<li>Together these statements set up the initial environment for running the BDD tests.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The last function that you define is, after_all, and it has one line of code, context.driver.quit.
+<ul>
+<li>This function tells the web browser to close down after all tests are complete, ensuring that you don't leave multiple web browsers running in memory afterwards.</li>
+<li>Obviously, you could add more text fixtures to this file and you can have them execute before and after each feature, scenario, step, or tag.</li>
+</ul>
+</li>
+</ol>
+<h3>Tips for Writing Feature Files</h3>
+<ul>
+<li>Strive for consistency.
+<ul>
+<li>Remember that Behave uses string matching to find the Python steps to execute.</li>
+<li>Say you have the string &quot;I see&quot; in one Gherkin statement and &quot;I should see&quot; in another.
+<ul>
+<li>These are two different strings, so you will need to write two separate Python steps to match them, one for each string.</li>
+<li>But if those strings are executing the same code, just choose one of the strings to use in your feature file.</li>
+</ul>
+</li>
+<li>Be consistent so that you don't need to write duplicate Python steps.</li>
+</ul>
+</li>
+<li>Consider the user experience.
+<ul>
+<li>You're describing the behavior that you want the user to see.</li>
+<li>If you have a field on the interface called &quot;Customer ID,&quot; use that exact name in the feature file.
+<ul>
+<li>Some developers write feature files that might use a variable name like &quot;customer_id&quot; because that's the field behind the scenes that gets updated.
+<ul>
+<li>The problem is that your stakeholder isn't going to know what you're talking about because the field that they see on the screen is &quot;Customer ID&quot;.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Always write the feature files as if you were explaining how to use the feature, not what the feature does under the covers.</li>
+</ul>
+</li>
+<li>Build in cues that signal that the system has responded to a request.
+<ul>
+<li>These cues can help with latency issues when you're testing remotely.</li>
+<li>For example, say you're checking that a Search/Submit button works when someone clicks it.
+<ul>
+<li>Make sure that you have an on-screen status that gets updated once the request is complete.
+<ul>
+<li>That way, you can tell the testing tools to wait for the status before checking the results.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Feature File Example</h3>
+<ul>
+<li>This pet shop wants to allow customers who come to their website to be able to search for pets by category.</li>
+</ul>
+<pre><code>Feature: Search for pets by category
+As a pet shop customer
+I need to be able to search for a pet by category
+So that I only see the category of pet I'm interested in buying
+
+Background:
+    Given the following pets
+        | name    | category  | available |
+        | Fido    | dog       | True      |
+        | Kitty   | cat       | True      |
+        | Leo     | lion      | False     |
+
+Scenario: Search for dogs
+    Given I am on the &quot;Home Page&quot;
+    When I set the &quot;Category&quot; to &quot;dog&quot;
+    And I click the &quot;Search&quot; button
+    Then I should see the message &quot;Success&quot;
+    And I should see &quot;Fido&quot; in the results
+    But I should not see &quot;Kitty&quot; in the results
+    And I should not see &quot;Leo&quot; in the results
+</code></pre>
+<ol>
+<li>You start by writing your feature file with the keyword Feature, followed by the title &quot;Search for pets by category.&quot;</li>
+<li>Next, you add the user story: &quot;As a pet shop customer, I need to be able to search for a pet by category, So that I only see the category of pet that I'm interested in buying.&quot;</li>
+<li>Next, you use the keyword: &quot;Background.&quot;
+<ul>
+<li>Sometimes several scenarios in the same feature start with the same context.</li>
+<li>Background is a test fixture that you can use to specify the context once and then establish it before every scenario in the feature.</li>
+<li>Typically, you use Background with one or more Given statements to set up the initial testing state, but you can use any keyword that fits.
+<ul>
+<li>In this example, you use, &quot;Given the following pets.&quot;
+<ul>
+<li>This Given statement is just like any other. Behave will search all of the Python step files for a Given decorator followed by the string, &quot;the following pets.&quot;</li>
+</ul>
+</li>
+<li>Under the Given statement, you create a data table.
+<ul>
+<li>You have to indent the table to associate it with the Given statement.</li>
+<li>To set up a working table, you must delimit its columns with vertical bars and use its first row to designate the column names.
+<ul>
+<li>In this example, you have three column names: name, category, and available.</li>
+<li>The other rows contain the data that you want the table to have at the beginning of every scenario.</li>
+</ul>
+</li>
+<li>Remember: since you included this table in the Background test fixture, its data will reload for each scenario.
+<ul>
+<li>So, for example, if one scenario deletes one of the pets, Behave will reload that table and that pet will be there for the next scenario.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Now you can write a scenario.
+<ul>
+<li>You want to describe what happens when a customer at the pet shop website's homepage enters &quot;dog&quot; into the category field and clicks the &quot;Search&quot; button.</li>
+<li>You start with the Scenario keyword, followed by a title for this scenario: &quot;Search for dogs.&quot;</li>
+<li>Next, you set up the initial state with a Given keyword: &quot;Given I am on the home page.&quot;
+<ul>
+<li>This will be your starting point.</li>
+</ul>
+</li>
+<li>Next, you add the event: &quot;When I set the 'Category' to 'dog.'&quot;
+<ul>
+<li>This statement does more than describe the action of the user.
+<ul>
+<li>It also tells the developers that on the home page, they need a field of some kind where the user can specify the text &quot;dog&quot; as the search criteria.</li>
+</ul>
+</li>
+<li>The second part of the event is &quot;And I click the 'Search' button.&quot;
+<ul>
+<li>Now the developers know that in addition to a category field, they need to provide a search button.</li>
+</ul>
+</li>
+<li>These two sentences give a lot of information about what is needed on the home page for this scenario.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Now it's time for your measurable outcome.
+<ul>
+<li>You start with &quot;Then I should see the message 'Success.'&quot;
+<ul>
+<li>It's easy to tell someone to look at a data table and notice if something has changed.</li>
+<li>But it's harder to tell a web browser driver like Selenium to do that.
+<ul>
+<li>You need to be more specific.</li>
+<li>For this reason, you should build in on-screen cues and a status like the &quot;Success&quot; message that signals that the results from taking the action have completed.
+<ul>
+<li>So you wait until you see the &quot;Success&quot; message, indicating that the search is complete.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Finally, you add a few assertions to ensure the user gets the correct results.
+<ul>
+<li>The first assertion indicates what the user is looking for: &quot;And I should see 'Fido' in the results.&quot;
+<ul>
+<li>How do you know that Fido should be in the results?
+<ul>
+<li>You check the table in the background statement.</li>
+<li>The table has a dog named Fido, a cat named Kitty, and a lion named Leo.</li>
+</ul>
+</li>
+<li>This situation shows why specifying the test data in the background statement is so helpful.
+<ul>
+<li>It lets everyone know what the initial state of the system is.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The next two assertions indicate what the user is not looking for.
+<ul>
+<li>One assertion is &quot;But I should not see 'Kitty' in the results;&quot;</li>
+<li>the other is &quot;And I should not see 'Leo' in the results.&quot;
+<ul>
+<li>Notice the consistency in the assertions:
+<ul>
+<li>You consistently use phrases like &quot;I should see&quot; and &quot;I should not see.&quot;
+<ul>
+<li>This way, you will have fewer Python steps to write.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3>Selenium</h3>
+<ul>
+<li>Selenium is a collection of tools for automating web browser activity.
+<ul>
+<li>At its core, Selenium is a WebDriver, an interface to write instruction sets that you can run interchangeably across popular browsers like Chrome, Firefox, Safari, and Edge, just to name a few.</li>
+<li>With only a few lines of code, you can control a web browser just like a real person would.
+<ul>
+<li>You can enter data into fields, read data back from fields, click links, click buttons…everything a real user can do.</li>
+<li>This control makes Selenium perfect for integration testing of multiple microservices that share a common user interface.</li>
+</ul>
+</li>
+<li>Selenium saves hours of running these tests manually.</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>To initialize Selenium, first, you must have the web browser that you want to use installed on the test system.
+<ul>
+<li>If you want to test with Chrome, you need to have Chrome installed.</li>
+<li>If you want to test with Firefox, you need to have Firefox installed.</li>
+<li>Selenium uses a real web browser, not emulation, so you need to install the actual web browser software.</li>
+</ul>
+</li>
+<li>Next, you instantiate a driver of the same type: a driver for Chrome, Firefox, or whatever other browser you want to use.
+<ul>
+<li>In this example, I'm setting up some options for the Chrome driver.
+<ul>
+<li>One option is that the driver is headless, which means I don't want the browser GUI to show up.</li>
+<li>Another option turns off security features like sandboxing that might interfere with testing.</li>
+</ul>
+</li>
+<li>Then I create a Chrome driver with those options.</li>
+</ul>
+</li>
+<li>To use Selenium, you must first tell it which element on the HTML page you want to interact with.
+<ul>
+<li>Selenium can find elements by class name, CSS selector, id, name, Xpath, links, partial links, text, tag names - that's a rich set of selectors to choose from.</li>
+<li>Selenium for Python has function calls for each of these selectors.
+<ul>
+<li>Selenium also has a version, &quot;find_by_elements&quot; with an &quot;s,&quot; that finds multiples of the elements on the web page. In this example, we'll keep it simple and only use find_element_by_id().</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>
+<p>Example: Initial setup</p>
+<pre><code>from os import getenv
+from selenium import webdriver
+
+BASE_URL = getenv('BASE_URL', 'http://localhost:8080')
+
+def before_all(context):
+    &quot;&quot;&quot; Executed once before all tests &quot;&quot;&quot;
+    options = webdriver.ChromeOptions()
+    options.add_argument(&quot;--headless&quot;)
+    options.add_argument(&quot;--no-sandbox&quot;)    # Bypass OS security model
+    context.driver = webdriver.Chrome(options=options)
+    context.base_url = BASE_URL
+
+def after_all(context):
+    &quot;&quot;&quot; Executed after all tests &quot;&quot;&quot;
+    context.driver.quit()
+</code></pre>
+</li>
+<li>
+<p>Example: Find element by id</p>
+<pre><code>def step_impl(context, text_string):
+    &quot;&quot;&quot; Get the value of a text filed &quot;&quot;&quot;
+    element = context.driver.find_element_by_id('customer_id')
+    assert text_string in element.get_attribute('value')
+</code></pre>
+<ol>
+<li>You start with a function that is a step implementation for finding an element by its id.
+<ul>
+<li>This function has two parameters.
+<ul>
+<li>One is the context, which is passed into each Python step.</li>
+<li>The other is a text string to look for, which is an additional parameter that you need for a selector method.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Next, you create a variable called element and you assign it the results of calling find_element_by_id() on the driver, passing in the name of the element id that you're looking for: &quot;customer_id.&quot;</li>
+<li>Then you specify what happens when Selenium finds this element.
+<ul>
+<li>You assert that the text string must be present in the element's value attribute.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>Example: Enter text into a field</p>
+<pre><code>def step_impl(context, text_string):
+    &quot;&quot;&quot; Update the value of a text field &quot;&quot;&quot;
+    element = context.driver.find_element_by_id('customer_id')
+    element.clear()
+    element.send_keys(text_string)
+</code></pre>
+<ol>
+<li>When find_element_by_id() is called, the function will search the HTML for an element that has an id of &quot;customer_id&quot; and will return that text input element.
+<ul>
+<li>This element becomes the one that you are manipulating in your code.</li>
+<li>You could have used a method to find elements by name, class, Xpath, or any other method.
+<ul>
+<li>Using the ids can be the most accurate because you can easily control their uniqueness and they don't change if you move elements around on the page.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Once you find an element, you can do more with it than just inspect its contents.
+<ul>
+<li>You can clear that element and then type the text string into the input field using the send_keys() function.</li>
+<li>This is most of what your test cases do; they look for text, enter text, and click buttons and links.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>Example: Wait for a value</p>
+<pre><code>WAIT_SECONDS = 60
+
+def step_impl(context, text_string):
+    &quot;&quot;&quot; Wait for the value of a text field &quot;&quot;&quot;
+    found = WebDriverWait(context.driver, WAIT_SECONDS).until(
+        expected_conditions.text_to_be_present_in_element_value(
+            By.ID, 'customer_id'), text_string
+    )
+    expect(found).to_be(True)
+</code></pre>
+<ul>
+<li>Often, you experience latency when testing in a web UI, so you need to wait for something to appear.
+<ul>
+<li>Luckily, the web driver has a WebDriverWait function to do just that.
+<ul>
+<li>It tells the driver to wait a certain number of seconds for something to appear.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>It looks like a lot of code, but it's very helpful when making calls to remote applications that may involve latency.</li>
+</ul>
+</li>
+</ul>
+<h3>Writing Step Files</h3>
+<ul>
+<li>Step files are Python files containing functions that match the Gherkin statements in the feature file.</li>
+<li>The Behave tool provides a set of Python decorators to use in matching Given, When, and Then.</li>
+<li>When Behave finds a Given statement in the feature file, it searches the step file for
+a function annotated with the @given decorator, containing a matching string.
+<ul>
+<li>When Behave finds a match, it executes that function.</li>
+</ul>
+</li>
+<li>Process
+<ol>
+<li>You write a step for each Gherkin statement in your scenario.</li>
+<li>Implement the step in Python,</li>
+<li>And repeat until all of the statements have steps.</li>
+</ol>
+</li>
+<li>Feature example<pre><code>Feature: The pet store catalog service
+    As a Pet Store Owner
+    I need a RESTful catalog service
+    So that I can keep track of all my pets.
+
+Scenario: The website is up
+    When I visit the &quot;Home Page&quot;
+    Then I should see &quot;Welcome to the Pet Shop&quot; in the title
+    And I should not see &quot;404 Not Found&quot;
+</code></pre>
+</li>
+<li>Step file example<pre><code>from behave import when, then
+
+@when('I visit the &quot;Home Page&quot;')
+def step_impl(context):
+    &quot;&quot;&quot; Make a call to the base URL &quot;&quot;&quot;
+    context.driver.get(context.base_url)
+
+@then('I should see &quot;Welcome to the Pet Shop&quot; in the title')
+def step_impl(context):
+    &quot;&quot;&quot; Check the title for Welcome message &quot;&quot;&quot;
+    assert &quot;Welcome to the Pet Shop&quot; in context.driver.title
+
+@then('I should not see &quot;404 Not Found&quot;')
+def step_impl(context):
+    &quot;&quot;&quot; Check the body for error message &quot;&quot;&quot;
+    element = context.driver.find_element(by.TAG_NAME, 'body')
+    assert &quot;404 Not Found&quot; not in element.text
+</code></pre>
+<ol>
+<li>You start by importing the when and then decorators from Behave.
+<ul>
+<li>Since you don't use the Given keyword in the feature file, you don't need to import the Given keyword decorator here.</li>
+</ul>
+</li>
+<li>Next, you have your first Python step.
+<ul>
+<li>You use the @when decorator with the string 'I visit the &quot;Home Page&quot;'.
+<ul>
+<li>This code indicates that Behave should invoke the function that follows when looking for a match for the statement &quot;When I visit the home page.&quot;</li>
+</ul>
+</li>
+<li>To implement this step, first, you define a function inside it called step_impl(), passing in the context and adding the appropriate docstring.
+<ul>
+<li>You use step_impl() inside every step because Behave doesn't use the function names for matching; it only matches based on the text string in the decorators given, when, and then.</li>
+</ul>
+</li>
+<li>Let's think about how you should implement this step.
+<ul>
+<li>In the environment.py file, you added a web driver and a base URL to the context and called them context.driver and context.base_url, respectively.</li>
+<li>Now it's time to use those variables.
+<ul>
+<li>The WebDriver has the methods get, put, post, and delete to make the corresponding HTTP verb requests.</li>
+<li>In this step, you want to get the home page, which is represented by the base_url. So you add the statement context.driver.get(context.base_url).
+<ul>
+<li>This statement will make an HTTP GET request to call the base URL and return the home page.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Notice that you didn't make any assertions in this step.
+<ul>
+<li>In test driven development, every function is a test case and has an assertion.</li>
+<li>But in BDD, each step is just one part of a test case; it's not an entire test case itself.
+<ul>
+<li>One step may be to set something up, like a state, and the following step asserts something about that state.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In this first step of this example, you implemented the action specified by the statement: to visit the home page.
+<ul>
+<li>In the following steps, you make assertions about the home page.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>For the next step, we use the decorator @then with the string 'I should see &quot;Welcome to the Pet Shop&quot; in the title'.
+<ul>
+<li>This step will match the second statement in your scenario.</li>
+<li>Again, you define a step_impl() function, passing in the context, and adding the appropriate docstring.</li>
+<li>Next, to finish this implementation step, you assert that the string &quot;Welcome to the Pet Shop&quot; is in the title of the web page that the web driver brings back.
+<ul>
+<li>This title is held in context.driver.title.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>For the last step, you use the @then decorator again.
+<ul>
+<li>You do this because in the feature, this statement has an And keyword and the statement before it has a Then.</li>
+<li>You add the string 'I should not see &quot;404 Not Found&quot;'.</li>
+<li>This step will match the third statement in your scenario.</li>
+<li>You define a function for this, passing in the context and an appropriate docstring.</li>
+<li>To finish implementing this step, first, you must find the body element of the web page's HTML.
+<ul>
+<li>You use the find_element() function on the web driver and specify that the function should look for the tag named 'body'.
+<ul>
+<li>You save that element as the variable called element.</li>
+</ul>
+</li>
+<li>Then you assert that the string &quot;404 Not Found&quot; is not in the element's text.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3>Loading Test Data</h3>
+<ul>
+<li>Test cases often need test data. There’s a simple way to specify test data for Behave
+directly in your feature file using the Background section.
+<ul>
+<li>In Background, you can specify the initial state and the data you want to start with.</li>
+<li>The only problem is that the data doesn’t load itself; you need to load it manually.
+<ul>
+<li>You might ask, “How do I do that?”</li>
+</ul>
+</li>
+<li>Behave puts the data in a variable in the context called table.
+<ul>
+<li>That means you can iterate over context.table and extract the data.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example<pre><code>Feature: Search for pets by category
+As a pet shop customer
+I need to be able to search for a pet by category
+So that I only see the category of pet I'm interested in buying
+
+Background:
+    Given the following pets
+        | name    | category  | available |
+        | Fido    | dog       | True      |
+        | Kitty   | cat       | True      |
+        | Leo     | lion      | False     |
+</code></pre>
+<ul>
+<li>Notice that it has a Background section that says, “Given the following pets” and includes a table of pets delimited by vertical bars.
+<ul>
+<li>The first row of this table contains the column names: name, category, and available.</li>
+<li>When Behave loads these into context.table, each row will be a Python dictionary with a name key, category key, and available key.
+<ul>
+<li>Thus, you can pull the data from the table by using the column names.</li>
+</ul>
+</li>
+<li>The rest of the table is data that gets loaded into context.table.
+<ul>
+<li>Each row will be a dictionary with the data for that row.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Loading data from context.table<pre><code>@given('the following pets')
+def step_impl(context):
+    &quot;&quot;&quot; Load the database with new pets &quot;&quot;&quot;
+    for row in context.table:
+        payload = {
+            &quot;name&quot;: row['name'],
+            &quot;category&quot;: row['category'],
+            &quot;available&quot;: row['available'] in ['True', 'true', '1']
+        }
+        context.resp = requests.post(
+            f&quot;{context.base_url}/pets&quot;,
+            json=payload
+        )
+        assert context.resp.status_code is 201
+</code></pre>
+<ol>
+<li>You start with the decorator given with the string “the following pets.”
+<ul>
+<li>This line will match the statement “Given the following pets” in the feature file.</li>
+</ul>
+</li>
+<li>Next, you define a function to implement this step, pass in the context, and add an appropriate docstring.</li>
+<li>Now, you want to iterate over context.table using a for loop.
+<ul>
+<li>This loop will give you back every row in the table as a dictionary named row.</li>
+</ul>
+</li>
+<li>Next, you create a variable called payload.
+<ul>
+<li>Payload is also a Python dictionary, and you will start to fill it with the columns from the table.</li>
+<li>You start by making a key called name.
+<ul>
+<li>For the value, you assign the data from the current row that also has the key called name.</li>
+</ul>
+</li>
+<li>You take the same approach with category.
+<ul>
+<li>You create a key called category and assign it the data from the current row that has a key called category.</li>
+</ul>
+</li>
+<li>Available is a little different because it’s a Boolean: “True” if the pet is available, “False” if it is not.
+<ul>
+<li>So, you need to convert the table data from a string to a Boolean.
+<ul>
+<li>You start by creating a key called available.</li>
+<li>You then assign it the data from the current row that has a key called available, but you don’t stop there.</li>
+<li>You evaluate this data to include strings of true with a capital T, true all lowercase, and the number one.
+- In other words, data of either of those strings will evaluate to the Boolean True and set available to True.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Now that you have your payload dictionary with the name, category, and available data, you need to create a pet from it.
+<ul>
+<li>Because you are remote from the server you are testing, you must make an HTTP request to the server’s REST API.</li>
+<li>To do this, you make a post request to your service’s REST API to create a pet.
+<ul>
+<li>The first argument is a string composed of the base URL in the context followed by /pets.
+<ul>
+<li>You use /pets because it’s the endpoint for creating a pet in a RESTful API.</li>
+</ul>
+</li>
+<li>You specify a second argument as json=payload, which will send the Python dictionary called payload as a JSON string to the REST API.
+<ul>
+<li>Notice that you are saving the response from this post in the context so that other steps can examine it if needed.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Finally, you assert that the status code in the response is a 201, which is the status code for a successful creation for a REST API.</li>
+</ol>
+</li>
+</ul>
+<h3>Generating Steps with Behave</h3>
+<ul>
+<li>Something that’s great about the Behave tool is that it can generate steps for you.
+<ul>
+<li>They could be the initial steps when you’re just starting out or any steps that are missing as you’re working on your feature scenarios.</li>
+</ul>
+</li>
+<li>Just run Behave against your feature file and it will show you the missing steps.
+<ul>
+<li>If you haven’t written any steps, then the first time you run Behave, all of the steps are missing.
+<ul>
+<li>If this is the case, Behave will actually seed your development efforts with a set of suggested steps.
+<ul>
+<li>With this code, you have the starting point for building your steps file.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>e.g. “search for dogs” scenario.
+<ol>
+<li>You start with a feature file.</li>
+<li>Once you create this feature file, you run Behave.</li>
+<li>You get output.
+<ul>
+<li>Behave tells you, “You can implement step definitions for the undefined steps with these snippets.”</li>
+<li>And then it gives you snippets of code that you can cut and paste into a steps file as a starting point.
+<ul>
+<li>Notice that each set has a proper decorator keyword indicating the type of step: Given, When, or Then.</li>
+<li>The remainder of the sentence is passed in as the string to match.</li>
+<li>Also, notice that each implementation simply raises a NotImplementedError exception.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Obviously, you need to replace these with real steps code.
+<ul>
+<li>The important point is that you can create a steps file from this output to give you a starting point for your steps.</li>
+<li>This way, you know that all of your scenarios are covered.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3>Implementing Initial Steps</h3>
+<ol>
+<li>You start by creating a steps file from the generated steps.</li>
+<li>You run Behave and you observe that the first step fails - because all it does is raise an exception.</li>
+<li>Then, you implement the first step to make it pass and you run Behave again to make sure that it passes.</li>
+<li>You repeat this process for the remaining steps until they all pass.</li>
+</ol>
+<h3>Working with Context</h3>
+<ul>
+<li>
+<p>The context variable is passed into every step definition, so all of the step functions that you write will have a variable called context as the first argument.</p>
+<ul>
+<li>You can think of it as a container or a bag to put stuff in, take stuff out, and pass it around.</li>
+<li>It exists for the duration of the entire feature file and all of the steps.
+<ul>
+<li>Every step called from the feature file will share the same context.</li>
+<li>That lifespan makes context useful for passing information from one step to the next--or any future step that might need that information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Python Flask test client Example</p>
+<pre><code>@given('the server is started')
+def step_impl(context):
+    context.client = app.test_client()
+
+@when('I visit the &quot;home page&quot;')
+def step_impl(context):
+    context.response = context.client.get('/')
+
+@then('I should see &quot;{messsage}&quot;')
+def step_impl(context, message):
+    assert message in str(context.response.data)
+</code></pre>
+<ol>
+<li>The first step in this file is “Given the server is started.”
+<ul>
+<li>This one line of code gets a test client from the Flask app and stores it in a context variable called context.client.</li>
+<li>Now any future step can get the test client simply by referencing context.client.</li>
+</ul>
+</li>
+<li>The next step does just that.
+<ul>
+<li>It calls a get() method on the context.client to get the root URL of the application under test.</li>
+<li>It stores the results from that call in another context variable called context.response.
+<ul>
+<li>Now any other step that needs to inspect the response of this get() request can find it in context.response.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The next step function does exactly that.
+<ul>
+<li>It references the data attribute of context.response and asserts that the message string passed into the function can be found somewhere in the data.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>Selenium clipboard example</p>
+<ul>
+<li>Occasionally, you need to copy information from one field and paste it into another, but unfortunately, Selenium doesn’t support clipboards.</li>
+</ul>
+<pre><code>@when('I copy the &quot;{element_name}&quot; field')
+def step_impl(context, element_name):
+    element_id = element_name.lower().replace(' ', '_')
+    element = context.driver.find_element_by_id(element_id)
+    context.clipboard = element.get_attribute('value')
+
+@when('I paste the &quot;{element_name}&quot; field')
+def step_impl(context, element_name):
+    element_id = element_name.lower().replace(' ', '_')
+    element = context.driver.find_element_by_id(element_id)
+    element.clear()
+    element.send_keys(context.clipboard)
+</code></pre>
+<ol>
+<li>The first step is “I copy the element_name field”.
+<ul>
+<li>This step uses a variable substitution, which is a way to pass in an element name that will be used as the source of the copy.
+<ul>
+<li>The first line in this step calculates the element ID for that name.</li>
+<li>The second line makes a call to context.driver.find_element_by_ID, passing in the element ID to get the actual element.</li>
+<li>The third line calls the get attribute on that element requesting the value, and here’s where the copy happens.</li>
+</ul>
+</li>
+<li>It stores that value in a variable called context.clipboard, &quot;clipboard&quot; here, you can call it anything.
+<ul>
+<li>Now, any future step can inspect context.clipboard and see if anything has been copied there.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Next, we have a step that does the paste function: “I paste the ‘element_name’ field”.
+<ul>
+<li>Once again, it calculates the field’s name and then calls context.driver.find_element_by_ID, passing in the element ID to get the actual element.
+<ul>
+<li>Once the step has the element, it clears it in preparation for the paste.</li>
+</ul>
+</li>
+<li>This last line is where the paste happens.
+<ul>
+<li>It calls send_keys() on the element, passing in the context.clipboard variable, which contains whatever was stored there by the copy clipboard step.</li>
+<li>Notice that these two steps are very generic.
+<ul>
+<li>They can take any element’s value, store it to the simulated clipboard, and then send that value to any element as keystrokes.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3>Variable Substitution</h3>
+<ul>
+<li>You can use variable substitution to make your Python steps more generic.
+<ul>
+<li>Often you have sentences in your feature file that only differ by a name field or a value, and they have identical implementations except for this name or data value.</li>
+<li>By changing these words in the sentence to variables, you don’t need to write as many Python steps because one step can now match multiple sentences in your feature file.
+<ul>
+<li>This leads to greater reuse, and it’s always a good idea to make steps as generic as possible for maximum reuse.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The rules for substituting a variable are simple.
+<ul>
+<li>You start with two curly braces.</li>
+<li>When Behave sees an open curly brace in the step string, it knows that what comes after it until the closed curly brace will be a variable name.</li>
+<li>Next, you create a variable name to replace the data in the string.
+<ul>
+<li>As usual with Python variable names, you can’t have spaces in them, but you can delimit them with underscores.</li>
+</ul>
+</li>
+<li>Then in the string, you substitute the variable name enclosed in curly braces.</li>
+<li>Behave will take whatever text that shows up in the position and assign it to the variable by that name.</li>
+<li>This variable then gets passed into your function as a parameter.</li>
+</ul>
+</li>
+<li>Maximum reuse
+<ul>
+<li>Replace many steps with one generic step</li>
+<li>Place generic steps in web_steps.py</li>
+<li>Reuse them in all your applications</li>
+</ul>
+</li>
+<li>e.g.<pre><code>When I set the &quot;name&quot; field to &quot;Maxwell&quot;
+And I set the &quot;category&quot; field to &quot;Dog&quot;
+And I set the &quot;available&quot; field to &quot;True&quot;
+
+@when('I set the &quot;{element_name}&quot; field to &quot;{text_string}&quot;')
+
+def step_impl(context, element_name, text_string):
+    element_id = element_name.lower().replace(' ', '_')
+    element = context.driver.find_element_by_id(element_id)
+    element.clear()
+    element.send_keys(text_string)
+</code></pre>
+<ol>
+<li>You start with the @when decorator and the string with the two variables defined.
+<ul>
+<li>In your step implementation, you add two additional parameters with the same variable names as the variables in the step string.</li>
+<li>You can now use these variable names in your function as substitutes for whatever strings are passed in from the feature file.
+<ul>
+<li>Remember that the element ID will be the lowercase version of the field name.
+<ul>
+<li>So you add a line of code that takes the lowercase version, and to ensure that you have a valid HTML ID, you replace any spaces with underscores.</li>
+</ul>
+</li>
+<li>You assign the ID to a variable called element_id.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Then you call context.driver.find_element_by_ID and pass in that element ID to get the actual element.</li>
+<li>Once you have the element, you clear it to make sure that it has no data before you send new data.</li>
+<li>Lastly, you call send_keys() on that element and pass in the text_string variable.
+<ul>
+<li>That text_string variable will contain whatever text is enclosed in the double quotes in the feature file statement.
+<ul>
+<li>Using double quotes gives a helpful visual representation of how the string will be parsed.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Now Behave can match all three of the feature file’s statements with just one step function, and all of them will manipulate the correct field and send the correct data.</li>
+</ol>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://devfreedom.github.io/sitemap.xml

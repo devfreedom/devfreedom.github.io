@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Study Note] Coursework: DevOps and Software Engineering - DevOps | devfreedom.github.io</title>
+    <meta name="title" content="[Study Note] Coursework: DevOps and Software Engineering - DevOps | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮Study Note❯,DevOps,software engineering,cloud computing,web development,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20230621_2242_study-note_devops_coursework_01/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[Study Note] Coursework: DevOps and Software Engineering - DevOps</h1>
+        <div class="text-center">Published on 21 June 2023 10:42 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮Study Note❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮Study Note❯</a>
+            
+            <a href="/tags/DevOps" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#DevOps</a>
+            
+            <a href="/tags/software engineering" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#software engineering</a>
+            
+            <a href="/tags/cloud computing" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#cloud computing</a>
+            
+            <a href="/tags/web development" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#web development</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/devops.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>1. DevOps 101</h1>
+<h2>1-1. What is DevOps?</h2>
+<p>DevOps is primarily a recognition that Dev and Ops must work together during the entire development life cycle.</p>
+<ul>
+<li>
+<p>Dimensions of DevOps</p>
+<ul>
+<li>Culture (most important)
+<ul>
+<li>Stop working in silos, just work together</li>
+</ul>
+</li>
+<li>Method</li>
+<li>Tools</li>
+</ul>
+</li>
+<li>
+<p>Essential characteristics of DevOps</p>
+<ul>
+<li>Cultural change</li>
+<li>Automated pipelines</li>
+<li>Infrastructure as code</li>
+<li>Microservices</li>
+<li>Containers</li>
+<li>Immutable infrastructure</li>
+</ul>
+</li>
+<li>
+<p>Working DevOps means pushing small releases faster in order to gain feedback, minimize risk, and maximize learning.</p>
+<ul>
+<li>Working in small batches reduces waste and means quickly delivering something useful to the customer.</li>
+</ul>
+</li>
+<li>
+<p>Social coding is coding as a community and public repositories and pair programming result in higher code quality.</p>
+</li>
+</ul>
+<h2>1-2. Approaches</h2>
+<h3>Taylorism vs. Craftwork</h3>
+<ul>
+<li>Taylorism is about applying science to management.
+<ul>
+<li>In Taylorism, organizations be divided into independent functional silos.</li>
+<li>Taylorism was designed for factory work, while software development is like craftwork.</li>
+</ul>
+</li>
+<li>To be DevOps, teams must stop working in silos and work together with a common goal.
+<ul>
+<li>Handoffs created by working in silos results in mistakes, bottlenecks, and delays.</li>
+</ul>
+</li>
+</ul>
+<h3>Civil Engineering vs. Software Engineering</h3>
+<ul>
+<li>Software development is often viewed as a project to be completed and then passed on to operations to maintain.
+<ul>
+<li>We continue to treat software engineering as if it were a civil engineering project.
+<ul>
+<li>The project model is fundamentally flawed as a way of doing software development.</li>
+<li>When a project is complete and people move on, there is no ownership.</li>
+<li>This is not the way to create great software.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In DevOps, we want stable, long-lasting team membership with end-to-end ownership.
+<ul>
+<li>Software engineering and the behavior of the system are constantly changing.</li>
+<li>Team ownership and stable teams make software development more like product development and less like project management.</li>
+</ul>
+</li>
+</ul>
+<h3>Traditional Ops vs. DevOps</h3>
+<ul>
+<li>Enterprises see change as complex and time-consuming.
+<ul>
+<li>Traditional Ops &quot;builds once&quot; and maintains.</li>
+</ul>
+</li>
+<li>DevOps breaks big projects into a series of small, manageable changes.
+<ul>
+<li>Ephemeral infrastructure is created for each new deployment.</li>
+<li>Dev wants innovation, while Ops wants stability.</li>
+</ul>
+</li>
+<li>Required DevOps behaviors include shared ownership, collaboration, embracing change, and data-driven responses.</li>
+</ul>
+<h3>Organizational Impact of DevOps</h3>
+<ul>
+<li>Agile is a fundamental tenet of DevOps.
+<ul>
+<li>&quot;Is the culture of my organization truly embracing the Agile mindset?&quot;
+<ul>
+<li>Agile teams must be small.
+<ul>
+<li>Make it small.</li>
+</ul>
+</li>
+<li>Agile teams should be dedicated.
+<ul>
+<li>You can’t have people committed to several projects and expect all of those projects to move at the same speed, or for your people to remain focused on any one project for too long.</li>
+</ul>
+</li>
+<li>Agile teams should be cross-functional.
+<ul>
+<li>“development team” includes all of the people responsible for developing the product.</li>
+<li>This means software engineers, test engineers, operations engineers, business analysts, whatever it takes.</li>
+<li>These people need to be on the same team and not working in silos getting each other’s attention through ticketing systems.</li>
+</ul>
+</li>
+<li>Agile teams need to be self-organized.
+<ul>
+<li>They commit to work one sprint at a time.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Conway's Law
+<ul>
+<li>&quot;Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure.&quot;</li>
+</ul>
+</li>
+<li>Successful DevOps teams should be organized around business domains.
+<ul>
+<li>Each team should have a mission that aligns with a business domain.</li>
+</ul>
+</li>
+<li>The organizational objective of DevOps is to attain a shared mindset and empower everyone to deliver customer value.
+<ul>
+<li>Actions without consequences can lead to apathy.</li>
+</ul>
+</li>
+</ul>
+<h3>There is no DevOps &quot;Team&quot;</h3>
+<ul>
+<li>DevOps is a mindset that the whole organization adopts.
+<ul>
+<li>DevOps is not a job title, but cultural transformation on an organizational scale.
+<ul>
+<li>Having a seperate DevOps team is an antipattern, it rather seperates Dev and Ops.</li>
+</ul>
+</li>
+<li>DevOps solves the problems caused by siloed teams.
+<ul>
+<li>When people work in silos they do not see or feel the effect of their poor work.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DevOps is the practice of development and operations engineers working together during the entire software lifecycle, following Lean and Agile principles that allow them to deliver high-quality results.</li>
+</ul>
+<h2>1-3. Methodologies</h2>
+<h3>Test-driven Development (TDD)</h3>
+<ul>
+<li>TDD means test case drives the design and development of code.</li>
+<li>TDD allows you to develop faster and with more confidence.</li>
+<li>The Red, Green, Refactor workflow has to do with red as a fail and green as a pass, and it increases the quality of the code.
+<ul>
+<li>In order to create a DevOps CI/CD pipeline, you must first automate your testing unless you want to push bugs to production faster.</li>
+</ul>
+</li>
+</ul>
+<h3>Behavior-driven Development (BDD)</h3>
+<ul>
+<li>BDD focuses on the behavior of the system from the outside in.
+<ul>
+<li>It looks at the system as a consumer of it.</li>
+</ul>
+</li>
+<li>BDD uses an approachable syntax that everyone can understand.</li>
+<li>Key benefits of BDD include improvement in communications, a common syntax, and acceptance
+criteria for user stories.</li>
+<li>Gherkin
+<ul>
+<li>A business readable language which helps you to describe business behavior without going into details of implementation.
+<ul>
+<li>It is a domain specific language for defining tests in Cucumber format for specifications.</li>
+<li>It uses plain language to describe use cases and allows users to remove logic details from behavior tests.</li>
+<li>The text in Gherkin langauge acts as documentation and skeleton of your automated tests.</li>
+<li>Gherkin format is based on TreeTop Grammar which exists in 37+ languages.</li>
+</ul>
+</li>
+<li>Primary purpose
+<ul>
+<li>Documents user scenarios</li>
+<li>Writing an automated test (BDD)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Minimum Viable Product (MVP)</h3>
+<ul>
+<li>Minimum viable product is as much about delivery as it is about building what the customer really desires.
+<ul>
+<li>An MVP is the minimal thing that you can do to test your hypothesis.</li>
+<li>An MVP is not about delivery as much as it is about learning.
+<ul>
+<li>It's okay if the MVP fails — make sure that you learn from it.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Cloud Native Microservices</h3>
+<ul>
+<li>Microservices are loosely coupled and independently deployable, smaller components or services, designed for scalability and communicate with APIs.
+<ul>
+<li>Microservices breakdown large applications into their core functions.
+<ul>
+<li>Application components can be developed and updated more efficiently by multiple developers working independently.</li>
+</ul>
+</li>
+<li>Teams can use different stacks and runtime environments for different components.</li>
+<li>Components facing too much load can be scaled independently, reducing the waste and cost associated with having to scale entire applications.</li>
+</ul>
+</li>
+<li>Stateless microservices each maintain their own state in a separate database or persistent object-store.</li>
+<li>Microservices are built around business capabilities and are independently deployable by fully automated deployment machinery.</li>
+<li>Cloud native architecture is a collection of independently deployable microservices.
+<ul>
+<li>A container is the distribution method for each microservice, meaning it delivers the code where it needs to go.
+<ul>
+<li>Containers are plug-and-play, so if one microservice isn’t working for an application, developers can take it out and put in a different one without disrupting how the rest of the app functions.</li>
+</ul>
+</li>
+<li>Resilience through horizontal scaling</li>
+<li>Failing instances are killed and respawned.</li>
+</ul>
+</li>
+</ul>
+<h3>Designing For Failure</h3>
+<ul>
+<li>Failure is inevitable, so we design for failure rather than trying to avoid failure.</li>
+<li>Developers need to build in resilience to be able to recover quickly.
+<ul>
+<li>Retry patterns work by retrying failed operations.</li>
+<li>Circuit breaker patterns are designed to avoid cascading failures.
+<ul>
+<li>Circuit breaker patterns trip once failures reach a certain limit or threshold. It detects a problem and avoids cascading failures.</li>
+</ul>
+</li>
+<li>Bulkhead patterns can be used to isolate failing services to limit the scope of failure.
+<ul>
+<li>Separate thread pools help recovery by directing traffic to active connection pools.</li>
+</ul>
+</li>
+<li>Monkey testing is deliberately killing services for testing.</li>
+<li>Chaos engineering is deliberately causing services to fail to see how other services
+are affected.</li>
+</ul>
+</li>
+</ul>
+<h3>Infrastructure-as-code</h3>
+<ul>
+<li>Infrastructure as code describes infrastructure in an executable textual format.
+<ul>
+<li>Ephemeral infrastructure can be used and then discarded.
+<ul>
+<li>Because servers are built on demand, via automation.</li>
+</ul>
+</li>
+<li>Rather than patching a running container, immutable delivery is making changes to the container image, then redeploying a new container.</li>
+</ul>
+</li>
+<li>Configuration management systems
+<ul>
+<li>These are tools like Ansible, Puppet, and Chef that allow you to describe your infrastructure as code, and then they create that infrastructure and keep it in that state.</li>
+</ul>
+</li>
+<li>Technology like Docker, Vagrant, Terraform, and even Kubernetes, also allow you to describe your infrastructure as code, and this code should be checked into version control.</li>
+<li>Server drift is a major source of failure.
+<ul>
+<li>Servers get updated for various reasons, and not always by the same people.
+<ul>
+<li>This causes them to drift from their original configuration.</li>
+<li>Sometimes the accumulation of these changes cause failures in unpredictable ways.</li>
+</ul>
+</li>
+<li>&quot;Servers are cattle, not pets.&quot;</li>
+</ul>
+</li>
+</ul>
+<h3>CI/CD</h3>
+<ul>
+<li>Continuous Integration (CI)
+<ul>
+<li>The process of continuously building, testing, and integrating every developer change into the master branch after a set of tests have passed.
+<ul>
+<li>The result is potentially deployable code.</li>
+</ul>
+</li>
+<li>CI reduces the risk of integrating code because you are integrating smaller changes.
+<ul>
+<li>Working in small batches aids continuous integration by reducing the number of conflicting changes.</li>
+</ul>
+</li>
+<li>Benefits include faster reaction time, moving faster, and reducing the risk of integrating code.</li>
+<li>Most CI tools like Travis CI, Circle CI, Jenkins, and GitHub Actions have the capability to monitor your version control system for changes as well as automate the build process.</li>
+</ul>
+</li>
+<li>Continuous Delivery (CD)
+<ul>
+<li>A series of practices designed to ensure that code can be rapidly and safely deployed to production by delivering every change to a production-like environment.
+<ul>
+<li>“production-like&quot; means it doesn’t have to be deployed into production.
+<ul>
+<li>It doesn’t have to be the actual production environment, but it should be enough like it so that the same procedure can be used to deploy to production.</li>
+</ul>
+</li>
+<li>Many people reserve the term “Continuous Deployment” for when you are deploying continuously to production.</li>
+</ul>
+</li>
+<li>e.g. If the production environment is containers running on Kubernetes, you should deploy to a development environment in containers on Kubernetes.</li>
+<li>CD key Principles
+<ul>
+<li>Built in quality
+<ul>
+<li>The CI/CD pipeline comes into play here, because it allows every code change to go through a set of rigorous checks to ensure high code quality.</li>
+</ul>
+</li>
+<li>Working in small batches
+<ul>
+<li>Smaller changes are easier to test and represent less risk of something getting broken.</li>
+</ul>
+</li>
+<li>Automate the repetitive tasks using computers
+<ul>
+<li>and then leave the problem solving to the people.</li>
+</ul>
+</li>
+<li>Relentlessly pursue continuous improvement.
+<ul>
+<li>we need to measure, using actionable measurements, and then take action when the measurement shows what we can improve.</li>
+</ul>
+</li>
+<li>Everyone be responsible</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>CI/CD pipeline</h3>
+<ul>
+<li>CI (plan, code, build, test) + CD (release, deploy, operate)
+<ul>
+<li>There are automated gates that create a pipeline of checks such as unit testing, integration testing, quality checks, vulnerability scans, and security tests, to ensure the quality of the code.</li>
+</ul>
+</li>
+<li>DevOps manages risk by increasing the rate of change rather than avoiding change.
+<ul>
+<li>In DevOps, deployment is king, deployment should be painless. You want to deploy early and often.</li>
+</ul>
+</li>
+<li>After CI/CD, when we use automation to deploy to production, then it is referred to as continuous deployment.
+<ul>
+<li>The term &quot;Continuous Deployment&quot; is reserved for actual deploying to production</li>
+</ul>
+</li>
+</ul>
+<h2>1-4. Measuring DevOps</h2>
+<ul>
+<li>DevOps changes the objective of problem resolution from &quot;failure prevention&quot; to &quot;failure recovery&quot;.
+<ul>
+<li>We used to measure mean time to failure where you tried to make sure the server never went down. That is old-school thinking.</li>
+<li>We need to go from mean time to failure to mean time to recovery. You anticipate that the server will go down. Just be sure you can recover quickly.</li>
+</ul>
+</li>
+</ul>
+<h3>Metrics</h3>
+<ul>
+<li>By goal
+<ul>
+<li>Measuring social metrics leads to improved socialization.</li>
+<li>Measuring DevOps metrics allows you to see the progression toward goals.</li>
+</ul>
+</li>
+<li>By meaning
+<ul>
+<li>Vanity metrics may be appealing at first glance but offer limited actionable insights.</li>
+<li>Actionable metrics provide meaningful ways to measure your process and work toward goals.
+<ul>
+<li>According to Dr. Nicole Forsgren, DevOps actionable metrics include mean lead time, release frequency, change failure rate, and mean time to recovery.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Cultural DevOps measurement
+<ul>
+<li>These are culture statements introduced by Dr. Nicole Forsgren for measuring the teams on a scale of 7, strongly agree, to 1.
+<ul>
+<li>On my team, information is actively sought.</li>
+<li>On my team, failures are learning opportunities and messengers are not punished.</li>
+<li>On my team, responsibilities are shared.</li>
+<li>On my team, cross-functional collaboration is encouraged and rewarded.</li>
+<li>On my team, failure causes inquiry.</li>
+<li>On my team, new ideas are welcomed.</li>
+</ul>
+</li>
+<li>Failures are learning opportunities that should not be punished.
+<ul>
+<li>It is the system that fails, not the person.</li>
+<li>Messengers are not punished.</li>
+<li>Foster a culture of experimentation.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Site Reliability Engineering vs. DevOps</h3>
+<ul>
+<li>SRE and DevOps have some common goals, but SRE takes a different approach than DevOps.</li>
+<li>For SRE,
+<ul>
+<li>The goal of site reliability engineers is to automate themselves out of a job.
+<ul>
+<li>One of the tenets of SRE is to only hire software engineers</li>
+</ul>
+</li>
+<li>In SRE, stability is controlled through something known as error budgets.
+<ul>
+<li>Developers are allowed to deploy their applications into production as long as they don't causetoo many production outages.</li>
+<li>Once the developers have caused enough outages to exceed their error budget, they're no longer allowed to deploy to production.</li>
+<li>It solves the problem of developers waiting for operations, yet it still gives operations control over the stability of the production environment.</li>
+</ul>
+</li>
+<li>Developers spend about 5% of their time rotating through the operations team so that they understand what the SRE team is doing on a daily basis.
+<ul>
+<li>Also if they cause too many outages, or the toil exceeds 50% of the site reliability engineer’s time, more developers are shifted to operations to help bring things back into balance.</li>
+</ul>
+</li>
+<li>SRE keeps those silos in place.
+<ul>
+<li>The development team is a separate and distinct team from the operations team.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SRE and DevOps can be used together to both maintain and use computer infrastructure.</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

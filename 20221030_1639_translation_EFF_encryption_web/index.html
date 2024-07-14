@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[번역] 인터넷을 암호화하다 | devfreedom.github.io</title>
+    <meta name="title" content="[번역] 인터넷을 암호화하다 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮번역❯,전자 프론티어 재단,EFF,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20221030_1639_translation_EFF_encryption_web/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[번역] 인터넷을 암호화하다</h1>
+        <div class="text-center">Published on 30 October 2022 04:39 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮번역❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮번역❯</a>
+            
+            <a href="/tags/전자 프론티어 재단" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#전자 프론티어 재단</a>
+            
+            <a href="/tags/EFF" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#EFF</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/eff-logo.png" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <p>미국의 디지털 민권단체인 전자 프론티어 재단(EFF)에 번역기여자로 참여해 작성한 번역본입니다.</p>
+<p>원문: <a href="https://www.eff.org/encrypt-the-web">Encrypting the Web</a></p>
+<p>번역본: <a href="https://www.eff.org/ko/encrypt-the-web">인터넷을 암호화하다</a></p>
+<hr>
+<p>인터넷 세상은 안전하지 않은 HTTP에서 더욱 안전한 HTTPS 프로토콜으로 대부분 옮겨갔습니다. 서버에서 당신의 브라우저로 웹페이지를 가져다주기 위해 모든 웹 서버들은 이러한 두 가지 프로토콜 중 하나를 사용합니다. 하이퍼텍스트 전송 통신규약(HTTP)은 그 내용을 중간에서 가로채거나 몰래 엿볼 수 있게끔 하는 심각한 문제점들을 가지고 있습니다. 하이퍼텍스트 보안 전송 통신규약(HTTPS)은 이러한 문제점들의 대부분을 해결합니다. 이것이 바로 전자 프론티어 재단(EFF) 및 우리와 뜻을 함께하는 지지자들이 웹사이트들에게 HTTPS를 기본으로 도입하기를 촉구해 온 이유입니다. 2021년을 기준으로, 웹페이지에 접속하는 모든 방문의 약 90%가 HTTPS를 사용합니다. 이는 우리 모두를 위한 보안과 암호화에 있어서 크나큰 성공입니다.</p>
+<p>HTTPS를 기본으로 탑재하는 것은 어느 때보다 더욱 쉬워졌습니다. 그리고 저희는 이를 위한 도구를 제공해 드리고 있습니다.</p>
+<p>몇 년간, 웹사이트 소유자들은 HTTPS를 오직 소수의 웹페이지에만 적용했습니다. 예를 들면 비밀번호나 신용카드 번호를 입력받는 웹페이지들 말이죠. 하지만 지난 10년간, 인터넷 보안 공동체는 모든 웹페이지들이 보호될 필요가 있음을 깨달았습니다. HTTP를 통해 전달되고 제공되는 웹페이지들은 여러분의 온라인 계정을 훔치는데 악용될 수 있는 도청, 콘텐츠 주입 공격, 쿠키 탈취 등과 같은 위협에 취약합니다.</p>
+<p>콘텐츠 주입 공격이란 당신이 HTTP 웹페이지와 통신을 할 때 누군가가 코드를 추가하는 것을 의미합니다. 영국 정부통신본부(GCHQ)와 미국 국가안보국(NSA)이 벨기에의 인터넷 서비스 제공사업자(ISP)에 있는 컴퓨터들을 접수한 사례가 바로 그 예입니다. 이는 또한 중국이 &quot;만리장포(The Great Cannon)&quot;라고 일컬어진, GitHub을 과부하로 마비시킨 압도적인 DDoS 공격에 사용한 수법입니다. 콘텐츠 주입 공격은 ISP 업계에서도 점점 흔하게 행해지고 있습니다. 버라이즌(Verizon)은 고객 컴퓨터로부터의 모든 통신 요청에 추적 헤더를 주입한 적이 있습니다. 그리고 컴캐스트(Comcast) 역시 웹사이트들에 무단으로 팝업을 주입합니다. 이러한 모든 공격들은 충분히 많은 수의 웹사이트에 HTTPS가 기본으로 적용되고 도입된다면 막을 수 있습니다.</p>
+<h3>개인으로서 할 수 있는 일</h3>
+<p>여러분은 HTTPS를 지원하는 웹사이트에서만 HTTPS를 사용하실 수 있습니다. 그리고 HTTPS를 지원하더라도 방문자들을 HTTPS 버전의 웹페이지로 안내하지 않는 웹사이트들이 여전히 많이 있습니다.</p>
+<p>여러분들은 이제 구글 크롬(Chrome), 모질라 파이어폭스(Firefox), 마이크로소프트 엣지(Microsoft Edge)에서 HTTPS를 기본값으로 강제하실 수 있습니다.</p>
+<p><strong>모질라 파이어폭스(Firefox)</strong></p>
+<ul>
+<li>설정(Settings) &gt; 개인정보 및 보안(Privacy &amp; Security) &gt; 맨 아래로 스크롤  &gt; HTTPS 전용 모드(HTTPS-Only Mode) 활성화</li>
+</ul>
+<p><strong>구글 크롬(Chrome)</strong></p>
+<ul>
+<li>설정(Settings) &gt; 개인정보 및 보안(Privacy and security) &gt; 보안(Security) &gt; 맨 아래로 스크롤 &gt; 항상 보안 연결 사용(“Always use secure connections”)을 활성화</li>
+<li>이 기능은 chrome://flags/#https-only-mode-setting 플래그에서도 찾으실 수 있습니다.</li>
+</ul>
+<p><strong>마이크로소프트 엣지(Edge)</strong></p>
+<ul>
+<li>이 기능은 Edge 92 및 그 이상에서 사용은 가능하지만, 아직은 Edge 정식 기능이 아닌 “실험적 기능(experimental feature)”으로 분류되어 있습니다.</li>
+<li>주소창에 edge://flags/#edge-automatic-https를 입력 및 접속한 다음에, 자동 HTTPS(Automatic HTTPS)를 활성화합니다.</li>
+<li>Microsoft Edge를 재시작할 수 있는 “다시 시작” 버튼을 누릅니다.</li>
+</ul>
+<p>이러한 기능을 수행하는 EFF의 브라우저 확장 기능인 HTTPS 에브리웨어(HTTPS Everywhere)는 2022년 말에 은퇴할 예정입니다. 왜냐하면 브라우저 확장 기능 없이도 이제는 대부분의 웹사이트에 HTTPS를 기본적으로 사용할 수 있게 되었기 때문입니다. 우리는 이것을 대단한 승리로 여깁니다. HTTPS Everywhere는 보다 많은 인터넷 세상이 자동적으로 암호화될 때까지 언제까지나 과도기적 해결책으로써 마련된 것이었습니다.</p>
+<h3>웹 사이트 관리자로서 할 수 있는 일</h3>
+<p>저희는 웹사이트를 운영하는 모든 분들이 HTTPS를 제공하고 방문자들이 HTTPS로 기본적으로 자동으로 접속될 수 있도록 해주실 것을 권장합니다. HTTPS를 제공하는 것은 지난 10년 동안 굉장히 저렴해졌습니다. 사실, HTTPS의 도입은 현대적인 HTTP/2 표준을 웹사이트에 도입하는 것 또한 가능하게 하며 이는 HTTP와 비교했을 때 웹 브라우징 속도를 비약적으로 향상할 수 있습니다. 그리고 HTTP/3-QUIC과 같이 보다 더 빠른 성능을 보장하는 최신의 프로토콜을 장래에 활용할 수 있게 해줍니다.</p>
+<p>HTTPS를 제공하기 위해서는 인증기관(certificate authority)으로부터 인증서를 발급받는 것이 필요합니다. 과거에는 이 과정이 비싸고 복잡했습니다. 하지만 2016년부터, 새로운 인증기관인 렛츠인크립트(Let's Encrypt)가 손쉬운 자동화를 가능하게 하는 API를 사용하여 일반 대중들에게 무료로 SSL 인증서를 발급합니다. Let's Encrypt는 전자 프론티어 재단(EFF), 모질라(Mozilla) 재단 및 많은 후원자들이 함께 모여 만든 연합 프로젝트입니다.</p>
+<p>만약 여러분이 웹 인터페이스만을 활용하여 웹사이트를 관리하고 있으시다면, 가장 수월한 방법은 바로 Let's Encrypt를 시스템에 통합하여 설정 메뉴로써 HTTPS 활성화가 가능하게 해달라고 해당 웹사이트를 호스팅하는 업체에 요청하는 것입니다. 여러 호스팅 업체들은 이미 Let's Encrypt를 지원하고 있으며, 지원을 추가하는 업체들의 수는 지속적으로 증가하고 있습니다.</p>
+<p>만약 여러분이 호스팅 업체의 쉘(shell) 환경에 접근하실 수 있다면 여러분은 EFF가 개발한 도구인 써트봇(Certbot)을 사용하실 수 있습니다. Certbot은 여러분이 Let's Encrypt로부터 무료 인증서를 발급받을 수 있게 해줍니다. 그리고 여러분의 아파치(Apache) 서버와 엔진엑스(Nginx) 서버가 올바르게 인증서를 사용할 수 있도록 자동으로 설정해 줍니다.</p>
+<h3>호스팅 제공 업체로서 할 수 있는 일</h3>
+<p>저희는 모든 호스팅 업체들과 콘텐츠 배포 네트워크(CDN) 업체들이 HTTP 대비 추가 비용 없이 HTTPS를 고객들에게 기본적으로 제공하도록 권장합니다. Cloudflare, OVH, WordPress.com, SquareSpace와 같은 많은 업체들은 이미 그렇게 하고 있습니다. Let's Encrypt 통합 가이드에는 HTTPS를 기본 설정으로써 탑재하는 방법과 관련된 추가적인 상세 정보가 있습니다. 우리는 웹호스팅 산업 표준으로써 자동적 무료 HTTPS를 적극적으로 지지하고 추구해 나갈 것입니다.</p>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

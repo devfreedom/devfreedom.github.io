@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[필기] 머신러닝 특강 - LangChain으로 LLM 활용하기 | devfreedom.github.io</title>
+    <meta name="title" content="[필기] 머신러닝 특강 - LangChain으로 LLM 활용하기 | devfreedom.github.io">
+    <meta name="description" content="devfreedom&#39;s personal blog">
+    <meta name="keywords" content="❮필기❯,인공지능,머신러닝,Python,LangChain,LLM,eleventy,template,simple,clean">
+    <meta name="author" content="devfreedom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devfreedom.github.io/20240205_2246_study-note_ai_ml_openai_langchain/">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+</head>	
+
+<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <header id="header" class="header-shadow bg-black px-6 py-5 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-500">
+    <div class="max-w-5xl mx-auto flex items-center flex-wrap justify-between">
+        <div class="sm:mr-8">
+            <a class="flex items-center" href="/">                              
+                <span class="text-lg text-white font-semibold self-center">devfreedom.github.io</span>
+            </a>
+        </div>
+        <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0">
+            
+            <a href="/tags" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">Categories</a>
+            
+            <a href="https://github.com/devfreedom" target="_blank" rel="noopener" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">GitHub</a>
+            
+            <a href="/about" class="block mt-4 md:inline-block md:mt-0 font-medium text-gray-500 hover:text-white text-base mr-7">About</a>
+            
+        </nav>
+        <form id="search" action="/search" class="order-last sm:order-none flex-auto w-32 items-center justify-end hidden sm:block mt-6 sm:mt-0">
+            <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+            <input type="text" id="header-searchbox" name="q" placeholder="Search..." class="w-full sm:max-w-xs bg-gray-200 border border-transparent float-right focus:bg-white focus:border-gray-300 focus:outline-none h-8 p-4 placeholder-gray-700 rounded text-gray-700 text-sm">
+        </form>
+        <div id="menu-toggle" class="flex items-center md:hidden text-gray-700 hover:text-teal-600 cursor-pointer sm:ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+        </div>
+    </div>
+</header>
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+        
+        
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">[필기] 머신러닝 특강 - LangChain으로 LLM 활용하기</h1>
+        <div class="text-center">Published on 5 February 2024 10:46 PM</div>
+        
+        <div class="mt-3 text-center">
+            
+            <a href="/tags/❮필기❯" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#❮필기❯</a>
+            
+            <a href="/tags/인공지능" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#인공지능</a>
+            
+            <a href="/tags/머신러닝" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#머신러닝</a>
+            
+            <a href="/tags/Python" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#Python</a>
+            
+            <a href="/tags/LangChain" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#LangChain</a>
+            
+            <a href="/tags/LLM" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5">#LLM</a>
+            
+        </div>
+        
+        
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="/assets/img/neural-network.jpg" width="960" height="500" alt="This post thumbnail">
+        </div>
+        
+    </header>
+    <div id="content" class="prose text-gray-800 max-w-none">
+        <h1>LangChain이란?</h1>
+<p>LangChain은 Large Langauge Model을 애플리케이션과 손쉽게 연동할 수 있도록 도와주는 프레임워크입니다.</p>
+<ul>
+<li>간단한 예시 코드<pre><code>!pip install langchain
+!pip install openai
+!pip install streamlit
+
+# OpenAI API key가 별도의 환경변수 .env 파일에 저장되어있다고 가정하겠습니다.
+from dotenv import load_dotenv
+load_dotenv()
+
+from openai import OpenAI
+
+# Streamlit은 인터랙티브한 데이터 앱을 만들 수 있도록 도와주는 프레임워크입니다.
+import streamlit as st
+
+client = OpenAI(api_key=OPEN_API_KEY)
+
+# OpenAI의 모델을 사용해보겠습니다. 
+from langchain.chat_models import ChatOpenAI
+from langchain.llms import OpenAI
+
+&quot;&quot;&quot;
+# LLM 모델을 사용할 경우, &quot;안녕&quot;이라고 입력을 하면 그 이후의 문장을 예측하고 생성하게 됩니다. 
+llm = OpenAI()
+result_llm = llm.predict(&quot;안녕&quot;)
+st.write(result_llm)
+&quot;&quot;&quot;
+
+&quot;&quot;&quot;
+# Chat 모델을 사용할 경우, &quot;안녕&quot;이라고 입력을 하면 &quot;무엇을 도와드릴까요?&quot;라는 대화형 답변이 출력됩니다.
+chat_model = ChatOpenAI()
+result_chat = chat_model.predict(&quot;안녕&quot;)
+st.write(result_chat)
+&quot;&quot;&quot;
+
+st.title(&quot;이력서를 만들어주는 인공지능&quot;)
+story = st.text_input(&quot;본인의 학력, 경력, 자격, 성격, 역량 등을 입력해보세요.&quot;)
+prompt = &quot;이런 정보를 기반으로 A4 용지 한 장 분량의 이력서를 작성해줘.&quot;
+
+if st.button(&quot;이력서를 해결해줘!&quot;):
+    st.write(story + &quot;라구요? 이력서를 한번 작성해볼게요.&quot;)
+    with st.spinner(&quot;잠시만 기다려주세요!&quot;):
+        result = chat_model.predict(story + prompt)
+        st.balloons()
+        st.write(result)
+
+</code></pre>
+</li>
+</ul>
+<h2>LLM과 prompt를 chaining하기</h2>
+<ul>
+<li>promptTemplate.py<pre><code>from dotenv import load_dotenv
+load_dotenv()
+
+from langchain.chat_models import ChatOpenAI
+from langchain.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+
+prompt = ChatPromptTemplate.from_template(&quot;{input}에 관한 농담을 하나 해줘.&quot;)
+model = ChatOpenAI()
+
+# chain을 구성합니다.
+#   1. template으로 구성된 prompt를,
+#   2. model에 투입하되, 출력값에서 개행 문자를 발견하면 일시정지합니다. 
+#   3. 그 결과를 표준 출력으로 표시합니다.
+chain = prompt | model.bind(stop=[&quot;\n&quot;]) | StrOutputParser()
+
+# chain에 입력값을 넣어 작동시킵니다.
+chain.invoke({&quot;input&quot;: &quot;개발자&quot;})
+</code></pre>
+</li>
+</ul>
+<h3>Google AI 모델 사용하기</h3>
+<ul>
+<li>google_lang.py<pre><code>from dotenv import load_dotenv
+load_dotenv()
+
+from langchain_google_genai import ChatGoogleGenerativeAI
+
+llm = ChatGoogleGenerativeAI(model=&quot;gemini-pro&quot;)
+result1 = llm.invoke(&quot;객체지향 프로그래밍에 대해서 중학생 눈높이에서 설명해줘.&quot;)
+
+message = HumanMessage(
+    content = [
+        {
+            &quot;type&quot;: &quot;text&quot;,
+            &quot;text&quot;: &quot;이 그림을 설명해줘&quot;,
+        },
+        {
+            &quot;type&quot;: &quot;image_url&quot;,
+            &quot;image_url&quot;: &quot;https://upload.wikimedia.org/wikipedia/commons/a/a3/ThinkCentre_S50.jpg&quot;,
+        }
+    ]
+)
+
+result2 = llm.invoke([message])
+</code></pre>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="mt-20 md:mt-32 lg:mt-32 xl:mt-32"></div>
+</article>
+        
+    </main>
+    <footer class="mt-20 px-10 py-8 bg-gray-200">
+    <div class="max-w-5xl mx-auto text-gray-700 text-center">
+        © 2022 <a href="/" class="font-medium" target="_blank" rel="noopener">devfreedom.github.io</a> by 
+        <a href="https://devfreedom.github.io" target="_blank" rel="noopener">devfreedom</a> 
+    </div>
+</footer>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>
