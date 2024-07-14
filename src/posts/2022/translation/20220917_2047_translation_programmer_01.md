@@ -8,11 +8,11 @@ tags:
     - 컴퓨터공학
 ---
 
-1. [당신이 프로그래머가 되어서는 안된다는 신호들](https://www.opencomputings.com/20220917_2047_translation_programmer_01)
-2. [당신이 형편없는 프로그래머라는 신호들](https://www.opencomputings.com/20220918_1400_translation_programmer_02)
-3. [당신이 평범한 프로그래머라는 신호들](https://www.opencomputings.com/20220918_1510_translation_programmer_03)
-4. [당신이 유능한 프로그래머라는 신호들](https://www.opencomputings.com/20220918_1534_translation_programmer_04)
-5. [당신이 대단한 프로그래머라는 신호들](https://www.opencomputings.com/20220918_1546_translation_programmer_05)
+1. [당신이 프로그래머가 되어서는 안된다는 신호들](https://devfreedom.github.io/20220917_2047_translation_programmer_01)
+2. [당신이 형편없는 프로그래머라는 신호들](https://devfreedom.github.io/20220918_1400_translation_programmer_02)
+3. [당신이 평범한 프로그래머라는 신호들](https://devfreedom.github.io/20220918_1510_translation_programmer_03)
+4. [당신이 유능한 프로그래머라는 신호들](https://devfreedom.github.io/20220918_1534_translation_programmer_04)
+5. [당신이 대단한 프로그래머라는 신호들](https://devfreedom.github.io/20220918_1546_translation_programmer_05)
 
 "바람직한, 그리고 좋지 못한 프로그래머란 무엇인가?"라는 질문에 현업 프로그래머들은 자신의 경력이나 학습 경험에서 우러나오는 나름대로의 다양한 기준과 대답을 가지고 있을 것입니다. 그 기준이 누군가는 보다 엄격하고 누군가는 다소 느슨하지만, 그래도 보편적으로 일치하는 업계 공통적인 견해는 있는 것 같습니다. '프로그래밍' 그 자체를 해온지는 20년이 넘었지만 안타깝게도 소프트웨어 개발을 직업으로 삼기에는 늦었고 또 나와는 맞지 않을 수 있음을 깨달은 한 사람으로서 이 질문은 제 스스로에게 한번쯤은 반드시 물어봐야 하는 질문일지도 모릅니다.
 

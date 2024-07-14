@@ -8,11 +8,11 @@ tags:
     - 컴퓨터공학
 ---
 
-1. [당신이 프로그래머가 되어서는 안된다는 신호들](https://www.opencomputings.com/20220917_2047_translation_programmer_01)
-2. [당신이 형편없는 프로그래머라는 신호들](https://www.opencomputings.com/20220918_1400_translation_programmer_02)
-3. [당신이 평범한 프로그래머라는 신호들](https://www.opencomputings.com/20220918_1510_translation_programmer_03)
-4. [당신이 유능한 프로그래머라는 신호들](https://www.opencomputings.com/20220918_1534_translation_programmer_04)
-5. [당신이 대단한 프로그래머라는 신호들](https://www.opencomputings.com/20220918_1546_translation_programmer_05)
+1. [당신이 프로그래머가 되어서는 안된다는 신호들](https://devfreedom.github.io/20220917_2047_translation_programmer_01)
+2. [당신이 형편없는 프로그래머라는 신호들](https://devfreedom.github.io/20220918_1400_translation_programmer_02)
+3. [당신이 평범한 프로그래머라는 신호들](https://devfreedom.github.io/20220918_1510_translation_programmer_03)
+4. [당신이 유능한 프로그래머라는 신호들](https://devfreedom.github.io/20220918_1534_translation_programmer_04)
+5. [당신이 대단한 프로그래머라는 신호들](https://devfreedom.github.io/20220918_1546_translation_programmer_05)
 
 타고난 성격, 지능, 적성에다가 끊임없는 개인적 노력 그리고 오랜 직업 경험까지 갖추어야만 도달할 수 있는 레벨입니다. 아무나 달성할 수 있는 경지는 아니라고 생각되고 저자도 그 점을 말하고 있네요.
 
